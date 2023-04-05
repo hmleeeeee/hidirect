@@ -78,21 +78,22 @@
 
   //플랜 및 담보 선택
   .plan_wrap {
-    padding: 20px;
-    .plan_selectlist {
+    padding: 52px 20px 20px;
+    .plan_menu {
       display: flex;
-      align-items: center;
-      margin-bottom: 30px;
-      li {
+      align-items: flex-end;
+      margin-bottom: 12px;
+      background-color: #F1F1F3;
+      border-radius: 8px;
+
+      .plan_menu_option {
         display: flex;
         flex: 1;
         flex-wrap: wrap;
-        height: 112px;
         text-align: center;
         a {
           width: 100%;
           padding: 16px 22px;
-          background-color: #F1F1F3;
           font-size: 13px;
           font-weight: $fw_bold;
           box-sizing: border-box;
@@ -107,32 +108,35 @@
           }
         }
         &.on {
+          position: relative;
           a {
             background-color: #fff;
             border: 1px solid #F8670D;
-            border-radius: 8px;
+            border-radius: 0 0 8px 8px;
           }
           .num {
             color: #F8670D;
           }
           .plan_label {
-            display: inline-block;
+            position: absolute;
+            top: -32px;
+            left: 0;
+            right: 0;
+            display: block;
+            height: 32px;
+            padding: 4px 0;
             color: #fff;
-            width: 100%;
-            padding: 6px 9px;
+            font-size: $fz_sm;
             background-color: #F8670D;
+            border: 1px solid #F8670D;
             border-radius: 8px 8px 0 0;
           }
         }
-        &:first-child a {
-          border-radius: 8px 0 0 8px;
-        }
-        &:last-child a {
-          border-radius: 0 0 8px 8px;
-        }
         .plan_label {
+          width: 100%;
           display: none;
         }
+
         & a:before {
           display: block;
           width: 100%;
@@ -143,25 +147,34 @@
         &.smart a:before {background:url($svg_plan_smart) center no-repeat;}
         &.standard a:before {background:url($svg_plan_standard) center no-repeat;}
         &.premium a:before {background:url($svg_plan_premium) center no-repeat;}
+      
       }
     }
-    .plan_itemlist {
-      li {
-        + li {
-          margin-top: 30px;
+    .plan_list {
+      .plan_list_item {
+        margin-top: 8px;
+        dt {
+          padding: 12px 0;
+          color: #222227;
+          font-size: $fz_sm;
         }
-      }
-      .chkoption {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 43px;
-        color: $gray350;
-        font-weight: $fw_regular;
-        div.on {
-          color: #222;
-          font-weight: $fw_bold;
-          background-color: #FFF4EB;
+        dd {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          div {
+            flex: 1;
+            padding: 10px 28px;
+            text-align: center;
+            border-bottom: 1px solid #F3F4F6;
+          }
+          .on {
+            color: #222227;
+            font-size: 15px;
+            font-weight: $fw_bold;
+            border-bottom-color: #FFF4EB;
+            background-color: #FFF4EB;
+          }
         }
       }
     }
