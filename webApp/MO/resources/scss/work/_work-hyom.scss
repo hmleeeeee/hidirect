@@ -6,7 +6,7 @@
 * hj.jang
 */
 
-//상품
+
 //status
 .navbar.type_status {
   top: 10px;
@@ -18,7 +18,19 @@
   right: 0;
   z-index: 501;
 }
+.section.nogap {
+  margin-top: 12px;
+}
+.item_wrap {
+  .item_link {
+    display: block;
+    padding: 16px 0;
+    color: #66666B;
+    font-size: 15px;
+  }
+}
 
+//상품
 .product_content {
   .product_price_info {
     .title_area {
@@ -67,18 +79,13 @@
       text-decoration: none;
     }
   }
-  .item_wrap {
-    .item {
-      padding: 16.5px 0;
-    }
-  }
   .btn_area + .banner {
     margin-top: 16px;
   }
 
   //플랜 및 담보 선택
   .plan_wrap {
-    padding: 52px 20px 20px;
+    padding: 56px 20px 20px;
     .plan_menu {
       display: flex;
       align-items: flex-end;
@@ -94,9 +101,9 @@
         a {
           width: 100%;
           padding: 16px 22px;
-          font-size: 13px;
+          color: #222227;
+          font-size: $fz_sm;
           font-weight: $fw_bold;
-          box-sizing: border-box;
           em {
             display: block;
             margin-bottom: 4px;
@@ -151,8 +158,12 @@
       }
     }
     .plan_list {
+      margin-top: 32px;
       .plan_list_item {
         margin-top: 8px;
+        &:first-child {
+          margin-top: 0;
+        }
         dt {
           padding: 12px 0;
           color: #222227;
