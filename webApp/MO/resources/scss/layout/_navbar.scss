@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/**
+* layout.navbar
+* ------------------
+*/
+
+.navbar{position:fixed;left:0;right:0; top:0; background: #fff;}
+
+//navbar , popup 공통
+.header_wrap{display: flex;flex-wrap:nowrap; align-items: center; justify-content: space-between;  height:$header_height; padding: 12px 10px 12px 8px;/* margin-left: 8px;*/
+	.header_title {font-weight: 500; font-size: 14px; line-height: 21px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+}
+
+//타이틀만 있는 케이스
+.navbar.type_title{
+	.header_wrap{justify-content: center; flex:none;
+		.btn_page_prev{display: none;}
+		.btn_sidebar_open{display: none;}
+	}
+}
+
+
+.modal {
+	.header_wrap {background:#fff}
+	&[data-layout-round="true"], &[data-layout-header="scroll"], &.modal-bottom {
+		.header_wrap {background:transparent;transform: translate3d(0,0,0);-webkit-transform: translate3d(0,0,0);}
+	} 
+}
+
+
+
+
+
+//---------------
+// Button
+// 이전 (<)
+.btn_page_prev{position:relative;width:28px;height:28px;padding:0;
+	&:after{@include bg_center; width:100%;height:100%;background:url($svg_btn_page_prev) 0 0 no-repeat;}
+	&:before{@include bg_center;width:36px;height:36px;}
+}
+
+// 메뉴 Open (≡)
+.btn_sidebar_open{position:relative;width:28px;height:28px;padding:0;
+	&:after{@include bg_center; width:100%;height:100%;background:url($svg_btn_sidebar_open) 0 0 no-repeat;}
+	&:before{@include bg_center;width:36px;height:36px;}
+}
+
+// 메뉴 Close (x)
+.btn_sidebar_close{position:relative;width:28px;height:28px;padding:0;
+	&:after{@include bg_center;width:24px;height:24px;background:url($svg_btn_page_close) 0 0 no-repeat; background-size: 24px;}
+	&:before{@include bg_center;width:36px;height:36px;}
+}
+
+// 팝업 Close  (x) (== 메뉴 Close 동일)
+.btn_page_close{position:relative;width:24px;height:24px;padding:0;
+	&:after{@include bg_center;width:100%;height:100%;background:url($svg_btn_page_close) 0 0 no-repeat; }
+	&:before{@include bg_center;width:36px;height:36px;}
+}
+
+// Home
+.btn_header_home{position:relative;width:24px;height:24px;padding:0;
+	&:after{@include bg_center;width:20px;height:19px;background:url($svg_btn_header_home) center center no-repeat;  background-size: 20px auto;} 
+	&:before{@include bg_center;width:36px;height:36px;}
+}
+
+//----------------[asis]: 이하 재정의
+
+
+// 알림
+.btn_alert {position:relative; width:40px; height:40px; padding:0;overflow: hidden;
+	.ani{display: block;position: relative; width: 80px;height: 80px; margin-left: -20px; margin-top: -20px;}
+}
+.btn_alert:before{@include bg_center;width:24px;height:24px;background:url($svg_btn_header-alert-black) 0 0 no-repeat; background-size: 100%;}
+
+.cnt {position:absolute; top:6px; right:3px;font-size:9px; color:#fff; line-height:13px; background:$point_color; padding:0 4px; border-radius:6px;}
+
+// header search
+.header_wrap .btn_search_block {position:relative;width:40px;height:40px;padding:0;
+	&:after{content:'';display:block;width:24px;height:24px;background:url($svg_ico_search_header) 0 0 no-repeat; background-size: 24px auto;margin-left: 15px;}
+}
+

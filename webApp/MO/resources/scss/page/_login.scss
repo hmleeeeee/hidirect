@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+/**
+* Page.login
+* ------------------
+*/
+
+[data-category=login][data-category-sub=main]{
+	#wrap{
+		background-color: #F5F5F7;
+	}
+	.navbar{
+		background-color:#F5F5F7;
+	}
+}
+
+// 인증방법 선택
+.login_method{
+	.item{
+		.anchor{
+			position:relative;
+			width:100%;
+			padding:23px 16px 24px 68px;
+			border-radius:12px;
+			background:#FFF;
+			box-shadow:0px 4px 18px rgba(0, 0, 0, 0.05);
+			text-align:left;
+			span{
+				display: inline-block;
+				position:static;
+				@include fz15();
+			}
+			&:before{
+				content:'';
+				position:absolute;
+				top:50%;
+				left:16px;
+				width:40px;
+				height:40px;
+				margin-top:-20px;
+				background-repeat:no-repeat;
+				background-position:50% 50%;
+				background-size:100% 100%;
+			}
+			&.pin{
+				&:before{
+					background-image:url($svg_pin);
+				}
+			}
+			&.bio{
+				&:before{
+					background-image:url($svg_bio);
+				}
+			}
+			&.phone{
+				&:before{
+					background-image:url($svg_phone);
+				}
+			}
+			&.kakao{
+				&:before{
+					background-image:url($svg_kakao);
+				}
+			}
+			&.naver{
+				&:before{
+					background-image:url($svg_naver);
+				}
+			}
+			&.joint{
+				&:before{
+					background-image:url($svg_joint);
+				}
+			}
+			&.bank{
+				&:before{
+					background-image:url($svg_bank);
+				}
+			}
+			&.joint2{
+				&:before{
+					background-image:url($svg_joint2);
+				}
+			}
+			&.desktop{
+				&:before{
+					background-image:url($svg_desktop);
+				}
+			}
+			&.mobile{
+				&:before{
+					background-image:url($svg_mobile);
+				}
+			}
+			strong{
+				position:absolute;
+				top:58px;
+				left:50%;
+				z-index:1;
+				width:max-content;
+				padding:8px 10px 8px 12px;
+				border-radius:6px;
+				font-size:12px;
+				font-weight:500;
+				line-height:1.5em;
+				letter-spacing:-0.04em;
+				color:#fff;
+				background-color:#3F3F41;
+				transform:translateX(-50%);
+				&:after{
+					content:'';
+					position:absolute;
+					top:-6px;
+					left:50%;
+					width:10px;
+					height:6px;
+					background:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6L10 6L5.76822 0.921865C5.36843 0.442111 4.63157 0.442111 4.23178 0.921865L0 6Z' fill='%233F3F41'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
+					transform:translateX(-50%);
+				}
+			}
+		}
+		&+.item{
+			margin-top:12px;
+		}
+	}
+	&.arrow{
+		.item{
+			margin-top:0;
+			border-bottom:1px solid #EFEFF1;
+			.anchor{
+				display:flex;
+				min-height:40px;
+				padding:16px 30px 16px 0;
+				border-radius:0;
+				align-items:center;
+				box-shadow:none;
+				&:before{
+					position:static;
+					min-width:40px;
+					margin:0 16px 0 0;
+				}
+				&:after{
+					content:'';
+					position:absolute;
+					top:50%;
+					right:0;
+					width:24px;
+					height:24px;
+					margin-top:-12px;
+					background:url($svg_arrow_right_24) 50% 50% no-repeat;
+					background-size:100% 100%;
+				}
+				strong{
+					display:block;
+					position:static;
+					width:100%;
+					max-width:172px;
+					margin-top:4px;
+					padding:0;
+					border-radius:0;
+					color:#000;
+					background-color:transparent;
+					transform:translateX(0);
+					font-size:13px;
+					font-weight:400;
+					line-height:1.5em;
+					word-break:keep-all;
+					color:#767678;
+					&:after{
+						display:none;
+					}
+				}
+			}
+		}
+	}
+	&.bottom{
+		.item{
+			margin-top:0;
+		}
+		.anchor{
+			height:60px;
+			padding:19px 30px 19px 52px;
+			border-radius:0;
+			box-shadow:none;
+			&:before{
+				left:0;
+			}
+		}
+	}
+}
+
+.sign_box{
+	position:relative;
+	margin-top:32px;
+	border:1px solid #EFEFF1;
+	.sign_area{
+		img{
+			width:100%;
+		}
+	}
+	.sign_reset{
+		position:absolute;
+		top:20px;
+		right:16px;
+		z-index:1;
+		padding-left:20px;
+		font-size:13px;
+		font-weight:500;
+		line-height:1.5em;
+		letter-spacing:-0.04em;
+		color:#555557;
+		&:after{
+			content:'';
+			position:absolute;
+			top:50%;
+			left:0;
+			width:16px;
+			height:16px;
+			margin-top:-8px;
+			background:url($svg_reset) 50% 50% no-repeat;
+			background-size:100% 100%;
+		}
+	}
+}

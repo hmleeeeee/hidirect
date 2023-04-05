@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+		$('.btn_samples').find('.btn').click();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="login" data-category-sub="main">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">로그인</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Modal</h2>
+						</div>
+						<div class="comp">
+							<div class="btn_area cta btn_samples">
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#MCUCO1101U'));" class="btn fill01">Open</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Modal Full -->
+		<div class="modal full fade" id="MCUCO1101U" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">휴면상태 안내</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+                <div class="governing notice" data-icon="unlock">
+                  <h2 class="governing_title">휴면상태 해제 후<br>로그인해 주세요.</h2>
+                  <p class="info_text">「정보통신망 이용촉진 및 정보보호 등에 관한 법률」에 따라 1년 동안 로그인하지 않은 고객님의 아이디는 자동으로 휴면상태로 변경되었습니다.</p>
+                  <p class="info_text">개인정보보호를 위해<br>본인인증 후 휴면상태를 해제할 수 있습니다.</p>
+                  <p class="info_text">휴면상태 해제를 신청하고<br>편리하게 홈페이지를 이용해 보세요.</p>
+                </div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill01">휴면계정 해제 신청</button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#MCUCO1101U'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Full -->
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

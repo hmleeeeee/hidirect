@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/**
+* Module.Accordion
+* ------------------
+*/
+
+
+// * Default
+//-----------------
+.accordion{
+	&.full{@include layoutFull();}
+	border:1px solid #ccc;  border-width:1px 0;
+	.item{border-top: 1px solid #ccc; 
+		&:first-child{border-top: none;}
+		.fold_header{
+			a{display: table; table-layout: fixed; width: 100%; padding:24px 20px;  color: #fff;}
+			.title{@include clearfix();width:calc(100% - 15px);
+				strong{color:#000;font-weight:500;vertical-align:middle;word-break:break-word;}
+				span{float: right; color:#000;vertical-align:middle;word-break:break-word;text-align: right;}
+			}
+			.icon_angle{display: table-cell;width: 24px;height: 24px;background: url($svg_arrow_down_24) center center no-repeat;background-size: 24px 24px; transition: transform $transition_base; transform: rotate(0);vertical-align: top;
+				span{@include blind();}
+			}
+		}
+		.fold_body{display:none;padding:2px 20px 27px; }
+
+		&.on{
+			.fold_header a{border-bottom:none;
+				.icon_angle{transform: rotate(180deg);}
+			}
+		}
+	}
+}
+
+
+
+
+// * 유의사항
+//-----------------
+// Default: full
+.accordion.notice{
+	border: none;border-top: 12px solid #F9F9FB;
+	// margin-left: -20px; margin-right: -20px;//full
+	.fold_header{
+		a{padding:24px 20px;}
+		.title{position: relative; /*padding-left: 24px;*/ font-size: 15px; line-height:20px ;
+			// &:after{content:''; position:absolute; top:50%; left:0; width:16px; height:16px; background:url($svg_icon_notice_red) no-repeat center center;transform:translateY(-50%);
+			// }
+		}
+	}
+	.fold_body{
+		border-top: 1px solid #B7B7B9;
+		padding: 32px 20px;
+	}
+}
+
+//납입기간
+.accordion.acco_select {
+  border: 1.5px solid #222227;
+  border-radius: 8px;
+	.uol_list > ul li {
+		padding-left: 0;
+		margin-bottom: 12px;
+		&:before {
+			display: none;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+  .fold_header{
+		a {padding: 14.5px 16px;font-size: 15px;}
+    .title .txt {
+      float: none;
+      text-align: left;
+      &:first-child::after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        margin: 0 7px 0 8px;
+        background: #D1D1D6;
+      }
+    }
+  }
+	.fold_body {
+		padding: 12px 16px 24px;
+		.uol_list {
+			.h4 {
+				color: #66666B;
+			}
+		}
+	}
+	.btn_rdo + label,
+	.btn_rdo:checked+label {
+		width: 61px;
+		height: 37px;
+		padding: 8px 12px;
+		text-align: center;
+		border-radius: 30px;
+	}
+	.btn_rdo:checked+label {
+		color: #fff;
+		background-color: #222227;
+		&:before {
+			display: none;
+		}
+	}
+}
+
+
+
+
+
+

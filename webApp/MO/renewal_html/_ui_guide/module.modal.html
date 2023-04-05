@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+
+		//Sample Btn
+		$('.btn_samples').find('.btn').each(function(){
+
+			$(this).on('click', function(){
+				$('.btn_samples').find('.btn').removeClass('fill01').addClass('fill02')
+				$(this).addClass('fill01').removeClass('fill02')
+			});
+		});
+		$('.btn_samples').find('.btn').eq(5).click();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="true" data-category="" data-category-sub="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">Module</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Modal3</h2>
+						</div>
+						<div class="comp">
+							<div class="btn_samples grid_sm4">
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_full01'));" class="btn fill02 sm">01.full</a>
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_full02'));" class="btn fill02 sm">02.full</a>
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_full03'));" class="btn fill02 sm">03.full</a>
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_full04'));" class="btn fill02 sm">04.full </a>
+
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_bottom01'));" class="btn fill02 sm">01.bottom</a>
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_bottom02'));" class="btn fill02 sm">02.bottom</a>
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_bottom03'));" class="btn fill02 sm">03.bottom(x)</a>
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_bottom04'));" class="btn fill02 sm">04.bottom</a>
+
+								<a href="javascript:void(0);" 
+									onclick="javascript:layerPop.alert(
+										$('#sampleModal_Alert')
+										, {
+											title: ''
+											, msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>'
+											, buttonTitle: {
+												ok: '확인'
+												, cancel: '취소'
+											}
+											, calllBack: {
+												ok: function(){
+													layerPop.close('#sampleModal_Alert'); 
+													return false;
+												}
+												, cancel: function(){
+													layerPop.close('#sampleModal_Alert'); 
+													return false;
+												}
+											}
+										}
+									);"
+								class="btn fill02 sm">06.alert</a>
+							</div>
+						</div>
+						<div class="comp">
+							<div style="height:600px; padding:10px;	background-color: #eee;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+							<div>== End ==</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<div class="content_footer fix">
+					<div class="btn_area footer">
+						<button type="button" class="btn fill02" disabled="">가나다라</button>
+						<button type="button" class="btn fill01">마바사아</button>
+					</div>
+				</div>
+				<!-- //content_footer -->
+				<!-- <script type="text/javascript" src="../_ui_include/quick.js"></script> -->
+				<!-- Include: quick -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- 01.modal_full -->
+		<div class="modal full fade" id="sampleModal_full01" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">01.full</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp grid_sm4" >
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full01'); return false;" class="btn option disabled" >01.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full02'); return false;" class="btn option">02.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full03'); return false;" class="btn option">03.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full04'); return false;" class="btn option">04.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom01'); return false;" class="btn option">01.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom02'); return false;" class="btn option">02.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom03'); return false;" class="btn option">03.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom04'); return false;" class="btn option">04.bottom</a>
+									<a href="javascript:void(0);"onclick="javascript:layerPop.alert($('#sampleModal_Alert') , {title: '', msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>', buttonTitle: {ok: '확인'} , calllBack: {ok: function(){layerPop.close('#sampleModal_Alert'); return false; } } } );"class="btn option">Alert</a>
+								</div>
+							</div>
+							<div class="section">
+								<div class="comp">
+									<div style="height:1000px; padding:10px;	background-color: #eee;">
+										<ul>
+											<li>.modal.full</li>
+											<li>Scroll: 내용 길때</li>
+											<li>.modal_footer 아래 서브 버튼</li>
+										</ul>
+									</div>
+									<div>==End==</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill02">취소</button>
+							<button type="button" class="btn fill01">확인</button>
+						</div>
+						<div class="btn_area sub">
+							<button type="button" class="btn text">다른 방법 선택</button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_full01'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //01.modal_full -->
+
+		<!-- 02.modal_full -->
+		<div class="modal full fade" id="sampleModal_full02" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">02.full(컨텐트 작을때)</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp grid_sm4" >
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full01'); return false;" class="btn option" >01.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full02'); return false;" class="btn option disabled">02.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full03'); return false;" class="btn option">03.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full04'); return false;" class="btn option">04.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom01'); return false;" class="btn option">01.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom02'); return false;" class="btn option">02.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom03'); return false;" class="btn option">03.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom04'); return false;" class="btn option">04.bottom</a>
+									<a href="javascript:void(0);"onclick="javascript:layerPop.alert($('#sampleModal_Alert') , {title: '', msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>', buttonTitle: {ok: '확인'} , calllBack: {ok: function(){layerPop.close('#sampleModal_Alert'); return false; } } } );"class="btn option">Alert</a>
+								</div>
+							</div>
+							<div class="section">
+								<div class="comp">
+									<div style="height:300px; padding:10px;	background-color: #eee;">
+										<ul>
+											<li>.modal.full</li>
+											<li>No Scroll: 내용 작을때</li>
+											<li>.modal_footer 아래 서브 버튼 없음</li>
+										</ul>
+									</div>
+									<div>==End==</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill02">취소</button>
+							<button type="button" class="btn fill01">확인</button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_full02'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //02.modal_full -->
+
+		<!-- 03.modal_full -->
+		<div class="modal full fade" id="sampleModal_full03" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">03.full</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp grid_sm4" >
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full01'); return false;" class="btn option" >01.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full02'); return false;" class="btn option">02.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full03'); return false;" class="btn option disabled">03.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full04'); return false;" class="btn option">04.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom01'); return false;" class="btn option">01.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom02'); return false;" class="btn option">02.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom03'); return false;" class="btn option">03.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom04'); return false;" class="btn option">04.bottom</a>
+									<a href="javascript:void(0);"onclick="javascript:layerPop.alert($('#sampleModal_Alert') , {title: '', msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>', buttonTitle: {ok: '확인'} , calllBack: {ok: function(){layerPop.close('#sampleModal_Alert'); return false; } } } );"class="btn option">Alert</a>
+								</div>
+							</div>
+							<div class="section">
+								<div class="comp">
+									<div style="height:300px; padding:10px;	background-color: #eee;">
+										<ul>
+											<li>.modal.full</li>
+											<li>No Scroll: 내용 작을때</li>
+											<li>.modal_footer (X)</li>
+										</ul>
+									</div>
+									<div>==End==</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_full03'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //03.modal_full -->
+
+		<!-- 04.modal_full -->
+		<div class="modal full fade" id="sampleModal_full04" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">04.full(Scroll Footer) </h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp grid_sm4" >
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full01'); return false;" class="btn option" >01.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full02'); return false;" class="btn option">02.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full03'); return false;" class="btn option">03.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full04'); return false;" class="btn option disabled">04.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom01'); return false;" class="btn option">01.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom02'); return false;" class="btn option">02.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom03'); return false;" class="btn option">03.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom04'); return false;" class="btn option">04.bottom</a>
+									<a href="javascript:void(0);"onclick="javascript:layerPop.alert($('#sampleModal_Alert') , {title: '', msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>', buttonTitle: {ok: '확인'} , calllBack: {ok: function(){layerPop.close('#sampleModal_Alert'); return false; } } } );"class="btn option">Alert</a>
+								</div>
+							</div>
+							<div class="section">
+								<div class="comp">
+									<div style="height:1000px; padding:10px;	background-color: #eee;">
+										<ul>
+											<li>.modal.full</li>
+											<li>Scroll: 내용 길때</li>
+											<li>.modal_footer 아래 서브 버튼</li>
+										</ul>
+									</div>
+									<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse debitis harum alias, deserunt aliquid illo sapiente quos cumque blanditiis vel? Dolorum, a? Deserunt dolores delectus, repudiandae harum ullam consequatur sint?</div>
+									<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse debitis harum alias, deserunt aliquid illo sapiente quos cumque blanditiis vel? Dolorum, a? Deserunt dolores delectus, repudiandae harum ullam consequatur sint?</div>
+									<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse debitis harum alias, deserunt aliquid illo sapiente quos cumque blanditiis vel? Dolorum, a? Deserunt dolores delectus, repudiandae harum ullam consequatur sint?</div>
+									<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse debitis harum alias, deserunt aliquid illo sapiente quos cumque blanditiis vel? Dolorum, a? Deserunt dolores delectus, repudiandae harum ullam consequatur sint?</div>
+									<div>==End==</div>
+								</div>
+
+								<div class="comp">
+									<div class="btn_area footer">
+										<button type="button" class="btn fill02">취소</button>
+										<button type="button" class="btn fill01">확인</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_full04'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //04.modal_full -->
+
+		<!-- 01.modal_bottom -->
+		<div class="modal bottom fade" id="sampleModal_bottom01" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">01.Modal Bottom</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							
+							<div class="section">
+								<div class="governing">
+									<p class="info_text">카카오인증을 위한 필요 약관동의입니다.</p>
+								</div>
+								
+								<div class="comp grid_sm4" >
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full01'); return false;" class="btn option" >01.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full02'); return false;" class="btn option">02.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full03'); return false;" class="btn option">03.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full04'); return false;" class="btn option">04.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom01'); return false;" class="btn option disabled">01.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom02'); return false;" class="btn option">02.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom03'); return false;" class="btn option">03.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom04'); return false;" class="btn option">04.bottom</a>
+									<a href="javascript:void(0);"onclick="javascript:layerPop.alert($('#sampleModal_Alert') , {title: '', msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>', buttonTitle: {ok: '확인'} , calllBack: {ok: function(){layerPop.close('#sampleModal_Alert'); return false; } } } );"class="btn option">Alert</a>
+								</div>
+							</div>
+							<div class="section">
+								<div class="comp">
+									<div style="height:600px; padding:10px;	background-color: #eee;">
+										<ul>
+											<li>.modal_header Fix Case<br></li>
+											<li>.modal_footer (O)</li>
+											<li>.modal_footer .sub btn (O)</li>
+										</ul>
+									</div>
+									<div style="height:600px; padding:10px;	background-color: #eee;"></div>
+									<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis velit at autem laborum aliquam, perspiciatis provident. Dolores, aspernatur delectus facere, quis placeat nobis. Expedita nihil id eligendi quas sit enim!</div>
+									<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis velit at autem laborum aliquam, perspiciatis provident. Dolores, aspernatur delectus facere, quis placeat nobis. Expedita nihil id eligendi quas sit enim!</div>
+									<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis velit at autem laborum aliquam, perspiciatis provident. Dolores, aspernatur delectus facere, quis placeat nobis. Expedita nihil id eligendi quas sit enim!</div>
+									<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis velit at autem laborum aliquam, perspiciatis provident. Dolores, aspernatur delectus facere, quis placeat nobis. Expedita nihil id eligendi quas sit enim!</div>
+									<div>==End==</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill02">취소</button>
+							<button type="button" class="btn fill01">확인</button>
+						</div>
+						<div class="btn_area sub">
+							<a href="javascript:void(0);" class="btn text">test</a>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_bottom01'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //01.modal_bottom -->
+
+		<!-- 02.modal_bottom -->
+		<div class="modal bottom fade" id="sampleModal_bottom02" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">02.Modal Bottom <br> 02.Modal Bottom</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+
+								<div class="comp">
+									<div class="modal_subtitle">Lorem ipsum dolor sit amet.</div>
+									<div style="height:100px; padding:10px;	background-color: #eee;"></div>
+								</div>
+
+								<div class="comp">
+									<div style="height:100px; padding:10px;	background-color: #eee;"></div>
+								</div>
+
+
+								<div class="comp grid_sm4" >
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full01'); return false;" class="btn option" >01.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full02'); return false;" class="btn option">02.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full03'); return false;" class="btn option">03.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full04'); return false;" class="btn option">04.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom01'); return false;" class="btn option">01.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom02'); return false;" class="btn option disabled">02.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom03'); return false;" class="btn option">03.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom04'); return false;" class="btn option">04.bottom</a>
+									<a href="javascript:void(0);"onclick="javascript:layerPop.alert($('#sampleModal_Alert') , {title: '', msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>', buttonTitle: {ok: '확인'} , calllBack: {ok: function(){layerPop.close('#sampleModal_Alert'); return false; } } } );"class="btn option">Alert</a>
+								</div>
+							</div>
+
+							<div class="section">
+								<div class="comp">
+									<div style="height:600px; padding:10px;	background-color: #eee;">
+										<ul>
+											<li>.modal_header Fix Case<br></li>
+											<li>.modal_footer (X)</li>
+										</ul>
+									</div>
+									<div style="height:600px; padding:10px;	background-color: #eee;"></div>
+									<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis velit at autem laborum aliquam, perspiciatis provident. Dolores, aspernatur delectus facere, quis placeat nobis. Expedita nihil id eligendi quas sit enim!</div>
+									<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis velit at autem laborum aliquam, perspiciatis provident. Dolores, aspernatur delectus facere, quis placeat nobis. Expedita nihil id eligendi quas sit enim!</div>
+									<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis velit at autem laborum aliquam, perspiciatis provident. Dolores, aspernatur delectus facere, quis placeat nobis. Expedita nihil id eligendi quas sit enim!</div>
+									<div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis velit at autem laborum aliquam, perspiciatis provident. Dolores, aspernatur delectus facere, quis placeat nobis. Expedita nihil id eligendi quas sit enim!</div>
+									<div>==End==</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_bottom02'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //02.modal_bottom -->
+
+		<!-- 03.modal_bottom -->
+		<div class="modal bottom fade" id="sampleModal_bottom03" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp" >
+									<div class="title_area">
+										<h2 class="modal_title">04.Modal Bottom</h2>
+									</div>
+
+									<div class="comp full grid_sm4" >
+										<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full01'); return false;" class="btn option" >01.full</a>
+										<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full02'); return false;" class="btn option">02.full</a>
+										<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full03'); return false;" class="btn option">03.full</a>
+										<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full04'); return false;" class="btn option">04.full</a>
+										<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom01'); return false;" class="btn option">01.bottom</a>
+										<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom02'); return false;" class="btn option">02.bottom</a>
+										<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom03'); return false;" class="btn option disabled">03.bottom</a>
+										<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom04'); return false;" class="btn option">04.bottom</a>
+										<a href="javascript:void(0);"onclick="javascript:layerPop.alert($('#sampleModal_Alert') , {title: '', msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>', buttonTitle: {ok: '확인'} , calllBack: {ok: function(){layerPop.close('#sampleModal_Alert'); return false; } } } );"class="btn option">Alert</a>
+									</div>
+
+									<div style="margin-top:20px;	height:600px; padding:10px;	background-color: #eee;">
+										<ul>
+											<li>No Header Fix: .modal_header (X) <br></li>
+											<li>.modal_body .wrapper{margin-top:40px;} <br> 스크립트 삽입</li>
+										</ul>
+									</div>
+									<div style="height:600px; padding:10px;	background-color: #eee;"></div>
+									<div>==End==</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill02">취소</button>
+							<button type="button" class="btn fill01">확인</button>
+						</div>
+						<div class="btn_area sub">
+							<button type="button" class="btn text">sub_btn</button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_bottom03'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //03.modal_bottom -->
+
+		<!-- 04.modal_bottom -->
+		<div class="modal bottom fade" id="sampleModal_bottom04" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp grid_sm4" >
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full01'); return false;" class="btn option" >01.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full02'); return false;" class="btn option">02.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full03'); return false;" class="btn option">03.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_full04'); return false;" class="btn option">04.full</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom01'); return false;" class="btn option">01.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom02'); return false;" class="btn option">02.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom03'); return false;" class="btn option">03.bottom</a>
+									<a href="javascript:void(0);" onclick="layerPop.open('#sampleModal_bottom04'); return false;" class="btn option disabled">04.bottom</a>
+									<a href="javascript:void(0);"onclick="javascript:layerPop.alert($('#sampleModal_Alert') , {title: '', msg: 'PIN인증이 일치하지 않습니다. <br> <strong>(1/5회)</strong>', buttonTitle: {ok: '확인'} , calllBack: {ok: function(){layerPop.close('#sampleModal_Alert'); return false; } } } );"class="btn option">Alert</a>
+								</div>
+							</div>
+							<div class="section">
+								<div class="comp" >
+									<div class="title_area">
+										<h2 class="modal_title">03.bottom(NO Footer)</h2>
+									</div>
+									<div style="height:auto; padding:10px;background-color: #eee;">
+										.modal.bottom <br>
+										.modal_header (x) <br>
+										.modal_footer (x) <br>
+										.modal_body .wrapper{margin-top:40px;}
+										 <br> 스크립트 삽입
+									</div>
+									<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque doloribus molestiae illo fugit nihil provident, ipsam voluptates sit culpa iusto molestias, quidem amet modi. Rem quisquam nam velit nulla saepe.</div>
+									<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque doloribus molestiae illo fugit nihil provident, ipsam voluptates sit culpa iusto molestias, quidem amet modi. Rem quisquam nam velit nulla saepe.</div>
+									<div>==End==</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_bottom04'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //04.modal_bottom -->
+
+		<!-- 01.modal_alert -->
+		<div class="modal alert fade" id="sampleModal_Alert" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header"></div>
+					<div class="modal_body">
+						<div class="wrapper ">
+							<div class="section">
+								<div class="sc_comp"></div>
+							</div>
+						</div>
+					</div>
+					<div class="modal_footer">
+						<div class="btn_area footer">
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_Alert'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //01.modal_alert -->
+
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

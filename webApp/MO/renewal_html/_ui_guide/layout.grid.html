@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<style type="text/css">
+	p strong{font-size: 18px;}
+/*	.section:first-child{margin-top: 0;}*/
+/*	.section, .section_wrap{padding-bottom: 40px; margin-top: 40px; margin-bottom: 30px;}*/
+	.info_txt{margin-right: 10px;}
+	.h2, .h3 , .h4{padding-left: 10px;}
+	.section.section_bg{background-color: #79b6f3;}
+	.comp{ background-color: #c4ddff;box-shadow:0 .1rem .6rem rgba(0,0,0, .4);}
+	.section .comp.grid1{background-color: orange;box-shadow:0 .1rem .6rem rgba(0,0,0, .2);}
+	.box{box-shadow:0 .1rem .6rem rgba(0,0,0, .2);}
+	/*.size_txt{font-weight: bold; color: #ff0000;}*/
+	#content .section_bg:before{position: absolute; z-index: 100; content: ''; display: block; pointer-events: none; top: 0; right: 0; bottom: 0; left: 0; background-color: transparent; background-image: linear-gradient(90deg, rgba(0, 0, 0, .1) 1px, transparent 1px); background-size: 50px 100%; }
+	#content .section_bg:after{position: absolute; z-index: 99; content: ''; display: block; pointer-events: none; top: 0; right: 0; bottom: 0; left: 0; background-color: transparent; background-image: linear-gradient(90deg, rgba(0, 0, 0, .05) 1px, transparent 1px); background-size: 25px 100%; }
+</style>
+<script>
+	$(function() {
+		UI.init();
+
+		//Guide
+		guideTab();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="true" data-category="guide" data-category-sub="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">Layout</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Layout System</h2>
+							<span class="info_txt">Content Layout 가이드 입니다.</span>
+						</div>
+						<div class="tab tab_scroll" data-tab="GuideTab">
+							<ul class="tab_wrap">
+								<li><a href="javascript:void(0);"><span>Title</span></a></li>
+								<li><a href="javascript:void(0);"><span>Section & Comp</span></a></li>
+								<li><a href="javascript:void(0);"><span>Grid</span></a></li>
+								<li><a href="javascript:void(0);"><span>Div</span></a></li>
+								<li><a href="javascript:void(0);"><span>Etc</span></a></li>
+								<li><a href="javascript:void(0);"><span>View All</span></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="section tab_content" data-tab="GuideTab">
+						<!-- Title Guide ============================ -->
+						<div class="section">
+							<div class="title_area">
+								<h2 class="h2">Title</h2>
+							</div>
+						</div>
+
+						<div class="section section_bg">
+							<div class="comp">
+								<div class="title_area">
+									<h3 class="h3">.title_area</h3>
+									<p>[Right Obj]</p>
+								</div>
+							</div>
+
+							<div class="comp">
+								<div class="title_area">
+									<h3 class="h4">.title_area</h3>
+									<p>[Right Obj]</p>
+								</div>
+							</div>
+
+							<div class="comp">
+								<div class="title_area">
+									<h3 class="h4">.title_area</h3>
+									<div class="title_footer">
+										<p>.title_footer</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="comp">
+								<div class="title_area">
+									<h3 class="h4">.title_area > .title_footer</h3>
+									<div class="title_footer">
+										<p>.title_footer</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //Title Guide ============================ -->
+					</div>
+
+					<div class="section tab_content" data-tab="GuideTab">
+						<!-- Comp Guide ============================ -->
+						<div class="section">
+							<div class="title_area">
+								<h2 class="h2">Section & Comp</h2>
+							</div>
+						</div>
+
+						<div class="section section_bg">
+							<div class="title_area">
+								<h3 class="h3">.section</h3>
+								<div class="info_txt">w: 100%</div>
+							</div>
+
+							<div class="comp">
+								<div class="title_area">
+									<h4 class="h4">.comp</h4>
+									<div class="side">
+										<div class="info_txt">w: 100% - 40px</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="comp full">
+								<div class="title_area">
+									<h4 class="h4">.comp.full</h4>
+									<div class="side">
+										<div class="info_txt">w: 100%</div>
+									</div>
+								</div>
+								<div class="comp">
+									<h4 class="h4">.comp</h4>
+								</div>
+							</div>
+						</div>
+						<!-- //Comp Guide ============================ -->
+					</div>
+
+					<div class="section tab_content" data-tab="GuideTab">
+						<!-- Grid Guide ============================ -->
+						<div class="section ">
+							<div class="title_area">
+								<h2 class="h2">Grid</h2>
+							</div>
+						</div>
+						<div class="section section_bg">
+							<div class="comp">
+								<div class="grid2 mt20">
+									<div class="box">.grid2 <br> flex Grid</div>
+									<div class="box"></div>
+								</div>
+								<div class="grid3 mt20">
+									<div class="box">.grid3</div>
+									<div class="box"></div>
+									<div class="box"></div>
+								</div>
+
+								<div class="grid4 mt20">
+									<div class="box">.grid4</div>
+									<div class="box"></div>
+									<div class="box"></div>
+									<div class="box"></div>
+								</div>
+								<div class="grid5 mt20">
+									<div class="box">.grid5</div>
+									<div class="box"></div>
+									<div class="box"></div>
+									<div class="box"></div>
+									<div class="box"></div>
+								</div>
+								<div class="grid6 mt20">
+									<div class="box">.grid6</div>
+									<div class="box"></div>
+									<div class="box"></div>
+									<div class="box"></div>
+									<div class="box"></div>
+									<div class="box"></div>
+								</div>
+								<div class="grid2 no_pad mt20">
+									<div class="box">.no_pad</div>
+									<div class="box"></div>
+									<div class="box">.no_pad</div>
+									<div class="box"></div>
+								</div>
+							</div>
+						</div>
+						<!-- //Grid Guide ============================ -->
+					</div>
+
+					<div class="section tab_content" data-tab="GuideTab">
+						<!-- Div Guide ============================ -->
+						<div class="section ">
+							<div class="title_area">
+								<h2 class="h2">Div</h2>
+							</div>
+						</div>
+						<div class="section section_bg">
+							<div class="comp">
+								<div class="div1_11 mt20">
+									<div class="box"></div>
+									<div class="box">.div1_11</div>
+								</div>
+								<div class="div2_10 mt20">
+									<div class="box">.div2_10</div>
+									<div class="box"></div>
+								</div>
+								<div class="div3_9 mt20">
+									<div class="box">.div3_9</div>
+									<div class="box"></div>
+								</div>
+								<div class="div4_8 mt20">
+									<div class="box">.div4_8</div>
+									<div class="box"></div>
+								</div>
+								<div class="div5_7 mt20">
+									<div class="box">.div5_7</div>
+									<div class="box"></div>
+								</div>
+								<div class="div6_6 mt20">
+									<div class="box">.div6_6</div>
+									<div class="box"></div>
+								</div>
+								<div class="div6_6 no_pad no_gap mt20">
+									<div class="box">.no_pad</div>
+									<div class="box"></div>
+									<div class="box">.no_gap</div>
+									<div class="box"></div>
+								</div>
+							</div>
+						</div>
+						<!-- Div Guide ============================ -->
+					</div>
+
+					<div class="section tab_content" data-tab="GuideTab">
+						<!-- Box Guide ============================ -->
+						<div class="section ">
+							<div class="title_area">
+								<h2 class="h2">Card</h2>
+							</div>
+						</div>
+						<div class="section section_bg">
+							<ul class="comp grid3">
+								<li class="card">
+									<div class="card_wrap">
+										<span>Card 01</span>
+										<ul>
+											<li>display:flex;</li>
+											<li>align-items: center;</li>
+										</ul>
+									</div>
+								</li>
+								<li class="card">
+									<div class="card_wrap">
+										<span>Card 02</span>
+										<ul>
+											<li></li>
+										</ul>
+									</div>
+								</li>
+								<li class="card">
+									<div class="card_wrap">
+										<span>Card 03</span>
+										<ul>
+											<li></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+
+
+							<ul class="comp grid3">
+								<li class="card">
+									<div class="card_wrap before_icon">
+										<span>Card 01</span>
+										<ul>
+											<li>.grid2</li>
+											<li>.card_wrap.before_icon</li>
+										</ul>
+									</div>
+								</li>
+								<li class="card">
+									<div class="card_wrap before_icon">
+										<span>Card 02</span>
+										<ul>
+											<li></li>
+										</ul>
+									</div>
+								</li>
+								<li class="card">
+									<div class="card_wrap before_icon">
+										<span>Card 03</span>
+										<ul>
+											<li></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //Box Guide ============================ -->
+					</div>
+					<!-- // ############################### -->
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<!-- <div class="content_footer fix">
+					<div class="btn_area footer">
+						<button type="button" class="btn fill02" disabled="">가나다라</button>
+						<button type="button" class="btn fill01">마바사아</button>
+					</div>
+				</div> -->
+				<!-- //content_footer -->
+				<script type="text/javascript" src="../_ui_include/quick.js"></script><!-- Include: quick -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Code Here~!! -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<style>
+	.layoutBody{position: relative;background-color: #fff;}
+	.layoutBody .label{padding: 4px 10px 5px;background-color: #0886c5; color: #fff; font-weight: normal;font-size: 14px;}
+	.layoutBody > .label,
+	[data-id] > .label{background-color: #0886c5 !important; color: #fff !important;}
+	[data-class] > .label{background-color: #9ac4de; color: #222;}
+	.layoutBody .etc{position: absolute;top: 3px;right: 10px;font-size: 12px;font-weight: normal;color: #fff;}
+	[data-id] > .etc{color: #fff !important;}
+	[data-class] > .etc{color: #222;}
+	[data-depth]{position: relative; margin:10px 20px 15px; border: 1px solid #666; border-radius: 4px;overflow: hidden;}
+</style>
+<script>
+
+</script>
+<script>
+	$(function() {
+		UI.init();
+		guideLayout();
+		// guideTab();
+		UI.tab('GuideTab');
+	});
+</script>
+</head>
+
+<body data-channel="mobile" data-login="true" data-category="guide" data-category-sub="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">Layout</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Layout</h2>
+							<span class="info_txt">Layout 가이드 입니다.</span>
+						</div>
+						<div class="tab tab_scroll" data-tab="GuideTab">
+							<ul class="tab_wrap">
+								<li><a href="javascript:void(0);"><span>Page</span></a></li>
+								<li><a href="javascript:void(0);"><span>Modal</span></a></li>
+								<li><a href="javascript:void(0);"><span>View All</span></a></li>
+							</ul>
+						</div>
+					</div>
+
+
+<!-- ############################################################ -->
+<!-- ############################################################ -->
+
+<!-- Page -->
+<div class="layoutBody tab_content mt40" data-tab="GuideTab">
+	<div id="wrap">
+		<div id="header" class="navbar"></div>
+		<div id="sidebar" class="sidebar" data-role="global-navigation" aria-hidden="true"></div>
+		<div id="container">
+			<div id="content">
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing"></div>
+						<div class="comp"></div>
+					</div>
+				</div>
+				<div class="content_footer"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal -->
+<div class="layoutBody tab_content mt40" data-tab="GuideTab">
+	<div id="wrap">
+		<div class="modal" id="modalID" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header"></div>
+					<div class="modal_body">
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal_footer fix">
+					</div>
+					<div type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_Full'); return false;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- View All -->
+<div class="layoutBody tab_content mt40" data-tab="GuideTab">
+	<div id="wrap">
+		<div id="header" class="navbar"></div>
+		<div id="sidebar" class="sidebar" data-role="global-navigation" aria-hidden="true"></div>
+		<div id="container">
+			<div id="content">
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing"></div>
+						<div class="comp"></div>
+					</div>
+				</div>
+				<div class="content_footer"></div>
+			</div>
+		</div>
+		<div id="footer" class="main_footer"></div>
+		<div class="modal full" id="modalID" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header"></div>
+					<div class="modal_body">
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal_footer fix">
+					</div>
+					<div type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_Full'); return false;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- ############################################################ -->
+<!-- Page01 -->
+<!-- ############################################################ -->
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<!-- <div class="content_footer fix">
+					<div class="btn_area footer">
+						<button type="button" class="btn fill02" disabled="">가나다라</button>
+						<button type="button" class="btn fill01">마바사아</button>
+					</div>
+				</div> -->
+				<!-- //content_footer -->
+				<!-- <script type="text/javascript" src="../_ui_include/quick.js"></script> -->
+				<!-- Include: quick -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Code Here~!! -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

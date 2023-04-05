@@ -1,0 +1,170 @@
+@charset "utf-8";
+
+/**
+* Work
+* ------------------
+* hj.jang
+*/
+
+//상품
+//status
+.navbar.type_status {
+  top: 10px;
+}
+.status.type_fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 501;
+}
+
+.product_content {
+  .product_price_info {
+    .title_area {
+      align-items: center;
+      margin-bottom: 3px;
+      .h4 {
+        font-size: $fz_sm;
+      }
+      .btn.round_line {
+        padding: 5px 8px;
+        color: #66666B;
+        font-weight: $fw_regular;
+        border-color: #D1D1D6;
+        border-radius: 30px;
+        i.svg_arrow_link {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .product_price {
+      margin-bottom: 10px;
+      color: #222227;
+      font-size: 30px;
+      font-weight: $fw_bold;
+      line-height: 42px;
+      span {
+        font-size: 24px;
+        font-weight: $fw_medium;
+      }
+    }
+    .tag_wrap {
+      .tag {
+        padding: 3px 14px;
+        font-size: $fz_sm;
+      }
+    }
+  }
+  .import_link {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding-left: 36px;
+    background:url($svg_recall) no-repeat;background-size: 28px 28px;
+    .btn.text {
+      text-decoration: none;
+    }
+  }
+  .item_wrap {
+    .item {
+      padding: 16.5px 0;
+    }
+  }
+  .btn_area + .banner {
+    margin-top: 16px;
+  }
+
+  //플랜 및 담보 선택
+  .plan_wrap {
+    padding: 20px;
+    .plan_selectlist {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      li {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        height: 112px;
+        text-align: center;
+        a {
+          width: 100%;
+          padding: 16px 22px;
+          background-color: #F1F1F3;
+          font-size: 13px;
+          font-weight: $fw_bold;
+          box-sizing: border-box;
+          em {
+            display: block;
+            margin-bottom: 4px;
+          }
+          .num {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+          }
+        }
+        &.on {
+          a {
+            background-color: #fff;
+            border: 1px solid #F8670D;
+            border-radius: 8px;
+          }
+          .num {
+            color: #F8670D;
+          }
+          .plan_label {
+            display: inline-block;
+            color: #fff;
+            width: 100%;
+            padding: 6px 9px;
+            background-color: #F8670D;
+            border-radius: 8px 8px 0 0;
+          }
+        }
+        &:first-child a {
+          border-radius: 8px 0 0 8px;
+        }
+        &:last-child a {
+          border-radius: 0 0 8px 8px;
+        }
+        .plan_label {
+          display: none;
+        }
+        & a:before {
+          display: block;
+          width: 100%;
+          height: 28px;
+          background-size: 28px;
+          content: '';
+        }
+        &.smart a:before {background:url($svg_plan_smart) center no-repeat;}
+        &.standard a:before {background:url($svg_plan_standard) center no-repeat;}
+        &.premium a:before {background:url($svg_plan_premium) center no-repeat;}
+      }
+    }
+    .plan_itemlist {
+      li {
+        + li {
+          margin-top: 30px;
+        }
+      }
+      .chkoption {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 43px;
+        color: $gray350;
+        font-weight: $fw_regular;
+        div.on {
+          color: #222;
+          font-weight: $fw_bold;
+          background-color: #FFF4EB;
+        }
+      }
+    }
+  }
+}
+

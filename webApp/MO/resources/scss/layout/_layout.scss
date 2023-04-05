@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+/**
+* Layout
+* ------------------
+*/
+// 
+//1140+80
+
+// * height100
+//-----------------
+html,body{min-height:100%;height:100%;}
+#wrap{position:relative;min-height:100%; min-width: $screen_width;}
+
+
+// * Basic
+//-----------------
+#header{z-index:$zindex_header;}
+#quick{z-index:$zindex_quick;}
+#content{min-height:100%;padding-top:$header_height;overflow-x:hidden;
+	.content_wrap{position: relative;min-height: 400px; 
+		// padding-top:$content_top_space;
+		padding-bottom:calc(#{$content_footer_height} + #{ $content_bottom_space});
+		&.no_footer{padding-bottom: #{$content_bottom_space};}
+	}
+	.content_footer{z-index:$zindex_content_footer;position: absolute;left: 0;right: 0;bottom: 0;
+		&.fix{position: fixed;}
+	}
+}
+
+.content_footer.fix,
+.modal_footer.fix{
+	// display:flex;
+	// flex-direction:column;
+	// justify-content:flex-end;
+	// height:138px;
+	padding:16px 20px 34px 20px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 19.79%);
+	backdrop-filter: blur(2px);
+}
+
+
+#footer{z-index:$zindex_footer;} //.main_footer
+
+
+
+// 모바일 가로 스크롤 안보이게
+html.mobile{
+	.tag_scroll,
+	.tab_scroll{
+		&::-webkit-scrollbar{display: none;}
+		-ms-overflow-style:none;
+		scrollbar-width:none;
+		scrollbar-height:none;
+	}
+}
+
+
+// * Case 
+//-----------------
+//Case: main
+[data-category="main"]{
+}
+
+
+//Case: 
+
+
+// Case: 유의사항 등 컨테트 bottom fix
+.section.bottom_fix{opacity:0 ;}
+.section.bottom_fix.show{opacity:1 ;}
+
+.modal .modal_body .wrapper.bottom_fix{padding-bottom: 0;
+	.btn_area.sub{padding-bottom: 56px;} //pin번호를 잊어버리셨나요?
+}
+
+#content .content_wrap.bottom_fix{padding-bottom: 0;
+	.btn_area.sub{padding-bottom: 56px;}
+}
+

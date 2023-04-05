@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+    //Sample Btn
+		$('.btn_samples').find('.btn').each(function(){
+
+    $(this).on('click', function(){
+      $('.btn_samples').find('.btn').removeClass('fill01').addClass('fill02')
+      $(this).addClass('fill01').removeClass('fill02')
+    });
+    });
+    $('.btn_samples').find('.btn').eq(5).click();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="true" data-category="" data-category-sub="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">회원가입</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing ta_l">
+              <div class="progress" aria-label="회원가입 총 3단계 중 1단계">
+								<div class="progress_wrap" aria-hidden="true">
+									<span class="progress_num">1</span>
+									<span class="progress_total">3</span>
+								</div>
+							</div>
+							<h2 class="governing_title">전자금융거래 회원가입을 위해<br />
+                실명확인을 해주세요.</h2>
+						</div>
+						<div class="comp">
+							<!-- Code Here~!! -->
+              <div class="form_area grid1">
+                <div class="form_item">
+                  <div class="form_label"><label for="inp01">이름</label></div>
+                  <div class="form_wrap">
+                    <input type="text" id="inp01" placeholder="placeholder">
+                  </div>
+                  <div class="form_msg confirm">성공 메시지</div>
+                  <div class="form_msg error">실패 메시지</div>
+                </div>
+              </div>
+              <div class="form_area grid1">
+								<div class="form_item col2">
+									<div class="form_label"><label for="inp10">주민등록번호/외국인등록번호</label></div>
+									<div class="form_wrap">
+										<input type="text" id="inp10" placeholder="앞 6자리">
+									</div>
+									<div class="form_wrap form_key">
+										<div class="pin_area">
+											<strong class="active"><span class="blind">1번째 번호</span></strong>
+											<strong><span class="blind">2번째 번호</span></strong>
+											<strong><span class="blind">3번째 번호</span></strong>
+											<strong><span class="blind">4번째 번호</span></strong>
+											<strong><span class="blind">5번째 번호</span></strong>
+											<strong><span class="blind">6번째 번호</span></strong>
+											<strong><span class="blind">7번째 번호</span></strong>
+										</div>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+							</div>
+              <div class="btn_samples">
+                <a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_bottom04'));" class="btn fill02 sm">약관 동의</a>
+              </div>
+							<!-- //Code Here~!! -->
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<div class="content_footer fix">
+					<div class="btn_area footer">
+						<button type="button" class="btn fill01">다음</button>
+					</div>
+				</div>
+				<!-- //content_footer -->
+				<script type="text/javascript" src="../_ui_include/quick.js"></script><!-- Include: quick -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- 04.modal_bottom -->
+		<div class="modal bottom fade" id="sampleModal_bottom04" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+          <div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">약관 동의</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp">
+                  <div class="modal_subtitle">필수 약관에 동의하시면 회원가입이 가능하며,<br>
+                    모든 서비스를 이용하실 수 있습니다.</div>
+								</div>
+                <div class="comp">
+                  <div class="title_area">
+                    <h4 class="h4">1. 수집·이용에 관한 사항</h4>
+                  </div>
+                  <div class="terms_chk">
+                    <div class="item">
+                      <input type="checkbox" id="terms_chk01">
+                      <label for="terms_chk01">
+                        <span>[필수]</span> 고유식별정보
+                      </label>
+                      <a href="#" class="terms_anchor"><span class="blind">약관 팝업</span></a>
+                    </div>
+                    <div class="item">
+                      <input type="checkbox" id="terms_chk02">
+                      <label for="terms_chk02">
+                        <span>[필수]</span> 개인(신용)정보
+                      </label>
+                      <a href="#" class="terms_anchor"><span class="blind">약관 팝업</span></a>
+                    </div>
+                    <div class="item">
+                      <input type="checkbox" id="terms_chk03">
+                      <label for="terms_chk03">
+                        <span>[필수]</span> 전자금융거래 이용 동의
+                      </label>
+                      <a href="#" class="terms_anchor"><span class="blind">약관 팝업</span></a>
+                    </div>
+                    <div class="item">
+                      <input type="checkbox" id="terms_chk04">
+                      <label for="terms_chk04">
+                        <span>[필수]</span> 홈페이지∙모바일 이용약관
+                      </label>
+                      <a href="#" class="terms_anchor"><span class="blind">약관 팝업</span></a>
+                    </div>
+                  </div>
+                </div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+          <div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill01">모두 동의 후 다음</button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_bottom04'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //04.modal_bottom -->
+		<!-- Code Here~!! -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

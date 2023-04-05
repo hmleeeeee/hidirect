@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/*!
+ * ====================================
+ * 다이렉트 보험 서비스 플랫폼 구축 MO
+ * ====================================
+ * Modify: 2023/02/02
+ */
+
+
+//------------------------------------
+// Util
+//------------------------------------
+@import "util/variables";
+@import "util/function";
+@import "util/mixins";
+@import "util/mixins.button";
+// @import "util/include";
+
+
+
+//------------------------------------
+// svg
+//------------------------------------
+@import "svg/svg.common";
+@import "svg/svg.login";
+
+
+//Guide CSS: module.svg.html 사용
+.guide_svg{
+	ul{@include grid(10, 8px, 8px);
+		justify-content: normal!important;
+		li{position: relative; height:160px; border: 1px solid #ccc; border-radius: 12px; text-align: center;
+			i{display: block; height: 90%;}
+			.name{position: absolute; bottom: 10px; left: 4px; right: 4px; font-size: 12px;}
+			&.black{background-color: #909090; color: #fff;}
+		}
+		&.big{
+			@include grid(2, 10px, 10px);
+			li{height:200px;}
+		}
+	}
+}
+@media (max-width: 1800px){.guide_svg ul{@include grid(8, 8px, 8px);} }
+@media (max-width: 1600px){.guide_svg ul{@include grid(7, 8px, 8px);} }
+@media (max-width: 1400px){.guide_svg ul{@include grid(6, 8px, 8px);} }
+@media (max-width: 1200px){.guide_svg ul{@include grid(5, 8px, 8px);} }
+@media (max-width: 1000px){.guide_svg ul{@include grid(4, 8px, 8px);} }
+@media (max-width: 800px){.guide_svg ul{@include grid(3, 8px, 8px);} }
+@media (max-width: 600px){.guide_svg ul{@include grid(2, 8px, 8px);} }
+@media (max-width: 400px){.guide_svg ul{@include grid(1, 8px, 8px);} }
+
+
+$svg_test:"data:image/svg+xml,%0A%3Csvg width='72px' height='72px' viewBox='0 0 72 72' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='icon_error_72'%3E%3Crect id='box' x='0' y='0' width='72' height='72'%3E%3C/rect%3E%3Crect id='Rectangle' fill='%23D9DADC' x='6' y='6' width='60' height='60' rx='30'%3E%3C/rect%3E%3Cg id='Group' transform='translate(34.000000, 23.000000)' fill='%23FFFFFF'%3E%3Ccircle id='Oval' cx='2' cy='24' r='2'%3E%3C/circle%3E%3Crect id='Rectangle' x='0' y='0' width='4' height='16' rx='2'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E";
+i.svg_test{background:url($svg_test) no-repeat center center;}
+
+
+//Test Function
+$svg_test_func: svg_color($svg_test, '#3b92e5', '%23D9DADC');
+$svg_test_func2: svg_color($svg_test_func, '#9900cc', '%23FFFFFF');
+i.svg_test_func{background:url($svg_test_func) no-repeat center center;}
+i.svg_test_func2{background:url($svg_test_func2) no-repeat center center;}
+i.svg_test_func3{background:url(svg_color($svg_test, '#9900cc', '%23D9DADC')) no-repeat center center;}
+
+//Test Mixin
+i.svg_test.mixin{
+	@include svg_color($svg_test, '#FF7802', '%23FFFFFF');
+}
+
+
+
+
+
+
+//------------------------------------
+// SVG.COMMON
+//------------------------------------
+//Header
+i.svg_btn_page_prev{background:url($svg_btn_page_prev) no-repeat center center;}
+i.svg_btn_sidebar_open{background:url($svg_btn_sidebar_open) no-repeat center center;}
+i.svg_btn_page_close{background:url($svg_btn_page_close) no-repeat center center;}
+i.svg_btn_modal_bottom_close{background:url($svg_btn_modal_bottom_close) no-repeat center center;}
+
+
+//common
+i.svg_icon_call{background:url($svg_icon_call) no-repeat center center;}
+
+//arrow
+i.svg_arrow_down{background:url($svg_arrow_down) no-repeat center center;}
+i.svg_arrow_down_24{background:url($svg_arrow_down_24) no-repeat center center;}
+i.svg_arrow_right_24{background:url($svg_arrow_right_24) no-repeat center center;}
+i.svg_arrow_up_24{background:url($svg_arrow_up_24) no-repeat center center;}
+i.svg_arrow_link{background:url($svg_arrow_link) no-repeat center center;}
+i.svg_reset{background:url($svg_reset) no-repeat center center;}
+
+//alert
+i.svg_alert_sucess{background:url($svg_alert_sucess) no-repeat center center;}
+i.svg_alert_info{background:url($svg_alert_info) no-repeat center center;}
+i.svg_alert_fail{background:url($svg_alert_fail) no-repeat center center;}
+
+//tag
+i.svg_favorites{background:url($svg_favorites) no-repeat center center;}
+// i.svg_filter{background:url($svg_filter) no-repeat center center;}
+// i.svg_filter_on{background:url($svg_filter_on) no-repeat center center;}
+
+
+
+
+
+//------------------------------------
+// SVG.LOGIN
+//------------------------------------
+i.svg_pin{background:url($svg_pin) no-repeat center center;}
+i.svg_bio{background:url($svg_bio) no-repeat center center;}
+i.svg_phone{background:url($svg_phone) no-repeat center center;}
+i.svg_kakao{background:url($svg_kakao) no-repeat center center;}
+i.svg_naver{background:url($svg_naver) no-repeat center center;}
+i.svg_joint{background:url($svg_joint) no-repeat center center;}
+i.svg_joint2{background:url($svg_joint2) no-repeat center center;}
+i.svg_bank{background:url($svg_bank) no-repeat center center;}
+i.svg_desktop{background:url($svg_desktop) no-repeat center center;}
+i.svg_mobile{background:url($svg_mobile) no-repeat center center;}
+i.svg_unlock{background:url($svg_unlock) no-repeat center center;}
+i.svg_confirm_unlock{background:url($svg_confirm_unlock) no-repeat center center;}
+i.svg_confirm{background:url($svg_confirm) no-repeat center center;}
+i.svg_error{background:url($svg_error) no-repeat center center;}
+i.svg_infomation{background:url($svg_infomation) no-repeat center center;}
+i.svg_nodata{background:url($svg_nodata) no-repeat center center;}
+i.svg_nodata2{background:url($svg_nodata2) no-repeat center center;}
+i.svg_joint_nodata{background:url($svg_joint_nodata) no-repeat center center;}

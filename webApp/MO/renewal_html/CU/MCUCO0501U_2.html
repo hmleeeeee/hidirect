@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+		UI.accordion($('.accordion.notice'));
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="certification" data-category-sub="joint">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">공동인증서 등록/관리</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+            <div class="governing ta_l">
+							<h2 class="governing_title">공동인증서 삭제를 위해<br>정보를 입력해 주세요.</h2>
+						</div>
+            <div class="comp">
+              <div class="form_area">
+                <div class="form_item col2">
+                  <div class="form_label"><label for="inp01">주민등록번호/외국인등록번호</label></div>
+                  <div class="form_wrap">
+                    <input type="text" id="inp01" placeholder="앞 6자리">
+                  </div>
+                  <div class="form_wrap form_key">
+                    <div class="pin_area">
+                      <strong class="active"><span class="blind">1번째 번호</span></strong>
+                      <strong><span class="blind">2번째 번호</span></strong>
+                      <strong><span class="blind">3번째 번호</span></strong>
+                      <strong><span class="blind">4번째 번호</span></strong>
+                      <strong><span class="blind">5번째 번호</span></strong>
+                      <strong><span class="blind">6번째 번호</span></strong>
+											<strong><span class="blind">7번째 번호</span></strong>
+                    </div>
+                  </div>
+                  <div class="form_msg error">주민등록번호/외국인등록번호 앞 6자리를 꼭 입력해주세요.</div>
+                  <div class="form_msg error">주민등록번호/외국인등록번호 뒤 7자리를 꼭 입력해주세요.</div>
+                </div>
+              </div>
+            </div>
+					</div>
+
+					<div class="section bottom_fix">
+						<div class="comp">
+							<div class="accordion notice full">
+								<div class="item">
+									<div class="fold_header">
+										<a href="javascript:void(0);" role="button" title="내용보기">
+											<div class="title"><strong>유의사항</strong></div>
+											<i class="icon_angle"><span>내용보기/내용닫기</span></i>
+										</a>
+									</div>
+									<div class="fold_body uol_list">
+										<ul>
+                        <li>스마트폰/PC에 저장된 공동인증서 파일을 삭제할 수 있습니다.<br>(단, 현대해상에 등록된 공동인증 등록정보는 삭제되지 않음)</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<div class="content_footer fix">
+					<div class="btn_area footer">
+						<button type="button" class="btn fill01">공동인증서 삭제</button>
+					</div>
+				</div>
+				<!-- //content_footer -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Code Here~!! -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

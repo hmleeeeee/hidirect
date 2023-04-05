@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+
+		//Guide
+		guideTab();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="true" data-category="guide" data-category-sub="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">Module</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Form</h2>
+							<span class="info_txt">Form 가이드 입니다.</span>
+						</div>
+						<div class="tab tab_scroll" data-tab="GuideTab">
+							<ul class="tab_wrap">
+								<li><a href="javascript:void(0);"><span>Input 기본형</span></a></li>
+								<li><a href="javascript:void(0);"><span>Input 기본형(right 정렬)</span></a></li>
+								<li><a href="javascript:void(0);"><span>Input 기본형 + 버튼 조합형</span></a></li>
+								<li><a href="javascript:void(0);"><span>기타 유형</span></a></li>
+								<li><a href="javascript:void(0);"><span>박스 유형</span></a></li>
+								<li><a href="javascript:void(0);"><span>셀렉트박스</span></a></li>
+								<li><a href="javascript:void(0);"><span>폼 조합</span></a></li>
+								<li><a href="javascript:void(0);"><span>체크박스</span></a></li>
+								<li><a href="javascript:void(0);"><span>라디오</span></a></li>
+								<li><a href="javascript:void(0);"><span>View All</span></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="section">
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">Input 기본형</h2>
+							</div>
+							<div class="form_area grid2">
+								<div class="form_item">
+									<div class="form_label"><label for="inp01">디폴트</label></div>
+									<div class="form_wrap">
+										<input type="text" id="inp01" placeholder="placeholder">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+								</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp02">디폴트(포커스)</label></div>
+									<!-- input 포커스시 form_wrap class focus 추가 -->
+									<div class="form_wrap focus">
+										<input type="text" id="inp02" placeholder="placeholder">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+
+								<div class="form_item">
+									<div class="form_label"><label for="inp03">readonly</label></div>
+									<!-- input readonly시 form_wrap class readonly 추가 -->
+									<div class="form_wrap readonly">
+										<input type="text" id="inp03" placeholder="placeholder" value="readonly" readonly="readonly">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp04">disabled</label></div>
+									<!-- input disabled시 form_wrap class disabled 추가 -->
+									<div class="form_wrap disabled">
+										<input type="text" id="inp04" placeholder="placeholder" value="disabled " disabled="disabled">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp05">confirm</label></div>
+									<!-- 벨리데이션 체크 성공시 form_wrap class confirm 추가 -->
+									<div class="form_wrap confirm">
+										<input type="text" id="inp05" placeholder="placeholder">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+								</div>
+
+								<div class="form_item">
+									<div class="form_label"><label for="inp06">error</label></div>
+									<!-- 벨리데이션 체크 실패시 form_wrap class error 추가 -->
+									<div class="form_wrap error">
+										<input type="text" id="inp06" placeholder="placeholder">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">Input 기본형(right 정렬)</h2>
+							</div>
+							<div class="form_area grid2">
+								<div class="form_item">
+									<div class="form_label"><label for="inp12">디폴트</label></div>
+									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
+									<div class="form_wrap form_right">
+										<input type="text" id="inp12" placeholder="placeholder">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp13">디폴트(포커스)</label></div>
+									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
+									<div class="form_wrap form_right focus">
+										<input type="text" id="inp13" placeholder="placeholder">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp14">readonly</label></div>
+									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
+									<div class="form_wrap form_right readonly">
+										<input type="text" id="inp14" placeholder="placeholder" value="readonly" readonly="readonly">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp15">disabled</label></div>
+									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
+									<div class="form_wrap form_right disabled">
+										<input type="text" id="inp15" placeholder="placeholder" value="disabled " disabled="disabled">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp16">confirm</label></div>
+									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
+									<div class="form_wrap form_right confirm">
+										<input type="text" id="inp16" placeholder="placeholder">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+								</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp17">error</label></div>
+									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
+									<div class="form_wrap form_right error">
+										<input type="text" id="inp17" placeholder="placeholder">
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+								</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp18">디폴트+삭제버튼</label></div>
+									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
+									<div class="form_wrap form_right form_clear">
+										<input type="text" id="inp18" placeholder="placeholder">
+										<button type="button" class="btn_clear"><span class="blind">입력값 초기화</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">Input 기본형 + 버튼 조합형</h2>
+							</div>
+							<div class="form_area grid2">
+								<div class="form_item">
+									<div class="form_label"><label for="inp07">디폴트+삭제버튼</label></div>
+									<div class="form_wrap form_clear">
+										<input type="text" id="inp07" placeholder="placeholder">
+										<button type="button" class="btn_clear"><span class="blind">입력값 초기화</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp08">인증번호 입력</label></div>
+									<div class="form_wrap form_time">
+										<input type="number" id="inp08" placeholder="숫자 6자리 입력" maxlength="6">
+										<button type="button" class="btn_form"><span>인증번호 재요청</span></button>
+									</div>
+									<div class="time_msg">
+										<span>남은시간 <em>02:59</em></span>
+										<button type="button" class="btn_text">시간 연장<span></span></button>
+									</div>
+								</div>
+								<div class="form_item">
+									<div class="form_label"><spab class="form_title">보안키패드</ㄴ></div>
+									<div class="form_wrap form_key">
+										<div class="pin_area">
+											<strong class="active"><span class="blind">1번째 번호</span></strong>
+											<strong><span class="blind">2번째 번호</span></strong>
+											<strong><span class="blind">3번째 번호</span></strong>
+											<strong><span class="blind">4번째 번호</span></strong>
+											<strong><span class="blind">5번째 번호</span></strong>
+											<strong><span class="blind">6번째 번호</span></strong>
+										</div>
+										<span type="button" class="icon_key" aria-hidden="true"></span>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">기타 유형</h2>
+							</div>
+							<div class="form_area">
+								<div class="form_item col2">
+									<div class="form_label"><label for="inp10">주민등록번호/외국인등록번호</label></div>
+									<div class="form_wrap">
+										<input type="text" id="inp10" placeholder="앞 6자리">
+									</div>
+									<div class="form_wrap form_key">
+										<div class="pin_area">
+											<strong class="active"><span class="blind">1번째 번호</span></strong>
+											<strong><span class="blind">2번째 번호</span></strong>
+											<strong><span class="blind">3번째 번호</span></strong>
+											<strong><span class="blind">4번째 번호</span></strong>
+											<strong><span class="blind">5번째 번호</span></strong>
+											<strong><span class="blind">6번째 번호</span></strong>
+											<strong><span class="blind">7번째 번호</span></strong>
+										</div>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="inp11">금액 입력</label></div>
+									<div class="form_wrap form_amount">
+										<input type="number" id="inp11" placeholder="숫자만 입력">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">박스 유형</h2>
+							</div>
+							<div class="form_area grid2">
+								<div class="form_item form_box">
+									<div class="form_wrap form_amount">
+										<input type="number" placeholder="숫자만 입력">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item form_box">
+									<div class="form_wrap form_amount focus">
+										<input type="number" placeholder="숫자만 입력">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item form_box">
+									<div class="form_wrap form_amount readonly">
+										<input type="number" placeholder="숫자만 입력" readonly="readonly">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item form_box">
+									<div class="form_wrap form_amount disabled">
+										<input type="number" placeholder="숫자만 입력" disabled="disabled">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form" disabled="disabled">전액<span></span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item form_box">
+									<div class="form_wrap form_amount error">
+										<input type="number" placeholder="숫자만 입력">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item form_box">
+									<div class="form_wrap form_amount confirm">
+										<input type="number" placeholder="숫자만 입력">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">셀렉트박스</h2>
+							</div>
+
+							<!-- 디폴트 셀렉트 -->
+							<div class="form_area grid2">
+								<div class="form_item">
+									<div class="form_label"><label for="select01">기본형</label></div>
+									<div class="form_wrap">
+										<select id="select01">
+											<option value="placeholder" selected>placeholder</option>
+											<option value="">옵션1</option>
+											<option value="">옵션2</option>
+										</select>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="select02">기본형 (선택 후)</label></div>
+									<div class="form_wrap">
+										<select id="select02">
+											<option value="placeholder">placeholder</option>
+											<option value="" selected>옵션1</option>
+											<option value="">옵션2</option>
+										</select>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="select03">focus</label></div>
+									<div class="form_wrap focus">
+										<select id="select03">
+											<option value="placeholder" selected>placeholder</option>
+											<option value="">옵션1</option>
+											<option value="">옵션2</option>
+										</select>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="select04">disabled</label></div>
+									<div class="form_wrap disabled">
+										<select id="select04" disabled>
+											<option value="placeholder" selected>placeholder</option>
+											<option value="">옵션1</option>
+											<option value="">옵션2</option>
+										</select>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="select05">error</label></div>
+									<div class="form_wrap error">
+										<select id="select05">
+											<option value="placeholder">placeholder</option>
+											<option value="" selected>옵션1</option>
+											<option value="">옵션2</option>
+										</select>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="select06">confirm</label></div>
+									<div class="form_wrap confirm">
+										<select id="select06">
+											<option value="placeholder">placeholder</option>
+											<option value="" selected>옵션1</option>
+											<option value="">옵션2</option>
+										</select>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+							</div>
+
+							<hr class="hr2 mtb">
+
+
+							<!-- 버튼형 셀렉트(바텀시트 호출) -->
+							<div class="form_area grid2">
+								<div class="form_item">
+									<div class="form_label"><label for="btn_select01">버튼형 셀렉트박스 기본형</label></div>
+									<div class="form_wrap placeholder">
+										<button type="button" id="btn_select01" class="btn_select"><span>은행 선택</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="btn_select02">버튼형 셀렉트박스 기본형 (선택 후)</label></div>
+									<div class="form_wrap">
+										<button type="button" id="btn_select02" class="btn_select"><span>은행 선택</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="btn_select03">버튼형 셀렉트박스 focus</label></div>
+									<div class="form_wrap focus">
+										<button type="button" id="btn_select03" class="btn_select"><span>은행 선택</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="btn_select04">버튼형 셀렉트박스 disabled</label></div>
+									<div class="form_wrap disabled">
+										<button type="button" id="btn_select04" class="btn_select" disabled="disabled">은행 선택<span></span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="btn_select05">버튼형 셀렉트박스 error</label></div>
+									<div class="form_wrap error">
+										<button type="button" id="btn_select05" class="btn_select"><span>은행 선택</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+								<div class="form_item">
+									<div class="form_label"><label for="btn_select06">버튼형 셀렉트박스 confirm</label></div>
+									<div class="form_wrap confirm">
+										<button type="button" id="btn_select06" class="btn_select"><span>은행 선택</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+									</div>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">폼 조합</h2>
+							</div>
+							<!-- 금액 입력 폼 -->
+							<div class="form_area">
+								<div class="form_item">
+									<div class="form_label"><label for="mix01">은행/계좌번호(계약자 본인 계좌만 가능)</label></div>
+									<div class="form_wrap placeholder">
+										<button type="button" id="mix01" class="btn_select"><span>은행 선택</span></button>
+									</div>
+									<div class="form_wrap form_amount">
+										<input type="number" id="inp11" placeholder="숫자만 입력">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+										<div class="option_area">
+										<button type="button" class="btn option">1만<span></span></button>
+										<button type="button" class="btn option">10만<span></span></button>
+										<button type="button" class="btn option">50만<span></span></button>
+										<button type="button" class="btn option">100만<span></span></button>
+										<button type="button" class="btn option">정정<span></span></button>
+									</div>
+								</div>
+							</div>
+							<br><br>
+							<!-- 박스 안에 금액 입력 들어간 경우 -->
+							<div class="form_area">
+								<div class="form_item form_box">
+									<div class="form_wrap form_amount">
+										<input type="number" placeholder="숫자만 입력">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+										<div class="option_area">
+										<button type="button" class="btn option">1만<span></span></button>
+										<button type="button" class="btn option">10만<span></span></button>
+										<button type="button" class="btn option">50만<span></span></button>
+										<button type="button" class="btn option">정정<span></span></button>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form_area">
+								<div class="form_item">
+									<div class="form_label"><label for="btn_select06">버튼형 셀렉트박스 confirm</label></div>
+									<div class="form_wrap confirm">
+										<button type="button" id="btn_select06" class="btn_select"><span>은행 선택</span></button>
+									</div>
+									<div class="form_wrap form_amount">
+										<input type="number" placeholder="숫자만 입력">
+										<span class="form_unit">만원</span>
+										<button type="button" class="btn_form"><span>전액</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+										<div class="option_area">
+										<button type="button" class="btn option">1만<span></span></button>
+										<button type="button" class="btn option">10만<span></span></button>
+										<button type="button" class="btn option">50만<span></span></button>
+										<button type="button" class="btn option">100만<span></span></button>
+										<button type="button" class="btn option">정정<span></span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">체크박스</h2>
+							</div>
+							<table class="table ta_c table_guide_button_type">
+								<caption>체크박스</caption>
+								<colgroup>
+									<col style="width:100px">
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col">Default</th>
+										<th scope="col">Checked</th>
+										<th scope="col">Disabled</th>
+										<th scope="col">Disabled+Checked</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">text</th>
+										<td><input type="checkbox" id="chk01"><label for="chk01">레이블</label></td>
+										<td><input type="checkbox" id="chk02" checked><label for="chk02">레이블</label></td>
+										<td><input type="checkbox" id="chk03" disabled><label for="chk03">레이블</label></td>
+										<td><input type="checkbox" id="chk04" checked disabled><label for="chk04">레이블</label></td>
+									</tr>
+									<tr>
+										<th scope="row">box</th>
+										<td><input type="checkbox" id="chk05" class="box_chk"><label for="chk05">레이블</label></td>
+										<td><input type="checkbox" id="chk06" class="box_chk" checked><label for="chk06">레이블</label></td>
+										<td><input type="checkbox" id="chk07" class="box_chk" disabled><label for="chk07">레이블</label></td>
+										<td><input type="checkbox" id="chk08" class="box_chk" checked disabled><label for="chk08">레이블</label></td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
+							<!-- 약관 동의 -->
+							<div class="terms_chk">
+								<div class="item">
+									<input type="checkbox" id="terms_chk01">
+									<label for="terms_chk01">
+										<span>[필수]</span> 텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.텍스트가 길어지면 이렇게 떨어집니다.
+									</label>
+									<a href="#" class="terms_anchor"><span class="blind">약관 팝업</span></a>
+								</div>
+								<div class="item">
+									<input type="checkbox" id="terms_chk02">
+									<label for="terms_chk02">
+										<span>[필수]</span> 동의하세요.
+									</label>
+									<a href="#" class="terms_anchor"><span class="blind">약관 팝업</span></a>
+								</div>
+								<div class="item">
+									<input type="checkbox" id="terms_chk03">
+									<label for="terms_chk03">
+										<span>[필수]</span> 동의하세요.
+									</label>
+									<a href="#" class="terms_anchor"><span class="blind">약관 팝업</span></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">라디오</h2>
+							</div>
+							<table class="table ta_c table_guide_button_type">
+								<caption>라디오</caption>
+								<colgroup>
+									<col style="width:100px">
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col">Default</th>
+										<th scope="col">Checked</th>
+										<th scope="col">Disabled</th>
+										<th scope="col">Disabled+Checked</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">text</th>
+										<td><input type="radio" id="rdo01"><label for="rdo01">레이블</label></td>
+										<td><input type="radio" id="rdo02" checked><label for="rdo02">레이블</label></td>
+										<td><input type="radio" id="rdo03" disabled><label for="rdo03">레이블</label></td>
+										<td><input type="radio" id="rdo04" checked disabled><label for="rdo04">레이블</label></td>
+									</tr>
+									<tr>
+										<th scope="row">btn</th>
+										<td><input type="radio" id="rdo05" class="btn_rdo"><label for="rdo05">레이블</label></td>
+										<td><input type="radio" id="rdo06" class="btn_rdo" checked><label for="rdo06">레이블</label></td>
+										<td><input type="radio" id="rdo07" class="btn_rdo" disabled><label for="rdo07">레이블</label></td>
+										<td><input type="radio" id="rdo08" class="btn_rdo" checked disabled><label for="rdo08">레이블</label></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<!-- <div class="content_footer">
+					<div style="height: 58px;background-color:orange;"></div>
+				</div> -->
+				<!-- //content_footer -->
+				<!-- <script type="text/javascript" src="../_ui_include/quick.js"></script>Include: quick -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+	</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Code Here~!! -->
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

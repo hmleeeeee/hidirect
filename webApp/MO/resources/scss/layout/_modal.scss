@@ -1,0 +1,328 @@
+@charset "utf-8";
+
+/**
+* Layout.popup
+* ------------------
+*/
+
+$modal_width: calc(100% - 40px);// (default:md)
+$modal_width_full: 100%;
+$modal_width_alert: calc(100% - 40px); //80%;
+$modal_pad: 20px;
+$modal_pad_alert: $modal_pad;
+
+// Size
+.modal{
+	& .modal_content{width:$modal_width;}
+	&.full .modal_content,
+	&.bottom .modal_content,
+	&.bar .modal_content{width:$modal_width_full;}
+	&.alert .modal_content{width:$modal_width_alert; max-width:300px;}
+}
+
+// Zindex
+.modal{z-index: $zindex_modal;}//full popup
+.modal.alert{z-index: $zindex_modal_up;}
+
+
+// .modal_sm_open,
+.modal_open{overflow-x: hidden; overflow-y: hidden !important; 
+	#wrap{z-index: 0;}
+}
+
+
+// Motion
+.modal.fade {transition: all $transition_base; opacity:0;}
+.modal.show {opacity:1;}
+
+.modal.full.fade {transition: none; opacity:0;}
+.modal.full.show {opacity:1;}
+
+.modal.drag.fade,
+.modal.bottom.fade { transform: translate3d(0, 100%, 0); opacity:0;}
+.modal.drag.show,
+.modal.bottom.show { transform: translate3d(0, 0, 0); opacity:1;}
+
+
+// Dimmed
+.modal_backdrop { position: fixed; z-index:$zindex_modal_backdrop; top: 0; right: 0; bottom: 0; left: 0; background-color: #000; opacity: 0.5;}
+
+
+
+
+// * Modal
+//--------------------------------
+// [03/21] Script 처리로 높이 변수 삭제
+
+// .wpop_content,
+.modal{display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; outline: 0;
+	.modal_dialog{
+		position: relative; 
+		width: auto;
+		height: auto; 
+		min-height: 100%;
+		margin: 0 auto; 
+		pointer-events: none; 
+		-webkit-appearance:none;
+		vertical-align: center;
+		display: -webkit-box; 
+		display: -ms-flexbox;
+		display: flex; 
+		align-items: center;
+	}
+
+	.modal_content{position: relative; margin: 0 auto; border-radius: 24px; background:#fff;background-clip: padding-box; box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.08); pointer-events: auto;  outline: 0;transition:box-shadow 0.15s linear;}
+
+	.modal_header{
+		.wrapper{padding: 15px 20px 16px;
+			.modal_title{@include fz15(); color:#1F1F21;padding-right:40px;}
+		}
+	}
+
+	.modal_body{position: relative; 
+		.wrapper{position: relative; height:auto; margin-bottom:-16px; padding:0 0 80px; overflow-y: auto; word-break:break-all;}
+	}
+
+	.modal_footer{ position: relative;
+		&.fix{
+			// padding-top: $modal_footer_pad_top;
+		}
+	}
+
+	.btn_modal_close{position:absolute; top:12px; right:10px; background:url($svg_btn_modal_close) no-repeat center center; width:28px; height:28px;
+		span{@include blind();}
+	}
+
+	.btn_modal_handle{width: 56px; height: 4px; background: #E8E8EA; border-radius: 3px;}
+}
+
+
+
+
+// * Modal full
+//--------------------------------
+.modal.full{
+	.modal_dialog{height: 100%;}
+	.modal_content{border-radius: 0;
+		.governing{
+			.governing_title+.info_text{
+				margin-top:24px;
+				&+.info_text{
+					margin-top:12px;
+				}
+			}
+		}
+		.btn_area.sub{
+			margin-top:24px;
+		}
+	}
+	&.complete{
+		.modal_title{
+			padding:0;
+			text-align:center;
+		}
+		.btn_modal_close{
+			display:none;
+		}
+	}
+}
+
+
+
+// * Modal bottom
+//--------------------------------
+.modal.bottom{
+	.modal_dialog{align-items: end;}
+	.modal_content{border-bottom-left-radius:0;border-bottom-right-radius:0;}
+
+	.modal_header .wrapper{padding: 40px 20px 20px;}
+	.modal_body .wrapper{padding:0 0 56px;
+		//margin-top: 40px; //.modal_header 없을경우 script로 삽입 
+
+		// ------
+		.comp:first-child{margin-top: 12px;}
+		.modal_subtitle{margin-top: -12px;margin-bottom:32px;@include fz15;font-weight:400;color:#555557}
+		.comp.border_top:first-child{margin-top: 0; border-top: 1px solid #1F1F21;
+			.modal_subtitle{margin-top: 0px;}
+		}
+		// ------
+	}
+	.modal_header, 
+	.modal_body{
+		.wrapper .modal_title{
+			@include fz17_700();
+			@include line_clamp(1.4em,48,2);
+		}
+	}
+	.btn_modal_close{position:absolute; top:20px; right:20px; background:url($svg_btn_modal_bottom_close) no-repeat center center; width:32px; height:32px;
+	}
+}
+
+
+
+// * Modal drag
+//--------------------------------
+.modal.bottom.drag{
+	.modal_header .wrapper{
+		 height: 40px;padding: 0;
+		.drag_handler{position: relative; height: 40px; cursor:grab;
+			display: block;
+			&:after{
+				content:''; position: absolute; top:50%; left:50%; 
+				width: 56px;
+				height: 4px;
+				background: #E8E8EA; border-radius: 3px;
+			}
+		}
+	}
+
+	// .modal_body .wrapper{padding:0 0 56px;
+	// 	//margin-top: 40px; //.modal_header 없을경우 script로 삽입 
+
+	// 	// ------
+	// 	.comp:first-child{margin-top: 12px;}
+	// 	.modal_subtitle{margin-top: -12px;margin-bottom:32px;@include fz15;font-weight:400;color:#555557}
+	// 	.comp.border_top:first-child{margin-top: 0; border-top: 1px solid #1F1F21;
+	// 		.modal_subtitle{margin-top: 0px;}
+	// 	}
+	// 	// ------
+	// }
+	// .modal_header, 
+	// .modal_body{
+	// 	.wrapper .modal_title{
+	// 		@include fz17_700();
+	// 		@include line_clamp(1.4em,48,2);
+	// 	}
+	// }
+	.btn_modal_close{display: none;}
+}
+
+
+//modal trigger bar
+.content_footer.fix{
+	&.calc_footer{padding:12px 20px 32px; box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.08);
+		.calc_wrap{@include div_px(calc(100% - 116px), 20px);
+			.modalbar_trigger{position: relative;
+				cursor:default;
+				.title{@include fz12();color: #555557;
+					span{color: #767678;}
+					em{color: $point_color;}
+				}
+				.num_txt{@include fz14_700();}
+			}
+
+			.modalbar_trigger:not(.disabled){
+				cursor:pointer;
+				&:after{content:'';position: absolute; right:16px; top:12px; width: 24px;height: 24px; background: url($svg_arrow_up_24) center center no-repeat;
+				}
+			}
+
+			.btn_area{position: relative;
+				.btn{width: 100%;}
+				&:after{content:'';position: absolute; left: -20px; height: 100%; width: 1px; border-left: 1px solid #EFEFF1;
+				}
+			}
+		}
+	}
+}
+
+
+// * Modal md
+//--------------------------------
+.modal.md{
+	.modal_dialog{height: 100%;}
+	.modal_content{border-radius:16px;}
+	.modal_header .wrapper{padding: 40px 20px 20px;}
+	.modal_header, 
+	.modal_body{
+		.wrapper .modal_title{
+			@include fz17_700();
+			@include line_clamp(1.4em,48,2);
+		}
+	}
+	.modal_footer{
+		border-radius:16px;
+	}
+	.btn_modal_close{position:absolute; top:20px; right:20px; background:url($svg_btn_modal_bottom_close) no-repeat center center; width:32px; height:32px;
+	}
+}
+
+
+
+
+// * Modal alert
+//--------------------------------
+.modal.alert{
+	.modal_content{border-radius: 16px; }
+	.modal_header{
+		.wrapper{padding:32px 32px 6px; 
+			.modal_title{@include fz15_700();padding-right: 0;color: #1F1F21; text-align: center; }
+		}
+	}
+	.modal_body{
+		.wrapper{padding:0 32px 32px; margin-bottom:0; text-align: center;
+			.sc_comp{}
+			// .alert_title{@include fz15_700();color: #1F1F21;margin-bottom: 6px;}
+			.alert_msg{@include fz15_400();
+				strong{@include fz15();color: #1F1F21;}
+			}
+			
+			.icon{position: relative;height: 64px; margin-bottom: 10px;
+				&:after{
+					@include bg_center();
+					content:'';position: absolute;width:64px; height: 64px; background: url($svg_alert_sucess) no-repeat 0 0; background-size: 100%;
+				}
+				&.info:after{
+					@include bg_center();
+					content:'';position: absolute;width:64px; height: 64px;
+					background: url($svg_alert_info) no-repeat 0 0;background-size: 100%;
+				}
+				&.fail:after{content:'';position: absolute;width:64px; height: 64px;background: url($svg_alert_fail) no-repeat 0 0;background-size: 100%;
+				}
+			}
+		}
+	}
+	.modal_footer{
+		.btn_area{border-top: 1px solid #EFEFF1;
+			.btn{@include fz15();margin: 0;color: #F8670D;
+				&:last-child{border-left: 1px solid #EFEFF1;}
+			}
+			.btn_cancel{ color: #555557;}
+		}
+	}
+	.btn_modal_close{display: none;position:absolute; top:20px; right:20px; background:url($svg_btn_modal_bottom_close) no-repeat center center; width:32px; height:32px;
+	}
+
+	//alert max-width: 320, align:left
+	&.alert_md{
+		.modal_header{
+			.wrapper{padding: 32px 28px 20px;
+				.modal_title{@include fz17_700(); /*padding-right:40px; */text-align: left;}
+			}
+		}
+		.modal_body{
+			.wrapper{padding: 0 28px 32px; text-align: left;} 
+		}
+	}
+}
+
+
+
+
+
+
+/*
+	//한달동안 열지 않음 : A_FP_22040
+	// .modal .cookie_area{@include clearfix(); margin-top: 30px;
+	// 	.mtl_checkbox{float: right;
+	// 		> span{padding-left: 26px;color: #757575; font-weight: $fw_regular;} 
+	// 	}
+	// }
+
+
+
+	//윈도우팝업 : 대표: A_IB_70001_1_P1
+	// .wpop_content{position: relative; overflow: auto;display: block;
+	// 	.modal_body .wrapper{max-height:initial;}
+	// }
+*/

@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/**
+* Module.Tab
+* ------------------
+*/
+
+
+// * Default
+//-----------------
+.tab{padding-top: 10px;
+	&.full{@include layoutFull();}
+	.tab_wrap{@include clearfix();position: relative;}
+}
+
+.tab_content{margin-top: 24px;
+	.tab_con_title{}//스크립트에서 .blind 삽입중
+}
+.tab_content .tab_con_title + .comp{margin-top: 0;}
+
+
+
+// * tab_line
+//-----------------
+.tab_line{
+	.tab_wrap{position: relative; display: flex; border-bottom: 1px solid #EFEFF1;}
+	li{position: relative; flex: 1 1 0;
+		&:after{content:''; position: absolute; left: 50%; right: 50%; bottom:0; height: 1px; background-color: transparent; 
+			// transition:all $transition-base;
+		}
+		a{display: block;min-height: 50px;padding:14px 5px 15px; 
+			@include fz14(); color: #767678;text-align: center; 
+		}
+		&.on{
+			&:after{left: 0; right: 0; bottom: 0; background-color: #1F1F21; }
+			a{@include fz14_700(); color: #1F1F21;}
+		}
+	}
+}
+
+
+// * tab_line_width_auto: left 정렬
+//-----------------
+.tab_line.tab_left{
+	.tab_wrap{flex:inline-flex; padding-left: 20px; gap:0 20px;}
+	li{flex:none;
+		a{padding:14px 0 15px;}
+	}
+}
+
+
+
+// * tab_round
+//-----------------
+.tab_round{
+	.tab_wrap{position: relative;display: flex; padding: 4px; margin-right: 52px; margin-left: 52px;border-radius: 100px; background: #F5F5F7;
+	}
+	li{position: relative;flex:1;
+		&:last-child{margin-left: -8px;}
+		a{display: block;min-height: 40px;padding:9px; background: none;;
+			@include fz14_400(); color: #555557;text-align: center; 
+		}
+		&.on{
+			a{@include fz14_700(); 
+				color: #1F1F21; background: #fff; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08); border-radius: 99px;
+			}
+		}
+	}
+}
+
+// * tab_scroll
+//-----------------
+
+
+
+.tab_scroll{overflow-y: hidden;overflow-x: auto; //width: calc(100% + 40px); 
+	.comp &{@include layoutFull();}
+	.tab_content & {margin-top: 16px;}
+	.tab_wrap{position: relative; width: max-content;padding-right: 20px;}
+	li{float: left; padding-right: 6px;
+		&:first-child{padding-left: 20px;}
+		&:last-child{padding-right: 0;}
+		a{@include btn_round();
+			@include fz14();
+			display: block; padding: 6px 14px; color: #767678; background: #F5F5F7;
+		}
+		&.on{
+			a {color: #fff; background: #1F1F21;}
+		}
+	}
+}

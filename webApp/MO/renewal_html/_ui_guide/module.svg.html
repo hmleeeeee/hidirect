@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<link rel="stylesheet" href="../../resources/css/ui.common.svg.css">
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+
+		//Guide Svg Class Name
+		$('.guide_svg').find('li').each(function(){
+			var cname = $(this).find('i').attr('class')
+			$(this).append('<span class="name">'+cname+'</span>')
+		});
+
+		//Guide
+		guideTab();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="true" data-category="guide" data-category-sub="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">Module</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Svg</h2>
+							<span class="info_txt">Svg 가이드 입니다.</span>
+						</div>
+						<!-- tab -->
+						<div class="tab tab_scroll" data-tab="GuideTab">
+							<ul class="tab_wrap">
+								<li><a href="javascript:void(0);"><span>Common</span></a></li>
+								<li><a href="javascript:void(0);"><span>Login</span></a></li>
+								<li><a href="javascript:void(0);"><span>Test</span></a></li>
+								<li><a href="javascript:void(0);"><span>View All</span></a></li>
+							</ul>
+						</div>
+						<!-- //tab -->
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">Common</h2>
+							</div>
+							<div class="guide_svg">
+								<ul>
+									<li><i class="svg_icon_call"></i></li>
+									<li><i class="svg_arrow_down"></i></li>
+									<li><i class="svg_arrow_down_24"></i></li>
+									<li><i class="svg_arrow_right_24"></i></li>
+									<li><i class="svg_arrow_up_24"></i></li>
+									<li><i class="svg_arrow_link"></i></li>
+									<li><i class="svg_favorites"></i></li>
+									<!-- <li><i class="svg_filter"></i></li> -->
+									<li><i class="svg_reset"></i></li>
+								</ul>
+							</div>
+
+							<div class="title_area mt20">
+								<h3 class="h3">Header</h3>
+							</div>
+							<div class="guide_svg">
+								<ul>
+									<li><i class="svg_btn_page_prev"></i></li>
+									<li><i class="svg_btn_sidebar_open"></i></li>
+									<li><i class="svg_btn_page_close"></i></li>
+									<li><i class="svg_btn_modal_bottom_close"></i></li>
+								</ul>
+							</div>
+
+							<div class="title_area mt20">
+								<h3 class="h3">alert</h3>
+							</div>
+							<div class="guide_svg">
+								<ul>
+									<li><i class="svg_alert_sucess"></i></li>
+									<li><i class="svg_alert_info"></i></li>
+									<li><i class="svg_alert_fail"></i></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">Login</h2>
+							</div>
+							<div class="guide_svg">
+								<ul>
+									<li><i class="svg_pin"></i></li>
+									<li><i class="svg_bio"></i></li>
+									<li><i class="svg_phone"></i></li>
+									<li><i class="svg_kakao"></i></li>
+									<li><i class="svg_naver"></i></li>
+									<li><i class="svg_joint"></i></li>
+									<li><i class="svg_joint2"></i></li>
+									<li><i class="svg_bank"></i></li>
+									<li><i class="svg_desktop"></i></li>
+									<li><i class="svg_mobile"></i></li>
+									<li><i class="svg_unlock"></i></li>
+									<li><i class="svg_confirm_unlock"></i></li>
+									<li><i class="svg_confirm"></i></li>
+									<li><i class="svg_error"></i></li>
+									<li><i class="svg_infomation"></i></li>
+									<li><i class="svg_nodata"></i></li>
+									<li><i class="svg_nodata2"></i></li>
+									<li><i class="svg_joint_nodata"></i></li>
+								</ul>
+							</div>
+						</div>
+
+
+						<!-- tsst -->
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">Test</h2>
+							</div>
+							<div class="guide_svg">
+								<ul>
+									<li class="black"><i class="svg_test"></i></li>
+									<li><i class="svg_test_func"></i></li>
+									<li><i class="svg_test_func2"></i></li>
+									<li><i class="svg_test_func3"></i></li>
+									<li><i class="svg_test mixin"></i></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //tsst -->
+					</div>
+				</div>
+				<!-- //content_wrap -->
+				<!-- <script type="text/javascript" src="../_ui_include/quick.js"></script>Include: quick -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+	</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Code Here~!! -->
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

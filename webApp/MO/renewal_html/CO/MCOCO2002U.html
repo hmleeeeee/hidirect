@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+		$('.btn_samples').find('.btn').click();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="login" data-category-sub="main">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">로그인</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Modal</h2>
+						</div>
+						<div class="comp">
+							<div class="btn_area cta btn_samples">
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#MCOCO2002U'));" class="btn fill01">Open</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Modal Full -->
+		<div class="modal full fade" id="MCOCO2002U" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">전자서명</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+                <div class="governing ta_l">
+                  <h2 class="governing_title">전자서명 방법을 선택해 주세요.</h2>
+                </div>
+								<div class="comp">
+                  <div class="login_method arrow">
+                    <div class="item">
+                      <button type="button" class="anchor phone" role="button"><span>모바일 직접서명</span></button>
+                    </div>
+                    <div class="item">
+                      <button type="button" class="anchor kakao" role="button"><span>카카오인증</span></button>
+                    </div>
+                    <div class="item">
+                      <button type="button" class="anchor naver" role="button"><span>네이버인증</span></button>
+                    </div>
+                    <div class="item">
+                      <button type="button" class="anchor joint" role="button"><span>공동인증</span></button>
+                    </div>
+                    <div class="item">
+                      <button type="button" class="anchor bank" role="button"><span>금융인증</span></button>
+                    </div>
+                  </div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#MCOCO2002U'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Full -->
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

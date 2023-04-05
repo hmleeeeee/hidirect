@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/**
+* layout.quick
+* ------------------
+*/
+
+$svg-common-quick-top:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;%7D.cls-2%7Bfill:%23fff;fill-rule:evenodd;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Ecommon_fab_top%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='ICONS'%3E%3Crect class='cls-1' width='60' height='60'/%3E%3Cpolygon class='cls-2' points='26.9 20.18 29 18 50 39.82 47.9 42 26.9 20.18'/%3E%3Cpolygon class='cls-2' points='10.1 42 8 39.82 29 18 31.1 20.18 10.1 42'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E";
+
+$svg-quick-btn-cs: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' preserveAspectRatio='xMidYMid' width='50' height='51' viewBox='0 0 50 51'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B stroke: %23fff; stroke-width: 2px; fill: none; fill-rule: evenodd; %7D .cls-2 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath d='M7.000,31.855 L7.000,17.615 C7.000,8.439 15.059,1.000 25.000,1.000 C34.941,1.000 43.000,8.439 43.000,17.615 L43.000,32.384 C43.000,41.561 34.941,49.000 25.000,49.000 ' class='cls-1'/%3E%3Cpath d='M42.500,16.000 C46.090,16.000 49.000,18.910 49.000,22.500 L49.000,25.500 C49.000,29.090 46.090,32.000 42.500,32.000 ' class='cls-1'/%3E%3Cpath d='M7.000,32.000 C3.686,32.000 1.000,29.090 1.000,25.500 L1.000,22.500 C1.000,18.910 3.686,16.000 7.000,16.000 ' class='cls-1'/%3E%3Ccircle cx='25' cy='47' r='4' class='cls-2'/%3E%3C/g%3E%3C/svg%3E%0A";
+
+$svg-quick-btn-write:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;%7D.cls-2%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Ecommunity_fab%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='ICONS'%3E%3Crect class='cls-1' width='60' height='60'/%3E%3Crect class='cls-2' x='6' y='53' width='48' height='3'/%3E%3Cpath class='cls-2' d='M37.18,9.36l8.46,8.46L42.3,21.16l-8.51-8.41,3.39-3.39m0-3.36-6.76,6.76L42.31,24.51,49,17.82,37.18,6Z'/%3E%3Cpath class='cls-2' d='M28.69,17.85l8.5,8.42L21.94,41.52l-8.54.08.08-8.54L28.69,17.85m0-3.35L11.11,32.07,11,44l11.93-.11L40.56,26.27,28.68,14.5Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E";
+
+
+//Top button
+.quick{position:fixed; z-index:$zindex_quick; right:16px; bottom:-100px; transition: bottom $transition_base;
+	.quick_wrap{position:relative; text-align:center;}
+	.btn_quick{display:block; position:relative;width:48px;height:48px;padding:0;border-radius:50%;background-color: #000; @include shadow(md);overflow: hidden;
+		&:after{position: absolute;content:'';width:48px;height:50px;transform:translate(-50%, -50%);}
+		&.btn_cs{background-color:#ed5b16;
+			&:after{background:url($svg-quick-btn-cs) center center no-repeat;background-size: 50%;}
+		}
+		&.btn_write {background-color:$point_color;}
+		&.btn_write:after{background:url($svg-quick-btn-write) center center no-repeat;background-size:30px auto;}
+		// top 버튼
+		&.btn_top { line-height:1;font-size:15px;font-weight:700;background:#666;
+			&:after {content:'';top:50%;left:50%; background: url($svg-common-quick-top) 50% 50%	 no-repeat; background-size: 50%}
+		}
+	}
+}
+
+// #wrap[aria-hidden="true"] .quick .word_tip {display:none;}
+
+
+//1. 항상 떠있는 Case
+.quick.floating{
+	bottom:20px;
+}
+
+//2. Top 버튼 나올때 Case
+.quick.floating_top{
+	bottom:20px;
+	.btn-top{opacity:1;bottom: 0px;}
+}
+
+.quick.floating.floating_top{//버튼 2개일때
+	.btn-top{opacity:1;bottom: 60px;}
+}
+
+//3. btn-footer-area fixed Case
+.quick.floating_bottom{
+	bottom:calc(55px + 20px);
+} 
+
+//4. 메인 
+.content[data-layout="main"]{
+	.quick.floating_bottom{
+		bottom:calc(70px + 20px)
+	}
+}

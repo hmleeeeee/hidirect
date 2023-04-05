@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="login" data-category-sub="main">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">로그인</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Modal</h2>
+						</div>
+						<div class="comp">
+							<div class="btn_area cta btn_samples">
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#MCOCO0001U'));" class="btn fill01">발급상태</a>
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#MCOCO0001U_2'));" class="btn fill02">미발급상태</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Modal Full -->
+		<div class="modal full fade" id="MCOCO0001U" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">PIN인증</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+                <div class="governing">
+                  <h2 class="governing_title">PIN번호 6자리를 입력해 주세요.</h2>
+                </div>
+								<div class="comp">
+                  <div class="pin_area cont_pin">
+                    <strong class="active"><span class="blind">1번째 번호</span></strong>
+                    <strong><span class="blind">2번째 번호</span></strong>
+                    <strong><span class="blind">3번째 번호</span></strong>
+                    <strong><span class="blind">4번째 번호</span></strong>
+                    <strong><span class="blind">5번째 번호</span></strong>
+                    <strong><span class="blind">6번째 번호</span></strong>
+                  </div>
+                </div>
+							</div>
+							<div class="section bottom_fix">
+								<div class="comp">
+                  <div class="btn_area sub">
+							      <button type="button" class="btn text arrow"><span>PIN번호를 잊어버리셨나요?</span></button>
+                  </div>
+                </div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill01"><span></span>다음</span></button>
+						</div>
+						<div class="btn_area sub">
+							<button type="button" class="btn text"><span>다른 방법 선택</span></button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#MCOCO0001U'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Full -->
+		<!-- Modal Full -->
+		<div class="modal full fade" id="MCOCO0001U_2" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">PIN인증</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+                <div class="governing nodata" data-icon="nodata">
+                  <h2 class="governing_title">이 기기에 등록된<br>PIN번호가 없어요.</h2>
+                </div>
+								<div class="comp">
+                  <div class="uol_list fz_sm">
+                    <ul>
+                      <li>PIN인증의 등록, 변경 및 재설정을 위해서는 본인확인이 필요합니다.</li>
+                      <li>개인정보보호를 위해 간편 타인에게 노출되지 않도록 유의하시기 바랍니다.</li>
+                    </ul>
+                  </div>
+                </div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill01">PIN번호 등록</button>
+						</div>
+						<div class="btn_area sub">
+							<button type="button" class="btn text"><span>다른 방법 선택</span></button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#MCOCO0001U_2'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Full -->
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

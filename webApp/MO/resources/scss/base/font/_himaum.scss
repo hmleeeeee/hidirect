@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/**
+* font: HIMaum
+* --------------
+*/
+
+// $font_path : '../../resources/fonts/'; // util/_variables.scss
+
+@font-face {
+	font-family:'HIMaum';
+	font-style:normal;
+	font-weight:400;
+	src:local('HIMaumR'), local('HIMaumR'), local('HIMaumR');
+	src:url($font_path+'HIMaum/HIMaumR.eot');
+	src:url($font_path+'HIMaum/HIMaumR.eot?#iefix') format('embedded-opentype'),
+		url($font_path+'HIMaum/HIMaumR.woff') format('woff'),
+		url($font_path+'HIMaum/HIMaumR.otf') format('truetype');
+}
+@font-face {
+	font-family:'HIMaum';
+	font-style:normal;
+	font-weight:300;
+	src:local('HIMaumL'), local('HIMaumL'), local('HIMaumL');
+	src:url($font_path+'HIMaum/HIMaumL.eot');
+	src:url($font_path+'HIMaum/HIMaumL.eot?#iefix') format('embedded-opentype'),
+		url($font_path+'HIMaum/HIMaumL.woff') format('woff'),
+		url($font_path+'HIMaum/HIMaumL.otf') format('truetype');
+}
+

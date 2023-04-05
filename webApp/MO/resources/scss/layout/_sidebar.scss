@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/**
+* layout.sidebar
+* ------------------
+*/
+
+
+.sidebar_open{overflow-x: hidden; overflow-y: hidden !important; } 
+
+.sidebar{z-index: $zindex_sidebar; position: fixed; top: 0; left: 0;right: 0; bottom: 0;width: 100%; height: 100%; transform: translate3d(101%, 0, 0); transition: transform $transition_base; background-color: #fff;
+	&.on{
+		transform: translate3d(0%, 0, 0); transition: transform $transition_base;
+	}
+}
+
+
+
+//sidebar_top
+.sidebar_top{
+	display: flex;flex-wrap:nowrap; align-items: flex-start; justify-content: space-between; height:$sidebar_top_height; padding: 12px 10px 12px 10px;
+}
+
+
+//sidebar_content
+.sidebar_content{overflow-y: scroll; height: calc(100vh - 60px)}
+
+
+//sidebar_header
+.sidebar_header{padding:5px 28px 0;
+	.name_box{ margin-top: 20px; @include clearfix;
+		.name_txt{float: left;}
+		.btn_my_info{float: right; margin-top: 10px; margin-left: 5px;}
+	}
+	.login_prev{
+		.name_box{margin-top: 0;}
+	}
+	.profile_area {padding-top:0;
+		.join_box{@include clearfix;
+			.bi_box{float: left; }
+		}
+	}
+}
+
+//sidebar_body
+.sidebar_body{margin-top: 40px;
+	$sidebar_primary_top: 15px;
+	.primary_area{display:flex; background-color:#f4f4f4; padding: 0 20px;
+		> li{position:relative;flex:1;}
+		> li button{z-index:3;position:relative;display:block;width: 100%;padding-top:85px; padding-bottom: 15px;text-align:center;line-height:14px;}
+		> li button span{position: relative;display:inline-block;margin-top: 0px;font-size:14px;color:#000; font-weight: 300;}
+		> li:before{content:''; z-index:1;position: absolute;top:$sidebar_primary_top; left: 50%; width: 58px;height: 58px; margin-left: -29px; background-color: #fff;border-radius:50%;}
+		> li:after{content:'';z-index:2; position: absolute;left: 50%; top: $sidebar_primary_top; width: 58px;height: 58px; margin-left: -29px;}
+	}
+	.nav{padding:25px 0 80px;
+		.nav_wrap {
+			>li{position: relative; margin-bottom: 10px;
+				> button {position: relative;width:100%; padding:6px 28px 5px;text-align:left; font-size: 16px;
+					span{font-size:16px; color: #000;}
+					&:after{content:''; position: absolute; top:50%; margin-top:-5px; right:35px; width: 7px;height: 7px; border:1px solid #000; border-width:1px 1px 0 0; transform: rotate(45deg);}
+				}
+				&.on{
+					> button{background-color: #f4f4f4;}
+				}
+				&:last-child{margin-bottom:0}
+			}
+		}
+	}
+}
+

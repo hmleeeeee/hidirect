@@ -1,0 +1,709 @@
+<!DOCTYPE HTML>
+<html lang="ko" class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Cache-Control" content="no-cache; no-store; no-save" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="./resources/css/worklist.min.css" />
+	<script type="text/javascript" src="./resources/js/worklist.min.js"></script>
+	<script type="text/javascript" src="./resources/js/worklist.include.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.tobe_section .pc').find('.btn_todo').eq(0).addClass('active');
+		});
+	</script>
+</head>
+<body data-page="todo">
+	<div id="wrap">
+		<h1>다이렉트 보험 서비스 플랫폼 구축 <small>: PC</small></h1>
+		<!-- header -->
+		<div class="header">
+			<div class="tab_nav" >
+				<h2>IA</h2>
+				<ul>
+					<li data-depth2="hide"><a href="javascript:void(0);"><span>A.Guide</span></a></li>
+					<li data-depth2="hide"><a href="javascript:void(0);"><span>Notice</span></a></li>
+					<li><a href="javascript:void(0);"><span>View All</span></a></li>
+				</ul>
+			</div>
+			<div class="info_section">
+				<div class="box info_box">
+					<h2>Info</h2>
+					<div class="box_wrap">
+						<table>
+							<caption>Encoding, Cross Browsing, Log Infomation</caption>
+							<colgroup><col width="100px" /><col width="100px" /><col width="100px" /><col width="100px" /></colgroup>
+							<tbody>
+								<!-- <tr>
+									<th scope="row">Basic</th>
+									<td colspan=3>
+										<div data-ui="more" data-title="Basic">
+											<dl><dt></dt><dd></dd></dl>
+										</div>
+									</td>
+								</tr> -->
+								<tr>
+									<th scope="row">Log</th>
+									<td colspan="3">
+										<div data-ui="more" data-title="Log">
+											<dl><dt>02/02</dt><dd>Hello World~!!</dd></dl>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="box link_box">
+					<h2>Link</h2>
+					<div class="box_wrap">
+						<script>incLinkInfo();</script>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- content -->
+		<div id="content">
+
+<!-- **************************************************
+* Start of Content
+************************************************** -->
+
+
+<!-- --------------------------------------------------
+// [A.Guide]
+-------------------------------------------------- -->
+<div class="tab_contents_wrap">
+	<h3></h3>
+	<table>
+		<script>incThead();</script>
+		<tbody>
+			<tr>
+				<td class="id">AD007</td>
+				<td class="depth2">입력 폼 확인</td>
+				<td class="depth3">기획과 디자인 다름: 주민등록번호 입력 폼 뒷자리 입력 양식 등 확인 필요</td>
+				<td class="path"></td>
+				<td class="request">장홍준</td>
+				<td class="corder">유하나<br>노우선</td>
+				<td class="ddate">3/17</td>
+				<td class="rdate"></td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">AD006</td>
+				<td class="depth2">Font</td>
+				<td class="depth3">폰트 Embeded 확인 요청: 숫자폰트: Noto Sans, 한글폰트: Noto Sans KR
+					<br> 숫자폰트 일단 퍼블에서 방어코딩 예정(.f_num)
+				</td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">유하나</td>
+				<td class="ddate">3/3</td>
+				<td class="rdate"></td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">AD005</td>
+				<td class="depth2">개발협의</td>
+				<td class="depth3">
+					1. asis MO 가이드 제공 요청 (완료: CO007) <br>
+					2. 폰트 등 resource tobe 폴더로 재선언 <br>
+						- 기존 plugins(jquery, swipe) 버전 확인 및 동일시 tobe 폴더로 재설정 확인 필요.(배포시) <br><br>
+
+					3. asis 바닥 페이지에서 tobe 레이어 팝업 이면??<br>
+						- 캘린더등(공통 모듈의 스크립트 asis, tobe 동시 선언 필요)<br>
+						- tobe html 에 .renewal 삽입 필요(팝업 및 페이지)<br>
+						- 팝업에서 공통 스크립트 다시 로딩???<br>
+						>> 대상페이지 없음 그럴경우 모두 window 팝업으로 대체(<strong>김낙기: 2/10</strong>)<br>
+
+					4. 커스텀 컨포넌트 사용 여부 <br>
+					5. 캘린더 <br>
+
+					<br><br>
+					4. <br>
+					[ASIS 소스에 : 신규 공통 삽입] <br>
+					<!-- body.renew  or Module 새로 만들기 -->
+					<ul>
+						<li>ui_common_renewal.css(asis, tobe 공통)</li>
+						<li>ui_common_renewal.js(asis, tobe 공통)</li>
+					</ul>
+					<br>
+
+					[TOBE] <br>
+					<ul>
+						<li>body.renewal</li>
+						<li>ui_common_renewal.css(asis, tobe 공통)</li>
+						<li>ui_common_renewal.js(asis, tobe 공통)</li>
+						<li>ui_common.css(tobe)</li>
+						<li>ui_common.js(tobe)</li>
+					</ul>
+				</td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">N/A</td>
+				<td class="ddate">2/7</td>
+				<td class="rdate"></td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">AD004</td>
+				<td class="depth2">UXwriting</td>
+				<td class="depth3">현대해상 다이렉트 UXwriting 가이드: [와이어링크]현대해상_UXwriting_가이드_2021101.pdf <br>
+					2/8(수) 와이어링크 담당자와 PM 14:00 미팅 <br>
+					>> 2/20 일 1차 SB 전달예정(기획, 2/6)
+				</td>
+				<td class="path"></td>
+				<td class="request">김낙기</td>
+				<td class="corder">N/A</td>
+				<td class="ddate">2/6</td>
+				<td class="rdate">2/6</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">AD003</td>
+				<td class="depth2">레이아웃 소스 현행화</td>
+				<td class="depth3">lnb type, full type</td>
+				<td class="path"></td>
+				<td class="request">장홍준</td>
+				<td class="corder">장홍준</td>
+				<td class="ddate">2/2</td>
+				<td class="rdate">2/3</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl>
+						<dt>2/3</dt>
+						<dd>
+							작업 경로(VDI망) <br>
+							eos_DHHOME>docs>homedirect>common>layout_lnb.html<br>
+							eos_DHHOME>docs>homedirect>common>layout_full.html
+						</dd>
+					</dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">AD002</td>
+				<td class="depth2">화면목록</td>
+				<td class="depth3">화면목록 초안 관련 퍼블 요청안 전달. Log 참조 >>
+				</td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">김낙기</td>
+				<td class="ddate">2/3</td>
+				<td class="rdate">2/3</td>
+				<td class="tag"><span>기획</span></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+					<dl><dt>2/3</dt><dd>
+						<ul>
+							<li>- Sorting 위해 Header Title 그루핑 변경</li>
+							<li>- NO. , 우선순위, 개정이력(구분, 일자, 내용), 담당자 추가</li>
+							<li>- 기획(예정, 완료, UX Writing, 검수) 추가</li>
+							<li>- 다지안(예정, 완료, 기획검수, 검수) 추가</li>
+							<li>- 퍼블리싱(예정, 완료, 기획검수, 디자인검수, 검수) 추가</li>
+							<li>- 1depth~6depth => 2depth~7depth 변경</li>
+							<li>- 카테고리 셀 병합 취소(Sorting 시 불편함)</li>
+							<li>- white 레코드 계정이력 삭제, 2/3 삽입</li>
+							<li>- PC, MO 화면목록 분리 요청</li>
+						</ul>
+					</dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">AD001</td>
+				<td class="depth2">공통가이드</td>
+				<td class="depth3">UI/UX공통가이드 문서 초안 디스크립션 전달 <br>
+					<ul>
+						<li>- UX Wrting 관련</li>
+						<li>- PC, MO 가이드 분리</li>
+						<li>- PC, MO 가이드 분리</li>
+					</ul>
+				</td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">김낙기</td>
+				<td class="ddate">2/3</td>
+				<td class="rdate">2/3</td>
+				<td class="tag"><span>기획</span></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+<!-- --------------------------------------------------
+// [NOTI]
+-------------------------------------------------- -->
+<div class="tab_contents_wrap">
+	<h3></h3>
+	<table>
+		<script>incThead();</script>
+		<tbody>
+			<tr>
+				<td class="id">CO012</td>
+				<td class="depth2">RFP</td>
+				<td class="depth3">Q: 홈페이지 범위 문의: RFP 상 디자인 가이드 범위 문의
+					<br>A: 상품2개 + 홈페이지 전체 리뉴얼 범위
+				</td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">김낙기</td>
+				<td class="ddate">3/6</td>
+				<td class="rdate">3/6</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO011</td>
+				<td class="depth2">반출</td>
+				<td class="depth3">
+					[2/27] 추후 반출시 반출 사유 필수 입력 요청(김재원) <br>
+					초기셋팅 퍼블리싱 파일 인터넷망 반출
+				</td>
+				<td class="path"></td>
+				<td class="request">장홍준</td>
+				<td class="corder">김재원</td>
+				<td class="ddate">2/24</td>
+				<td class="rdate">2/27</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO010</td>
+				<td class="depth2">회식</td>
+				<td class="depth3">3/9(목) 18:00 영등포구청역 원조부안집 본점</td>
+				<td class="path"></td>
+				<td class="request">김낙기</td>
+				<td class="corder">N/A</td>
+				<td class="ddate">2/23</td>
+				<td class="rdate"></td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO009</td>
+				<td class="depth2">일정</td>
+				<td class="depth3">
+					[3/3] 서브시안 차주(3/10), 디자인가이드(3/17)관련 재문의<br>
+					[2/28] 재문의: 주간보고7주차<br>
+					[2/27] 디자인 일정 회식 못 받음<br>
+					[2/23] 퍼블리싱 가이드 시작 일정 관련 요청
+				</td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">김낙기</td>
+				<td class="ddate">2/23</td>
+				<td class="rdate"></td>
+				<td class="tag"></td>
+				<td class="log">
+					<div></div>
+					<dl><dt>3/3</dt>
+			    	<dd>
+			    		[재문의] WBS 수정 및 캐치업 플랜 요청
+					    <ul>
+					    	<li>서브시안 차주(3/10), 디자인가이드(3/17)</li>
+					    </ul>
+			    	</dd>
+			    </dl>
+			    <dl><dt>2/13</dt>
+			    	<dd>
+			    		[주간보고7주차]디자인 요청 일정 입니다.
+					    <ul>
+					    	<li>* 1차 가이드(3/6): MO/PC의 레이아웃, 폼, 버튼, 테이블 등</li>
+					    	<li>* 2차 가이드(3/10): MO/PC의 모듈 및 관련 키페이지(CRUD) 등</li>
+					    	<li>> 참고로, 기획파트에서 디자인 가이드 위한 대상화면 선정(필요시)</li>
+					    	<li>> 디자인 가이드는 MO/PC 함께 고려</li>
+					    </ul>
+			    	</dd>
+			    </dl>
+					<dl><dt>2/23</dt>
+						<dd>
+							<ul>
+								<li>- 화면설계서 리뷰 및 일정표 공유(끝난건 가요?)</li>
+								<li>- 디자인 가이드, 키페이지 리뷰 및 일정표 공유</li>
+								<li>- 피그마 교육</li>
+								<li>- 검수(기획,디자인,퍼블리싱, 고객) 및 컨펌 프로세스</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl><dt>2/13</dt><dd>
+						<ul>
+							<li>퍼블 착수 일정은?>> 문의예정</li>
+							<li>- UI/UX 공통 가이드 현행화 및 SB 일정</li>
+							<li>- 디자인 가이드 일정</li>
+							<li>- 페이지 일정</li>
+							<li>- 개발 우선순위</li>
+						</ul>
+					</dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO008</td>
+				<td class="depth2">NAS</td>
+				<td class="depth3">인터넷망 반출 위한 파일(화면목록, 설계서등)을 공유/관리할 파일 서버(NAS)를 본사 요청 (http://quickconnect.to/netive)
+				</td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">김낙기</td>
+				<td class="ddate">2/21</td>
+				<td class="rdate">2/21</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO007</td>
+				<td class="depth2">ASIS</td>
+				<td class="depth3">
+					>> [2/24] AD005 개발협의 중복 <br>
+					>> [2/21] 소스 전달 받음 <br>
+					[2/14] ASIS 모바일소스 요청: 2/14 잠실 회의 
+				</td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">이헌</td>
+				<td class="ddate">2/14</td>
+				<td class="rdate">2/21</td>
+				<td class="tag"></td>
+				<td class="log">
+					<div></div>
+					<dl><dt>2/21</dt><dd>현대해상다이렉트_모바일_html.zip, 현대해상다이렉트_모바일_인수인계파일.zip
+					 현대해상다이렉트_웹_html.zip, 현대해상다이렉트_웹_인수인계파일.zip</dd></dl>
+					<dl><dt>2/21</dt><dd>재요청</dd></dl>
+					<dl><dt>2/12</dt><dd>ASIS 소스 요청</dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO006</td>
+				<td class="depth2">셋팅 및 요청</td>
+				<td class="depth3">Log. [02/06] 대기, [01/31] 요청. Log 참조 >></td>
+				<td class="path"></td>
+				<td class="request">고재광</td>
+				<td class="corder">김낙기</td>
+				<td class="ddate">2/6</td>
+				<td class="rdate"></td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt>2/7</dt><dd>ASIS 퍼블리싱 소스 설명 관련 업무지원 요청(사이드 이펙트 방지, 신규 디렉토리 정의 등)</dd></dl>
+					<dl>
+						<dt>2/6</dt>
+						<dd>
+							<ul>
+								<li><strong>[추가]</strong></li>
+								<li>10. 상세 WBS 일정
+									<ul>
+										<li>- UI/UX 공통 가이드 및 리뷰 일정 등</li>
+										<li>- 디자인 시안/가이드 리뷰 일정 등</li>
+										<li>- 퍼블리싱 가이드 및 리뷰 일정 등</li>
+										<li>- 업무 분장 및 실 작업 일정</li>
+									</ul>
+								</li>
+								<li>11. 협의
+									<ul>
+										<li>- 디렉토리 구조 및 개발전달 Flow 협의(개발 협의 필요)</li>
+										<li>- 퍼블리싱 고객컨펌 프로세스 협의(기획검수, 디자인검수, 고객컨펌)</li>
+									</ul>
+								</li>
+								<li>12. 재확인 필요<br>
+									1) PC <br>
+									- Browser: Edge, Chrome, Safari, Whale 적용 (최신브라우저)(인터뷰...-v1.0)<br>
+									- 기준 해상도: (정의 되지 않음) <br>
+									- 접근성: 준수(제안요청서) <br>
+									<br>
+									2) MO <br>
+									- OS ver: 정의되지 않음(ex. IOS 11.0↑, Android 6.0↑)<br>
+									- 기준 해상도: 360px 기준 대표 동일(인터뷰...-v1.0) <br>
+									- 접근성: 모바일 웹접근성 적용 안함(변경: 인터뷰...-v1.0) <br>
+								</li>
+							</ul>
+							<ul>
+								<li><strong>[Ing...]</strong></li>
+								<li>2. 장홍준선임 모니터 교체(신청중)- 2/6 완료</li>
+								<li>4. 보안 인터넷망 설치 & 피그마 테스트</li>
+								<li>5. 업무망내 문서 DRM 해제 권한 요청 - (업무망 에서  MS office Cppy & Paste 자유롭게 가능 요청)</li>
+								<li>6. ASIS 퍼블리싱 및 디자인 산출물 요청 및 (<i>AD003</i>)</li>
+								<li>8. 맥 셋팅(퍼블)</li>
+								<li>9. 디자인 맥 장비 인터넷망 -> 프로젝트 공유서버 연동(PSD  반입 등)</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>1/31</dt>
+						<dd>
+							<ul>
+								<li>1. 퍼블 반입 프로그램 요청 - 1/31: 김재원선임께 반입 요청함</li>
+								<li>2. 장홍준  선임 PC 업무망내 연결 불가로 교체 및 재설치 요청- 1/31: 김재원선임께 구두 요청함(확인 필요)</li>
+								<li>3. 모니터 스위칭(업무망,  인터넷망) 장비(HDMI 케이블) 요청</li>
+								<li>- 1/30: 김재원선임께 구두 요청함(확인 필요)</li>
+								<li>4. 보안 인터넷망 PC 설치 - 피그마테스트</li>
+								<li>5. 업무망내 문서 DRM 해제 권한 요청 - (업무망 에서  MS office Cppy & Paste 자유롭게 가능 요청)</li>
+								<li>6. ASIS 퍼블리싱 및 디자인 산출물 요청</li>
+								<li>7. VDI 셋팅 요청(OTP 등)</li>
+								<li>8. 맥 셋팅(퍼블) - 퍼블 검수 및 테스트 용도(업무망 및 VDI망에서도 볼수 있는지)</li>
+								<li>9. 디자인 맥 장비 인터넷망 -> 프로젝트 공유서버 연동(PSD  반입 등)</li>
+							</ul>
+						</dd>
+					</dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO006</td>
+				<td class="depth2">Publish Info</td>
+				<td class="depth3">
+					1. PC <br>
+					- Browser: Edge, Chrome, Safari, Whale 적용 (최신브라우저)(인터뷰...-v1.0)<br>
+					- 기준 해상도: 1140px<br>
+					- 접근성: 준수(제안요청서, REQ-AN-DH-UI-012)<br>
+					<br>
+					2. MO <br>
+					- OS ver: 정의되지 않음(ex. IOS 11.0↑, Android 6.0↑)<br>
+					- 기준 해상도: 360px 기준 대표 동일(인터뷰...-v1.0) <br>
+					- 접근성: 모바일 웹접근성 적용 안함(변경: 인터뷰...-v1.0) <br>
+				</td>
+				<td class="path"></td>
+				<td class="request">김낙기</td>
+				<td class="corder">N/A</td>
+				<td class="ddate">2/6</td>
+				<td class="rdate"></td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+					<dl><dt>2/9</dt><dd>PC: 1140, MO: 360x800(HSP-DE-XX-XX-006-MO-스마트폰 해상도_v0.2.pptx)</dd></dl>
+					<dl><dt>2/9</dt><dd>
+						고객사에서 제시한 다이렉트 PC/MO 사이즈입니다. <br>
+						PC: 1140px, MO: 640px (From:김낙기)
+					</dd></dl>
+					<dl><dt>2/6</dt>
+						<dd>
+							[HSP-AN-DH-UI-001-인터뷰계획 및 결과서(UIUX개선,변경)-v.1.0.xlsx] <br>
+							4. 모바일 기준해상도: 360px 기준(대표 동일) <br>
+							5. PC 브라우저: Edge, Chrome, Safari, Whale 적용(최신브라우저) <br>
+							8. 모바일 웹접근성: 모바일 웹접근성 적용 안함 <br> <br>
+						</dd>
+					</dl>
+					<dl><dt>12/14</dt>
+						<dd>
+							[제안요청서_다이렉트 보험 서비스 플랫폼 구축.docx] <br>
+							page.11: 홈페이지 웹접근성 준수 <br>
+							- 장애인 차별금지법 대응 다이렉트 홈페이지(PC/모바일) 웹 접근성 준수(명암대비, 이미지설명 추가, 큰글씨 확대적용 등)
+						</dd>
+					</dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO005</td>
+				<td class="depth2">큰글씨</td>
+				<td class="depth3">큰글씨 서비스 도입은 다이렉트에서 적용하지 않기로 함</td>
+				<td class="path"></td>
+				<td class="request">김낙기</td>
+				<td class="corder">N/A</td>
+				<td class="ddate">2/6</td>
+				<td class="rdate">2/6</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO004</td>
+				<td class="depth2">대표</td>
+				<td class="depth3">대표 테스트데이터</td>
+				<td class="path"><a href="https://qa.hi.co.kr" target="_blank">qa.hi.co.k</a></td>
+				<td class="request">노우선</td>
+				<td class="corder">N/A</td>
+				<td class="ddate">2/3</td>
+				<td class="rdate">2/3</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt>2/3</dt><dd>[테스트 데이터]</dd></dl>
+					<dl><dt>2/3</dt>
+						<dd>
+							<ul>
+								<li>1.690503_2841323</li>
+								<li>2.761224_2376527</li>
+								<li>3.661030_1856421</li>
+								<li>4.680226_2964725</li>
+								<li>5.700307_2463729</li>
+								<li>6.910510_1372344</li>
+								<li>7.891121_1486827</li>
+								<li>8.851211_2736922</li>
+								<li>9.821219_2088324</li>
+								<li>10.800216_2963048</li>
+							</ul>
+						</dd>
+					</dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO003</td>
+				<td class="depth2">Info</td>
+				<td class="depth3">
+					검수 URL, SVN, VDI SVN, 공유폴더 등. Log 참조 >>
+				</td>
+				<td class="path">
+					[검수 URL] <br>
+					고재광: <a href="http://10.149.228.106/index.html" target="_blank">http://10.149.228.106</a><br>
+					장홍준: <a href="http://10.149.228.105/index.html" target="_blank">http://10.149.228.105</a><br>
+				</td>
+				<td class="request">고재광</td>
+				<td class="corder">고재광</td>
+				<td class="ddate">2/2</td>
+				<td class="rdate">2/2</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+					<dl>
+						<dt>2/2</dt>
+						<dd>
+							[검수 URL]<br>
+							고재광: <a href="http://10.149.228.106/index.html" target="_blank">http://10.149.228.106</a><br>
+							장홍준: <a href="http://10.149.228.105/index.html" target="_blank">http://10.149.228.105</a><br><br>
+							[작업 URL]<br>
+							<a href="http://10.149.228.106:3900" target="_blank">http://10.149.228.106:3900</a><br>
+							<a href="http://10.149.228.105:3900" target="_blank">http://10.149.228.105:3900</a><br>
+						</dd>
+					</dl>
+					<dl>
+						<dt>2/2</dt>
+						<dd>
+							[퍼블 SVN]<br>
+							작업: https://10.149.228.106/svn/pub/ <br>
+							검수: https://10.149.228.106/svn/pub.check/ <br>
+						</dd>
+					</dl>
+					<dl>
+						<dt>1/30</dt>
+						<dd>
+							[VDI SVN]<br>
+							http://IA1034-00.hdvdi.co.kr:8008/svn/eos_DHHOME<br>
+							http://IA1034-00.hdvdi.co.kr:8008/svn/eos_DHMOBAPP<br>
+							http://IA1034-00.hdvdi.co.kr:8008/svn/eos_DHADMIN<br>
+							고재광: dev7007/dev7007 <br>
+							장홍준: dev7008/dev7008 
+						</dd>
+					</dl>
+					<dl>
+						<dt>1/20</dt>
+						<dd>
+							[다이렉트 홈페이지 URL]<br>
+							1. 다이렉트 PC<br>
+							- 개발: devdirect.hi.co.kr<br>
+							- 검증: qadirect.hi.co.kr<br><br>
+							
+							2. 다이렉트 모바일<br>
+							- 개발: devmdirect.hi.co.kr<br>
+							- 검증: qamdirect.hi.co.kr<br><br>
+							
+							3. 다이렉트 관리자(ADMIN)<br>
+							- 개발/검증 호환: qadirectadmin.hi.co.kr<br>
+						</dd>
+					</dl>
+					<dl><dt>1/18</dt><dd>
+						[프로젝트 공유폴더 설정]
+						<ul>
+							<li>1. 크롬 브라우저에서 project.hi.co.kr 접속</li>
+							<li>2. ID: 사번, Password: hdmf1234*로 로그인</li>
+							<li>3. 패스워드 변경 후, 종료</li>
+							<li>4. Windows에서 \10.140.197.231\다이렉트 접속</li>
+							<li>--사번과 변경된 패스워드로 로그인</li>
+							<li>5. ★수행사 폴더 확인되면 정상</li>
+							<li>6. 프로젝트 표준 가이드 => \\10.140.197.231\프로젝트표준</li>
+						</ul>
+					</dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO002</td>
+				<td class="depth2">인력관리</td>
+				<td class="depth3">투입/철수/휴가 <br>
+				</td>
+				<td class="path"></td>
+				<td class="request">N/A</td>
+				<td class="corder">N/A</td>
+				<td class="ddate">N/A</td>
+				<td class="rdate">N/A</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd> 작성바랍니다</dd></dl>
+					<dl><dt>1/31</dt><dd>여름휴가 3일, 6월 1~3주차에 원하는 날짜에 신청하시면 됩니다. 
+					연차에서 차감되는게 아니고, 날짜만 공유해주시면 됩니다(From. 김낙기수석)</dd></dl>
+					<dl><dt>1/30</dt><dd>고재광, 장홍준 투입</dd></dl>
+				</td>
+			</tr>
+			<tr>
+				<td class="id">CO001</td>
+				<td class="depth2">WBS</td>
+				<td class="depth3">
+					Log 참조 >>
+				</td>
+				<td class="path"></td>
+				<td class="request">N/A</td>
+				<td class="corder">N/A</td>
+				<td class="ddate">N/A</td>
+				<td class="rdate">N/A</td>
+				<td class="tag"></td>
+				<td class="log">
+					<dl><dt></dt><dd></dd></dl>
+					<dl><dt>02/02</dt><dd>
+						[WBS_v0.9] <br>
+						<ul>
+							<li>- 기간: 1/18 ~ 11/17</li>
+							<li>- 보고(착수: 2/10 , 중간: 4/14 , 완료: 11/10)</li>
+							<li>- 공통 UI 정의: 3/3</li>
+							<li>- 디자인 시안/가이드 설계: 2/17</li>
+							<li>- 화면설계: 3/3</li>
+							<li>- 디자인: 2/6 ~ 5/12</li>
+							<li>- 퍼블: 3/6 ~6/2</li>
+							<li>- 구현: 4/3 ~ 7/17</li>
+							<li>- 통테1차: 7/18 ~ 7/26</li>
+							<li>- 통테2차: 7/27 ~ 8/25</li>
+							<li>- 호환성: 7/27 ~ 8/11</li>
+							<li>- 오픈: 10/20</li>
+							<li>- 교육 및 인수인계: 10/23 ~ 11/17</li>
+						</ul>
+					</dd></dl>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+<!-- --------------------------------------------------
+// [TODO]
+-------------------------------------------------- -->
+
+</div><!-- //content -->
+</div><!-- //wrap -->
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/**
+* Module.motion
+* ------------------
+*/
+
+/*
+$motionDuration : 3200ms;
+$oriBG : #ed6b28;
+$overBG : #f95501 ;
+
+.illust-link{z-index:12;
+	border: 1px solid $oriBG;
+	background:$oriBG;
+	animation: motion_bg $motionDuration ease-out infinite ;
+	&:after{border-top-color : $oriBG;animation: motion_after $motionDuration ease-out infinite ;z-index:3;bottom: -8px;}
+	&:before{position: absolute; content: ''; width: 0; height: 0; right: 14px; bottom: -10px; border-top: 9px solid #ed6b28; border-left: 5px solid transparent; border-right: 4px solid transparent;z-index:1;}
+}
+
+.txt-motion {overflow: hidden; position: relative; z-index:10; width: 90px; height: 30px;
+	.text {color: #fff; font-size: 14px; font-weight: 700; display: inline-block; position: absolute; bottom: 6px;
+		animation: motion $motionDuration ease-out infinite ;
+
+		&-1 {left: 0; animation-delay: 0ms;}//전
+		&-2 {left: 12px; animation-delay: 120ms; }//문
+		&-3 {left: 24px; animation-delay: 200ms; }//가
+		&-4 {left: 36px; animation-delay: 280ms; }//의
+		&-5 {left: 48px; animation-delay: 330ms; }//견
+		&-6 {left: 64px; animation-delay: 380ms; }//보
+		&-7 {left: 76px; animation-delay: 420ms; }//기
+	}
+}
+
+@keyframes motion {
+	50% {color:#fff;}
+	68% {color:$oriBG;}
+	76% {color:#fff;}
+}
+@keyframes motion_bg {
+	50% {background:$overBG;}
+	70% {background:#fff;}
+	85% {background:$overBG;}
+}
+@keyframes motion_after {
+	50% {border-top-color:$overBG;}
+	70% {border-top-color:#fff;}
+	85% {border-top-color:$overBG;}
+}
+
+
+//저사양 폰 모션 제거
+.illust-link-low {z-index:12;right: 40px; top: 0; font-size:14px; line-height:20px; font-weight:700; padding:0 9px; color:#fff; position:absolute; height:30px; background:#ed6b28; border-radius:5px; box-shadow:3px 3px 6px rgba(0,0,0,0.1);
+	&:after {position:absolute; content:'';width:0; height:0; right:9px; bottom:-9px; border-top:18px solid #ed6b28; border-left:9px solid transparent; border-right:9px solid transparent;}
+}*/

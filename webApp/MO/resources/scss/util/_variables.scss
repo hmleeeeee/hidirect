@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+//=======================================================
+// Util.varibles
+//=======================================================
+
+$channel: "mobile";
+
+
+
+
+// * 경로
+//-----------------
+$path:      '../../resources/images/';
+$font_path: '../../resources/fonts/';
+
+
+
+$screen: (
+  "pc_width":          1280px,
+  "pc_max_width":      1920px,
+  "pc_margin":         40px, //1280 이하
+  "pc_max_margin":     50px, //1280 이상
+  "mobile_width":      100%,
+  "mobile_max_width":  100%,
+  "mobile_margin":     20px,
+  "mobile_max_margin": 0
+) !default;
+
+
+
+
+//=================
+// * Layout
+//-----------------
+//screen
+$screen_width:        map-get($screen, "#{$channel}_width");//gap: 40, content: 1200
+$screen_max_width:    map-get($screen, "#{$channel}_max_width");// gap: 40, content: 1840
+$screen_margin:       map-get($screen, "#{$channel}_margin");
+$screen_max_margin:   map-get($screen, "#{$channel}_max_margin");
+
+//layout
+// $header_height:       100px;
+// $breadcrumb_height:   40px;
+// $footer_height:       342px;
+// $footer_width:        $screen_width; 
+
+//layout MO
+$header_height:       52px;
+$sidebar_top_height:  52px;
+$footer_height:       58px;//메인에만 있음(추후 수정)
+
+// content
+$content_top_space:       40px;//content 상단 여백
+$content_bottom_space:    64px; //content 하단 여백
+// $btn_bottom_fixed_height: 58px;// 하단 고정형 버튼 높이
+$content_footer_height: 90px;// 하단 고정형 버튼 높이
+
+
+//section
+$section_space_h:     40px;//section 상단 영백
+$comp_space_h:        32px;//comp 상단 영백
+
+
+//Grid
+$grid_column: 12;
+$grid_gutter: 2%; 
+$grid_hgap: 20px;
+
+// * Z-index
+//-----------------
+// $zindex_skip:         900 !default;
+// $zindex_header:       500 !default;
+// $zindex_breadcrumb:   409 !default;
+// $zindex_quick:        400 !default;
+// $zindex_footer:       300 !default;
+
+$zindex_header:       500 !default;
+$zindex_sidebar:      600 !default;
+// $zindex_breadcrumb:   409 !default;
+$zindex_footer:       300 !default;
+$zindex_content_footer: 209 !default;
+$zindex_quick:        400 !default;
+
+
+$zindex_modal_up:     8300 !default;//alert confirm
+$zindex_modal:        8010 !default; //full popup (8010 ~ 8199 까지 팝업위 팝업 가능)
+
+//modal dimm
+$zindex_modal_backdrop: 8000 !default;//full popup
+
+
+
+// * GNB 
+//-----------------
+$gnb_dep1_height: 79px;
+
+
+
+// * Font
+//-----------------
+$font_family: 'Noto Sans', 'Malgun Gothic',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
+
+//fw
+$fw_light:    300 !default;
+$fw_regular:  400 !default;
+$fw_medium:   500 !default;
+$fw_bold:     700 !default;
+$fw_base:     $fw_medium;
+
+// Size
+$heding1:     22px;
+// $heding2:     28px;
+// $heding3:     26px;
+
+$fz_sm:       13px; 
+$fz_msm:      13px; 
+$fz_md:       14px !default; 
+$fz_lg:       16px; 
+$fz_base:     $fz_md; 
+
+// $h1:          $fz_base * 2.5 !default;
+// $h2:          $fz_base * 2 !default;
+// $h3:          $fz_base * 1.75 !default;
+// $h4:          $fz_base * 1.5 !default;
+// $h5:          $fz_base * 1.25 !default;
+// $h6:          $fz_base !default; 
+
+
+// * Color
+//-----------------
+$point_color: #F8670D;//orange 
+$error_color: #f93636; //red
+
+// Greyscale
+$gray100 : #000000;
+$gray850 : #1F1F21;
+$gray750 : #3F3F41;
+$gray700 : #555557;
+$gray650 : #6C6C6E;
+$gray500 : #949496;
+$gray400 : #B7B7B9;
+$gray350 : #C8C8CA;
+$gray300 : #DFDFE1;
+$gray250 : #E8E8EA;
+$gray200 : #EFEFF1;
+$gray190 : #F1F1F3;
+$gray170 : #F3F4F6;
+$gray150 : #F5F5F7;
+$gray130 : #F9F9FB;
+
+
+
+// * Transition
+//-----------------
+// $transition: transform 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1) 0s !default;
+$transition_base: .33s cubic-bezier(0.685, 0.0473, 0.346, 1) 0s;//-- 이름 변경 건
+
+// * Dimmed 
+//-----------------
+$dimmed_alpha: 0.5;
+
+
+
+
+//------------------------------------
+// button
+//------------------------------------
+// $btn-transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$btn-focus-box-shadow:  0 0 0 .2rem rgba(#FF7B02, .25) ;
+$btn-active-box-shadow: inset 0 3px 5px rgba(#000, .125) ;
+
+
+
+
+
+// * Table 
+//-----------------
+$table_bgc: #f9f9f9; //bg
+$table_bdc: #ccc; //border_color
+$table_bdc_strong: #aaa;
+$table_bdbc: #bbb; //bottom_color
+
+
+
+
+
+
+
+
+// ############################################################
+// * 이하 재설정 필요
+//-----------------
+
+
+
+
+
+
+//modal
+// $zindex-modal-up2 : 8300 !default;//alert confirm
+// $zindex-modal : 8010 !default; //full popup (8010 ~ 8199 까지 팝업위 팝업 가능)
+// $zindex-modal-down1 : 1008 !default;//보장분석 top
+// $zindex-modal-bottom : 8251 !default;//보장분석 top
+// //modal dimm
+// $zindex-modal-backdrop : 8000 !default;//full popup -(사용하지 않음)
+// $zindex-modal-backdrop-sm : 8200 !default; //alert
+// $zindex-modal-backdrop-top : 1007 !default;//보장분석 dimm (header 보다 작게)
+// $zindex-modal-backdrop-bottom : 8250 !default;//modal 보다 크게)
+
+// $zindex-modal-ai-pop : 8000 !default; //sfp 등록 AI 추천학습 Quick
+
+
+//--------------
+//Transition
+
+
+
+
+
