@@ -11,7 +11,9 @@
 //-----------------
 
 .point_color{color: $point_color !important;}
-.red{color: #FF2D55 !important;}
+.red{color: #FF2D55;}
+.blue {color: #008CD3}
+
 
 .h2{@include h2(); }//fz18
 .h3{@include h3(); }//fz17_700
@@ -282,6 +284,11 @@
 	&.yellow.fill { color:#fff; background-color:#FDB637;}
 	&.black { color:#1F1F21; border-color:#1F1F21;}
 	&.black.fill { color:#fff; background-color:#1F1F21;}
+
+	&.type {text-transform: uppercase;}
+	&.type.new {color: #44A515;background-color: #E1F4D7;border-color: #E1F4D7;}
+	&.type.best {color: #FF4A3D;background-color: #FFEEEB;border-color: #FFEEEB;}
+	&.type.upgrade {color: #028CED;background-color: #EAF3FE;border-color: #EAF3FE;}
 
 	//은행개인
 	&.orange.fill02 {font-size: 12px; font-weight: 500; height:26px; line-height: 18px; padding:4px 8px; border-color:#FFF7F5; color:#F8670D; background-color:#FFF7F5;}
