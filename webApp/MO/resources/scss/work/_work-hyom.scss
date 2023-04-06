@@ -29,9 +29,107 @@
     font-size: 15px;
   }
 }
+//상세
+#content.detail {
+  //title
+  .governing {
+    .xlg {
+      font-size: 30px;
+      font-weight: $fw_bold;
+      line-height: 42px;
+      span:not(.badge) {
+        font-size: 17px;
+        font-weight: $fw_medium;
+        line-height: 24px;
+      }
+    }
+    .badge_wrap {
+      margin-top: 20px;
+      .badge {
+        padding: 4px 10px;
+        font-size: 12px;
+        border-radius: 8px;
+      }
+    }
+  }
+  .review_wrap {
+    padding: 138px 0 12px;
 
-//상품
-.product_content {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      z-index: 2;
+      display: inline-block;
+      width: 202px;
+      height: 154px;
+      background: url(/webApp/MO/resources/images/temp/img_driver.png) center no-repeat;
+      background-size: contain;
+      transform: translateX(-50%);
+    }
+  }
+  .review_swiper {
+    position: relative;
+    padding: 24px 16px 16px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 10px 16px 20px rgba(0, 0, 0, 0.16);
+
+    .review_title_area {
+      text-align: center;
+      .review_title {
+        color: #222227;
+        font-size: 22px;
+        font-weight: $fw_bold;
+        line-height: 44px;
+        .num {
+          font-size: 44px;
+        }
+        p {
+          font-size: 15px;
+          font-weight: $fw_medium;
+        }
+      }
+      p {
+        color: #222227;
+        font-size: 15px;
+        font-weight: $fw_medium;
+      }
+    }
+    .review_box {
+      padding: 16px;
+      margin-top: 22px;
+      text-align: center;
+      background: #F4F6FA;
+      border-radius: 16px;
+
+      .badge_wrap {
+        margin-bottom: 8px;
+      }
+      .review_txt {
+        color: #222227;
+        font-weight: $fw_medium;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .reviewer {
+        margin-top: 8px;
+        color: #66666B;
+        font-size: 13px;
+      }
+    }
+  }
+}
+//bg type
+#content.detail.bg {
+  height: 100vh;
+  padding-top: 20px;
+  background: linear-gradient(180deg, #F2F4F6 67.71%, #FFFFFF 100%), #F2F4F6;
+}
+
+//보험상품
+#content.product {
   .product_price_info {
     .title_area {
       align-items: center;

@@ -278,8 +278,12 @@
 	&.green.fill { color:#fff; background-color:#048901;}
 	&.blue { color:#008CD3; border-color:#008CD3;}
 	&.blue.fill { color:#fff; background-color:#008CD3;}
+	&.blue.transparent { color:#008CD3; background-color: transparent;}
+	&.deepblue { color:#005AD1; border-color:rgba(0,90,209,0.4);}
+	&.deepblue.transparent { color:#005AD1; border-color:rgba(0,90,209,0.4); background-color: transparent;}
 	&.orange { color:#F8670D; border-color:#F8670D;}
 	&.orange.fill { color:#fff; background-color:#F8670D;}
+	&.orange.transparent { color:#F8670D; background-color:#F8670D; background-color: transparent;}
 	&.yellow { color:#FDB637; border-color:#FDB637;}
 	&.yellow.fill { color:#fff; background-color:#FDB637;}
 	&.black { color:#1F1F21; border-color:#1F1F21;}
@@ -292,6 +296,28 @@
 
 	//은행개인
 	&.orange.fill02 {font-size: 12px; font-weight: 500; height:26px; line-height: 18px; padding:4px 8px; border-color:#FFF7F5; color:#F8670D; background-color:#FFF7F5;}
+	
+	&.emoji {
+		display: inline-flex;
+		align-items: center;
+		height: 26px;
+		padding: 4px 10px;
+		color: #222227;
+		font-size: 12px;
+		line-height: 18px;
+		border-color: #55555A;
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			margin-left: 4px;
+		}
+		&.smile:before {
+			background: url(/webApp/MO/resources/images/icon/icon_emoji_smile.png) center center no-repeat;
+			background-size: 16px;
+		}
+	}
 }
 
 
