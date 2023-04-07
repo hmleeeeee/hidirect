@@ -7,7 +7,7 @@
 */
 
 
-//status
+//common
 .navbar.type_status {
   top: 10px;
 }
@@ -29,10 +29,20 @@
     font-size: 15px;
   }
 }
+//bg
+.section.bg_gradient {
+  padding: 30px 0;
+  background: linear-gradient(180deg, #F2F4F6 67.71%, #FFFFFF 100%), #F2F4F6;
+}
+.section.bg_gray {
+  padding: 40px 0;
+  background: #F2F4F6;
+}
+
 //상세
 #content.detail {
   //title
-  .governing {
+  .governing { 
     .xlg {
       font-size: 30px;
       font-weight: $fw_bold;
@@ -51,7 +61,12 @@
         border-radius: 8px;
       }
     }
+    +[class*="_wrap"],
+    +[class*="_list"] {
+      margin-top: 24px;
+    }
   }
+  //베스트 리뷰
   .review_wrap {
     padding: 138px 0 12px;
 
@@ -64,68 +79,219 @@
       display: inline-block;
       width: 202px;
       height: 154px;
-      background: url(/webApp/MO/resources/images/temp/img_driver.png) center no-repeat;
+      background: url(/webApp/MO/resources/images/temp/img_driverins_bg.png) center no-repeat;
       background-size: contain;
       transform: translateX(-50%);
     }
-  }
-  .review_swiper {
-    position: relative;
-    padding: 24px 16px 16px;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 10px 16px 20px rgba(0, 0, 0, 0.16);
-
-    .review_title_area {
-      text-align: center;
-      .review_title {
-        color: #222227;
-        font-size: 22px;
-        font-weight: $fw_bold;
-        line-height: 44px;
-        .num {
-          font-size: 44px;
+    .review_swiper {
+      position: relative;
+      padding: 24px 16px 16px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 10px 16px 20px rgba(0, 0, 0, 0.16);
+  
+      .review_title_area {
+        text-align: center;
+        .review_title {
+          color: #222227;
+          font-size: 22px;
+          font-weight: $fw_bold;
+          line-height: 44px;
+          .num {
+            font-size: 44px;
+          }
+          p {
+            font-size: 15px;
+            font-weight: $fw_medium;
+          }
         }
         p {
+          color: #222227;
           font-size: 15px;
           font-weight: $fw_medium;
         }
       }
-      p {
-        color: #222227;
-        font-size: 15px;
-        font-weight: $fw_medium;
-      }
-    }
-    .review_box {
-      padding: 16px;
-      margin-top: 22px;
-      text-align: center;
-      background: #F4F6FA;
-      border-radius: 16px;
-
-      .badge_wrap {
-        margin-bottom: 8px;
-      }
-      .review_txt {
-        color: #222227;
-        font-weight: $fw_medium;
-        font-size: 16px;
-        line-height: 24px;
-      }
-      .reviewer {
-        margin-top: 8px;
-        color: #66666B;
-        font-size: 13px;
+      .review_box {
+        padding: 16px;
+        margin-top: 22px;
+        text-align: center;
+        background: #F4F6FA;
+        border-radius: 16px;
+  
+        .badge_wrap {
+          margin-bottom: 8px;
+        }
+        .review_txt {
+          color: #222227;
+          font-weight: $fw_medium;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .reviewer {
+          margin-top: 8px;
+          color: #66666B;
+          font-size: 13px;
+        }
       }
     }
   }
-}
-//bg type
-#content.detail.bg {
-  height: 100vh;
-  padding-top: 20px;
-  background: linear-gradient(180deg, #F2F4F6 67.71%, #FFFFFF 100%), #F2F4F6;
+
+  .colorbox_list {
+    .colorbox {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+      border-radius: 16px;
+      .colorbox_desc {
+        flex: 2;
+        word-break: keep-all;
+        .colorbox_tit {
+          color: #000;
+        }
+        .colorbox_sub {
+          margin-top: 12px;
+          color: #444448;
+          font-size: 13px;
+          font-weight: 400;
+        }
+      }
+      +.colorbox {margin-top: 12px;}
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 32px;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+      }
+      .percent {
+        flex: 1;
+        padding-right: 24px;
+        color: #000;
+        font-size: 52px;
+        line-height: 52px;
+        font-weight: 600;
+        text-align: right;
+        box-sizing: border-box;
+        span {
+          font-size: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+    .colorbox:nth-child(1) {
+      background: linear-gradient(0deg, #FFF0E2, #FFF0E2), #FFD5AC;
+      &:after {
+        background: url(/webApp/MO/resources/images/temp/img_driver_asset_1.png) no-repeat;
+        background-size: 80px;
+      }
+    }
+    .colorbox:nth-child(2) {
+      background: linear-gradient(0deg, #E6F6FF, #E6F6FF), #D7F1FC;
+      &:after {
+        background: url(/webApp/MO/resources/images/temp/img_driver_asset_2.png) no-repeat;
+        background-size: 80px;
+      }
+    }
+  }
+  .iconbox_list {
+    display: flex;
+    margin-top: 12px;
+    .iconbox {
+      flex: 1;
+      padding: 26px 0;
+      border: 1px solid #E5E5EA;
+      border-radius: 16px;
+      text-align: center;
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 96px;
+      }
+      &:nth-child(1):before {background: url(/webApp/MO/resources/images/temp/img_driver_asset_3.png) center no-repeat;background-size: 120px;}
+      &:nth-child(2):before {background: url(/webApp/MO/resources/images/temp/img_driver_asset_4.png) center no-repeat;background-size: 120px;}
+      +.iconbox {
+        margin-left: 11px;
+      }
+      p {color: #000;font-size: 13px;font-weight: $fw_bold;}
+    }
+  }
+  //보장 상품
+  .insproduct_wrap {
+    .insproduct_swiper {
+      background: #fff;
+      box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.16);
+      border-radius: 16px;
+    }
+  }
+  .more_product_wrap {
+    .more_product_list {
+      li {
+        padding: 24px 8px;
+        border-bottom: 1px solid #F3F4F6;
+        a {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          padding-left: 48px;
+          color: #111;
+          font-size: 16px;
+          font-weight: $fw_medium;
+          line-height: 24px;
+          em {
+            display: block;
+          }
+          span {
+            color: #444448;
+            font-size: 15px;
+            font-weight: 400;
+          }
+          &.link:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            transform: translateY(-50%);
+          }
+          &.prd1:before {
+            background: url(/webApp/MO/resources/images/icon/ico_driver_prd_1.png) no-repeat;
+            background-size: 32px;
+          }
+          &.prd2:before {
+            background: url(/webApp/MO/resources/images/icon/ico_driver_prd_2.png) no-repeat;
+            background-size: 32px;
+          }
+          &.prd3:before {
+            background: url(/webApp/MO/resources/images/icon/ico_driver_prd_3.png) no-repeat;
+            background-size: 32px;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            background:url($svg_more_link) center center no-repeat;
+            background-size: 48px;
+          }
+        }
+        &:last-child {
+          border-bottom: 0;
+        }
+        
+      }
+    }
+  }
+  .banner + .btn_wrap {
+    margin-top: 12px;
+  }
 }
 
 //보험상품
@@ -315,3 +481,8 @@
   }
 }
 
+
+//media query
+@media (min-width: 375px) {
+  .mbr {display: block;} 
+}
