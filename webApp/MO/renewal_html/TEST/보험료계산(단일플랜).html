@@ -303,66 +303,23 @@
 			</div>
 			<!-- [End of content] ==================================== -->
 		</div>
-
-		<!-- [Start of Modal] ====================================== -->
-		<div class="modal full fade" id="sampleModal_full04" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal_dialog" role="document">
-				<div class="modal_content">
-					<div class="modal_header">
-						<div class="wrapper">
-							<h2 class="modal_title">보험계약대출 거래내역조회</h2>
-						</div>
-					</div>
-					<div class="modal_body">
-						<!-- wrapper: modal_body -->
-						<div class="wrapper">
-							<div class="section">
-								<div class="comp">
-									<div style="height:1000px; padding:10px;	background-color: #eee;">
-										<ul>
-											<li>.modal.full</li>
-											<li>Scroll: 내용 길때</li>
-											<li>.modal_footer 아래 서브 버튼</li>
-										</ul>
-									</div>
-									<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse debitis harum alias, deserunt aliquid illo sapiente quos cumque blanditiis vel? Dolorum, a? Deserunt dolores delectus, repudiandae harum ullam consequatur sint?</div>
-									<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse debitis harum alias, deserunt aliquid illo sapiente quos cumque blanditiis vel? Dolorum, a? Deserunt dolores delectus, repudiandae harum ullam consequatur sint?</div>
-									<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse debitis harum alias, deserunt aliquid illo sapiente quos cumque blanditiis vel? Dolorum, a? Deserunt dolores delectus, repudiandae harum ullam consequatur sint?</div>
-									<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse debitis harum alias, deserunt aliquid illo sapiente quos cumque blanditiis vel? Dolorum, a? Deserunt dolores delectus, repudiandae harum ullam consequatur sint?</div>
-									<div>==End==</div>
-								</div>
-
-								<div class="comp">
-									<div class="btn_area footer">
-										<button type="button" class="btn fill01">확인</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- //wrapper: modal_body -->
-					</div>
-					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_full04'); return false;"><span>닫기</span></button>
-				</div>
-			</div>
-		</div>
-		<!-- [End of Modal] ======================================== -->
 	</div>
 	<!-- //wrap -->
 
   <script>
-    $('.plan_menu').each(function() {
-      $('.plan_menu_option').off("click").on("click", function() {
-          $(this).addClass('on').siblings().removeClass('on');
+     $('.plan_menu').each(function() { //plan_menu 클래스를 검사한다
+      $('.plan_menu_option').off("click").on("click", function() {  //pan_menu_option 클래스를 클릭하면
+          $(this).addClass('on').siblings().removeClass('on');  //plan_menu_option(클릭된 나 자신)에게 on클래스가 추가하고 형제는 on클래스 지워준다
 
-          const idx = $('.plan_menu_option').index(this);
-          console.log(idx)
+          const idx = $('.plan_menu_option').index(this); //plan_menu_option의 인덱스(나 자신)을 변수명 idx로 선언
+          console.log(idx)  //클릭해보면 첫번째껀 0, 두번째껀 1, 세번째껀 2라고 콘솔 찍힘
 
-          $('.plan_list_item').each(function() {
-            $(this).find('.form_wrap').eq(idx).addClass('on').siblings().removeClass('on');
+          $('.plan_list_item').each(function() {  //그 안에서 plan_list_item을 검사한다
+            $(this).find('.form_wrap').eq(idx).addClass('on').siblings().removeClass('on'); // plan_list_item(나 자신)안에 속해있는 form_wrap의 (인덱스 번호 - 0또는 1또는 2)에 해당하는 요소에 on클래스를 추가하고 형제는 on클래스 지워준다
           });
       });
-      if ($(this).hasClass('only')) {
-        $(this).find('> div').not('.on').css('display', 'none');
+      if ($(this).hasClass('only')) { //plan_menu 클래스가 only라는 클래스를 가지고 있다면
+        $(this).find('> div').not('.on').css('display', 'none');  //plan_menu(나 자신의) 바로 직결되어있는 div에 on클래스가 없는 애들은 안보이게 처리한다
       }
     });
   </script>
