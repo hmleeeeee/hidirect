@@ -351,13 +351,15 @@
 
   <script>
     $('.plan_menu').each(function() {
-      
       $('.plan_menu_option').off("click").on("click", function() {
-        const planMenu = $(this).index();
-
-          console.log(planMenu);
           $(this).addClass('on').siblings().removeClass('on');
 
+          const idx = $('.plan_menu_option').index(this);
+          console.log(idx)
+
+          $('.plan_list_item').each(function() {
+            $(this).find('.form_wrap').eq(idx).addClass('on').siblings().removeClass('on');
+          });
       });
       if ($(this).hasClass('only')) {
         $(this).find('> div').not('.on').css('display', 'none');

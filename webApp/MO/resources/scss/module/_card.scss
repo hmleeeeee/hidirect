@@ -34,6 +34,56 @@
         display:none;
       }
     }
+    &.icon {
+      .card_wrap {
+        padding: 0;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+        
+        .item_link {
+          position: relative;
+          padding: 24px 50px 24px 68px;
+          display: block;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            width: 32px;
+            height: 32px;
+            background: url($svg_icon_car) 50% 50% no-repeat;
+            background-size: 100%;
+            transform: translateY(-50%);
+          }
+          &:after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            width: 24px;
+            height: 24px;
+            background: url($svg_arrow_right_24) 50% 50% no-repeat;
+            background-size: 100%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+      .card_header {
+        color: #3F3F41;
+        font-size: 15px;
+        font-weight: $fw_medium;
+        +.card_body:not(.border_top) {
+          margin-top: 6px;
+        }
+      }
+      .card_body {
+        margin-top: 6px;
+        color: #767678;
+        font-size: 13px;
+      }
+      +.icon {
+        margin-top: 10px;
+      }
+    }
   }
   &_wrap{
     display:block;

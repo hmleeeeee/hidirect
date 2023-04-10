@@ -38,6 +38,19 @@
   padding: 40px 0;
   background: #F2F4F6;
 }
+.tab_content.bg_gray {
+  height: fit-content;
+  background: #F9F9FB;
+  .comp {
+    padding: 32px 0 0;
+    .title_area {
+      margin-bottom: 24px;
+      .h3{color: #3F3F41;}
+    }
+    +.comp {margin-top: 0;}
+    &:last-child {padding-bottom: 64px;}
+  }
+}
 
 //상세
 #content.detail {

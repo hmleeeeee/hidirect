@@ -25,7 +25,11 @@
 // * governing & title_area
 //-----------------
 .governing {position:relative; text-align: center; margin-left: 20px; margin-right: 20px;
-	.governing_title { @include fz22(); word-break: keep-all;}
+	.governing_title { 
+		@include fz22(); word-break: keep-all;
+		+.info_text {margin-top: 24px;}
+		+.uol_list {margin-top: 40px;}
+	}
 	.governing_title strong {color: $point_color;}
 
 	.info_text {display: block; @include fz15_400(); color: #555557; line-height: 1.5; margin-top: 10px; word-break: keep-all; 
