@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>단기운전자 확대 특약 신청</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>단기운전자 확대 특약 신청</h1>
+		</header>
+		<div class="popContent"><!-- 0626 문구수정 JJY-->
+			<p class="topTxt"><span>본인명의의 카드결제만 가능</span>합니다.</p>
+			<section>
+				<h2>보험료</h2>
+				<div class="orgBox">
+					<ul>
+						<li class="total">
+							<strong>총 보험료</strong>
+							<span>1,200,000원</span><!-- 0628 ￦삭제 JJY -->
+						</li>
+					</ul>
+				</div>
+
+				<h2>결제 정보</h2>
+				<fieldset>
+					<legend>결제정보 입력</legend>
+					<div class="inputWrap">
+						<select title="카드사 선택">
+							<option>카드사를 선택해주세요</option>
+							<option value="1">삼성카드</option>
+							<option value="2">LG카드</option>
+							<option value="3">BC카드</option>
+						</select>
+					</div>
+
+					<h2>카드번호</h2>
+					<div class="inputWrap four">
+						<input id="cardNo" name="cardNo" value="" type="number" placeholder="4자리">
+						<label for="cardNo" class="hide">카드 첫번째 4자리 입력</label>
+						<input id="cardNo2" name="cardNo2" value="" type="password" placeholder="4자리">
+						<label for="cardNo2" class="hide">카드 두번째 4자리 입력</label>
+						<input id="cardNo3" name="cardNo3" value="" type="password" placeholder="4자리">
+						<label for="cardNo3" class="hide">카드 세번째 4자리 입력</label>
+						<input id="cardNo4" name="cardNo4" value="" type="number" placeholder="4(3)자리"><!-- 6021 placeholder 수정 -->
+						<label for="cardNo4" class="hide">카드 네번째 4(3)자리 입력</label><!-- 6021 text 수정 -->
+					</div>
+					<ul class="twoType">
+						<li>
+							<h2>유효기간</h2>
+						</li>
+						<li>
+							<h2>할부기간</h2>
+						</li>
+					</ul>
+					<div class="inputWrap selectR">
+						<input id="carNo" name="carNo" value="" type="number"  placeholder="MM/YY">
+						<label for="carNo" class="hide">유효기간 입력</label>
+						<select title="카드사 선택">
+							<option>할부기간 선택</option>
+							<option value="1">일시불</option>
+							<option value="2">할부</option>
+						</select>
+					</div>
+
+					<ul class="listDot mgbS">
+						<li>국내 발급된 본인명의의 신용카드만 사용하실 수 있습니다.</li>
+						<li>보험계약 체결을 위해서는 계약자님의 공인인증서가 필요합니다.</li>
+					</ul>
+					
+					<h2>추가정보</h2>
+					<div class="inputWrap">
+						<input type="tel" id="phoneNum" value="" required />
+						<label for="phoneNum">휴대폰번호 입력</label>
+					</div>
+
+					<div class="inputWrap">
+						<input type="text" id="name" value="" required />
+						<label for="name">이메일주소 입력</label>
+					</div>
+				</fieldset>
+
+				<div class="btnWrap">
+					<span><a href="#" role="button">이전</a></span>
+					<span class="on"><a href="#" role="button">다음</a></span>
+				</div>
+			</section>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

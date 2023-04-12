@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>[팝업] 위치정보 이용 동의</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>위치정보 이용 동의</h1>
+		</header>
+		<div class="popContent"><!-- 0626 문구수정 JJY-->
+			<p class="topTxt">위치기반 서비스를 이용을 위해 아래의 항목에 동의해주시기 바랍니다.</p>
+			<section>
+				<div class="gpsAgr">
+					<h2>소비자 권익보호에 관한 사항</h2>
+					<div class="agrBox">
+						<div>
+							<ul class="listBasic mgtNone">
+								<li>본 동의를 거부하시는 경우에는 고장 출동 서비스 및 KT GiGA 지오펜싱 서비스 제공이 제한될 수 있으며, 본 정보는 해당 목적 외 다른 정보와 결합하여 이용되지 않습니다. </li>
+							</ul>
+						</div>
+					</div>
+
+					<h2>고장출동 위치 확인 서비스 이용 동의</h2>
+					<div class="agrBox">
+						<div>
+							<!-- 약관내용 -->
+							<!-- 2017-07-13 Text 중복제공으로 Text 수정  -->
+							<p class="mgT10">당사 및 당사 업무 수탁자는 개인정보보호법 및 신용정보의 이용 및 보호에 관한 법률에 따라 귀하의 개인(신용)정보를 다음과 같이 수집, 이용하고자 합니다.</p>
+							<h3>개인 위치정보의 수집, 이용 목적</h3>
+							<ul class="listBasic mgtNone">
+								<li>고장출동 시 요청자의 위치 확인 관련 업무</li>
+								<li>인천, 김포, 제주 공항 방문 시 요청자의 위치 확인 관련 업무</li>
+							</ul>
+							<h3>수집, 이용할 위치 정보의 내용</h3>
+							<ul class="listBasic mgtNone">
+								<li>핸드폰 번호 , 현재 위치 정보</li>
+							</ul>
+							<h3>개인 (신용) 정보 보유, 이용기간</h3>
+							<ul class="listBasic mgtNone">
+								<li>수집, 이용 동의일로부터 거래 종료 후 5년까지 (단, 거래 종료 후 5년이 경과한 후에는 보험금 지급, 금융사고 조사, 보험사기 방지, 적발, 민원처리, 법령상 의무이행을 위한 경우에 한하여 보유, 이용하며 별도 보관)</li>
+							</ul>
+							<p class="mgT10">제 3자 정보제공 동의 : KT (KT GiGA 지오펜싱 서비스 이용)</p>
+							<!-- //약관내용 -->
+						</div>
+					</div>
+				</div>
+
+				<!-- 0626 수정 JJY-->
+				<div class="checkBox">
+					<input type="checkbox" id="ck_agr01"><label for="ck_agr01"><span class="hide">위치기반 서비스 이용을 위해 약관에 동의</span></label>
+					<span>위치기반 서비스 이용을 위해 약관에 동의합니다.</span>
+				</div>
+
+			</section>
+			<!-- <div class="btnWrap">
+				<a href="#" role="button">확인</a>
+			</div> -->
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

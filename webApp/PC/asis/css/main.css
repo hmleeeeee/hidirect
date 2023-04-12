@@ -1,0 +1,207 @@
+@charset "utf-8";
+
+/* 메인화면 - 개선 /202106 */
+.directWrap{position:relative}
+.mainTopWrap{padding-top:112px;background:#efefef url('https://direct.hi.co.kr/images/main/img_visual_n2022.jpg') no-repeat center 112px}
+.mainTopWrap .mainTopArea{position:relative;margin:0 auto;width:1140px;height:421px;}
+.mainTopWrap .mainTopArea img{vertical-align:top}
+
+/* 제목 타이틀 - 개선 /202106 */
+.mainTopWrap .mainTopArea .txtArea{padding-top:64px;text-align:left;}
+.mainTopWrap .mainTopArea .txtArea .btnArea{position:absolute;left:0;bottom:125px;}
+.mainTopWrap .mainTopArea .txtArea .btnArea > a{display:inline-block;width:100%;}
+.mainTopWrap .mainTopArea .txtArea .btnArea .btn{display:inline-block;margin-right:10px;width:162px;height:45px;line-height:43px}
+.mainTopWrap .mainTopArea .txtArea .btnArea .btn span{font-size:17px}
+.mainTopWrap .mainTopArea .txtArea .btnArea .btn.blue{background:#047db5}
+
+/* 제목 타이틀 - 개선 /202005 
+.mainTopWrap .mainTopArea .txtArea{padding-top:58px;letter-spacing:-1px;}
+.mainTopWrap .mainTopArea .txtArea .txSub{line-height:1.3;font-size:18px;color:#000000}
+.mainTopWrap .mainTopArea .txtArea .txTi{margin-top:8px;line-height:1.15;font-size:39px;color:#e67401}
+.mainTopWrap .mainTopArea .txtArea .tx{font-size:13px}
+.mainTopWrap .mainTopArea .txtArea .btnArea{margin:20px 0 37px;width:100%}
+.mainTopWrap .mainTopArea .txtArea .btnArea .btn{display:inline-block;margin-right:10px;width:162px;height:45px;line-height:43px}
+.mainTopWrap .mainTopArea .txtArea .btnArea .btn span{font-size:17px}
+.mainTopWrap .mainTopArea .txtArea .btnArea .btn.blue{background:#047db5}
+*/
+
+/* 자동차보험갱신, 법인자동차보험, 특약할인 / 접근성 2차 /2210 */
+.mainTopWrap .mainTopArea .pointArea{display:flex;justify-content:space-between;position:absolute;top:40px;right:0;width:579px;box-sizing:border-box;border:1px solid #e5e7e7;}
+.mainTopWrap .mainTopArea .pointArea a:focus{outline:none}
+.mainTopWrap .mainTopArea .pointArea .pointL{box-sizing:border-box;overflow: hidden;}
+.mainTopWrap .mainTopArea .pointArea .pointL > ul{display:flex;}
+.mainTopWrap .mainTopArea .pointArea .pointL > ul > li{box-sizing:border-box;border-bottom:1px solid #e5e7e7;}
+.mainTopWrap .mainTopArea .pointArea .pointL > ul > li + li{border-left:1px solid #e5e7e7;box-sizing: border-box;}
+.mainTopWrap .mainTopArea .pointArea .pointL > ul > li > a{display:block;position:relative;}
+.mainTopWrap .mainTopArea .pointArea .pointL > ul > li > a:focus:after{content:'';display:block;position:absolute;top:0;left:0;width:130px;height:226px;border:1px dotted #ee5a00}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap{position:relative;width:398px;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-container{overflow:inherit;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-slide a{display:block;position:relative}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-slide a:focus:after{content:'';display:block;position:absolute;top:0;left:0;width:396px;height:107px;border:1px dotted #ee5a00}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .titleArea{border-bottom:1px solid #dddddd;height:33px;position:relative;margin-top:-2px;padding-bottom:0;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .titleArea.noLine{border-bottom:0;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .titleArea .tit{display:inline-block;line-height:1;color:#222222;font-size:21px;padding-right:18px;background:url('https://direct.hi.co.kr/images/main/main_title_arr.png') no-repeat right 2px;}
+/* swiper slider */
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-paginationWrap{position:absolute;left:19px;top:87px !important;width:auto;height:8px;transition:all 0s;line-height:0;text-align:center;font-size:0;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-pagination{position:relative;display:inline-block;left:auto;right:auto;top:auto;bottom:auto;width:auto;height:8px;transition:all 0s;line-height:0;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-pagination-bullet{overflow:hidden;margin-right:4px;width:8px;height:8px;border:2px solid #bbbbbb;background:none;opacity:1;text-indent:-9999999px;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-pagination-bullet-active{border:2px solid #047db5;background:#047db5}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-paginationWrap > a.btnStop{position:relative;z-index:1;display:inline-block;vertical-align:top;overflow:hidden;text-indent:-9999px;background:url('https://direct.hi.co.kr/images/main/btn_stop_s.png') no-repeat center center;width:6px;height:8px;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-paginationWrap > a.btnStop.on{background:url('https://direct.hi.co.kr/images/main/btn_play_s.png') no-repeat center center;}
+.mainTopWrap .mainTopArea .pointArea .pointL .swiper-container-wrap .swiper-paginationWrap > a.btnStop:focus{outline:1px dotted #ee5a00}
+.mainTopWrap .mainTopArea .pointArea .pointR{border-left:1px solid #e5e7e7;width:178px;height:338px;}
+.mainTopWrap .mainTopArea .pointArea .pointR > a{display:block;position:relative}
+.mainTopWrap .mainTopArea .pointArea .pointR > a:focus:after{content:'';display:block;position:absolute;top:0;left:0;width:176px;height:336px;border:1px dotted #ee5a00}
+
+/* 다이렉트 보험상품 /개선2112 */
+.mainContentWrap{padding-bottom:60px}
+.mainContentWrap img{vertical-align:top}
+.mainContentWrap .bt_org{display:inline-block;padding:0 10px;height:26px;line-height:24px;border:1px solid #e67401;background-color:#fff;font-weight:normal;font-size:14px;color:#e67401;}
+.mainContentWrap .bt_blue{display:inline-block;padding:0 10px;height:26px;line-height:24px;border:1px solid #047db5;background-color:#fff;font-weight:normal;font-size:14px;color:#047db5;}
+.mainContentWrap .mainContentArea{padding-top:40px;letter-spacing:-1.5px}
+.mainContentWrap .mainContentArea h2{margin-bottom:20px;height:31px;line-height:30px;text-align:center;font-size:32px;color:#000000}
+.mainContentWrap .mainContentArea h2 strong{color:#e67401}
+.mainContentWrap .mainContentArea h3{color:#000000}
+.mainContentWrap .mainContentArea .productList{margin:0 auto;width:1140px}
+.mainContentWrap .mainContentArea .productList .itemWrap{display:flex;justify-content:space-between;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item{width:380px;box-sizing:border-box}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .tit{display:inline-block;margin-bottom:13px;padding:6px 12px 6px 11px;height:19px;line-height:1rem;border-radius:16px;background-color:#ee5a00;text-align:center;font-weight:normal;font-size:16px;color:#fff}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list{display:flex;justify-content:space-between;flex-wrap:wrap;box-sizing:border-box;width:380px;height:570px;border-bottom:1px solid #777;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item:last-child > .list li:nth-child(2n + 2),
+.mainContentWrap .mainContentArea .productList .itemWrap .item:last-child > .list li:last-child{border-right:1px solid #777;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item:last-child > .list li:nth-child(2n + 2) > a:after,
+.mainContentWrap .mainContentArea .productList .itemWrap .item:last-child > .list li:last-child > a:after{width:190px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item:last-child > .list li.wide:last-child > a:after{width:380px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li{box-sizing:border-box;width:190px;height:190px;border-top:1px solid #777;border-left:1px solid #777}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.wide,
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.wide > a{width:380px;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.wide > a:after{width:381px;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a{position:relative;display:block;box-sizing:border-box;padding:18px 0 0 22px;width:190px;height:190px;transition:all .3s linear}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a:after{z-index:3;content:'';display:block;position:absolute;top:-1px;left:-1px;box-sizing:border-box;width:191px;height:191px;border:1px solid #ee5a00;opacity:0;transition:all .3s linear}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a:focus,
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a:hover{background-color:#fef5e9}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a:focus:after,
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a:hover:after{opacity:1;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li:nth-child(n + 5) > a:after,
+.mainContentWrap .mainContentArea .productList .itemWrap .item:nth-child(2n) > .list li:nth-child(n + 4) > a:after{height:190px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a .ti{display:inline-block;height:24px;line-height:1em;font-weight:bold;font-size:21px;color:#222}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a .ti > span{font-weight:normal;font-size:15px;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a .tx{display:block;margin:6px 0 10px;line-height:1.3em;font-weight:normal;font-size:15px;color:#777}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a .tx > strong{color:#e67401}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a > .fgPtx{display:inline-block;margin-left:8px;padding:0 6px 0 5px;height:22px;line-height:21px;background-color:#009ab1;text-align:center;font-size:13px;color:#fff;vertical-align:top;} /* 접근성 2차 /2210 */
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a > .fgNewTx{display:inline-block;margin-left:8px;padding:0 6px 0 5px;height:22px;line-height:21px;background-color:#e71a35;text-align:center;font-size:13px;color:#fff;vertical-align:top;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li > a > .fgNewImg{z-index:4;display:block;position:absolute;top:-10px;right:3px;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.fgEvent > a > .ti{padding-right:55px;background:url('https://direct.hi.co.kr/images/main/ic_flag_event.png') no-repeat right center}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.fgEvent.fgNew > a > .ti{padding-right:100px;background:url('https://direct.hi.co.kr/images/main/ic_flag_event.png') no-repeat right center}
+/* 배경, Icon */
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.bg_driver a{background-image:url('https://direct.hi.co.kr/images/main/bg_insu_driver.png');background-repeat:no-repeat;background-position:right 0}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.bg_abroad a{background-image:url('https://direct.hi.co.kr/images/main/bg_insu_abroad.png');background-repeat:no-repeat;background-position:right 1px top 0}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.bg_fire a{background-image:url('https://direct.hi.co.kr/images/main/bg_insu_fire2.png');background-repeat:no-repeat;background-position:right 0}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.bg_cancer a{background-image:url('https://direct.hi.co.kr/images/main/bg_insu_cancer.png');background-repeat:no-repeat;background-position:right 0}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.bg_children a{background-image:url('https://direct.hi.co.kr/images/main/bg_insu_children.png');background-repeat:no-repeat;background-position:right 0}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.bg_children.fgNew:after{right:224px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.bg_health a{background-image:url('https://direct.hi.co.kr/images/main/bg_insu_health.png');background-repeat:no-repeat;background-position:right 0}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_driver a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_driver.png');background-repeat:no-repeat;background-position:135px 135px;} /* 추가 /2206 */
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_cancer a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_cancer.png');background-repeat:no-repeat;background-position:130px 136px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_damage a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_damage.png');background-repeat:no-repeat;background-position:131px 131px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_long a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_abroadLong.png');background-repeat:no-repeat;background-position:128px 137px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_travel a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_travel.png');background-repeat:no-repeat;background-position:141px 131px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_golf a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_golf.png');background-repeat:no-repeat;background-position:141px 134px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_fire a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_fire2.png');background-repeat:no-repeat;background-position:135px 128px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_fire_cp a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_company-fire.png');background-repeat:no-repeat;background-position:129px 128px} /* 추가 /2206 */
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_wind a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_wind.png');background-repeat:no-repeat;background-position:129px 128px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_flood a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_flood.png');background-repeat:no-repeat;background-position:114px 129px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_pension a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_pension.png');background-repeat:no-repeat;background-position:143px 133px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_health a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_health2.png');background-repeat:no-repeat;background-position:139px 129px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_abroad a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_abroad.png');background-repeat:no-repeat;background-position:132px 133px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_children a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_children.png');background-repeat:no-repeat;background-position:116px 130px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_pet a{background-image:url('https://direct.hi.co.kr/images/main/ic_insu_pet.png');background-repeat:no-repeat;background-position:134px 134px}
+/* 전화가입상품 */
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_insuTel .ti{padding-right:24px;background:url('https://direct.hi.co.kr/images/main/ic_ti_tel.png') no-repeat right center;}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_insuTel .insuTelList{position:absolute;top:43px;right:9px;display:flex;justify-content: space-between;flex-wrap:wrap;width:161px}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_insuTel .insuTelList > *{margin-bottom:8px;width:78px;height:25px;line-height:24px;text-align:center;background-color:#defbff;font-weight:600;font-size:14px;color:#000}
+.mainContentWrap .mainContentArea .productList .itemWrap .item > .list li.ic_insuTel .insuTelList > *:nth-child(even){margin-left:5px}
+
+.mainContentWrap .mainContentArea .productList .item.typeR .pTit,
+.mainContentWrap .mainContentArea .productList .item.typeR .pList{float:right}
+.mainContentWrap .mainContentArea .productList .item.typeR .pList li{border-right:1px solid #dcdcdc;border-left:0}
+
+/* mainBannerMid */
+.mainBannerMid{display:flex;justify-content:center;margin-top:46px;height:150px}
+.mainBannerMid div.bnMidL{width:50%;height:150px;background-color:#e5f5ff;text-align:right}
+.mainBannerMid div.bnMidR{width:50%;height:150px;background-color:#e9ffe8;text-align:left}
+.mainBannerMid div a{display:inline-block} /* 추가 /202008 */
+
+/* My다이렉트, 혜택/이벤트 */
+.contentIn{display:flex;margin:0 auto;width:1140px;letter-spacing:-1px}
+.contentIn .myDirectArea{width:255px}
+.contentIn .myDirectArea h3{margin-bottom:25px;height:32px;line-height:27px;font-size:28px}
+.contentIn .myDirectArea ul{padding-top:8px;border-top:2px solid #000000}
+.contentIn .myDirectArea ul li{width:255px;height:37px;border-bottom:1px solid #dcdcdc}
+.contentIn .myDirectArea ul li a{display:block;width:100%;height:37px;line-height:36px;background:url('https://direct.hi.co.kr/images/main/bt_arw_r.gif') no-repeat right center;font-size:18px;color:#595757}
+.contentIn .eventArea{position:relative;margin-left:65px}
+.contentIn .eventArea h3{margin-bottom:25px;height:32px;line-height:27px;font-size:28px;text-align:center}
+/* swiper slider */
+.contentIn .eventArea{width:820px;}
+.contentIn .eventArea .swiper-container.slideEvent{width:100%;height:200px}
+.contentIn .eventArea .swiper-container.slideEvent .swiper-slide{width:390px;height:200px}
+.contentIn .eventArea .swiper-container.slideEvent .swiper-slide a{display:block;width:390px;height:200px;outline:none}
+.contentIn .eventArea .swiper-container.slideEvent .swiper-slide a:focus:after{content:'';display:block;position:absolute;top:0;left:0;width:388px;height:198px;border:1px dotted #e67401}
+.contentIn .eventArea .swiper-container.slideEvent .swiper-slide a img{width:390px;height:200px;vertical-align:top}
+.contentIn .eventArea .swiper-button-prev{top:5px;left:256px;margin:0;width:12px;height:19px;background:url('https://direct.hi.co.kr/images/main/ic_prev.png') no-repeat 0 0}
+.contentIn .eventArea .swiper-button-next{top:5px;right:256px;margin:0;width:12px;height:19px;background:url('https://direct.hi.co.kr/images/main/ic_next.png') no-repeat 0 0}
+
+/* 기부안내 */
+.mainDonation{margin-top:45px;background-color:#fff6eb}
+.mainDonation .contentIn{justify-content:space-between;position:relative;height:140px}
+.mainDonation .contentIn .imgArea{max-width:880px;height:140px}
+.mainDonation .contentIn .bt_org{position:absolute;top:76px;left:400px} /* 2201변경 */
+.mainDonation .contentIn .myTotal{position:relative;max-width:260px;height:140px}
+.mainDonation .contentIn .myTotal .ti{display:inline-block;position:absolute;top:30px;left:0;padding:0 13px 0 12px;height:26px;line-height:25px;border-radius:13px;background-color:#e67401;font-size:15px;text-align:center;color:#ffffff}
+.mainDonation .contentIn .myTotal .ttx{padding-top:60px;line-height:40px;font-size:30px;color:#cb5b00;text-align:right} /* 접근성20번 */
+.mainDonation .contentIn .myTotal .ttx strong{display:inline-block;line-height:40px;letter-spacing:-2px;font-size:42px}
+
+/* 공지사항, 동영상, 고객센터 */
+.mainNotice{margin-top:13px;width:255px}
+.mainNotice h3,
+.mainCenter h3{display:inline-block;height:24px;line-height:23px}
+.mainNotice h3 a,
+.mainCenter h3 a{display:inline-block;padding-right:22px;height:24px;background:url('https://direct.hi.co.kr/images/main/bt_arw_ti.png') no-repeat right center;font-size:24px}
+.mainNotice .noticeList{margin-top:10px;padding-top:12px;border-top:1px solid #dddddd}
+.mainNotice .noticeList li{margin-top:16px;width:255px;height:16px}
+.mainNotice .noticeList li a{display:block;height:16px;line-height:16px;font-size:16px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#595757}
+.movArea{overflow:hidden;margin-top:13px;margin-left:65px;width:390px;height:212px;background-color:#000000}
+.movArea > a{display:block;position:relative;width:390px;height:212px;outline:none}
+.movArea > a:focus:after{content:'';display:block;position:absolute;top:0;left:0;width:388px;height:210px;border:1px dotted #e67401}
+.mov_youtube{z-index:15;position:fixed;top:50%;left:50%;margin:-240px 0 0 -427px;padding-top:30px;width:854px;height:480px;background-color:#000000}
+.mov_youtube > a.btMovClose{position:absolute;top:6px;right:7px;display:block;width:19px;height:18px}
+.mainCenter{margin-top:13px;margin-left:50px;width:380px}
+.mainCenter .centerList{display:flex;justify-content:space-between;margin-top:9px}
+.mainCenter .centerList li{height:106px}
+.mainCenter .centerCall{margin-top:17px;padding-left:112px;background:url('https://direct.hi.co.kr/images/main/ic_center04.gif') no-repeat 20px center;}
+.mainCenter .centerCall .ti{height:24px;line-height:23px;font-size:18px;color:#000000}
+.mainCenter .centerCall .ti .bt_org{margin-left:10px;height:22px;line-height:21px;vertical-align:top}
+.mainCenter .centerCall .tel{margin-top:6px;height:24px;line-height:22px;font-size:30px;color:#047db5}
+.mainCenter .centerCall .tel strong{display:inline-block;height:24px;line-height:22px;color:#e67401}
+.mainCenter .centerCall .tel span{display:inline-block;margin-left:10px;height:24px;line-height:22px;font-size:16px;color:#727171;vertical-align:top}
+
+.btmAppDown{position:fixed;bottom:0;z-index:15;padding:28px 0 22px;width:100%;height:162px;box-sizing:border-box;border-top:1px solid #e5e5e5;background-color:#fff1d5;opacity:0}
+.btmAppDown .btmCt{position:relative;margin:0 auto;padding-left:292px;width:1140px;box-sizing:border-box}
+.btmAppDown .btmCt .btmImg{position:absolute;top:-51px;left:0}
+.btmAppDown .btmCt .btmTx{margin-bottom:11px}
+.btmAppDown .btmCt .inputArea .inputBase{width:383px;height:45px}
+.btmAppDown .btmCt .inputArea .inputBase label{padding-top:10px}
+.btmAppDown .btmCt .closeArea_gray{z-index:98;position:absolute;bottom:0;right:0}
+.btmAppDown .btmCt .closeArea_gray .btnBannerClose{margin-left:15px}
+
+/* 메인 레이어 영역 /202005 */
+.layerMainArea{position:absolute;top:380px;left:50%;width:auto;height:auto}
+.layer_main{position:absolute;top:0;left:50%;z-index:15;margin-left:170px;width:400px;height:385px;box-sizing:border-box;box-shadow:1px 1px 6px 0px rgba(0,0,0,0.75);letter-spacing:-1px} /* 수정 /20200525 */
+.layer_main .imgArea img{vertical-align:top}
+.layer_main .btnArea{position:absolute;bottom:0;left:0;padding:0 20px;width:360px;height:35px;line-height:34px}
+.layer_main .btnArea:after{content:'';display:block;clear:both}
+.layer_main .btnArea a{font-size:15px;color:#ffffff}
+.layer_main .btnArea .btToday{float:left}
+.layer_main .btnArea .btClose{float:right}
+.layer_main + .layer_main{margin-left:-230px;}
+.layer_main_dim{position:fixed;left:0;top:0;z-index:14;width:100%;height:100%;background:rgba(0,0,0,0.5)}

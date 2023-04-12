@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 사고 및 긴급상황 통보장치 특약</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>사고 및 긴급상황 통보장치 특약</h1>
+		</header>
+
+		<div class="popContent">
+			<!-- EDIT text del-->
+			<!-- <p class="topTxt01">가입 여부를 선택해 주세요.</p> -->
+
+			<!-- 0629 디자인 변경 JJY -->
+			<div class="tabMenuBox">
+				<div class="tabMenu joinBtn">
+					<a href="#none" class="on" role="button">가 입<span class="hide">선택됨</span></a>
+					<a href="#none" role="button">미가입</a>
+				</div>
+			</div>
+			<section>
+				<!-- 2017-06-19 접근성을 위하여 tabOpen on 추가후  style="display:block" 제거 -->
+				<div class="toggleWrap">
+					<div class="tabBox open">
+						<div class="toggleTitle"><a href="#none" class="toggleBtn">특약 상세정보 보기</a></div>
+						<!-- 2017-07-11 기획 요청 컨텐츠 수정
+						<div class="toggleDetail">
+							<ul class="listDot">
+								<li>특약 가입 할 경우 사진 1매(사고통보장치확인서)가 필요하므로 보험 가입 시 사진을 준비해주시기 바랍니다.</li>
+								<li>추가 특약 및 긴급출동 특약 보험료를 제외한 총보험료가 할인됩니다.</li>
+								<li>사고 및 긴급상황 통보장치의 경우는 차량부속품 가액에서는 제외됩니다.</li>
+							</ul>
+						</div> -->
+						<div class="toggleDetail">
+							<ul class="listDot">
+								<li>사고통보장치가 장착되고, 제조사와의 무선통신서비스가 가입·개통된 차량에 한하여 가입가능합니다
+									(현대차 블루링크/기아차 UVO/BMW 커넥티드 드라이브/LAND ROVER 인컨트롤)</li>
+								<li>사진이 없어도 보험료 계산은 가능합니다.(보험가입시 무선통신서비스 가입확인서 사진 1매가 필요하므로, 미리 준비해 주십시오)</li>
+								<li>추가 특약 및 긴급출동 특약 보험료를 제외한 총보험료가 할인됩니다.</li>
+								<li>사고 및 긴급상황 통보장치의 경우는 차량부속품 가액에서는 제외됩니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="tabOpen on">
+					<!-- 가입 선택시 영역 -->
+				</div>
+				<div class="tabOpen">
+					<!-- 미가입 선택시 영역 -->
+				</div>
+
+
+			</section>
+			<!-- //style -->
+
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<a href="#" role="button">확인</a>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

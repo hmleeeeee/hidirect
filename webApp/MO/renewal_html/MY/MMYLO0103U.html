@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="loan">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">보험계약대출 상환</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing ta_l">
+							<div class="progress" aria-label="보험계약대출 상환 신청 총 4단계 중 2단계">
+								<div class="progress_wrap" aria-hidden="true">
+									<span class="progress_num">2</span>
+									<span class="progress_total">4</span>
+								</div>
+							</div>
+							<h2 class="governing_title">출금계좌를 선택해 주세요.</h2>
+						</div>
+						<div class="comp">
+							<div class="amount_accordion">
+								<div class="item">
+									<div class="fold_header">
+										<a href="javascript:void(0);" role="button" title="내용보기">
+											<div class="amount_title">
+												<h2 class="title">출금예정금액</h2>
+												<div class="amount icon02">1,500,000<em>원</em></div>
+											</div>
+											<i class="btn toggle">상세</i>
+										</a>
+									</div>
+									<div class="fold_body">
+										<div class="card_item">
+											<div class="card_wrap">
+												<div class="dl_list">
+													<div class="dl_body">
+														<dl>
+															<dt>출금예정금액</dt><dd>1,500,000원</dd>
+															<dt>원금상환금액</dt><dd>1,400,000원</dd>
+															<dt>대출이자</dt><dd>60,800원</dd>
+														</dl>
+													</div>
+													<div class="dl_footer">
+														<dl class="">
+															<dt><strong>상환 후 대출잔액</strong></dt>
+															<dd><strong class="point_color">4,500,000원</strong></dd>
+														</dl>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="comp">
+							<div class="form_area">
+								<div class="form_item">
+									<div class="form_label">
+										<label for="form01">출금계좌</label>
+										<div class="tooltip">
+											<button type="button" class="btn_tooltip" data-pos="bottom" data-icon="true" data-handler="click"><span class="blind">툴팁</span></button>
+											<div class="tooltip_wrap" role="tooltip">
+												<div class="tooltip_con">
+													<div class="tooltip_title">출금계좌</div>
+													<div class="tooltip_contents">본인명의 계좌만 등록할 수 있습니다.</div>
+												</div>
+												<a class="tooltip_close" href="javascript:void(0);" role="button">Close</a>
+											</div>
+										</div>
+									</div>
+									<div class="form_wrap">
+										<select id="form01">
+											<option value="selected">국민은행 123******123</option>
+										</select>
+									</div>
+									<!-- CASE.01 대출금지급가능 계좌가 1건인 경우 -->
+									<div class="form_wrap readonly">
+										<input type="text" id="" title="대출금 수령계좌" value="국민은행 123******123" readonly="readonly">
+									</div>
+									<!-- //CASE.01-->
+								</div>
+
+								<div class="form_item">
+									<div class="form_label"><label for="form02">이자납입계좌</label>
+										<div class="tooltip">
+											<button type="button" class="btn_tooltip" data-pos="bottom" data-icon="true" data-handler="click"><span class="blind">툴팁</span></button>
+											<div class="tooltip_wrap" role="tooltip">
+												<div class="tooltip_con">
+													<div class="tooltip_title">이자납입계좌</div>
+													<div class="tooltip_contents">본인명의 계좌만 등록할 수 있습니다.</div>
+												</div>
+												<a class="tooltip_close" href="javascript:void(0);" role="button">Close</a>
+											</div>
+										</div>
+									</div>
+									<div class="form_check_wrap">
+										<input type="checkbox" id="form02" checked="checked"><label for="form02">대출금 수령계좌와 같아요</label>
+									</div>
+									<!-- CASE.02 체크해제 -->
+										<div class="form_wrap">
+											<select id="" title="이자납입계좌">
+												<option value="" selected>직접입력</option>
+												<option value="">국민은행 123******123</option>
+											</select>
+										</div>
+									<!-- //CASE.02 -->
+								</div>
+							
+								<!-- CASE.03: 직접입력 -->
+								<div class="form_item_group">
+									<div class="form_item">
+										<div class="form_label"><label for="form04">은행/계좌번호(본인명의 계좌만 가능)</label></div>
+										<div class="form_wrap placeholder">
+											<button type="button" id="form04" class="btn_select"><span>은행 선택</span></button>
+										</div>
+										<div class="form_wrap">
+											<input type="number" id="" placeholder="- 없이 입력" title="계좌번호 입력">
+											<div class="append">
+												<span class="unit"><button type="button" class="btn_form">계좌확인</button></span>
+											</div>
+										</div>
+									</div>
+									<div class="form_item">
+										<div class="form_label"><label for="form05">예금주</label></div>
+										<div class="form_wrap">
+											<input type="text" id="form05" placeholder="[계좌확인] 눌러 예금주 입력" readonly="readonly">
+										</div>
+									</div>
+								</div>
+								<!-- //CASE.03 -->
+
+								<div class="form_item">
+									<div class="form_label">
+										<label for="form06">이자 납입일</label>
+									</div>
+									<div class="form_wrap">
+										<select id="form06">
+											<option value="selected">5일</option>
+											<option value="selected">10일</option>
+											<option value="selected">20일</option>
+											<option value="selected">25일</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form_item no_label">
+									<div class="form_check_wrap box_type">
+										<input type="checkbox" id="form07" class="box_chk"><label for="form07">이자미납 안내문은 연락처로 보내드려요. <br> <strong>우편으로도 받으시겠어요?</strong> </label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="section bottom_fix">
+						<div class="comp">
+							<div class="accordion notice full">
+								<div class="item">
+									<div class="fold_header">
+										<a href="javascript:void(0);" role="button" title="내용보기">
+											<div class="title"><strong>유의사항</strong></div>
+											<i class="icon_angle"><span>내용보기/내용닫기</span></i>
+										</a>
+									</div>
+									<div class="fold_body uol_list">
+										<ul>
+											<li>대출금 수령계좌는 보험료 또는 대출이자 자동이체계좌 중 최근 2년 이내 이체 실적이 3회 이상인 계약자 본인명의 계좌만 가능합니다.</li>
+											<li>본인명의의 휴대폰이 없거나 거래내역이 없는 본인명의 신규 계좌로 대출금을 수령하고 싶은 경우, 대출상담 콜센터(1588-5655)나 고객지원팀으로 문의해 주세요.</li>
+											<li>가상계좌, 펀드계좌, 신탁계좌로는 대출금 수령이 제한될 수 있으며, 출금이 불가능한 계좌(평생계좌, 맞춤계좌 등)는 이자납입계좌로 등록할 수 없습니다.</li>
+											<li>「통신사기피해환급법」에 따라 홈페이지, 모바일웹, 모바일앱을 통해 대출신청을 하는 경우 추가 인증이 필요합니다.</li>
+											<li>「통신사기피해환급법」에 따라 인터넷 금융거래 시, 다음에 해당하는 이상금융거래로 판단될 경우 인터넷으로 신청이 제한됩니다. 신청하려면 대출상담 콜센터(1588-5655)를 통해 추가 본인확인 후 가능합니다.
+												<ol>
+													<li>① 중국/동남아 IP 접속 건</li>
+													<li>② 당일 3백만원 이상 금융거래 후, 추가 신청 건</li>
+												</ol>
+											</li>
+											<li>현대해상에 등록된 휴대폰번호와 인증 시 사용하는 휴대폰번호가 다르면 휴대폰인증이 완료되지 않습니다. 인증받을 휴대폰번호로 고객정보를 변경해 주세요.</li>
+											<li>대출상환은 홈페이지, 모바일웹, 모바일앱, 대출상담 콜센터, 고객지원팀을 통해서 가능합니다.</li>
+											<li>대출이자는 대출신청 시 선택한 자동이체계좌에서 자동 납입됩니다.</li>
+											<li>대출시점에 대출이자가 자동이체 청구 중(영업일 기준 자동이체일 1~2일 전)일 경우 대출(상환)을 하면 이자가 이중출금되며, 이중출금 시에는 영업일 기준 2일 후 자동이체계좌로 자동 환급됩니다.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<div class="content_footer fix">
+					<div class="btn_area footer">
+						<button type="button" class="btn fill01">다음</button>
+					</div>
+				</div>
+				<!-- //content_footer -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Modal Bar -->
+		<!-- Code Here~!! -->
+		<!-- //Modal Bar -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

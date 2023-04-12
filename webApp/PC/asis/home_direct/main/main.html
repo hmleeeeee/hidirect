@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>메인</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/lib/swiper.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/main.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/swiper.css" />
+    <script>
+        $(function(){
+            gnb(2,0,0);
+            $(".objArea").eq(0).addClass("play");
+            var mainTopTxt = []
+            $(".mainTopArea .swiper-slide").each(function(){
+                mainTopTxt.push($(this).attr("data-media-value"));
+            })
+            //2017-12-13 수정 : s
+            $(".swiper-container-wrap").each(function(){
+                var _this = $(this);
+                var target = $(this).find(".swiper-container");
+                if(target.find(".swiper-slide").length > 1){
+                    target.closest(".swiper-container-wrap").find(".swiper-paginationWrap").show();
+                    var swiper = new Swiper(target, {
+                        nextButton: _this.find('.btn_next'),
+                        prevButton: _this.find('.btn_prev'),
+                        pagination: _this.find('.swiper-pagination'),
+                        loop:true,
+                        paginationClickable : true,
+                        paginationElement : "button",
+                        autoplay: 5000,
+                        autoplayDisableOnInteraction: true,
+                        onSlideChangeStart : function(swiper){
+                            target.find(".swiper-slide").find(".objArea").removeClass("play");
+                        },
+                        onSlideChangeEnd : function(swiper){
+                            if(target.hasClass("mainTopArea")){
+                                target.find(".swiper-slide.swiper-slide-active").find(".objArea").eq(0).addClass("play");
+                                var prev_num = Number(target.find(".swiper-slide.swiper-slide-active").attr("data-swiper-slide-index"))-1;
+                                var next_num = Number(target.find(".swiper-slide.swiper-slide-active").attr("data-swiper-slide-index"))+1;
+                                if(prev_num < 0){
+                                    prev_num = mainTopTxt.length-1
+                                }
+                                if(next_num > mainTopTxt.length-1){
+                                    next_num = 0
+                                }
+                                _this.find('.btn_prev').text(mainTopTxt[prev_num]);
+                                _this.find('.btn_next').text(mainTopTxt[next_num]);
+                            }
+                        }
+                    });
+                    _this.find(".btnStop").click(function(e){
+                        e.preventDefault();
+                        if(!$(this).hasClass("on")){
+                            $(this).addClass("on");
+                            $(this).text("재생");
+                            swiper.stopAutoplay();
+                        }else{
+                            $(this).removeClass("on")
+                            $(this).text("정지");
+                            swiper.startAutoplay();
+                        }
+                    })
+
+                    _this.on("mouseenter foucsin",function(){
+                        if(!_this.find(".btnStop").hasClass("on")){
+                            swiper.stopAutoplay();
+                        }
+                    })
+                    _this.on("mouseleave foucsout",function(){
+                        if(!_this.find(".btnStop").hasClass("on")){
+                            swiper.startAutoplay();
+                        }
+                    })
+                    target.find(".swiper-slide a").on("focus",function(){
+                        $(this).css("position","fixed");
+                        //swiper.slideTo(Number($(this).attr("data-swiper-slide-index"))-1)
+                        $(this).css("position","relative");
+                    })
+                }
+            })
+            //2017-12-13 수정 : s
+            $(".fullBannerWrap").slideDown()
+
+        })
+    </script>
+</head>
+<body class="directHomepage">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+    <li><a href="#gnb">메뉴바로가기</a></li>
+</ul>
+<!--fullBannerWrap : s-->
+<div class="fullBannerWrap" style="background:#003170">
+    <div class="fullBannerArea">
+        <ul class="bannerArea">
+            <li>
+                <a href="#" class="banner" style="background-image: url('https://direct.hi.co.kr/images/main/main_banner_bg.png');"><img src="https://direct.hi.co.kr/images/common/main_banner.png" alt="가을받이 이벤트"></a>
+            </li>
+            <li>
+                <a href="#" class="banner" style="background-image: url('https://direct.hi.co.kr/images/main/main_banner_bg.png');"><img src="https://direct.hi.co.kr/images/common/main_banner.png" alt="가을받이 이벤트"></a>
+            </li>
+        </ul>
+        <div class="closeArea">
+            <div class="checkbox">
+                <input type="checkbox" id="closeChk1">
+                <label for="closeChk1">3일동안 보지 않기</label>
+            </div>
+            <a href="#" class="btnBannerClose"><img src="https://direct.hi.co.kr/images/main/btn_banner_close.png" alt="닫기"></a>
+        </div>
+
+    </div>
+</div>
+<!--fullBannerWrap : e-->
+<div class="directWrap">
+    <script type="text/javascript" src="../../_ui_include_asis/gnb.js"></script>
+    <!--directListArea : s-->
+    <div class="directListArea">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">개인용 자동차보험</p>
+                        <p class="txt">최대 58.7%까지  할인</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">법인용 자동차보험</p>
+                        <p class="txt">최대 58.7%까지  할인</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">운전자보험</p>
+                        <p class="txt">초회보험료 최대 12% 할인</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">해외여행보험</p>
+                        <p class="txt">인터넷가입으로 10% 할인!</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">국내여행보험</p>
+                        <p class="txt">인터넷가입으로 10% 할인!</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">해외장기체류보험</p>
+                        <p class="txt">인터넷가입으로 15% 할인</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">실손의료비보장보험</p>
+                        <p class="txt">필요한 의료비 보장만 쏙!</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">암보험</p>
+                        <p class="txt">최대 12% 할인</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">골프보험</p>
+                        <p class="txt">최대 10% 저렴!</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">(무배당) 연금보험</p>
+                        <p class="txt">안정적인 노후, 미래의 행복</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">(유배당) 연금보험</p>
+                        <p class="txt">안정적인 노후, 미래의 행복</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="inner">
+                        <p class="tit">주택화재상해보험</p>
+                        <p class="txt">든든하고 실속있는 보장</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--directListArea : e-->
+    <!--allmenuListArea : s-->
+    <div class="allmenuListArea">
+        <div class="allmenuList">
+            <ul>
+                <li><a href="#" class="dep1">인터넷가입상품</a>
+                    <div class="dep2">
+                        <ul>
+                            <li><a href="#">자동차</a>
+                                <ul class="dep3">
+                                    <li><a href="#">자동차보험</a></li>
+                                    <li><a href="#">운전자보험</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">여행/레저</a>
+                                <ul class="dep3">
+                                    <li><a href="#">해외여행보험</a></li>
+                                    <li><a href="#">해외장기체류보험</a></li>
+                                    <li><a href="#">국내여행보험</a></li>
+                                    <li><a href="#">골프보험</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">건강/생활</a>
+                                <ul class="dep3">
+                                    <li><a href="#">실손의료보험</a></li>
+                                    <li><a href="#">암보험</a></li>
+                                    <li><a href="#">주택화재상해보험</a></li>
+                                    <li><a href="#">무배당연금보험</a></li>
+                                    <li><a href="#">유배당연금보험</a></li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#" class="dep1">전화가입상품</a>
+                    <div class="dep2">
+                        <ul>
+                            <li><a href="#">자동차</a>
+                                <ul class="dep3">
+                                    <li><a href="#">자동차보험</a></li>
+                                    <li><a href="#">하이콜ECO운전자보험</a></li>
+                                    <li><a href="#">하이운전자보험</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">어린이종합보험</a></li>
+                            <li><a href="#">주택화재상해보험</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#" class="dep1">결제할인<br>제휴혜택</a>
+                    <div class="dep2">
+                        <ul>
+                            <li><a href="#">이달의 카드 할인/혜택</a></li>
+                            <li><a href="#">경차·전기차 고객</a>
+                                <ul class="dep3">
+                                    <li><a href="#">경차 할인카드</a></li>
+                                    <li><a href="#">전기차 할인카드</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">제휴카드</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">제휴포인트결제</a></li>
+                            <li><a href="#">제휴사 할인/서비스</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#" class="dep1">보상서비스</a>
+                    <div class="dep2">
+                        <ul>
+                            <li><a href="#">자동차</a>
+                                <ul class="dep3">
+                                    <li><a href="#">사고접수안내</a></li>
+                                    <li><a href="#">보험금청구서류</a></li>
+                                    <li><a href="#">고장출동서비스</a></li>
+                                    <li><a href="#">교통사고처리요령</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">질병/상해/재물</a>
+                                <ul class="dep3">
+                                    <li><a href="#">보험금청구안내</a></li>
+                                    <li><a href="#">보험금청구서류</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="harf clear"><a href="#" class="dep1">인터넷창구</a>
+                    <div class="dep2">
+                        <ul>
+                            <li><a href="#">계약조회/변경</a>
+                                <ul class="dep3">
+                                    <li><a href="#">계약조회</a></li>
+                                    <li><a href="#">개인정보변경</a></li>
+                                    <li><a href="#">가입경력인정 신청/변경</a></li>
+                                    <li><a href="#">자동이체신청/계좌변경</a></li>
+                                    <li><a href="#">환급금지급계좌신청/변경</a></li>
+                                    <li><a href="#">차량번호확정/변경</a></li>
+                                    <li><a href="#">단기운전자확대특약</a></li>
+                                    <li><a href="#">Eco마일리지 특약</a></li>
+                                    <li><a href="#">블랙박스(영상기록장치)특약</a></li>
+                                    <li><a href="#">공인인증 전자서명</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">납입/환급/해지</a>
+                                <ul class="dep3">
+                                    <li><a href="#">납입/환급/해지</a></li>
+                                    <li><a href="#">보험료납입</a></li>
+                                    <li><a href="#">연금저축보험료 추가납입</a></li>
+                                    <li><a href="#">만기환급금신청</a></li>
+                                    <li><a href="#">연금신청</a></li>
+                                    <li><a href="#">휴면보험금신청</a></li>
+                                    <li><a href="#">계약해지</a></li>
+                                    <li><a href="#">청약철회</a></li>
+                                    <li><a href="#">여행/장기체류, 골프보험 취소</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">증명서 발급</a>
+                                <ul class="dep3">
+                                    <li><a href="#">증명서 발급</a></li>
+                                    <li><a href="#">보험증권</a></li>
+                                    <li><a href="#">보험료납입증명서</a></li>
+                                    <li><a href="#">자동차보험가입증명서</a></li>
+                                    <li><a href="#">적용요율등급확인서</a></li>
+                                    <li><a href="#">교통사고피해확인서</a></li>
+                                    <li><a href="#">보험금지급내역서</a></li>
+                                    <li><a href="#">대출증명서</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#" class="dep1">고객콜센터</a>
+                    <div class="dep2">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">홈페이지이용안내</a>
+                                <ul class="dep3">
+                                    <li><a href="#">보험료계산가이드</a></li>
+                                    <li><a href="#">Click 2 Call (실시간 상담원 연결) 안내</a></li>
+                                    <li><a href="#">보안프로그램 설치 및 안내</a></li>
+                                    <li><a href="#">전자금융거래 유의사항</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">모바일 이용안내</a>
+                                <ul class="dep3">
+                                    <li><a href="#">보안프로그램설치 및 안내</a></li>
+                                    <li><a href="#">공인인증서 이용안내</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">이메일상담신청</a></li>
+                            <li><a href="#">고객콜센터 안내</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">상담원채용</a>
+                                <ul class="dep3">
+                                    <li><a href="#">채용공고</a></li>
+                                    <li><a href="#">인사제도 안내</a></li>
+                                    <li><a href="#">입사지원 현황</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">전자민원접수</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--allmenuListArea : e-->
+
+    <!-- Swiper -->
+    <div class="swiper-container-wrap">
+        <div class="swiper-container mainTopArea">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url('https://direct.hi.co.kr/images/main/main_top_img_01.jpg')" data-media-value="자동차보험">
+                    <div class="objArea">
+                        <h2 class="obj txt1">자동차보험</h2>
+						<!-- 2017-12-07 문구수정 및 메인 이미지 수정 : s -->
+                        <div class="obj txt2">모든조건 충족시 최대 58.7%까지 저렴!</div>
+						<!-- 2017-12-07 문구수정 및 메인 이미지 수정 : e -->
+                        <div class="obj btnArea">
+                            <a href="#" class="btn orange"><span>신규 보험료 계산</span></a>
+                            <a href="#" class="btn blue"><span>갱신 보험료 계산</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image:url('https://direct.hi.co.kr/images/main/main_top_img_02.jpg')" data-media-value="해외여행보험">
+                    <div class="objArea">
+                        <h2 class="obj txt1">해외여행보험</h2>
+                        <div class="obj txt2">10+10%(추가할인) 인터넷/가족할인까지 받으세요!</div>
+                        <div class="obj btnArea">
+                            <a href="#" class="btn orange"><span>보험료 계산</span></a>
+                            <a href="#" class="btn blue"><span>자세히보기</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image:url('https://direct.hi.co.kr/images/main/main_top_img_03.jpg')" data-media-value="운전자보험">
+                    <div class="objArea">
+                        <h2 class="obj txt1">운전자보험</h2>
+                        <div class="obj txt2">운전자를 위한 비용손해, 운전자보험으로 부담없이 준비하세요!</div>
+                        <div class="obj btnArea">
+                            <a href="#" class="btn orange"><span>신규 보험료 계산</span></a>
+                            <a href="#" class="btn blue"><span>갱신 보험료 계산</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn_prev">운전자보험</a>
+            <a href="#" class="btn_next">해외여행보험</a>
+            <div class="swiper-paginationWrap">
+                <div class="swiper-pagination"></div>
+                <a href="#" class="btnStop">정지</a>
+            </div>
+        </div>
+    </div>
+    <!--mainContentWrap : s-->
+    <div class="mainContentWrap">
+        <div class="mainContentArea">
+            <div class="productList">
+                <div class="item">
+                    <div class="titleArea">
+                        <h3 class="tit">자동차</h3>
+                        <p class="txt">자동차 운전자라면 꼭 필요한 상품!</p>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">
+                                <span class="tit">자동차보험(개인)</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">자동차보험(법인)</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">운전자보험</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">운전자보험 (TM) </span>
+                                <span class="box tel">전화상담</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class="titleArea">
+                        <h3 class="tit">여행/레저</h3>
+                        <p class="txt">여가생활을 더욱 즐겁게하는 상품!</p>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">
+                                <span class="tit">해외여행보험</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">국내여행보험</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">해외장기체류보험</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">골프보험</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class="titleArea">
+                        <h3 class="tit">건강/생활</h3>
+                        <p class="txt">생활에 필요한 모든 보장 상품!</p>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">
+                                <span class="tit">(무)연금보험</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">주택화재상해보험</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">실손의료비보장보험</span>
+                                <span class="box">계산/가입</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tit">어린이종합보험 (TM)</span>
+                                <span class="box tel">전화상담</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bannerArea"><a href="#"><img src="https://direct.hi.co.kr/images/main/main_right_banner.jpg" alt="경차 고객이시라면? 車보험료 3만원 청구할인! (30만원 이상 결제 시 / 현대카드 제공)"></a></div>
+            </div>
+        </div>
+        <div class="mainContentArea bg">
+            <div class="mainContent">
+				<!-- 2017-12-11 공지사항과 제휴카드 위치 변경 : s -->
+                <!-- 공지사항 : s-->
+                <div class="item noticeWrap">
+                    <div class="titleArea">
+                        <a href="#" class="tit">공지사항</a>
+                    </div>
+                    <ul class="list">
+                        <li><a href="#"><span class="ctg">[채용]</span> 다이렉트 상담직 채용</a></li>
+                        <li><a href="#"><span class="ctg">[공지]</span> 실손의료비보장보험 신상품 오픈</a></li>
+                        <li><a href="#"><span class="ctg">[공지]</span> 렌터카 차량손해 담보 특약 안내</a></li>
+                        <li><a href="#"><span class="ctg">[공지]</span> 휴대폰 직접서명 안내</a></li>
+                        <li><a href="#"><span class="ctg">[공지]</span> 차량 무상점검 서비스 시행 안내</a></li>
+                    </ul>
+                </div>
+                <!-- 공지사항 : e-->
+				<!-- 제휴카드 : s-->
+                <div class="item swiper-container-wrap card">
+                    <div class="titleArea">
+                        <a href="#" class="tit">제휴카드</a>
+                        <div class="swiper-paginationWrap">
+                            <div class="swiper-pagination"></div>
+                            <a href="#" class="btnStop"><img src="https://direct.hi.co.kr/images/main/btn_stop_s.png" alt="정지"></a>
+                        </div>
+                    </div>
+                    <div class="swiper-container cardSlide">
+						<!-- 2017-12-11 태그수정 및 이미지수정 : s -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+								<!-- 2017-12-08 : a태그 추가 : s -->
+								<a href="#">
+									<!-- 2017-12-11 일 수정 전 슬라이드 태그
+									<div class="cardImg">
+										<p class="img"><img src="https://direct.hi.co.kr/images/main/card_img_02.png" alt="신한카드"></p>
+										<p class="txt">GS칼텍스 <span class="fontPoint1">현대카드 M</span></p>
+									</div>
+									<ul class="listStyle fz15 fontLevel2 bar noGap">
+										<li>3만원 청구 할인 (다이렉트車 보험료)</li>
+										<li>주유 시 M포인트 적립 및 사용 (GS칼텍스)</li>
+									</ul> 
+									-->
+									<div class="cardImg onlyimg">
+										<p class="img"><img src="https://direct.hi.co.kr/images/main/card_img_01.png" alt="[현대하이카다이렉트 신한 HI-POINT카드] 1.보험료 결제 시 최대 3만원 할인, 2.추가 10만원 세이브 (포인트연계 서비스)"></p>
+									</div>
+								</a>
+								<!-- 2017-12-08 : a태그 추가 : e -->
+                            </div>
+                            <div class="swiper-slide">
+								<!-- 2017-12-07 문구수정 및 이미지 수정 : s -->
+								<!-- 2017-12-08 : a태그 추가 : s -->
+								<a href="#">									
+									<div class="cardImg onlyimg">
+										<p class="img"><img src="https://direct.hi.co.kr/images/main/card_img_02.png" alt="[GS칼텍스 현대카드 M] 1.3만원 청구 할인 (다이렉트車 보험료), 2.주유 시 M포인트 적립 및 사용 (GS칼텍스)"></p>
+									</div>
+								</a>
+								<!-- 2017-12-08 : a태그 추가 : e -->
+								<!-- 2017-12-07 문구수정 및 이미지 수정 : e -->
+                            </div>
+							<div class="swiper-slide">
+								<a href="#">									
+									<div class="cardImg onlyimg">
+										<p class="img"><img src="https://direct.hi.co.kr/images/main/card_img_03.png" alt="[뉴현대하이카다이렉트 롯데카드] 1.최대 2만원 청구 할인 (현대해상 운전자 보험료), 2.30만원 이상 카드 자동이체납 이용 시 월1회"></p>
+									</div>
+								</a>
+                            </div>
+                        </div>
+						<!-- 2017-12-11 태그수정 및 이미지수정 : e -->
+                    </div>
+                </div>
+                <!-- 제휴카드 : e-->
+				<!-- 2017-12-11 공지사항과 제휴카드 위치 변경 : e -->
+                <!-- 이벤트 : s-->
+                <div class="item swiper-container-wrap event">
+                    <div class="titleArea noLine">
+                        <a href="#" class="tit">이벤트</a>
+                        <div class="swiper-paginationWrap">
+                            <div class="swiper-pagination"></div>
+                            <a href="#" class="btnStop"><img src="https://direct.hi.co.kr/images/main/btn_stop_s.png" alt="정지"></a>
+                        </div>
+                    </div>
+                    <div class="swiper-container eventSlide">
+                        <div class="swiper-wrapper">
+							<!-- 2017-12-07 이미지 수정 : s -->
+							<div class="swiper-slide"><a href="#"><img src="https://direct.hi.co.kr/images/main/main_event_slide.jpg" alt="현대/삼성카드 추가혜택(자동차보험료 30만원 이상 결제시 현대카드 1만원 캐시백, 삼성카드 1만원 주유권)"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="https://direct.hi.co.kr/images/main/main_event_slide2.jpg" alt="축! 현대해상 다이렉트 앱 런칭 알아두면 쓸데있는 신규 모바일 앱"></a></div>							
+							<!-- 2017-12-07 이미지 수정 : e -->
+                        </div>
+                    </div>
+                </div>
+                <!-- 이벤트 : e-->
+                <!-- 콜센터 : s-->
+                <div class="callCenter">
+                    <ul>
+                        <li class="tit">인터넷 가입상품</li>
+                        <li class="tel">1899-<span class="fontPoint2">6782</span></li>
+                    </ul>
+                    <ul>
+                        <li class="tit">전화 가입상품</li>
+                        <li class="tel">1577-<span class="fontPoint2">1001</span></li>
+                    </ul>
+                    <ul>
+                        <li class="tit">사고접수/ 긴급출동<br>(365일 24시간 운영)</li>
+                        <li class="tel">1588-<span class="fontPoint2">5656</span></li>
+                    </ul>
+                </div>
+                <!-- 콜센터 : e-->
+
+            </div>
+        </div>
+    </div>
+    <!--mainContentWrap : e-->
+
+
+
+    <!--fullBannerWrap : s-->
+    <div class="fullBannerWrap" style="background:#003170">
+        <div class="fullBannerArea">
+            <ul class="bannerArea">
+                <li>
+                    <a href="#" class="banner" style="background-image: url('https://direct.hi.co.kr/images/main/main_banner_bg.png');"><img src="https://direct.hi.co.kr/images/common/main_banner.png" alt="가을받이 이벤트"></a>
+                </li>
+            </ul>
+            <div class="closeArea">
+                <div class="checkbox">
+                    <input type="checkbox" id="closeChk2">
+                    <label for="closeChk2">3일동안 보지 않기</label>
+                </div>
+                <a href="#" class="btnBannerClose"><img src="https://direct.hi.co.kr/images/main/btn_banner_close.png" alt="닫기"></a>
+            </div>
+
+        </div>
+    </div>
+    <!--fullBannerWrap : e-->
+
+    <!--2017-11-21 수정 : s-->
+    <!--footerWrap : s-->
+    <script type="text/javascript" src="../../_ui_include_asis/footer.js"></script>
+    <!--footerWrap : e-->
+    <!--2017-11-21 수정 : e-->
+</div>
+<!--01_pop전화상담신청 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap w780">
+    <div class="titleArea">
+        <h2>갱신(재가입)</h2>
+    </div>
+    <div class="popupContentArea">
+        <p class="fz17 fontBase">자동차 보험 갱신(재가입) 전에 아래 내용을 먼저 확인해주세요.</p>
+        <ul class="mainReJoinArea">
+           <li>
+               <div class="icon"><img src="https://direct.hi.co.kr/images/common/main_pop_icon_01.png" alt=""></div>
+               <div class="txt">공인인증서 없이도 가입이<br>가능합니다.</div>
+               <div class="con">
+                   휴대폰 직접서명을 통해<br>
+                   가입이 가능합니다.<br>
+                   공인인증서 가입을 원하시는 경우<br>
+                   공인인증서를 준비해주세요.
+               </div>
+           </li>
+            <li>
+                <div class="icon"><img src="https://direct.hi.co.kr/images/common/main_pop_icon_02.png" alt=""></div>
+                <div class="txt">변경사항이 있는 경우만<br>준비해주세요. </div>
+                <div class="con">
+                    <p>
+                        <span class="fontPoint2">블랙박스 특약</span><br>
+                        차량번호판, 내부장착사진
+                    </p>
+                    <p class="mt5">
+                        <span class="fontPoint2">자녀할인 특약</span><br>
+                        가족관계증명서 또는 등본스캔본
+                    </p>
+                    <ul class="listStyle star noGap mt5 fz14">
+                        <li>단, 자녀가 7세 이하인 경우만<br>가입 가능</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="icon"><img src="https://direct.hi.co.kr/images/common/main_pop_icon_03.png" alt=""></div>
+                <div class="txt">변경사항이 없어도<br>사진 등록이 필요합니다.</div>
+                <div class="con">
+                    <p>
+                        <span class="fontPoint2">사고 및 긴급상황 통보장치 특약</span><br>
+                        무선통신 서비스 가입 확인서
+                    </p>
+                    <p class="mt5">
+                        <span class="fontPoint2">ECO 마일리지 특약</span><br>
+                        최초주행거리 사진
+                    </p>
+                    <ul class="listStyle star noGap mt5 fz14">
+                        <li>
+                            개시일 15일 이내에 다이렉트<br>
+                            모바일앱 또는 대표홈페이지<br>
+                            (<a href="http://www.hi.co.kr" class="fontPoint1" target="_blank" title="새창으로">www.hi.co.kr</a>)를 통해 등록 가능
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <!--btn:s-->
+        <div class="btnAreaWrap tac">
+            <a href="#" class="btn line inlineBlock orange" style="width: 174px;"><span>갱신(재가입) 하기</span></a>
+        </div>
+        <!--btn:e-->
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!--01_pop전화상담신청 : e-->
+</body>
+</html>

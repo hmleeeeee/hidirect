@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 바이오인증 서비스 가입/변경</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>바이오인증 서비스 가입/변경</h1>
+		</header>
+		<div class="popContent">
+			<p class="topTxt">실명인증과 휴대폰인증을 진행해주시기 바랍니다.</p>
+			<section>
+				<h2><span>(필수)</span>휴대폰 인증을 위한 동의</h2>
+				<div class="agreeCtr">
+					<a href="#none" class="allAgr" role="button" title="약관 전체동의">전체동의</a>
+					<button class="btnView"><span class="state">약관 숨기기</span></button>
+				</div>
+				<ul class="termCont">
+					<li>
+						<input type="checkbox" id="ck06"><label for="ck06"><span class="hide">개인정보 이용 동의</span></label>
+						<a href="#" role="button" title="약관보기">개인정보 이용 동의</a>
+					</li>
+					<li>
+						<input type="checkbox" id="ck07"><label for="ck07"><span class="hide">고유식별정보 처리 동의</span></label>
+						<a href="#" role="button" title="약관보기">고유식별정보 처리 동의</a>
+					</li>
+					<li>
+						<input type="checkbox" id="ck08"><label for="ck08"><span class="hide">서비스이용약관 동의</span></label>
+						<a href="#" role="button" title="약관보기">서비스이용약관 동의</a>
+					</li>
+					<li>
+						<input type="checkbox" id="ck09"><label for="ck09"><span class="hide">통신사이용약관 동의</span></label>
+						<a href="#" role="button" title="약관보기">통신사이용약관 동의</a>
+					</li>
+				</ul>
+				
+				<h2>휴대폰 인증 정보 입력</h2>
+				<fieldset>
+					<legend>휴대폰 인증 정보 입력</legend>
+					<div class="inputWrap">
+						<input type="text" id="name" required="">
+						<label for="name">이름</label>
+					</div>
+					<div class="inputWrap two">
+		       			<input type="text" id="number01" required="">
+						<label for="number01">주민등록번호<em class="hide">앞자리</em></label>
+						<input type="password" placeholder="●●●●●●●" id="number02">
+						<label for="number02" class="hide">주민등록번호뒷자리</label>
+					</div>
+					<div class="inputWrap">
+						<select title="통신사 선택">
+							<option>통신사 선택</option>
+							<option value="1">SKT</option>
+							<option value="2">KT</option>
+							<option value="3">LGT</option>
+							<option value="4">SKT알뜰</option>
+							<option value="5">KT알뜰</option>
+							<option value="6">LGT알뜰</option>
+						</select>
+					</div>
+					<div class="inputWrap btn">
+						<input type="text" id="phone" required />
+						<label for="phone">휴대폰 번호(-없이 입력)</label>
+						<a href="#">인증번호 받기</a>
+					</div>
+					<div class="inputWrap">
+						<input type="text" id="certify" required />
+						<label for="certify">인증번호(6자리)</label>
+						<span class="certify">02:57</span>
+					</div>
+				</fieldset>
+			</section>
+			<div class="btnWrap">
+				<span><a href="#">이전</a></span>
+				<span><a href="#">다음</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

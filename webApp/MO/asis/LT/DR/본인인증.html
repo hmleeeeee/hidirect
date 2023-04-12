@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>휴대폰 인증 : 개인정보 동의</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Content">본문 바로가기</a></div>
+<div id="h1Wrap">
+	<header>
+		<h1>개인정보 동의</h1>
+		<a href="#none" class="btnHome">메인페이지로 이동</a>
+		<a href="#none" class="btnInfo">입력정보 팝업</a>
+	</header>
+
+	<!-- content -->
+
+	<section>
+		<p class="topTxt">본인인증 방법을 선택하여 인증을 진행해주세요.</p>
+		<ul class="wrapTab clFix TabChois">
+			<li class="on">
+				<div>
+					<a href="#" class="tabs" >
+						<em class="ico icoPhone"></em>
+						<strong>휴대폰</strong>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="#" class="tabs" >
+						<em class="ico icoCert"></em>
+						<strong>공인인증서</strong>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="#" class="tabs" >
+						<em class="ico icoBio"></em>
+						<strong>신용카드</strong>
+					</a>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<div class="tabOpen" style="display:block">
+		<section>
+			<div class="termHead btnset">
+				<h2>휴대폰 인증을 위한 동의(필수)</h2>
+				<a href="#">전체동의</a>
+			</div>
+
+			<ul class="termCont">
+				<li>
+					<a href="#">개인정보이용 동의</a>
+					<input type="checkbox" id="ch06"><label for="ch06">약관동의</label>
+				</li>
+				<li>
+					<a href="#">고유식별정보처리 동의</a>
+					<input type="checkbox" id="ch07"><label for="ch07">약관동의</label>
+				</li>
+				<li>
+					<a href="#">서비스이용약관 동의</a>
+					<input type="checkbox" id="ch08"><label for="ch08">약관동의</label>
+				</li>
+				<li>
+					<a href="#">통신사이용약관 동의</a>
+					<input type="checkbox" id="ch09"><label for="ch09">약관동의</label>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h2>휴대폰 인증 정보 입력</h2>
+			<div class="inputWrap">
+				<select>
+					<option>통신사 선택</option>
+					<option value="1">SKT</option>
+					<option value="2">KT</option>
+					<option value="3">LGT</option>
+					<option value="4">SKT알뜰</option>
+					<option value="5">KT알뜰</option>
+					<option value="6">LGT알뜰</option>
+				</select>
+			</div>
+			<p class="txtGuideInfo">통신사를 선택해주세요.</p>
+
+			<div class="inputWrap phone">
+				<input type="text" class="inputClick" value="" title="휴대폰 번호" placeholder="휴대폰 번호(-없이 입력)">
+				<a href="#">인증번호 받기</a>
+			</div>
+			<p class="txtGuideInfo ">휴대폰번호 입력을 확인해주세요.</p>
+
+			<div class="inputWrap">
+				<div class="certify">
+					<input type="text" class="inputClick"  value="" title="인증번호" placeholder="인증번호(6자리)">
+					<span>02:57</span>
+				</div>
+			</div>
+			<p class="txtGuideInfo ">인증번호를 입력해주세요.</p>
+
+			<div class="btnWrap">
+				<span><a href="#" role="button">이전</a></span>
+				<span class="on"><a href="#" role="button">다음</a></span>
+			</div>
+
+			<ul class="listDot mgtM">
+				<li>보험료 산출 및 가입을 위하여 관련 법률 및 제 규정에 따라 반드시 본인인증을 거쳐야 할 필수 절차입니다.</li>
+				<li>고객님의 소중한 정보는 당사의 개인정보 처리 지침에 따라 안전하게 사용되고 있습니다.</li>
+				<li>본인인증에 따른 모든 비용은 당사에서 부담하고 있습니다.</li>
+			</ul>
+		</section>
+	</div>
+	<div class="tabOpen">
+		<section>
+			<div class="wrapTabCont">
+				<div class="cerAreaStep1">
+					<div class="cerArea">
+						<h2>공인인증서를 선택하세요.</h2>
+						<div class="wrapLineBox">
+							<ul class="CerList">
+								<li>
+									<div class="CerBox">
+										<em class="ico icoCert"></em>
+										<strong class="certName">박해상</strong>
+										<dl class="certDesc">
+											<dt>발급자</dt>
+											<dd>yessign</dd>
+											<dt>구분</dt>
+											<dd>은행개인</dd>
+											<dt>만료일</dt>
+											<dd>2017.08.27</dd>
+										</dl>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="wrapLineBox">
+							<ul class="CerList">
+								<!-- 공인인증서가 없는 경우 노출 -->
+								<li>
+									<div>
+										<p class="txtGuideInfo">저장 된 공인인증서가 없습니다.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="btnWrap">
+						<a href="#" role="button">취소</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="wrapTabCont">
+				<div class="cerAreaStep2">
+					<div class="cerArea">
+						<h2>공인인증서 비밀번호를 입력하세요.</h2>
+						<div class="mgtS">
+							<div class="aniForm">
+							<input id="cpNo" name="cpNo" value="" type="text" required>
+							<label for="cpNo">비밀번호 입력</label>
+							</div>
+						</div>
+						<p class="txtGuideInfo">공인인증서 비밀번호 입력을 확인해주세요.</p>
+					</div>
+					<div class="btnWrap">
+						<span><a href="#" role="button">이전</a></span>
+						<span class="on"><a href="#" role="button">확인</a></span>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="tabOpen">
+		<section>
+			<div>
+				작업준비중
+			</div>
+		</section>
+	</div>
+
+	<!-- content -->
+</div>
+</body>
+</html>
+

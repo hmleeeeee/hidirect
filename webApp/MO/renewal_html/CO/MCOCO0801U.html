@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+		$('.btn_samples').find('.btn').click();
+
+    // 은행 선택 팝업
+		UI.tab('bank_tab', 0, function($this, i){
+			var $header = $('.payment_method_title');
+			if(i == 0) $header.html('은행을 선택해 주세요.');
+			else $header.html('증권사를 선택해 주세요.');
+		});
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">로그인</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Modal</h2>
+						</div>
+						<div class="comp">
+							<div class="btn_area cta btn_samples">
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#MCOCO0801U'));" class="btn fill01">Open</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Modal Full -->
+		<div class="modal bottom fade" id="MCOCO0801U" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title payment_method_title">은행을 선택해 주세요.</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+                <!-- tab_line -->
+                <div class="tab tab_line pt0" data-tab="bank_tab">
+                  <ul class="tab_wrap">
+                    <li><a href="javascript:void(0);"><span>은행</span></a></li>
+                    <li><a href="javascript:void(0);"><span>증권사</span></a></li>
+                  </ul>
+                </div>
+                <!--// tab_line -->
+                <!-- tab_content -->
+                <div class="tab_content" data-tab="bank_tab">
+                  <div class="comp">
+                    <div class="payment_method_list">
+                      <div class="payment_method_item">
+                        <button type="button" class="bank01">
+                          <span class="payment_method_name">기업은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank02">
+                          <span class="payment_method_name">KB국민은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank03">
+                          <span class="payment_method_name">농협은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank04">
+                          <span class="payment_method_name">지역농협</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank05">
+                          <span class="payment_method_name">우리은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank06">
+                          <span class="payment_method_name">SC은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank07">
+                          <span class="payment_method_name">씨티은행(한미)</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank08">
+                          <span class="payment_method_name">전북은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank09">
+                          <span class="payment_method_name">제주은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank10">
+                          <span class="payment_method_name">우체국</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank11">
+                          <span class="payment_method_name">KEB하나은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank12">
+                          <span class="payment_method_name">KEB하나은행</span>
+                          <span class="payment_method_sub_name">구.외환은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank13">
+                          <span class="payment_method_name">신한은행</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank14">
+                          <span class="payment_method_name">새마을금고</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank15">
+                          <span class="payment_method_name">신용협동조합</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank16">
+                          <span class="payment_method_name">수협</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank17">
+                          <span class="payment_method_name">케이뱅크</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank18">
+                          <span class="payment_method_name">카카오뱅크</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank19">
+                          <span class="payment_method_name">토스뱅크</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab_content" data-tab="bank_tab">
+                  <div class="comp">
+                    <div class="payment_method_list">
+                      <div class="payment_method_item">
+                        <button type="button" class="bank20">
+                          <span class="payment_method_name">대신증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank21">
+                          <span class="payment_method_name">메리츠증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank22">
+                          <span class="payment_method_name">미래에셋증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank23">
+                          <span class="payment_method_name">삼성증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank24">
+                          <span class="payment_method_name">신한금융투자</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank25">
+                          <span class="payment_method_name">SK증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank26">
+                          <span class="payment_method_name">HMC투자증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank27">
+                          <span class="payment_method_name">유안타증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank28">
+                          <span class="payment_method_name">이베스트투자증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank29">
+                          <span class="payment_method_name">하나금융투자</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank30">
+                          <span class="payment_method_name">하이투자증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank31">
+                          <span class="payment_method_name">한국투자증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank32">
+                          <span class="payment_method_name">KB증권</span>
+                        </button>
+                      </div>
+                      <div class="payment_method_item">
+                        <button type="button" class="bank33">
+                          <span class="payment_method_name">NH투자증권</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //tab_content -->
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#MCOCO0801U'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Full -->
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>01_고객정보_pop만기알람신청</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+</head>
+
+
+<body>
+<!-- popup_보험가입시_알아두실_사항 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap Infomation w780">
+    <div class="titleArea">
+        <h2>만기 알람 신청</h2>
+    </div>
+    <div class="popupContentArea">
+        <div class="con fontBase fz15 mb15">
+            자동차보험의 만기가 <span class="fontPoint1">OOOO년 OO월 OO일</span> 이후인 경우 인터넷 보험료 계산이 어렵습니다.<br>
+            지금 만기 알람 신청을 해주시면 만기일 전 자동차 보험료 안내를 받으실 수 있습니다.
+        </div>
+        <!--inputTable : s-->
+        <div class="inputTable onlyInput bline mb30">
+            <ul class="inputArea item2">
+                <li class="item">
+                    <div class="radio">
+                        <input type="radio" name="kind" id="kind1" class="yes">
+                        <label for="kind1">기존유지차량</label>
+                    </div>
+                    <div class="radio ml20">
+                        <input type="radio" name="kind" id="kind2" class="no">
+                        <label for="kind2">신규(중고차) 구입차량</label>
+                    </div>
+                </li>
+            </ul>
+            <ul class="inputArea item2">
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="name">이름</label>
+                        <input type="text" id="name">
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="hp">휴대폰번호(‘-’없이)</label>
+                        <input type="text" id="hp">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--inputTable : e-->
+
+        <!--inputTable : s-->
+        <div class="inputTable checkAllSet">
+            <div class="title">
+                <h3 class="tit"><span class="fontLevel2">(선택)</span> 상품 소개를 위한 동의
+                </h3>
+                <div class="rightArea">
+                    <div class="checkbox checkAll">
+                        <input type="checkbox" id="agreeAll2">
+                        <label for="agreeAll2">전체동의</label>
+                    </div>
+                </div>
+            </div>
+            <div class="agreeBox noGap checkAllSetItem">
+                <ul>
+                    <li>
+                        <div class="titArea">
+                            <span class="txt">개인(신용)정보의 수집·이용에 관한 사항</span>
+                        </div>
+                        <div class="agreeRadio">
+                            <div class="radio">
+                                <input type="radio" name="agree5" id="agree5_1" class="yes">
+                                <label for="agree5_1">동의함</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="agree5" id="agree5_2" class="no">
+                                <label for="agree5_2">동의하지 않음</label>
+                            </div>
+                        </div>
+                        <div class="agreeContentScroll">
+                            <p class="fontBase fz14">당사는 『개인정보보호법』 및 『신용정보의 이용 및 보호에 관한 법률』에 따라 보험상품 소개 및 홍보 등을 위하여 귀하의 개인(신용)정보를 다음과 같이 <b>수집·이용</b>하고자 합니다. 이에 대하여 동의하십니까?</p>
+
+							<dl class="mt10 fz14">
+								<dt class="fontBase">개인(신용)정보의 수집·이용 목적</dt>
+								<dd class="mt5">
+									<ul class="listStyle dot">
+										<li>상품·서비스 소개 및 판매, 사은·판촉행사 안내, 시장조사.</li>
+									</ul>
+								</dd>
+							</dl>
+
+							<dl class="mt10 fz14">
+								<dt class="fontBase">수집·이용할 개인(신용)정보의 내용</dt>
+								<dd class="mt5">
+									<ul class="listStyle dot">
+										<li>개인식별정보(성명, 생년월일, 주소, 직업, 전화번호, 휴대폰전화번호, 전자우편주소) 보험계약 정보</li>
+									</ul>
+								</dd>
+							</dl>
+
+							<dl class="mt10 fz14">
+								<dt class="fontBase">개인(신용)정보의 보유·이용기간</dt>
+								<dd class="mt5">
+									<ul class="listStyle dot">
+										<li>당사와 보험계약 체결실적이 있는 고객 : 최대 5년</li>
+									</ul>
+								</dd>
+							</dl>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--inputTable : e-->
+        <div class="txtContent blineBig">
+            <h4>소비자 권익보호에 관한 사항</h4>
+            <div class="con fz14">
+                본 동의는 보험계약 체결에 필수적이지 않으며 동의를 거부하실 수 있습니다.<br>
+                또한, 동의하시더라도 당사 홈페이지 및 고객콜센터(1588-5656)를 통해 철회하거나 가입권유 목적의 연락에 대한 중단을 요청하실 수 있으며 은행연합회의 DO not Call 센터(<a href="http://www.donotcall.or.kr" target="_blank" title="새창으로 링크">www.donotcall.or.kr</a>)를 통해 언제든지 마케팅활동에 대한 중지를 요청하실 수 있습니다.
+            </div>
+        </div>
+
+        <div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock gray"><span>취소</span></a>
+            <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- popup_보험가입시_알아두실_사항 : e-->
+</body>
+</html>

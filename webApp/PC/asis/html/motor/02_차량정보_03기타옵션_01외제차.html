@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>02_차량정보_03기타옵션_01외제차</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+    <script>
+        $(function(){
+            /*자동완성 보여주기위한 임시 스크립트*/
+            $(".autoComplete .autoCompleteInput").on("keyup",function(){
+                var target = $(this).closest(".autoComplete");
+                target.find(".autoCompleteList").show();
+            })
+            $(".autoCompleteList li a").on("click",function(){
+                var target = $(this).closest(".autoComplete");
+                target.find(".autoCompleteInput").val($(this).text());
+                target.find(".autoCompleteList").hide();
+            })
+            /*add del*/
+            $(document).on("click",".addItemArea .btnAdd",function(e){
+                e.preventDefault();
+                var addItemHtml =''
+                addItemHtml += '<ul class="inputLine mt10">';
+                addItemHtml += '    <li class="name">부속품명</li>';
+                addItemHtml += '    <li class="ml10">';
+                addItemHtml += '	<div class="selectItem small">';
+                addItemHtml += '	    <select title="부속품명을 선택해주세요" class="addChkSelect" style="width: 150px;">';
+                addItemHtml += '		<option value="">선택</option>';
+                addItemHtml += '		<option value="1">배우자</option>';
+                addItemHtml += '		<option value="2">부모</option>';
+                addItemHtml += '		<option value="3">자녀</option>';
+                addItemHtml += '		<option value="etc">기타</option>';
+                addItemHtml += '	    </select>';
+                addItemHtml += '	</div>';
+                addItemHtml += '    </li>';
+                addItemHtml += '    <li class="ml10">';
+                addItemHtml += '	<div class="labelTitleInput">';
+                addItemHtml += '	    <div class="inputSetAlign" style="width: 150px;">';
+                addItemHtml += '		<div class="inputSet">';
+                addItemHtml += '		    <div class="input"><input type="text" id="more5_1" title="금액 (예:20)" placeholder="금액 (예:20)"></div>';
+                addItemHtml += '		    <div class="rightTxt">만원</div>';
+                addItemHtml += '		</div>';
+                addItemHtml += '	    </div>';
+                addItemHtml += '	</div>';
+                addItemHtml += '    </li>';
+                addItemHtml += '    <li class="name etcType" style="display: none;">세부명칭</li>';
+                addItemHtml += '    <li class="ml10 etcType" style="display: none;">';
+                addItemHtml += '        <div class="inputBase placeholder h40">';
+                addItemHtml += '            <input type="text" title="새부명칭">';
+                addItemHtml += '        </div>';
+                addItemHtml += '    </li>';
+                addItemHtml += '    <li class="addBtn"><a href="#" class="btn middle h40 plus btnAdd"><span>추가</span></a><a href="#" class="btn middle h40 btnDel"><span>삭제</span></a></li>';
+                addItemHtml += '</ul>';
+                $(this).closest(".addItemArea").append(addItemHtml);
+                selectChg();
+            })
+            $(document).on("click",".addItemArea .btnDel",function(e){
+                e.preventDefault();
+                $(this).closest(".inputLine").remove();
+            })
+            $(document).on("change",".addChkSelect",function(e){
+                e.preventDefault();
+                var val = $(this).val();
+                console.log(val);
+                if(val == "etc"){
+                    $(this).closest(".inputLine").find(".etcType").show();
+                }else{
+                    $(this).closest(".inputLine").find(".etcType").hide();
+                }
+            })
+
+
+
+        })
+    </script>
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="형대해상 다이렉트"></a></p>
+            <h1>자동차보험</h1>
+        </div>
+        <div class="stepArea">
+        </div>
+		<div class="helpPopWrap">
+            <div class="titleArea">도움말</div>
+            <div class="scrollArea">
+                <div class="item on" id="help1Con">
+                    <p class="title">블랙박스 장착 특약</p>
+                    <div class="conArea">
+                        <div class="con">
+                            가입 대상<br>
+							하이카다이렉트 개인용 자동차보험<br>
+							차량용 영상기록장치(블랙박스)가 고정으로 장착된 자동차의 경우 가입 가능 (단, 휴대전화, 테블릿 PC 등에 애플리케이션(응용프로그램)을 탑재하여 사용되는 차량용 영상기록장치는 적용대상 아님)
+                        </div>
+                        <div class="con">
+                            적용요율<br>
+							담보 및 특약 적용보험료의 97.0% 적용
+                        </div>
+                        <div class="con">
+                            기타 유의사항<br>
+							<ul class="listStyle dot">
+								<li>특별약관 가입 시 차량용 영상기록장치에 대한 정보(제조사, 모델명, 부속품가액 등)를 회사에 알려야함.</li>
+								<li>차량용 영상기록장치가 피보험자동차에 장착되어 있는 사진을 제출해야함.</li>
+								<li>보험기간 중에 피보험자동차의 차량용 영상기록장치가 정상적으로 작동하지 않는 경우 또는 차량용 영상기록장치를 교체하는 경우 이 사실을 보험회사에 알려야 함.</li>
+								<li>사고 발생 시 사고와 관련된 영상기록정보를 제출하지 않거나, 허위 또는 조작하는 경우에는 할인받은 보험료를 반환해야 함</li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help2Con">
+                    <p class="title">차량이 특정용도 차량, 수반차(자체 동력이 없어 견인되는 형태로 이동하는 차량), 교습용 차량입니까?</p>
+                    <div class="conArea">
+                        <div class="con">
+                            특정용도차량<br>
+							특정한 용도에 사용되는 자동차로서 이동진료차, 이동도서관차, 채혈차, 방송중계차, 혈액수송차, 검사측정차, 현금수송차, 방역차, 소독차, 이동우편차, 영화촬영차, 이동판매차, 충전차, 배전차, 발전차 등 이와 유사한 형태로 사용하는 자동차 (단, 관련 장비가 차체에 부착된 경우에만 해당하며, 화물차에 장비를 싣고 다니는 경우에는 해당되지 않습니다.)
+                        </div>
+                        <div class="con">
+                            교습용차량<br>
+							인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <a href="#" class="btnHelpClose"><img src="https://direct.hi.co.kr/images/common/btn_help_close.png" alt="닫기"></a>
+        </div>
+
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>차량 상세정보 입력</h2>
+            <p class="txt">기타옵션을 선택해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+
+        <!--carDetailWrap : s-->
+        <div class="carDetailWrap">
+            <div class="titleArea">
+                <div class="keyWordArea">
+                    <h3 class="tit">인기 검색어 : </h3>
+                    <div class="keyWordList">
+                        <a href="#">그랜져</a>
+                        <a href="#">쏘나타</a>
+                        <a href="#">K5</a>
+                        <a href="#">말리부</a>
+                        <a href="#">K7</a>
+                        <a href="#">아반떼</a>
+                        <a href="#">SM6</a>
+                        <a href="#">투싼</a>
+                        <a href="#">싼타페</a>
+                    </div>
+                </div>
+                <div class="rightArea">
+                    <div class="autoComplete">
+                        <div class="inputBase placeholder small btnType" style="width: 270px;">
+                            <input type="text" placeholder="자동차명으로 검색 ex) 그랜져" title="직자동차명으로 검색 ex) 그랜져" class="autoCompleteInput">
+                            <a href="#" class="btnRight"><img src="https://direct.hi.co.kr/images/common/btn_search_small.png" alt="검색"></a>
+                        </div>
+                        <ul class="autoCompleteList">
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <ul class="lineTabList">
+                <li class="tab tab1 insertEnd">
+                    <div class="item">
+                        <div class="tit">제조사</div>
+                        <div class="txt">현대</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+                <li class="tab tab2 insertEnd">
+                    <div class="item">
+                        <div class="tit">대표차명</div>
+                        <div class="txt">그랜져</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+                <li class="tab tab3 insertEnd">
+                    <div class="item">
+                        <div class="tit">등록년도</div>
+                        <div class="txt">2017년 (2월 이후)</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+                <li class="tab tab4 insertEnd">
+                    <div class="item">
+                        <div class="tit">세부차명</div>
+                        <div class="txt">그랜져HG</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+                <li class="tab tab5 insertEnd">
+                    <div class="item">
+                        <div class="tit">세부형식</div>
+                        <div class="txt">5인승,H220,프리미엄 컬렉션,오토,에어컨,기타등등등등</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--carDetailWrap : e-->
+        <div class="etcOptionArea">
+            <div class="oh">
+                <div class="tar fontPoint2"> OOOO의 출고 당시 기준 기본 부속품 : ABS,  ABS,  ABS</div>
+                <div class="fz17 fontBase">외제차는 차량가액 일부 수정이 가능합니다.</div>
+            </div>
+            <div class="input">
+                <div class="labelTitleInput inlineBlock">
+                    <div class="inputSetAlign" style="width: 170px;">
+                        <div class="inputSet">
+                            <div class="input"><input type="text" id="more5_1" title="가격을 입력해주세요"></div>
+                            <div class="rightTxt">만원</div>
+                        </div>
+                    </div>
+                </div>
+                <span class="txt">(수정가능범위 : O,OOO만원 ~ O,OOO만원)</span>
+            </div>
+            <ul class="listStyle star noGap">
+                <li>외제차량의 경우, 일정 범위 내에서 차량가액 수정이 가능합니다.</li>
+                <li>외제차는 고장출동 서비스 중 잠금해제 서비스가 제공되지 않습니다.</li>
+            </ul>
+        </div>
+
+        <!--confirmTable : s-->
+        <div class="confirmTable noAllSet longCon mt30 mb30">
+            <ol class="confirmList">
+                <li>
+                    <div class="titleWrap">
+                        <div class="title">
+                            <div class="num">1.</div>
+                            <div class="txt">LPG 차량이신가요?</div>
+                        </div>
+                        <div class="rightArea">
+                            <div class="confirm dataSelect">
+                                <ul>
+                                    <li><a href="#" class="yes" data-media-value="yes">예</a></li>
+                                    <li><a href="#" class="no" data-media-value="no">아니오</a></li>
+                                </ul>
+                                <input type="hidden" id="confirm1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moreInsetBox openClose">
+                        <ul class="inputLine">
+                            <li>
+                                <div class="labelTitleInput">
+                                    <div class="inputSetAlign" style="width: 150px;">
+                                        <div class="inputSet">
+                                            <div class="input"><input type="text" id="more5_1" title="금액 (예:20)" placeholder="금액 (예:20)"></div>
+                                            <div class="rightTxt">만원</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ml10">(수정가능범위 : O,OOO만원 ~ O,OOO만원)</li>
+                        </ul>
+                        <ul class="listStyle star">
+                            <li>LPG차량의 경우 차량가액 80% ~ 100% 범위 내에서 차량가액 수정이 가능합니다.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="titleWrap">
+                        <div class="title">
+                            <div class="num">2.</div>
+                            <div class="txt">블랙박스 장착 특약에 가입하시겠습니까? (3%할인) <a href="#help1Con" class="btnHelp">도움말</a></div>
+                        </div>
+                        <div class="rightArea">
+                            <div class="confirm dataSelect">
+                                <ul>
+                                    <li><a href="#" class="yes" data-media-value="yes">예</a></li>
+                                    <li><a href="#" class="no" data-media-value="no">아니오</a></li>
+                                </ul>
+                                <input type="hidden" id="confirm1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moreInsetBox openClose">
+                        <ul class="inputLine">
+                            <li>
+                                <div class="labelTitleInput">
+                                    <div class="inputSetAlign" style="width: 150px;">
+                                        <div class="inputSet">
+                                            <div class="input"><input type="text" id="more5_1" title="금액 (예:20)" placeholder="금액 (예:20)"></div>
+                                            <div class="rightTxt">만원</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="listStyle star">
+                            <li>사진이 없어도 보험료 계산은 가능합니다.<br>보험 가입 시, 사진 2매(차량 정면 사진 및 블랙박스 장착 실내 사진) 등록이 필요하므로 미리 준비해 주세요.</li>
+                            <li>긴급출동 특약 보험료를 제외한 담보를 보험료를 할인하여 드립니다. (기타 특약 일부 포함)</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="titleWrap">
+                        <div class="title">
+                            <div class="num">3.</div>
+                            <div class="txt">차량 기본 부속품 외 추가부속품이 있나요?</div>
+                        </div>
+                        <div class="rightArea">
+                            <div class="confirm dataSelect">
+                                <ul>
+                                    <li><a href="#" class="yes" id="test" data-media-value="yes">예</a></li>
+                                    <li><a href="#" class="no" data-media-value="no">아니오</a></li>
+                                </ul>
+                                <input type="hidden" id="confirm1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moreInsetBox openClose">
+                        <div class="fz15 mb10">
+                            기본 장착품 및 블랙박스 외에 장착하신 제품 정보를 입력해 주세요.<br>
+                            <span class="fz14 fontLevel2">(부속품은 최대 10개까지 추가 가능하며, 부속품 가액은 차량가액으로 포함됩니다.)</span>
+                        </div>
+                        <div class="addItemArea">
+                            <ul class="inputLine">
+                                <li class="name">부속품명</li>
+                                <li class="ml10">
+                                    <div class="selectItem small">
+                                        <select title="부속품명을 선택해주세요" style="width: 150px;" class="addChkSelect">
+                                            <option value="">선택</option>
+                                            <option value="1">부속1</option>
+                                            <option value="2">부속2</option>
+                                            <option value="3">부속3</option>
+                                            <option value="etc">기타</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="ml10">
+                                    <div class="labelTitleInput">
+                                        <div class="inputSetAlign" style="width: 150px;">
+                                            <div class="inputSet">
+                                                <div class="input"><input type="text" id="more5_1" title="금액 (예:20)" placeholder="금액 (예:20)"></div>
+                                                <div class="rightTxt">만원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="name etcType" style="display: none;">세부명칭</li>
+                                <li class="ml10 etcType" style="display: none;">
+                                    <div class="inputBase placeholder h40">
+                                        <input type="text" title="새부명칭">
+                                    </div>
+                                </li>
+                                <li class="addBtn"><a href="#" class="btn middle h40 plus btnAdd"><span>추가</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="titleWrap">
+                        <div class="title">
+                            <div class="num">4.</div>
+                            <div class="txt">차량이 특정용도 차량, 수반차(자체 동력이 없어 견인되는 형태로 이동하는 차량),<br>교습용 차량입니까? <a href="#help2Con" class="btnHelp">도움말</a></div>
+                        </div>
+                        <div class="rightArea">
+                            <div class="confirm dataSelect">
+                                <ul>
+                                    <li><a href="#" class="yes" data-media-value="yes">예</a></li>
+                                    <li><a href="#" class="no" data-media-value="no">아니오</a></li>
+                                </ul>
+                                <input type="hidden" id="confirm1">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <!--confirmTable : e-->
+
+
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item37">
+                    <li><a href="#" class="btn prev"><span>이전</span></a></li>
+                    <li><a href="#" class="btn next"><span>다음</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap layerpop1 w780" id="layerpop1">
+    <div class="titleArea">
+        <h2>개인(신용)정보의 수집·이용에 관한 사항</h2>
+    </div>
+    <div class="popupContentArea">
+        <div class="popAgreeScroll" id="layerpop2">
+
+            <p><span style="font-size: medium;">당사 및 당사 업무수탁자는「개인정보 보호법」및「신용정보의 이용 및 보호에 관한 법률」에 따라 귀하의 개인(신용)정보를 다음과 같이 <b><span style="color: rgb(255, 0, 0);">수집&middot;이용</span></b>하고자 합니다. 이에 대하여 동의하십니까?</span></p>
+            <p>&nbsp;</p>
+            <ul class="listDot">
+                <li><b><span style="font-size: medium;">개인(신용)정보의 수집&middot;이용 목적</span></b>
+                    <ul class="listBasic">
+                        <li><span style="font-size: small;">보험계약 상담,</span><span style="font-size: medium;">(신용)정보의</span> <span style="font-size: small;">보험계약 인수여부 결정을 위한 판단, 재무설계서비스, 실손의료보험중복확인을 위한 타사보험 가입조회</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+            <ul class="listDot">
+                <li><span style="font-size: 12pt;"><b>수집&middot;이용할 개인(신용) 정보의 내용</b></span>
+                    <ul class="listBasic">
+                        <li><span style="font-size: 10pt;">개인식별정보 (성명, </span><span style="font-size: 12pt;"><b>주민등록번호, 외국인등록번호</b></span>, <span style="font-size: 10pt;">주소, 직업, 전화번호, 전자우편주소)</span></li>
+                        <li><span style="font-size: 12pt;"><b>질병 및 상해에 관한 정보</b></span></li>
+                        <li><span style="font-size: 10pt;">당사, 신용정보집중기관 및 보험요율산출기관에서 수집&middot;관리하는 보험계약정보 및 보험금지급 관련 정보(사고정보 포함)&nbsp;</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+            <ul class="listDot">
+                <li><span style="font-size: 12pt;"><b>개인(신용)정보 보유&middot;이용기간</b></span>
+                    <ul class="listBasic">
+                        <li><span style="font-size: 12pt;"><b>수집&middot;이용 동의일로부터 3개월까지</b></span></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+
+
+
+            당사 및 당사 업무수탁자는 「개인정보보호법」 및 「신용정보의 이용 및 보호에 관한 법률」에 따라 귀하의 개인(신용)정보를 다음과 같이 수집·이용 하고자 합니다. 이에 대하여 동의하십니까?
+            <p class="titleLevel1">보험가입 설계시</p>
+            <p class="titleLevel2">개인(신용)정보의 수집·이용 목적</p>
+            - 보험계약상담, 보험계약 인수여부 결정을 위한 판단, 다중이용업소 화재배상책임보험 가입대상 확인<br>
+            - 대상 확인, 재무설계서비스, 실손의료보험 중복확인을 위한 타사보험 가입조회
+
+            <p class="titleLevel2">수집·이용할 개인(신용) 정보의 내용</p>
+            - 개인식별정보 (성명, 주민등록번호, 외국인등록번호, 주소, 직업, 전화번호, 전자우편주소)<br>
+            - 질병 및 상해에 관한 정보 (단, 자동차 보험은 제외)<br>
+            - 다중이용업소정보 (상호, 업종, 영업장 면적 및 주소, 소방방재청 발급 일련번호) (단, 자동차보험은 제외)
+            ㆍ 소득에 관한 정보 (총급여액, 과세대상급여액, 종합(결정)소득금액, 사업소득금액) (보험료 또는 담보별 누적 가입금액이 과도한 경우에 한함) (단, 자동차보험은 제외)
+            ㆍ 당사, 신용정보집중기관(생명·손해보험협회) 및 보험요율산출기관에서 수집·관리하는 -보험계약정보 및 보험금지급 관련 정보(사고정보 포함), 교통법규위반 개인정보
+        </div>
+        <div class="btnAreaWrap tac mt20">
+            <a href="javascript:alertPopup('asdasdasd','ok',null,'#layerpop2')" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"  data-focus="#test"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+</body>
+</html>

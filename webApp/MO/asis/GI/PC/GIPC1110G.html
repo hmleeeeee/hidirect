@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>추가정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Content">본문 바로가기</a></div>
+<header>
+	<h1>추가정보 입력</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">입력정보 팝업</a>
+</header>
+<div id="h1Wrap">
+	<!-- content -->
+	<section>
+		<p class="topTxt mgbNone">고객님의 추가정보를 입력해주세요.</p>
+	</section>
+
+	<section>
+		<div>
+			<h2>여행지</h2>
+			<div class="searchBox"> <!-- style cssname 변경 -->
+				<input type="search" id="txt_sch" class="txt_inp search" placeholder="국가 검색">
+				<label for="txt_sch" class="hide">여행지 검색</label>
+				<a href="#" class="schBtn" role="button"><span class="icoSch">여행지 검색</span></a>
+			</div>
+
+			<h2>여행목적</h2>
+			<div class="noCheckList two height4">
+				<a href="#" role="button" class="on">
+					<span class="choisText">단순여행</span>
+				</a>
+				<a href="#" role="button">
+					<span class="choisText">업무학술/출장</span>
+				</a>
+			</div>
+
+			<h2>보험기간</h2>
+			<div class="inputWrap">
+				<input id="carTerm" type="text" placeholder="보험기간" value="" readonly="readonly" />
+				<label for="carTerm">보험기간 입력</label>
+				<a href="#" class="calBtn" role="button"><span class="hide">보험기간 선택</span></a>
+			</div>
+
+			<div class="btnWrap">
+				<span><a href="#" role="button">이전</a></span>
+				<span class="on"><a href="#" role="button">다음</a></span>
+			</div>
+
+		</div>
+	</section>
+	<!-- //content -->
+</div>
+</body>
+</html>

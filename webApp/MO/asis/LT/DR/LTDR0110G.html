@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>보험료 확인</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>보험료 확인</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">1</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<div class="accodion on">
+		<div>
+			<a href="#" class="subConOpen" role="button">
+				<strong>월 보험료</strong>
+				<span>1,000,000원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+			</a>
+		</div>
+		<div class="dataDetail">
+			<ul>
+				<li>
+					<strong class="titl">할인</strong><span class="cost">100,000만원</span>
+					<span class="info">다이렉트 할인 (평균 15.4%), 블릭박스 특약, 하이카 그린서비스 특약</span>
+				</li>
+				<li>
+					<strong class="titl">총 보험료</strong>
+					<span class="cost">1,120,000원</span>
+				</li>
+				<li>
+					<strong class="titl">예상환급금</strong>
+					<spann class="cost"><a href="#" role="button" class="btnArr">확인</a></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 0630 마크업 전체 변경 JJY-->
+	<section>
+		<h2>플랜 및 담보 선택</h2>
+		<div class="specialsList">
+			<a href="#" role="button" class="on">
+				<span class="name">스마트 플랜</span>
+				<span class="desc">938,839원</span>
+			</a>
+			<a href="#" role="button">
+				<span class="name">스탠다드 플랜</span>
+				<span class="desc">8,839원</span>
+			</a>
+			<a href="#" role="button">
+				<span class="name">프리미엄 플랜</span>
+				<span class="desc">38,839원</span>
+			</a>
+		</div>
+		
+		<ul class="listBox">
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="collat01" checked="checked" disabled="disabled"><label for="collat01"><span class="hide">교통상해후유장해 (비운전중, 80%이상, 월지급형)</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="title">교통상해후유장해 (비운전중, 80%이상, 월지급형)<em>1백만원</em></p>
+					<p class="won">122,125원</p>
+				</div>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="collat02"><label for="collat02"><span class="hide">교통상해휴유장해(비운전중, 80%이상, 월지급형)</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="title">교통상해휴유장해(비운전중, 80%이상, 월지급형)<em>1백만원</em></p>
+					<p class="won">1,252,125원</p>
+				</div>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="collat02"><label for="collat02"><span class="hide">교통상해휴유장해(비운전중, 80%이상, 월지급형)</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="title"><em class="point">(필수)</em>교통상해휴유장해(비운전중, 80%이상, 월지급형)<em>1백만원</em></p>
+					<p class="won">2,125원</p>
+				</div>
+			</li>
+		</ul>
+
+		<ul class="inputWrap title">
+			<li class="two">
+				<dl>
+					<dt>보험/납입기간</dt>
+					<dd>
+						<select id="changeA1" title="보험/납입기간 선택">
+							<option value="">월/년</option>
+							<option value=""></option>
+						</select>
+					</dd>
+				</dl>
+			</li>
+			<li class="two">
+				<dl>
+					<dt>납입 방법</dt>
+					<dd>
+						<select id="changeA2" title="납입 방법 선택">
+							<option value="">월납</option>
+							<option value="">일시불</option>
+						</select>
+					</dd>
+				</dl>
+			</li>
+		</ul>
+
+		<div class="btn">
+			<a href="#" role="button" class="orgSms">문자로 받기</a>
+		</div>
+		
+		<ul class="listDot">
+			<li>보험기간과 납입기간을 다르게 설정함을 원하시는 경우, 고객센터(1588-5656)로 문의 주시기 바랍니다.</li><!-- 0715 문구수정 JJY-->
+		</ul>
+		
+		<div class="btnWrap">
+			<span><a href="#" role="button">이전</a></span>
+			<span><a href="#" role="button">보험 가입하기</a></span>
+		</div>
+	</section>
+
+	<!-- 2017-06-19 총 보험료 위치 수정 및 소스 수정-->
+	<div class="accodionPo">
+		<div>
+			<a href="#" class="subConOpen" role="button">
+				<strong>월 보험료</strong>
+				<span>1,000,000원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+			</a>
+		</div>
+		<div class="dataDetail">
+			<ul>
+				<li>
+					<strong class="titl">할인</strong><span class="cost">100,000만원</span>
+					<span class="info">다이렉트 할인 (평균 15.4%), 블릭박스 특약, 하이카 그린서비스 특약</span>
+				</li>
+				<li>
+					<strong class="titl">총 보험료 <a href="#" role="button" class="btnArr">예상환급금 확인</a></strong>
+					<span class="cost">1,120,000원</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //2017-06-19 총 보험료 위치 수정 및 소스 수정-->
+</div>
+</body>
+</html>
+

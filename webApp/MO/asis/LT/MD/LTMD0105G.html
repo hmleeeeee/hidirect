@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>해외금융계좌 신고대상 여부 확인</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>해외금융계좌 신고대상 여부 확인</h1>
+		</header>
+		<div class="popContent">
+			<p class="topTxt">해외금융계좌신고에 필요한 정보를 입력해주세요.</p>
+			<section>
+				<form>
+					<h2>신고대상</h2>
+					<div class="itemPack">
+						<ul class="itemListN2">
+							<li>
+								<a href="#layerPopup1" role="button"><div class="cont">미국 시민권자</div></a>
+							</li>
+							<li>
+								<a href="#none" role="button"><div class="cont">미국 영주권자</div></a>
+							</li>
+							<li>
+								<a href="#none" role="button"><div class="cont">미국 세법상 미국 거주자</div></a>
+							</li>
+							<li>
+								<a href="#none" role="button"><div class="cont">미국 외 국가</div></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="checkBox">
+						<input type="checkbox" id="ck00"><label for="ck00"><span class="hide">한국 이외의 조세목적상 해외거주자인 경우 확인함</span></label>
+						<span>한국 이외의 조세목적상 해외거주자인 경우 체크</span>
+					</div>
+
+					<h2>영문성명</h2>
+					<fieldset>
+						<legend>영문성명</legend>
+						<div class="inputWrap two">
+							<span>
+								<input type="email" id="name01" required>
+								<label for="name01">성</label>
+							</span>
+							<span>
+								<input type="email" id="name02" required>
+								<label for="name02">이름</label>
+							</span>
+						</div>
+						<div class="inputWrap">
+							<input type="email" id="addB1" required />
+							<label for="addB1">거주주소(영문)</label>
+						</div>
+					</fieldset>
+
+					<h2>국가정보</h2>
+					<div id="country" class="insSpecial country">
+						<ul class="carAttList">
+							<li class="on">
+								<a href="#" class="chioson" role="button">
+									<span class="carAttAdd">국가1
+										<em class="desc">미국</em>
+									</span>
+								</a>
+								<a href="#" class="counDel"><span class="hide">국가 삭제</span></a>
+							</li>
+							<li class="on">
+								<a href="#" class="chioson" role="button">
+									<span class="carAttAdd">국가2
+										<em class="desc">트리니다드 토바고</em>
+									</span>
+								</a>
+								<a href="#" class="counDel"><span class="hide">국가 삭제</span></a>
+							</li>
+							<li>
+								<a href="#" class="chioson" role="button">
+									<span class="carAttAdd">국가3
+									<em class="desc fontOrg">입력해주세요</em>
+									</span>
+								</a>
+								<a href="#" class="counDel"><span class="hide">국가 삭제</span></a>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</section>
+
+			<div class="btnWrap">
+				<span><a href="#" role="button">취소</a></span>
+				<span><a href="#" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+
+	<!-- 레이어팝업 : 도움말 -->
+	<div class="layerPopup" id="layerPopup1">
+		<div class="layerWrap">
+			<h2>납세자번호 입력</h2>
+			<!-- <p class="topTxt">해외금융계좌 신고대상을 미국 시민권자로 선택하셨습니다. <br>납세자 번호를 입력해주세요.</p> -->
+			<div class="layerCont">
+				<div class="inputWrap">
+					<input type="text" id="add1" class="inputClick" value="" title="납세자번호 입력" required />
+					<label for="add1">납세자번호</label>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<span><a href="#close">취소</a></span>
+				<span class="on"><a href="#">확인</a></span>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+</body>
+</html>

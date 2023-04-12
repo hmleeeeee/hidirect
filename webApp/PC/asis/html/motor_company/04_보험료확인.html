@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>04_보험료확인</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+    <script>
+        $(function(){
+            $(document).on("click",".rowItem .price a",function(e){
+                e.preventDefault();
+                var idx = $(this).closest(".rowItem").index();
+                $(this).closest(".priceInfomationArea").addClass("openPop");
+                if(!$(this).closest(".rowItem").hasClass("on")){
+                    $(this).closest(".priceInfomationArea").find(".openPopContentArea").hide().removeClass("on");
+                    $(this).closest(".priceInfomationArea").find(".rowItem").removeClass("on").eq(idx).addClass("on");
+                    var target = $(this).closest(".rowItem").find(".openPopContentArea");
+                    var top = ($(this).closest(".rowItem").height() * idx)-(idx+1);
+                    target.css("top",-top).show();
+                    setTimeout(function(){
+                        target.addClass("on")
+                        selectChg()
+                    },1)
+
+                }
+            })
+            $(document).on("click",".openPopContentArea .btnClose",function(e){
+                e.preventDefault();
+                $(this).closest(".priceInfomationArea").removeClass("openPop");
+                $(this).closest(".priceInfomationArea").find(".openPopContentArea").removeClass("on");
+                $(this).closest(".priceInfomationArea").find(".rowItem").removeClass("on")
+                setTimeout(function(){
+                    $(".openPopContentArea").hide()
+                },200)
+
+            })
+            $(document).on("change",".typeSelect",function(){
+                var val = $(this).val();
+                var target = $(this).closest(".inScrollArea");
+                target.find(".tabCon").removeClass("on");
+                target.find(".tabCon."+val).addClass("on");
+
+            })
+            /*tabWrap*/
+            $(document).on("click",".tabWrap .tabList li a",function(e){
+                e.preventDefault();
+                var idx = $(this).parent().index();
+                if(idx == 0){
+                    $(this).closest(".openPopContentArea").find(".etcCon").show();
+                }else{
+                    $(this).closest(".openPopContentArea").find(".etcCon").hide();
+                }
+            })
+        })
+    </script>
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="형대해상 다이렉트"></a></p>
+            <h1>자동차보험 <span class="fz17">(개인형)</span></h1>
+        </div>
+        <div class="stepArea">
+        </div>
+        <div class="helpPopWrap">
+            <div class="titleArea">도움말</div>
+            <div class="scrollArea">
+                <div class="item on" id="help1Con">
+                    <p class="title">대인배상Ⅰ</p>
+                    <div class="conArea">
+                        <div class="con">
+                            대인배상<br>
+                            피보험자동차의 사고로 인하여 남을 죽게 하거나 다치게 한 경우에 법률상 손해배상책임을 짐으로써 입은 손해를 보상
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            사망/후유장애시 최대 1억 5천만원, 부상시 최대 3천만원(부상 급수별 상이) 보상
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help2Con">
+                    <p class="title">대인배상Ⅱ</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자동차의 사고로 인하여 남을 죽게 하거나 다치게 한 경우에 법률상 손해배상책임을 짐으로써 입은 손해를 보상
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            대인배상I로 지급되는 (지급할 수 있는) 금액 초과액
+                            배상액이 큰 사고 까지 생각하신다면 대인배상Ⅱ 의 경우 ‘무한’으로 가입하시는 것이 든든합니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help3Con">
+                    <p class="title">대물배상</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자동차의 사고로 인하여 타인의 자동차나 물건에 손해를 끼친 경우 법률상 손해배상책임을 짐으로써 입은 손해를 보상
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            1사고당 선택한 보험 가입 금액 한도를 보상하며 반드시 2천만원 이상은 가입해야 하는 의무보험
+                            외제차량을 포함한 고가 차량의 증가로 충분한 보험 가입 금액의 설정이 필요합니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help4Con">
+                    <p class="title">자기신체사고</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자동차의 사고로 인하여 피보험자(본인 및 가족-부모,배우자,자녀)가 동승 중 죽거나 상해를 입은 경우 보상
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            사망 : 보험가입금액 한도 보상<br>
+                            부상/후유 장해 : 자기신체 사고 보험금 지급기준에 따라 보험 가입금액을 한도 보상 (기준 등급은 약관 참조)
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help5Con">
+                    <p class="title">자동차상해</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자동차의 사고로 인하여 피보험자(본인 및 가족-부모,배우자,자녀)가 동승 중 죽거나 상해를 입은 경우 보상
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            사망 : 보험가입금액 한도 보상<br>
+                            후유 장해 : 보험 가입금액 한도 내 위자료 및 상실 수익액 지급<br>
+                            부상 : 보험 가입금액 한도 내 실제 치료비 지급
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help6Con">
+                    <p class="title">무보험차상해</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자(본인및 가족-배우자, 부모, 자녀)가 무보험자동차로 인한 사고로 죽거나 다쳤을 떄 그 손해에 대하여 배상의무자가 있을 경우 보상
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            피보험자 1인당 선택한 보험 가입 금액 한도 보상<br>
+                            대인배상I, 대인배상II,대물 배상,자기신체 사고나 자동차상해 담보에 모두 가입 하는 경우 가입 할 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help7Con">
+                    <p class="title">자기차량손해</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            <ul class="listStyle dot">
+                                <li>피보험자동차를 소유, 사용, 관리하는 동안에 피보험자동차에 직접적으로 생긴 손해를 보상</li>
+                                <li>타차와의 직접적인 충돌 또는 접촉으로 인한 손해</li>
+                                <li>피보험자동차 전부의 도난(일부 부속품, 장치만의 도난제외)</li>
+                                <li>타차 이외의 물체와의 충돌, 피보험자동차 단독사고, 침수 등의 손해에 대해서는 ‘자기차량손해 보장확대 특약’을 가입해야 보상 가능</li>
+                            </ul>
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            <ul class="listStyle dot">
+                                <li>피보험자동차에 생긴 손해액+비용-보험증권에 기재된 자기부담금</li>
+                                <li>전부손해일 경우 자기부담금을 공제하지 않음</li>
+                            </ul>
+                        </div>
+                        <div class="con">
+                            보상한도 : 피보험자동차의 사고 당시 보험가액(가입금액 한도)
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help8Con">
+                    <p class="title">긴급출동특약</p>
+                    <div class="conArea">
+                        <div class="con">
+                            [하이카서비스]<br>
+                            제공서비스<br>
+                            <ul class="listStyle dot">
+                                <li>긴급구난, 긴급견인, 비상급유, 배터리충전, 잠금장치 해제, 타이어 펑크수리/교체, 휴즈 교환 서비스 제공 횟수
+                                    <ul>
+                                        <li>- 1년 계약 : 5회</li>
+                                        <li>- 1년 미만~3개월 초과 계약 : 3회</li>
+                                        <li>- 3개월 이하 계약 : 1회</li>
+                                    </ul>
+                                </li>
+                                <li>비상급유/긴급견인 서비스는 각1일 1회 한하여 제공</li>
+                            </ul>
+                        </div>
+                        <div class="con">
+                            가입대상<br>
+                            승용차, 경·3종승합, 경·4종화물, 3종A화물
+                            [하이카서비스(중형 화물·승합)]
+                        </div>
+                        <div class="con">
+                            제공서비스<br>
+                            <ul class="listStyle dot">
+                                <li>비상급유, 배터리충전, 잠금장치해제</li>
+                                <li>서비스 제공 횟수
+                                    <ul>
+                                        <li>- 1년 계약 : 2회</li>
+                                        <li>- 1년 미만 계약 : 1회</li>
+                                    </ul>
+                                </li>
+                                <li>비상급유/긴급견인 서비스는 각1일 1회 한하여 제공</li>
+                            </ul>
+                        </div>
+                        <div class="con">
+                            가입대상<br>
+                            2·3종B화물, 2종 습합, 4종화물, 3종(A)화물, 경화물중 기중기장치요율 or 특수 적재 장치요율 적용 차량[하이카서비스(전기자동차)]
+                        </div>
+                        <div class="con">
+                            제공서비스<br>
+                            <ul class="listStyle dot">
+                                <li>긴급견인, 잠금장치해제, 긴급구난, 휴즈교환, 배터리긴급충전지원(충전소로 견인)</li>
+                                <li>서비스 제공 횟수
+                                    <ul>
+                                        <li>- 1년 계약 : 5회</li>
+                                        <li>- 1년 미만~3개월 초과 계약 : 3회</li>
+                                        <li>- 3개월 이하 계약 : 1회</li>
+                                    </ul>
+                                </li>
+                                <li>비상급유/긴급견인 서비스는 각1일 1회 한하여 제공</li>
+                            </ul>
+                        </div>
+                        <div class="con">
+                            가입대상<br>
+                            순수 전기차(하이브리드자동차, 연료전지자동차 제외)
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help9Con">
+                    <p class="title">가족 생활비담보 (기본형)</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자가 피보험자동차를 소유· 사용· 관리 중 발생한 피보험자동차의 사고로 사망 또는 1급~3급의 후유장해를 입은 경우
+                        </div>
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>사망 : 3천만원</li>
+                                <li>상해등급 1급 ~ 3급 : 1천만원</li>
+                                <li>자기신체사고(자동차상해) 가입한 경우 가입가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help10Con">
+                    <p class="title">가족 생활비담보 (주말·휴일 한정형)</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자가 주말, 휴일에 피보험자동차를 소유· 사용· 관리 중 발생한 피보험자동차의 사고로 사망 또는 1급~3급의 후유장해를 입은 경우
+                        </div>
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>사망 : 3천만원</li>
+                                <li>상해등급 1급 ~ 3급 : 1천만원</li>
+                                <li>자기신체사고(자동차상해) 가입한 경우 가입가능</li>
+                            </ul>
+                            주말:금요일 18시부터 월요일 <br>
+                            휴일: ‘법정공휴일(국가에서 정한 임시공휴일 포함) 및 근로자의 날’ 전일 18시부터 익일 06시까지
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help11Con">
+                    <p class="title">뺑소니사고 사망담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자가 뺑소니사고에 의하여 사망한 경우
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            피보험자 1인당 3천만원 지급
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help12Con">
+                    <p class="title">상급병실료지원</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자가 피보험자동차를 소유· 사용· 관리 중 발생한 피보험자동차의 사고로 자기신체사고 또는 자동차상해 보험금이 지급되는 경우
+                        </div>
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>상급병실(특실포함)-기준병실 = 차액을 30일, 500만원 한도로 지급</li>
+                                <li>자기신체사고(자동차상해) 가입한 경우 가입가능</li>
+                                <li>장기보험 상급병실료 지급과 중복보상</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help13Con">
+                    <p class="title">상해간병비 지원담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자가 피보험자동차를 소유·사용·관리 중 발생한 피보험자동차의 사고로 1급~10급 상해를 입은 경우 상해를 입은 피보험자 1인당 다음의 금액
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            상해등급별 20만원~2백만원 한도
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help14Con">
+                    <p class="title">상해용품 지원담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용<br>
+                            피보험자동차의 사고로 인해 상해를 입은 경우 "생활용품 및 차량안전용품" 지급(보험기간 중 1회)<br>
+                            제공물품 : 구급함, 경광봉, 무릎담요, 사고표기용 스프레이, 포장박스 등
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help15Con">
+                    <p class="title">성형·치아보철비용지원</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자동차의 사고로 상해를 입은 경우
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            <ul class="listStyle dot">
+                                <li>성형비용 지원금 : 안면부, 상지, 하지 성형부위 1cm당 10만원 (1회, 1천만원 한도)</li>
+                                <li>치아보철비용 지원금 : 치아보철 1대당 20만원</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help16Con">
+                    <p class="title">실버케어</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자동차의 사고로 상해를 입은 경우
+                        </div>
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>요양시설이용 지원금 : 후유장해 1~3급인 경우 1억</li>
+                                <li>건강회복 지원금 : 부상 1~7급인 경우 100만원</li>
+                                <li>골절치료 지원금 : 부상 1~7급의 골절상해 시 100만원</li>
+                                <li>만 65세 이상의 기명피보험자, 기명피보험자 배우자 또는 부모</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help17Con">
+                    <p class="title">자녀케어</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자동차의 사고 또는 보행 중 사고로 상해를 입은 경우
+                        </div>
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>고도후유장애 위로금 : 후유장애 1~3급인 경우 1억</li>
+                                <li>자녀간병 지원금: 부상 1~7급인 경우 100만원</li>
+                                <li>계약 체결 당시 만 18세 이하 자녀가 있는 경우</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help18Con">
+                    <p class="title">Road 차량진단 서비스 추가특약</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용<br>
+                            <ul class="listStyle dot">
+                                <li>차량계기판 경고등 점등 시 차량진단 스캐너 장비 활용 현장점검 서비스 제공</li>
+                                <li>하이카다이렉트 서비스 특약 가입 시 추가 가입 가능</li>
+                                <li>스캐너 장비가 있는 일부 차종의 경우에만 가입 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help19Con">
+                    <p class="title">다른 자동차 차량손해담보 (차대차 충돌사고 한정)</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자가 다른 자동차 운전 시 운전한 다른 자동차의 ‘차량손해’ 보상
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            <ul class="listStyle dot">
+                                <li>지급기준/보상한도 : ‘대물배상’ 지급기준에 따라 ‘대물배상’ 가입금액을 한도로 보상</li>
+                                <li>자기부담금 : 1사고당 30만원</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help20Con">
+                    <p class="title">다른 자동차 차량손해담보 - 자녀 운전담보 추가</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용<br>
+                            <ul class="listStyle dot">
+                                <li>자녀의 타인소유 자동차운전 중 사고에 대한 위험까지 보장</li>
+                                <li>무보험상해담보, 다른 자동차 차량손해담보 가입 시 추가 가입 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help21Con">
+                    <p class="title">신조자동차 판매직원 위험담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임
+                            <ul class="listStyle dot">
+                                <li>피보험자동차의 판매직원(제조사 또는 판매회사 소속 직원)이 판매과정에서 운전 중 생긴 사고에 대해서, 판매직원을 보험증권에 기재된 운전자로 간주</li>
+                                <li>신차손해특약 가입 시 자동적용</li>
+                                <li>판매직원이 자동차취급업자종합보험 등 다른 보험계약에서 보험금이 지급되는 경우, 그 초과액만 보상</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help22Con">
+                    <p class="title">신차손해담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>1번의 사고로 생긴 기명피보험자의 손해가 보험가입금액의 30% 이상의 경우</li>
+                                <li>신차가액 보험금 (전손 혹은 손해액이 보험가입금액의 70% 이상 시)</li>
+                                <li>대체차량 등록비용 (보험가입금액의 7% 한도로 차량 교환 시 소요된 취/등록세)</li>
+                                <li>수리비 제비용 (1번의 사고로 생긴 손해액의 보험가입금액의 30% 이상 70% 미만일 경우 보험가입금액의 10% 지급)</li>
+                            </ul>
+                        </div>
+                        <div class="con">
+                            가입대상: 승용, 경·3종 승합, 또는 경·3종·4종 화물자동차로써 최초등록일로부터 6개월 미경과 차량
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help23Con">
+                    <p class="title">자기차량손해 보장 확대</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임
+                            <ul class="listStyle dot">
+                                <li>피보험자동차를 소유·사용·관리 중 피보험자동차에 직접적으로 생긴 손해를 보상</li>
+                                <li>타물체와의 충돌, 접촉, 추락, 전복 또는 차량의 침수로 인한 손해</li>
+                                <li>화재, 폭발, 낙뢰, 날아온 물체, 떨어지는 물체에 의한 손해 또는 풍력에 의해 차체에 생긴 손해</li>
+                                <li>보험금 지급기준은 ‘자기차량손해’ 담보와 동일</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help24Con">
+                    <p class="title">자차렌트비용 및 차량운반비용담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>자기차량손해 보험금이 지급되는 경우</li>
+                                <li>렌트 시 동종의 국산 대여차 기준 렌트비 (1일당 차종별 렌트비용 한도금액 내 실제 렌트비용 지급)</li>
+                                <li>비렌트 시 렌트비용의 30% 지급</li>
+                                <li>차량운반비용 : 20만원 한도 실비 보상</li>
+                                <li>수리불능시 10일, 실수리 또는 도난시 30일 한도 보상</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help25Con">
+                    <p class="title">자동차시세 하락손해 지원담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>수리비용이 사고 발생 시 차량가액의 20% 초과시</li>
+                                <li>최초등록일로부터 1년 이하: 수리비용의 15% 지급</li>
+                                <li>최초등록일로부터 1년 초과: 수리비용의 10% 지급</li>
+                                <li>최초등록일로부터 13개월 미경과 차량 가입 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help26Con">
+                    <p class="title">전손 시 대체차량 등록비용담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>자기차량손해 보험금이 지급되는 경우</li>
+                                <li>자차 전손 시 보험가입금액 7% 한도 내 취/등록세 지급</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" id="help27Con">
+                    <p class="title">견인 서비스 확장 추가특약 I</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>피보험자가 자력으로 주행이 불가능한 경우 1일당 1회에 한하여 견인</li>
+                                <li>견인을 개시한 곳으로부터 40km 한도</li>
+                                <li>고장출동서비스를 가입한 경우에 한하여 가입 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help28Con">
+                    <p class="title">다른 자동차 운전담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용
+                            피보험자가 다른 자동차를 운전 중 대인/대물/자손 사고 발생 시 다른 자동차를 피보험자동차로 간주하여 보상
+                        </div>
+                        <div class="con">
+                            운전가능자
+                            <ul class="listStyle dot">
+                                <li>기명피보험자 및 배우자(1인 한정의 경우 기명피보험자만 가능)</li>
+                                <li>자녀 운전 추가 특약 가입 시 자녀 운전 가능</li>
+                                <li>다른 자동차 범위<br>일반 승용, 다인승 승용, 경/3종 승합, 경/4종 화물 자동차 간 운전 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help29Con">
+                    <p class="title">다른 자동차 운전담보 - 자녀 운전담보 추가</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용<br>
+                            <ul class="listStyle dot">
+                                <li>자녀의 타인소유 자동차 운전 중 사고에 대한 위험 보장</li>
+                                <li>무보험차상해, 다른자동차 운전담보 가입 시 가입 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help30Con">
+                    <p class="title">대리운전위험담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>대리운전자가 피보험자동차 운전 중 발생한 사고에 대해 보상</li>
+                                <li>대리운전자: 대리운전업자(요금이나 대가 목적 운전대행서비스 제공자)로 피보험자동차 운전을 일시적으로 의뢰 받아 대리하는 사람</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help31Con">
+                    <p class="title">보험대차운전중사고보상특약</p>
+                    <div class="conArea">
+                        <p>보상내용</p>
+                        <div class="con">
+                            <ul class="listStyle dot">
+                                <li>보험대차 운행 중 사고시 보상</li>
+                                <li>보험대차 : 사고 후 수리기간 동안 상대방 보험사 대물배상 지급기준에 따라 대차(렌트) 받은 차량</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help32Con">
+                    <p class="title">벌금비용담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            확정판결에 의하여 벌금형이 확정된 경우
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            벌금 : 법원의 확정판결에 의한 벌금 상당액 (2천만원 한도)
+                        </div>
+                        <div class="con">
+                            실손 및 비례보상<br>
+                            벌금비용 : 타보험(운전자보험 등)과 비례보상<br>
+                            비례보상담보 중복 조회가 필요 하며, 확인 후 가입 여부를 선택해 주세요.
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help33Con">
+                    <p class="title">변호사선임비용담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자가 구속 또는 공소제기된 경우(단, 약식기소 제외)
+                        </div>
+                        <div class="con">
+                            보상내용<br>
+                            <ul class="listStyle dot">
+                                <li>변호사선임비용:1사고마다 5백만원 한도</li>
+                                <li>실손 및 비례보상
+                                    <ul>
+                                        <li>- 실제 변호사 선임비용을 한도 내 지급</li>
+                                    </ul>
+                                </li>
+                                <li>타보험(운전자보험 등)과 비례보상</li>
+                            </ul>
+                            비례보상담보 중복 조회가 필요 하며, 확인 후 가입 여부를 선택해 주세요.
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="help34Con">
+                    <p class="title">형사합의지원금담보</p>
+                    <div class="conArea">
+                        <div class="con">
+                            보상책임<br>
+                            피보험자가 피보험자자동차를 운전하는 동안(주/정차제외)생긴 사고로 인하여 피해자가 사망하거나 중상해를 입어 형사합의금을 지급하는 경우 아래 금액 보상
+                        </div>
+                        <div class="con">
+                            보상내용
+                            <ul class="listStyle dot">
+                                <li>피해자에게 지급한 형사합의금 또는 공탁금</li>
+                                <li>사망/중상해 사고:피해자 1인당 3천만원 한도</li>
+                                <li>중과실 사고 : 상해등급별 3백만원~2천만원 한도</li>
+                                <li>실손 및 비례보상
+                                    <ul>
+                                        <li>- 실제 지급(공탁)한 금액을 형사합의지원금으로 지급</li>
+                                    </ul>
+                                </li>
+                                <li>타보험(운전자보험 등)과 비례보상
+                                    <ul>
+                                        <li>- 대인배상I를 가입하는 경우에 한하여 가입 가능</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            비례보상담보 중복 조회가 필요 하며, 확인 후 가입 여부를 선택해 주세요.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btnHelpClose"><img src="https://direct.hi.co.kr/images/common/btn_help_close.png" alt="닫기"></a>
+        </div>
+
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>보험료 확인</h2>
+            <p class="txt">플랜 및 담보를 선택해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+        <!--priceInfomationWrap : s-->
+        <div class="priceInfomationWrap big noTab">
+            <!--lineTabWrap : s-->
+            <div class="priceInfomationArea">
+                <!--rowItem : s-->
+                <div class="rowItem">
+                    <ul class="list">
+                        <li class="title">대인배상Ⅰ <a href="#help1Con" class="btnHelp">도움말</a></li>
+                        <li class="con">가입</li>
+                        <li class="price">2,015,468원</li>
+                    </ul>
+                </div>
+                <!--rowItem : e-->
+
+                <!--rowItem : s-->
+                <div class="rowItem">
+                    <ul class="list">
+                        <li class="title">대인배상 II <a href="#help2Con" class="btnHelp">도움말</a></li>
+                        <li class="con">무한</li>
+                        <li class="price"><a href="#">120,000원</a></li>
+                    </ul>
+                    <div class="openPopContentArea">
+                        <h4 class="openTit">대인배상 II</h4>
+                        <div class="inScrollArea">
+                            <div class="selectArea">
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio1" id="radio1_1">
+                                            <label for="radio1_1">무한</label>
+                                        </div>
+                                    </li>
+                                    <li class="upDown"><span class="bar">0원</span></li>
+                                    <li class="price">4,280원</li>
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio1" id="radio1_2">
+                                            <label for="radio1_2">미가입</label>
+                                        </div>
+                                    </li>
+                                    <li class="upDown"><span class="down">190원</span></li>
+                                    <li class="price">4,280원</li>
+                                </ul>
+                            </div>
+                            <ul class="listStyle star tLine">
+                                <li>
+                                    보상책임 : 피보험자동차의 사고로 인하여 남을 죽게<br>
+                                    하거나 다치게 한 경우에 법률상 손해배상책임을<br>
+                                    짐으로써 입은 손해를 보상
+                                </li>
+                                <li>
+                                    보상내용 : 대인배상 I로 지급되는 (지급할 수 있는)<br>
+                                    금액 초과액
+                                </li>
+                                <li>
+                                    배상액이 큰 사고까지 생각하신다면 대인배상 II 의<br>
+                                    경우 ‘무한’으로 가입하시는 것이 든든합니다.
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btnClose"><span>적용</span></a>
+                    </div>
+                </div>
+                <!--rowItem : e-->
+                <!--rowItem : s-->
+                <div class="rowItem">
+                    <ul class="list">
+                        <li class="title">대물배상 <a href="#help3Con" class="btnHelp">도움말</a></li>
+                        <li class="con">3억원 (의무담보 포함)</li>
+                        <li class="price"><a href="#">276,610원</a></li>
+                    </ul>
+                    <div class="openPopContentArea">
+                        <h4 class="openTit">대물배상</h4>
+                        <div class="inScrollArea">
+                            <div class="selectArea">
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_1">
+                                            <label for="radio2_1">10억원 (의무담보 포함)</label>
+                                        </div>
+                                    </li>
+                                    <li class="upDown"><span class="up">190원</span></li>
+                                    <li class="price">4,280원</li>
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_2">
+                                            <label for="radio2_2">5억원 (의무담보 포함)</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_3">
+                                            <label for="radio2_3">3억원 (의무담보 포함)</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_4">
+                                            <label for="radio2_4">2억원 (의무담보 포함)</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_5">
+                                            <label for="radio2_5">1억원 (의무담보 포함)</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_6">
+                                            <label for="radio2_6">7천만원 (의무담보 포함)</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_7">
+                                            <label for="radio2_7">5천만원 (의무담보 포함)</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_8">
+                                            <label for="radio2_8">3천만원 (의무담보 포함)</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio2" id="radio2_9">
+                                            <label for="radio2_9">2천만원 (의무)</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+
+                            </div>
+                            <ul class="listStyle star tLine">
+                                <li>보상책임 : 피보험자동차의 사고로 인하여 타인의 자동차나 물건에 손해를 끼친 경우 법률상 손해배상책임을 짐으로써 입은 손해를 보상</li>
+                                <li>보상내용 : 사망 : 1사고당 선택한 보험가입 금액 한도를 보상하며 반드시 2천만원 이상은 가입해야하는 의무보험</li>
+                                <li>외제차량을 포함한 고가 차량의 증가로 충분한 보험 가입 금액의 설정이 필요합니다.</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btnClose"><span>적용</span></a>
+                    </div>
+                </div>
+                <!--rowItem : e-->
+                <!--rowItem : s-->
+                <div class="rowItem">
+                    <ul class="list">
+                        <li class="title">자기신체사고</li>
+                        <li class="con">자기신체사고 (5천 / 부상3천)</li>
+                        <li class="price"><a href="#">10,360원</a></li>
+                    </ul>
+                    <div class="openPopContentArea">
+                        <h4 class="openTit">자기신체사고</h4>
+                        <div class="inScrollArea">
+                            <div class="selectKind">
+                                <div class="radio">
+                                    <input type="radio" name="radio3_kind" id="radio3_kind_1" class="typeSelect" value="type1">
+                                    <label for="radio3_kind_1">자기신체사고 <a href="#help4Con" class="btnHelp">도움말</a></label>
+                                </div>
+                                <div class="radio ml20">
+                                    <input type="radio" name="radio3_kind" id="radio3_kind_2" class="typeSelect" value="type2">
+                                    <label for="radio3_kind_2">자동차상해 <a href="#help5Con" class="btnHelp">도움말</a></label>
+                                </div>
+                            </div>
+                            <div class="tabCon type1 on">
+                                <div class="selectArea">
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_1">
+                                                <label for="radio3_type1_1">1억원/5천만원</label>
+                                            </div>
+                                        </li>
+                                        <li class="upDown"><span class="up">190원</span></li>
+                                        <li class="price">4,280원</li>
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_2">
+                                                <label for="radio3_type1_2">1억원/3천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_3">
+                                                <label for="radio3_type1_3">1억원/1.5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_4">
+                                                <label for="radio3_type1_4">5천만원/5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_5">
+                                                <label for="radio3_type1_5">5천만원/3천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_6">
+                                                <label for="radio3_type1_6">5천만원/1.5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_7">
+                                                <label for="radio3_type1_7">3천만원/5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_8">
+                                                <label for="radio3_type1_8">3천만원/3천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_9">
+                                                <label for="radio3_type1_9">3천만원/1.5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_10">
+                                                <label for="radio3_type1_10">1.5천만원/5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_11">
+                                                <label for="radio3_type1_11">1.5천만원/3천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_12">
+                                                <label for="radio3_type1_12">1.5천만원/1.5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type1" id="radio3_type1_13">
+                                                <label for="radio3_type1_13">미가입/미가입</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                </div>
+                                <ul class="listStyle star tLine">
+                                    <li>보상책임 : 피보험자동차의 사고로 인하여 피보험자(본인 및 가족•부모, 배우자, 자녀)가 동승 중 죽거나 상해를 입은 경우 보상</li>
+                                    <li>
+                                        보상내용 : 사망 : 보험가입금액 한도 보상<br>
+                                        부상/후유장애시 : 자기신체 사고 보험금 지급기준에 따라 보험 가입금액을 한도 보상(기준 등급은 약관 참조)
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tabCon type2">
+
+                                <div class="selectArea">
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_1">
+                                                <label for="radio3_type2_1">5억원/5천만원</label>
+                                            </div>
+                                        </li>
+                                        <li class="upDown"><span class="up">190원</span></li>
+                                        <li class="price">4,280원</li>
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_2">
+                                                <label for="radio3_type2_2">5억원/3천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_3">
+                                                <label for="radio3_type2_3">5억원/2천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_4">
+                                                <label for="radio3_type2_4">3억원/5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_5">
+                                                <label for="radio3_type2_5">3억원/3천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_6">
+                                                <label for="radio3_type2_6">3억원/2천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_7">
+                                                <label for="radio3_type2_7">2억원/5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_8">
+                                                <label for="radio3_type2_8">2억원/3천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_9">
+                                                <label for="radio3_type2_9">2억원/2천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_10">
+                                                <label for="radio3_type2_10">1억원/5천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_11">
+                                                <label for="radio3_type2_11">1억원/3천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_12">
+                                                <label for="radio3_type2_12">1억원/2천만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio3_type2" id="radio3_type2_13">
+                                                <label for="radio3_type2_13">미가입/미가입</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                </div>
+                                <ul class="listStyle star tLine">
+                                    <li>보상책임 : 피보험자동차의 사고로 인하여 피보험자(본인 및 가족•부모, 배우자, 자녀)가 동승 중 죽거나 상해를 입은 경우 보상</li>
+                                    <li>
+                                        보상내용 : 사망 : 보험가입금액 한도 보상<br>
+                                        후유장애 : 보험 가입금액 한도 내 위자료 및 상실 수익액 지급<br>
+                                        부상 : 보험 가입금액 한도 내 실제 치료비 지급
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <a href="#" class="btnClose"><span>적용</span></a>
+                    </div>
+                </div>
+                <!--rowItem : e-->
+                <!--rowItem : s-->
+                <div class="rowItem">
+                    <ul class="list">
+                        <li class="title">무보험자상해 <a href="#help6Con" class="btnHelp">도움말</a></li>
+                        <li class="con">2억원</li>
+                        <li class="price"><a href="#">5,080원</a></li>
+                    </ul>
+                    <div class="openPopContentArea">
+                        <h4 class="openTit">무보험자상해</h4>
+                        <div class="inScrollArea">
+                            <div class="selectArea">
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio4" id="radio4_1">
+                                            <label for="radio4_1">5억원</label>
+                                        </div>
+                                    </li>
+                                    <li class="upDown"><span class="up">190원</span></li>
+                                    <li class="price">4,280원</li>
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio4" id="radio4_2">
+                                            <label for="radio4_2">2억원</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio4" id="radio4_3">
+                                            <label for="radio4_3">미가입</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                            </div>
+                            <ul class="listStyle star tLine">
+                                <li>보상책임 : 피보험자(본인 및 가족•부모, 배우자, 자녀)가 무보험자동차로 인한 사고로 죽거나 다쳤을 때 그 손해에 대하여 배상의무자가 있을 경우 보상</li>
+                                <li>보상내용 : 피보험자 1인당 선택한 보험 가입 금액 한도 보상</li>
+                                <li>대인배상I, 대인배상II, 대물 배상, 자기신체 사고나 자동차상해 담보에 모두 가입 하는 경우 가입 할 수 있습니다.</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btnClose"><span>적용</span></a>
+                    </div>
+                </div>
+                <!--rowItem : e-->
+                <!--rowItem : s-->
+                <div class="rowItem">
+                    <ul class="list">
+                        <li class="title">자기차량손해 <a href="#help7Con" class="btnHelp">도움말</a></li>
+                        <li class="con">3,210만원 (손해액의 20%) 자기부담금 (20~50만원)</li>
+                        <li class="price"><a href="#">496,040원</a></li>
+                    </ul>
+                    <div class="openPopContentArea">
+                        <h4 class="openTit">자기차량손해</h4>
+                        <div class="inScrollArea">
+                            <div class="selectKind">
+                                <div class="selectItem small">
+                                    <select name="" id="" class="typeSelect" title="물적사고 할증 기준금액을 선택해주세요">
+                                        <option value="">물적사고 할증 기준금액</option>
+                                        <option value="type1">50만원</option>
+                                        <option value="type2">100만원</option>
+                                        <option value="type3">150만원</option>
+                                        <option value="type4">200만원</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="tabCon type1 on">
+                                <div class="selectArea">
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type1" id="radio5_type1_1">
+                                                <label for="radio5_type1_1">손해액의20% / <br>5만원~50만원</label>
+                                            </div>
+                                        </li>
+                                        <li class="upDown"><span class="up">190원</span></li>
+                                        <li class="price">4,280원</li>
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type1" id="radio5_type1_2">
+                                                <label for="radio5_type1_2">손해액의20% / <br>30만원~100만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type1" id="radio5_type1_3">
+                                                <label for="radio5_type1_3">손해액의30% / <br>30만원~100만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type1" id="radio5_type1_4">
+                                                <label for="radio5_type1_4">손해액의30% / <br>50만원~200만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type1" id="radio5_type1_5">
+                                                <label for="radio5_type1_5">미가입/미가입</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tabCon type2">
+                                <div class="selectArea">
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type2" id="radio5_type2_1">
+                                                <label for="radio5_type2_1">손해액의20% / <br>10만원~50만원</label>
+                                            </div>
+                                        </li>
+                                        <li class="upDown"><span class="up">190원</span></li>
+                                        <li class="price">4,280원</li>
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type2" id="radio5_type2_2">
+                                                <label for="radio5_type2_2">손해액의20% / <br>30만원~100만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type2" id="radio5_type2_3">
+                                                <label for="radio5_type2_3">손해액의30% / <br>30만원~100만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type2" id="radio5_type2_4">
+                                                <label for="radio5_type2_4">손해액의30% / <br>50만원~200만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type2" id="radio5_type2_5">
+                                                <label for="radio5_type2_5">미가입/미가입</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="tabCon type3">
+                                <div class="selectArea">
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type3" id="radio5_type3_1">
+                                                <label for="radio5_type3_1">손해액의20% / <br>15만원~50만원</label>
+                                            </div>
+                                        </li>
+                                        <li class="upDown"><span class="up">190원</span></li>
+                                        <li class="price">4,280원</li>
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type3" id="radio5_type3_2">
+                                                <label for="radio5_type3_2">손해액의20% / <br>30만원~100만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type3" id="radio5_type3_3">
+                                                <label for="radio5_type3_3">손해액의30% / <br>30만원~100만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type3" id="radio5_type3_4">
+                                                <label for="radio5_type3_4">손해액의30% / <br>50만원~200만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type3" id="radio5_type3_5">
+                                                <label for="radio5_type3_5">미가입/미가입</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="tabCon type4">
+                                <div class="selectArea">
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type4" id="radio5_type4_1">
+                                                <label for="radio5_type4_1">손해액의20% / <br>20만원~50만원</label>
+                                            </div>
+                                        </li>
+                                        <li class="upDown"><span class="up">190원</span></li>
+                                        <li class="price">4,280원</li>
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type4" id="radio5_type4_2">
+                                                <label for="radio5_type4_2">손해액의20% / <br>30만원~100만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type4" id="radio5_type4_3">
+                                                <label for="radio5_type4_3">손해액의30% / <br>30만원~100만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type4" id="radio5_type4_4">
+                                                <label for="radio5_type4_4">손해액의30% / <br>50만원~200만원</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                    <ul class="row">
+                                        <li class="radioArea">
+                                            <div class="radio">
+                                                <input type="radio" name="radio5_type4" id="radio5_type4_5">
+                                                <label for="radio5_type4_5">미가입/미가입</label>
+                                            </div>
+                                        </li>
+                                        <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                        <!--<li class="price">4,280원</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <ul class="listStyle star tLine">
+                                <li>
+                                    보상책임 : 피보험자동차를 소유, 사용, 관리하는 동안에 피보험자동차에 직접적으로 생긴 손해를 보상<br>
+                                    타차와의 직접적인 충돌 또는 접촉으로인한 손해<br>
+                                    피보험자동차 전부의 도난(일부 부속품, 장치만의 도난제외)<br>
+                                    타차 이외의 물체와의 충돌, 피보험자동차 단독사고, 침수 등의 손해에 대해서는 ‘자기차량손해 보장확대 특약’을 가입해야 보상 가능
+                                </li>
+                                <li>보상내용 : 피보험자동차에 생긴 손해액+비용•보험증권에 기재된 자기부담금(전부손해일 경우 자기부담금을 공제하지 않음)</li>
+                                <li>보상한도 : 피보험자동차의 사고 당시 보험가액(가입금액 한도)</li>
+                            </ul>
+
+                        </div>
+                        <a href="#" class="btnClose"><span>적용</span></a>
+                    </div>
+                </div>
+                <!--rowItem : e-->
+                <!--rowItem : s-->
+                <div class="rowItem">
+                    <ul class="list">
+                        <li class="title">긴급출동특약 <a href="#help8Con" class="btnHelp">도움말</a></li>
+                        <li class="con">하이카서비스</li>
+                        <li class="price"><a href="#">0원</a></li>
+                    </ul>
+                    <div class="openPopContentArea">
+                        <h4 class="openTit">긴급출동특약</h4>
+                        <div class="inScrollArea">
+                            <div class="selectArea">
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio6" id="radio6_1">
+                                            <!--2017-11-17 수정 : s -->
+                                            <label for="radio6_1">가입</label>
+                                            <!--2017-11-17 수정 : e -->
+                                        </div>
+                                    </li>
+                                    <li class="upDown"><span class="up">190원</span></li>
+                                    <li class="price">4,280원</li>
+                                </ul>
+                                <ul class="row">
+                                    <li class="radioArea">
+                                        <div class="radio">
+                                            <input type="radio" name="radio6" id="radio6_2">
+                                            <label for="radio6_2">미가입</label>
+                                        </div>
+                                    </li>
+                                    <!--<li class="upDown"><span class="up">190원</span></li>-->
+                                    <!--<li class="price">4,280원</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="btnClose"><span>적용</span></a>
+                    </div>
+                </div>
+                <!--rowItem : e-->
+                <!--rowItem : s-->
+                <div class="rowItem">
+                    <ul class="list">
+                        <li class="title">기타특약 등</li>
+                        <li class="con">자기차량 손해 보상확대 외</li>
+                        <li class="price"><a href="#">0원</a></li>
+                    </ul>
+                    <div class="openPopContentArea tabWrap">
+                        <ul class="textTab tabList">
+                            <li class="on"><a href="#">자기신체</a></li>
+                            <li><a href="#">자기차량</a></li>
+                            <li><a href="#">보장확대</a></li>
+                            <li><a href="#">사고처리비용</a></li>
+                            <li><a href="#">기타</a></li>
+                        </ul>
+                        <div class="inScrollArea etc">
+                            <div class="tabCon gap on">
+                                <div class="topTxt">
+                                    <ul class="listStyle star">
+                                        <li>나와 가족에 대한 보장을 확대하는 특약</li>
+                                    </ul>
+                                </div>
+                                <div class="checkboxList">
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_1">
+                                        <label for="checkbox1_1">가족 생활비담보(기본형) <a href="#help9Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_2">
+                                        <label for="checkbox1_2">가족 생활비담보(주말•휴일 한정형) <a href="#help10Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_3">
+                                        <label for="checkbox1_3">뺑소니사고 사망담보 <a href="#help11Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_4">
+                                        <label for="checkbox1_4">상급병실료지원 <a href="#help12Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_5">
+                                        <label for="checkbox1_5">상해간병비 지원담보 <a href="#help13Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_6">
+                                        <label for="checkbox1_6">상해용품 지원담보 <a href="#help14Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_7">
+                                        <label for="checkbox1_7">성형•치아보철비용지원 <a href="#help15Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_8">
+                                        <label for="checkbox1_8">실버케어 <a href="#help16Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox1" id="checkbox1_9">
+                                        <label for="checkbox1_9">자녀케어 <a href="#help17Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabCon">
+                                <div class="topTxt">
+                                    <ul class="listStyle star">
+                                        <li>내 차에 대한 보장을 확대하는 특약</li>
+                                    </ul>
+                                </div>
+                                <div class="checkboxList">
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_1">
+                                        <label for="checkbox2_1">Road 차량진단 서비스 추가특약 <a href="#help18Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_2">
+                                        <label for="checkbox2_2">다른 자동차 차량손해담보<br>(차대차 충돌사고 한정) <a href="#help19Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_3">
+                                        <label for="checkbox2_3">다른 자동차 차량손해담보<br> – 자녀 운전담보 추가 <a href="#help20Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_4">
+                                        <label for="checkbox2_4">신조자동차 판매직원 위험담보 <a href="#help21Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_5">
+                                        <label for="checkbox2_5">신차손해담보 <a href="#help22Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_6">
+                                        <label for="checkbox2_6">자기차량손해 보장 확대 <a href="#help23Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_6">
+                                        <label for="checkbox2_6">자차렌트비용 및 차량운반비용담보 <a href="#help24Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_7">
+                                        <label for="checkbox2_7">자동차시세 하락손해 지원담보 <a href="#help25Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox2" id="checkbox2_8">
+                                        <label for="checkbox2_8">전손 시 대체차량 등록비용담보 <a href="#help26Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabCon">
+                                <div class="topTxt">
+                                    <ul class="listStyle star">
+                                        <li>내 차에 대한 보장을 확대하는 특약</li>
+                                    </ul>
+                                </div>
+                                <div class="checkboxList">
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox3" id="checkbox3_1">
+                                        <label for="checkbox3_1">견인 서비스 확장 추가특약Ⅰ <a href="#help27Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox3" id="checkbox3_2">
+                                        <label for="checkbox3_2">다른 자동차 운전담보 <a href="#help28Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox3" id="checkbox3_3">
+                                        <label for="checkbox3_3">다른 자동차 운전담보 – 자녀 운전담보 추가 <a href="#help29Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox3" id="checkbox3_4">
+                                        <label for="checkbox3_4">대리운전위험담보 <a href="#help30Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox3" id="checkbox3_5">
+                                        <label for="checkbox3_5">보험대차운전중사고보상특약 <a href="#help31Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabCon">
+                                <div class="topTxt">
+                                    <ul class="listStyle star">
+                                        <li>사고 발생 시 사고처리비용에 대한 보장을 확대하는 특약</li>
+                                    </ul>
+                                </div>
+                                <div class="checkboxList">
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox4" id="checkbox4_1">
+                                        <label for="checkbox4_1">벌금비용담보 <a href="#help32Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox4" id="checkbox4_2">
+                                        <label for="checkbox4_2">변호사선임비용담보 <a href="#help33Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="checkbox4" id="checkbox4_3">
+                                        <label for="checkbox4_3">형사합의지원금담보 <a href="#help34Con" class="btnHelp">도움말</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabCon">
+                                <div class="shareInputWrap">
+                                    <div class="shareInput">
+                                        <ul>
+                                            <li class="tit">나눔특약 <a href="#" class="btnHelp">도움말</a></li>
+                                            <li class="input">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" name="checkbox5" id="checkbox5">
+                                                    <label for="checkbox5">가입</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="tit"><label for="kind">분납선택</label></li>
+                                            <li class="input">
+                                                <div class="selectItem small">
+                                                    <select name="kind" id="kind">
+                                                        <option value="1">일시불</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tar"><a href="#" class="btn small2" title="자세히보기"><span>자세히보기</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etcCon">선택특약 : 실비케어, 상해용품 지원담보</div>
+                        <a href="#" class="btnClose"><span>적용</span></a>
+                    </div>
+                </div>
+                <!--rowItem : e-->
+            </div>
+            <!--priceInfomationArea : e-->
+        </div>
+        <!--priceInfomationWrap : e-->
+        <div class="infoTotalArea">
+            <div class="InfoTotal">
+                <ul class="saleList">
+                    <li>
+                        <div class="row small topRow">
+                            <p class="tit">할인 전 보험료</p>
+                            <p class="con"> 1,721,770원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row topRow">
+                            <p class="tit">총 할인 금액</p>
+                            <p class="con">- 256,150원</p>
+                        </div>
+                        <div class="row">
+                            <p class="tit">다이렉트 할인</p>
+                            <p class="con">- 135,500원</p>
+                        </div>
+                        <div class="row">
+                            <p class="tit">블랙박스 할인</p>
+                            <p class="con">- 30,000원</p>
+                        </div>
+                        <div class="row">
+                            <p class="tit">자녀특약 할인</p>
+                            <p class="con">- 65,150원</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="totalPay">
+                    <p class="txt">다이렉트 보험료</p>
+                    <div class="price">
+                        <span class="number">1,456,620</span>
+                        <span class="priceTxt">원</span>
+                    </div>
+                    <div class="eco">
+                        ECO마일리지 할인 시 총 보험료<br>
+                        1,420,000원
+                    </div>
+                </div>
+            </div>
+            <div class="btnSet">
+                <a href="#" class="btnSave"><span>내 보험료 저장</span></a>
+                <!--2017-11-24 수정 : s-->
+                <div class="lineBtn">
+                    <a href="#"><span>문자로 받기</span></a>
+                </div>
+                <!--2017-11-24 수정 : e-->
+            </div>
+        </div>
+        <!--cardInfomation :s-->
+        <div class="cardInfomation">
+            <div class="leftArea">
+                <h4 class="title">신용카드별 결제 혜택 (카드사 제공)</h4>
+                <ul class="listStyle dot">
+                    <li>30만원이상 홈페이지 고객 직접 결제(승인)건 대상</li>
+                    <li>카드사별 타 행사(캐시백/청구할인 등)혜택 중복 불가하며,<br>중복 시 큰 금액 적용</li>
+                    <li>법인/체크/선불/기프트카드 및 간편결제 제외</li>
+                </ul>
+            </div>
+            <div class="rightArea">
+                <div class="imgTabType tabWrap">
+                    <ul class="tabList">
+                        <li class="on">
+                            <a href="#">
+                                <span class="img"><img src="https://direct.hi.co.kr/images/motor/card_01_on.png" alt="hyundai card"></span>
+                                <span class="txt">최대4만원 할인</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="img"><img src="https://direct.hi.co.kr/images/motor/card_02_off.png" alt="samsung card"></span>
+                                <span class="txt">최대4만원 할인</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="img"><img src="https://direct.hi.co.kr/images/motor/card_03_off.png" alt="kb국민카드"></span>
+                                <span class="txt">최대4만원 할인</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tabCon on">
+                        <h4 class="tabHiddenTitle">현대카드</h4>
+                        <div class="tabConTable">
+                            <div class="tit">
+                                <p class="fontBase fz15">현대카드<br>지금바로 결제 시</p>
+                                <p class="fontPoint2 fz17 mt5">최대 4만원<br>+ α 추가 절약</p>
+                            </div>
+                            <div class="con">
+                                캐시백 1만원 제공(보험개시 익월말)
+                                <p class="fontLevel2">
+                                    - M포인트 보험료 결제 사용: 최대 3만원<br>
+                                    - M/X/ZERO 계열로 일시불 결제 시 추가
+                                </p>
+                                <p class="mt3">150% 적립/할인(현대카드 슈퍼클럽)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabCon">
+                        <h4 class="tabHiddenTitle">삼성카드</h4>
+                        <div class="tabConTable">
+                            <div class="tit">
+                                <p class="fontBase fz15">삼성카드<br>지금바로 결제 시</p>
+                                <p class="fontPoint2 fz17 mt5">1만원 주유권<br>+ 포인트결제</p>
+                            </div>
+                            <div class="con">
+                                모바일 주유권 제공<br>
+                                (카드 소유주 1인당 1회)
+                                <p class="fontLevel2">
+                                    * 승인익월말 카드소유주 휴대폰 발송
+                                </p>
+                                <p class="mt3">100% 포인트 사용 가능 (보유 포인트 차감)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabCon">
+                        <h4 class="tabHiddenTitle">국민카드</h4>
+                        <div class="tabConTable">
+                            <div class="tit">
+                                <p class="fontBase fz15">국민카드<br>지금바로 결제 시</p>
+                                <p class="fontPoint2 fz17 mt5">1만원 추가절약</p>
+                            </div>
+                            <div class="con">
+                                청구할인 1만원 제공
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--cardInfomation :e-->
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item37">
+                    <li><a href="#" class="btn prev"><span>이전</span></a></li>
+                    <li><a href="#" class="btn next"><span>다음</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

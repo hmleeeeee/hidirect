@@ -338,8 +338,8 @@ $(document).ready(function() {
 				data:['O', true, true, true]
 				, option:[true, true, true, false]
 							//:[No,		2D,		3D,			4D,			5D, 		6D, 		Page, 	Path, 	Type, 	기획, 		디자인,	담당자,	예정,		완료, 		검대상,		고객검,		Tag,		Log
-				, search:['X',	'X', 	'X', 		'X', 		'X', 		'X', 		'X', 		'X', 		true, 	true, 	true,		true, 	true, 	true, 	false, 		false, 		true, 	true]
-				, table :['O', 	'O', 	true, 	true, 	true, 	true, 	false, 	'O', 		true, 	true, 	true,		true, 	true, 	true, 	false,		false, 		true,		true]
+				, search:['X',	'X', 	'X', 		'X', 		'X', 		'X', 		'X', 		'X', 		true, 	true, 	true,		true, 	true, 	true, 	true, 		true, 		true, 	true]
+				, table :['O', 	'O', 	true, 	true, 	true, 	true, 	false, 	'O', 		true, 	true, 	true,		true, 	true, 	true, 	true,			true, 		true,		true]
 			}
 		}
 		, mobile : {

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>03_보험료확인</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/longterm.css" />
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="형대해상 다이렉트"></a></p>
+            <h1>실손의료비보장보험</h1>
+        </div>
+        <div class="stepArea">
+        </div>
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>보험료 확인</h2>
+            <p class="txt">플랜 및 담보를 선택해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+        <!--lineTabWrap : s-->
+        <div class="lineTabWrap tabWrap">
+            <ul class="lineTabList tabList item2 big">
+                <li class="on">
+                    <a href="#">
+                        <span class="vmiddle">
+                            <span class="tit">선택형Ⅱ(월 12,170원)</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="vmiddle">
+                            <span class="tit">표준형 (월 11,780원)</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>            
+            <div class="tabCon on">
+                <h3 class="tabHiddenTitle">스탠다드 플랜 (5,000원)</h3>
+                <!--productInfoTable : s-->
+                <div class="productInfoTable type2">
+                    <ul class="titleArea">
+                        <li class="tit">가입담보형</li>
+                        <li class="pay">가입금액</li>
+                        <li class="pay">보험료</li>
+                        <li class="join">가입설정</li>
+                    </ul>
+                    <div class="infoArea">
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">기본. 상해입원실손의료비(갱신형)</span>
+                            </li>
+                            <li class="pay">2억원</li>
+                            <li class="pay">132원</li>
+                            <li class="join fontPoint2">필수가입</li>
+                        </ul>
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">기본. 상해통원실손의료비(외래)(갱신형)</span>
+                            </li>
+                            <li class="pay">3,000만원</li>
+                            <li class="pay">50원</li>
+                            <li class="join fontPoint2">
+                                <div class="circleSlide">
+                                    <div class="circle"></div>
+                                    <ul>
+                                        <li><a href="#" data-media-value="no">미가입</a></li>
+                                        <li><a href="#" data-media-value="yes">가입</a></li>
+                                    </ul>
+                                    <input type="hidden" id="join1">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">기본. 상해통원실손의료비(처방조제)(갱신형)</span>
+                            </li>
+                            <li class="pay">미가입</li>
+                            <li class="pay">51원</li>
+                            <li class="join fontPoint2">
+                                <div class="circleSlide">
+                                    <div class="circle"></div>
+                                    <ul>
+                                        <li><a href="#" data-media-value="no">미가입</a></li>
+                                        <li><a href="#" data-media-value="yes">가입</a></li>
+                                    </ul>
+                                    <input type="hidden" id="join1">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">기본. 질병입원실손의료비(갱신형)</span>
+                            </li>
+                            <li class="pay">1,000만원</li>
+                            <li class="pay">135원</li>
+                            <li class="join fontPoint2">
+                                <div class="circleSlide">
+                                    <div class="circle"></div>
+                                    <ul>
+                                        <li><a href="#" data-media-value="no">미가입</a></li>
+                                        <li><a href="#" data-media-value="yes">가입</a></li>
+                                    </ul>
+                                    <input type="hidden" id="join1">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">기본. 질병통원실손의료비(외래)(갱신형)</span>
+                                
+                            </li>
+                            <li class="pay">20만원</li>
+                            <li class="pay">132원</li>
+                            <li class="join fontPoint2">
+                                <div class="circleSlide">
+                                    <div class="circle"></div>
+                                    <ul>
+                                        <li><a href="#" data-media-value="no">미가입</a></li>
+                                        <li><a href="#" data-media-value="yes">가입</a></li>
+                                    </ul>
+                                    <input type="hidden" id="join1">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">기본. 질병통원실손의료비(처방조제)(갱신형)</span>
+                            </li>
+                            <li class="pay">10만원</li>
+                            <li class="pay">50원</li>
+                            <li class="join fontPoint2">
+                                <div class="circleSlide">
+                                    <div class="circle"></div>
+                                    <ul>
+                                        <li><a href="#" data-media-value="no">미가입</a></li>
+                                        <li><a href="#" data-media-value="yes">가입</a></li>
+                                    </ul>
+                                    <input type="hidden" id="join1">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">특약. 비급여도수치료・체외충격파치료・증식치료실손의료비(갱신형)</span>
+                            </li>
+                            <li class="pay">1,000만원</li>
+                            <li class="pay">51원</li>
+                            <li class="join fontPoint2">
+                                <div class="circleSlide">
+                                    <div class="circle"></div>
+                                    <ul>
+                                        <li><a href="#" data-media-value="no">미가입</a></li>
+                                        <li><a href="#" data-media-value="yes">가입</a></li>
+                                    </ul>
+                                    <input type="hidden" id="join1">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">특약. 비급여주사료실손의료비(갱신형)</span>
+                            </li>
+                            <li class="pay">1,000만원</li>
+                            <li class="pay">135원</li>
+                            <li class="join fontPoint2">
+                                <div class="circleSlide">
+                                    <div class="circle"></div>
+                                    <ul>
+                                        <li><a href="#" data-media-value="no">미가입</a></li>
+                                        <li><a href="#" data-media-value="yes">가입</a></li>
+                                    </ul>
+                                    <input type="hidden" id="join1">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="item">
+                            <li class="tit">
+                                <span class="txt">특약. 비급여자기공명영상진단(MRI/MRA)실손의료비(갱신형)</span>
+                            </li>
+                            <li class="pay">20만원</li>
+                            <li class="pay">132원</li>
+                            <li class="join fontPoint2">
+                                <div class="circleSlide">
+                                    <div class="circle"></div>
+                                    <ul>
+                                        <li><a href="#" data-media-value="no">미가입</a></li>
+                                        <li><a href="#" data-media-value="yes">가입</a></li>
+                                    </ul>
+                                    <input type="hidden" id="join1">
+                                </div>
+                            </li>
+                        </ul>                        
+                    </div>
+					<a href="#" class="btn small mt10" style="width:128px;"><span>담보 내용 자세히 보기</span></a>
+                    <div class="selectDateArea mt30">
+                        <dl>
+                            <dt>보험가입기간</dt>
+                            <dd> 
+                                <div class="inputBase placeholder disabled">
+									<input type="text" placeholder="1년" title="1년" disabled>
+								</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>납입방법</dt>
+                            <dd>
+                                <div class="selectItem">
+                                    <select name="selectYear2" id="selectYear2" title="납입방법을 선택해주세요">
+                                        <option value="">선택하세요</option>
+                                        <option value="1">10년</option>
+                                        <option value="2">5년</option>
+                                        <option value="3">1년</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>의료급여수급권자</dt>
+                            <dd>
+                                <div class="selectItem">
+                                    <select name="selectKind" id="selectKind" title="의료급여수급권자를 선택해주세요">
+                                        <option value="">선택하세요</option>
+                                        <option value="1">월납</option>
+                                        <option value="2">연납</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="InfoTotal">
+                        <div class="totalPay">
+                            <p class="txt">결제 보험료</p>
+                            <div class="price">
+                                <span class="number">12,170</span>
+                                <span class="priceTxt">원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--productInfoTable : e-->
+                <!--alertInfo : s-->
+                <div class="alertInfo">
+                    <p class="title">유의사항</p>
+                    <div class="conArea">
+                        <ul class="listStyle dot">
+                            <li>실손의료비 보장보험은 매년 갱신되며, 갱신시점의 연령, 위험률 증가에 따라 보험료가 변동(증가)될 수 있습니다.</li>
+							<li>매 1년 자동갱신 (갱신횟수 최대 14회), 재가입 주기는 15년 단위이며, 재가입을 통해 보장받을 수 있는 최대 연령은 100세로<br> 재가입 전일까지 재가입 의사표시를 하셔야 합니다. (자세한 사항은 약관 참조)</li>
+							<li>의료수급권자는 의료급여증명서 제출 시 보험료 5% 할인 혜택 제공됩니다.</li>
+							<li>
+								자기 부담금<br>
+								- 선택형Ⅱ : 의료급여 10%, 비급여 20%, 특약 30%<br>
+								- 표준형 : 의료급여 20%, 비급여 20%, 특약 30%
+
+							</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--alertInfo : e-->
+
+                <!--btnAreaWrap : s-->
+                <div class="btnAreaWrap right"><a href="#" class="btn small mail"><span>문자로 받기</span></a></div>
+                <!--btnAreaWrap : e-->
+
+            </div>
+            <div class="tabCon">
+                <h3 class="tabHiddenTitle">프리미엄 플랜 (7,500원)</h3>
+            </div>
+        </div>
+        <!--lineTabWrap : e-->
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item37">
+                    <li><a href="#" class="btn prev"><span>이전</span></a></li>
+                    <li><a href="#" class="btn next"><span>다음</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>차량 추가부속품 선택 | 차량 상세정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>차량 상세정보 입력</h1>
+	<a href="#" class="btnHome">메인페이지로 이동</a>
+	<a href="#" class="btnInfo">2</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<a href="#" class="subConOpen up" role="button">
+		<strong>총 차량가액</strong>
+		<span>1,723원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+	</a>
+	<div class="dataDetail">
+		<ul>
+			<li>
+				<strong class="stit">차량 정보</strong><span class="cost">1,473만원</span>
+				<span class="info">LF쏘나타2.0, 5인승,Style,오토,에어컨, P/S,ABS, AIR-D</span>
+			</li>
+			<li>
+				<strong class="stit">추가부속품</strong><span class="cost">543만원</span>
+				<span class="info">블랙박스, 네비게이션, 후방카메라, HID헤드램프, 펄도장, 도난추적GPS, 테슬라 차량 패키지</span>
+			</li>
+		</ul>
+	</div>
+	<section>
+		<div class="h2Btn">
+			<h2>블랙박스가 장착되어 있나요?<span>(3% 할인)</span></h2>
+			<a href="#helplayerPopup" class="btnHelp" role="button"><span>도움말</span></a>
+		</div>
+
+		<div class="btn">
+			<div><a href="#" role="button">아니오</a></div>
+			<div><a href="#layerPop1" role="button">예</a></div>
+		</div>
+
+		<h2>차량 기본 부속품 외 추가부속품이 있나요?</h2>
+		<div class="btn">
+			<div><a href="#" role="button">아니오</a></div>
+			<div><a href="#layerPop1" role="button">예</a></div>
+		</div>
+		
+		<div class="h2Btn">
+			<h2>구매하신 테슬라 차량가액이 기본 차량가액을 초과하는 경우에 해당되시나요?</h2>
+			<a href="#layerPop4" class="btnHelp" role="button"><span>도움말</span></a>
+		</div>
+
+		<div class="btn">
+			<div><a href="#" role="button">아니오</a></div>
+			<div><a href="#layerPop5" role="button">예</a></div>
+		</div>
+	</section>
+
+	<div class="accodionPo">
+		<a href="#" class="subConOpen" role="button">
+			<strong>총 차량가액</strong>
+			<span>1,723원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+		</a>
+		<div class="dataDetail">
+			<ul>
+				<li>
+					<strong class="stit">차량 정보</strong><span class="cost">1,473만원</span>
+					<span class="info">LF쏘나타2.0, 5인승,Style,오토,에어컨, P/S,ABS, AIR-D</span>
+				</li>
+				<li>
+					<strong class="stit">추가부속품</strong><span class="cost">543만원</span>
+					<span class="info">블랙박스, 네비게이션, 후방카메라, HID헤드램프, 펄도장, 도난추적GPS</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">다음</a></span>
+	</div>
+	<!-- content -->
+</div>
+
+
+
+<div class="layerPopup" id="layerPop1">
+	<div class="layerWrap">
+		<h2>블랙박스 정보 입력</h2>
+		<div class="layerCont">
+			<div class="h2Btn">
+				<h3 class="pdr">제품 가격정보</h3>
+				<a href="#none" class="btnDel" role="button">삭제</a>
+			</div>
+			<!-- style form element 변경 -->
+			<fieldset>
+				<legend>부속품 정보입력</legend>
+				<!-- <div class="inputWrap">
+					<select title="기타부속품 선택">
+						<option>기타부속품 선택</option>
+					</select>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="addyear01" required />
+					<label for="addyear01">장착년월 (ex. 201512)</label>
+				</div> -->
+				<div class="inputWrap">
+					<input type="text" id="addcost02" required />
+					<label for="addcost02">금액입력(만원 단위)</label>
+				</div>
+			</fieldset>
+			<!-- //style -->
+			<!-- <div class="logTabChoisBoxNone">
+				<span class="title">현재가</span>
+				<span class="price">50만원 <a href="#layerPop1" role="button"><em>수정</em></a></span>
+
+			</div> -->
+			<!-- <div class="logTabChoisBox  mgtNone">
+				<span class="carAttProdTotalCostName">현재가</span>
+				<span class="carAttProdTotalCost"><em>1,240,000</em>만원 <a href="#" role="button"><span>삭제</span></a></span>
+			</div> -->
+		</div>
+		<div class="layerBtn">
+			<span><a href="#close">취소</a></span>
+			<span class="on"><a href="#">확인</a></span>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+<div class="layerPopup" id="layerPop2">
+	<div class="layerWrap">
+		<h2>기타 부속품 정보 입력</h2>
+		<div class="layerCont">
+			<strong>제품의 가격정보를 입력해주세요.</strong>
+			<!-- style form element 변경 -->
+			<fieldset>
+				<legend>부속품 정보입력</legend>
+				<!-- <div class="inputWrap">
+					<select title="기타부속품 선택">
+						<option>기타부속품 선택</option>
+					</select>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="addyear02" required />
+					<label for="addyear02">장착년월 (ex. 201512)</label>
+				</div>-->
+				<div class="inputWrap">
+					<input type="text" id="addcost02" required />
+					<label for="addcost02">금액입력</label>
+				</div>
+			</fieldset>
+			<!-- //style -->
+
+			<!-- <div class="carAttProdTotalBox mgtNone">
+				<span class="carAttProdTotalCostName">현재가</span>
+				<span class="carAttProdTotalCost"><em>1,240,000</em>만원</span>
+				<a href="#" role="button" class="btnGray"><span class="icoDelete">삭제</span></a>
+			</div> -->
+		</div>
+		<div class="layerBtn">
+			<span><a href="#close">취소</a></span>
+			<span class="on"><a href="#">확인</a></span>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+<div class="layerPopup" id="layerPop3">
+	<div class="layerWrap">
+		<h2>블랙박스 장착 특약 안내</h2>
+		<div class="layerCont">
+			<h3>가입대상</h3>
+			<p>하이카다이렉트 개인용 자동차보험 차량용 영상기록장비(블랙박스)가 고정으로 장착된 자동차의 경우 가입 가능 (단, 휴대전화, 태블릿 PC 등에 애플리케이션(응용프로그램)을 탑재하여 사용되는 차량용 영상기록 장치는 적용대상 아님)</p>
+
+			<h3>적용요율</h3>
+			<p>담보 및 특약 적용보험료의 97.0% 적용</p>
+
+			<h3>기타 유의사항</h3>
+			<ul class="listDot">
+				<li>특별약관 가입 시 차량용 영상기록장치에 대한 정보(제조사, 모델명, 부속품가액 등)를 회사에 알려야 함</li>
+				<li>차량용 영상기록장치가 피보험자동차에 장착되어 있는 사진을 제출해야 함.</li>
+				<li>사고 발생 시 사고와 관련된 영상기록정보를 제출하지 않거나, 허위 또는 조작하는 경우에는 할인 받은 보험료를 반환해야 함.</li>
+				<li>사고 발생 시 사고와 관련된 영상기록정보를 제출하지 않거나, 허위 또는 조작하는 경우에는 할인 받은 보험료를 반환해야 함.</li>
+				<li>보험 가입을 위해 사진 2매(차량 정면 사진 및 블랙박스 장착 실내사진)가 필요합니다.</li>
+				<li>사진 없어도 보험료 계산은 가능합니다. (가입 불가)</li>
+			</ul>
+		</div>
+		<div class="layerBtn">
+			<a href="#">확인</a>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+<div class="layerPopup" id="layerPop4">
+	<div class="layerWrap">
+		<h2>테슬라 차량가액 입력안내(중요)</h2>
+		<div class="layerCont">
+			<p>테슬라 차량의 경우 구매 시 테슬라 옵션사양 선택에 따라 표기된 <span>기본차량 가액을 초과하는 경우</span><br /><br />
+			총 차량가액 초과 해당 여부에 [예]를 선턱하여 <span>초과차액을 입력</span>해 주세요.</p>
+			<div class="listEtc"><p>실제 옵션가액 기준으로 보장되므로 정확한 금액을 입력해주세요.</p></div>
+		</div>
+		<div class="layerBtn">
+			<a href="#">확인</a>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>	
+
+<div class="layerPopup" id="layerPop5">
+	<div class="layerWrap">
+		<h2>테슬라 차량 패키지</h2>
+		<div class="layerCont">
+			<div class="h3Btn">
+				<h3>초과차액</h3>
+				<a href="#none" class="btnDel" role="button">삭제</a>
+			</div>
+			
+			<fieldset>
+				<legend>테슬라 차량 패키지 정보입력</legend>
+				<div class="inputWrap">
+					<input type="text" id="addcost02" required />
+					<label for="addcost02">금액입력</label>
+				</div>
+			</fieldset>
+		</div>
+		<div class="layerBtn">
+			<span><a href="#close">취소</a></span>
+			<span class="on"><a href="#">확인</a></span>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+</body>
+</html>

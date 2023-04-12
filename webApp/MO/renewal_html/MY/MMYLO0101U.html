@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="loan">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">보험계약대출 상환</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+            <div class="tab tab_round" data-tab="tabRound">
+							<ul class="tab_wrap" role="tablist">
+								<li role="tab" class="on"><a href="javascript:void(0);" title="원금+이자상환 탭 선택"><span>원금+이자상환</span></a></li>
+								<li role="tab"><a href="javascript:void(0);"><span>이자만 납입</span></a></li>
+							</ul>
+						</div>
+						<div class="governing ta_l">
+							<div class="progress" aria-label="보험계약대출 신청 총 4단계 중 1단계">
+								<div class="progress_wrap" aria-hidden="true">
+									<span class="progress_num">1</span>
+									<span class="progress_total">4</span>
+								</div>
+							</div>
+							<h2 class="governing_title">원금상환금액을 입력해 주세요.</h2>
+							<p class="info_text point_color">입력한 금액에 이자가 합산됩니다.</p>
+						</div>
+						<div class="comp">
+							<div class="amount_title">
+								<h2 class="title">대출원금</h2>
+								<div class="amount icon01">1,250<em>만원</em></div>
+							</div>
+						</div>
+						<div class="comp">
+							<div class="form_area">
+								<div class="form_item">
+									<div class="form_label"><label for="inp01">원금상환금액</label></div>
+									<div class="form_wrap">
+										<input type="number" id="inp01" placeholder="1만원 이상 입력" data-clear="true">
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
+									</div>
+									<div class="option_area">
+										<button type="button" class="btn option"><span>1만</span></button>
+										<button type="button" class="btn option"><span>10만</span></button>
+										<button type="button" class="btn option"><span>50만</span></button>
+										<button type="button" class="btn option"><span>100만</span></button>
+										<button type="button" class="btn option"><span>정정</span></button>
+									</div>
+									<div class="form_msg error">원금상환금액을 입력해 주세요.</div>
+								</div>
+								<p class="bul_dot">상환일 기준으로 대출이율이 높은 보험계약 순으로 선택되어 자동 계산됩니다.</p>
+							</div>
+						</div>
+
+						<div class="comp">
+							<div class="toggle_accordion"><!-- Default:닫힘,  .open: 펼치기 -->
+								<div class="item">
+									<div class="fold_header">
+										<p class="title">계약별로 직접 입력</p>
+										<div class="switch_toggle">
+											<a href="javascript:void(0);" class="btn_accordion" role="button"><span class="blind">내용보기</span></a>
+										</div>
+									</div>
+									<div class="fold_body">
+										<div class="card_list">
+											<div class="card_item check_type">
+												<div class="card_wrap">
+													<div class="dl_list">
+														<div class="dl_head">
+															<p class="title">연금저축손해보험노후웰스보험 (Hi904)기본플랜</p>
+														</div>
+														<dl>
+															<dt>대출이율</dt><dd class="point_color">3.4%</dd>
+															<dt>대출원금</dt><dd>50만원</dd>
+															<dt>대출이자</dt><dd>100,000원</dd>
+															<dt><strong>원금+이자</strong></dt><dd><strong class="point_color fz17">600,000원</strong></dd>
+														</dl>
+														<div class="form_area">
+															<div class="form_item form_box">
+																<div class="form_wrap">
+																	<input type="number" title="대출신청금액" placeholder="1만원이상 입력" data-clear="true">
+																	<div class="append">
+																		<span class="unit">만원</span>
+																		<span class="unit"><button type="button" class="btn_form">전액</button></span>
+																	</div>
+																</div>
+																<div class="option_area">
+																	<button type="button" class="btn option"><span>1만</span></button>
+																	<button type="button" class="btn option"><span>10만</span></button>
+																	<button type="button" class="btn option"><span>50만</span></button>
+																	<button type="button" class="btn option"><span>100만</span></button>
+																	<button type="button" class="btn option"><span>정정</span></button>
+																</div>
+															</div>
+														</div>
+														<div class="dl_footer dashed">
+															<div class="tooltip_area">
+																<span class="tooltip_text">신용정보집중 대상 대출입니다.</span>
+																<div class="tooltip">
+																	<button type="button" class="btn_tooltip" data-pos="bottom" data-icon="true" data-handler="click"><span class="blind">툴팁 bottom</span></button>
+																	<div class="tooltip_wrap" role="tooltip">
+																		<div class="tooltip_con">
+																			<div class="tooltip_title">신용정보 집중 대상 대출</div>
+																			<div class="tooltip_contents">
+																				「신용정보업 감독규정」 개정에 따라 2019년 7월 10일 이후 새로 가입한 보험계약에서 대출신청 시, 신용정보 제공에 동의해야 신청이 가능합니다. 또한 해당 정보는 한국신용정보원에 집중되어 다른 금융기관 등에 공유되고, 다른 금융기관 대출의 DSR(총부채원리금상환비율) 산정 시 해당 보험계약대출의 '이자상환액' 이 포함됩니다.
+																			</div>
+																		</div>
+																		<a class="tooltip_close" href="javascript:void(0);" role="button">Close</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="card_item check_type">
+												<div class="card_wrap">
+													<div class="dl_list">
+														<div class="dl_head">
+															<p class="title">무배당현대해상다이렉트실손의료비보장보험(계약전환용)(갱신형)(HI2301)</p>
+														</div>
+														<dl>
+															<dt>대출이율</dt><dd class="point_color">3.4%</dd>
+															<dt>대출원금</dt><dd>50만원</dd>
+															<dt>대출이자</dt><dd>100,000원</dd>
+															<dt><strong>원금+이자</strong></dt><dd><strong class="point_color fz17">600,000원</strong></dd>
+														</dl>
+														<div class="form_area">
+															<div class="form_item form_box">
+																<div class="form_wrap">
+																	<input type="number" title="대출신청금액" placeholder="1만원이상 입력" data-clear="true">
+																	<div class="append">
+																		<span class="unit">만원</span>
+																		<span class="unit"><button type="button" class="btn_form">전액</button></span>
+																	</div>
+																</div>
+																<div class="option_area">
+																	<button type="button" class="btn option"><span>1만</span></button>
+																	<button type="button" class="btn option"><span>10만</span></button>
+																	<button type="button" class="btn option"><span>50만</span></button>
+																	<button type="button" class="btn option"><span>100만</span></button>
+																	<button type="button" class="btn option"><span>정정</span></button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="card_item check_type disabled"> <!-- N : 비활성화(신청 불가) 상태 일 떄 클래스 .disabled 추가 -->
+												<div class="card_wrap">
+													<div class="dl_list">
+														<div class="dl_head">
+															<p class="title">연금저축손해보험노후웰스보험 (Hi904)기본플랜</p>
+														</div>
+														<dl>
+															<dt>대출이율</dt><dd>3.4%</dd>
+															<dt>대출원금</dt><dd>50만원</dd>
+															<dt>대출이자</dt><dd>100,000원</dd>
+															<dt><strong>원금+이자</strong></dt><dd><strong>600,000원</strong></dd>
+														</dl>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="section bottom_fix">
+						<div class="comp">
+							<div class="accordion notice full">
+								<div class="item">
+									<div class="fold_header">
+										<a href="javascript:void(0);" role="button" title="내용보기">
+											<div class="title"><strong>유의사항</strong></div>
+											<i class="icon_angle"><span>내용보기/내용닫기</span></i>
+										</a>
+									</div>
+									<div class="fold_body uol_list">
+										<ul>
+											<li>대출이자가 자동이체 청구 중(영업일 기준 자동이체일 1~2일 전)일 경우 상환(대출) 시 이자가 이중출금되며, 이중출금 시에는 영업일 기준 2일 후 자동이체 계좌로 자동 환급됩니다.</li>
+											<li>업무처리 중이거나 2010년 4월 1일 이후 가입한 계약이 미납해지(실효)가 된 경우 대출상환, 이자납입 처리가 되지 않으며, 자동이체 청구도 제외됩니다. </li>
+											<li>미납해지된 기간 동안 출이자는 보험계약대출 이율보다 낮은 해지환급금 적용이율로 계산되며, 계약이 부활될 경우에는 보험계약대출 이율이 다시 적용됩니다. </li>
+											<li>자세한 내용은 인터넷 콜센터(02-2116-1004) 또는 대출상담 콜센터(1588-5655)로 문의해 주세요. </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<div class="content_footer fix calc_footer">
+					<div class="calc_wrap">
+						<a href="javascript:void(0)" role="button" onclick="javascript:layerPop.open($('#sampleModal_Drag'));" class="modalbar_trigger">
+							<p class="title">출금예상금액<span>(원금+<span class="point_color">이자</span>)</span></p>
+							<p class="num_txt">10,000,000<em>원</em></p>
+						</a>
+						<!-- 링크 없는 CASE: .modalbar_trigger 에 .disabled 추가 -->
+						<!-- <a href="javascript:void(0)" role="button" class="modalbar_trigger disabled">
+							<p class="title">대출신청금액</p>
+							<p class="num_txt">0<em>원</em></p>
+						</a> -->
+						<!-- //링크 없는 CASE -->
+						<div class="btn_area">
+							<a href="javascript:void(0);" class="btn fill01">다음</a>
+						</div>
+					</div>
+				</div>
+				<!-- //content_footer -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Modal Bar -->
+		<div class="modal bottom drag fade" id="sampleModal_Drag" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<a href="javascript:void(0);" class="drag_handler" onclick="layerPop.close('#sampleModal_Drag'); return false;"></a>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+								<div class="comp">
+									<div class="title_area">
+										<h2 class="h2">출금예상금액<span>(원금+<span class="point_color">이자</span>)</span></h2>
+									</div>
+									<div class="box">
+										<a href="MMYLO0112U.html" class="btn text arrow" target="_blank">MMYLO0112U.html</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer">
+							<button type="button" class="btn fill01">다음</button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#sampleModal_Drag'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Bar -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

@@ -1,0 +1,4706 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>보험료 계산하기</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="./css/directH1.css">
+<link rel="stylesheet" type="text/css" href="./css/roundslider.css">
+<script type="text/javascript">
+  var sCurDate = "202203";
+  var _currDate = new Date(1648187056097);
+  var _menuId = 'b5eef5f9a4';
+  var _menuIdcNm = '자동차 보험료계산 기초정보 입력';
+  var _menuGb = '8200000000';
+</script>
+
+<script type="text/javascript" src="./js/jquery/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="./js/jquery.touchFlow.js"></script><!--
+<script type="text/javascript" src="./js/jquery/jquery-dateFormat.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery.blockUI.js"></script>
+<script type="text/javascript" src="./js/min/json2.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery.history.js"></script>
+<script type="text/javascript" src="./js/min/hi-framework-jquery.js"></script>
+<script type="text/javascript" src="./js/min/HiJS.js"></script> -->
+<script type="text/javascript" src="./js/common/common.js"></script>
+<script type="text/javascript" src="./js/common/min/common_app.js"></script>
+<script type="text/javascript" src="./js/common/common_ui.js"></script>
+<script type="text/javascript" src="./js/common/common_combo.js"></script>
+<script type="text/javascript" src="./js/common/min/validation.js"></script>
+<script type="text/javascript" src="./js/common/min/commonTime.js"></script>
+<script type="text/javascript" src="./js/common/min/cDate.js"></script>
+<script type="text/javascript" src="./js/xecuresmart.js"></script>
+<script type="text/javascript" src="./js/min/slick.js"></script>
+<script type="text/javascript" src="./js/ui.js"></script>
+<script type="text/javascript" src="./js/min/ui_common.js"></script>
+<script type="text/javascript" src="./js/jquery/roundslider.js"></script>
+<script type="text/javascript" src="./js/countUp.js"></script>
+<!-- API chart -->
+<script type="text/javascript">
+	
+  $(function() {
+
+    //카카오톡 유입시 설정한 로컬스토리지 초기화-invader
+    //localStorage.clear();//로컬스토리지 초기화
+    localStorage.removeItem("certSeqNo");
+    
+    /*제휴분기*/
+    var tmpjehuPopChk = "N";
+    if(tmpjehuPopChk == "Y"){
+      fnJehuTemp(); //제휴 임시로 닫기
+    }
+    
+    var JeHuEventService = "false";
+    var blgEventService = "false";
+    var rewardEventService = "false";
+    var friendEventService = "false";
+    var frirendEventChkYn = "Y";
+    var renewEventService = "false";
+    var renewalEventService = "false";
+    
+    if(blgEventService == "false" && '' == "C040"){
+      alert("현대해상 다이렉트블로그 계산 이벤트가 종료되었습니다.");
+    }else if(JeHuEventService == "false" && '' == "C042"){
+      alert("현대해상 TVCF 런칭 이벤트가 종료되었습니다.");
+    }else if(rewardEventService == "false" && '' == "C045"){			
+      alert("<B>자동차보험 이벤트<br/>참여기간이 아닙니다.</B>", "location.href='/service.do?m=7c6641ec8a';");
+    }else if(friendEventService == "false" && '' == "C044" && frirendEventChkYn == "Y"){			
+      alert("<div class='eventend'><strong>현재 <em>종료된 이벤트</em>입니다</strong><span>더 좋은 이벤트로 찾아뵙겠습니다.</span></div>", "location.href='/service.do?m=7c6641ec8a';");
+    }else if(friendEventService == "true" && '' == "C044" && frirendEventChkYn == "N"){			
+      alert("<B><font color='#4374D9'><strong style='font-size:17px'>친구추천 이벤트 일시중지 안내</br></br></font></strong>KT mhows 시스템업그레이드로 인해<br/>5월 23일(목) 00 ∼ 12시(총12시간) 동안<br/>상품 교환 및 이벤트 참여가 일시 중지 됩니다.</B>");
+    }else if(renewEventService == "false" && ('' == "C053" || '' == "C060") ){			
+      alert("<B>현대해상 갱신 이벤트<br/>참여기간이 아닙니다.</B>", "location.href='/service.do?m=7c6641ec8a';");
+    }else if(renewalEventService == "false" && ('' == "C054" || '' == "C055") ){			
+      alert("<B>현대해상 갱신 이벤트<br/>참여기간이 아닙니다.</B>", "location.href='/service.do?m=7c6641ec8a';");
+    }
+      
+    else{}
+    
+    fnKTJehuEndChk(); //KT(B284), 현대캐피탈플러스(B307), 현대캐피탈플카(B349) 종료체크
+    
+    
+    
+    
+    sessionStorage.removeItem('edDtCount'); //자동차 보험 종료 카운트 삭제
+    sessionStorage.removeItem("cnInfoLayerOpnYn"); // 커넥티드 제조사 정보조회 레이어 오픈여부 세션스토리지값 초기화
+    sessionStorage.removeItem("cnInfoAgrLayerOpnYn"); // 커넥티드 제조사 정보조회 동의 레이어 오픈여부 세션스토리지값 초기화
+    sessionStorage.removeItem("bfCalcHisStep");    // 최근계산내역으로 이동 시 이동단계
+    
+    sessionStorage.removeItem("eventSatis");    // 만족도조사 이벤트 레이어 오픈여부 세션스토리지값 초기화
+    
+    // 초기화
+    fnInit();
+    
+    //[제휴] pc로 모바일 URL로 접근시 pc로 분기.2016-08-29
+    //alert(osInfo.window);
+    if(osInfo.window){
+      if('' != ""){
+        //alert('');
+        if(url.indexOf("https://mdirect.hi.co.kr") != -1 && url.indexOf("m=b5eef5f9a4") != -1){
+          //location.href = "https://direct.hi.co.kr/service.do?m=28680681ee"+param;	
+        }else{
+          //location.href = "https://edirect.hi.co.kr/service.do?m=28680681ee"+param;
+        }
+      }
+    }
+    
+    // 제휴정보
+    if ("" != "" && "" != "") {
+      sessionStorage.setItem('partnerShipInfoVal', JSON.stringify({cncNo:"", mediaNo:"", campaignId:""}));
+    }
+    
+    // KTCLIP 진입시 팝업
+    if('' == 'KTCLIP' || '' == 'KTCLIP2'){
+      lpOpener('ktclipInfoPopup');
+    }
+    
+    // 보험다모아
+    if('' == 'e_sure_market' && '' != ''){
+      lpOpener('damoaLayer');
+    }
+    
+          
+    $('.listDot').on('click', function () {
+      fnCertiPass();
+    });
+    
+    
+    // 이름 입력란 클릭 시 하단으로 scroll 이동 (iPhone5 대응)  -> 2021.01 디자인 변경으로 인해 삭제
+/* 		$('#ptyKorNm').click(function(){
+      if (osInfo.cd != "10111005") { // iOS 가 아닐때만 동작
+        setTimeout(function(){
+          $('html, body').animate({
+            scrollTop: $("#ptyKorNm").offset().top - $("#ptyKorNm").height()
+          }, 200);
+        },300);
+      }
+    });
+    
+    
+    // 주민등록번호 앞자리
+    $('#regNo1').click(function(){
+      if (osInfo.cd != "10111005") { // iOS 가 아닐때만 동작
+        setTimeout(function(){
+          $('html, body').animate({
+            scrollTop: $("#regNo1").offset().top - $("#regNo1").height()
+          }, 200);
+        },300);
+      }
+    }); */
+    
+    
+    // 보안키패드 라이브러리 변경하면서 삭제 20.06
+     /* $(document).on("click", ".xkp_key2.xkinput.xknumber", function(e) {
+      if ($("#regNo2").val().length == 7 && xkModule.isOpend()) {
+        xkModule.close();
+        //autoNextField('regNo2', 'telNo', 7); //장차법으로 삭제
+      }
+    }); */
+    
+    // 휴대폰번호 입력
+/* 		$('#telNo_af').click(function(){
+      if (osInfo.cd != "10111005") { // iOS 가 아닐때만 동작
+        setTimeout(function(){
+          $('html, body').animate({
+            scrollTop: $("#telNo_af").offset().top - $("#telNo_af").height()
+          }, 200);
+        },300);
+      }
+    }); */
+    
+    // input 클릭 시 이벤트 화면 안보이는 기능
+    // 안드로이드 일 경우 화면비율로, iOS일경우 focus 클릭 시로 판단하여 이벤트 배너 가림 
+    //-> 2021.01 결제할인 이벤트 부분이 보험료계산 밑으로 이동 / carBnArea 사용하지않음
+/* 		if (osInfo.cd == "10111004") { // Android
+      $(window).resize(function(){
+        if( window.orientation !== undefined ){
+          var ratio = window.innerWidth / window.innerHeight;
+          if( window.orientation === 0 || window.orientation === 180 ){
+            // portrait
+            if(ratio < 0.76){// 키보드 다운
+              calcBnUp('carBnArea');
+            }else{// 키보드 업
+              calcBnDown('carBnArea');
+            }
+          }else{
+            // landscape 가로모드는 지원안함
+          }
+        }			
+      });
+    }else{
+      // iOS에서는 focus, blur 상태로 키패드 여부 판단
+      $('input').bind('focus', function() {
+        var keyboardShown = $(window).scrollTop() > 0;
+        calcBnDown('carBnArea');
+      })
+      
+      $('input').bind('blur', function() {
+        var keyboardShown = $(window).scrollTop() > 0;
+        calcBnUp('carBnArea');
+      })
+    } */
+    
+    //input 입력시 버튼 색상 변경
+    var inputName = $('#ptyKorNm'); 
+        var inputReg1 = $('#regNo1');
+        var inputReg2 = $('#regNo2');
+        var inputHp = $('#telNo_af');
+        
+        $('input').on('keyup', function(){
+            if(!inputName.val()=="" && !inputReg1.val()=="" && !inputReg2.val()=="" && !inputHp.val()==""){			
+              $('#calcBtn').addClass('on');	
+            }else{
+              $('#calcBtn').removeClass('on');
+            }
+            
+        });
+    
+    /* 앱푸시 수취 확인 서비스 호출 */
+    var pushId = "null";
+    var pushEvntCat = "null"; 
+    // appPushTagging(pushId, pushEvntCat);  // 추후 산출 단계별 저장할때 pushEvntCat 값사용
+    
+    if(!isNullChk(pushId)){
+      appPushTagging(pushId, 0);	
+    }
+    
+    // ToggleBox - SlideDownUp Toggle /2104
+    $('.toggleBtn').click(function(){
+      var boxArea = $(this).parent().parent('.toggleBox'); // 토글박스
+      
+      switch (boxArea.hasClass('on')) {
+        case false :
+          $(this).parent().next('.toggleDetail').slideDown('fast'); // 닫힘 시 상세내용 열림
+          boxArea.addClass('on'); // 토글박스에 on 추가				
+          break;
+        default :
+          $(this).parent().next('.toggleDetail').slideUp('fast'); // 열림 시 상세내용 닫힘
+          boxArea.removeClass('on'); // 토글박스에 on 삭제
+      }
+    });
+    
+  });
+  
+  function fnJehuTemp(){
+
+    //alert("<B><font color='#4374D9'><strong style='font-size:17px'>이벤트 일시중지 안내</br></br></font></strong>대행사 변경으로 인해 이벤트 참여가 일시 중지됩니다.<br/>중단일시 : 2020년12월31(목) 18:30 ~ 2021년1월8일(금) 24:00까지.</B>");
+    lpOpener('teslaPopup');
+  }
+  
+  // 보험료계산 하단 배너 닫기 /1904
+  function calcBnDown(bn){		
+    $('.'+bn).css('bottom','-80px');	
+  }
+  
+  // 보험료계산 하단 배너 열기 /1905
+  function calcBnUp(bn){		
+    $('.'+bn).css('bottom', '54px' );
+  }
+  function  fnKTJehuEndChk(){
+    /*KT 멤버쉽 20190930 종료*/
+    if(getToday() >='20191001' && '' == "B284"){
+      lpOpener('chkKtEndPopup');
+      return false;
+    }
+    return true;
+  }
+  // 다음단계 이동
+  function fnMoveNext(pageCode) {
+    
+    // 파이어베이스 로그 분석 수집
+    setFirebaseButtonEvent("page_name&calc_car_insur&자동차보험료계산하기");
+    
+    if(!fnKTJehuEndChk()){
+      return;
+    }
+    
+    // 가상키패드 암호값 세팅
+    concatXkSessionInfo("regNo2");
+    
+    /*휴대폰번호 값 세팅*/
+    var telNo_bf = $("#telNo_bf").val();
+    var telNo_af = $("#telNo_af").val();
+    var telNo = telNo_bf + telNo_af;
+    $("#telNo").val(telNo);
+    
+    //JSK 제휴 이벤트 중복참여
+    var reqRegNo1 = $('#regNo1').val();
+    var reqRegNo2 = $('#regNo2').val();
+    var reqRegNoEvnt = reqRegNo1+reqRegNo2;
+    var reqTelNo = $('#telNo').val();	
+    
+    var JeHueventId = "";
+    var mdNo = '';
+    
+    var jeHueventDate = getToday();
+    
+    if (!fnInputVldChk()){
+      return;
+    }
+    
+    //이상(anomaly) 주민번호 체크
+    if($('#regNo2').val() == "1111111" && anomalyNextYN != 'Y') {
+      lpOpener("juminCheckLayer");
+      return;
+    }
+    
+    //간편설계 화면 진입시 차량번호 체크
+    if( ('' == 'sim' || '' == 'B407'  ) && !fnInputVldChkCarNum()) {
+      return;
+    }
+    /*제휴 이벤트 중복참여 체크 JSK*/		
+    var blgEventService = "false";
+    var JeHuEventService = "false";
+    var friendEventService = "false";
+    
+    //다이렉트 블로그 & 페이스북
+    if(blgEventService == "true" && '' == 'C040'){
+      JeHueventId = '72'; //블로그 이벤트
+      fnEventJeHuJoinChk(reqRegNoEvnt, reqTelNo, JeHueventId);
+    }else if(JeHuEventService == "true" && '' == 'C042'){
+      JeHueventId = '79'; //페이스북 이벤트	
+      fnEventJeHuJoinChk(reqRegNoEvnt, reqTelNo, JeHueventId);
+    }else if(friendEventService == "true" && '' == 'C044'){
+      if(getToday() <= '20211231'){
+        JeHueventId = "224"; //친구추천 이벤트
+          }else{
+            JeHueventId = "262"; //친구추천 이벤트
+          }
+      fnEventJeHuJoinChk(reqRegNoEvnt, reqTelNo, JeHueventId);
+    }else{
+      
+    }	
+    
+    /*기부 이벤트 중복참여 체크*/
+    var cbpsCatCd = '';		
+        if(cbpsCatCd == "01" || cbpsCatCd == "02" || cbpsCatCd == "03"){	 
+          if(getToday() <= '20211231'){
+        JeHueventId = "225";	//기부 이벤트
+          }else{
+            JeHueventId = "263";	//기부 이벤트
+          }
+      fnEventJeHuJoinChk(reqRegNoEvnt, reqTelNo, JeHueventId);
+    }
+        
+    // KTMBS HDCAREVNT 진입시 동의체크(순서중요)
+    if('' == 'KTMBS' || '' == 'HDCAREVNT' || '' == 'HDMF_RENEW' || '' == 'HDMF_RENEW2'){
+      /* 동의여부 체크 */
+      if ( !$(":checkbox[name='lmsChkAgree1']").is(':checked') ){ // 개인정보 수집.이용 동의
+          alert("개인(신용)정보 수집 &middot; 이용 동의에 체크해 주세요.");
+          $("#lmsChkAgree1").focus(); 
+          return; 
+        }
+      
+      if ( !$(":checkbox[name='lmsChkAgree2']").is(':checked') ){ // 개인정보 수집.이용 동의
+          alert("개인(신용)정보 제공 동의에 체크해 주세요.");
+          $("#lmsChkAgree2").focus(); 
+          return; 
+        }
+    }
+  
+    
+    $('#preNextCat').val('1');
+    $('#pageCode').val(pageCode); // 1-보험료계산하기, 2-최근계산내역
+    if ($('#regNo1').val() == $('#sesRegNo1').val() && $('#regNo2').val() == $('#sesRegNo2').val() && '' != 'B407' ){
+      document.form1.certExistYn.value = "Y"; //기존 세션에 인증성공한 주민번호로 다시 재 인증시 기인증여부를 Y로 세팅
+      /*인증간소화처리건 인증이력남기기위해 데이터저장	
+        인증타입 : P2,P3,P4...
+      */
+      var oReqData = {
+           svcMenuId 		: 'b5eef5f9a4'
+          ,menuCode 		: '82'
+          ,ptyId 			:  $('#sesPtyId').val()
+              ,channelType    : 'M'
+              ,certType 		: ""
+              ,certRsltCd 	: '0000'
+              ,certRsltMsg 	: '정상'
+          };
+        HiJS.svr.doRequestAjax("DHCO0099M20S", {
+          data : oReqData,
+          loadingbar : false,
+          callback : {
+            success : function(responseObj) {	
+              fnStepProcSimple();
+            },
+            failure : function(responseObj) {
+            }
+          }
+        
+        });		
+            
+      
+      
+    }else{		
+    // 세션 저장, 마케팅 동의 여부 조회
+    fnStepProc();
+    }
+  }
+
+   function fnEventJeHuJoinChk(reqRegNoEvnt, reqTelNo, JeHueventId){
+     var CheckrtCode = "";
+      var oReqData = {
+                custTel    : reqTelNo
+                , billYn   : 'Y'
+                , evntId   : JeHueventId
+                , saveYn   : 'N'
+                , regNo    : reqRegNoEvnt
+                , media_no : ''
+                , cnc_no	 : '' 		// 쿠폰번호 추가
+                , cbpsCat	 : ''	// 기부처구분코드
+          };
+        HiJS.svr.doRequestAjax("DHCO0350M12S", {
+          data : oReqData,
+          loadingbar : false,
+          callback : {
+            success : function(responseObj) {		
+              console.log(responseObj);
+              if(responseObj.data.rtCode =="002"){
+                if(oReqData.media_no == "C040"){
+                  alert("다이렉트블로그 보험료 계산</p>이벤트에 이미 참여하셨습니다.</p>확인 버튼을 누르면 보험료계산/가입은</p>가능하나 경품은 중복 지급되지 않습니다.</p>이점 양해 부탁드립니다.");									
+                }else if(oReqData.media_no == "C042"){
+                  alert("자녀할인특약 변경 기념</p>이벤트에 이미 참여하셨습니다.</p>확인 버튼을 누르면 보험료계산/가입은</p>가능하나 경품은 중복 지급되지 않습니다.</p>이점 양해 부탁드립니다.");
+                }else if(oReqData.media_no == "C044"){
+                  alert("현대해상다이렉트 친구추천 이벤트에</p>이미 참여하셨습니다.</p>확인 버튼을 누르면 보험료계산/가입은</p>가능하나 경품은 지급되지 않습니다.</p>이점 양해 부탁드립니다.");
+                }else if(oReqData.cbpsCat != ""){
+                  alert("현대해상다이렉트 기부 이벤트에</p>이미 참여하셨습니다.</p>확인 버튼을 누르면 보험료계산/가입은</p>가능하나 기부금은 중복으로 적립되지 않습니다.</p>이점 양해 부탁드립니다.");
+                }else{}		
+              }else {
+                // 친구추천이벤트 URL쿠폰발급 방식으로 변경에 따른 유효성 체크 추가
+                if(oReqData.media_no == "C044"){
+                  if(responseObj.data.rtCode == "C01"){
+                    alert("죄송합니다.</p>이번달 이미 3회 참여 완료 하셨습니다.</p>다음달에 다시 도전해주세요!");
+                  }else if(responseObj.data.rtCode == "C02"){
+                    alert("죄송합니다.</p>소개하신분과 동일한 휴대폰 번호로는</p>이벤트에 참여하실 수 없습니다.</p>이점 양해 부탁드립니다.");
+                  }else if(responseObj.data.rtCode == "C03"){
+                    alert("죄송합니다.</p>유효하지 않은 주소입니다.</p>소개받은 URL 다시 한번 확인 부탁드립니다.");
+                  }
+                }
+              }
+            },
+            failure : function(responseObj) {
+            }
+          }				
+        });		
+      
+  }
+  
+  /**
+  3개월 이전 마케팅 여부 조회
+  */
+  function fnAgreeDisplay(mktgUtlAgrmViewYn) {
+    
+    var _obj = $('#presonalAgree').find('section').find('h2').eq(1); //상품소개를 위한 동의
+    
+    if (mktgUtlAgrmViewYn == 'N') {
+      _obj.hide();
+      _obj.next('.agreeCtr').hide();
+      $('#agreeAll2').hide();
+    } else {
+      _obj.show();
+      _obj.next('.agreeCtr').show();
+      $('#agreeAll2').show();
+    }
+    
+  }
+
+  // 약관 성공 callback
+  function fnMove(returnObj) {
+    //console.log("fnMove 호출!!!"); // 개인정보처리동의 약관 동의 확인버튼 클릭시 호출
+    
+       // 실명인증(세션처리로 변경)
+    var realNmReqData = {
+         keyRegNo	: ""			  	      
+          , keyCustName	: ""
+          , keyUserTeam	: "A4"
+          , KeySelYn	: "N"
+      };
+    
+      
+    HiJS.svr.doRequestAjax("DHCO0099M32S", {
+//		HiJS.svr.doRequestAjax("DHMT0100M47S", {
+      data 		: realNmReqData,
+      async		: false,
+      loadingbar	: true,
+      callback	: {
+        success : function(responseObj) {
+          
+          //console.log("### lnkReturnCode : " + responseObj.data.lnkReturnCode);
+          //console.log("### lnkResultCode : " + responseObj.data.lnkResultCode);
+          
+          if(responseObj.data.lnkReturnCode=="00"){ // 00 : 실명확인 결과정상, 99 : 실명확인 결과실패
+            if(responseObj.data.lnkResultCode=="2"){ // 1 : 일치, 2 : 불일치, 5 : 당사존재(당사테이블 우선조회여부 "Y"일경우에 RETURN)
+              //상품소개동의팝업 Close
+              alertCloser("layerPopConfirm","");
+              
+              alert("<b>실명인증 오류 안내</b></br></br>이름과 주민등록번호를 정확하게 다시 입력해주세요.</br></br>※ 실명인증 오류가 계속되신다면 </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NICE아이디 고객센터로 문의바랍니다.</br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*문의처 :&nbsp;   <a href=\"http://www.niceid.co.kr\" target=\"_blank\" > www.niceid.co.kr </a> <a href=\"tel:1600-1522\">(☎ 1600-1522)</a>", "location.href='/service.do?m=b5eef5f9a4'");
+              return false;
+            }
+          }else{
+            
+            //상품소개동의팝업 Close
+            alertCloser("layerPopConfirm","");
+            
+            alert("<b>실명인증 기관 장애 안내</b></br></br>현재 NICE아이디(실명인증기관)의 장애로 이용이 어렵습니다. </br>잠시 후 다시 이용해주시기 바랍니다.", "location.href='/service.do?m=b5eef5f9a4'");
+            return false;						
+          }
+        },
+        failure : function(responseObj) {
+          var message = responseObj.header.responseMessage;
+          alert(message.substr(message.indexOf("]")+2), "location.href='/service.do?m=b5eef5f9a4'");
+        }
+      }
+    });
+       
+      
+    if ($('#mktgUtlAgrmViewYn').val() == 'Y') {
+      if (returnObj.agree5 == 'Y') {
+        $('#mktgUtlAgrmYn').val('01');
+        $('#receiveAgree').val("Y/Y/Y/Y");	
+      }else if(returnObj.eventAgree =="Y"){
+        $('#mktgUtlAgrmYn').val('01');
+        $('#receiveAgree').val("Y/Y/Y/Y");	
+      }else{
+        $('#mktgUtlAgrmYn').val('02');
+        $('#receiveAgree').val("N/N/N/N");
+      }	
+    }else {
+        $('#mktgUtlAgrmYn').val('');
+        $('#receiveAgree').val("");	
+    }
+    
+    
+    // 인증
+    fnOpenCertiLayer( "POPUP"
+                  , "presonalAgree"
+                  , $('#ptyKorNm').val()
+                  , $('#regNo1').val()
+                  , $('#regNo2').val()
+                  , $('#telNo').val()
+                  , 'b5eef5f9a4'
+                  , '82'
+                  , fnReturnCert);
+    
+  }
+  
+  // 인증 콜백 
+  function fnReturnCert(certCat, certSeqNo, mblNo){
+    //console.log('[MTPC0110G] fnReturnCert() 호출!!');
+    //closeLayer("presonalAgree");
+    //$('#presonalAgree').hide();
+    
+    $('#certSeqNo').val(certSeqNo);
+    
+    var objTelNo = splitTelNo(mblNo);
+    $('#telNo1').val(objTelNo.telNo1);
+    $('#telNo2').val(objTelNo.telNo2);
+    $('#telNo3').val(objTelNo.telNo3);
+    $('#certCat').val(certCat);
+    
+    // TODO : 운영테스트 후 주석삭제
+    // fnMove0131();
+    mVaccine_check(fnMove0131);
+  }
+  
+  // XXX : 테스트용 인증 패스
+  function fnCertiPass(){
+    
+    $('#presonalAgree').hide();
+    $("#certificateLayer").hide();
+    
+    // 0000 히든 패스
+    $('#certSeqNo').val('0000');
+    
+    if('' == 'B407'){
+      $('#certSeqNo').val('45788203');	
+    }
+    
+    
+    var objTelNo = splitTelNo($('#telNo').val());
+    $('#telNo1').val(objTelNo.telNo1);
+    $('#telNo2').val(objTelNo.telNo2);
+    $('#telNo3').val(objTelNo.telNo3);
+    $('#certCat').val('03');
+    fnMove0131();
+    
+  }
+  
+  /**
+   * 다음단계이동 전 세션 처리
+   */
+  function fnStepProc(){
+    //$.blockUI();
+    HiJS.svr.doRequestAjax("DHMT0100M12S", {
+      formId : "form1",
+      messageEnabled : false,
+      callback : {
+        success : function(responseObj) {
+          
+          if(responseObj.data.dhmt0001vo.executeTime == 999){
+            // session이 없을때 처리
+            location.href = "/bin/MT/PC/MTPC0004G.jsp";
+          }
+          
+          $("#executeTime").val(responseObj.data.dhmt0001vo.executeTime);
+          
+          var mktgUtlAgrmViewYn = 'Y';
+          //제휴인 경우에도 상품소개동의 재징구되지 않도록 수정 2018.07.16
+          if (responseObj.data.dhmt0001vo.mktgUtlAgrmExistYn == 'Y') { //마케팅 여부 이미 동의함
+            mktgUtlAgrmViewYn = 'N';
+          }
+          
+          $('#mktgUtlAgrmViewYn').val(mktgUtlAgrmViewYn);
+          var threeAgreeObj = {
+              threeYn : 'N' 
+          };
+          
+          fnOpenPresonalAgree(threeAgreeObj, fnMove); // 약관 조회
+          fnAgreeDisplay(mktgUtlAgrmViewYn); // 마케팅 여부 화면 표시
+            
+          var provideText ="";
+          var providePurpose = "보험료산출완료 확인";
+          var provideItem = "보험료산출완료 여부";
+          var provideTerm = "동의일로부터 1개월";
+          
+          if(''== "IP" ){			
+            provideText = "(주)멤플러스";
+          }else if(''== "CJOSHOPPINGAA" ){			
+            provideText = "(주)CJ오쇼핑";	
+          }else if(''== "GSHOMESHOPPING" ){			
+            provideText = "(주)GS홈쇼핑";	
+          }else if('' != "" ){			
+            provideText = "";
+          }
+          
+          //제휴처에 따라 제3자동의정보 문구 변경
+          if(''== "KAKAOPAY" ){//(2016.10.31)
+            providePurpose = "카카오페이 결제고객 프로모션 경품 지급";
+            provideItem = "계약자 휴대폰 번호 (카카오페이 결제 계약에 한함)";
+            provideTerm = "경품지급 완료 후 즉시 파기 (동의일로부터 최대 2개월)";
+          }else if(''== "HYUNDAI_MOTOR" ){//(2017.01.19)
+            providePurpose = "모바일주유권발송";
+            provideItem = "휴대전화번호";
+            provideTerm = "모바일주유권발송 목적 달성 후 1개월내 파기";
+          }else if(''== "KTCLIP" || ''== "KTCLIP2"){
+            provideText = "KT(주)";
+            providePurpose = "프로모션 참여완료 확인 (보험료 산출완료 여부)";
+            provideItem = "프로모션 참여완료 결과 (보험료 산출완료 여부)";
+            provideTerm = "포인트 적립완료 후 즉시 파기 (최대 1개월 이내)";
+          }
+          
+          if (provideText != '') {
+            var appendHtml = "<header>";
+            appendHtml += "<h1>개인(신용)정보의 제3자 제공에 관한 사항</h1>";
+            appendHtml += "</header>";
+            appendHtml += "<div class=\"popContent\">";
+            appendHtml += "<section class=\"agrSection2\">";
+            appendHtml += "<ul class=\"listDot\">";
+            appendHtml += "<li>제공 받는 자";
+            appendHtml += "<ul class=\"listBasic\">";
+            appendHtml += "<li id=\"provideText\">"+provideText+"</li>";
+            appendHtml += "</ul>";
+            appendHtml += "</li>";
+            appendHtml += "<li>개인(신용)정보를 제공받는 자의 이용 목적";
+            appendHtml += "<ul class=\"listBasic mgT0\">";
+            appendHtml += "<li id=\"providePurpose\">"+providePurpose+"</li>";
+            appendHtml += "</ul>";
+            appendHtml += "</li>";
+            appendHtml += "<li>제공 개인(신용)정보의 항목";
+            appendHtml += "<ul class=\"listBasic mgT0\">";
+            appendHtml += "<li id=\"provideItem\" >"+provideItem+"</li>";
+            appendHtml += "</ul>";
+            appendHtml += "</li>";
+            appendHtml += "<li> 개인(신용)정보를 제공받는 자의 개인정보 보유 및 이용기간";
+            appendHtml += "<ul class=\"listBasic\">";
+            appendHtml += "<li id=\"provideTerm\" >"+provideTerm+"</li>";
+            appendHtml += "</ul>";
+            appendHtml += "</li>";
+            appendHtml += "</ul>";
+            appendHtml += "</section>";
+            appendHtml += "<div class=\"btnWrap\"> <a href=\"javscript:void(0);\" onclick=\"fnAppendBeforeHtml();closeLayer('agree_detail')\">확인</a> </div>";
+            appendHtml += "</div>";
+            appendHtml += "<button type=\"button\" class=\"btnClose\" onclick=\"fnAppendBeforeHtml();closeLayer('agree_detail')\">창닫기</button>";
+                        
+            // 3자 제공 내용 변경
+            $(document).on('click','#BFZZ03', function (event) {
+              event.stopImmediatePropagation();
+              $('#agree_detail').html('');
+              $('#agree_detail').html(appendHtml);
+            });
+          }
+        },
+        failure : function(responseObj){
+          
+          // 오류페이지 이동
+          $.unblockUI();
+          location.href="/bin/CO/CO/COCO0802G.jsp?pageGb=MT&etime=1648187056063";
+          return;
+        }
+      }
+    });
+  }
+  /**
+   *  본인인증 간소화용 다음단계이동
+   */
+  function fnStepProcSimple(){
+    HiJS.svr.doRequestAjax("DHMT0100M12S", {
+      formId : "form1",
+      messageEnabled : false,
+      callback : {
+        success : function(responseObj) {
+                    
+          if(responseObj.data.resultCode == 900){
+            // session이 없을때 처리
+            location.href = "/bin/MT/PC/MTPC0004G.jsp";
+          }
+            $("#executeTime").val(responseObj.data.dhmt0001vo.executeTime);
+            fnMove0131();
+        
+                            
+        },
+        failure : function(responseObj){
+          
+          // 오류페이지 이동
+          $.unblockUI();
+          location.href="/bin/CO/CO/COCO0802G.jsp?pageGb=MT&etime=1648187056063";
+          return;
+        }
+      }
+    });	
+  }
+    
+    
+  // 다른 약관 내용으로 다시 변경
+  function fnAppendBeforeHtml() {
+    var appendHtml = "<header>";
+    appendHtml += "<h1 id=\"detail_text\"></h1>";
+    appendHtml += "</header>";
+    appendHtml += "<div class=\"popContent\">";
+    appendHtml += "<section class=\"agrSection\" id=\"detail_cnts\"></section>";
+    appendHtml += "<div class=\"btnWrap\">";
+    appendHtml += "<a href=\"javascript:void(0);\" onclick=\"closeLayer('agree_detail');\">확인</a>";
+    appendHtml += "</div>";
+    appendHtml += "</div>";
+    appendHtml += "<button type=\"button\" class=\"btnClose\" onclick=\"closeLayer('agree_detail');\">창닫기</button>";
+    $('#agree_detail').html('');
+    $('#agree_detail').html(appendHtml);
+  }
+  
+  
+  /**
+   * 이전산출조회
+   */
+  function fnMove0131(){
+    //console.log("fnMove0131() 호출!!!"); // 본인인증 성공 후 호출
+    
+    $('#preNextCat').val('1');
+    $.blockUI();
+    HiJS.svr.doRequestAjax("DHMT0100M13S", {
+      formId : "form1",
+      messageEnabled : false,
+      loadingbar : false,
+      callback : {
+        success : function(responseObj) {
+          $.unblockUI();
+          if(responseObj.data.dhmt0001vo.executeCode == 999){
+            // session이 없을때 처리
+            location.href = "/bin/MT/PC/MTPC0004G.jsp";
+          }					
+          $("#executeTime").val(responseObj.data.dhmt0001vo.executeTime);
+          
+// 					console.log('[MTPC0110G] 1--pageCode:'+$('#pageCode').val());
+// 					console.log('[MTPC0110G] 1--mediano:'+mediano);
+// 					console.log('[MTPC0110G] 1--cbpsCatCd:'+cbpsCatCd);
+// 					console.log('[MTPC0110G] 1--dhmt0110vo.length:'+responseObj.data.dhmt0001vo.dhmt0110vo.length);
+// 					console.log('[MTPC0110G] 1--simplePlanCarNum:'+$("#simplePlanCarNum").val());
+// 					console.log('[MTPC0110G] resultVO.dhmt0001vo.inpath:');
+// 					console.log('[MTPC0110G] resultVO.dhmt0001vo.marketInagNo:');
+// 					console.log('[MTPC0130G] carAutoNoExsitYn:'+responseObj.data.carAutoNoExsitYn);
+          
+          var carAutoNoExsitYn = responseObj.data.carAutoNoExsitYn;
+          var simplePlanCarNum = $("#simplePlanCarNum").val();
+          var inagInsDt = '';
+          
+          if(simplePlanCarNum != ''){
+            
+            var carList = responseObj.data.dhmt0001vo.dhmt0110vo;
+            if(carList.length >0){
+              $.each(carList, function (idx, carData){
+                
+                //차량번호,차대번호 확인
+                if(simplePlanCarNum == carData.carAutoNo || simplePlanCarNum == carData.chssNo){
+                  
+                  //btnCat: 1=갱신대상,2: 예상보험료 
+  // 								console.log('[MTPC0110G] idx:'+idx);
+  // 								console.log('[MTPC0110G] carData.carAutoNo:'+carData.carAutoNo);
+  // 	 							console.log('[MTPC0110G] carData.chssNo:'+carData.chssNo);
+  // 								console.log('[MTPC0110G] carData.btnCat:'+carData.btnCat);
+  // 	 							console.log('[MTPC0110G] carData.preInagNo:'+carData.preInagNo);
+  // 	 							console.log('[MTPC0110G] carData.preInagSeq:'+carData.preInagSeq);
+  // 								console.log('[MTPC0110G] carData.insdCo:'+carData.insdCo);
+  // 	 							console.log('[MTPC0110G] carData.carDvcrtpCat:'+carData.carDvcrtpCat);
+  // 	 							console.log('[MTPC0110G] carData.inagInsEdDt:'+carData.inagInsEdDt);
+                  
+                  if(carData.insdCo != '09'){
+                    
+                    //타사+갱신
+                    if(carData.btnCat == '1'){
+                      
+                      inagInsDt = carData.inagInsEdDt;			//만일이 시작일로 세팅
+                      
+                      $('#shotCutIdx').val(idx);					//갱신시 전계약번호 idx
+                      $('#prevInsdCo').val(carData.insdCo);		//회사cd
+                      $('#autoTypCd').val(carData.carDvcrtpCat);	//차종
+                      
+                    }else if(carData.btnCat == '2'){
+                    //타사+예상	
+                      inagInsDt = getToday();
+                      
+                      $('#shotCutIdx').val(idx);	//갱신시 전계약번호 idx
+                      $('#chkExpPrem').val('Y');
+                      
+                    }else if(carData.btnCat == '4' || carData.btnCat == '5'){
+                    //만기미도래:4,만기경과:5	
+                      inagInsDt = getToday();
+                      $('#shotCutIdx').val(idx);	//갱신시 전계약번호 idx
+                    }
+                    
+                  }else if(carData.insdCo == '09'){
+                    
+                    //자사+갱신, 만기미도래:4,만기경과:5
+                    if(carData.btnCat == '1'){
+                      
+                      inagInsDt = carData.inagInsEdDt; //만일이 시작일로 세팅
+                      
+                      $('#inagCat').val("3");	// 갱신, 이전산출구분 (1:개발원갱신, 2:이전산출, 3:갱신가입(자체), 33:갱신가입계산후복귀(갱신가입문제시 사용)))
+                      $('#shotCutIdx').val(idx);
+                      $('#mnapAutoTypCat').val(carData.carDvcrtpCat);
+                      $('#carAutoNo').val(carData.carAutoNo);				//차량번호
+                      $('#carAutoNoText').val(carData.carAutoNo);
+                      $('#inagNo').val(carData.preInagNo);
+                      $('#inagNoSeq').val(carData.preInagSeq);
+                      $('#inagStDt').val(setFormatDate(inagInsDt, '-'));
+                      $('#inagEdDt').val(getNextYearDay2(inagInsDt, '-'));
+                      
+                    }else if(carData.btnCat == '2'){
+                    //자사+예상
+                      inagInsDt = getToday();
+                      
+                      $('#shotCutIdx').val(idx);	//갱신시 전계약번호 idx
+                      $('#chkExpPrem').val('Y');	
+                    
+                    }else if(carData.btnCat == '4' || carData.btnCat == '5'){
+                    //만기미도래:4,만기경과:5	
+                      inagInsDt = getToday();
+                      $('#shotCutIdx').val(idx);	//갱신시 전계약번호 idx
+                    }
+                  }
+                }
+              });
+            }else{
+              //신규 = fnSimplePlanCheck() call
+            }
+          }else{
+            simplePlanCallYn = 'Y'; //차량번호 미입력시 기존 프로세스 적용
+          }
+          
+          if ($('#pageCode').val() == '1') {
+            // 다음화면 이동
+
+            var mediano = "";
+            var cbpsCatCd = "";
+            
+            if('' != ''){	//문자로받기 url접근시 4단계로 점프
+              if (responseObj.data.dhmt0001vo.dhmt0110vo.length > 0) { //개발원 차량 목록이 있을 경우
+                $('#carListSize').val(responseObj.data.dhmt0001vo.dhmt0110vo.length);
+              }
+              fnSmsJumping();
+            }else if("" == "B407"){	//카카오톡 플랫폼
+              fnKakao();
+            }else if(responseObj.data.dhmt0001vo.easyPremList.length > 0 && "B280".indexOf(mediano) != -1 && cbpsCatCd == "" ){	//이전산출 내역 있는 경우, 제휴/이벤트가 아닌경우
+              //console.log('[MTPC0110G] -------------------aaa');
+              //console.log('[MTPC0110G] -------------------simplePlanCallYn(1):'+simplePlanCallYn);
+
+              if(simplePlanCallYn != 'Y' && '' == 'sim'){
+                fnSimplePlanCheck(inagInsDt);
+              
+              }else if("" == "e_sure_market" && "" != ""){
+                //보험다모아
+                //console.log('[MTPC0110G] (1)fnEasyPremListDisplay, inpath:');
+                fnMtEasyPremCal('', '', '4', '5117', '40', ''); //130g
+                
+                lpOpener('centerLoadingBar');
+                
+              }else{
+                $('#carListSize').val(responseObj.data.dhmt0001vo.dhmt0110vo.length);
+                // 최근계산내역 팝업 노출
+                fnEasyPremListDisplay(responseObj.data.dhmt0001vo.easyPremList);
+              }
+              
+            }else if("" == "B278"){	//차봇 접근
+              //console.log('[MTPC0110G] -------------------bbb');
+
+
+                 var reqObj = {
+                       executeTime : $("#executeTime").val()
+                           };
+
+                 
+                 HiJS.svr.doRequestAjax("DHMT6000M01S", {
+                 formId : "form1",
+                 messageEnabled : false,
+                 //loadingbar : true,
+                 callback : {
+                   success : function(responseObj) {
+                     $("#executeTime").val(responseObj.data.executeTime);
+                     HiJS.svr.doRequestForm('4ae3cfd294', 'form1');
+                     return;
+                   },
+                   
+                   failure : function(responseObj){	//기본정보 세팅에러시 차량선택페이지로 이동
+                  if (responseObj.data.dhmt0001vo.dhmt0110vo.length > 0) { //개발원 차량 목록이 있을 경우
+                    $('#carListSize').val(responseObj.data.dhmt0001vo.dhmt0110vo.length);
+                    // 최근계산내역 팝업 노출
+                    $("#stepHistCd").val('10051001');
+                    HiJS.svr.doRequestForm('ceda0cf40f', 'form1');
+                  } else { //개발원 차량 목록이 없을 경우
+                    $("#stepHistCd").val('10051001'); // 차량 종류 및 차대, 차번 등록 페이지 이동시 histCd
+                    HiJS.svr.doRequestForm('eda936e232', 'form1');
+                  }
+                   }
+                 }});
+
+              
+            }//END 차봇	
+            else{
+              //console.log('[MTPC0110G] -------------------ccc');
+              //console.log('[MTPC0110G]length--1:'+responseObj.data.dhmt0001vo.dhmt0110vo.length);
+              //console.log('[MTPC0110G] -------------------simplePlanCallYn(2):'+simplePlanCallYn);
+              
+              if (responseObj.data.dhmt0001vo.dhmt0110vo.length > 0) { //개발원 차량 목록이 있을 경우
+                
+                if(simplePlanCallYn != 'Y' && '' == 'sim'){
+                  fnSimplePlanCheck(inagInsDt);
+                
+                }else if("" == "e_sure_market" && "" != ""){
+                  //보험다모아
+                  //console.log('[MTPC0110G] (2)fnEasyPremListDisplay, inpath:');
+                  fnMtEasyPremCal('', '', '4', '5117', '40', ''); //130g
+                  
+                  lpOpener('centerLoadingBar');
+                  
+                }else{
+                  $('#carListSize').val(responseObj.data.dhmt0001vo.dhmt0110vo.length);
+                  // 최근계산내역 팝업 노출
+                  $("#stepHistCd").val('10051001');
+                  HiJS.svr.doRequestForm('ceda0cf40f', 'form1');
+                }
+                
+              } else { //개발원 차량 목록이 없을 경우
+                
+                if(simplePlanCallYn != 'Y' && '' == 'sim'){
+                  fnSimplePlanCheck(inagInsDt);
+                
+                }else if("" == "e_sure_market" && "" != ""){
+                  //보험다모아
+                  //console.log('[MTPC0110G] (3)fnEasyPremListDisplay, inpath:');
+                  fnMtEasyPremCal('', '', '4', '5117', '40', ''); //130g
+                  
+                  lpOpener('centerLoadingBar');
+                  
+                }else{
+                  $("#stepHistCd").val('10051001'); // 차량 종류 및 차대, 차번 등록 페이지 이동시 histCd
+                  HiJS.svr.doRequestForm('eda936e232', 'form1');
+                }
+              }
+            }
+
+          } else if ($('#pageCode').val() == '2' && cbpsCatCd == "" && "B280".indexOf(mediano) != -1) {
+            //console.log('[MTPC0110G] -------------------ddd');
+            $('#carListSize').val(responseObj.data.dhmt0001vo.dhmt0110vo.length);
+            
+            // 최근계산내역 팝업 노출
+            fnEasyPremListDisplay(responseObj.data.dhmt0001vo.easyPremList);
+            
+          }
+        },
+        failure : function(responseObj){
+          // 오류페이지 이동
+          location.href="/bin/CO/CO/COCO0802G.jsp?pageGb=MT&etime=1648187056063";
+          return;
+        }
+      }
+    });
+  }
+  
+  
+  
+  
+  
+  function fnKakao(){
+
+    var oReqData = {
+        
+        executeTime :	$("#executeTime").val(),
+        carNo :  $("#carNo").val(),
+        keyNo :  '',
+        requestNo : ''
+      };	
+    $.blockUI();
+      HiJS.svr.doRequestAjax('DHMT5700M10S',{
+        data : oReqData,
+        loadingbar : false,
+        
+        callback : {
+          success:function(responseObj){
+          
+            //카카오톡 접근시 로컬 스토리지에 certSeqNo값 저장-invader;
+            localStorage.certSeqNo = responseObj.data.certSeqNo;
+            
+            if(responseObj.data.rsltCode == "9999"){
+              $.unblockUI();
+              alert("차량번호가 없는 차량으로 설계진행이 불가능합니다.", "closeLayer()");
+              return;
+            }else if(responseObj.data.rsltCode == "9991"){
+              $.unblockUI();
+              alert("개인용 차량만 진행가능합니다.", "closeLayer()");
+              return;
+            }
+            
+            
+            //10111004 //안드
+            //10111005 // ios
+            
+            if ( $("#osInfoCd").val() =="10111004" ) {
+              window.location.href="kakaotalk://inappbrowser/close";
+              
+            }else{
+              
+              window.location.href="kakaoweb://closeBrowser";
+              
+            }
+            
+          },
+          failure : function (responseObj){
+            
+          }
+      }
+    });
+
+  }
+  
+  function fnSmsJumping(){
+
+    var oReqData = {
+        mappingNo 	: '',
+        executeTime :	$("#executeTime").val()
+      };	
+      
+      HiJS.svr.doRequestAjax('DHMT0100M46S',{
+        data : oReqData,
+        loadingbar : false,
+        
+        callback : {
+          success:function(responseObj){
+            var data = responseObj.data;
+            if(data.resultCode == '010' ){
+              alert('고객님, 보험시작일이 이미 지났거나 상품변경 등으로 계속 진행이 어렵습니다.<br>보험료계산을 원하시는 차량과 보험일시를 선택하신 후 진행해 주시기 바랍니다.', "fnNextPage();");
+            }else if(data.resultCode == '020' ){
+              alert('고객님, 차량소유자 본인이 아닌 경우 진행이 어렵습니다.<br>보험료계산을 원하시는 차량과 보험일시를 선택하신 후 진행해 주시기 바랍니다.', "fnNextPage();");
+            }else{
+              fnMtEasyPremCal(data.plnNo ,data.inagNoSeq , "2" , data.prodCd ,"40", data.clk2CallId + ":" + data.clk2CallSeq ,'' );
+            }
+            
+          },
+          failure : function (responseObj){
+            fnNextPage();
+          }
+      }
+    });
+  }	
+  
+  function fnNextPage(){
+    if ($('#carListSize').val() > 0) { //개발원 차량 목록이 있을 경우
+      $("#stepHistCd").val('10051001');
+      HiJS.svr.doRequestForm('ceda0cf40f', 'form1');
+    } else { //개발원 차량 목록이 없을 경우
+      $("#stepHistCd").val('10051001'); // 차량 종류 및 차대, 차번 등록 페이지 이동시 histCd
+      HiJS.svr.doRequestForm('eda936e232', 'form1');
+    }
+  }
+  
+  var simplePlanCallYn = 'N'; //간편설계 확인여부
+  function fnSimplePlanCheck(eDt){	
+    //console.log("fnSimplePlanCheck -eDt:"+eDt);
+    //return;
+    
+    $('#preNextCat').val('1');
+    $('#inagInsStDt').val(eDt); //만기일이 갱신시작일,
+    
+    //$.blockUI();
+    HiJS.svr.doRequestAjax("DHMT0100M42S", {
+      formId : "form1",
+      messageEnabled : false,
+      loadingbar : true,
+      callback : {
+        success : function(responseObj) {
+          
+          if(responseObj.data.dhmt0001vo.executeCode == 999){
+            // session이 없을때 처리
+            location.href = "/bin/MT/PC/MTPC0004G.jsp";
+          }					
+          
+          var retVal = responseObj.data.dhmt0001vo.simplePlanApplyYn;
+          //console.log('DHMT0100M42S--simplePlanApplyYn:'+retVal);
+          
+          if(retVal == 'Y'){
+            if($('#inagCat').val() == '3'){
+              //console.log("fnSimplePlanCheck --------------------AA");
+// 							console.log("fnSimplePlanCheck --inagStDt:"+$('#inagStDt').val());
+// 							console.log("fnSimplePlanCheck --inagEdDt:"+$('#inagEdDt').val());
+              
+               //자사갱신
+// 							fnCalcInit();
+               
+              //간편설계
+              $("#stepHistCd").val('10051001');
+              HiJS.svr.doRequestForm('3d78045bfc', 'form1');
+              
+            }else{
+              //console.log("fnSimplePlanCheck --------------------BB");
+              
+              //간편설계
+              $("#stepHistCd").val('10051001');
+              HiJS.svr.doRequestForm('3d78045bfc', 'form1'); ///service.do?tranId=DHMT0100M01S&view=MT/PC/MTPC0140G.jsp
+            }
+                
+          }else{
+            //재호출, 기존프로세스
+            simplePlanCallYn = 'Y';
+            fnMove0131();
+          }
+
+        },
+        failure : function(responseObj){
+          // 오류페이지 이동
+          //location.href="/bin/CO/CO/COCO0802G.jsp?pageGb=MT&etime=1648187056063";
+          return;
+        }
+      }
+    });
+  }
+  
+  // 자사갱신 호출
+  function fnCalcInit(){
+    
+    $('#preNextCat').val('1');
+    $("#stepHistCd").val('10051001');
+    
+    $.blockUI();
+    HiJS.svr.doRequestAjax("DHMT0100M01S", {
+      formId : "form1",
+      messageEnabled : false,
+      loadingbar : true,
+      callback : {
+        success : function(responseObj) {
+          
+          if(responseObj.data.dhmt0001vo.executeCode == 999){
+            // session이 없을때 처리
+            location.href = "/bin/MT/PC/MTPC0004G.jsp";
+          }
+          
+          $("#executeTime").val(responseObj.data.dhmt0001vo.executeTime);
+          //console.log('DHMT0100M01S ---------------1:'+$("#executeTime").val());
+          
+          $('#preNextCat').val('1');
+          $('#sameAddCat').val('1'); //동일증권 구분(1-단독,2-동일동시,3-동일추가,4-종기일치,5-단기계약) 
+          
+          //자사갱신
+          HiJS.svr.doRequestForm('5304fc93e5', 'form1');
+
+        },
+        failure : function(responseObj){
+          
+          // 오류페이지 이동
+          $.unblockUI();
+// 					location.href="/bin/CO/CO/COCO0802G.jsp?pageGb=MT&etime=1648187056063";
+// 					return;
+        }
+      }
+    });
+    
+  }
+  
+  
+  // 유효성체크
+  function fnInputVldChk(){
+    
+    $('#ptyKorNm').val($('#ptyKorNm').val().trim());
+    // 이름 유효성 검사
+    if (/[^\s\t\r\n]+/.test($('#ptyKorNm').val()) == false) { //입력 여부
+      alert("이름을 입력해주세요.", "$('#ptyKorNm').focus()");
+      return false;
+    } else if (/^[가-힣A-Za-z\s\.]+$/.test($('#ptyKorNm').val()) == false) { //한글 입력 여부
+      alert("이름을 한글 또는 영문으로 입력해 주세요.", "$('#ptyKorNm').focus()");
+      return false;
+    }
+    
+    // 주민번호 유효성 검사
+    if (/[^\s\t\r\n]+/.test($('#regNo1').val()) == false) {
+      alert("주민등록번호 입력을 확인해주세요.", "$('#regNo1').focus()");
+      return false;
+    } else if (/^[0-9]*$/.test($('#regNo1').val()) == false) {
+      alert("주민등록번호 입력을 확인해주세요.", "$('#regNo1').focus()");
+      return false;
+    } else if (/[^\s\t\r\n]+/.test($('#regNo2').val()) == false) {
+      alert("주민등록번호 입력을 확인해주세요.", "$('#regNo2').focus()");
+      return false;
+    } else if (!validCheckRRNO_all($('#regNo1').val(), $('#regNo2').val(), "$('#regNo1').focus()")) {
+      $('#regNo1').val(""); // 주민등록번호 초기화
+      $('#regNo2').val(""); // 주민등록번호 초기화
+      return false;
+    }
+    
+    //차량번호 입력받는 경우, 유효성 검사
+    if('' == 'B407'&& $("#carNo").val() == ''){
+      alert("차량번호 또는 차대번호 입력을 확인해주세요.", "$('#carNo').focus()");
+      return false;	
+    }else if(''=='sim' && $('#telNo_af').val()=='' && $("#simplePlanCarNum").val() == '' ){
+      alert("차량번호 또는 차대번호 입력을 확인해주세요.", "$('#simplePlanCarNum').focus()");
+      return false;
+    }
+    
+    // 휴대폰번호 유효성 검사
+    if (/[^\s\t\r\n]+/.test($('#telNo').val()) == false) {
+      alert("휴대폰번호 입력을 확인해주세요.", "$('#telNo_af').focus()");
+      return false;
+    } else if (/^[0-9]*$/.test($('#telNo').val()) == false) {
+      alert("휴대폰번호 입력을 확인해주세요.", "$('#telNo_af').focus()");
+      return false;
+    } else if(!validTelNo($('#telNo').val(), $('#telCat').val(), "$('#telNo_af').focus()")){
+      return false;
+    } 
+    
+    var objTelNo = splitTelNo($('#telNo').val());
+    $('#telNo1').val(objTelNo.telNo1);
+    $('#telNo2').val(objTelNo.telNo2);
+    $('#telNo3').val(objTelNo.telNo3);
+    
+    
+    if('' == 'B407'){
+      if($("#carNo").val() == ''){
+        alert("차량번호 또는 차대번호 입력을 확인해주세요.", "$('#carNo').focus()");
+        return false;	
+      }
+    
+      if($("#carNo").val().length != "17"){
+        var mnapAutoTypCat = fnGetMnapAutoTypCat($("#carNo").val());
+        
+        if(mnapAutoTypCat != "A"){
+          alert("개인용 차량만 진행가능합니다.", "$('#carNo').focus()");
+          return false;				
+        }				
+      }			
+    }
+    
+    
+
+    var eventTelNo = "";
+    //C038이벤트로 넘어온 고객의 경우 이벤트화면에서 입력한 전화번호와 산출 전화번호가 같은 경우만 다음단계 진행 가능 JSK
+    if ( ("C038" == "" || "C041" == "" || "C043" == "" || "C049" == "" || "C050" == "")
+        && eventTelNo != null
+        && eventTelNo != ""
+        && $('#telNo').val() != "" )
+    {
+      alert("이벤트 응모자 휴대폰번호와 차량 소유자 휴대폰번호가 같은 경우에만 응모 가능합니다. <BR/><BR/><font color='#4374D9'><B>서로 다른 경우는 응모할 수 없으니 <BR/>다시 확인하시기 바랍니다.</B></font>");
+      lpOpener('eventStopLayer'); 
+      return false;
+    }
+    
+    
+    return true;
+  }
+  
+  // 가망고객 대상 LMS 이벤트 레이어 닫힘버튼 클릭시 실행 JSK
+  function fnClsEvnt() {
+    $.blockUI();
+    closeLayer('eventStopLayer');
+    if("C038" == ""){
+      location.href="/service.do?m=2dc9a47c8d";
+      
+    }else if("C041" == ""){
+      var tmMenuId = "";		
+      //location.href="/service.do?m=24d06e530a"; // TM 7월 산출 이벤트
+      //location.href="/service.do?m=a1a3c928f2"; // TM 6월 산출 이벤트
+       //location.href="/service.do?m=d8926628b7"; // TM 11월 산출 이벤트
+       location.href="/service.do?m="+tmMenuId;   // TM 12월 산출 이벤트
+       
+    }else if("C043" == ""){
+        location.href="/service.do?m=e637e0b111";
+    }else if("C049" == ""){//대표홈페이지 회원 DB CM산출 이벤트
+        location.href="/service.do?m=cc686ae434";
+    }else if("C050" == ""){//대표홈페이지 회원 DB CM가입 이벤트
+        location.href="/service.do?m=df236ada60";
+    }
+    
+  } 
+  
+
+  
+  // 초기화
+  function fnInit(){
+    
+    $('#ptyKorNm').val('');
+    $('#regNo1').val('');
+    $('#telCat').val(nvl('', '3'));
+    $('#telNo').val('');
+    $('#telNo1').val('');
+    $('#telNo2').val('');
+    $('#telNo3').val('');
+    $('#telNo3').val('');
+    $('#simplePlanCarNum').val(''); //간편설계 차량번호
+    $('#telNo_bf').val('');		//휴대폰번호 input 디자인 변경으로 인한 추가
+    $('#telNo_af').val('');
+    
+    //카카오톡 플랫폼인 경우 본인인증 화면 변경	
+    //카카오톡이면서 간편갱신으로 접근시에도 처리(간편갱신은 강제로 medai_no가 A364로 변환됨) - 2020.11.09 심흥무
+    //다른 상품에서도 사용하기 위해 COCO0091.jsp에 구현, 상단 타이틀 바꾸는것만 여기서 구현
+    //if('' == 'B407'||utm_source == 'kakaotalk'){
+    if('' == 'B407'){
+      $("#selChoisDiv").hide();
+      $("#certSubTitle").removeClass("topTxt01");
+      $("#certSubTitle").addClass("topTxt");	
+      
+      $("#certSubTitle").hide();
+      $("#onlyHpCertTitle").show();//휴대폰인증만 가능함 문구 보여줌
+    }
+    
+
+    /* 브라우저 정보 및 OS 정보 가져오기 by 2016.08.09 김태원 */
+    try {
+      fnSettingChInfo();  //브라우저 정보
+      getOsInfo();        //OS정보
+      
+      $("#osInfoCd").val(osInfo.cd);
+      $("#osInfoVsn").val(osInfo.vsn);
+      $("#osInfoPadCd").val(osInfo.pad);
+      $("#bInfoCd").val(browserInfo.cd);
+      $("#bInfoVsn").val(browserInfo.vsn);
+    } catch(e) {
+      
+    }
+  }
+  
+  // 차량번호 유효성체크
+  function fnInputVldChkCarNum(){
+    
+    var carAutoNo = $('#simplePlanCarNum').val();
+    //console.log('[fnInputVldChkCarNum] carAutoNo:'+carAutoNo);
+    
+    if('' == 'B407'){
+      carAutoNo = $('#carNo').val();
+    }
+    
+    if(carAutoNo == ''){
+      // 차량번호가 null일때는 pass
+      return true;
+    }
+      
+      //차대번호 체크기능 추가
+    if(carAutoNo.length == 17){
+      tmpChssNo = carAutoNo.toUpperCase(); 		//소문자로 입력되었을 때 대문자로 변환해서 비교
+      tmpChssNo2 = tmpChssNo.substring(11,17);
+      //console.log('[fnInputVldChkCarNum] tmpChssNo2:'+tmpChssNo2+',tmpChssNo2.length:'+tmpChssNo2.length);
+      
+          var chssNoExpReg = /^[A-Z0-9]{12}/g;	//차대번호 체크 정규식(17자리)	ex)KMHEM42APXA 123456  hicar 111 111 111 111
+          var chssNoExpReg2 = /^[0-9]{6}/g;		//차대번호 뒷6자리 숫자체크
+  
+          if(!(chssNoExpReg.test(tmpChssNo) && tmpChssNo.length == 17) || tmpChssNo == '9999999') {
+            
+            alert('잘못된 차대번호입니다. 다시 입력해 주십시오.', "$('#simplePlanCarNum').focus()");
+            $('#simplePlanCarNum').val("");
+            return false;
+          }
+    }else{
+      //차량번호
+          var carNumExpReg1 = /^[가-힝]{2}[0-9]{1}[0-9]{1}[가-힝]{1}[0-9]{4}/g;	//차량번호 체크 정규식              ex)서울12가1234
+          var carNumExpReg2 = /^[가-힝]{2}[0-9]{1}[가-힝]{1}[0-9]{4}/g;			//차량번호 체크 정규식              ex)부산1나1234
+          var carNumExpReg3 = /^[0-9]{1}[0-9]{1}[가-힝]{1}[0-9]{4}/g;			//차량번호 체크 정규식(뒤 6자리만)  ex)12다1234
+          
+          // 2019.09.01부터 차량번호 앞 3자리도가능 ( 100~699 ) / 승용만 해당 /  123가1234 형태만 존재 ( 서울123가1234 형태는 없음 )
+          var carNumExpReg4 = /^[1-6]{1}[0-9]{1}[0-9]{1}[가-힝]{1}[0-9]{4}/g;	 //차량번호 체크 정규식  ex)123다1234
+  
+          if(!(      ( carNumExpReg1.test(carAutoNo) && carAutoNo.length == 9 ) 
+              || ( carNumExpReg2.test(carAutoNo) && carAutoNo.length == 8 ) 
+              || ( carNumExpReg3.test(carAutoNo) && carAutoNo.length == 7 )
+              || ( carNumExpReg4.test(carAutoNo) && carAutoNo.length == 8 ) // 2019.09.01 신규추가
+            )) {
+            alert('잘못된 차량번호입니다. 다시 입력해 주십시오.', "$('#carAutoNo').focus()");
+            $('#simplePlanCarNum').val("");
+              return false;
+          } 
+          
+          //차량번호 자릿수에 따라 구분값 추출
+          //배, 바, 사, 아, 자, 허, 하, 호   ==> 영업용 차량
+          var sGubun = "";
+          
+          if(carAutoNo.length == 7) {
+              sGubun = carAutoNo.substring(2, 3);
+          } else if(carAutoNo.length == 8) {
+              sGubun = carAutoNo.substring(3, 4);
+          } else if(carAutoNo.length == 9) {
+              sGubun = carAutoNo.substring(4, 5);
+          }
+          
+          //영업용차량 여부
+          //[P20161011-0011]영업용보종(렌터카) 차량 가입 프로세스 변경 
+          if(sGubun == "바" || sGubun == "배" || sGubun == "사" || sGubun == "아" || sGubun == "자" || sGubun == "허" || sGubun == "하" || sGubun == "호" ) {
+            alert('영업용 차량은 인터넷으로 보험료 계산/가입 안내가 어렵습니다. 자세한 내용은 고객센터(1577-1001)로 문의하여 주시기 바랍니다.', "$('#simplePlanCarNum').focus()");
+              return false;
+          }
+    }
+    
+    return true;
+  }
+  
+  
+  
+  // 차종구분 자동셋팅
+  function fnGetMnapAutoTypCat(reqAutoNo){
+    var carAutoNo = $('#carAutoNo').val();
+    
+    if(reqAutoNo){
+      carAutoNo = reqAutoNo; 
+    }
+    
+    var carCenterNo = '';
+    var mnapAutoTypCat = '';
+    
+    // 차량번호 가운데자리 자르기
+        if(carAutoNo.length == 7) {
+          carCenterNo = carAutoNo.substring(0, 2);
+        }else if(carAutoNo.length == 8) {
+          var carNumExpReg2 = /^[가-힝]{2}[0-9]{1}[가-힝]{1}[0-9]{4}/g;	//차량번호 체크 정규식    ex)부산1나1234
+
+          if ( carNumExpReg2.test(carAutoNo) ) {
+            carCenterNo = carAutoNo.substring(2, 3);
+          } else { // 20190901부터 신규 부여되는 차량번호 123가1234
+            carCenterNo = carAutoNo.substring(0, 3);
+          }
+        }else if(carAutoNo.length == 9) {
+          carCenterNo = carAutoNo.substring(2, 4);
+        }else {
+            return '';
+        }
+    
+        if(carCenterNo.length == 1) {
+          // 차량번호 가운데 자리가 1자리면 구번호
+      if(carCenterNo >= 1 && carCenterNo <= 4 ) {
+              mnapAutoTypCat = 'A';
+            } else if(carCenterNo >= 5 && carCenterNo <= 6) {
+              mnapAutoTypCat = 'B';
+            } else if(carCenterNo >= 7 && carCenterNo <= 8) {
+              mnapAutoTypCat = 'C';
+            } else {
+              // 특수용도 차량 가입X
+              mnapAutoTypCat = 'X';
+            }
+        }else if(carCenterNo.length == 2){
+          // 차량번호 가운데 자리가 2자리면 신번호
+          carCenterNo = Number(carCenterNo);
+            if(carCenterNo >= 1 && carCenterNo <= 69) {
+              mnapAutoTypCat = "A";
+            } else if(carCenterNo >= 70 && carCenterNo <= 79) {
+              mnapAutoTypCat = "B";
+            } else if(carCenterNo >= 80 && carCenterNo <= 97) {
+              mnapAutoTypCat = "C";
+            }else{
+              // 특수용도 차량 가입X
+              mnapAutoTypCat = "X";
+            }
+        }else if(carCenterNo.length == 3){ // 예) 123가1234는 승용만 존재
+          mnapAutoTypCat = "A";
+        }
+        
+        return mnapAutoTypCat;
+  }
+  
+  //이상(anomaly) 주번체크 후 계속 진행
+  function continueNext() {
+    lpCloser('juminCheckLayer');
+    anomalyNextYN = 'Y';
+    fnMoveNext('1');
+  }
+  
+  //이상(anomaly) 주번체크 후 중단
+  function stopNext() {
+    lpCloser('juminCheckLayer');
+    alert("주민번호 암/복호화 과정 中 오류가 발생하였습니다.<br>고객센터 ☎1899-6782로 문의 후 설계 진행 부탁드립니다.");
+  }
+</script>
+</head>
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<!--// skipNavi -->
+
+<header id="topHeader">
+  <h1><img src="https://mdirect.hi.co.kr/images/main/img_logo.png" alt="현대해상 다이렉트" style="width:135px;height:21px"></h1>
+  <a href="javascript:openLayer('_callmeBreakwayLayerMT_psn');" class="btnHome" role="button">메인페이지로 이동</a>
+</header>
+<!--// topHeader -->
+
+<div id="h1Wrap" class="pdB0">
+  <div class="carVisual" id="dept1top_01" style="display:none">
+    <span class="subTitle"><img src="https://mdirect.hi.co.kr/images/content/title_main_no1.png" alt="대한민국 NO.1 브랜드"></span>
+    <h2>다이렉트 자동차보험</h2>
+    <div class="awardBrand">
+        <!-- 연도변경200330 --><p class="txt">2018~2020 한국산업의 브랜드파워<br><span class="fontBlue">다이렉트 자동차보험 부문 3년 연속 1위</span></p><!-- // 연도변경200330 -->
+    </div>
+    <div class="info">
+      <ul class="specialArea">
+        <li>
+          <p><strong>15.4%</strong></p>
+          <p>인터넷가입</p>
+          <span>(오프라인 대비 평균)</span>
+        </li>
+        <li>
+          <p><strong>32%</strong></p>
+          <p>마일리지 특약</p>
+          <span>(3천KM이하)</span>
+        </li>
+          <li>
+          <p><strong>14%</strong></p>
+          <p>자녀할인 특약</p>
+          <span>(부부/1인 한정 및 태아)</span>
+        </li>
+        <li>
+          <p><strong>11.7%</strong></p>
+          <p>무사고 할인</p>
+          <span>(3년 이상 평균)</span>
+        </li>
+      </ul>
+      <ul class="specialArea">
+        <li>
+          <p><strong>7%</strong></p>
+          <p>커넥티드카<br>특약 할인</p>
+          <span>(사고 통보장치 장착 시)</span>
+        </li>
+        <li>
+          <p><strong>6.8%</strong></p>
+          <p>교통법규<br>준수 할인</p>
+        </li>
+        <li>
+          <p><strong>4.5%</strong></p>
+          <p>차선이탈경고<br>장치특약 할인</p>
+          <span>(경고장치 장착 시)</span>
+        </li>
+        <li>
+          <p><strong>2.0%</strong></p>
+          <p>블랙박스특약</p>
+          <span>(블랙박스 장착 시)</span>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="info"><img src="https://mdirect.hi.co.kr/images/content/img_carVisual_special.png" alt="평균15.4% 인터넷 가입(오프라인 대비 평균), 32% 마일리지 특약(3천Km 이하), 11.3% 무사고 할인(3년 이상), 13% 자녀할인 특약(부부/1인한정 및 태아), 7% 커넥티드카 특약 할인(사고통보장치장착 시), 4.7% 교통법규준수할인, 4.5% 차선이탈경고장치 특약 할인 (경고장치 장착 시), 3% 블랙박스 특약(블랙박스 장착 시)"></div> -->
+  </div>
+  <div class="carVisual" id="dept1top_02" style="display:none">
+    <!-- 현대캐피탈제휴상단이미지180509 -->
+    <div id="dept1top_02_img"><img src="" alt="" style="width:100%;"></div>
+    <!--// 현대캐피탈제휴상단이미지180509 -->
+  </div>
+  <!--// carVisual -->
+  
+  <div class="carVisual">
+    <h2 class="tiImg"><img src="https://mdirect.hi.co.kr/images/motor/img_ti_carInsu2104.png" alt="다이렉트 자동차보험 고객님의 정보를 입력해 주세요."></h2>
+    <form name="form1" id="form1" method="post">
+    <fieldset>
+    <legend>자동차 소유주(예정) 정보입력</legend>
+    <div class="inputWrap">
+      <input type="text" id="ptyKorNm" name="ptyKorNm" title="이름입력" required="" maxlength="30">
+      <label for="ptyKorNm">자동차 소유(예정)자의 이름</label>
+    </div>
+    <div class="inputWrap two">
+      <input type="tel" id="regNo1" name="regNo1" title="주민등록번호 앞자리" required="" maxlength="6" autocomplete="new-password" onkeyup="">
+      <label for="regNo1">주민등록번호 앞자리</label>
+      <input type="password" id="regNo2" name="regNo2" title="뒤 7자리" required="" maxlength="7" xecurenumpad="" autocomplete="new-password" onkeyup="">
+      <label for="regNo2">뒤 7자리</label>
+    </div>
+    <div class="inputWrap select">
+      <select title="휴대폰 번호 앞자리" id="telNo_bf">
+        <option value="010">010</option>
+        <option value="011">011</option>
+        <option value="016">016</option>
+        <option value="017">017</option>
+        <option value="018">018</option>
+        <option value="019">019</option>
+        <option value="0130">0130</option>
+      </select>
+      <input type="tel" id="telNo_af" name="telNo_af" title="휴대폰 번호 중간, 뒷자리" placeholder="휴대폰&#10;&#13;번호(- 없이입력)" required="" maxlength="8" value="">
+      <input type="hidden" id="telNo" name="telNo" title="휴대폰 번호" required="" maxlength="11" value="">
+    </div>
+    </fieldset>
+    </form>
+    <!-- 버튼 / 입력 완료 시 활성화 <a>에 class="on" 추가 -->
+    <div class="btnWrap mgtL" style="position:relative;z-index:0">
+      <span><a href="javascript:fnMoveNext('1');" role="button" id="calcBtn" class="">보험료 계산하기</a></span>
+    </div>
+    <!--// 버튼 -->
+    <ul class="listDot">
+      <li>법인 자동차보험은 PC 홈페이지에서 가입 가능합니다.</li>
+      <li>영업용 자동차는 인터넷으로 가입할 수 없습니다.</li>
+    </ul>
+  </div> 
+  <!--// carVisual -->	
+  <ul class="carBnList">
+    <li>
+      <img src="https://mdirect.hi.co.kr/images/motor/main_banner_cardBenefit202209_5_M.gif" alt="오늘의 카드 혜택은? (9.28~9.30) 현대카드 3만원(주유권), 삼성카드 3만원(주유권), KB국민카드 3만원(주유권), 신한카드 3만원(캐쉬백), 우리카드 3만원(캐쉬백), NH농협카드 3만원(캐쉬백), 하나카드 3만원(캐쉬백)"> <!-- 접근성 2차 /2210 -->
+    </li>
+    <!-- 보장분석 배너 /2204 -->
+    <li class="mgT0">
+      <img src="https://mdirect.hi.co.kr/images/motor/calc_banner_dataLab2204.jpg" alt="내 차 보험 얼마나 안전할까? 자동차 보장 분석 결과를 보험료 계산 화면에서 지금 확인해 보세요.">
+    </li>
+    <!--// 보장분석 배너 /2204 -->
+  </ul>
+  <!--// carBnList -->
+  <!-- content -->
+  <section class="carInsuInfo">
+    <h3 class="chkTi">내 차 보험료 할인 받는 방법은?</h3>
+    <div class="chkTx">내가 받을 수 있는 할인을 꼼꼼히 확인해 보세요!</div>
+    <div class="chkBox">
+      <strong>평균 15.4% 저렴한 보험료 </strong>
+      <span>당사 오프라인 대비</span>
+    </div>
+    <div class="infoToggleArea">
+        <div class="toggleBox on">
+          <div class="toggleTitle"><a href="javascript:void(0);" class="toggleBtn" role="button">연간 15,000km 이하로 주행하나요?</a></div>
+          <div class="toggleDetail" style="display:block">
+            <div class="infoTxt carsBg01">
+              <div class="ti">
+                <strong>마일리지 특약</strong><em class="pnt">38%</em>              
+              </div>
+              <span class="tx">3천km 이하, 운행정보확인장치 방식</span>
+            </div>
+          </div>
+        </div>
+        <!--// toggleBox 마일리지특약 -->
+        <div class="toggleBox">
+          <div class="toggleTitle"><a href="javascript:void(0);" class="toggleBtn" role="button">사고없이 안전운전했나요?</a></div>
+          <div class="toggleDetail">
+            <div class="infoTxt carsBg02">
+              <div class="ti">
+                <strong>무사고할인</strong><em class="pnt">11.5%</em>              
+              </div>
+              <span class="tx">3년 이상 평균</span>
+            </div>
+            <div class="infoTxt carsBg03">
+              <div class="ti">
+                <strong>교통법규준수할인</strong><em class="pnt">7.5%</em>
+              </div>            
+            </div>
+          </div>
+        </div>
+        <!--// toggleBox 무사고할인 -->
+        <div class="toggleBox">
+          <div class="toggleTitle"><a href="javascript:void(0);" class="toggleBtn" role="button">만6세 이하 자녀나 태아가 있나요?</a></div>
+          <div class="toggleDetail">
+            <div class="infoTxt carsBg04">
+              <div class="ti">
+                <strong>자녀할인 특약</strong><em class="pnt">14%</em>
+              </div>
+              <span class="tx">부부/ 1인한정 및 태아</span>
+            </div>
+          </div>
+        </div>
+        <!--// toggleBox 자녀할인특약 -->
+        <div class="toggleBox">
+          <div class="toggleTitle"><a href="javascript:void(0);" class="toggleBtn" role="button">내 차가 커넥티드카인가요?</a></div>
+          <div class="toggleDetail">
+            <div class="infoTxt carsBg05">
+              <div class="ti">
+                <strong>커넥티드카 할인특약</strong>
+                <em class="pnt">
+                  
+                  7.1%
+                </em>
+              </div>
+              <span class="tx">사고 통보장치 장착 시</span>
+            </div>
+            <div class="infoTxt carsBg06">
+              <div class="ti">
+                <strong>커넥티드카 안전운전 할인특약</strong>
+                <em class="pnt">9%</em>
+              </div>
+              <span class="tx">안전운전점수가 70점 이상인 경우</span>
+            </div>
+          </div>
+        </div>
+        <!--// toggleBox 커넥티드카할인특약 -->
+        <div class="toggleBox">
+          <div class="toggleTitle"><a href="javascript:void(0);" class="toggleBtn" role="button">부가장치를 장착했나요?</a></div>
+          <div class="toggleDetail">
+            <div class="infoTxt carsBg07">
+              <div class="ti">
+                <strong>블랙박스 할인특약</strong>
+                <em class="pnt">2.2%</em>
+              </div>
+              <span class="tx">차량연식 12년 이하, 블랙박스 장착 시</span>
+            </div>
+            <div class="infoTxt carsBg08">
+              <div class="ti">
+                <strong>차선이탈경고장치 할인특약</strong>
+                <em class="pnt">
+                  
+                  4.3%
+                </em>
+              </div>
+              <span class="tx">차선이탈경고장치 장착 시</span>
+            </div>
+            <div class="infoTxt carsBg09">
+              <div class="ti">
+                <strong>전방충돌경고장치 할인특약</strong>
+                <em class="pnt">1.5%</em>
+              </div>
+              <span class="tx">전방충돌경고장치 장착 시</span>
+            </div>
+          </div>
+        </div>
+        <!--// toggleBox 블랙박스할인특약 -->
+      </div>
+      <!--// toggleWrap -->
+    </section>
+    <!--// carInsuInfo -->
+  </div>
+  
+  <div class="layerPopup" id="layerPopup1" aria-hidden="true" style="opacity: 0; display:none;">
+    <div class="layerWrap">
+      <h2>현대캐피탈 이벤트 유의사항</h2>
+      <div class="layerCont">
+        <ul class="listDot">
+          <li>현대캐피탈 플러스멤버십 고객 대상 이벤트로 멤버십 회원이 아닌 경우 주유권이 제공되지 않습니다.</li>
+          <li>현대캐피탈 전용 이벤트페이지를 통해 개인용 자동차 보험을 가입하신 고객에 한해 혜택이 제공됩니다 (현대캐피탈 제공)</li>
+          <li>전화가입 및 별도의 심사가 필요하여 본 이벤트페이지를 통해 가입이 어려운 경우 대상에서 제외됩니다.</li>
+          <li>현대캐피탈/현대해상 다이렉트의 다른 청구할인,캐쉬백, 주유권등 혜택과 중복 적용되지 않습니다.</li>
+          <li>카카오페이 등 간편결제건은 제외됩니다. </li>
+          <li>본인명의 차량 보유(보험개발원 기준) 고객만 참여가 가능합니다. </li>
+          <li>차량이 2대 이상인 경우 각각 혜택을 받을 수 있으며, 주유권은 참여하신 휴대폰 번호로 발송이 됩니다. </li>
+          <li>주유권지급일: 8월 10일(금)</li>
+        </ul>   
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" onclick="lpCloser('layerPopup1');" class="on" role="button">확인</a>
+      </div>
+      <a href="javascript:void(0);" onclick="lpCloser('layerPopup1');" role="button" class="layerClose">창닫기</a>
+    </div>
+  </div>
+  
+  <!-- KTCLIP 진입시 레이어 팝업 -->
+  <div class="layerPopup" id="ktclipInfoPopup" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap">
+      <h2>카포인트 자동차보험 가입 이벤트 안내</h2>
+      <div class="layerCont">
+        <div class="visualTm">
+          <p><strong class="oColor">이벤트 대상</strong>카포인트 채널을 통해 현대해상다이렉트에 접속하고 보험가입 완료한 건</p>
+                  <p class="pdtS"><strong class="oColor">이벤트 내용</strong>자동차보험 가입시 3만원 혜택 지급 (kt제공)<br> - 30만원 이상 3만원/ 현대해상 신규고객</p>
+                  <p class="pdtS"><strong class="oColor">지급일</strong>보험가입일 기준 익월 말일</p>
+        </div>
+        <div class="listDot mgtS">
+          <p>혜택지급 조건 (산출 시점 보험개발원 조회 결과 기준)</p>
+        </div>
+        <ul class="listBasic mglS">
+          <li>참여일 기준 기존 현대해상 가입차량은 혜택 제외됩니다.</li>
+                  <li>차량 소유주 기준 1인 1회에 한하며 현대해상의 다른 청구할인, 캐시백, 주유권 등 혜택과 중복되지 않습니다. (중복시 큰 금액 적용)</li>
+                  <li>전화가입 및 별도의 심사가 필요하여 홈페이지 가입이 어려운 경우 대상에서 제외됩니다.</li>
+              </ul>
+              <div class="listEtc">
+          <p>가입 시 알아두실 사항</p>
+        </div>
+        <ol class="numList mglL mgtNone">
+          <li>약관관련 보험계약 체결전에 상품설명서 및 약관을 읽어보시기 바랍니다.</li>
+                  <li>예금자보호제도<br>이 보험계약은 예금보험공사가 보호하되, 보호 한도는 본 보험회사에 있는 귀하의 모든 예금보험 대상 금융상품의 해약환급급(또는 만기시 보험금이나 사고보험금)에 기타지급금을 합하여 1인당 "최고 5천만원" 이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</li>
+                  <li>보험계약체결<br>보험계약자가 기존에 체결했던 보험을 해지하고 다른 보험을 체결하면 보험인수가 거절되거나 보험료가 인상되거나 보장내용이 달라질 수 있습니다.</li>
+              </ol>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" onclick="lpCloser('ktclipInfoPopup');" class="on" role="button">확인</a>
+      </div>
+      <a href="javascript:void(0);" onclick="lpCloser('ktclipInfoPopup');" role="button" class="layerClose">창닫기</a>
+    </div>
+  </div>
+  <!-- // 레이어팝업 : KT클립 180625 -->
+  
+  <!-- 이벤트레어어 팝업 -->
+  <div class="layerPopup" id="eventStopLayer" aria-hidden="true" style="opacity: 0; display: none;">
+    <div class="layerWrap">
+        <h2>이벤트 참여 불가 안내</h2>
+      <div class="layerCont" style="max-height:290px;">
+        <div class="">
+          <p><span>
+            <font color="black"><b>이벤트 응모자 휴대폰번호와 차량 소유자 휴대폰번호가 같은 경우에만 응모 가능합니다.</b></font> <br><br><font color="#4374D9"><b>* 서로 다른 경우는 응모할 수 없으니 다시 확인하시기 바랍니다.</b></font>
+          </span></p>
+        </div>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" class="on" role="button" onclick="javascript:fnClsEvnt();">확인</a>
+      </div>
+      <a href="javascript:void(0);" role="button" class="layerClose" onclick="javascript:fnClsEvnt();">창닫기</a>
+    </div>
+  </div>
+  <!-- // 휴대폰 직접서명 이용 공지 레이어 팝업1711 -->
+  
+  <!-- 제휴 KTMBS B309 HDCAREVNT C045 / HDMF_RENEW C053 / HDMF_RENEW2 C060 start -->
+  <!-- Layer 개인정보 수집/이용 동의 -->
+  <div class="layerPopup" id="agreeLayerPop1" tabindex="0" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap">
+      <h2>개인(신용)정보 수집 · 이용 동의</h2>
+      <div class="layerCont counselInfo">
+        <h3>소비자 권익보호에 관한 사항</h3>
+          <p class="mgtS">본 동의를 거부하실 수 있으나, 거부하실 경우 이벤트에 참여하실 수 없습니다. 이벤트 참여 정보는 경품 당첨 안내 및 배송을 위해 당사 수탁 업체에 제공되며 경품 안내 및 배송 완료 후 파기합니다. </p>
+        
+          <h3>개인(신용)정보의 수집 · 이용에 관한 사항</h3>
+          <p class="mgtS">당사 및 당사 업무수탁자는 「개인정보보호법」 및 「신용정보의 이용 및 보호에 관한 법률」에 따라 귀하의 개인(신용)정보를 다음과 같이 수집 · 이용하고자 합니다. 이에 대하여 동의하십니까?</p>
+      <ul class="mgtS listDot">
+        <li>개인(신용)정보의 수집 · 이용 목적 : 이벤트 응모 및 처리</li>
+        <li>수집 · 이용할 개인(신용)정보의 내용 : 개인식별정보(이름, 휴대폰번호)</li>
+        <li>개인(신용)정보의 보유  · 이용 기간 : 수집 · 이용 동의일로부터 1년</li>
+      </ul>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" onclick="javascript:lpCloser('agreeLayerPop1')" class="on" role="button">확인</a>
+      </div>
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('agreeLayerPop1')" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!-- // Layer 개인정보 수집/이용 동의 -->
+  
+  <!-- Layer 개인정보 제공 동의 -->
+  <div class="layerPopup" id="agreeLayerPop2" tabindex="0" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap">
+      <h2>개인(신용)정보 제공 동의</h2>
+      <div class="layerCont counselInfo">
+        <h3>개인(신용)정보의 제공에 관한 사항</h3>
+        <p>[경품 발송을 위한 개인(신용)정보 처리 위탁 동의]</p>
+        <ul class="mgtS listDot">
+          <li><b>개인(신용)정보 취급 위탁을 받는 자</b>        	
+            <ul class="listBasic">          
+      
+        
+            
+        
+          <li>갤럭시아커뮤니케이션즈(모바일 교환권)</li>
+              
+                   
+            </ul>
+          </li>
+          <li><b>개인(신용)정보 취급위탁을 하는 업무의 내용</b>        	
+            <ul class="listBasic">
+        <li>경품 발송 업무</li>
+            </ul>
+          </li>
+          <li><b>개인(신용)정보 제공 범위</b>        	
+            <ul class="listBasic">
+        <li>휴대폰번호</li>
+            </ul>
+          </li>
+          <li><b>취급위탁을 받는 자의 개인(신용)정보 보유 · 이용기간</b>        	
+            <ul class="listBasic">
+        <li>경품발송일로부터 90일 이후 즉시 파기</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" onclick="javascript:lpCloser('agreeLayerPop2')" class="on" role="button">확인</a>
+      </div>
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('agreeLayerPop2')" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!-- // Layer 개인정보 제공 동의 -->
+  <!-- 제휴 KTMBS B309 HDCAREVNT C045 end -->
+  <div class="layerPopup" id="chkKtEndPopup" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap">
+      
+        
+        
+            
+        
+          
+              
+      
+      
+      <div class="layerCont">
+      
+        
+        
+            
+        
+          
+              
+       
+  
+           <p><strong><span class="oColor">9.30일 </span> </strong>자로 종료되었습니다.</p>          
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" onclick="javascript:lpCloser('chkKtEndPopup');" class="on" role="button">확인</a>
+      </div>
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('chkKtEndPopup');" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  
+  <!-- 레이어 - 보험다모아 /1911 -->
+  <script>
+    function damoaClose(){
+      lpCloser('damoaLayer')
+      $('#ptyKorNm').focus();
+    }
+  </script>
+  
+  <div id="damoaLayer" class="layerPopup" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap" style="top:15%;padding:0;max-height:80%">
+      <h2 class="hide" style="padding:0;border:none">이벤트 안내</h2>
+      <div class="layerCont" style="padding:0;min-height:233px;max-height:600px">
+        <a href="javascript:void(0);" onclick="javascript:damoaClose();" title="보험다모아 설계 내역 확인하기">
+          <img src="https://mdirect.hi.co.kr/images/event/201911001/img_layer_damoa1911.jpg" alt="온라인 보험슈퍼마켓 보험다모아, 현대해상 다이렉트. 보험다모아 설계 보험료, 현대해상에서 바로 확인하세요! 현대해상에서는 고객정보만 입력하시면 방금 설계하신 보험다모아 자동차 보험료가 그대로 조회되어 편리하게 보험 가입이 가능합니다. 보험다모아 설계 내역 확인하기" style="width:100%">
+        </a>
+      </div>
+      <!-- // 내용 -->
+      <a href="#" role="button" class="layerClose">창닫기</a>
+    </div>
+  </div>
+  <!-- // 레이어 - 보험다모아 /1911 -->
+  
+  <!-- 이상(anomaly) 주민번호 확인 -->
+  <div id="juminCheckLayer" class="layerPopup" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap">
+      <div class="layerCont" style="max-height:290px;">
+        <div class="">
+          <p><span>
+            <font color="black">주민번호 암/복호화 과정 中 뒷 7자리 숫자가 동일한 연속 숫자로 확인됩니다.<br>동일한 연속 숫자로 이루어진 것이 맞습니까?</font>
+          </span></p>
+        </div>
+      </div>
+      <div class="layerBtn">
+          <span><a href="#none" role="button" class="on" onclick="javascript:continueNext();">예</a></span>
+          <span><a href="#none" role="button" onclick="javascript:stopNext();">아니오</a></span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 보험다모아용 로딩바 -->
+  <div class="loadBgW" id="centerLoadingBar" style="display:none;">
+    <div class="loadImg"><img src="https://mdirect.hi.co.kr/images/common/loading.gif" width="48px" height="48px" alt="로딩 이미지"></div>
+  </div>
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+       <!-- 책임개시일 -->
+    <!-- 커넥티드카 여부(1. 기본  2. 옵션 0. 미적용) -->
+       <!-- 휴일여부 Y.휴일 N.휴일아님 -->
+       <!-- 상담신청 플로팅아이콘 보여줄지 여부 Y.보여줌  N.숨김  -->
+  
+  
+  
+  <script type="text/javascript">
+  
+    $(document).ready(function() {
+      //console.log("holidayYn=>" + "N" );
+      //console.log("callIconViewYn=>" + "Y" );
+      //console.log("curMenuId=>" + "b5eef5f9a4" );
+      
+    });
+  
+    // 상담신청 플로팅 아이콘 클릭 시 이벤트
+    function fnCallConfirm() {
+      
+      if(confirm('고객센터로 연결하시겠습니까?', "fnCallConfirmOk()", "")){
+        return;
+      }
+    }
+    
+    // 상담신청 플로팅 아이콘 클릭 후 확인 버튼 클릭 시 전화어플 실행
+    function fnCallConfirmOk (){
+      location.href = 'tel:1899-6782';
+    }	
+    
+    
+    function fnShowAllStepStat() {
+  
+      var headObjData = {
+        executeTime : $('#executeTime').val()
+      };
+      HiJS.svr.doRequestAjax("DHMT0100M02S", {
+        data : headObjData,
+        callback : {
+          success : function(responseObj) {
+            if (responseObj.data.executeCode == 999 ) {
+              location.href = "/bin/MT/PC/MTPC0004G.jsp";
+              return;
+            }
+            
+            if("" == "5407"){
+              fnSetAllStepDataBike(responseObj);
+            }else{
+              fnSetAllStepData(responseObj);
+            }
+          },
+          failure : function(responseObj) {
+          }
+        }
+      });
+    }
+    
+    /* 김옥희 대리 요청으로 2단계 이동 시 추가부속품 선택 화면으로 이동하도록 변경 by 2018.02.11 */
+    var menuIdToStep = [
+                    {menuId : 'b5eef5f9a4', step : '1'}
+                  , {menuId : 'eda936e232', step : '2'}
+                  , {menuId : 'f71f0ead17', step : '3'}
+                  , {menuId : 'b8ea03a350', step : '4'}
+                  , {menuId : '2d69664fef', step : '5'}
+                  , {menuId : 'ead71b4efb', step : '6'}
+                  , {menuId : '203a6a48c9', step : '7'}
+                  , {menuId : 'ed1ec73742', step : '8'}
+                  , {menuId : 'cdd8ff7a6a', step : '9'}
+                  ];
+    
+    var menuIdToStepBike = [
+                      {menuId : '3c8865986a', step : '1'}
+                    , {menuId : 'f5f1bb25e4', step : '2'}
+                    , {menuId : 'a8806388d8', step : '3'}
+                    , {menuId : '6b128659e2', step : '4'}
+                    , {menuId : '1dc9278b36', step : '5'}
+                    , {menuId : 'ead71b4efb', step : '6'}  //기존id
+                    , {menuId : '203a6a48c9', step : '7'}  //기존id
+                    , {menuId : 'ed1ec73742', step : '8'}  //기존id
+                    , {menuId : 'cdd8ff7a6a', step : '9'}  //기존id
+                    ];
+    
+    function fnJumpingStep(step) {
+      
+      $('#preNextCat').val('3');
+      
+      //간편설계 화면으로 이동
+      if(step == '1' && '' == 'Y'){
+        $('#spcalc').val('sim');
+        
+      }
+      
+      if("" == "5407"){
+        //이륜차
+        $.each(menuIdToStepBike, function (idx, val) {
+          if (val.step == step) {
+            HiJS.svr.doRequestForm(val.menuId, 'form1');	
+          }
+        });
+      }else{
+        //자동차
+        $.each(menuIdToStep, function (idx, val) {
+          if (val.step == step) {
+            HiJS.svr.doRequestForm(val.menuId, 'form1');	
+          }
+        });
+      }
+      
+      
+    }
+    
+    //자동차
+    function fnSetAllStepData(responseObj) {
+      //console.log('[MTPC0003G, fnSetAllStepData] call--------------------1');
+      var exeData = responseObj.data;
+      var maxStep = exeData.maxStep;
+      var stepToNum = 0;
+      
+      if (paramStep == '2') {
+        stepToNum = 1;
+      } else if (paramStep == '3') {
+        stepToNum = 2;
+      } else if (paramStep == '4') {
+        stepToNum = 3;
+      } else if (paramStep == '5') {
+        stepToNum = 4;
+      } else if (paramStep == '6') {
+        stepToNum = 5;
+      } else if (paramStep == '7') {
+        stepToNum = 6;
+      } else if (paramStep == '8') {
+        stepToNum = 7;
+      }
+      
+      var appendHtml = '';
+      
+      // 자동차 정보
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 2</em><strong>차량 기본정보</strong>";
+      if (stepToNum >= 2) {
+  
+        appendHtml += "<dl>";
+        if (exeData.carNumCat == '1') {
+          appendHtml += "<dt>차량번호</dt>";
+          appendHtml += "<dd>"+maskingCarAutoNo(exeData.carAutoNo)+"</dd>";
+        } else if (exeData.carNumCat == '2') {
+          appendHtml += "<dt>차대번호</dt>";
+          appendHtml += "<dd>"+maskingCarAutoNo(exeData.chssNo)+"</dd>";
+        } else if (exeData.carNumCat == '3') {
+        }
+        appendHtml += "<dt>보험기간</dt>";
+        appendHtml += "<dd>"+setFormatDate(exeData.inagStDt, '.') + ' ~ ' + setFormatDate(exeData.inagEdDt, '.')+"</dd>";
+        appendHtml += "</dl>";
+        
+        if("" != 'B278'){
+          appendHtml += "<a href=\"javascript:fnJumpingStep('2');\" role=\"button\">수정</a>";
+        }
+      }
+      appendHtml += "</div>";
+      $('#stepToNum2').html(appendHtml);
+      
+      
+      // 자동차 상세정보
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 3</em><strong>차량 상세정보</strong>";
+      if (stepToNum >= 3) {
+        
+        // 제조사 데이터
+        var mkcdObj = [
+            {nm:'현대',			cd:'6'}
+          , {nm:'르노삼성',		cd:'7'}
+          , {nm:'기아',			cd:'1'}
+          , {nm:'GM대우(쉐보레)',	cd:'3'}
+          , {nm:'쌍용',			cd:'2'}
+          , {nm:'외제차',		cd:'9'}
+          ];
+        
+        var autoCompNm = '';
+        $.each(mkcdObj, function(idx, val) {
+          if (exeData.autoCompCd == val.cd) {
+            autoCompNm = val.nm;
+          }
+        });
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>제조사</dt>";
+        appendHtml += "<dd>"+autoCompNm+"</dd>";
+        appendHtml += "<dt>등록연도</dt>";
+        appendHtml += "<dd>"+exeData.autoRegY+"년</dd>";
+        appendHtml += "<dt>세부차명</dt>";
+        appendHtml += "<dd>"+exeData.detAutoNm+"</dd>";
+        if(exeData.prodCd != "5407"){
+          appendHtml += "<dt>세부형식</dt>";
+          appendHtml += "<dd>"+exeData.detAutoTyp+"</dd>";
+          appendHtml += "<dt>총차량가액</dt>";
+          appendHtml += "<dd>"+getCurrencyValue(exeData.totInsAmt)+"만원</dd>";
+        }
+        if(exeData.prodCd == "5407"){
+          appendHtml += "<dt>배기량</dt>";
+          appendHtml += "<dd>"+exeData.mncpEngdplNm+"</dd>";
+          appendHtml += "<dt>사용용도</dt>";
+          if(exeData.bicDrvgObj == "1"){
+            appendHtml += "<dd>가정용 및 기타</dd>";	
+          }else if(exeData.bicDrvgObj == "2"){
+            appendHtml += "<dd>비유상운송 배달</dd>";
+          }else if(exeData.bicDrvgObj == "3"){
+            appendHtml += "<dd>유상운송 배달 및 대여용</dd>";
+          }
+        }
+  
+        appendHtml += "</dl>";
+        
+        if("" != 'B278'){
+          appendHtml += "<a href=\"javascript:fnJumpingStep('3');\" role=\"button\">수정</a>";
+        }
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum3').html(appendHtml);
+      
+      
+      // 가입 범위
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 4</em><strong>운전자 정보</strong>";
+      if (stepToNum >= 4) {
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>운전자범위</dt>";
+        appendHtml += "<dd>"+exeData.drvrRngeLmtNm + ' ' + exeData.drvrAgeLmtNm+"</dd>";
+        appendHtml += "</dl>";
+        appendHtml += "<a href=\"javascript:fnJumpingStep('4');\" role=\"button\">수정</a>";
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum4').html(appendHtml);
+      
+      
+      // 보험료 계산
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 5</em><strong>보험료 확인</strong>";
+      if (stepToNum >= 5) {
+        
+        var disCntListStrTxt = '';
+        if (exeData.chk9482 == 'Y') {
+          disCntListStrTxt += '블랙박스 특약/';
+        }
+        if (exeData.chk9467 == 'Y') {
+          disCntListStrTxt += 'ECO 마일리지 특약/';
+        }
+        if (exeData.magdChldPageCheck == '1') {
+          disCntListStrTxt += '자녀할인 특약/';
+        }
+        if (exeData.chk9504 == 'Y') {
+          disCntListStrTxt += '커넥티드카할인 특약/';
+        }
+        
+        if (exeData.chk9504 == 'Y') {
+          disCntListStrTxt += '안전운전할인 특약/';
+        }
+        
+        if(exeData.chk9445){
+          disCntListStrTxt += '승용차요일제 특약/';
+        }
+        if(exeData.chk9505 == 'Y'){
+          disCntListStrTxt += '차선이탈경고장치 특약/';
+        }			
+        if(exeData.chk9766 == 'Y'){
+          disCntListStrTxt += '나눔 특약/';
+        }
+        if(exeData.chk9489 == 'Y'){
+          disCntListStrTxt += '안전교육할인 특약/';
+        }
+        disCntListStrTxt += '하이카 그린서비스/';
+        if (disCntListStrTxt) {
+          disCntListStrTxt = disCntListStrTxt.substring(0, disCntListStrTxt.length -1);
+        }
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>할인특약</dt>";
+        appendHtml += "<dd>"+(disCntListStrTxt == ''? '없음' : disCntListStrTxt)+"</dd>";
+        appendHtml += "<dt>최종보험료</dt>";
+        appendHtml += "<dd>"+getCurrencyValue(exeData.mtap1001VO.cltlDtlsVO.totElagAppPrem )+"원</dd>";
+        appendHtml += "</dl>";
+        appendHtml += "<a href=\"javascript:fnJumpingStep('5');\" role=\"button\">수정</a>";
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum5').html(appendHtml);
+      
+      
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 6</em><strong>계약자정보</strong>";
+      if (stepToNum >= 6) {
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>계약자</dt>";
+        appendHtml += "<dd>"+maskingName(exeData.mtap1112VO.p02.polhldrVO.ptyKorNm)+"("+ValueFilter.convert('regNo', exeData.mtap1112VO.p02.polhldrVO.ptyRegNo)+")</dd>";
+        appendHtml += "<dt>피보험자</dt>";
+        appendHtml += "<dd>"+maskingName(exeData.mtap1112VO.p02.insrdVO.ptyKorNm)+"("+ValueFilter.convert('regNo', exeData.mtap1112VO.p02.insrdVO.ptyRegNo)+")</dd>";
+        appendHtml += "</dl>";
+        appendHtml += "<a href=\"javascript:fnJumpingStep('6');\" role=\"button\">수정</a>";
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum6').html(appendHtml);
+      
+  
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 7</em><strong>청약내용 확인</strong>";
+      if (stepToNum >= 7) {
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>보험명</dt>";
+        appendHtml += "<dd>Hicar 개인용(CM)</dd>";
+        appendHtml += "</dl>";
+        appendHtml += "<a href=\"javascript:fnJumpingStep('7');\" role=\"button\">수정</a>";
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum7').html(appendHtml);
+      
+      
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 8</em><strong>결제</strong>";
+      if (stepToNum >= 8) {
+        
+        /* $('#stepInfoSpn6_h').text('완료');
+        fnAddTagAToParent('stepInfoSpn6_h', '6');
+        fnAddTagAToParent('stepInfoSpn7_h', '7'); */
+      }
+      appendHtml += "</div>";
+      $('#stepToNum8').html(appendHtml);
+      
+      openLayer('allStepShowLayer');
+    }
+    
+    //이륜차용
+    function fnSetAllStepDataBike(responseObj) {
+      console.log('[MTPC0003G, fnSetAllStepDataBike] bike call--------------------1');
+      
+      var exeData = responseObj.data;
+      var maxStep = exeData.maxStep;
+      var stepToNum = 0;
+      
+      if (paramStep == '2') {
+        stepToNum = 1;
+      } else if (paramStep == '3') {
+        stepToNum = 2;
+      } else if (paramStep == '4') {
+        stepToNum = 3;
+      } else if (paramStep == '5') {
+        stepToNum = 4;
+      } else if (paramStep == '6') {
+        stepToNum = 5;
+      } else if (paramStep == '7') {
+        stepToNum = 6;
+      } else if (paramStep == '8') {
+        stepToNum = 7;
+      } else{
+        stepToNum = 1;
+      }
+      
+      var appendHtml = '';
+      
+      // 자동차 정보
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 2</em><strong>차량 기본정보</strong>";
+      if (stepToNum >= 2) {
+  
+        appendHtml += "<dl>";
+        if (exeData.carNumCat == '1') {
+          appendHtml += "<dt>차량번호</dt>";
+          appendHtml += "<dd>"+maskingCarAutoNo(exeData.carAutoNo)+"</dd>";
+        } else if (exeData.carNumCat == '2') {
+          appendHtml += "<dt>차대번호</dt>";
+          appendHtml += "<dd>"+maskingCarAutoNo(exeData.chssNo)+"</dd>";
+        } else if (exeData.carNumCat == '3') {
+        }
+        appendHtml += "<dt>보험기간</dt>";
+        appendHtml += "<dd>"+setFormatDate(exeData.inagStDt, '.') + ' ~ ' + setFormatDate(exeData.inagEdDt, '.')+"</dd>";
+        appendHtml += "</dl>";
+        
+        if("" != 'B278'){
+          appendHtml += "<a href=\"javascript:fnJumpingStep('2');\" role=\"button\">수정</a>";
+        }
+      }
+      appendHtml += "</div>";
+      $('#stepToNum2').html(appendHtml);
+      
+      
+      // 자동차 상세정보
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 3</em><strong>차량 상세정보</strong>";
+      if (stepToNum >= 3) {
+        /*
+        // 제조사 데이터
+        var mkcdObj = [
+            {nm:'현대',			cd:'6'}
+          , {nm:'르노삼성',		cd:'7'}
+          , {nm:'기아',			cd:'1'}
+          , {nm:'GM대우(쉐보레)',	cd:'3'}
+          , {nm:'쌍용',			cd:'2'}
+          , {nm:'외제차',		cd:'9'}
+          ];
+        
+        var autoCompNm = '';
+        $.each(mkcdObj, function(idx, val) {
+          if (exeData.autoCompCd == val.cd) {
+            autoCompNm = val.nm;
+          }
+        });*/
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>제조사</dt>";
+        appendHtml += "<dd>"+exeData.autoCompCd+"</dd>";
+        appendHtml += "<dt>모델명</dt>";
+        appendHtml += "<dd>"+exeData.rpsAutoNm+"</dd>";
+        appendHtml += "<dt>등록연도</dt>";
+        appendHtml += "<dd>"+exeData.autoRegY+"</dd>";
+  
+        if(exeData.prodCd == "5407"){
+          appendHtml += "<dt>배기량</dt>";
+          appendHtml += "<dd>"+exeData.mncpEngdplNm+"</dd>";
+          appendHtml += "<dt>사용용도</dt>";
+          if(exeData.bicDrvgObj == "1"){
+            appendHtml += "<dd>가정용 및 기타</dd>";	
+          }else if(exeData.bicDrvgObj == "2"){
+            appendHtml += "<dd>비유상운송 배달</dd>";
+          }else if(exeData.bicDrvgObj == "3"){
+            appendHtml += "<dd>유상운송 배달 및 대여용</dd>";
+          }
+        }
+        appendHtml += "</dl>";
+        
+        if("" != 'B278'){
+          appendHtml += "<a href=\"javascript:fnJumpingStep('3');\" role=\"button\">수정</a>";
+        }
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum3').html(appendHtml);
+      
+      
+      // 가입 범위
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 4</em><strong>운전자 정보</strong>";
+      if (stepToNum >= 4) {
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>운전자범위</dt>";
+        appendHtml += "<dd>"+exeData.drvrRngeLmtNm + ' ' + exeData.drvrAgeLmtNm+"</dd>";
+        appendHtml += "</dl>";
+        appendHtml += "<a href=\"javascript:fnJumpingStep('4');\" role=\"button\">수정</a>";
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum4').html(appendHtml);
+      
+      
+      // 보험료 계산
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 5</em><strong>보험료 확인</strong>";
+      if (stepToNum >= 5) {
+        
+        var disCntListStrTxt = '';
+        if (exeData.chk9482 == 'Y') {
+          disCntListStrTxt += '블랙박스 특약/';
+        }
+        if (exeData.chk9467 == 'Y') {
+          disCntListStrTxt += 'ECO 마일리지 특약/';
+        }
+        if (exeData.magdChldPageCheck == '1') {
+          disCntListStrTxt += '자녀할인 특약/';
+        }
+        if (exeData.chk9504 == 'Y') {
+          disCntListStrTxt += '커넥티드카할인 특약/';
+        }
+        
+        if (exeData.chk9504 == 'Y') {
+          disCntListStrTxt += '안전운전할인 특약/';
+        }
+        
+        if(exeData.chk9445){
+          disCntListStrTxt += '승용차요일제 특약/';
+        }
+        if(exeData.chk9505 == 'Y'){
+          disCntListStrTxt += '차선이탈경고장치 특약/';
+        }			
+        if(exeData.chk9766 == 'Y'){
+          disCntListStrTxt += '나눔 특약/';
+        }
+        if(exeData.chk9489 == 'Y'){
+          disCntListStrTxt += '안전교육할인 특약/';
+        }
+        disCntListStrTxt += '하이카 그린서비스/';
+        if (disCntListStrTxt) {
+          disCntListStrTxt = disCntListStrTxt.substring(0, disCntListStrTxt.length -1);
+        }
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>할인특약</dt>";
+        appendHtml += "<dd>"+(disCntListStrTxt == ''? '없음' : disCntListStrTxt)+"</dd>";
+        appendHtml += "<dt>최종보험료</dt>";
+        appendHtml += "<dd>"+getCurrencyValue(exeData.mtap1001VO.cltlDtlsVO.totElagAppPrem )+"원</dd>";
+        appendHtml += "</dl>";
+        appendHtml += "<a href=\"javascript:fnJumpingStep('5');\" role=\"button\">수정</a>";
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum5').html(appendHtml);
+      
+      
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 6</em><strong>계약자정보</strong>";
+      if (stepToNum >= 6) {
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>계약자</dt>";
+        appendHtml += "<dd>"+maskingName(exeData.mtap1112VO.p02.polhldrVO.ptyKorNm)+"("+ValueFilter.convert('regNo', exeData.mtap1112VO.p02.polhldrVO.ptyRegNo)+")</dd>";
+        appendHtml += "<dt>피보험자</dt>";
+        appendHtml += "<dd>"+maskingName(exeData.mtap1112VO.p02.insrdVO.ptyKorNm)+"("+ValueFilter.convert('regNo', exeData.mtap1112VO.p02.insrdVO.ptyRegNo)+")</dd>";
+        appendHtml += "</dl>";
+        appendHtml += "<a href=\"javascript:fnJumpingStep('6');\" role=\"button\">수정</a>";
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum6').html(appendHtml);
+      
+  
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 7</em><strong>청약내용 확인</strong>";
+      if (stepToNum >= 7) {
+        
+        appendHtml += "<dl>";
+        appendHtml += "<dt>보험명</dt>";
+        appendHtml += "<dd>Hicar 개인용(CM)</dd>";
+        appendHtml += "</dl>";
+        appendHtml += "<a href=\"javascript:fnJumpingStep('7');\" role=\"button\">수정</a>";
+        
+      }
+      appendHtml += "</div>";
+      $('#stepToNum7').html(appendHtml);
+      
+      
+      appendHtml = "";
+      appendHtml += "<div>";
+      appendHtml += "<em class=\"tag\">STEP 8</em><strong>결제</strong>";
+      if (stepToNum >= 8) {
+        
+        /* $('#stepInfoSpn6_h').text('완료');
+        fnAddTagAToParent('stepInfoSpn6_h', '6');
+        fnAddTagAToParent('stepInfoSpn7_h', '7'); */
+      }
+      appendHtml += "</div>";
+      $('#stepToNum8').html(appendHtml);
+      
+      openLayer('allStepShowLayer');
+    }
+    
+     var retVal = true;
+    function fnEcoMethodClk(rdoVal) {
+      
+      if(rdoVal == '2') {
+        if (!confirm('마일리지 특약 거리측정방식을 OBD로 선택 시, 최종운행정보(OBD)확인장치 장착이 필요합니다. 또한 해당 특약 거리측정방식으로 OBD를 선택하여 가입 시 추후 변경 및 재가입은 불가합니다.\n계속 진행하시겠습니까?', "fnMethodCallback()", "fnMethodCallback2()")) {
+        }
+        
+        $("#fstDrvDistPhtgDtDiv").hide();
+        $("#fstDrvDistDiv").hide();
+        
+      }else if(rdoVal == '3') {
+        //$("#fstDrvDistPhtgDt").show();
+        //$("#fstDrvDist").show();
+        
+        $("#fstDrvDistPhtgDtDiv").show();
+        $("#fstDrvDistDiv").show();
+        
+        //kode123,20180629
+        // 커넥티드카 여부(1. 기본  2. 옵션 0. 미적용))
+        console.log('[MTPC0003G, fnEcoMethodClk] connCarCat:');
+  // 			if(''=='1' || ''=='2'){
+  // 				alert("커넥티드카 기본장착차량으로 할인특약이 자동적용 되었습니다. 실제 커넥티드카 장착된 차량인지 반드시 확인하시기 바랍니다");
+  // 			}
+        
+      }else{
+        $("#fstDrvDistPhtgDtDiv").hide();
+        $("#fstDrvDistDiv").hide();
+      }
+      return retVal;
+    }
+    
+    function fnMethodCallback() {
+  // 		retVal = false;
+  // 		$(':radio[name="method"]:input[value="1"]').prop('checked', true);
+      console.log("[MTPC0401G,fnEcoMethodClk] 1 retVal:"+retVal);
+    }
+    
+    function fnMethodCallback2() {
+      retVal = false;
+      
+      $("#ecoObd").removeClass('on');
+      //$("#ecoPic").addClass('on');
+      $('#method').val('');
+      console.log("[MTPC0401G,fnEcoMethodClk] 2 retVal:"+retVal);
+    }
+  
+    
+    
+  
+  </script>
+  
+  <div class="popWrap" style="display: none;" id="allStepShowLayer">
+    <header>
+      <h1>입력정보 요약</h1>
+    </header>
+    <div class="popContent">
+      <section class="bg">
+        <ul class="infoSummary">
+          <li id="stepToNum1">
+            <div>
+              <em class="tag">STEP 1</em><strong>고객정보</strong>
+              <span>(nullnull)</span>
+              <a href="javascript:fnJumpingStep('1');" role="button">수정</a>
+            </div>
+          </li>
+          <li id="stepToNum2">
+          </li>
+          <li id="stepToNum3">
+          </li>
+          <li id="stepToNum4">
+          </li>
+          <li id="stepToNum5">
+          </li>
+          <li id="stepToNum6">
+          </li>
+          <li id="stepToNum7">
+          </li>
+          <li id="stepToNum8">
+            <div>
+              <em class="tag">STEP 8</em><strong>보험료결제</strong>
+            </div>
+            <!-- <div>
+              <em class="tag">STEP 8</em><strong>결제</strong>
+              <dl id="">
+                <dt>결제방법</dt>
+                <dd id="stepAutoComp"></dd>
+                <dt>결제금액</dt>
+                <dd id="stepAutoComp"></dd>
+                <dt>ECO마일리지 환급 계좌</dt>
+                <dd id="stepAutoComp"></dd>
+              </dl>
+            </div> -->
+          </li>
+        </ul>
+      </section>
+      <div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+        <a href="javascript:closeLayer('allStepShowLayer');" role="button" class="on">확인</a>
+      </div>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('allStepShowLayer');">창닫기</button>
+  </div>
+  
+  <!-- 다이렉트모바일 자동차보험 가입화면 전체에 전화상담 아이콘 추가 / 정경미 대리 요청으로 2019.01.10 반영 by 김태원 과장  -->
+  
+  
+  <form name="frmInfo" id="frmInfo" method="post">
+    <input type="hidden" id="executeTime" name="executeTime" value="1648187056063">
+    <input type="hidden" id="preNextCat" name="preNextCat" value="3">	
+  </form>
+     <!-- 전체보기 레이어 -->
+  
+  
+  
+  
+  <script type="text/javascript">
+    
+    var _telData = {telType:"", telNo:"", referer:"/"};
+    var _telChk = false;
+    
+    /**
+     * @alias 이탈레이어
+     */
+    function fnCallOutLayer() {
+      var rootGb = _menuGb.substr(0, 2);
+      if (rootGb == "82") { // 자보
+        fnCmOutAutoCall(); // 산출이탈 OBCALL 자동저장 2016-10-12
+      }
+      
+      var task = getCallmeTask();
+      console.log("_menuGb:"+_menuGb, task);
+      // 마지막스텝 체크
+      //2021-10-26
+      //CM장기 실손 설계이탈화면 개선(모바일) 
+      if (isLastStep() || task == "MD_CALL") {
+        if (task == "CC_CALL") {
+          lpOpener("_linkedSaleLTMD");
+        } else if ( task == "MD_CALL" || task == "FIRE_CALL"  || task == "CHILD_CALL"|| task == "LT_CALL") {
+          lpOpener("_linkedSaleLTCC");
+        } else if ( task == "HT_CALL"){
+          lpOpener("_linkedSaleLTHT");
+        } else {
+          location.href = "/";
+        }
+        
+        return;
+      }
+      // 전화번호세팅
+      setCallmeTelNo();
+      // 레이어호출
+      
+      if (task == "CAL_CALL") {
+        openCallmeLayerPC(task, _telData, _telData.referer);
+      } else {
+        if(_menuId == '058d893174' || _menuId == '452665tgd7' 
+          || _menuId == '7afb3ad9a3' || _menuId == 'a7ab8a9cfb' || _menuId == '9589f58b0d'){
+          openCallmeLayerPC(task, _telData,_menuId);
+        }
+        else{
+          openCallmeLayerPC(task, _telData);
+        }
+      }
+      
+      // 보험료계산 나가기 중간저장 호출
+      if(isCalcStep()){
+        fnSaveBtnClose();
+      }
+    }
+    //연금보험 모바일 이탈
+    function fnCallOutLayerPn(){
+      lpOpener("_linkedSaleLTCC");
+    }
+    
+    function fnCallOutInsuLayer() {
+      // 전화번호세팅
+      setCallmeTelNo();
+      
+      var task = "L_FG_INSU_CALL";
+      openCallmeLayerPC(task, _telData);
+    }
+    
+    
+    /** 
+     * @alias 기본전화번호 세팅
+     */
+    function setCallmeTelNo() {
+      if (!_telChk) {
+        _telData = getCMTelNo($("input[name=executeTime]").val());
+        _telChk = true;
+        if ($("input[data-callmeTelInfo='telNo']").length > 0 && $("input[data-callmeTelInfo='telNo']").val() != "") {
+          _telData.telType = $("select[data-callmeTelInfo='telCat']").val();
+          _telData.telNo = $("input[data-callmeTelInfo='telNo']").val();
+          _telChk = false;
+        }
+      }
+    }
+    
+    /** 
+     * @alias 보험료계산 나가기 스텝 판단
+     */	 
+    function isCalcStep() {
+      var result = false;
+      var rootGb = _menuGb.substr(0, 2);
+      switch(rootGb) {
+        case "84" : // 운보
+          if (_menuId == "452665tgd7") result = true;
+        case "75" : // 주택화재상해보험
+          if (_menuId == "7afb3ad9a3") result = true;
+        case "16" : // 어린이보험
+          if (_menuId == "058d893174") result = true;	
+        case "c2" : // 실손
+          if (_menuId == "dfc6f4a1c4") result = true;
+        case "87" :	// 암
+          if (_menuId == "a7ab8a9cfb") result = true;
+        case "97" : // 건강보험
+          if (_menuId == "9589f58b0d") result = true;
+        case "93" :	// 연금
+          if (_menuId == "c40bb2bc43") result = true;
+      }
+      return result;
+    }
+    
+    /** 
+     * @alias 마지막스텝 판단
+         PC     모바일
+     연금	47	    93
+     실손	48	    c2
+     운전자	46	    84
+     건강	97	    97
+     주택	98	    98
+     암       49	    C3
+     어린이	99	    99
+     */
+    function isLastStep() {
+      var result = false;
+      var rootGb = _menuGb.substr(0, 2);
+      switch(rootGb) {
+        case "82" : // 자보
+          if (_menuId == "dkq91cj01s") result = true;
+          break;
+        case "84" : // 운보
+          if (_menuId == "e4n3d1h78s") result = true;
+          break;
+        case "85" : // 해외여행
+          if (_menuId == "80e79e8a1d") result = true;
+          break;
+        case "d8" : // 해외장기체류
+          if (_menuId == "fecf44d3a2") result = true;
+          break;
+        case "86" : // 국내여행
+          if (_menuId == "f4388de059") result = true;
+          break;
+        case "87" : // 암보험	장기3종 가입완료 팝업 신설 2004 : 마지막 페이지 체크 추가
+          if (_menuId == "04f6ddcc57") result = true;
+          break;
+        case "c2" : // 실손의료비보장보험
+          if (_menuId == "4ba17d8689") result = true;
+          break;
+        case "91" : // 골프
+          if (_menuId == "aa71dea157") result = true;
+          break;
+        case "93" : // (무)연금보험
+          if (_menuId == "ltpn0099") result = true;
+        case "94" : // 주택화재
+          if (_menuId == "5096215818") result = true;
+          break;
+        case "97" : // 건강보험
+          if (_menuId == "ed4b7991aa") result = true;
+          break;
+        case "f5" : // H주택화재상해보험
+          if (_menuId == "d52c9e7702") result = true;
+          break;	
+        case "98" : // H주택화재상해보험
+          if (_menuId == "d52c9e7702") result = true;
+          break;	
+        case "22" : // 어린이보험
+          if (_menuId == "a954bdb1c9") result = true;
+          break;
+        case "16" : // 어린이보험
+          if (_menuId == "a954bdb1c9") result = true;
+          break;	
+      }
+      
+      return result;
+    }
+    
+    /** 
+     * @alias 보험상품별 TASK 
+     */
+    function getCallmeTask() {
+      var result = "CAL_CALL";
+      var rootGb = _menuGb.substr(0, 2);
+      console.log("rootGb:"+rootGb);
+      switch(rootGb) {
+        case "82" : // 자보
+          result = "CAL_CALL";
+          break;
+        case "84" : // 운보
+          result = "LT_CALL";
+          break;
+        case "85" : // 해외여행
+          result = "FG_CALL";
+          break;
+        case "d8" : // 해외장기체류
+          result = "L_FG_CALL"; // 해외장기체류보험은 해외여행과 동일하게 콜미신청하기로 함 (2016.07.27 윤우현 주임에게 확인) // 2021.11.03 해외장기체류 이탈프로세스 변경(안윤경 차장님)
+          break;
+        case "86" : // 국내여행
+          result = "DM_CALL";
+          break;
+        case "87" : // 암보험	장기3종 가입완료 팝업 신설 2004 : 압보험 상품 TASK 추가
+          result = "CC_CALL";
+          break;
+        case "c2" : // 실손의료비
+          result = "MD_CALL";
+          break;
+        case "91" : // 골프
+          result = "GF_CALL";
+          break;
+        case "93" : // (무)연금보험 // XXX 콜 코드 확인
+          result = "XX_CALL";
+          break;
+        case "94" : // 주택화재
+          result = "HS_CALL";
+          break;
+        case "97" : // 건강보험
+          result = "HT_CALL";
+          break;		
+        case "f5" : // H주택화재상해보험
+          result = "FIRE_CALL";
+          break;	
+        case "98" : // H주택화재상해보험
+          result = "FIRE_CALL";
+          break;
+        case "75" : // H주택화재상해보험
+          result = "FM_CALL";
+          break;
+        case "22" : // 장기어린이보험
+          result = "CHILD_CALL";
+          break;
+        case "16" : // 장기어린이보험
+          result = "CHILD_CALL";
+          break;	
+        case "7d" : // 전환형실손
+          result = "SM_CALL";
+          break;					
+      }
+      
+      return result;
+    }
+    
+  </script>
+  
+  <!-- 공통 레이어 -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- 이벤트 노출체크 -->
+       <!-- 이벤트 노출체크 -->
+  
+  <script type="text/javascript">
+    
+    $(function() {
+      $("#dummyiframe").attr("title", "빈 프레임");
+      
+      $('input[name=custNo1]').click(function(){
+        if($(this).val() == "예)19780802") {
+          $(this).val("");
+        }
+      });
+      var appInfo = JSON.parse(sessionStorage.getItem('appInfo'));
+      
+      if (appInfo != undefined && (appInfo.osType == 'AOS' || appInfo.osType == 'IOS')){
+      }else{
+        $("#appLayer1").show();
+        $("#appLayer2").show();
+      }
+      
+      fnSvcNtfyCnts(); // 긴급공지 조회
+      
+    });
+    
+    // 긴급공지 조회
+    function fnSvcNtfyCnts() {
+      var requestVO = {};
+      requestVO = {
+          svcMenuId : _menuId //메뉴ID
+      };
+      
+      HiJS.svr.doRequestAjax('DHCO0210M09S', {
+        data		: requestVO,
+        callback	: {
+            success : function(responseObj) {
+              var resData = responseObj.data;
+              
+              
+              console.log("resData.title:::", resData);
+              console.log("resData.title:::" + resData.title);
+              
+              
+              if( resData!=null && resData.title!=null && resData.cnts!=null ){
+                $('#menuEmrNtceTitle').text(resData.title);
+                $('#menuEmrNtceCont').html(resData.cnts);
+                alertOpener("menuNoticeLayerPopAlert");
+              }
+            },
+            failure : function(responseObj){
+              
+              console.log("긴급공지 조회 실패");
+              
+            }
+        }
+      });
+    }
+    
+    //장기체류해외여행보험 보험료 나에게 보내기
+    function lfgSendMeKakao(){
+  
+      var telNo1 = $("#mpNo").val().substring(0, 3);
+      var telNo2 = $("#mpNo").val().substring(3, 7);
+      var telNo3 = $("#mpNo").val().substring(7, 11);
+      
+      var requestVO = {};
+      requestVO = {
+          telNo1 : telNo1, //메뉴ID
+          telNo2 : telNo2, //메뉴ID
+          telNo3 : telNo3, //메뉴ID
+          executeTime : $("#executeTime").val()
+      };
+      
+      console.log("requestVO : " + requestVO);
+      HiJS.svr.doRequestAjax('DHGI5001M81S', {
+        data		: requestVO,
+        callback	: {
+            success : function(responseObj) {
+              alert("보험료 전송이 완료되었습니다.<br>출국 전 잊지말고 다시 방문해주세요.","location.href='/'");
+            },
+            failure : function(responseObj){
+              alert("보험료 전송이 실패하였습니다.<br>입력정보를 확인해주세요.");
+            }
+        }
+      });
+    }
+    
+    /**
+     * @alias 개인정보 동의 안내 팝업
+     */
+    function fnOpenLayer() {
+      openLayer('_bottomInfoLayer4');
+      $("#mailLayer_agreeSel01").attr("checked", true);
+    }
+    
+    //전문금융소비자 관련 추가 20210322
+    function setSpc(){//확인버튼 클릭시 셋팅		
+      var cpNm = $("#cpNm").val(); 
+      if(cpNm == ""){
+        alert("전문금융소비자 단체(회사)명을 입력해주세요.","$('#cpNm').focus()");
+        return false;
+      } else{
+        $("#strEtc6").val(cpNm);//단체 회사명
+      }
+      if( $('input:radio[name="spcType"]:checked').val() == "2" && $("#strEtc5").val() == ""){
+        alert("전문금융소비자 세부항목을 선택해주세요.");
+        return false;
+      } 
+      //lpCloser('spcInputPop');
+      closeLayer('spcInputPop');
+    }
+    
+    function setSpcDtl(val){
+      $("#strEtc5").val(val);//전문금융소비자 세부항목 선택
+    }
+    //전문금융소비자 관련 추가 20210322
+    
+  </script>
+  
+  <script type="text/javascript" src="../js/mVaccine/TouchEn_mVaccine.js"></script>
+  <script type="text/javascript">
+    
+    _mVaccine.mVaccine_lic = "1680139f92030057e27e910015e6aed8d6372208";
+    
+    var mVaccineUrl = "https://mdirect.hi.co.kr";
+    if (location.href.indexOf("hdmapp.hi.co.kr") > -1) {
+      mVaccineUrl = "http://hdmapp.hi.co.kr";
+    } else if (location.href.indexOf("qamdirect.hi.co.kr") > -1 || location.href.indexOf("dm.hicardirect.com") > -1) {
+      mVaccineUrl = ".";
+    }
+    
+    _mVaccine.callback_url = mVaccineUrl + "/mVaccine/callback_check.jsp";
+    _mVaccine.callback_token = getCookie("JSESSIONID");
+    
+    var callback_return = 'null';
+    
+    // 다음페이지 이동 
+    var _mVaccine_nextPageFnc;
+    
+    /** 
+     * @alias 백신검사
+     * @param fnc 다음실행함수
+     */
+    function mVaccine_check(fnc) {
+      
+      // 안드로이드 및 백신완료
+      fnc();
+    }
+    
+    /** 
+     * @alias 백신검사시작
+     */
+    
+    var mVaccineTimerId;
+    
+    function mVaccine_Start() {
+      _mVaccine.callback_token = getCookie("JSESSIONID");
+      
+      mVaccineCheckStatus(mVaccine_nextPage);
+      // _mVaccine.mode = "full"; // 기존 백신 검사 화면
+      _mVaccine.mode = "mini"; // 간소화 모드 백신 화면
+      _mVaccine.start();
+      mVaccineTimerId = setInterval(function() {mVaccineCheckStatus(mVaccine_nextPage);},3000);
+    }
+    
+    /** 
+     * @alias 백신 다음페이지이동 함수 실행
+     */
+    function mVaccine_nextPage(isRun) {
+      if (isRun) {
+        closeLayer('_mobileVaccineLayer');
+        clearInterval(mVaccineTimerId);
+        if (typeof(_mVaccine_nextPageFnc) == 'function') {
+          _mVaccine_nextPageFnc();
+        }
+      }
+    }
+    
+    function fnGoAppDown(){
+      var appInfo = JSON.parse(sessionStorage.getItem('appInfo'));
+      var osInfo = getOsInfo();
+      
+      if (osInfo.cd == "10111004") { // Android
+        fnGoAppInstall('market://details?id=kr.co.direct.hi.hyundai.android');
+      } else if (osInfo.cd == "10111005") { // IOS
+        location.href ="https://itunes.apple.com/kr/app/HiDirect/id1265054195?mt=8";				
+      }
+    }
+  
+  </script>
+  
+  <!-- 레이어 시작 -->
+  <!-- 앱소개 레이어 -->
+  
+  
+  
+  
+  
+  
+  <script type="text/javascript">
+  
+  // 브라우저 정보를 가져오기 위한 변수
+  var browserInfo = {
+      alias : "",
+      name : "",
+      vsn : "-1",
+      cd : "",
+      x64 : false
+  };
+  
+  // OS 정보를 가져오기 위한 변수
+  var osInfo = {
+      cd : "",
+      vsn : "",
+      pad : ""
+  };
+  
+  /**
+   * @alias getOsInfo : 브라우저 종류 및 버전 조회
+   */
+  function fnSettingChInfo() {
+    try {
+      var pf = navigator.platform.toLowerCase();
+      var ua = navigator.userAgent.toLowerCase();
+      
+      var index = -1;
+      var tmp = "";
+      
+      if (navigator.appName == "Microsoft Internet Explorer") {
+        browserInfo.alias = "MSIE";
+        browserInfo.name = "IE";
+        index = navigator.userAgent.indexOf(browserInfo.alias)+browserInfo.alias.length+1;
+        tmp = navigator.userAgent.substring(index);
+        index = tmp.indexOf(";");
+        if (index < 0) {
+          index = tmp.indexOf(")");
+        }
+        browserInfo.vsn = tmp.substring(0, index);
+        browserInfo.cd = "10121001"; // IE
+      } else if (navigator.userAgent.match(/Navigator/i)) { // Firefox
+        browserInfo.alias = "Navigator";
+        browserInfo.name = "Firefox";
+        index = navigator.userAgent.lastIndexOf(browserInfo.alias) + browserInfo.alias.length + 1;
+        tmp = navigator.userAgent.substring(index);
+        browserInfo.vsn = tmp;
+        index = tmp.indexOf(" ");
+        if (index > 0) {
+          browserInfo.vsn = tmp.substring(0, index);
+        }
+        browserInfo.cd = "10121005"; // 파이어폭스
+      } else if (navigator.userAgent.match(/OPR/i)) {
+        browserInfo.alias = navigator.appName;
+        browserInfo.name = "Opera";
+        index = navigator.userAgent.lastIndexOf("OPR") + "OPR".length + 1;
+        tmp = navigator.userAgent.substring(index);
+        browserInfo.vsn = tmp;
+        index = tmp.indexOf(" ");
+        if (index > 0) {
+          browserInfo.vsn = tmp.substring(0, index);
+        }
+        browserInfo.cd = "10121004"; // 오페라
+      } else if (navigator.userAgent.match(/Firefox/i)) {
+        browserInfo.alias = "Firefox";
+        browserInfo.name = "Firefox";
+        index = navigator.userAgent.lastIndexOf(browserInfo.alias) + browserInfo.alias.length + 1;
+        tmp = navigator.userAgent.substring(index);
+        browserInfo.vsn = tmp;
+        index = tmp.indexOf(" ");
+        if (index > 0) {
+          browserInfo.vsn = tmp.substring(0, index);
+        }
+        browserInfo.cd = "10121005"; // 파이어폭스
+      } else if (navigator.userAgent.match(/Chrome/i)) { // Chrome
+        browserInfo.alias = "Chrome";
+        browserInfo.name = "Chrome";
+        if (navigator.userAgent.match(/ChromePlus/i)) {
+          browserInfo.alias = "ChromePlus";
+          browserInfo.name = "Chrome";
+        }
+        index = navigator.userAgent.lastIndexOf(browserInfo.alias)+browserInfo.alias.length+1;
+        tmp = navigator.userAgent.substring(index);
+        browserInfo.vsn = tmp;
+        index = tmp.indexOf(" ");
+        if (index > 0) {
+          browserInfo.vsn = tmp.substring(0, index);
+        }
+        browserInfo.cd = "10121002"; // 크롬
+      } else if (navigator.userAgent.match(/Safari/i)) { // Safari
+        browserInfo.alias = "Safari";
+        browserInfo.name = "Safari";
+        // index = navigator.userAgent.lastIndexOf(browserInfo.alias) + browserInfo.alias.length + 1;
+        index = navigator.userAgent.lastIndexOf("vsn") + "vsn".length + 1;
+        tmp = navigator.userAgent.substring(index);
+        browserInfo.vsn = tmp;
+        index = tmp.indexOf(" ");
+        if (index > 0) {
+          browserInfo.vsn = tmp.substring(0, index);
+        }
+        browserInfo.cd = "10121003"; //사파리
+      } else if (navigator.userAgent.match(/Opera/i)) {
+        browserInfo.alias = navigator.appName;
+        browserInfo.name = "Opera";
+        index = navigator.userAgent.lastIndexOf("vsn") + "vsn".length + 1;
+        tmp = navigator.userAgent.substring(index);
+        browserInfo.vsn = tmp;
+        index = tmp.indexOf(" ");
+        if (index > 0) {
+          browserInfo.vsn = tmp.substring(0, index);
+        }
+        browserInfo.cd = "10121004"; //오페라
+      } else if (navigator.userAgent.match(/Trident/i)) {
+        browserInfo.alias = "MSIE";
+        browserInfo.name = "IE";
+        index = navigator.userAgent.lastIndexOf("rv:") + "rv:".length;
+        tmp = navigator.userAgent.substring(index);
+        index = tmp.indexOf(")");
+        if (index < 0) {
+          index = tmp.indexOf(" ");
+        }
+        browserInfo.vsn = tmp.substring(0, index);
+        browserInfo.cd = "10121001"; //IE
+      } else {
+        browserInfo.name = navigator.appName;
+        browserInfo.vsn = "기타브라우저";
+        browserInfo.cd = "10121006"; //Etc
+      }
+      
+      if (browserInfo.alias == "MSIE") {
+        if (navigator.userAgent.indexOf("Trident/4.0") != -1) {
+          browserInfo.vsn = "8";// IE8
+        } else if (navigator.userAgent.indexOf("Trident/5.0") != -1) {
+          browserInfo.vsn = "9";// IE9
+        } else if (navigator.userAgent.indexOf("Trident/6.0") != -1) {
+          browserInfo.vsn = "10";// IE10
+        } else if (navigator.userAgent.indexOf("Trident/7.0") != -1) {
+          browserInfo.vsn = "11";// IE11
+        } else {
+          browserInfo.vsn = browserInfo.vsn.charAt(0); // IE7 이하 or IE12 이상
+        }
+      }
+      
+      // alert("browserInfo.name=>"+ browserInfo.name + " / " + "browserInfo.vsn=>" + browserInfo.vsn);
+      
+      // x64
+      if (ua.indexOf("win64") > -1 || pf.indexOf("mac") > -1) {
+        browserInfo.vsn = browserInfo.vsn + " x64";
+      }
+    } catch(e) {
+      // alert(":"+e.description+" : "+e);
+    }
+    
+    return browserInfo;
+  }
+  
+  /**
+   * @alias getOsInfo : 운영체계(OS) 종류 및 버전 조회
+   */
+  function getOsInfo() {
+    try {
+      var pf = navigator.platform.toLowerCase();
+      var ua = navigator.userAgent.toLowerCase();
+      
+      //alert("pf=>" + pf);
+      //alert("ua=>" + ua);
+      
+      // OS name
+      if (pf.indexOf("win32") > -1 || pf.indexOf("win64") > -1) {
+        osInfo.window = true;
+        osInfo.cd = "10111001"; //윈도우
+        if (ua.indexOf("nt 6.3") > -1) {
+          osInfo.vsn = "8.1";
+        } else if (ua.indexOf("nt 6.2") > -1) {
+          osInfo.vsn = "8";
+        } else if (ua.indexOf("nt 6.1") > -1) {
+          osInfo.vsn = "7";
+        } else if (ua.indexOf("nt 6.0") > -1) {
+          osInfo.vsn = "Vista/Server 2008";
+        } else if (ua.indexOf("nt 5.2") > -1) {
+          osInfo.vsn = "Server 2003";
+        } else if (ua.indexOf("nt 5.1") > -1) {
+          osInfo.vsn = "XP";
+        } else if (ua.indexOf("nt 5.0") > -1) {
+          osInfo.vsn = "2000";
+        } else if (ua.indexOf("nt") > -1) {
+          osInfo.vsn = "NT";
+        } else if (ua.indexOf("9x 4.90") > -1) {
+          osInfo.vsn = "Me";
+        } else if (ua.indexOf("98") > -1) {
+          osInfo.vsn = "98";
+        } else if (ua.indexOf("95") > -1) {
+          osInfo.vsn = "95";
+        } else if (ua.indexOf("win16") > -1) {
+          osInfo.vsn = "3.x";
+        } else if (ua.indexOf("windows") > -1) {
+          osInfo.vsn = "계열";
+        } else {
+          osInfo.vsn = "계열";
+        }
+      } else if (pf.indexOf("linux armv") > -1) {
+        osInfo.cd = "10111004"; // 안드로이드
+        if (ua.indexOf("shw-m") > -1) {
+          osInfo.pad ="10111004"; // 안드로이드
+        }
+      } else if (pf.indexOf("linux") > -1) {
+        osInfo.linux = true;
+        osInfo.cd = "10111002"; //리눅스
+        if (ua.indexOf("fedora") > -1) {
+          osInfo.vsn = "페도라";
+        } else if (ua.indexOf("ubuntu") > -1) {
+          osInfo.vsn = "리눅스 우분투";
+        } else {
+          osInfo.vsn = "계열";
+        }
+      } else if (pf.indexOf("mac") > -1) {
+        osInfo.vsn = osInfo.vsn + " x64";
+        osInfo.cd = "10111003"; // MAC OS
+        if (ua.indexOf("os x 10_9") > -1) {
+          osInfo.vsn = "매버릭스";
+        } else if (ua.indexOf("os x 10_8") > -1) {
+          osInfo.vsn = "마운틴 라이언";
+        } else if (ua.indexOf("os x 10_7") > -1) {
+          osInfo.vsn = "라이언";
+        } else if (ua.indexOf("os x 10_6") > -1) {
+          osInfo.vsn = "스노우 레퍼드";
+        } else {
+          osInfo.vsn = "계열";
+        }
+      } else if (pf.indexOf("ipad") > -1 || pf.indexOf("iphone") > -1 || pf.indexOf("ipod") > -1 || pf.indexOf("ios") > -1) {
+        osInfo.cd = "10111005"; // IOS
+        if (pf.indexOf("ipad") > -1) {
+          osInfo.pad ="10111005"; //ipad
+        }
+        
+        if ( pf.indexOf("iphone") > -1 ){
+          index = ua.lastIndexOf('iphone os') + ('iphone os').length + 1  ;
+          tmp = navigator.userAgent.substring(index, index+6);
+          tmp = replaceAll(tmp, ";", "");
+          tmp = replaceAll(tmp, " ", "");
+          osInfo.vsn = tmp;
+        }
+      }
+      
+      if (ua.indexOf("windows phone") > -1 || ua.indexOf("windows ce") > -1) {
+        osInfo.cd = "10111006"; // 윈도우 모바일
+      } else if (ua.indexOf("symbian") > -1) {
+        osInfo.cd = "10111008"; // 심비안
+      } else if (ua.indexOf("blackberry") > -1) {
+        osInfo.cd = "10111007"; // 블랙베리
+      } else if (ua.indexOf("android") > -1) {
+        osInfo.cd  = "10111004"; // 안드로이드
+        osInfo.alias = "Android";
+        index = navigator.userAgent.lastIndexOf('Android') + osInfo.alias.length + 1  ;
+        tmp = navigator.userAgent.substring(index, index+5);  // 안드로이드버전이 8.0.0 이런식으로 들어와서 + 5를 함
+        
+        tmp = replaceAll(tmp, ";", "");
+        tmp = replaceAll(tmp, " ", "");
+        
+        osInfo.vsn = tmp;
+      }
+      
+      // x64
+      if (ua.indexOf("wow64") > -1 || ua.indexOf("win64") > -1) {
+        osInfo.vsn = osInfo.vsn + " x64";
+      }
+      if (osInfo.group == "linux") {
+        if (pf.indexOf("x86_64") > -1) {
+          osInfo.vsn = osInfo.vsn + " x64";
+        }
+        if (ua.indexOf("x86_64") > -1) {
+          osInfo.vsn = osInfo.vsn + " x64";
+        }
+      }
+      // alert("osInfo.name=>" + osInfo.name + " / " + "osInfo.mobile=>" + osInfo.mobile + " / " + "osInfo.x64=>" + osInfo.x64 ;
+    } catch(e) {
+      
+    }
+    
+    return osInfo;
+  }
+  
+  </script>
+  
+  <script type="text/javascript">
+    
+    $(function() {
+      osInfo = getOsInfo();
+      var intent = "";
+      
+      var partnerShipInfoVal = JSON.parse(sessionStorage.getItem('partnerShipInfoVal'));
+      
+      if (osInfo.cd == "10111004") { // Android
+        intent = "Intent://main";
+        if (partnerShipInfoVal != null && partnerShipInfoVal.cncNo != undefined) {
+          intent += "?cnc_no=" + partnerShipInfoVal.cncNo;
+          intent += "&media_no=" + partnerShipInfoVal.mediaNo;
+          intent += "&campaignId=" + partnerShipInfoVal.campaignId;
+        }
+        intent += "#Intent;scheme=hidirect;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=kr.co.direct.hi.hyundai.android;end";
+        $("#appIntroAppDownload").attr("href", intent);
+      } else if (osInfo.cd == "10111005") { // IOS
+        $("#appIntroAppDownload").on('click', function() {
+          intent = 'hidirect://main';
+          if (partnerShipInfoVal != null && partnerShipInfoVal.cncNo != undefined) {
+            intent += "?cnc_no=" + partnerShipInfoVal.cncNo;
+            intent += "&media_no=" + partnerShipInfoVal.mediaNo;
+            intent += "&campaignId=" + partnerShipInfoVal.campaignId;
+          }
+          location.href = intent;
+          setTimeout(function() {
+            location.href = 'https://itunes.apple.com/kr/app/HiDirect/id1265054195?mt=8';
+          }, 1000);
+        });
+      }
+    });
+    
+    // APP소개 레이어 열기
+    function fnOpenAppIntroLayer() {
+      openLayer("appIntoLayer");
+    }
+    
+    // 인증 레이어 닫기
+    function fnCloseAppIntroLayer() {
+      closeLayer("appIntoLayer");
+    }
+    
+  </script>
+  
+  <div class="popWrap" id="appIntoLayer" style="display:none;">
+    <header>
+      <h1>현대해상다이렉트 APP소개</h1>
+    </header>
+    <div class="popContent">
+      <div class="appguideVisual">
+        <p>
+          <strong>다이렉트를 더 스마트하게</strong>
+          현대해상 다이렉트 모바일 앱을 통해 안전하고 편리하게 모바일 이용이 가능합니다.
+        </p>
+      </div>
+      <section>
+        <ul class="appguide">
+          <li class="menu1">
+            <strong>다이렉트 모바일 앱으로 더 쉽게</strong>
+            <p>스마트폰으로 더 편리하게, 현대해상 다이렉트보험을 만나실 수 있습니다.</p>
+          </li>
+          <li class="menu2">
+            <strong>안전한 다이렉트 모바일 앱</strong>
+            <p>공동인증서와 바이오인증을 통해 더 안전하고 쉽게 다이렉트보험을 가입/관리하실 수 있습니다.</p>
+          </li>
+          <li class="menu3">
+            <strong>5분이면 가입까지</strong>
+            <p>이해하기 쉬운 화면 구성과 편리한 모바일 서비스를 통해 처음 해보는 사람도 5분이면 가입까지 진행하실 수 있습니다.</p>
+          </li>
+        </ul>
+        <div class="btn">
+          <a href="Intent://main#Intent;scheme=hidirect;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=kr.co.direct.hi.hyundai.android;end" role="button" class="on" id="appIntroAppDownload" target="_blank">APP 실행</a>
+        </div>
+      </section>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:fnCloseAppIntroLayer();">창닫기</button>
+  </div>
+  
+  
+  <!-- 뒤로가기 레이어 시작 -->
+  <div class="layerPopup" id="_backBtnLayer" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap">
+      <div class="layerCont" style="max-height:370px">
+        <div class="grayBoxLine mgtNone">
+          <strong>뒤로가기 버튼 클릭 시 홈으로 이동합니다.<br>이동하시겠습니까?</strong>
+        </div>
+        
+        <div class="bgAppDown mgT15 mgbL" style="" id="appLayer1">
+          <h3 class="mgB10">스마트폰에 현대해상 다이렉트 앱<br>설치해보세요~</h3>
+          <p>일일이 검색할 필요 없이<br>편리하게 이용하실 수 있습니다!</p>
+        </div>      
+        
+        <div class="btn" style="" id="appLayer2">
+          <a href="javascript:fnGoAppDown();" role="button" class="blue blueAppDown">현대해상 다이렉트 App 받기</a>
+        </div>
+        <!-- // APP 다운로드 안내 -->
+      </div>
+      <div class="layerBtn">
+        <span><a href="javascript:void(0);" onclick="javascript:lpCloser('_backBtnLayer','');">취소</a></span>
+        <span><a href="/" onclick="javascript:lpCloser('_backBtnLayer','');" class="on">확인</a></span>
+      </div>
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('_backBtnLayer','');" role="button" class="layerClose">창닫기</a>
+    </div>
+  </div>
+  <!-- 뒤로가기 레이어 끝 -->
+  
+  <!-- 본인인증 종료 레이어 시작 -->
+  <div class="layerPopup" id="certificateEndLayer" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap">
+      <h2>본인인증 종료 안내</h2>
+      <div class="layerCont">
+        <p>장시간 홈페이지를 이용하지 않으셔서<br>고객님의 정보 보호를 위하여<br>자동으로 <span class="pointC01">로그아웃</span> 되었습니다.</p>
+      </div>
+      <div class="layerBtn">
+        <a href="/" onclick="javascript:lpCloser('certificateEndLayer');" class="on" role="button">확인</a> 
+      </div>
+    </div>
+  </div>
+  <!-- 본인인증 종료 레이어 끝 -->
+  
+  <!-- 상담전화신청 레이어 시작 -->
+  <div class="popWrap" id="_callmeLayer" style="display:none;">
+    <header>
+      <h1>상담 신청 안내</h1>
+    </header>
+    <div class="popContent">
+      <div class="telVisual">
+        <div class="telText">
+          <strong>무엇을 도와드릴까요?</strong>
+        </div>
+      </div>
+      <section>
+        <h2>연락처</h2>
+        <fieldset>
+          <div class="inputWrap select">
+            <select title="전화번호구분" id="_callmeLayer_telType" data-callmevo="telType">
+              <script type="text/javascript">writeOptionHtml('teltype');</script><option value="3">휴대폰</option><option value="2">직장</option><option value="1">자택</option>
+            </select>
+            <input type="tel" title="휴대폰 번호" placeholder="휴대폰 번호(-없이 입력)" id="_callmeLayer_telType_input" maxlength="11" data-callmevo="telNo" data-validtype="vNotNull vNumber">
+          </div>
+          <div class="inputWrap birth" style="display: none;"></div>
+          <div class="agreeBox">
+            <strong>상담전화 신청을 위한 연락처 수집이용에 동의합니다.</strong>
+            <em>수집정보는 상담 목적 외 용도로 이용되지 않습니다.</em>
+            <p>
+              <input type="checkbox" id="_callmeLayerAgreeCheck">
+              <label for="_callmeLayerAgreeCheck"><span class="hide">상담전화 신청을 위한 연락처 수집이용에 동의</span></label>
+              <span>동의합니다.</span>
+            </p>
+          </div>
+        </fieldset>	
+          
+        <div class="btn">
+          <a href="javascript:void(0);" class="on" role="button" data-callmeact="apply">상담전화 신청</a>
+        </div>
+        <h2>고객센터</h2>
+        <ul class="listDot">
+          <li>평일 09시 ~ 18시</li>
+        </ul>
+        <div class="btn">
+          <a href="tel:1899-6782" class="blue" role="button">바로 전화하기</a>
+        </div>
+      </section>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_callmeLayer');">창닫기</button>
+  </div>
+  <!-- 상담전화신청 레이어 끝 -->
+  
+  <!-- 자동차보험 이탈 레이어 시작 -->
+  <div class="popWrap" id="_callmeLayerMT" style="display:none;">
+    <header>
+      <h1>상담 신청 안내</h1>
+    </header>
+    <div class="popContent">
+      <div class="telVisual">
+        <div class="telText">
+          <strong>무엇을 도와드릴까요?</strong>
+        </div>
+      </div>
+      <section>
+        <h2>연락처</h2>
+        <fieldset>
+          <div class="inputWrap select">
+            <select title="전화번호구분" id="_callmeLayer_telType" data-callmevo="telType">
+              <script type="text/javascript">writeOptionHtml('teltype');</script><option value="3">휴대폰</option><option value="2">직장</option><option value="1">자택</option>
+            </select>
+            <input type="tel" title="휴대폰 번호" placeholder="휴대폰 번호(-없이 입력)" id="_callmeLayer_telType_input_MT" maxlength="11" data-callmevo="telNo" data-validtype="vNotNull vNumber">
+          </div>
+          <div class="inputWrap birth" style="display: none;"></div>
+          <div class="agreeBox">
+            <strong>상담전화 신청을 위한 연락처 수집이용에 동의합니다.</strong>
+            <em>수집정보는 상담 목적 외 용도로 이용되지 않습니다.</em>
+            <p>
+              <input type="checkbox" id="_callmeLayerMTAgreeCheck">
+              <label for="_callmeLayerMTAgreeCheck"><span class="hide">상담전화 신청을 위한 연락처 수집이용에 동의</span></label>
+              <span>동의합니다.</span>
+            </p>
+          </div>
+        </fieldset>	
+          
+        <div class="btn">
+          <a href="javascript:void(0);" class="on" role="button" data-callmeact="apply">상담전화 신청</a>
+        </div>
+        
+        
+            
+        <h2>고객센터</h2>
+        <ul class="listDot">
+          <li>평일 09시 ~ 18시</li>
+        </ul>
+        <div class="btn">
+          <a href="tel:1899-6782" class="blue" role="button">바로 전화하기</a>
+        </div>
+        <div class="btnWrap">
+          <span><a href="/" role="button">홈으로</a></span>
+          <span><a href="javascript:void(0);" onclick="javascript:closeLayer('_callmeLayerMT');" role="button">계속 계산하기</a></span>
+        </div>
+      </section>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_callmeLayerMT');">창닫기</button>
+  </div>
+  <!-- 자동차보험 이탈 레이어 끝 -->
+  
+  <!-- 운전자보험 이탈 레이어 시작 -->
+  <div class="popWrap" id="_callmeLayerLT" style="display:none;">
+    
+      
+        <header>
+          <h1>장기보험 이벤트 안내</h1>
+        </header>
+        <div class="popContent">
+          <section>
+            <div>
+              <p style="text-align:center">
+                <img src="https://mdirect.hi.co.kr/images/event/202108001/event_pop_longinsu2108.jpg" alt="다이렉트 장기보험과 함께하면 경품이 팡팡! 참여대상 장기 운전자/암/건강/주택화재상해보험 가입 고객 운전자보험 전원증정 모바일 신세계 상품권 1만원권 + 스타벅스 1잔 추가 증정(프리미엄 플랜 가입시). 건강보험, 암보험, NEW 주택화재상해보험 신세계 상품권 3만원(가입 보험료별 상이) 경품발송 : 참여일 기준 다다음 달 15일 전후 문자 발송 (2회차 보험료 납입 후 계약 유지시) 엠포스 제공" style="width:100%">
+              </p>
+            </div>
+            <div class="btnWrap">
+              <span><a href="/" class="btnOrg" role="button">홈으로</a></span>
+              <span><a href="javascript:void(0);" class="btnOrg" onclick="javascript:closeLayer('_callmeLayerLT');" role="button">보험 가입 계속하기</a></span>					
+            </div>
+          </section>
+        </div>
+      
+      
+    
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_callmeLayerLT');">창닫기</button>
+  </div>
+  <!-- // 운전자보험 이탈 레이어 끝 -->
+  
+  <!-- 자동자, 운전자 이외 (일반보험?) 이탈 레이어 시작 -->
+  <div class="popWrap" id="_callmeLayerGI" style="display:none;">
+    <header>
+      <h1>상담 신청 안내</h1>
+    </header>
+    <div class="popContent">
+      <div class="telVisual">
+        <div class="telText">
+          <strong>무엇을 도와드릴까요?</strong>
+        </div>
+      </div>
+      <section>
+        <h2>연락처</h2>
+        <fieldset>
+          <div class="inputWrap select">
+            <select title="전화번호구분" id="_callmeLayer_telType" data-callmevo="telType">
+              <script type="text/javascript">writeOptionHtml('teltype');</script><option value="3">휴대폰</option><option value="2">직장</option><option value="1">자택</option>
+            </select>
+            <input type="tel" title="휴대폰 번호" placeholder="휴대폰 번호(-없이 입력)" id="_callmeLayer_telType_input_GI" maxlength="11" data-callmevo="telNo" data-validtype="vNotNull vNumber">
+          </div>
+          <div class="inputWrap birth" style="display: none;"></div>
+          <div class="agreeBox">
+            <strong>상담전화 신청을 위한 연락처 수집이용에 동의합니다.</strong>
+            <em>수집정보는 상담 목적 외 용도로 이용되지 않습니다.</em>
+            <p>
+              <input type="checkbox" id="_callmeLayerGIAgreeCheck">
+              <label for="_callmeLayerGIAgreeCheck"><span class="hide">상담전화 신청을 위한 연락처 수집이용에 동의</span></label>
+              <span>동의합니다.</span>
+            </p>
+          </div>
+        </fieldset>	
+          
+        <div class="btn">
+          <a href="javascript:void(0);" class="on" role="button" data-callmeact="apply">상담전화 신청</a>
+        </div>
+        <h2>고객센터</h2>
+        <ul class="listDot">
+          <li>평일 09시 ~ 18시</li>
+        </ul>
+        <div class="btn">
+          <a href="tel:1899-6782" class="blue" role="button">바로 전화하기</a>
+        </div>
+        <div class="btnWrap">
+          <span><a href="/" role="button">홈으로</a></span>
+          <span><a href="javascript:void(0);" onclick="javascript:closeLayer('_callmeLayerGI');" role="button">계속 계산하기</a></span>
+        </div>
+      </section>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_callmeLayerGI');">창닫기</button>
+  </div>
+  <!-- // 자동자, 운전자 이외 (일반보험?) 이탈 레이어 끝 -->
+  
+  <!-- 연금보험 이탈 레이어 시작 -->
+  <div class="popWrap" id="_callmeLayerPN" style="display:none;">
+    <header>
+      <h1>연금보험 이벤트 안내</h1>
+    </header>
+    <div class="popContent">
+      <section>
+        <div>
+          <p style="text-align:center">
+                <img src="https://mdirect.hi.co.kr/images/event/202109005/event_pop_insujoin2109.gif" alt="다이렉트 연금저축보험 가입 이벤트. 노후 준비는 지금이 가장 빠를 때 연금저축보험으로 노후준비와 세액공제를 동시에 준비하세요! 신세계상품권 3만원 대상:다이렉트 연금저축보험 가입 고객 (월납 보험료 10만원 이상 가입 고객), 경품:모바일 신세계 상품권 3만원, 경품발송:가입일 기준 다다음달 15일 전후 문자 발송 (2회차 보험료 정상 납입시) * 경품은 엠포스 제공 *경품은 엠포스 제공" class="w100">
+              </p>
+        </div>
+        <div class="btnWrap">
+          <span><a href="/" class="btnOrg" role="button">홈으로</a></span>
+          <span><a href="javascript:void(0);" class="btnOrg" onclick="javascript:closeLayer('_callmeLayerPN');" role="button">보험 가입 계속하기</a></span>					
+        </div>
+      </section>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_callmeLayerPN');">창닫기</button>
+  </div>
+  <!-- // 연금보험 이탈 레이어 끝 -->
+  
+  <!-- 해외여행보험 산출이탈시 삼성카드 결제혜택 안내 s -->
+  <div class="layerPopup" id="_callmeLayerGI_SamsungCard" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap" style="top:10%">
+      <h2 class="hide" style="padding:0;border:none">이벤트 안내</h2>
+      <div class="layerCont" style="padding:0;max-height:700px">
+        <p><img src="https://mdirect.hi.co.kr/images/event/m_layer_event_samsungcard2001.jpg" alt="SAMSUNGCARD. 삼성카드 이용고객 결제혜택 안내. 홈페이지/모바일을 통해 해외여행보험 가입시 보유하신 삼성카드 포인트를 100% 사용하실 수 있습니다! 보유 포인트 100% 사용.카드포인트로 알뜰하게 보험가입하시고, 현대해상다이렉트 해외여행보험과 함께 안전한 여행 되세요~" style="width:100%"></p>
+      </div>
+      <!-- // 내용 -->
+      
+      <div class="layerBtn">
+        <span><a href="javascript:closeLayer();" role="button" class="on">보험료계산 계속하기</a></span>
+        <span><a href="javascript:closeLayer();fnCallOutLayer();" role="button">닫기</a></span>			
+      </div>
+      <a href="#" role="button" onclick="javascript:closeLayer();fnCallOutLayer();" class="layerClose">창닫기</a>
+    </div>
+  </div>
+  <!-- 해외여행보험 산출이탈시 삼성카드 결제혜택 안내 e -->
+  
+  <!-- CM장기 상품안내 이탈 팝업 202112 : s -->
+  <div class="layerPopup" id="_callmePrdLayerLtHt" tabindex="0" style="display: none; opacity: 0; pointer-events: auto;" aria-hidden="true">
+    <div class="layerWrap" style="top:15%">
+     <h2 class="hide" style="padding:0;border:none">건강보험 간편하게 보험료 확인해 보세요!</h2>
+      <div class="layerCont" style="padding:0;min-height:233px;max-height:600px">
+        <p style="padding:0;text-align:center"><img src="https://mdirect.hi.co.kr/images/cm_breakaway_pop.jpg" style="width:100%" alt="고객님,건강보험 간편하게 보험료 확인해 보세요! 대표 사망 원인3대 질병(암, 심장질환, 뇌혈관질환) 진단비 보장(특약가입시), 생활속 크고 작은 질병 120대질병수술비 보장(특약가입시), 생년월일, 성별, 직업 정보만으로 간편한 보험료 확인"></p>
+      </div>
+          <div class="layerBtn">
+        <span class="w30"><a href="/service.do?m=7c6641ec8a">홈으로</a></span>
+        <span class="on w70"><a href="/service.do?m=2283811640&amp;simpCalc=Y">간편하게 보험료 확인</a></span>
+      </div>
+      
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('_callmePrdLayerLtHt');" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  
+  <!-- lay - 보험가입 진행 안내 /2111 -->
+  <div class="layerPopup" id="_callmeLayerLFG" style="display: none; pointer-events: auto; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap sizeL">
+      <h2>보험가입 진행 안내</h2>
+      
+      <div class="layerCont insuEscWrap">      
+        <div class="flexWrap">
+          <p class="img botImg"><img src="https://mdirect.hi.co.kr/images/content/img_esc_bot.png" alt="" class="w100"></p>
+          <div class="txArea">
+            <p class="txTi"><strong>고객님,</strong> 아직 보험가입이<br>완료되지 않았습니다.</p>
+          </div>
+        </div>
+        <div class="mgtM">
+          <p class="tac font13">지금 창을 닫으시면 지금까지 입력된<br>정보가 사라집니다.</p>
+        </div>
+  
+        <ul class="listDot mgtM pdtM pdbL" style="border-top:1px dashed #dedede">
+          <li>전화상담이 필요하시면, 인터넷 고객센터<br>
+            <span style="color:#047db5"><a href="tel:1899-6782" class="fontBlue" title="인터넷 고객센터 전화 걸기">1899-6782</a> (평일 9시~18시)</span>를 이용해주시기 바랍니다.</li>
+        </ul>
+      </div>
+      <!--// insuEscWrap -->
+      
+      <div class="layerBtn">
+        <span style="width:30%"><a href="/" role="button">홈으로</a></span>
+        <span style="width:70%"><a href="javascript:closeLayer('_callmeLayerLFG');" role="button" class="on">보험료 계산 계속하기</a></span>
+      </div>
+      <a href="javascript:closeLayer('_callmeLayerLFG');" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!--// lay - 보험가입 진행 안내 /2111 -->
+  
+  
+  <!-- lay - 보험가입 진행 안내 /2111 -->
+  <div class="layerPopup" id="_callmeLayerLFGINSU" style="display: none; pointer-events: auto; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap sizeL">
+      <h2>보험가입 진행 안내</h2>
+      
+      <div class="layerCont insuEscWrap">      
+        <div class="flexWrap" style="display: flex !important">
+          <p class="img botImg"><img src="https://mdirect.hi.co.kr/images/content/img_esc_bot.png" alt="" class="w100"></p>
+          <div class="txArea">
+            <p class="txTi"><strong>고객님,</strong> 아직 보험가입이<br>완료되지 않았습니다.</p>
+          </div>
+        </div>
+        <div class="mgtM">
+          <p class="tac font13">이제 다이렉트로 저렴한 보험료 결제만 남았어요~</p>
+        </div>
+        <div class="bnArea mgtM">
+          <img src="https://mdirect.hi.co.kr/images/content/bn_pop_card2111.png" alt="결제도 가볍게! 무이자 할부 안내. Hyundai Card, SAMSUNGCARD, KB국민카드, 신한카드" class="w100">
+        </div>
+        <!--// bnArea -->
+  
+        <ul class="listDot mgtM pdbL">
+          <li>전화상담이 필요하시면, 인터넷 고객센터<br>
+            <span style="color:#047db5"><a href="tel:1899-6782" class="fontBlue" title="인터넷 고객센터 전화 걸기">1899-6782</a> (평일 9시~18시)</span>를 이용해주시기 바랍니다.</li>
+        </ul>
+      </div>
+      <!--// insuEscWrap -->
+      
+          <div class="layerBtn">
+        <span style="width:30%"><a href="javascript:openKakaoSendPopup()" role="button">홈으로</a></span>
+        <span style="width:70%"><a href="javascript:closeLayer('_callmeLayerLFGINSU');" role="button" class="on">보험료 계산 계속하기</a></span>
+      </div>
+      <a href="javascript:closeLayer('_callmeLayerLFGINSU');" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!--// lay - 보험가입 진행 안내 /2111 -->
+  
+  
+  <!-- lay - 나에게 보내기 /2111 -->
+  <div class="layerPopup" id="_callmeLayerLFGKAKAO" style="display: none; pointer-events: auto; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap sizeL" style="padding-bottom: 0rem !important;">
+      <h2>보험료 나에게 보내기</h2>
+      
+      <div class="layerCont insuEscWrap">
+        <div class="flexWrap" style="display: flex !important">
+          <p class="img"><img src="https://mdirect.hi.co.kr/images/content/img_esc_kakaotalk.png" alt="" class="w100"></p>
+          <div class="txArea">
+            <span class="tx">지금 확인하신 보험료를 카카오<br>알림톡(문자)로  보내드릴까요?  </span>
+          </div>
+        </div>
+        <div class="mgtM">
+          <p class="tac font13">안전한 해외체류를 위해 출국 전 꼭 가입해주세요~</p>
+        </div>
+  
+        <form name="" id="" method="post">
+          <div class="inputWrap btn mgtL mgbL">
+            <input type="tel" id="mpNo" name="mpNo" maxlength="11" required=""><label for="mpNo">휴대폰 번호(-없이 입력)</label>
+            <a href="javascript:lfgSendMeKakao();" id="" class="org">나에게 보내기</a>
+          </div>
+        </form>
+      </div>
+      <!--// insuEscWrap -->
+      
+      <!-- <div class="layerBtn">
+        <a href="/" role="button">닫기(홈으로)</a>
+      </div> -->
+      <a href="/" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!--// lay - 나에게 보내기 /2111 -->
+  
+    
+  <!-- 인수거부 레이어 시작 -->
+  <div class="popWrap" id="_callmeLayerInsu" style="display:none;">
+    <header>
+      <h1>보험 심사 안내</h1>
+    </header>
+    <div class="popContent">
+      <div class="telVisual">
+        <div class="telText">
+          <strong>고객님 죄송합니다.</strong>인터넷으로 보험료 계산/가입이 어렵습니다.<br>
+          연락처를 남기시면 상담원이 직접 연락드리겠습니다.
+        </div>
+      </div>
+      <section>
+        <h2>연락처</h2>
+        <div class="inputWrap select">
+          <select title="전화번호구분" id="_callmeLayer_telType" data-callmevo="telType">
+            <script type="text/javascript">writeOptionHtml('teltype');</script><option value="3">휴대폰</option><option value="2">직장</option><option value="1">자택</option>
+          </select>
+          <input type="tel" title="휴대폰 번호" placeholder="휴대폰 번호(-없이 입력)" id="_callmeLayerInsu_input" maxlength="11" data-callmevo="telNo" data-validtype="vNotNull vNumber">
+        </div>
+        <div class="agreeBox">
+          <strong>상담전화 신청을 위한 연락처 수집이용에 동의합니다.</strong>
+          <em>수집정보는 상담 목적 외 용도로 이용되지 않습니다.</em>
+          <p>
+            <input type="checkbox" id="_callmeLayerInsuAgreeCheck">
+            <label for="_callmeLayerInsuAgreeCheck"><span class="hide">상담전화 신청을 위한 연락처 수집이용에 동의</span></label>
+            <span>동의합니다.</span>
+          </p>
+        </div>
+        <div class="btn">
+          <a href="javascript:void(0);" role="button" data-callmeact="apply">상담전화 신청</a>
+        </div>
+        <h2>고객센터</h2>
+        <ul class="listDot">
+          <li>평일 09시 ~ 18시</li>
+        </ul>
+        <div class="btn">
+          <a href="tel:1899-6782" class="blue" role="button">바로 전화하기</a>
+        </div>
+        <div class="btnWrap">
+          <span><a href="/" role="button">홈으로</a></span>
+          <span><a href="javascript:void(0);" onclick="javascript:closeLayer('_callmeLayerInsu');" role="button">계속 계산하기</a></span>
+        </div>
+      </section>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_callmeLayerInsu');">창닫기</button>
+  </div>
+  <!-- // 인수거부 레이어 끝 -->
+  
+  <!--장기 인수거부 레이어 시작 -->
+  <div class="popWrap" id="_callmeLayerInsuLt" style="display:none;">
+    <header>
+      <h1>보험 심사 안내</h1>
+    </header>
+    <div class="popContent">
+      <div class="telVisual">
+        <div class="telText">
+          <strong>고객님 죄송합니다.</strong>인터넷으로 보험료 가입이 어렵습니다.<br>전화가입 상담을 원하시는 경우,<br>상담전화 신청을 해주시기 바랍니다.
+        </div>
+      </div>
+      <section>
+        <div class="btn">
+          <a href="tel:15771001" class="blueCall" role="button">상담전화 신청 (1577-1001)</a><!-- 0629 class수정 JJY-->
+        </div>
+        <div class="btnWrap">
+          <a href="/" class="on" role="button">홈으로</a>
+        </div>
+      </section>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_callmeLayerInsuLt');">창닫기</button>
+  </div>
+  <!-- //장기 인수거부 레이어 끝 -->
+  
+  <!-- APP 안내 레이어팝업 -->
+  <div class="layerPopup" id="appInfoLayer" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap">
+      <h2>공동인증서/바이오인증 안내</h2>
+      <div class="layerCont">
+        <p class="appGuide">공동인증서/ 바이오인증은 <span class="oColor">현대해상 다이렉트APP</span>을 통해 지원되고 있습니다.</p>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" onclick="javascript:openAppIntro();" role="button">APP 안내보기</a>
+      </div>
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('appInfoLayer');" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!-- // APP 안내 레이어팝업 -->
+  
+  <!-- APP 설치안내 레이어팝업 -->
+  <div class="layerPopup" id="appInstallLayer" aria-hidden="true" tabindex="0" style="opacity: 0; z-index: 999999; pointer-events: auto;">
+    <div class="layerWrap">
+      <h2>앱설정 안내</h2>
+      <div class="visualappSet">
+        <p>앱설정은 현대해상 다이렉트 APP을 통해<br>지원되고 있습니다.</p>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" onclick="javascript:lpCloser('appInstallLayer'); openAppIntro();" role="button">APP 안내보기</a>
+      </div>
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('appInstallLayer');" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!-- // APP 안내 레이어팝업 -->
+  
+  <!-- 메뉴별 긴급공지 레이어 시작 -->
+  <div class="layerPopup" id="menuNoticeLayerPopAlert" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap">
+      <h2>알려드립니다!</h2>
+      <div class="layerCont">
+        <strong id="menuEmrNtceTitle"></strong>
+        <span id="menuEmrNtceCont"></span>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" onclick="javascript:lpCloser('menuNoticeLayerPopAlert')" class="on" role="button">확인</a>
+      </div>
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('menuNoticeLayerPopAlert')" role="button" class="layerClose">창닫기</a>
+    </div>
+  </div>
+  <!-- // 메뉴별 긴급공지 레이어 끝 -->
+  
+  <!-- // 폰모드변경 레이어 시작 -->
+  <div class="layerPopup" id="orientationChangeLayer" onclick="javascript:void(0);" aria-hidden="true" style="opacity: 0; z-index: 0; pointer-events: none; display: none;" tabindex="-1">
+    <p class="changeLayer">모바일에서는 가로모드가 지원되지 않습니다.</p>
+  </div>
+  <!-- // 폰모드변경 레이어 끝 -->
+  
+  
+  <div class="popWrap" id="_mobileVaccineLayer" style="display:none;">
+    <header>
+      <h1>모바일 백신 설치 안내</h1>
+    </header>
+    <div class="popContent">
+      <div class="visualVaccine">
+        <p>
+          <strong>고객님의 개인정보 보호를 위해<br>모바일 백신 프로그램 설치/실행을 확인합니다.</strong>
+          <span><em>백신 실행</em>을 선택하시면 프로그램 실행 후 다음 단계로 이동합니다.</span>
+        </p>
+      </div>
+      <section>
+        <h2>유의 사항</h2>
+        <ul class="listDot">
+          <li>[백신 실행]을 터치하셔도 화면이 이동하지 않는 경우,<br> [백신 설치]를 통해 백신 프로그램을 설치하신 후에 다시 [백신 실행]을 터치하시기 바랍니다.</li>
+        </ul>
+      </section>
+      <div class="btnWrap two">
+        <span><a href="javascript:void(0);" onclick="javascript:_mVaccine.market();" role="button">백신 설치</a></span>
+        <span><a href="javascript:void(0);" onclick="javascript:mVaccine_Start();" role="button">백신 실행</a></span>
+      </div>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_mobileVaccineLayer')">창닫기</button>
+  </div>
+  
+  
+  <!-- 레이어팝업 : alert -->
+  <div class="layerPopup" id="layerPopAlert" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap">
+      <div class="layerCont">
+        <div class="alertCont">
+          <p class="txt01" id="alertLayerMsg"></p>
+        </div>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" id="alertBtn" class="on" role="button">확인</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 레이어팝업 : confirm -->
+  <div class="layerPopup" id="layerPopConfirm" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap">
+      <div class="layerCont">
+        <div class="alertCont">
+          <p class="txt01" id="confirmLayerMsg"></p>
+        </div>
+      </div>
+      <div class="layerBtn">
+        <span><a href="javascript:void(0);" id="confirmCancelBtn">취소</a></span>
+        <span><a href="javascript:void(0);" id="confirmBtn" class="on">확인</a></span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 레이어 끝 -->
+  
+  
+  
+  <!-- 휴대폰 직접서명 이용 공지 레이어 팝업1711 -->
+  <div class="layerPopup" id="hpDirectSignLayerPop" aria-hidden="true" style="opacity: 0; display: none;">
+    <div class="layerWrap">
+      <!--<h2>휴대폰 직접서명 일시 중단 안내</h2>-->
+      <div class="layerCont" style="max-height:290px;">
+        <div class="visualStopPhone">
+          <p>공인인증센터 시스템점검 작업으로<br><b>휴대폰 직접서명</b>이 일시 중단됩니다.<br><span class="mgtS blColor"><strong>중단일시 : 2017.11.22(수) 새벽 00시 ~ 02시(2시간)</strong></span></p>
+        </div>
+        <div class="listDot mgtS">
+          <p><strong class="bColor">공동인증서를 통한 계약체결은 가능합니다.</strong></p>
+        </div>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void(0);" class="on" role="button" onclick="javascript:closeLayer('hpDirectSignLayerPop')">확인</a>
+      </div>
+      <a href="javascript:void(0);" role="button" class="layerClose" onclick="javascript:closeLayer('hpDirectSignLayerPop')">창닫기</a>
+    </div>
+  </div>
+  <!-- // 휴대폰 직접서명 이용 공지 레이어 팝업1711 -->
+  
+  <!-- 레이어팝업_신용카드결제혜택안내181130 -->
+  <div class="layerPopup" id="popSamsungCardPointInfo" aria-hidden="true" tabindex="0" style="opacity: 0; z-index: 999999; pointer-events: auto; display: none;">
+    <div class="layerWrap">
+       <h2>신용카드 포인트 이용 안내</h2>
+       <div class="layerCont" style="text-align:left">
+          <ul class="listDot">
+            <li>삼성카드를 이용하여 결제하는 고객님 중 삼성카드 포인트를 보유하신 경우에 한해 포인트 결제를 이용할 수 있습니다.</li>
+                      <li>포인트 보유금액은 삼성카드 홈페이지를 통해 확인가능하며, 포인트 이용 결제시 포인트는 전액 사용됩니다.(결제금액보다 많은 포인트 보유시 결제금액은 전액 포인트로 결제됩니다.)</li>
+                      <li>결제대금은 사용하신 포인트 차감 후 금액으로 청구되며, 사용하신 포인트 금액은 삼성카드 홈페이지 '포인트 사용내역'에서 확인하실 수 있습니다.</li>
+                      <li>포인트 관련 상담 및 문의는 삼성카드 고객센터(T:1588-8700)로 연락주시기 바랍니다.</li>
+          </ul>	
+      </div>	
+      <div class="layerBtn">
+        <a href="#none" onclick="javascript:lpCloser('popSamsungCardPointInfo');" class="on" role="button">확인</a>
+      </div>		
+    </div>
+  </div>
+  <!-- // 레이어팝업_신용카드결제혜택안내181130 -->
+  
+  
+  <!-- lay - 보험가입 진행 안내 /2111 -->
+  <div class="layerPopup" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap sizeL">
+      <h2>보험가입 진행 안내</h2>
+      
+      <div class="layerCont insuEscWrap">      
+        <div class="flexWrap">
+          <p class="img botImg"><img src="https://mdirect.hi.co.kr/images/content/img_esc_bot.png" alt="" class="w100"></p>
+          <div class="txArea">
+            <p class="txTi"><strong>고객님,</strong> 아직 보험가입이<br>완료되지 않았습니다.</p>
+          </div>
+        </div>
+        <div class="mgtM">
+          <p class="tac font13">지금 창을 닫으시면 지금까지 입력된<br>정보가 사라집니다.</p>
+        </div>
+  
+        <ul class="listDot mgtM pdtM pdbL" style="border-top:1px dashed #dedede">
+          <li>전화상담이 필요하시면, 인터넷 고객센터<br>
+            <span style="color:#047db5"><a href="tel:1899-6782" class="fontBlue" title="인터넷 고객센터 전화 걸기">1899-6782</a> (평일 9시~18시)</span>를 이용해주시기 바랍니다.</li>
+        </ul>
+      </div>
+      <!--// insuEscWrap -->
+      
+      <div class="layerBtn">
+        <span style="width:30%"><a href="javascript:void(0);" role="button">홈으로</a></span>
+        <span style="width:70%"><a href="javascript:void(0);" role="button" class="on">보험료 계산 계속하기</a></span>
+      </div>
+      <a href="javascript:void(0);" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!--// lay - 보험가입 진행 안내 /2111 -->
+    
+  
+  
+    <!-- pop 계약자 정보 추가입력 1902 -->
+    <div class="popWrap" id="addCustInfoLayer" style="display:none;">
+      <header>
+        <h1>계약자 정보 추가 입력</h1>
+      </header>
+      <div class="popContent">
+        <section>
+          <fieldset>
+            <legend>계약자 추가 정보</legend>
+            <div class="inputWrap">
+              <input type="text" id="wrkplcNm" required="">
+              <label for="wrkplcNm">직장명</label>
+            </div>
+            <!-- // 직장명 -->
+            <div class="inputWrap">
+              <input type="tel" id="wrkplcTelNo" required="">
+              <label for="wrkplcTelNo">직장연락처('-' 없이)</label>
+            </div>
+            <!-- // 직장연락처 -->
+            <div class="inputWrap">
+              <input type="text" id="divNm" required="">
+              <label for="divNm">부서</label>
+            </div>
+            <!-- // 부서 -->
+            <div class="inputWrap">
+              <input type="text" id="psnNm" required="">
+              <label for="psnNm">직위</label>
+            </div>
+            <!-- // 직위 -->
+            <div class="inputWrap">
+              <input type="text" id="wrkplcAmsvgAddr" maxlength="200" required="">
+              <label for="wrkplcAmsvgAddr">기본 주소</label>
+            </div>
+            <div class="inputWrap">
+              <input type="text" id="wrkplcOthsAddr" maxlength="200" required="">
+              <label for="wrkplcOthsAddr">상세 주소</label>
+            </div>
+            <!-- // 직장주소 -->
+            <div class="inputWrap">
+        <select title="자금출처 선택" id="dlMnSrcCat" name="dlMnSrcCat">
+            <option value="">자금출처 선택</option>              
+                <option value="01">1. 사업소득</option>
+                <option value="02">2. 부동산 임대소득</option>
+                <option value="03">3. 부동산 양도소득</option>
+                <option value="04">4. 금융소득(이자 및 배당)</option>
+                <option value="05">5. 근로소득</option>
+                <option value="06">6. 연금소득</option>
+                <option value="07">7. 퇴직소득</option>
+                <option value="08">8. 상속·증여</option>
+                <option value="09">9. 일시 재산양도로 인한 소득</option>
+                <option value="10">10. 해당없음</option>
+                <option value="99">99. 기타</option>
+              </select>
+            </div>
+            <!-- // 자금출처 -->
+            <div class="inputWrap">
+              <select title="거래목적 선택" id="dlObjCat" name="dlObjCat">
+                    <option value="">거래목적 선택</option>
+                     <option value="01">1. 보장-재해</option>
+                     <option value="02">2. 보장-암 및 중대질병</option>
+                     <option value="03">3. 보장-사망</option>
+                     <option value="04">4. 보장-재계약</option>
+                     <option value="05">5. 보장-기타</option>
+                     <option value="11">11. 저축-결혼/주택자금</option>
+                     <option value="12">12. 저축-자녀양육비(학자금 포함)</option>
+                     <option value="13">13. 저축-노후준비</option>
+                     <option value="14">14. 저축-증여/상속</option>
+                     <option value="15">15. 저축-기타</option>
+                     <option value="21">21. 대출-주택구입</option>
+                     <option value="22">22. 대출-전세자금 마련</option>
+                     <option value="23">23. 대출-생활자금</option>
+                     <option value="24">24. 대출-기타</option>
+              </select>
+            </div>
+            <!-- // 거래목적 -->
+            <div class="inputWrap">
+              <input type="text" id="dlMnSrcOthsDesc" required="">
+              <label for="dlMnSrcOthsDesc">자금출처기타</label>
+            </div>
+            <!-- // 자금출처기타 -->
+            <div class="inputWrap">
+              <input type="text" id="dlObjOthsDesc" required="">
+              <label for="dlObjOthsDesc">거래목적기타</label>
+            </div>
+            <!-- // 거래목적기타 -->
+          </fieldset>
+          <ul class="listEtc">
+            <li>취소 선택시 계약 진행이 불가합니다.</li>
+          </ul>
+        </section>
+        <!-- // 정보입력 -->
+        
+        <div class="btnWrap">
+          <span><a href="#" onclick="javascript:closeLayer('addCustInfoLayer');" role="button">취소</a></span>
+          <span><a href="#" onclick="javascript:goEDDSave('1');return false;" role="button">저장</a></span>
+        </div>
+        <!-- // 버튼 -->
+      </div>
+      <button type="button" class="btnClose" onclick="javascript:closeLayer('addCustInfoLayer');">창닫기</button>
+      
+    </div>
+    <!-- // pop 계약자 정보 추가입력 1902 -->
+  
+  <!-- Layer-휴면보험금 안내 -->
+  <div id="LTMRS5100VO_PopUp" class="layerPopup" tabindex="0" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap sizeL">
+      <h2>휴면보험금 안내</h2>
+      
+      <div class="layerCont">			
+        <p class="mgB15">고객님께서 보유하고 계신 장기보험 휴면보험금에 대해 안내드립니다.</p>
+        
+        <table class="tbl03" summary="장기보험 휴면보험금 계약번호, 계약자, 휴면보험금, 발생일자, 상품명 안내">
+          <caption>장기보험 휴면보험금계약번호, 계약자, 휴면보험금, 발생일자, 상품명</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="bdTBLine">계약번호</th>
+              <th scope="col" class="bdTBLine">계약자</th>
+              <th scope="col" class="bdTBLine">휴면보험금</th>
+              <th scope="col" class="bdTBLine">발생일자</th>
+              <th scope="col" class="bdTBLine">상품명</th>
+            </tr>
+          </thead>
+          <tbody id="LTMRS5100VO_tbody"></tbody>
+        </table>
+        
+        <table class="tbl03 mgT10" style="border-top:0" summary="휴면보험금 전체, 합계 내용">
+          <caption>휴면보험금 합계구분, 내용, 구분, 내용, 전체, 휴면보험금 합계</caption>
+          <colgroup>
+            <col width="20%"><col width="20%"><col width="35%"><col width="25%">
+          </colgroup>
+          <thead class="blind">
+            <tr>
+              <th scope="col">구분</th>
+              <th scope="col">내용</th>
+              <th scope="col">구분</th>
+              <th scope="col">내용</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="bgGray" style="border:1px solid #d0d0d0">전체</th>
+              <td style="border:1px solid #d0d0d0"><span id="LTMRS5100VO_cnt"></span>건</td>
+              <th scope="row" class="bgGray" style="border:1px solid #d0d0d0">휴면보험금 합계</th>
+              <td style="border:1px solid #d0d0d0 !important"><span id="LTMRS5100VO_sumAmt"></span></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <ul class="listBasic">
+          <li>신청방법<br>
+            ① 현대해상 홈페이지 → 인터넷창구 → 휴면보험금신청<br>
+            ② 현대해상 콜센터(☎<a href="tel:1588-5656">1588-5656</a>)
+          </li>
+          <li>신청방법 및 이체실적에 따라 금액한도가 상이하며, 추가인증이 필요할 수 있습니다.</li>
+          <li>이미 해당 보험금을 받으신 경우에는 계약 안내사항으로 참고하여 주시면 감사하겠습니다.</li>			
+        </ul>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void('0');" onclick="closeLayer('LTMRS5100VO_PopUp');" role="button" class="on">확인</a>
+      </div>
+      <a href="javascript:void('0');" onclick="closeLayer('LTMRS5100VO_PopUp');" role="button" class="layerClose">창닫기</a>
+    </div>
+  </div>
+  <!-- // Layer-휴면보험금 안내 -->
+  
+  <!-- 레이어팝업-해외금융계좌 신고제도 여부 확인 안내 /1906 -->
+  <div class="layerPopup" id="fccf_PopUp" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap">
+      <div class="layerCont">
+        <div class="alertCont">
+          <p class="txt01 tal">해외금융계좌 신고제도에 따라 외국의 국적, 시민권, 영주권등을 보유하거나 외국에 납세의무를 지닌 경우 <strong class="fontOrg">[예]</strong>를 체크해주세요.</p>
+        </div>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void('0');" onclick="closeLayer('fccf_PopUp');" class="on" role="button">확인</a>
+      </div>
+    </div>
+  </div>
+  <!-- 레이어팝업-해외금융계좌 신고제도 여부 확인 안내 /1906 -->
+  
+  <!-- 바이오인증 서비스 인증방법 선택 -->
+  <div class="popWrap" id="bioAuthTypeSelect" style="display:none;">
+    <header>
+      <h1 id="bioCertTitleStr">바이오인증 서비스 가입/변경</h1>
+    </header>
+    <div class="popContent">
+      <p class="topTxt">인증방법을 선택해주시기 바랍니다.</p>
+      <section class="bg">  
+                 <div class="wrapTab tabChois bio">
+          <a href="#none" role="button" class="certi3" onclick="javascript:sessionStorage.setItem('selAuthTechCd', '100');fnSelTpNextStep();closeLayer('bioAuthTypeSelect');"><span>지문인증</span></a>
+          <a href="#none" role="button" class="certi4" onclick="javascript:sessionStorage.setItem('selAuthTechCd', '119');fnSelTpNextStep();closeLayer('bioAuthTypeSelect');"><span>홍채인증</span></a>
+        </div>
+              <!-- <div class="btn">
+          <a href="#" role="button" class="on">인증하기</a>
+        </div> -->
+      </section>
+             
+      </div>
+        
+    <!-- //content -->
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('bioAuthTypeSelect');">창닫기</button>
+  </div>
+  <!-- 바이오인증 서비스 인증방법 선택 -->
+  
+  <!-- pop-카카오페이인증 안내(인증요청) /1911 -->
+  <div class="popWrap" id="kakaoPayAuthReqPop" style="display:none;">
+    <header>
+      <h1>카카오페이 인증</h1>
+    </header>
+    <div class="popContent">
+      <div class="kakaoPayVisual certImg">
+           <p class="tiTx"><strong>고객님의 스마트폰으로<br>카카오페이 인증을 요청했습니다.</strong></p>
+          <p><span>인증이 완료</span>되면 다시 이 화면으로 돌아와서<br><span>하단의 확인 버튼</span>을 눌러주세요.</p>
+      </div>
+      <section class="section02">
+        <div class="toggleWrap mgT0">
+          <div class="tabBox open">
+          <div class="toggleTitle"><a href="#none" class="toggleBtn" role="button">카카오페이 인증 안내<span class="hide"> 하위콘텐츠 닫기</span><span class="hide"> 하위콘텐츠 닫기</span><span class="hide"> 하위콘텐츠 닫기</span></a></div>
+            <div class="toggleDetail" tabindex="0">
+              <ul class="listDot">
+                <li>지금 발송된 <span>카카오톡을 확인</span>해 주세요.</li>
+                <li>인증요청 카카오톡 하단의 확인하기를 눌러 <span>인증을 완료</span>해 주세요.</li>
+                <li>인증이 완료되면 다시 이 화면으로 돌아와서 <span>하단의 확인버튼</span>을 눌러주세요.</li>
+              </ul>        
+            </div>					
+          </div>
+        </div>
+      </section>
+      <div class="btnWrap">
+        <a href="javascript:void(0);" onclick="javascript:fnCertKakaoPayAuthReSend();" role="button">카카오페이 인증 완료 후 확인</a>
+      </div>
+    </div>
+    <!-- //content -->
+    <button type="button" class="btnClose" onclick="javascript:fnCloseCertKakaoPayAuthLayer();">창닫기</button>
+  </div>
+   <!-- // pop-카카오페이인증 안내(인증요청) /1911 -->
+   
+   <!-- pop-카카오페이인증 안내(인증요청) /1911 -->
+  <div class="popWrap" id="kakaoPayOwnReqPop" style="display:none;">
+    <header>
+      <h1>카카오페이 인증</h1>
+    </header>
+    <div class="popContent">
+      <div class="kakaoPayVisual certImg">
+           <p class="tiTx"><strong>고객님의 스마트폰으로<br>카카오페이 인증을 요청했습니다.</strong></p>
+          <p><span>인증이 완료</span>되면 다시 이 화면으로 돌아와서<br><span>하단의 확인 버튼</span>을 눌러주세요.</p>
+      </div>
+      <section class="section02">
+        <div class="toggleWrap mgT0">
+          <div class="tabBox open">
+          <div class="toggleTitle"><a href="#none" class="toggleBtn" role="button">카카오페이 인증 안내<span class="hide"> 하위콘텐츠 닫기</span><span class="hide"> 하위콘텐츠 닫기</span><span class="hide"> 하위콘텐츠 닫기</span></a></div>
+            <div class="toggleDetail" tabindex="0">
+              <ul class="listDot">
+                <li>지금 발송된 <span>카카오톡을 확인</span>해 주세요.</li>
+                <li>인증요청 카카오톡 하단의 확인하기를 눌러 <span>인증을 완료</span>해 주세요.</li>
+                <li>인증이 완료되면 다시 이 화면으로 돌아와서 <span>하단의 확인버튼</span>을 눌러주세요.</li>
+              </ul>        
+            </div>					
+          </div>
+        </div>
+      </section>
+      <div class="btnWrap">
+        <a href="javascript:void(0);" onclick="javascript:fnKakaoOwnAuthRes();" role="button">카카오페이 인증 완료 후 확인</a>
+      </div>
+    </div>
+    <!-- //content -->
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('kakaoPayOwnReqPop');">창닫기</button>
+  </div>
+   <!-- // pop-카카오페이인증 안내(인증요청) /1911 -->
+  
+  <!-- pop-카카오페이인증 안내(정상 처리되지 않음) /1911 -->
+  <div class="popWrap" id="kakaoPayAuthPollingPop" style="display:none;">
+    <header>
+      <h1>카카오페이 인증</h1>
+    </header>
+    <div class="popContent">
+      <div class="kakaoPayVisual">
+           <p class="tiTx"><strong>카카오페이 인증이<br>정상 처리되지 않았습니다.</strong></p>
+      </div>
+      <section class="section01">				
+        <ul class="listDot">
+          <li>발송된 <span>카카오톡으로 인증을 먼저</span> 하시고 인증완료 후 확인 버튼을 눌러주세요.</li>
+          <li>카카오페이 인증을 원치 않으시면 <span>다른 인증수단으로 본인인증</span> 해주세요.</li>
+        </ul>
+      </section>
+         <div class="btnWrap two multiLine">
+        <span><a href="javascript:void(0);" onclick="javascript:fnCloseCertKakaoPayAuthLayer();" role="button">다른 인증수단으로<br>본인인증 하기</a></span>
+        <span><a href="javascript:void(0);" onclick="javascript:fnCertKakaoPayAuthReSend();" role="button">카카오페이 인증<br>완료 후 확인</a></span>
+      </div>
+    </div>
+    <!-- //content -->
+    <!-- <button type="button" class="btnClose" onclick="javascript:closeLayer('kakaoPayAuthPollingPop');">창닫기</button> -->
+  </div>
+  <!-- // pop-카카오페이인증 안내(정상 처리되지 않음) /1911 -->
+  
+  <!-- Layer-카카오페이 인증방법 안내 /1911 -->
+  <div id="kakaoPayAuthGuideInfoLayer" class="layerPopup" tabindex="0" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap" style="top:15%;max-height:400px"> <!-- 수정 /191115 -->
+      <h2>카카오페이 인증방법 안내</h2>
+      
+      <div class="layerCont pdT0" style="max-height:380px">
+        <div class="infoTi_kakaopay">최초발급 시 등록한<br>비밀번호/지문입력만으로 인증완료</div>
+        
+        <ol class="step_kakaopay">
+          <li><p>카카오페이<br>인증 선택</p></li>
+          <li><p>카카오톡으로<br>인증요청 발송</p></li>
+          <li><p>카카오톡<br>인증요청 문자<br>확인하기 클릭</p></li>
+        </ol>
+        <ol class="step_kakaopay mgT15">
+          <li><p>인증비밀번호<br>또는<br>지문입력</p></li>
+          <li><p>인증완료</p></li>
+          <li><p>보험료설계<br>진행</p></li>
+        </ol>
+      </div>
+      <!-- // 내용 -->
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('kakaoPayAuthGuideInfoLayer');" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!-- // Layer-카카오페이 인증방법 안내 /1911 -->
+  
+  <!-- Layer-카카오페이 인증서 발급 방법 안내 /1911 -->
+  <div id="kakaoPayAuthIssueInfoLayer" class="layerPopup" tabindex="0" aria-hidden="true" style="opacity: 0;">
+    <div class="layerWrap" style="top:15%;max-height:400px"> <!-- 수정 /191115 -->
+      <h2>카카오페이 인증서 발급 방법 안내</h2>
+    
+      <div class="layerCont pdT0" style="max-height:380px">
+        <div class="infoTi_kakaopay ti2">별도의 앱설치, 개인정보 입력 등 번거로운 작업없이 카카오톡 내에서 간단하게 발급 가능</div>
+        <ol class="step_kakaopay type2">
+          <li><p>카카오페이<br>인증 선택</p></li>
+          <li><p>카카오톡으로<br>인증요청 발송</p></li>
+          <li><p>카카오톡<br>인증요청 문자<br>확인하기 클릭</p></li>
+        </ol>
+        <!-- 수정 /191121 -->
+        <ol class="step_kakaopay type2 mgT15">
+          <li><p>서비스<br>이용악관 동의</p></li>
+              <li><p>휴대폰<br>본인인증</p></li>
+              <li><p>인증비밀번호<br>등록 및<br>지문등록</p></li>
+        </ol>
+        <!-- // 수정 /191121 -->
+      </div>
+      <!-- // 내용 -->
+      <a href="javascript:void(0);" onclick="javascript:lpCloser('kakaoPayAuthIssueInfoLayer');" class="layerClose" role="button">닫기</a>
+    </div>
+  </div>
+  <!-- // Layer-카카오페이 인증서 발급 방법 안내 /1911 -->
+  
+  <!-- 장기3종 가입완료 팝업 신설 2004 :  pop 실손의료비보험안내 2004 : s -->
+  <div class="layerPopup" id="_linkedSaleLTMD" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="popWrap bgWhite">
+      <header>
+      <h1>현대해상다이렉트 실손의료비보험 안내</h1>
+      </header>
+      
+      <div class="popContent bgWhite" style="padding:0 20px">
+        <p><img src="https://mdirect.hi.co.kr/images/content/pop_img_medical_top.gif" alt="실손의료비보험도 간편하게 가입하세요! 현대해상다이렉트 실손의료비보험" class="w100"></p>      
+        <div><img src="https://mdirect.hi.co.kr/images/content/pop_img_medical_ct.gif" alt="간편가입 보장 안내" class="w100"></div>
+        <div class="hide">각종질병과 사고로 인한 통원,입원,처방조제비 보장!(해당특약가입시, 본인부담금 자기부담금공제 보장), 최대 100세까지 든든하게 보장!(매년 자동갱신, 15년마다 재가입, 최대100세까지 보장가능)</div>
+        <div class="btn mgT25">
+          <a href="/service.do?m=8cdea2348c" role="button" class="white">실손의료비보험 알아보기</a>
+        </div>
+        <!-- 버튼 -->
+        <!--- 하단버튼 변경 200504 : s -->
+        <div class="btnWrap">
+          <a href="/service.do?m=7c6641ec8a" role="button">홈으로</a>
+        </div>
+        <!---// 하단버튼 변경 200504 : e -->
+      </div>
+      <!-- // popContent -->
+      <button type="button" class="btnClose" onclick="javascript:lpCloser('')">창닫기</button>
+    </div>
+    <!-- // popWrap -->
+  </div>
+  <!-- //pop 실손의료비보험안내 2004 : e -->
+  
+  <!-- 장기3종 가입완료 팝업 신설 2004 :  pop 암보험안내 2004 : s -->
+  <div class="layerPopup" id="_linkedSaleLTCC" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="popWrap bgWhite">
+      <header>
+        <h1>현대해상다이렉트</h1>
+      </header>
+      <div class="popContent bgWhite" style="padding:20px 20px">    
+          <div style="position:relative">
+              <img src="https://mdirect.hi.co.kr/images/content/pop_img_medical_ct.gif" alt="현대해상다이렉트 건강보험 안내" class="w100">
+              <div class="hide">건강검진 결과등록 5% 할인! 3대질병 (암,뇌,심장) 진단, 질병 및 상헤 입원/수술, 특정감염병입원 보장 (해당 특약 가입시)</div>
+              <p style="position:absolute;bottom:7%;width:100%;text-align:center;">
+                  <a href="/service.do?m=c9d2b5e703" style="display:inline-block;width:89%;">
+                      <img src="https://mdirect.hi.co.kr/images/content/btn_img_medical_ct.gif" alt="건강보험 알아보기" style="width:100%;">
+                  </a>
+              </p>
+          </div>
+          <div style="position:relative;margin-top:15px;">
+            <img src="https://mdirect.hi.co.kr/images/content/pop_img_cancer_ct.gif" alt="현대해상다이렉트 암보험 안내" class="w100">
+              <div class="hide">암에 집중된 담보 구성! 암진단/수술/입원비 까지, 재진단시에도 2년마다 보장 만기 후 자동갱신 가능!(특약 가입시, 갱신시 보험료 인상 가능)</div>
+           <p style="position:absolute;bottom:7%;width:100%;text-align:center;">
+                  <a href="/service.do?m=b970661463" style="display:inline-block;width:89%;">
+                      <img src="https://mdirect.hi.co.kr/images/content/btn_img_cancer_ct.gif" alt="암보험 알아보기" style="width:100%;">
+                  </a>
+              </p>
+          </div>
+          <div class="btnWrap">
+              <a href="/service.do?m=7c6641ec8a" role="button">홈으로</a>
+          </div>
+      </div>
+      <!-- // popContent -->
+      <button type="button" class="btnClose" onclick="javascript:lpCloser('')">창닫기</button>
+    </div>
+    <!-- // popWrap -->
+  </div>
+  <!-- // pop 암보험안내 2004 : e -->
+  
+  <!-- pop 건강보험안내 200826 : s -->
+  <div class="layerPopup" id="_linkedSaleLTHT" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="popWrap bgWhite">
+      <header>
+        <h1>현대해상다이렉트</h1>
+      </header>
+      <div class="popContent bgWhite" style="padding:20px 20px">    
+          <div style="position:relative">
+              <img src="https://mdirect.hi.co.kr/images/content/pop_img_driver_prevent.png" alt="현대해상다이렉트 운전자보험 안내" class="w100">
+              <div class="hide">'나'를 위한 운전자보험! 형사책임과 벌금(대인,대물), 사고처리지원금 보장, 스쿨존사고 처벌 강화 대비!(해당 특약 가입시)</div>
+              <p style="position:absolute;bottom:7%;width:100%;text-align:center;">
+                  <a href="/service.do?m=4jd59k8345" style="display:inline-block;width:89%;">
+                      <img src="https://mdirect.hi.co.kr/images/content/btn_img_driver_prevent.gif" alt="운전자보험 알아보기" style="width:100%;">
+                  </a>
+              </p>
+          </div>
+          <div style="position:relative;margin-top:15px;">
+            <img src="https://mdirect.hi.co.kr/images/content/pop_img_loss_prevent.png" alt="현대해상다이렉트 실손보험 안내" class="w100">
+              <div class="hide">최대 100세까지 든든하게! 자사오프라인대비 4.6%저렴, 각종 사고와 질병으로 인한 입원/통원/처방조제비 보장(해당 특약 가입시)</div>
+           <p style="position:absolute;bottom:7%;width:100%;text-align:center;">
+                  <a href="/service.do?m=8cdea2348c" style="display:inline-block;width:89%;">
+                      <img src="https://mdirect.hi.co.kr/images/content/btn_img_loss_prevent.gif" alt="실손보험 알아보기" style="width:100%;">
+                  </a>
+              </p>
+          </div>
+          <div class="btnWrap">
+              <a href="/service.do?m=7c6641ec8a" role="button">홈으로</a>
+          </div>
+      </div>
+      <!-- // popContent -->
+      <button type="button" class="btnClose" onclick="javascript:lpCloser('')">창닫기</button>
+    </div>
+    <!-- // popWrap -->
+  </div>
+  <!-- //pop 건강보험안내 200826 : e -->
+  
+  
+  
+  <!-- 전문금융소비자 관련 추가 20210322 안내 팝업 -->
+  <div class="layerPopup" id="spcGuidePop" style="display: none; opacity: 0;" aria-hidden="true">
+    <div class="layerWrap">
+      <div class="layerCont">
+        <div class="alertCont">
+          <p class="txt01 tal"><strong class="fontBlue">전문금융소비자란</strong> 「금융소비자 보호에 관한 법률」제2조제9호에 따라 금융상품에 관한 <strong class="fontOrg">전문성</strong> 또는 <strong class="fontOrg">소유자산규모 등에 비추어 금융상품계약에 따른 위험감수능력이 있는 금융소비자</strong>를 의미합니다.</p>
+                  <p class="tal mgtS">○ 일반금융소비자 : 전문금융소비자가 아닌자</p>
+                  <p class="tal mgtS">○ 전문금융소비자(지자체,단체 등) : 국가, 한국은행, 금융회사, 주권상장법인, 지방자치단체, 금융협회, 공공기관, 지방공기업, 보험관계단체, 단체보험을 체결하고자 하는 자 및 동일한 회사·사업장·조합 등 5인 이상의 근로자를 고용하고 있는 단체 등</p>
+                  <p class="tal mgtS">○ 전문금융소비자(보험설계사 등) : 보험설계사·대리점 및 중개사 등 보험모집종사자 </p>
+                  <p class="tal mgtS mgbS">○ 전환신청 가능자(전문 → 일반) : 주권상장법인, 지방자치단체, 단체보험을 체결하고자 하는 자, 기업성보험을 체결하고자 하는 자, 공공기관, 지방공기업 및 동일한 회사·사업장·조합 등 5인 이상의 근로자를 고용하고 있는 단체 등 전문금융소비자</p>
+        </div>
+      </div>
+      <div class="layerBtn">
+        <a href="javascript:void('0');" onclick="lpCloser('spcGuidePop');" class="on" role="button">확인</a>
+      </div>
+    </div>
+  </div>
+  <!-- 전문금융소비자 관련 추가 20210322 -->
+  <!-- 전문금융소비자 관련 추가 20210322 전문금융소비자 세부항목 선택 팝업-->
+  <div class="popWrap" id="spcInputPop" style="display:none;">
+  
+    <header>
+      <h1>전문금융소비자</h1>
+    </header>
+    
+    <div class="popContent">
+      <section>
+              <h2>단체(회사)명</h2>
+        <fieldset>
+          <legend>단체(회사)명</legend>
+          <div class="inputWrap">
+            <input type="text" id="cpNm" maxlength="500" style="ime-mode:disabled;" required="">
+            <label for="strEtc6">필수 입력</label>
+          </div>
+        </fieldset>
+        <h2>전문금융소비자 세부항목 선택</h2>
+        <div class="itemPack">
+          <ul class="itemListN2">
+            <li data-val="02" style="height: 61px;" id="spc02">
+              <a href="javascript:setSpcDtl('2');" role="button" style="height: 100%; padding: 0.1rem 0px;" aria-label="지자체, 단체"><div class="cont">지자체, 단체</div></a>
+            </li>
+            <li data-val="03" style="height: 61px;" id="spc03">
+              <a href="javascript:setSpcDtl('3');" role="button" style="height: 100%; padding: 0.1rem 0px;" aria-label="보험모집종사자"><div class="cont">보험모집종사자</div></a>
+            </li>
+            <li data-val="04" style="height: 66px;" id="spc04">
+              <a href="javascript:setSpcDtl('4');" role="button" style="height: 100%; padding: 0.1rem 0px;" aria-label="기타"><div class="cont">기타</div></a>
+            </li>
+          </ul>
+                  <ul class="listDot mgtS">
+              <li style="height: 66px;"> 「금융소비자 보호에 관한 법률」 제17조제1항에 따라 보험계약자의 일반ㆍ전문금융소비자 여부를 확인하기 위한 절차입니다. <br>필요시 이를 확인할 수 있는 증빙자료 제출을 요구할 수 있으며, 전문금융소비자가 일반금융소비자와 동일한 대우를 받고자 하는 경우 전환신청이 가능합니다.</li>
+            </ul>
+        </div>
+        
+      </section>
+        <div class="btnWrap">
+          <span><a href="javascript:void(0);" onclick="javascript:closeLayer('spcInputPop');" role="button">취소</a></span>
+          <span><a href="javascript:void(0);" onclick="javascript:setSpc();" role="button">확인</a></span>
+        </div>
+    </div>	
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('spcInputPop');">창닫기</button>
+  </div>
+  <!-- // 새창-전문소비자 여부 확인때210322-->
+  
+  <!-- 레이어팝업_테슬라리워드이벤트-->
+  <div class="layerPopup" id="teslaPopup" aria-hidden="true" tabindex="0" style="opacity: 0; z-index: 999999; pointer-events: auto; display: none;">
+    <div class="layerWrap">
+       <h2>[InsureMyTesla 가입 이벤트 안내]</h2>
+       <div class="layerCont" style="text-align:left">
+          <ul class="listDot">
+            <li>  ▶ 이벤트대상 ◀</li>
+            <li>	   InsureMyTesla 를 통해 현대해상다이렉트에 접속하고							
+            <br>	   자동차보험가입 완료한, 현대해상 신규고객								
+            <br>	   (다른경로 가입 및 현대해상 갱신 시 혜택불가)						</li>
+            <br>		
+            <li>	  ▶ 이벤트내용 ◀												</li>
+            <li>	   30만원 이상 가입 시, Tesla e-shop 에서 지정물품에 사용가능한					
+            <br>	    프로모션 코드(3만원 상당) 제공									</li>
+            <li>	   행사기간 : 2021.10.1(금) 체결계약건 부터						</li>
+            <li>	   혜택 사용관련 문의 : Tesla 고객지원팀 (080-617-1399)					
+            <br>	    (지정물품, 프로모션 코드사용, 배송일정 등) 						</li>
+            <br>
+            <li>	  ▶ 지급일 ◀													</li>
+            <li>	   보험 가입일이 속한 분기의, 다음분기 첫달 말일경 고객이 등록한				
+            <br>	    연락처로 프로모션 코드 발송 									
+            <br>	    (ex.보험가입일이 10.15일(4분기)인 경우, 1월말(1분기 첫달) 발송)	</li>
+            <br>				
+            <li>	  ▶ 유의사항 ◀													</li>
+            <li>	   현대해상의 모든 이벤트(산출시와 가입시 합산) 제공금액은					
+            <br>	    3만원을 초과하지 않으며, 다른혜택(카드할인, 캐시백, 주유권 등)과					
+            <br>	    중복 적용되지 않습니다. 										</li>
+            <li>	   혜택은 지급 시점에 보험계약을 정상 유지하셔야 지급됩니다.			</li>		
+            <li>	   영업용/업무용/법인차량 고객은 혜택제외 입니다.					</li>
+            <br>
+            <li>	  ▶꼭 알아두실 사항 ◀											</li>
+            <li><span class="fontPoint2">· 보험계약 체결 전 반드시 상품설명서 및 약관을 읽어보시기 바랍니다.</span>	</li>				
+            <li>	   이 계약은 예금자보호법에 따라 예금보험공사가 보호하되,					
+            <br>	    보호한도는 본 보험회사에 있는 귀하의 모든 예금보호대상 금융상품의					
+            <br>	    해지환급금(또는 만기 시 보험금이나 사고보험금)에 기타 지급금을					
+            <br>	    합하여 1인당 "최고5천만원"이며, 5천만원을 초과하는 나머지 금액은					
+            <br>	    보호하지 않습니다.											</li>
+            <li>	   보험계약자가 기존에 체결했던 보험계약을 해지하고 다른 보험계약을					
+            <br>	    체결하면 보험계약이 거절될 수 있으며, 보험료가 인상되거나				
+            <br>	    보장내역이 달라질 수 있습니다. 									</li>
+            <li>	   현대해상은 해당상품에 대해 충분히 설명할  의무가 있으며,					
+            <br>	   가입자는 가입에 앞서 이에대한 충분한 설명을 받으시기 바랍니다.		</li>
+            <br>		
+            <li>	준법감시인 확인필 제20218577호 (유효기간 2021.9.30~2022.9.29)		</li>		
+          </ul>	
+      </div>	
+      <div class="layerBtn">
+        <a href="#none" onclick="javascript:lpCloser('teslaPopup');" class="on" role="button">확인</a>
+      </div>		
+    </div>
+  </div>
+  <!-- // 레이어팝업_테슬라리워드이벤트 -->
+  
+  <!-- 전환형실손보험 이탈팝업 /20220216 -->
+  <div class="popWrap" id="_callmeLayerSM" style="display:none;">
+  
+    <header style="overflow:hidden;height:auto;">
+      <h1>실손전환상담센터 안내</h1>
+    </header>
+    <div class="popContent">
+      <div class="telVisual">
+        <div class="telText">
+          <strong>도움이 필요하세요?<br>
+          현대해상 <span class="fontOrg">실손전환상담센터에 문의</span>하시면<br>자세히 설명해드립니다.</strong>
+        </div>
+      </div>
+      
+      <section>
+        
+        <div class="popContent" style="padding:15px 35px"> 
+            <img src="https://mdirect.hi.co.kr/images/content/img_oneInsu_tel.png" alt="현대해상 실손전환상담센터 1588-8291 평일 9시30분 부터 17시 30분" class="w100">
+          </div>
+          <div class="btn mgtL">
+            <a href="tel:1588-8291" class="blue" role="button">상담센터 전화하기</a>
+        </div>
+       
+        <div class="btnWrap">
+      <span><a href="/" role="button">홈으로</a></span>
+      <span><a href="javascript:void(0);" onclick="javascript:closeLayer('_callmeLayerSM');" role="button">계속 계산하기</a></span>        
+        </div>
+      </section>
+    </div>  
+    <button type="button" class="btnClose" onclick="javascript:closeLayer('_callmeLayerSM');">창닫기</button>
+    
+  </div>
+  <!--// 전환형실손보험 이탈팝업 /20220216-->
+   <!-- footer -->
+</body>
+</html>

@@ -1,0 +1,1307 @@
+@charset "utf-8";
+
+.carMain{background:#d0dde5 url('https://direct.hi.co.kr/images/internet_product/bg_insuJoin_car.jpg') no-repeat center top;background-size:cover} /* 수정 /2112 */
+.carComMain{background:#2d2e27 url('https://direct.hi.co.kr/images/motor/bg_carInsu_corp.jpg') no-repeat center top;background-size:cover} /* 수정 /2106 */
+.carInfoInput{ display:none; padding:20px 11px 0 11px;}
+.carInfoInput.type2{ padding-top:7px;}
+.carInfoInput .itemSelectArea{ }
+.carInfoInput .inputTable{border-bottom:1px solid #e5e5e5; padding-bottom:15px; margin:10px 0 15px 0;}
+.carInfoInput .itemSelectArea .inputTable.noLine{border-bottom:0; padding-bottom:0; margin:10px 0 15px 0;}
+.carInfoInput .itemSelectArea .inputTable .lineBox{ border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; width:375px; padding:15px 0;}
+
+/* 수정 버튼 /1904 */
+.contentWrap .leftArea .stepArea ol li .btnEdit{margin-top:2px;padding:2px 0 3px;width:30px;height:10px;line-height:10px;border:1px solid #555;text-align:center;font-size:11px;color:#444}
+
+.carDetailWrap{border-top:2px solid #555555}
+.carDetailWrap .titleArea{ padding-top:20px; margin-bottom:10px;}
+.carDetailWrap .titleArea:after{ content:''; display:block;clear:both}
+.carDetailWrap .titleArea .keyWordArea{ float:left; margin-top:5px;}
+.carDetailWrap .titleArea .keyWordArea .tit{ float:left; color:#047db5; margin-right:5px;}
+.carDetailWrap .titleArea .keyWordArea .keyWordList{ width:460px;text-overflow:ellipsis; overflow:hidden;white-space:nowrap;word-break:keep-all;}
+.carDetailWrap .titleArea .keyWordArea .keyWordList a{ display:inline-block;font-size:14px; position:relative; padding-right:7px; margin-right:2px;}
+.carDetailWrap .titleArea .keyWordArea .keyWordList a:after{ content:''; display:block; width:1px; height:12px; background:#dddddd; position:absolute; right:0;top:6px;}
+.carDetailWrap .titleArea .keyWordArea .keyWordList a:last-child{ padding-right:0; margin-right:0;}
+.carDetailWrap .titleArea .keyWordArea .keyWordList a:last-child:after{ display:none;}
+.carDetailWrap .titleArea .rightArea{ float:right;}
+
+.carDetailWrap .lineTabList{ overflow:hidden;margin:0 -1px 20px 0 ;}
+.carDetailWrap .lineTabList li{ float:left;width:50%;margin:0 0 0 -1px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; position:relative;border-bottom:1px solid #555555;}
+.carDetailWrap .lineTabList li:first-child{ margin-left:0;}
+.carDetailWrap .lineTabList li.tab1{ width:101px;}
+.carDetailWrap .lineTabList li.tab2{ width:141px;}
+.carDetailWrap .lineTabList li.tab3{ width:141px;}
+.carDetailWrap .lineTabList li.tab4{ width:141px;}
+.carDetailWrap .lineTabList li.tab5{ width:141px;} /* 2018-07-27 수정  */
+/* 2018-07-27 추가 - 자동체세부모델찾기 버튼추가 */
+.carDetailWrap .lineTabList li.tabNone{width:160px; padding:12px}
+.carDetailWrap .lineTabList li > .btn{padding:0 10px; margin:0;}
+
+.carDetailWrap .lineTabList li .item{ display:block; background:#f5f5f5; line-height:68px; text-align:left;padding:0 15px; font-size:14px;border:1px solid #dddddd; border-bottom:0;}
+.carDetailWrap .lineTabList li .item .btnModify{ display:none;}
+.carDetailWrap .lineTabList li .item .txt{ display:none;}
+.carDetailWrap .lineTabList li.on{z-index:1;border-bottom:1px solid transparent;}
+.carDetailWrap .lineTabList li.on .item{background:#fff; border:1px solid #555555; border-bottom:0;}
+.carDetailWrap .lineTabList li.insertEnd{ background:#047db5;}
+.carDetailWrap .lineTabList li.insertEnd .item{background:#047db5; border:1px solid #047db5; border-bottom:0; color:#ffffff; line-height:1;height:68px; border-left:1px solid #036491;border-right:1px solid #036491;}
+.carDetailWrap .lineTabList li.insertEnd .item .tit{ margin-top:13px;}
+.carDetailWrap .lineTabList li.insertEnd .item .txt{ display:block; font-size:15px; margin-top:10px;text-overflow:ellipsis; overflow:hidden;white-space:nowrap;word-break:keep-all; max-width:100%;}
+.carDetailWrap .lineTabList li.insertEnd .item .btnModify{ display:block; position:absolute; right:1px; top:0;z-index:1}
+.carDetailWrap .carBoxItemList{margin:-6px;}
+.carDetailWrap .carBoxItemList .row{ position:relative;}
+.carDetailWrap .carBoxItemList .row ul{}
+.carDetailWrap .carBoxItemList .row ul:after{ content:''; display:block;clear:both}
+.carDetailWrap .carBoxItemList .row > ul > li{width:196px; height:100px;margin:6px; float:left; display:table;}
+.carDetailWrap .carBoxItemList .row > ul > li .box{ display:table-cell;border:1px solid #cccccc; vertical-align:middle; text-align:center; font-size:17px; position:relative;}
+.carDetailWrap .carBoxItemList .row > ul > li .box .logo{ display:block;font-size:0;}
+.carDetailWrap .carBoxItemList .row > ul > li .box .logo > img{font-size:15px;}
+.carDetailWrap .carBoxItemList .row > ul > li .box .logo + .txt{font-size:15px;}
+.carDetailWrap .carBoxItemList .row > ul > li .box .price{ color:#ee5a00; font-size:17px; display:block; margin-top:4px;}
+.carDetailWrap .carBoxItemList .row > ul > li.on .box{border:2px solid #ee5a00} /* 수정 /190326 */
+.carDetailWrap .carBoxItemList .row > ul > li.on .box:after {content: '';display: block;position: absolute;left: 15px;top: 10px;background: url(https://direct.hi.co.kr/images/common/icon_item_select.png) no-repeat;width: 18px;height: 14px;}
+.carDetailWrap .carBoxItemList.item2 .row > ul > li{width:404px; height:110px;}
+.carDetailWrap .carBoxItemList.item2 .row > ul > li .box{ text-align:left;padding:0 20px;}
+.carDetailWrap .carBoxItemList.item2 .row > ul > li.on .box{ text-align:left;padding:15px 20px 0 20px;}
+.carDetailWrap .carBoxItemList.item2 .row > ul > li.on .box:after{top:5px;left:inherit;right:8px;} /* 수정 /1903 */
+
+.carDetailWrap .carBoxItemList .firstDayBoxWrap{ position:relative;padding:0 6px; margin-bottom:20px; margin-top:6px; display:none;}
+.carDetailWrap .carBoxItemList .firstDayBoxWrap .firstDayBox{border:1px solid #e5e5e5; background:#f5f5f5;padding:14px 29px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.carDetailWrap .carBoxItemList .firstDayBoxWrap .firstDayBox li{ float:left;}
+.carDetailWrap .carBoxItemList .firstDayBoxWrap .firstDayBox li.txt{ font-size:15px; margin-right:15px; line-height:40px;}
+.carDetailWrap .carBoxItemList .firstDayBoxWrap .firstDayBox li.date .inputBase{width:196px;}
+.carDetailWrap .carBoxItemList .firstDayBoxWrap .firstDayBox li.btnArea{ margin-left:10px;}
+.carDetailWrap .carBoxItemList .firstDayBoxWrap .btnBoxClose{ position:absolute; right:20px; top:14px;;}
+.carDetailWrap .carBoxItemList .firstDayBoxWrap .alert{ display:none;font-size:14px; color:#e91010; line-height:16px; padding-left:20px; position:relative; margin-top:10px;}
+.carDetailWrap .carBoxItemList .firstDayBoxWrap .alert:before{ display:block; content:''; background:url("https://direct.hi.co.kr/images/common/icon_alert_validation.png"); width:14px; height:14px;line-height:18px; position:absolute; left:0; top:2px;}
+
+.etcOptionArea{ margin-top:-10px;border-bottom:1px solid #dddddd;padding-bottom:15px; margin-bottom:20px;} /* 수정 /1912 */
+.etcOptionArea .input{margin:6px 0 10px 0;}
+.etcOptionArea .input *{vertical-align:top;}
+.etcOptionArea .input .txt{vertical-align:top; display:inline-block; margin-left:6px; line-height:40px;}
+
+
+/* 운전자정보입력 /1709 */
+.itemSelectArea .itemList.item5{display:block;margin:0 -5px;width:auto}
+.itemSelectArea .itemList.item5 li{width:138px;padding:0 5px;-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}
+.itemSelectArea .itemList.item5 li a{width:100%;height:70px;padding-top:0;line-height:70px;font-size:15px}
+
+/* 운전자한정특약210618 */
+.itemSelectArea .itemList.item5_2{display:block;margin:0 -5px;width:auto; text-align:left}
+.itemSelectArea .itemList.item5_2 li{width:166px;padding:10px 5px 0 5px;-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}
+.itemSelectArea .itemList.item5_2 li a{width:100%;height:70px;padding-top:0;line-height:70px;font-size:15px}
+.itemSelectArea .itemList.item5_2 li:nth-child(1), .itemSelectArea .itemList.item5_2 li:nth-child(2), .itemSelectArea .itemList.item5_2 li:nth-child(3), .itemSelectArea .itemList.item5_2 li:nth-child(4), .itemSelectArea .itemList.item5_2 li:nth-child(5) {padding-top:0;}
+
+/* 운전자정보 임직원 추가 /202011 */
+.itemSelectArea .itemList.item7{display:block;margin:0 -5px;width:auto}
+.itemSelectArea .itemList.item7 li{width:118px;padding:0 5px;-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}
+.itemSelectArea .itemList.item7 li a{width:100%;height:70px;padding-top:0;line-height:70px;font-size:15px}
+
+.driving_chioceWrap{position:relative;display:table;margin-top:20px;width:100%;height:560px;border-top:2px solid #555;border-bottom:1px solid #ddd;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;} /* 수정 /1910 */
+.driving_chioceWrap:after{ content:''; display:block;clear:both}
+.driving_chioceWrap .infoTxt{ position:absolute; left:0; top:52px;z-index:1; font-size:17px; color:#222222; width:410px; text-align:center;}
+.driving_chioceWrap .drive_conbox{display:table-cell;width:50%;height:100%;vertical-align:top;}
+.driving_chioceWrap .drive_conbox:after{ content:''; display:block;clear:both}
+.driving_chioceWrap .drive_conbox.vermid{vertical-align:middle}
+.driving_chioceWrap .drive_conbox .drive_con{padding-left:30px;color:#777;}
+.driving_chioceWrap .drive_conbox .drive_con .no_choicetxt{font-size:17px;color:#222;margin-bottom:5px;}
+.driving_chioceWrap .drive_conbox .drive_con .drive_infotxt{letter-spacing:-0.08em;}
+.driving_chioceWrap .drive_conbox .family_choice{width:100%;height:100%;position:relative;background:url("https://direct.hi.co.kr/images/motor/bg_family.png");color:#999;}
+
+.drive_conbox .family_choice .txt{display:block;text-align:center;line-height:28px;}
+.drive_conbox .family_choice .parents{width:131px;position:absolute;top:108px;left:24px}
+.drive_conbox .family_choice .parents:before{width:100%;height:79px;content:''; display:block;clear:both;background:url("https://direct.hi.co.kr/images/motor/img_drive_parents_off.png");}
+.drive_conbox .family_choice .parents.on:before{background:url("https://direct.hi.co.kr/images/motor/img_drive_parents_on.png");}
+
+.drive_conbox .family_choice .mate_parents{width:130px;position:absolute;top:108px;right:66px}
+.drive_conbox .family_choice .mate_parents:before{width:100%;height:79px;content:''; display:block;clear:both;background:url("https://direct.hi.co.kr/images/motor/img_drive_mateparents_off.png");}
+.drive_conbox .family_choice .mate_parents.on:before{background:url("https://direct.hi.co.kr/images/motor/img_drive_mateparents_on.png");}
+
+.drive_conbox .family_choice .person_self{width:54px;position:absolute;top:214px;left:109px}
+.drive_conbox .family_choice .person_self:before{width:100%;height:81px;content:''; display:block;clear:both;background:url("https://direct.hi.co.kr/images/motor/img_drive_person_off.png");}
+.drive_conbox .family_choice .person_self.on:before{background:url("https://direct.hi.co.kr/images/motor/img_drive_person_on.png");}
+
+.drive_conbox .family_choice .mate{width:54px;position:absolute;top:214px;left:50%}
+.drive_conbox .family_choice .mate:before{width:100%;height:82px;content:''; display:block;clear:both;background:url("https://direct.hi.co.kr/images/motor/img_drive_mate_off.png");}
+.drive_conbox .family_choice .mate.on:before{background:url("https://direct.hi.co.kr/images/motor/img_drive_mate_on.png");}
+
+.drive_conbox .family_choice .person_other{width:55px;position:absolute;top:214px;right:26px}
+.drive_conbox .family_choice .person_other:before{width:100%;height:80px;content:''; display:block;clear:both;background:url("https://direct.hi.co.kr/images/motor/img_drive_otherperson_off.png");}
+.drive_conbox .family_choice .person_other.on:before{background:url("https://direct.hi.co.kr/images/motor/img_drive_otherperson_on.png");}
+
+.drive_conbox .family_choice .children{position:absolute;top:316px;left:50%;margin-left:-48px;width:135px;} /* 수정 /1910 */
+.drive_conbox .family_choice .children:before{width:100%;height:73px;content:''; display:block;clear:both;background:url("https://direct.hi.co.kr/images/motor/img_drive_children_off.png");}
+.drive_conbox .family_choice .children.on:before{background:url("https://direct.hi.co.kr/images/motor/img_drive_children_on.png");}
+
+
+.woman .drive_conbox .family_choice .person_self:before{width:100%;height:81px;content:''; display:block;clear:both;background:url("https://direct.hi.co.kr/images/motor/img_drive_mate_off.png");}
+.woman .drive_conbox .family_choice .person_self.on:before{background:url("https://direct.hi.co.kr/images/motor/img_drive_mate_on.png");}
+
+.woman .drive_conbox .family_choice .mate:before{width:100%;height:82px;content:''; display:block;clear:both;background:url("https://direct.hi.co.kr/images/motor/img_drive_person_off.png");}
+.woman .drive_conbox .family_choice .mate.on:before{background:url("https://direct.hi.co.kr/images/motor/img_drive_person_on.png");}
+
+.drive_conbox .family_choice .parents.on span,
+.drive_conbox .family_choice .mate_parents.on span,
+.drive_conbox .family_choice .person_self.on span,
+.drive_conbox .family_choice .mate.on span,
+.drive_conbox .family_choice .person_other.on span,
+.drive_conbox .family_choice .children.on span{color:#047db5}
+
+.drive_conbox .inputTable{border-top:0;margin-bottom:0;}
+.drive_conbox .inputTable.linebot{padding-bottom:20px;margin-bottom:12px;border-bottom:1px solid #eee;}
+.drive_conbox .listStyle{margin-top:12px;}
+.drive_conbox .listStyle li{letter-spacing:-0.08em;}
+
+/* 운전자정보 임직원 추가 /202011 */
+.driving_chioceWrap .drive_conbox .family_choice.bgImgNone{background:#f5f5f5}
+.drive_conbox .family_choice .staff{width:338px;position:absolute;top:152px;left:34px}
+.drive_conbox .family_choice .staff:before{width:100%;height:82px;content:''; display:block;clear:both;background:url('https://direct.hi.co.kr/images/motor/img_drive_staff.png');}
+.drive_conbox .family_choice .txtBox{position:absolute;bottom:20px;left:0;margin:0 30px;padding:13px 16px;border:1px solid #cfcfcf;background-color:#fff}
+.drive_conbox .family_choice .txtBox strong{display:block;font-weight:normal;font-size:15px;color:#222}
+.drive_conbox .family_choice .txtBox span{display:block;margin-top:5px;font-weight:normal;font-size:14px;color:#777}
+
+.drive_conbox .inputTable{border-top:0;margin-bottom:0;}
+.drive_conbox .inputTable.linebot{padding-bottom:20px;margin-bottom:12px;border-bottom:1px solid #eee;}
+.drive_conbox .listStyle{margin-top:12px;}
+.drive_conbox .listStyle li{letter-spacing:-0.08em;}
+
+/* 자동차보험료계산 /개선202009 */
+.priceInfomationWrap{width:820px}
+.priceInfomationWrap:after{content:'';display:block;clear:both}
+.priceInfomationWrap .lineTabWrap{float:left;width:650px;overflow:hidden}
+.priceInfomationWrap .lineTabWrap .lineTabList.item3 li{float:left;width:217px}
+.priceInfomationWrap .lineTabWrap .lineTabList.item3 li:first-child{width:218px}
+.priceInfomationWrap .lineTabWrap:only-child{float:none;width:100%}
+.priceInfomationWrap .lineTabWrap:only-child .lineTabList.item3 li{float:left;width:274px}
+.priceInfomationWrap .lineTabWrap:only-child .lineTabList.item3 li:first-child{width:274px}
+.priceInfomationArea{margin-top:0px}
+.noTab .priceInfomationArea{border-top:2px solid #555555;overflow:hidden;padding-top:10px}
+.priceInfomationArea .rowItem{height:52px;position:relative;margin-top:-1px}
+.priceInfomationArea .rowItem .list{display:inline-flex;justify-content:space-between;align-items:center;width:100%;table-layout:fixed;height:50px;position:relative;z-index:2;transition:all 0.2s;-webkit-transition:all 0.2s;border:1px solid #eeeeee;border-left:0;border-right:0}
+.priceInfomationArea .rowItem:first-child .list{border-top:1px solid transparent}
+.priceInfomationArea .rowItem .list li{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:15px;vertical-align:middle}
+.priceInfomationArea .rowItem .list li.title{position:relative;padding:0 18px 0 10px;width:164px;color:#777777}
+.priceInfomationArea .rowItem .list li.title .btnHelp{position:absolute;top:50%;right:0;margin-top:-8px}
+.priceInfomationArea .rowItem .list li.con{flex:1;padding:0 10px 0 20px;color:#222222;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;word-break:keep-all;text-align:left}
+.priceInfomationArea .rowItem .list li.price{position:relative;padding-right:30px;text-align:right;color:#ec4d0f}
+.priceInfomationArea .rowItem .list li.price a{display:inline-block;color:#ec4d0f;padding-right:20px;background:url('https://direct.hi.co.kr/images/common/btn_datepicker_next.png') no-repeat right center;margin-right:-20px}
+.priceInfomationArea .rowItem .list li.price.org a{background:url('https://direct.hi.co.kr/images/common/btn_datepicker_next_org.png') no-repeat right center}
+/* 부가담보 추천 CLICK! /2106 */
+.priceInfomationArea .rowItem .altBox{display:block;position:absolute;top:-12px;right:7px;height:23px;z-index:3}
+.priceInfomationArea .rowItem .altBox:after{content:'';display:block;position:absolute;bottom:-10px;right:12px;width:12px;height:10px;background:url('https://direct.hi.co.kr/images/common/arw_dn_org.png') no-repeat 0 0}
+.priceInfomationArea .rowItem .altBox a{display:block;margin:0;padding:4px 12px;height:15px;line-height:14px;background:#ffa143;font-weight:normal;font-size:14px;color:#fff}
+/* 부가담보 말풍선 /2103 */
+.priceInfomationArea .rowItem .altBoxOver{display:block;z-index:3;position:absolute;top:-10px;right:0;padding:4px 6px 5px;height:14px;line-height:13px;background-color:#009ab1;text-align:center;font-size:13px;color:#fff}
+.priceInfomationArea .rowItem .altBoxOver:after{content:'';display:block;position:absolute;bottom:-10px;right:20px;width:9px;height:11px;background:url('https://direct.hi.co.kr/images/common/arw_up_blue.png') no-repeat 0 0;-ms-transform:rotateZ(180deg);-webkit-transform:rotateZ(180deg);transform:rotateZ(180deg)}
+.priceInfomationArea .rowItem .altBoxOver strong{color:#fcff00}
+
+.priceInfomationArea .rowItem .noticeOver{z-index:3;display:block;position:absolute;top:-10px;right:0;padding:4px 6px 5px;height:14px;line-height:13px;background-color:#009ab1;text-align:center;font-size:13px;color:#fff;opacity:0;filter:alpha(opacity=0)}
+.priceInfomationArea .rowItem .noticeOver:after{content:'';display:block;position:absolute;bottom:-10px;right:20px;width:9px;height:11px;background:url('https://direct.hi.co.kr/images/common/arw_up_blue.png') no-repeat 0 0;-ms-transform:rotateZ(180deg);-webkit-transform:rotateZ(180deg);transform:rotateZ(180deg)}
+.priceInfomationArea .rowItem .noticeOver strong{color:#fcff00}
+.priceInfomationArea .openPopContentArea{display:none;transition:right 0.2s;-webkit-transition:right 0.2s;right:-330px}
+
+.priceInfomationArea.openPop .rowItem .list{opacity:0.55;width:320px}
+.big .priceInfomationArea.openPop .rowItem .list{width:490px}
+.priceInfomationArea.openPop .rowItem.on{z-index:3}
+.priceInfomationArea.openPop .rowItem.on .list{z-index:2;opacity:1;border:1px solid #555555;border-right:0;background:#ffffff}
+.priceInfomationArea.openPop .rowItem.on .list li.title{padding-left:9px;width:124px}
+.priceInfomationArea.openPop .rowItem.on .list li.price .altBox{display:none} /* 추가 /202009 */
+/* 부가담보 말풍선 /2103 */
+.priceInfomationArea.openPop .rowItem.on .altBoxOver{display:none}
+
+.priceInfomationArea .openPopContentArea{overflow:hidden;padding:13px 0 19px 19px;height:459px;border:1px solid #555555;position:absolute;top:0;z-index:1;width:330px;-webkit-box-sizing:border-box;box-sizing:border-box;background:#ffffff}
+.priceInfomationArea .openPopContentArea.on{right:0;overflow:inherit} /* 수정 /202009 */
+.priceInfomationArea .openPopContentArea .openTit{font-size:17px;color:#222222;margin-bottom:15px}
+.priceInfomationArea .openPopContentArea .textTab{overflow:hidden;width:282px}
+.priceInfomationArea .openPopContentArea .textTab li{position:relative;float:left;margin:0 0 0 -1px;width:25%;-webkit-box-sizing:border-box;box-sizing:border-box;border-bottom:1px solid #555}
+.priceInfomationArea .openPopContentArea .textTab li:first-child{margin-left:0}
+.priceInfomationArea .openPopContentArea .textTab li a{display:block;height:32px;line-height:32px;text-align:center;border:1px solid #ddd;border-bottom:0;background-color:#f5f5f5}
+.priceInfomationArea .openPopContentArea .textTab li.on{z-index:1;border-bottom:1px solid transparent}
+.priceInfomationArea .openPopContentArea .textTab li.on a{border:1px solid #555;border-bottom:0;background-color:#fff;color:#ee5a00}
+
+/* 부가담보 선택 Tip /202009 */
+.priceInfomationArea .recTipArea{position:absolute;top:0;left:-320px;overflow:hidden;padding:16px;width:314px;height:350px;-webkit-box-sizing:border-box;box-sizing:border-box;border:2px solid #e9e9e9;background-color:#fff9ec;background-image:url('https://direct.hi.co.kr/images/motor/bg_recTip.png');background-repeat:no-repeat;background-position:center bottom}
+.priceInfomationArea .recTipArea.bg-none{background-image:none}
+.priceInfomationArea .recTipArea .tit{margin-bottom:17px;height:18px;line-height:17px;font-size:17px;color:#080808}
+.priceInfomationArea .recTipArea .rec-list{overflow:auto;max-height:286px}
+.priceInfomationArea .recTipArea .rec-list li{margin-top:12px;padding:16px 13px;border-radius:10px;border:1px solid #ee5a00;background-color:#fff}
+.priceInfomationArea .recTipArea .rec-list li:first-child{margin-top:0}
+.priceInfomationArea .recTipArea .rec-list li > div{display:flex;justify-content:space-between}
+.priceInfomationArea .recTipArea .rec-list li .txt{min-height:22px;line-height:21px;font-size:14px;color:#555}
+.priceInfomationArea .recTipArea .rec-list li .txt strong{font-weight:normal;font-size:14px;color:#ee5a00}
+.priceInfomationArea .recTipArea .rec-list li a.btOrg{display:inline-block;padding:4px 10px;height:14px;line-height:13px;background-color:#ee5a00;font-size:13px;text-align:center;color:#fff}
+.priceInfomationArea .recTipArea .btClose{display:block;position:absolute;top:17px;right:14px;width:20px;height:19px}
+
+/* 부가담보 추천 배너 /2208 */
+.bnRecCrt{overflow:hidden;margin-top:25px;padding:12px 10px 11px;box-sizing:border-box;width:282px;line-height:1.2em;border-radius:5px;border:1px solid #7bafe5;background-color:#edf7ff;background-repeat:no-repeat;background-position:right center}
+.bnRecCrt.ic01{background-image:url('https://direct.hi.co.kr/images/motor/ico_rec_crt01.png');}
+.bnRecCrt.ic02{background-image:url('https://direct.hi.co.kr/images/motor/ico_rec_crt02.png');}
+.bnRecCrt.ic03{background-image:url('https://direct.hi.co.kr/images/motor/ico_rec_crt03.png');}
+.bnRecCrt .tit{display:block;font-weight:600;font-size:15px;color:#222}
+.bnRecCrt .tit .fgRec{display:inline-block;margin-left:5px;padding:0 4px 0 3px;height:17px;background-color:#009ab1;font-weight:normal;font-size:12px;color:#fff;vertical-align: top;text-align:center;}
+.bnRecCrt .txt{display:block;margin-top:3px;font-weight:normal;font-size:14px;color:#707070}
+/* Best Choice 배너 */
+.recTopBox{margin-bottom:25px;border-radius:10px;background-color:#2291a1}
+.recTopBox .txt{display:flex;justify-content:center;align-items:center;position:relative;margin:0 auto;padding:13px 0 13px;line-height:1.2em;letter-spacing:-1px;text-align:left;font-weight:normal;font-size:19px;color:#fff}
+.recTopBox .txt:before{content:'';display:block;margin-right:12px;width:83px;height:67px;background:url('https://direct.hi.co.kr/images/motor/ico_star_bestChoice.png') no-repeat 0 0;}
+.recTopBox .txt strong{font-weight:normal !important;color:#ffc81c}
+.recTopBox a.txt:after{content:'';display:block;margin-left:15px;width:11px;height:20px;background:url('https://direct.hi.co.kr/images/common/btn_arr_right.png') no-repeat 0 0;}
+
+.priceInfomationArea .openPopContentArea .inScrollArea{overflow-y:scroll;height:367px;-webkit-box-sizing:border-box;box-sizing:border-box} /* 수정 /2107 */
+.priceInfomationArea .openPopContentArea .inScrollArea.etc{height:368px}
+.priceInfomationArea .openPopContentArea .inScrollArea.etc .tabCon{padding-bottom:15px}
+.priceInfomationArea .openPopContentArea .inScrollArea.etc .tabCon.gap{padding-bottom:50px}
+.priceInfomationArea .openPopContentArea .inScrollArea .listStyle{padding-bottom:15px;width:282px}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectKind{padding-bottom:10px;width:282px;border-bottom:1px solid #555555}
+.priceInfomationArea .openPopContentArea .inScrollArea .topTxt{display:block;overflow:hidden;margin:10px 0 15px;padding-bottom:8px;width:282px;border-bottom:2px solid #eaeaea}
+.priceInfomationArea .openPopContentArea .inScrollArea .topTxt .listStyle{float:right;width:auto;letter-spacing:-0.06em}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea{position:relative;margin-top:9px;width:282px;border-top:1px solid #eee}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row{overflow:hidden;line-height:24px;border-bottom:1px solid #eeeeee;height:65px;-webkit-box-sizing:border-box;box-sizing:border-box;display:table;width:100%;position:relative}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row:last-child{margin-bottom:0}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row .radioArea{position:relative;display:table-cell;width:auto;letter-spacing:-0.1em;vertical-align:middle}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row .radioArea .radio label span{font-size:13px}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row .upDown{position:absolute;right:5px;top:50%;text-align:right;font-size:13px;margin-top:-1px}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row .upDown .bar{color:#555555;display:inline-block;background:url('https://direct.hi.co.kr/images/common/icon_bar.png') no-repeat left center;padding-left:14px}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row .upDown .up{color:#e91010;display:inline-block;background:url('https://direct.hi.co.kr/images/common/icon_up.png') no-repeat left center;padding-left:14px}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row .upDown .down{color:#047db5;display:inline-block;background:url('https://direct.hi.co.kr/images/common/icon_down.png') no-repeat left center;padding-left:14px}
+.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row .price{position:absolute;right:5px;top:50%;text-align:right;font-size:15px;-webkit-box-sizing:border-box;box-sizing:border-box;color:#222222;margin-top:-23px}
+.priceInfomationArea .openPopContentArea .inScrollArea .listStyle.tLine{padding-top:15px;border-top:1px solid #eeeeee}
+.priceInfomationArea .openPopContentArea .inScrollArea .checkboxList{padding-bottom:10px;max-width:282px}
+.priceInfomationArea .openPopContentArea .inScrollArea .checkboxList .checkbox{display:block;margin-bottom:10px;letter-spacing:-0.07em}
+.priceInfomationArea .openPopContentArea .inScrollArea .checkboxList .checkbox .price{position:absolute;right:0;top:0;text-align:right;font-size:15px;color:#ec4d0f}
+.priceInfomationArea .openPopContentArea .inScrollArea .checkboxList .checkbox:last-child{margin-bottom:0}
+.priceInfomationArea .openPopContentArea .inScrollArea .shareInputWrap{margin-top:10px;width:282px}
+.priceInfomationArea .openPopContentArea .inScrollArea .shareInput ul{padding:10px 0;display:table;table-layout:fixed;width:100%;border-bottom:1px solid #eeeeee}
+.priceInfomationArea .openPopContentArea .inScrollArea .shareInput ul:last-child{border-bottom:0}
+.priceInfomationArea .openPopContentArea .inScrollArea .shareInput ul li{display:table-cell;vertical-align:middle}
+.priceInfomationArea .openPopContentArea .inScrollArea .shareInput ul li.tit{width:98px}
+.priceInfomationArea .openPopContentArea .etcCon{position:absolute;left:19px;bottom:0;background:#a39d98;line-height:40px;padding-left:20px;color:#ffffff;width:281px;z-index:3}
+.priceInfomationArea .openPopContentArea .btnClose{display:block;position:absolute;right:10px;top:10px;border:1px solid #ee5a00;color:#ee5a00;text-align:center;width:40px;line-height:25px;font-size:13px}
+/* 기타특약-보험료추가 시 */
+.priceInfomationArea .openPopContentArea .inScrollArea .checkboxList .checkbox.viewPrice label{padding-right:55px}
+
+/*자기신체사고,자동차상해 담보금액 스크롤용*/
+.priceInfomationArea .openPopContentArea .inScrollArea2{overflow-y:scroll;height:241px;-webkit-box-sizing:border-box;box-sizing:border-box} /* 수정 /2106 */
+.priceInfomationArea .openPopContentArea .inScrollArea2.etc{height:354px}
+.priceInfomationArea .openPopContentArea .inScrollArea2.etc .tabCon{padding-bottom:15px}
+.priceInfomationArea .openPopContentArea .inScrollArea2.etc .tabCon.gap{padding-bottom:50px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .listStyle{padding-bottom:15px;width:282px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectKind{padding-bottom:10px;width:282px;border-bottom:1px solid #555555}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .topTxt{display:block;overflow:hidden;margin:10px 0;width:282px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .topTxt .listStyle{float:right;width:auto;letter-spacing:-0.06em}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea{position:relative;margin-top:9px;width:282px;border-top:1px solid #eee}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row{overflow:hidden;line-height:24px;border-bottom:1px solid #eeeeee;height:65px;-webkit-box-sizing:border-box;box-sizing:border-box;display:table;width:100%;position:relative}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row:last-child{margin-bottom:0}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row .radioArea{position:relative;display:table-cell;width:auto;letter-spacing:-0.1em;vertical-align:middle}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row .radioArea .radio label span{font-size:13px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row .upDown{position:absolute;right:5px;top:50%;text-align:right;font-size:13px;margin-top:-1px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row .upDown .bar{color:#555555;display:inline-block;background:url('https://direct.hi.co.kr/images/common/icon_bar.png') no-repeat left center;padding-left:14px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row .upDown .up{color:#e91010;display:inline-block;background:url('https://direct.hi.co.kr/images/common/icon_up.png') no-repeat left center;padding-left:14px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row .upDown .down{color:#047db5;display:inline-block;background:url('https://direct.hi.co.kr/images/common/icon_down.png') no-repeat left center;padding-left:14px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .selectArea .row .price{position:absolute;right:5px;top:50%;text-align:right;font-size:15px;-webkit-box-sizing:border-box;box-sizing:border-box;color:#222222;margin-top:-23px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .listStyle.tLine{padding-top:15px;border-top:1px solid #eeeeee}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .checkboxList{max-width:282px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .checkboxList .checkbox{display:block;margin-bottom:10px;letter-spacing:-0.07em}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .checkboxList .checkbox .price{position:absolute;right:0;top:0;text-align:right;font-size:15px;color:#ec4d0f}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .checkboxList .checkbox:last-child{margin-bottom:0}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .shareInputWrap{margin-top:10px;width:282px}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .shareInput ul{padding:10px 0;display:table;table-layout:fixed;width:100%;border-bottom:1px solid #eeeeee}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .shareInput ul:last-child{border-bottom:0}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .shareInput ul li{display:table-cell;vertical-align:middle}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .shareInput ul li.tit{width:98px}
+/*//자기신체사고,자동차상해 담보금액 스크롤용*/
+
+/* 자동차보험 담보 금액별 보장내용 노출 /2107  */
+.priceInfomationArea .openPopContentArea .inScrollArea2 .radioArea .radio label b{font-weight:600}
+.priceInfomationArea .openPopContentArea .inScrollArea2 .radioArea .radio label:before{top:50%;margin-top:-12px}
+
+/* tab /보험료확인 */
+.priceInfomationArea .openPopContentArea .tabWrap .lineTabList{padding-right:28px}
+.priceInfomationArea .openPopContentArea .tabWrap .lineTabList li a{line-height:33px;font-size:14px} /* 추가 /2106 */
+.priceInfomationArea .openPopContentArea .tabWrap .lineTabList li a .bx_tip{display:inline-block;padding:0 6px;height:16px;line-height:17px;border-radius:8px;background:#ee5a00;font-size:11px;color:#fff}
+.priceInfomationArea .openPopContentArea .tabWrap .tabCon{overflow:auto}
+.priceInfomationArea .openPopContentArea .tabWrap .tabCon .inScrollArea{position:relative;}
+.priceInfomationArea .openPopContentArea .tabWrap .tx_guide{margin:20px 0;padding-bottom:8px;width:282px;color:#777}
+.priceInfomationArea .openPopContentArea .tabWrap .tx_guide p.txt strong{color:#ee5a00}
+.priceInfomationArea .openPopContentArea .tabWrap .tx_guide.bg_guide1{background:url('https://direct.hi.co.kr/images/common/img_99per.png') no-repeat right bottom}
+.priceInfomationArea .openPopContentArea .tabWrap .tx_guide.bg_guide2{background:url('https://direct.hi.co.kr/images/common/img_36per.png') no-repeat right bottom}
+.priceInfomationArea .openPopContentArea .tabWrap .tx_guide.bg_guide3{background:url('https://direct.hi.co.kr/images/common/img_97per.png') no-repeat right bottom}
+.priceInfomationArea .openPopContentArea .tabWrap .tx_guide.bg_guide4{background:url('https://direct.hi.co.kr/images/common/img_82per.png') no-repeat right bottom}
+.priceInfomationArea .openPopContentArea .tabWrap .tx_guide.bg_guide5{padding-bottom:30px;background:url('https://direct.hi.co.kr/images/common/img_95per.png') no-repeat right bottom}
+.priceInfomationArea .openPopContentArea .tabWrap .tx_guide.bg_guide6{background:url('https://direct.hi.co.kr/images/common/img_92per.png') no-repeat right bottom}
+.priceInfomationArea .openPopContentArea .tabWrap .txtSrc{width:282px;font-size:12px;text-align:right;color:#898989}
+.priceInfomationArea .openPopContentArea .tabWrap .contentTable tr th,
+.priceInfomationArea .openPopContentArea .tabWrap .contentTable tr td{font-size:13px}
+/* 보험료 확인 - 담보선택 내부 탭 /개선2106 */
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList{display:block;position:relative;width:282px}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li{display:block;margin:9px 0 0;border:1px solid #cdcdcd}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li:first-child{margin-top:0}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li a{-webkit-box-sizing:border-box;box-sizing:border-box;padding:8px 8px 8px 40px;width:100%;height:38px;border:0;background-color:#ffffff;letter-spacing:-1px;line-height:21px;text-align:left}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li a span{display:inline-block;height:22px;font-weight:normal;font-size:15px;color:#555555}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li a:before{content:'';display:block;position:absolute;top:8px;left:8px;width:22px;height:22px;border:1px solid #bbb}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li.on{border:1px solid #666666}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li.on a span{font-weight:600}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li.on a:before{border:1px solid #fc843b;background:#fff url('https://direct.hi.co.kr/images/common/img_chk_tab.png') no-repeat center center}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li a .boxGrey{display:inline-block;position:relative;margin-left:46px;padding:0 6px;height:22px;line-height:22px;background-color:#828282;font-weight:normal!important;font-size:13px !important;text-align:center;color:#fff}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li a .boxGrey:before{content:'';display:inline-block;position:absolute;top:5.5px;left:-10px;width:10px;height:11px;background:url('https://direct.hi.co.kr/images/common/arw_left_grey.png') no-repeat 0 0}
+.priceInfomationArea .openPopContentArea .tabWrap .itemSelectArea .itemList.lineOnly li a .boxSky{display:inline-block;margin-left:5px;padding:0 6px;height:22px;line-height:22px;background-color:#009ab1;font-weight:normal !important;font-size:13px !important;text-align:center;color:#fff}
+
+.priceInfomationArea .openPopContentArea .tabWrap .inScrollArea .contentTable tr th,
+.priceInfomationArea .openPopContentArea .tabWrap .inScrollArea .contentTable tr td{padding:8px 0 9px}
+.priceInfomationArea .openPopContentArea .tabWrap .inScrollArea .contentTable,
+.priceInfomationArea .openPopContentArea .tabWrap .txt{max-width:282px}
+
+.priceInfomationWrap .saleArea{ float:right; width:150px;}
+.priceInfomationWrap .saleArea .saleBox{ background:#f5f5f5;padding:14px 15px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.priceInfomationWrap .saleArea .saleBox .title{ font-size:15px; margin-bottom:12px;}
+.priceInfomationWrap .saleArea .itemSelectArea .itemList li{margin:0 0 10px 0; display:block;}
+.priceInfomationWrap .saleArea .itemSelectArea .itemList li:last-child{ margin-bottom:0;}
+.priceInfomationWrap .saleArea .itemSelectArea .itemList li a{ width:120px; height:70px; display:table; padding-top:0;}
+.priceInfomationWrap .saleArea .itemSelectArea .itemList li a span{ display:table-cell; vertical-align:middle; font-size:14px; line-height:20px;transition:padding-top 0.3s;-webkit-transition:padding-top 0.3s}
+.priceInfomationWrap .saleArea .itemSelectArea .itemList li.on a span{ padding-top:14px;}
+.priceInfomationWrap .saleArea .itemSelectArea .itemList li.disabled a span{ background:#f5f5f5;}
+
+  
+
+.priceInfomationWrap .saleArea_add{float:right;width:150px}
+.priceInfomationWrap .saleArea_add .saleBox{margin:-33px 0 0;box-sizing:border-box;}
+.priceInfomationWrap .saleArea_add .saleBox .title{margin-bottom:10px;font-size:15px}
+.priceInfomationWrap .saleArea_add .itemSelectArea{border-top:2px solid #555}
+.priceInfomationWrap .saleArea_add .itemSelectArea .itemList li{margin:5px 0 0; display:block;}
+.priceInfomationWrap .saleArea_add .itemSelectArea .itemList li:last-child{ margin-bottom:0;}
+.priceInfomationWrap .saleArea_add .itemSelectArea .itemList li a{width:150px;height:50px;display:block;padding:8px 0 8px 20px;line-height:16px;text-align:left;font-size:14px;transition:all 0.5s ease}
+.priceInfomationWrap .saleArea_add .itemSelectArea .itemList li.on a{padding-left:26px}
+.priceInfomationWrap .saleArea_add .itemSelectArea .itemList li.disabled a{background:#f5f5f5;}
+.priceInfomationWrap .saleArea_add .itemSelectArea .itemList li.on a:after{ content:''; display:block;position:absolute;left:8px;top:10px;width:14px; height:10px;background:url('https://direct.hi.co.kr/images/common/icon_item_select.png') no-repeat;background-size:14px auto}
+
+/* 보험료확인 - 자동차상해 안내 /2106 */
+.layTipWrap{position:fixed;left:0;right:0;bottom:55px;margin:0 auto;width:1140px;z-index:4}
+.layTipWrap .tipContent{position:relative;margin-left:auto;margin-right:40px;padding:22px 20px 18px 27px;width:453px;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #555;background-color:#ffffff}
+.layTipWrap .tipContent .tipTit{margin-bottom:7px;font-weight:normal;font-size:18px;color:#222}
+.layTipWrap .tipContent .tipTit > em{color:#ff3600}
+.layTipWrap .tipContent .tipTxt{margin-bottom:15px;line-height:1.45em;font-weight:normal;font-size:14px;color:#333;letter-spacing:normal}
+.layTipWrap .tipContent .tipList{margin-bottom:15px;padding:10px 15px 10px 15px;background-color:#fff5e9}
+.layTipWrap .tipContent .tipList li{display:flex;justify-content:space-between;margin-top:6px;line-height:20px;font-weight:normal;font-size:15px;letter-spacing:-1px}
+.layTipWrap .tipContent .tipList li:first-child{margin-top:0}
+.layTipWrap .tipContent .tipList li .boxGrey{display:block;width:35px;height:21px;background-color:#828282;text-align:center;font-size:13px;color:#ffffff}
+.layTipWrap .tipContent .tipList li .boxSky{display:block;width:35px;height:21px;background-color:#009ab1;text-align:center;font-size:13px;color:#ffffff}
+.layTipWrap .tipContent .tipList li .tit{;min-width:80px;color:#292929}
+.layTipWrap .tipContent .tipList li .txt{min-width:170px;color:#333333}
+.layTipWrap .tipContent .tipList li .price{color:#ff6600}
+.layTipWrap .tipContent .btnArea{display:flex;justify-content:center}
+.layTipWrap .tipContent .btnArea a{display:inline-block;margin:0 3px;padding:0 15px;height:28px;line-height:27px;border:1px solid #333;background-color:#fff;text-align:center;color:#333}
+.layTipWrap .tipContent .btnArea a.btnOrg{border:1px solid #ee5a00;color:#ee5a00}
+.layTipWrap .tipContent .btnArea a.btnGrey{border:1px solid #919191;color:#929292}
+.layTipWrap .tipContent a.btnClose{display:block;position:absolute;top:15px;right:15px;width:20px;height:20px;}
+
+/* 갱신 가입 전 보장 점검 /2204 */
+.layJoinInfoWrap{z-index:4;position:fixed;left:0;left:50%;bottom:55px;margin-left:-180px;width:710px;box-sizing:border-box;border:1px solid #048db5;background-color:#fff}
+.layJoinInfoWrap .joinTitArea{padding: 0 25px;background:#047db5;position:relative;line-height:55px;}
+.layJoinInfoWrap .joinTitArea h2{font-size:22px;color:#fff}
+.layJoinInfoWrap .joinInfoContent{display:flex;justify-content:space-between;overflow:hidden;padding:20px 25px 25px 25px;}
+.layJoinInfoWrap .joinInfoContent .infoContent{position:relative;width:50%;letter-spacing:-1px;}
+.layJoinInfoWrap .joinInfoContent .infoContent:nth-child(n+2){margin-left:30px;padding-left:30px}
+.layJoinInfoWrap .joinInfoContent .infoContent:nth-child(n+2):before{content:'';display:block;position:absolute;top:0;left:0;width:1px;height:100%;border-left:1px dashed #dadada}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoTit{margin-bottom:15px;font-weight:normal;font-size:21px;color:#000;line-height:1em}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoTit > em{color:#ff3600}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoTxt{margin-bottom:20px;line-height:1.4em;font-weight:normal;font-size:16px;color:#555;}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoList{background-color:#fff}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoList li{display:flex;justify-content:flex-start;margin-bottom:6px;line-height:22px;font-weight:normal;font-size:15px;letter-spacing:-1px}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoList li .boxGrey{display:block;margin-right:10px;width:68px;height:23px;background-color:#828282;text-align:center;font-size:14px;color:#fff}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoList li .boxSky{display:block;margin-right:10px;width:68px;height:23px;background-color:#009ab1;text-align:center;font-size:14px;color:#fff}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoList li .boxOrg{display:block;margin-right:10px;width:68px;height:23px;background-color:#ee5a00;text-align:center;font-size:14px;color:#fff}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoList li .tit{min-width:80px;color:#000}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoList li .txt{margin-right:10px;width:50%;font-size:15px;color:#333}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoList li .price{width:30%;text-align:right;color:#ec4d0f}
+.layJoinInfoWrap .btnArea{display:flex;justify-content:center;padding-bottom:30px}
+.layJoinInfoWrap .btnArea a{display:inline-block;margin:0 8px;padding:0 25px;min-width:104px;height:45px;box-sizing:border-box;line-height:44px;background-color:#fff;text-align:center;font-size:19px;color:#333}
+.layJoinInfoWrap .btnArea a.btnBlue{background-color:#2180d0;color:#fff}
+.layJoinInfoWrap .btnArea a.btnOrg{background-color:#ee5a00;color:#fff}
+.layJoinInfoWrap .btnArea a.btnGrey{background-color:#919191;color:#fff}
+.layJoinInfoWrap .btnClose{position:absolute;right:30px;top:18px;height:18px;}
+
+/* 갱신 가입 전 보장 점검_1개일떄 221107*/
+.layJoinInfoWrap.one{z-index:4;position:fixed;left:0;left:50%;bottom:55px;margin-left:80px;width:450px;box-sizing:border-box;border:1px solid #048db5;background-color:#fff}
+.layJoinInfoWrap.one .joinTitArea{padding: 0 25px;background:#047db5;position:relative;line-height:55px;}
+.layJoinInfoWrap.one .joinTitArea h2{font-size:22px;color:#fff}
+.layJoinInfoWrap.one .joinInfoContent{display:flex;justify-content:space-between;overflow:hidden;padding:20px 25px 25px 25px;}
+.layJoinInfoWrap.one .joinInfoContent .infoContent{position:relative;width:100%;letter-spacing:-1px;}
+.layJoinInfoWrap .joinInfoContent .infoContent .infoTit{margin-bottom:15px;font-weight:normal;font-size:18px;color:#000;line-height:1em}
+
+
+/* 팝업 - 담보 리스트 /202009 /개선2208 */
+.layerPopWrap .popupContentArea{position:relative;}
+.layerPopWrap .popupContentArea .checkboxList{padding:18px 0 20px;border-top:2px solid #555;border-bottom:1px solid #ddd}
+.layerPopWrap .popupContentArea .checkboxList .checkbox{display:block;position:relative;margin-bottom:10px;letter-spacing:-0.07em}
+.layerPopWrap .popupContentArea .checkboxList .checkbox label{font-size:16px}
+.layerPopWrap .popupContentArea .checkboxList .checkbox .price{position:absolute;right:0;top:0;height:24px;line-height:23px;text-align:right;font-size:16px;} /* 수정 /2208 */
+.layerPopWrap .popupContentArea .checkboxList .checkbox .txt{padding-left:33px;line-height:1.1rem;font-size:14px;color:#7e7e7e}
+.layerPopWrap .popupContentArea .checkboxList .checkbox .fgSky{position:absolute;top:-20px;left:33px;padding:0 6px;height:20px;background-color:#06b1ca;line-height:19px;text-align:center;font-size:15px;color:#fff} /* 추가 /2208 */
+.layerPopWrap .popupContentArea .checkboxList .checkbox:last-child{margin-bottom:0}
+.layerPopWrap .popupContentArea .checkboxList + .checkboxList{border-top:0}
+.layerPopWrap .popupContentArea .checkboxList.bestList{padding:20px 10px 20px}
+.layerPopWrap .popupContentArea .checkboxList.bestList .checkbox{margin:20px 0 40px} /* 추가 /2208 */
+.layerPopWrap .popupContentArea .checkboxList.bestList .checkbox:last-child{margin:20px 0 0} /* 추가 /2208 */
+.layerPopWrap .popupContentArea .helpArea{z-index:5;position:absolute;top:73px;left:50%;width:87.5%;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #ddd;background:#fff;-webkit-box-shadow:0 2px 7px rgba(0,0,0,0.2);box-shadow:0 2px 7px rgba(0,0,0,0.2);-webkit-transform:translate(-50%, -50%;);transform:translate(-50%, 0)}
+.layerPopWrap .popupContentArea .helpArea .btClose{position:absolute;right:15px;top:9px;width:20px;height:19px}
+.layerPopWrap .popupContentArea .helpArea .titArea{padding:0 18px 0 32px;height:37px;line-height:37px;border-bottom:1px solid #eeeeee;background:url('https://direct.hi.co.kr/images/common/btn_help.png') no-repeat 10px center;color:#222}
+.layerPopWrap .popupContentArea .helpArea .txtArea{overflow:auto;padding:15px 18px;max-height:510px;font-size:14px;color:#555;min-height:37px}
+.layerPopWrap .popupContentArea .helpArea .txtArea .item .title{padding-bottom:10px;font-size:15px;color:#047db5;text-decoration:underline}
+.layerPopWrap .popupContentArea .helpArea .txtArea .item .con{margin-bottom:15px}
+
+/* 팝업 - 체크 리스트 /202009 */
+.layerPopWrap .itemSelectArea .itemList.type-rec{}
+.layerPopWrap .itemSelectArea .itemList.type-rec li{display:block;margin:0}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg01 a{background:url('https://direct.hi.co.kr/images/motor/ico_rec01_off.gif') no-repeat 38px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg02 a{background:url('https://direct.hi.co.kr/images/motor/ico_rec02_off.gif') no-repeat 40px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg03 a{background:url('https://direct.hi.co.kr/images/motor/ico_rec03_off.gif') no-repeat 40px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg04 a{background:url('https://direct.hi.co.kr/images/motor/ico_rec04_off.gif') no-repeat 38px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg05 a{background:url('https://direct.hi.co.kr/images/motor/ico_rec05_off.gif') no-repeat 39px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg01.on a{background:url('https://direct.hi.co.kr/images/motor/ico_rec01_on.gif') no-repeat 38px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg02.on a{background:url('https://direct.hi.co.kr/images/motor/ico_rec02_on.gif') no-repeat 40px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg03.on a{background:url('https://direct.hi.co.kr/images/motor/ico_rec03_on.gif') no-repeat 40px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg04.on a{background:url('https://direct.hi.co.kr/images/motor/ico_rec04_on.gif') no-repeat 38px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.bg05.on a{background:url('https://direct.hi.co.kr/images/motor/ico_rec05_on.gif') no-repeat 39px center}
+.layerPopWrap .itemSelectArea .itemList.type-rec li a{width:100%;padding:26px 0 0 105px;height:76px;font-size:16px;text-align:left;letter-spacing:-1px}
+.layerPopWrap .itemSelectArea .itemList.type-rec li.on a:after{left:inherit;right:15px}
+.layerPopWrap .itemSelectArea .itemList.type-rec li a span{display:inline-block;height:24px;line-height:23px;}
+.layerPopWrap .itemSelectArea .itemList.type-rec li+li{margin-top:17px}
+ /* ListScrollArea /202009 */
+.layerPopWrap .popupContentArea .listScrollArea{overflow:auto;max-height:528px;border-top:2px solid #555;border-bottom:1px solid #ddd}
+.layerPopWrap .popupContentArea .listScrollArea .checkboxList{border-top:0}
+.layerPopWrap .popupContentArea .listScrollArea .checkboxList:last-child{border-bottom:0} 
+
+.infoTotalArea{width:100%; overflow:hidden; margin-top:20px; }
+.infoTotalArea .InfoTotal{display:flex;justify-content:space-between;background:#047db5;min-height:84px;overflow:hidden;position:relative;float:left;width:650px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.infoTotalArea .InfoTotal .saleList{ -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; margin:20px 0 20px 20px; position:relative; overflow:hidden;}
+.infoTotalArea .InfoTotal .saleList li{ float:left;margin-top:-4px;margin-left:20px; padding-left:21px; position:relative; color:#ffffff;letter-spacing:-0.05em;min-height:105px;}
+.infoTotalArea .InfoTotal .saleList li:before{ content:''; display:block; width:1px; height:100%; background:#036491; position:absolute; left:0; top:0px;}
+.infoTotalArea .InfoTotal .saleList li:first-child{ margin-left:0; padding-left:0;}
+.infoTotalArea .InfoTotal .saleList li:first-child:before{ display:none;}
+.infoTotalArea .InfoTotal .saleList li .row{ overflow:hidden; width:271px;}
+.infoTotalArea .InfoTotal .saleList li .row.small{ width:80px;}
+.infoTotalArea .InfoTotal .saleList li .row.small .tit{ float:none; width:auto;}
+.infoTotalArea .InfoTotal .saleList li .row.small .con{ float:none; text-align:left;}
+.infoTotalArea .InfoTotal .saleList li .row.topRow{ margin-bottom:10px;}
+.infoTotalArea .InfoTotal .saleList li .row .tit{ float:left;max-width:200px}
+.infoTotalArea .InfoTotal .saleList li .row .con{ float:right; text-align:right;}
+.infoTotalArea .InfoTotal .saleList li .row.topRow{margin-bottom:10px}
+.infoTotalArea .InfoTotal .saleList li .row .tit{float:left;max-width:200px}
+.infoTotalArea .InfoTotal .saleList li .row .con{float:right;text-align:right}
+.infoTotalArea .InfoTotal .saleList li .row .btnHelp{margin:-2px 0 0 8px;background-image:url("https://direct.hi.co.kr/images/common/btn_help_w.png")}
+.infoTotalArea .InfoTotal .saleList li .row strong{color:#ff9933}
+.infoTotalArea .InfoTotal .saleList li .saleListContent{ overflow:hidden;transition:all 0.3s;-webkit-transition:all 0.3s}
+.infoTotalArea .InfoTotal .saleList li .saleListContent.hidden{max-height:80px;}
+.infoTotalArea .InfoTotal .saleList li .saleListContent.open{max-height:170px;}
+.infoTotalArea .InfoTotal .saleList li .btnMore{display:inline-block;background:url("https://direct.hi.co.kr/images/motor/more_icon.png") no-repeat;padding-left:25px;color:#ffffff;line-height:19px;margin-top:5px}
+.infoTotalArea .InfoTotal .totalPay{position:relative;width:218px;text-align:right;background:#003170;height:auto;padding:15px 20px 15px 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.infoTotalArea .InfoTotal .totalPay:after{content:'';display:block;position:absolute;left:0;top:18px;width:0;height:0;border-style:solid;border-width:11px 0 11px 14px;border-color:transparent transparent transparent #047db5}
+.infoTotalArea .InfoTotal .totalPay .txt{font-size:15px;color:#ffffff}
+.infoTotalArea .InfoTotal .totalPay .price{color:#f0db2b;font-size:32px;text-align:right;margin-top:-8px;font-weight:bold}
+.infoTotalArea .InfoTotal .totalPay .price .number{display:inline-block;vertical-align:top}
+.infoTotalArea .InfoTotal .totalPay .price .priceTxt{display:inline-block;vertical-align:top;font-size:19px;color:#f0db2b;margin:15px 0 0 -3px}
+.infoTotalArea .InfoTotal .totalPay .eco{color:#41d9e2;line-height:1.1rem;font-weight:bold;font-size:13px}
+.infoTotalArea .InfoTotal .totalPay .mlgInfo{line-height:1.1rem;font-size:13px;color:#fff} /* 예상환급금 /2104 */
+.infoTotalArea .InfoTotal .totalPay .mlgInfo .tit{display:inline-block;margin-bottom:5px;padding:2px 8px 3px;border:2px solid #ee5a00;font-weight:600;font-size:13px;color:#ee5a00} /* 예상환급금 /2104 */
+.infoTotalArea .InfoTotal .totalPay .mlgInfo .txt{display:block;font-size:14px;color:#41d9e2}
+.infoTotalArea .InfoTotal .totalPay .mlgInfo strong{color:#f0db2b} /* 예상환급금 /2104 */
+
+/* 다이렉트보험료 - Flex /2204 */
+.infoTotalArea.infoLayer{position:relative;overflow:inherit}
+.infoTotalArea.infoLayer:after{content:'';display:block;clear:both}
+.infoTotalArea.infoLayer .totalayer{z-index:5;position:absolute;top:-106px;right:170px;z-index:3;padding:13px 30px;border-radius:10px;border:1px solid #ee5a00;background-color:#fdf7ed;letter-spacing:-1px;line-height:1.4em}
+.infoTotalArea.infoLayer .totalayer:before{content:'';display:block;position:absolute;bottom:-6px;left:50%;margin-left:-6px;width:10px;height:10px;border-right:1px solid #ee5a00;border-bottom:1px solid #ee5a00;transform:rotate(45deg);background-color:#fdf7ed}
+.infoTotalArea.infoLayer .totalayer .tix{margin-bottom:10px;font-size:17px;color:#000}
+.infoTotalArea.infoLayer .totalayer .tix span{flex:none;padding:0;font-size:17px;color:#047db5}
+.infoTotalArea.infoLayer .totalayer .tix em{font-size:17px;color:#ec4d0f}
+.infoTotalArea.infoLayer .totalayer .tix .buDown{display:inline-block;padding-right:23px;background:url('https://direct.hi.co.kr/images/motor/ico_total_down.png') no-repeat right 60%;}
+.infoTotalArea.infoLayer .totalayer .txt{font-size:13px;color:#393939}
+.infoTotalArea.infoLayer .totalayer .btnClose{position:absolute;top:10px;right:10px;display:block;width:13px;height:13px;}
+.infoTotalArea.infoLayer .totalayer .btnClose:before,
+.infoTotalArea.infoLayer .totalayer .btnClose:after{position:absolute;top:-1px;left:6px;content:'';width:1px;height:15px;background-color:#555}
+.infoTotalArea.infoLayer .totalayer .btnClose:before{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
+.infoTotalArea.infoLayer .totalayer .btnClose:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
+
+/* ECO마일리지 환급 보험료 /수정2003 */
+.infoTotalArea .InfoTotal.ecoArea .saleList{margin:0 0 0 20px;padding-top:20px;width:392px;border-top:1px solid #036491}
+.infoTotalArea .InfoTotal.ecoArea .saleList li{float:right;min-height:90px}
+.infoTotalArea .InfoTotal.ecoArea .saleList li .rdoArea{padding-top:5px}
+.infoTotalArea .InfoTotal.ecoArea .totalPay{padding:0 20px}
+.infoTotalArea .InfoTotal.ecoArea .totalPay .ecoRefund{padding-top:20px;border-top:1px solid #047db5}
+.infoTotalArea .InfoTotal.ecoArea .totalPay .ecoRefund p{color:#41d9e2;line-height:1.1rem;font-weight:bold;font-size:13px}
+.infoTotalArea .InfoTotal.ecoArea .totalPay .ecoRefund .price,
+.infoTotalArea .InfoTotal.ecoArea .totalPay .ecoRefund .price .priceTxt{color:#ff9933}
+.infoTotalArea .InfoTotal.ecoArea .totalPay:after{display:none}
+
+/* 예상환급금예측 /2104 */
+.contentTable tr.prdArea{background-color:#fdf5ed}
+.contentTable tr.prdArea td{border-top:2px dashed #ee5a00 !important;border-bottom:2px dashed #ee5a00 !important;border-left:0 !important;border-right:0 !important}
+.contentTable tr.prdArea td:first-child{border-left:2px dashed #ee5a00 !important}
+.contentTable tr.prdArea td:last-child{border-right:2px dashed #ee5a00 !important}
+.contentTable tr.prdArea td.prdBg{position:relative}
+.contentTable tr.prdArea td.prdBg .prdPt{display:block;position:absolute;top:-16px;left:7px;padding:7px 0 13px;width:33px;height:19px;line-height:18px;background:url('https://direct.hi.co.kr/images/common/pt_prd_org.png') no-repeat 0 0;font-weight:normal;font-size:13px;color:#fff;text-align:center}
+
+/* 다수차량할인 총 계산 차량 /1911 */
+.InfoTotal.multiCar .saleList li .row{max-width:220px}
+.InfoTotal.multiCar .saleList li .row.small{max-width:125px}
+.InfoTotal.multiCar .saleList li .totNum{display:flex;align-items:center;box-sizing:border-box;padding:0 9px;height:41px;border-radius:21px;border:1px solid #ffffff;line-height:1.2em;letter-spacing:-1px;}
+.InfoTotal.multiCar .saleList li .totNum .tit{margin-right:10px;font-size:14px;color:#ffffff}
+.InfoTotal.multiCar .saleList li .totNum .con{font-size:18px;color:#ffd181}
+/* 다수차량 심플버전 /1911 */
+.productInfoTable .InfoTotalSmall.multiCar{padding-right:435px}
+.productInfoTable .InfoTotalSmall.multiCar .saleList li{padding-left:90px}
+.productInfoTable .InfoTotalSmall.multiCar .saleList li .totNum{display:flex;align-items:center;letter-spacing:-1px;}
+.productInfoTable .InfoTotalSmall.multiCar .saleList li .totNum .tit{display:flex;margin-right:10px;align-items:center;box-sizing:border-box;padding:0 9px;height:29px;border-radius:15px;border:1px solid #ffffff;color:#ffffff}
+.productInfoTable .InfoTotalSmall.multiCar .saleList li .totNum .con{font-size:26px;color:#ffd181}
+.productInfoTable .InfoTotalSmall.multiCar .totalPay{width:435px}
+
+/* 보험료 결제하기-ECO마일리지 환급 보험료 /1809 */
+.InfoTotalOnly .saleList li.ecoPay{padding:7px 0 7px 21px}
+.InfoTotalOnly .saleList p{line-height:28px}
+.InfoTotalOnly.boxEcoRefund{background:#fff}
+.InfoTotalOnly.boxEcoRefund .radio label{color:#555}
+.InfoTotalOnly.boxEcoRefund strong{color:#ee5a00}
+.InfoTotalOnly strong{color:#ff9933}
+.InfoTotalOnly .noticeArea{display:table-cell;padding:15px;width:45%;vertical-align:middle}
+.InfoTotalOnly .noticeArea p{box-sizing:border-box;border-radius:5px;border:2px solid #ccc;line-height:36px;text-align:center}
+.InfoTotalOnly .noticeArea p strong{color:#555}
+.InfoTotalOnly .btnNotice{display:inline-block;overflow:hidden;margin:-2px 0 0 10px;width:16px;height:16px;background: url("https://direct.hi.co.kr/images/common/btn_help.png") no-repeat;text-indent:-9999px;vertical-align:middle;}
+.iconAlert{padding-left:20px;background:url("https://direct.hi.co.kr/images/common/icon_alert.png") no-repeat left center;}
+
+.infoTotalArea .btnSet{float:right;}
+.infoTotalArea .btnSet .btnSave{ display:block;border:1px solid #dddddd; background:#f5f5f5;height:85px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; text-align:center; padding-top:18px;}
+.infoTotalArea .btnSet .btnSave span{ display:inline-block; background:url("https://direct.hi.co.kr/images/common/icon_save.png") no-repeat center top; padding-top:28px;}
+.infoTotalArea .btnSet .lineBtn{ margin-top:10px;}
+.infoTotalArea .btnSet .lineBtn a{ display:block; float:left;border:1px solid #dddddd; line-height:43px; height:45px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; text-align:center; margin-left:-1px; width:75px;}
+.infoTotalArea .btnSet .lineBtn a:first-child{ margin-left:0; width:76px;}
+.infoTotalArea .btnSet .lineBtn a:only-child{ margin-left:0; width:150px;}
+.infoTotalArea .btnSet .lineBtn a:only-child span{ display:inline-block; background:url("https://direct.hi.co.kr/images/common/icon_mail.png") no-repeat left center; padding-left:22px;}
+.infoTotalArea .btnSet .lineBtn.new a:only-child span{ background:url("https://direct.hi.co.kr/images/common/icon_mail.png") no-repeat left center; }
+.infoTotalArea .btnSet .lineBtn.new a{ border:1px solid #003170; color:#003170; background-color: #eaf3ff;} /* 저장버튼추가220825 */
+
+.cardInfomation{border-top:2px solid #555555; padding-top:20px; margin-top:30px;}
+.cardInfomation .leftArea{ float:left; width:340px;}
+.cardInfomation .leftArea .title{ color:#222222; font-size:17px; margin-top:-5px; margin-bottom:9px;}
+.cardInfomation .rightArea{ float:left; width:480px;}
+.cardInfomation .rightArea .imgTabType .tabList:after{ content:''; display:block;clear:both}
+.cardInfomation .rightArea .imgTabType .tabList li{ float:left; width:160px;}
+.cardInfomation .rightArea .imgTabType .tabList.item1 li{ width:480px;}
+.cardInfomation .rightArea .imgTabType .tabList.item2 li{ width:240px;}
+.cardInfomation .rightArea .imgTabType .tabList.item3 li{ width:160px;}
+.cardInfomation .rightArea .imgTabType .tabList.item4 li{ width:120px;}
+.cardInfomation .rightArea .imgTabType .tabList.item5 li{width:96px; font-size:12px;}
+.cardInfomation .rightArea .imgTabType .tabList.item6 li{width:80px} /* 추가210408 */
+.cardInfomation .rightArea .imgTabType .tabList.item7 li{width:68px} /* 추가210629 */
+.cardInfomation .rightArea .imgTabType .tabList.item7 li:first-child{width:72px;} 
+.cardInfomation .rightArea .imgTabType .tabList li a{ display:block; height:55px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; padding-top:9px; text-align:center; background:#dddddd; border-right:1px solid #cccccc; position:relative;}
+.cardInfomation .rightArea .imgTabType .tabList li:last-child a{ border-right:0;}
+.cardInfomation .rightArea .imgTabType .tabList li.on a{ background:#009ab1; color:#ffffff;}
+.cardInfomation .rightArea .imgTabType .tabList li.on a:after{ content:''; display:block; position:absolute; left:0; right:0; top:55px;width:0; height:0;margin:0 auto;border-style:solid;border-width:7px 7px 0 7px;border-color:#009ab1 transparent transparent transparent }
+.cardInfomation .rightArea .imgTabType .tabList li a .img{ display:block; margin-bottom:1px; line-height:1;}
+.cardInfomation .rightArea .imgTabType .tabList li a .img img{ vertical-align:top;}
+.cardInfomation .rightArea .imgTabType .tabCon{border:1px solid #dddddd; border-top:0;padding:15px 0}
+.cardInfomation .rightArea .imgTabType .tabCon .tabConTable{ display:table;width:100%;height:93px;table-layout:fixed}
+.cardInfomation .rightArea .imgTabType .tabCon .tabConTable .tit{ display:table-cell;width:158px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border-right:1px solid #eeeeee; padding-left:30px; line-height:22px; vertical-align:middle; color:#222222;}
+.cardInfomation .rightArea .imgTabType .tabCon .tabConTable .con{ display:table-cell;padding-left:20px; vertical-align:middle; color:#222222;}
+
+.cardInfomation .rightArea .imgTabType .tabList.item8 li{width:59px;border-top:1px solid #ccc;border-right:1px solid #cccccc;}
+.cardInfomation .rightArea .imgTabType .tabList.item8 li:first-child a{border-left:1px solid #ccc}
+.cardInfomation .rightArea .imgTabType .tabList.item8 li:last-child{width:59px;}
+.cardInfomation .rightArea .imgTabType .tabList.item8 li a{display:block;position:relative;padding-top:8px;height:64px;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;border-right:0;background:#dddddd;transition:all 0.2s ease}
+.cardInfomation .rightArea .imgTabType .tabList.item8 li a .img{margin-bottom:0}
+.cardInfomation .rightArea .imgTabType .tabList.item8 li a .txt{display:block;height:12px;line-height:12px;font-size:12px;color:#434343;vertical-align:top;}
+.cardInfomation .rightArea .imgTabType .tabList.item8 li.on a{background:#009ab1;color:#fff} /* 접근성29번 */
+.cardInfomation .rightArea .imgTabType .tabList.item8 li.on a:after{top:64px;}
+.cardInfomation .rightArea .imgTabType .tabList.item8 li.on a .txt{color:#fff}
+
+/* 예상주행거리 /2106 */
+#rangeYearWrap{display:flex;justify-content:space-between;margin-top:15px;color:#222;letter-spacing:-1px}
+#rangeYearWrap .rangeArea{display:flex;width:650px;min-height:142px;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #c3c3c3}
+#rangeYearWrap .rangeArea .calcRange{position:relative;padding-top:15px;padding-left:12px;width:433px;box-sizing:border-box;background:url('https://direct.hi.co.kr/images/motor/rangeKm_bg_basic.png') no-repeat 16px 80px}
+#rangeYearWrap .rangeArea .calcRange .tx{position:absolute;top:15px;left:24px;display:inline-block;padding:9px 26px;line-height:1.4em;background-color:#fff5e9;font-size:14px;color:#636363;text-align:center;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;transition:all .3s ease}
+#rangeYearWrap .rangeArea .calcRange .tx strong{color:#fb6705}
+#rangeYearWrap .rangeArea .calcRange .tx #rangeKm{display:inline-block}
+/* Range Desigh /2106 */
+#rangeYearWrap .rangeArea .calcRange .rangeBg{position:relative;margin-top:65px;margin-left:4px;padding:13px 0 25px 5px;background:url('https://direct.hi.co.kr/images/motor/rangeKm_bg0.png') no-repeat 0 0;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;transition:all .3s ease}
+
+#rangeYearWrap .rangeArea .calcRange .rangeBg .startAni{position:absolute;top:7px;left:10px}
+#rangeYearWrap .rangeArea .calcRange .rangeBg .startAni span{display:inline-block;margin-left:-10px;width:11px;height:11px;border-bottom:3px solid #047db5;border-right:3px solid #047db5;transform:rotate(-45deg);animation:animate 2s infinite}
+#rangeYearWrap .rangeArea .calcRange .rangeBg .startAni span:nth-child(2){animation-delay:-.2s}
+#rangeYearWrap .rangeArea .calcRange .rangeBg .startAni span:nth-child(3){animation-delay:-.4s}
+@keyframes animate{
+	0%{opacity:0;-webkit-transform:rotate(-45deg) translate(10px, 10px);transform:rotate(-45deg) translate(10px, 10px)}
+	50%{opacity:1}
+	100%{opacity:0;-webkit-transform:rotate(-45deg) translate(30px, 30px);transform:rotate(-45deg) translate(30px, 30px)}
+}
+
+#rangeYearWrap .rangeArea .calcRange .rangeBg.bg1{background:url('https://direct.hi.co.kr/images/motor/rangeKm_bg1.png') no-repeat 0 0}
+#rangeYearWrap .rangeArea .calcRange .rangeBg.bg2{background:url('https://direct.hi.co.kr/images/motor/rangeKm_bg2.png') no-repeat 0 0}
+#rangeYearWrap .rangeArea .calcRange .rangeBg.bg3{background:url('https://direct.hi.co.kr/images/motor/rangeKm_bg3.png') no-repeat 0 0}
+#rangeYearWrap .rangeArea .calcRange .rangeBg.bg4{background:url('https://direct.hi.co.kr/images/motor/rangeKm_bg4.png') no-repeat 0 0}
+#rangeYearWrap .rangeArea .calcRange .rangeBg.bg5{background:url('https://direct.hi.co.kr/images/motor/rangeKm_bg5.png') no-repeat 0 0}
+#rangeYearWrap .rangeArea .calcRange .rangeBg.bg6{background:url('https://direct.hi.co.kr/images/motor/rangeKm_bg6.png') no-repeat 0 0}
+#rangeYearWrap .rangeArea .calcRange #rangeSlider{margin-left:1px;width:379px;height:8px;border-radius:4px !important;border:0;background:none}
+#rangeYearWrap .rangeArea .calcRange #rangeSlider .ui-slider-handle{top:-.6em;border:0;width:25px;height:26px;background:url('https://direct.hi.co.kr/images/motor/rangeKm_point.png') no-repeat 0 0} /* Handle Pointer */
+#rangeYearWrap .rangeArea .calcResult{padding:20px 12px 0 0;width:217px;box-sizing:border-box;text-align:right}
+#rangeYearWrap .rangeArea .calcResult .calcTi{display:block;line-height:1.3em;font-weight:normal;font-size:18px}
+#rangeYearWrap .rangeArea .calcResult .calcTxt{display:block;margin-top:10px;height:30px;line-height:29px;line-height:1.4em;font-weight:normal;font-size:14px;color:#777}
+#rangeYearWrap .rangeArea .calcResult .calcCash{display:block;margin-bottom:12px;height:30px;line-height:29px;font-weight:600;font-size:29px;color:#fb6705}
+#rangeYearWrap .rangeArea .calcResult .calcCash1,
+#rangeYearWrap .rangeArea .calcResult .calcCash2{display:flex;justify-content:space-between;margin-top:1px;padding-left:10px;line-height:1.4em;font-weight:normal;font-size:14px;}
+#rangeYearWrap .rangeArea .calcResult .calcCash1 > p,
+#rangeYearWrap .rangeArea .calcResult .calcCash2 > p{color:#777}
+#rangeYearWrap .rangeArea .calcResult .calcCash1 > strong,
+#rangeYearWrap .rangeArea .calcResult .calcCash2 > strong{color:#047db5 }
+#rangeYearWrap .infoArea{position:relative;padding:20px 0 0;min-height:142px;width:150px;-webkit-box-sizing:border-box;box-sizing:border-box;line-height:1.4em;background-color:#fff7ee;text-align:center;font-size:14px}
+#rangeYearWrap .infoArea strong{color:#fb6705}
+#rangeYearWrap .infoArea .tiImg{position:absolute;top:-9px;left:-10px}
+#rangeYearWrap .infoArea .tiImg img{vertical-align:top}
+
+/*가입완료*/
+.motorEndbox{position:relative;padding:15px 20px 20px 20px;border-bottom: 1px solid #dddddd;margin-bottom: 15px;border-top: 2px solid #555555; background:#f5f5f5; display:none; margin-top:10px;}
+.motorEndbox .title{ overflow:hidden;padding:12px 0;}
+.motorEndbox .title .tit{ float:left;font-size:17px; line-height:24px; color:#222222; margin-top:-1px;letter-spacing:-0.04em;}
+.motorEndbox .title .tit .txt{ color:#777; font-size:14px; line-height:22px; display:block;margin:5px 0 4px 0}
+.motorEndbox .btnClose{position:absolute;right:20px !important;top:20px !important;}
+.motorEndbox .morpicArea.bline{border-bottom: 1px solid #e5e5e5;padding: 0 0 30px 0 !important;margin:0 20px 15px 20px;}
+.motorEndbox .morpicArea.bline.pb20{ padding-bottom:20px !important;}
+.motorEndbox .morpicArea .mopic.one{display:table;width:100%;}
+.motorEndbox .morpicArea .mopic.one > li{display:table-cell;vertical-align:middle;text-align:center;float:none}
+.motorEndbox .morpicArea .mopic.one > li:first-child{width:390px;}
+.motorEndbox .morpicArea .mopic.one > li:last-child{width:390px;}
+.motorEndbox .morpicArea .mopic.one > li:last-child .btnAreaWrap{text-align:right;}
+.motorEndbox .mopic{overflow:hidden;}
+.motorEndbox .mopic.line{ border-bottom:1px solid #e5e5e5; padding-bottom:20px; margin-bottom:15px;}
+.motorEndbox .mopic li{position:relative;float:left;text-align:center;width:50%;}
+.motorEndbox .mopic li:before{position:absolute;left:0;top:0;content:'';width:1px;height:100%;background:#e5e5e5;}
+.motorEndbox .mopic li:first-child:before{display:none;}
+.motorEndbox .mopic .img{margin-bottom:10px; width:260px; height:170px;}
+.motorEndbox .mopic .txtContent{ font-size:15px; margin-bottom:5px;}
+.motorEndbox .mopic .txtContent h4{ margin-bottom:0;}
+.motorEndbox .mopic.rightTxt{}
+.motorEndbox .mopic.rightTxt li{ width:100%; position:relative; height:170px; padding-left:390px; text-align:left;}
+.motorEndbox .mopic.rightTxt .img{margin-bottom:10px; width:260px; height:170px; position:absolute; left:55px; top:0;}
+.motorEndbox .mopic.rightTxt .txtContent{ font-size:15px; margin-top:32px;}
+.motorEndbox .mopic.rightTxt .txtContent h4{ margin-bottom:0;}
+.motorEndbox .mopic.rightTxt .btnAreaWrap{ margin-bottom:0; width:auto;}
+.motorEndbox .optionArea{ width:650px;margin:0 auto -5px auto; overflow:hidden; padding-top:30px;}
+.motorEndbox .optionArea .inputBase{ float:left;}
+.motorEndbox .optionArea .txtArea{ margin:5px 0 0 20px; color:#777777; float:left;}
+.motorEndbox.motorbox{display:block;padding:0;}
+.motorEndbox.motorbox .title{padding:17px 0;background:#fff;border-bottom: 1px solid #dddddd;}
+.motorEndbox.motorbox .morpicArea{padding: 0 20px 30px 20px;}
+.motorEndbox.motorbox .listStyle{padding: 0 20px 15px 20px;}
+
+.infoTableWrap .title.pt10{padding-top:10px;}
+.infoTableWrap.end .infoTable.pb5{padding-bottom:5px;}
+
+/*170920동일증권설정*/
+.insurance_policyWrap{border-top:2px solid #555555;}
+.insurance_policyWrap:after{ content:''; display:block;clear:both}
+.insurance_policyWrap .titleArea{ font-size:17px;padding:15px 0}
+.insurance_policyWrap .insurance_policyBox{width:100%;margin-bottom:20px;padding:0 19px;background:#f5f5f5;border:1px solid #e5e5e5;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.insurance_policyWrap .insurance_policyBox .set{width:100%;display:table;height:70px;padding:19px 0;border-bottom:1px solid #e5e5e5;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.insurance_policyWrap .insurance_policyBox .set:last-child{ border-bottom:0;}
+.insurance_policyWrap .insurance_policyBox .car_number{display:table-cell;width:120px;vertical-align:middle;}
+.insurance_policyWrap .insurance_policyBox .insurance_date{display:table-cell;vertical-align:middle;border-left: 1px solid #e5e5e5; padding-left:20px;}
+.insurance_policyWrap .insurance_policyBox .extra_grade{display:table-cell;width:110px;padding-left:55px;}
+
+.insurance_policyBox .car_number span{display:block;text-align:center;font-size:17px;width:99px;}
+.insurance_policyBox .car_number .plancar{background:#ee5a00;height:26px;color:#fff;font-size:15px;line-height:26px;margin-bottom:3px}
+.insurance_policyBox .insurance_date .insurance_barbox{float:left;height:70px;padding-left:70px;background:url("https://direct.hi.co.kr/images/motor/icon_car.png") no-repeat left 23px; position:relative;}
+.insurance_policyBox .insurance_date .insurance_barbox .same{display:block; color:#777; position:absolute; left:-1px; top:51px; font-size:14px;}
+.insurance_policyBox .insurance_date .insurance_barbox .date{display:block;margin-bottom:5px;color:#047db5;text-align:left;}
+.insurance_policyBox .insurance_date .insurance_barbox .process_box{position:relative;width:300px;height:20px;}
+.insurance_policyBox .insurance_date .insurance_barbox .process_box .ing{position:absolute;height:100%;background:#047db5;text-indent:-9999px;transition:all 0.3s;-webkit-transition:all 0.3s}
+.insurance_policyBox .insurance_date .insurance_barbox .process_start {margin-top:4px;overflow:hidden}
+.insurance_policyBox .insurance_date .insurance_barbox .process_start span{color:#777;font-size:15px;}
+.insurance_policyBox .insurance_date .insurance_barbox .process_start span:first-child{float:left;}
+.insurance_policyBox .insurance_date .insurance_barbox .process_start span:last-child{float:right;}
+
+.insurance_policyBox .extra_grade p{width:110px;height:58px;padding-top:12px;background:#fff;color:#222;font-size:15px;text-align:center;}
+
+.insurance_policyWrap .listStyle{margin-top:-3px;}
+.personSameCon{display:none;}
+.personSameCon .boxArea{border-bottom:1px solid #dddddd; border-top:1px solid #dddddd; background:#f5f5f5; margin-bottom:10px;padding:20px;}
+.personSameCon .boxArea2{margin-bottom:10px;padding:20px 0;border-bottom:1px solid #dddddd;border-top:1px solid #dddddd;background:#ffffff;} /* 추가 /2004 */
+.personSameCon .personType{ display:none;}
+.personSameCon .personType.on{ display:block;}
+
+
+
+/* 청약내용확인 */
+.linelistBar{overflow:hidden;}
+.linelistBar li{position:relative;float:left;padding:0 20px 0 21px;}
+.linelistBar li:first-child{padding-left:0;}
+.linelistBar li:before{position:absolute;left:0;top:50%;margin-top:-7px;width:1px;height:14px;background:#eeeeee;content:'';}
+.linelistBar li:first-child:before{display:none;}
+
+.motorEndbox .mopic.noline li:before{display:none;}
+
+.cardSalePointCon{border-top:1px solid #dddddd; background:#f5f5f5; padding:20px; display:none;}
+.cardSalePointCon > .title{ font-size:15px; margin-bottom:10px;padding:0; margin-top:-5px;}
+
+/* cardSaleInfoWrap */
+.cardSaleInfoWrap{}
+.cardSaleInfo{ overflow:hidden; position:relative; display:none;padding:0 0 30px 0; border-bottom:1px solid #dddddd; margin-bottom:30px;}
+.cardSaleInfo:after{ content:''; display:block; width:1px;height:100%; position:absolute; left:50%; top:0; background:#eeeeee;}
+.cardSaleInfo .leftArea{ float:left; width:410px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; padding-right:20px;}
+.cardSaleInfo .leftArea .title{ font-size:17px; color:#222222; margin-top:-5px; line-height:25px;}
+.cardSaleInfo .leftArea .txt{ font-size:15px;padding:5px 0 0 0}
+.cardSaleInfo .leftArea .listStyle{ margin-top:9px;}
+.cardSaleInfo .leftArea .listStyle:first-child{ margin-top:-5px;}
+.cardSaleInfo .leftArea .cardList{ padding:15px 0 4px 0;}
+.cardSaleInfo .leftArea .cardList li{ margin-bottom:10px;}
+.cardSaleInfo .leftArea .cardList li:last-child{ margin-bottom:0;}
+.cardSaleInfo .leftArea .cardList li.pointSearch{ background:#f5f5f5; border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;padding:9px 33px;}
+.cardSaleInfo .leftArea .cardList li.pointSearch .point{ display:inline-block; margin-left:10px; font-size:13px; color:#777777;}
+.cardSaleInfo .rightArea{ float:left; padding-left:30px; width:360px;}
+.cardSaleInfo .rightArea .cardImg{ margin-bottom:13px; position:relative;}
+.cardSaleInfo .rightArea .cardImg .customer{ position:absolute; right:0;top:50%;margin-top:-13px; color:#777777;}
+.cardSaleInfo .rightArea .listStyle{ margin-top:9px;}
+
+
+/*추가할인특약*/
+.specialWrap{overflow:hidden;margin-left:-20px;margin-top:-20px;}
+.specialBox{float:left;position:relative;width:400px;margin:20px 0 0 20px;height:290px;padding:24px 19px 19px;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;border:1px solid #ddd;}
+.specialBox dl {margin-bottom:16px;}
+.specialBox dl dt{margin-bottom:5px;font-size:17px;color:#222;}
+.specialBox dl dd{font-size:15px}
+.specialBox.child:after{ content:''; display:block; position:absolute; right:31px; bottom:19px; background:url("https://direct.hi.co.kr/images/motor/img_special_discount01.png") no-repeat; width:101px; height:99px;}
+.specialBox.milage:after{ content:''; display:block; position:absolute; right:19px; bottom:19px; background:url("https://direct.hi.co.kr/images/motor/img_special_discount02.png") no-repeat; width:143px; height:90px;}
+.specialBox.milage.mBg2:after{background-image:url("https://direct.hi.co.kr/images/motor/img_special_discount02_1.png")} /* 추가 /2103 */
+.specialBox.accident:after{ content:''; display:block; position:absolute; right:29px; bottom:19px; background:url("https://direct.hi.co.kr/images/motor/img_special_discount03.png") no-repeat; width:108px; height:90px;}
+.specialBox.green:after{ content:''; display:block; position:absolute; right:19px; bottom:19px; background:url("https://direct.hi.co.kr/images/motor/img_special_discount04.png") no-repeat; width:149px; height:90px;}
+.specialBox.lineOut:after{ content:''; display:block; position:absolute; right:0px; bottom:0px; background:url("https://direct.hi.co.kr/images/motor/img_special_discount05.png") no-repeat; width:161px; height:122px;}
+.specialBox.traffic:after{ content:''; display:block; position:absolute; right:0px; bottom:0px; background:url("https://direct.hi.co.kr/images/motor/img_special_discount06.png") no-repeat; width:161px; height:122px;}
+.specialBox.handicap:after{ content:''; display:block; position:absolute; right:0px; bottom:0px; background:url("https://direct.hi.co.kr/images/motor/img_special_discount07.png") no-repeat; width:161px; height:122px;}
+.specialBox.safety:after{content:'';display:block;position:absolute;right:16px;bottom:19px;background:url('https://direct.hi.co.kr/images/motor/img_special_discount08.png') no-repeat;width:142px;height:90px} /* 추가1902 */
+.specialBox.safety2:after{content:'';display:block;position:absolute;right:16px;bottom:19px;background:url('https://direct.hi.co.kr/images/motor/img_special_discount08.png') no-repeat;width:142px;height:90px} /* 추가1902 */
+.specialBox.forwardCollision:after{ content:''; display:block; position:absolute; right:19px; bottom:19px; background:url('https://direct.hi.co.kr/images/motor/img_special_discount10.png') no-repeat; width:150px; height:110px;} /* 전방충돌특약200504 */
+/* 추가할인 특약 /1911 */
+.contentWrap > .contentArea .topTitleArea.loadTop{margin-bottom:20px;padding-top:60px;}
+.topTitleArea.loadTop .tit{text-align:center;font-size:31px}
+.topTitleArea.loadTop .loadGh{position:relative;overflow:hidden;padding-top:140px;background:url('https://direct.hi.co.kr/images/motor/bg_loadCar.jpg') no-repeat 0 0}
+.topTitleArea.loadTop .loadGh .ghBar{position:absolute;bottom:0;left:0;width:0;height:35px;background:#047db5;transition:all ease}
+.topTitleArea.loadTop .loadGh ul{position:relative;display:flex;justify-content:space-between;height:35px;border:1px solid #047db5;box-sizing:border-box}
+.topTitleArea.loadTop .loadGh ul li{overflow:hidden;width:25%;height:33px;line-height:33px;box-sizing:border-box;border-left:1px solid #047db5;text-align:center;font-size:18px;color:#047db5;}
+.topTitleArea.loadTop .loadGh ul li:first-child{border-left:0}
+.topTitleArea.loadTop .loadGh .ghPoint{position:absolute;bottom:35px;left:0;margin-left:-20px;transition:all ease}
+
+/* 보험료계산 로딩 화면 /1912 */
+.loadWrap{display:flex;flex-wrap:wrap;overflow:hidden;padding-bottom:20px;height:463px;box-sizing:border-box;border-top:2px solid #555555;border-bottom:1px solid #dddddd;background-color:#f5f5f5}
+.loadInfoBox{position:relative;margin:20px 0 0 20px;padding:22px;width:380px;height:200px;box-sizing:border-box;border:1px solid #ee5a00;background-color:#ffffff}
+.loadInfoBox:before{z-index:3;content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.6) url('https://direct.hi.co.kr/images/motor/ani_loading.gif') no-repeat center center;background-size:18px auto;opacity:1;transition:0.5s all ease}
+.loadInfoBox.on:before{opacity:0}
+.loadInfoBox dl{margin-bottom:16px;}
+.loadInfoBox dl dt{margin-bottom:5px;font-size:18px;color:#222222;}
+.loadInfoBox dl dd{font-size:15px}
+.loadInfoBox:after{content:'';display:block;position:absolute;right:22px;bottom:22px;height:63px;}
+.loadInfoBox.infoCar:after{background:url('https://direct.hi.co.kr/images/motor/img_info_simple01.png') no-repeat;width:112px;}
+.loadInfoBox.infoDate:after{background:url('https://direct.hi.co.kr/images/motor/img_info_simple02.png') no-repeat;width:74px;}
+.loadInfoBox.infoDriver:after{background:url('https://direct.hi.co.kr/images/motor/img_info_simple03.png') no-repeat;width:95px;}
+.loadInfoBox.infoSpecial:after{background:url('https://direct.hi.co.kr/images/motor/img_info_simple04.png') no-repeat;width:79px;}
+
+
+/*법인용 자동차보험*/
+.itemSelectArea .itemList.item6{margin:-5px; width:auto}
+.itemSelectArea .itemList.item6:after{ content:''; display:block;clear:both}
+.itemSelectArea .itemList.item6 li{width:266px;height:70px;margin:5px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;float:left;}
+.itemSelectArea .itemList.item6 li a{ width:100%;padding-top:0;height:70px;font-size:15px;display:table;}
+.itemSelectArea .itemList.item6 li  span{vertical-align:middle;display:table-cell;line-height:20px;}
+
+.chargeArea .tit{margin-top:18px;margin-bottom:3px;color:#222;font-size:15px;}
+.listStyle.line > li{color:#555;}
+.listStyle.line > li:before{ display:block; content:''; width:5px; height:1px; background:#555555; position:absolute; left:0; top:11px;}
+.inputTable .title.inputTitle02{padding:17px 0 16px 0}
+
+.priceInfomationWrap.companyPriceInfo .lineTabWrap{width:100%;float:none;}
+.priceInfomationWrap.companyPriceInfo .lineTabWrap .lineTabList.item3 li{ float:left; width:274px;}
+.priceInfomationWrap.companyPriceInfo .lineTabWrap .lineTabList.item3 li:first-child{ width:275px;}
+
+.companyPriceArea.priceInfomationArea.openPop .rowItem .list{width:432px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea{width:388px; }
+.companyPriceArea.priceInfomationArea .openPopContentArea .inScrollArea .selectArea{width:350px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .inScrollArea .selectArea .row .radioArea{ width:224px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .inScrollArea .selectKind{ width:344px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .inScrollArea .listStyle{ width:344px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .inScrollArea .topTxt{ margin:10px 0 0 0;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .inScrollArea .topTxt .listStyle{ width:auto;padding-bottom:10px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .inScrollArea .shareInputWrap{ width:344px;}
+
+.companyPriceArea.priceInfomationArea .openPopContentArea .textTab li:nth-child(1){ width:77px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .textTab li:nth-child(2){ width:77px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .textTab li:nth-child(3){ width:77px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .textTab li:nth-child(4){ width:98px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .textTab li:nth-child(5){ width:57px;}
+
+.companyPriceArea.priceInfomationArea .openPopContentArea .etcCon{ width:319px;}
+.companyPriceArea.priceInfomationArea .openPopContentArea .btnClose{right:19px;}
+
+.companyTotalpay{overflow:hidden}
+.companyTotalpay .InfoTotal{float:left;width:650px;padding-right:0;}
+.companyTotalpay .btnSet02{margin-top:20px;}
+.companyTotalpay .btnSet02 .btnSave02{ display:block;border:1px solid #dddddd; background:#f5f5f5;height:70px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; text-align:center; padding-top:10px;}
+.companyTotalpay .btnSet02 .btnSave02 span{ display:inline-block; background:url("https://direct.hi.co.kr/images/common/icon_save.png") no-repeat center top; padding-top:28px;}
+.companyTotalpay  .saleArea .btnSet02 .lineBtn{ margin-top:10px;}
+.companyTotalpay  .saleArea .btnSet02 .lineBtn a{ display:block; float:left;border:1px solid #dddddd; line-height:38px; height:40px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; text-align:center; margin-left:-1px; width:75px;}
+.companyTotalpay  .saleArea .btnSet02 .lineBtn a:first-child{ margin-left:0; width:76px;}
+
+.companyTotalpay .InfoTotal .saleList li{min-height:84px;}
+
+.inputTable.companyPerson .title .tit{float:none;font-size:17px;}
+.inputTable.companyPerson .same{margin-top:13px;}
+.inputTable.companyPerson .same .radio{margin-right:20px;}
+
+
+.carMain.connected{background:#08060b url("https://direct.hi.co.kr/images/motor/main_bg_connectedCar.jpg") no-repeat center top}
+.carMain.connected .logo_square{position:absolute;top:277px;left:50%;margin-left:-900px;box-sizing:border-box}
+.carMain.connected .logo_square:after{content:'';display:block;clear:both}
+.carMain.connected .logo_square li{float:left;padding:12px;background:rgba(0%,0%,0%,0.5);}
+.carMain.connected .logo_square li+li{margin-left:21px}
+.carMain.connected .fixedBannerArea.infoArea{margin-left:-900px;padding:20px;width:620px;box-sizing:border-box;background:rgba(0%,0%,0%,0.5)}
+.carMain.connected .fixedBannerArea.infoArea .tit{margin-bottom:5px;font-size:18px;color:#f0db2b}
+.carMain.connected .fixedBannerArea.infoArea .list:after{content:'';display:block;clear:both}
+.carMain.connected .fixedBannerArea.infoArea .list li{margin-bottom:2px;padding-left:12px;background:url("https://direct.hi.co.kr/images/common/bu_circle_yellow.png") no-repeat 0 10px;font-size:15px;color:#bebebe}
+.carMain.connected .fixedBannerArea.infoArea .notice{padding-left:24px;background:url("https://direct.hi.co.kr/images/common/icon_exmark_orange.png") no-repeat 0 1px;line-height:18px;font-size:12px;color:#bebebe}
+.carMain.connected .fixedBannerArea.infoArea .infoCt{padding-left:10px}
+.carMain.connected .fixedBannerArea.infoArea .infoCt.undline{padding-bottom:15px}
+
+/* (carMain-개인)(carComMain-법인)랜딩화면 /추가1808 */
+/* 개인용산출입력정보화면수상추가190425 */
+.carMain .productMainWrap .logo,
+.carComMain .productMainWrap .logo{top:60px}
+.carComMain .productMainWrap .mainTitle{top:110px}
+.carMain .productMainWrap .mainTitle .awardBrand{margin-top:47px; background:url('https://direct.hi.co.kr/images/motor/img_logoBrand1.png') no-repeat; padding-left:80px; font-size:19px; line-height:22px; color:#222222; height:72px;}
+.carMain .productMainWrap .mainTitle .tit,
+.carComMain .productMainWrap .mainTitle .tit{font-size:44px;line-height:1.2}
+.carMain .productMainWrap .mainTitle .txt,
+.carComMain .productMainWrap .mainTitle .txt{font-size:28px;line-height:1.2}
+.carMain .productMainWrap .mainTitle .txts,
+.carComMain .productMainWrap .mainTitle .txts{font-size:22px}
+.carMain .fixedBannerArea{margin-left:-880px;padding:0;background:none}
+.carComMain .fixedBannerArea{margin-left:-900px;padding:0;background:none}
+.carMain .fixedBannerArea .tit,
+.carComMain .fixedBannerArea .tit{margin-bottom:15px;font-size:22px;color:#fff;text-align:center}
+.carComMain .fixedBannerArea .bannerArea{display:flex;justify-content:space-between}
+.carComMain .fixedBannerArea .bannerArea img{vertical-align:top}
+.carMain .fixedBannerArea .bannerArea{padding:20px;width:620px;background:rgba(0%,0%,0%,0.6);box-sizing:border-box}
+.carMain .fixedBannerArea .bannerArea li{width:155px;vertical-align:top;border-right:0}
+ .carMain .fixedBannerArea .bannerArea li:after{display:none}
+.carMain .fixedBannerArea .bannerArea.motor li > div:nth-child(3){margin-top:15px;}
+.carMain .fixedBannerArea .infoArea{margin:1px -20px 0;padding-bottom:15px;width:620px;background:rgba(0%,0%,0%,0.6);box-sizing:border-box;text-align:center} /* 수정 /1912 */
+.carMain .fixedBannerArea .infoArea li.fz15{width:100%;color:#fff}
+.carMain .fixedBannerArea .infoArea li.fz15 span.icon.clockmark{background-position:left 4px}
+.carMain .fixedBannerArea .infoArea .btInfo{position:absolute;top:0;left:450px;display:inline-block;padding:0 10px;height:23px;font-size:15px;line-height:23px;background:#008194;color:#fff}
+.carMain .fixedBannerArea .infopopup{margin-top:0;padding-left:34px;width:auto;border-top:0;text-align:left}
+.carMain .fixedBannerArea .infopopup+.infopopup{padding-top:12px}
+.carComMain .fixedBannerArea .infopopup li{height:23px;line-height:23px}
+.carMain .fixedBannerArea .infopopup li .icon,
+.carComMain .fixedBannerArea .infopopup li .icon{background-position:left 4px}
+.carMain .fixedBannerArea li .titleArea{padding-bottom:5px;height:auto}
+.carMain .fixedBannerArea li .titleArea .inner{vertical-align:top}
+
+.carMain.carSimple{background:#535052 url('https://direct.hi.co.kr/images/motor/main_bg_simple.jpg') no-repeat center top;}
+.carMain.carSimple .productMainWrap{background:none}
+.carMain.carSimple .productMainWrap .mainTitle .tit{margin:26px 0 38px;line-height:3.4rem;font-size:48px}
+.carMain.carSimple .productMainWrap .mainTitle .txt{font-size:30px}
+.carMain.carSimple .productMainWrap .mainTitle .txt2{line-height:1.9rem;font-size:22px;color:#222222}
+.carMain.carSimple .fixedBannerArea .bannerArea{margin-bottom:86px;padding:0;background:none} 
+.carMain.carSimple .fixedBannerArea .bannerArea ul{display:flex;height:auto;}
+.carMain.carSimple .fixedBannerArea .bannerArea ul li{display:flex;align-items:flex-start;position:relative;margin-right:45px;padding:0;width:142px;height:142px;box-sizing:border-box;border-radius:50%;border:1px solid #221f1f;box-shadow:0 1px 10px 0 rgba(0,0,0,0.6);background:rgba(0%,0%,0%,0.5)}
+.carMain.carSimple .fixedBannerArea .bannerArea ul li .titleArea{margin-top:26px;padding:0}
+.carMain.carSimple .fixedBannerArea .bannerArea ul li .titleArea .inner{padding-top:45px;background:url('https://direct.hi.co.kr/images/motor/ic_carSimple.png') no-repeat;background-position:center -2px;line-height:1.5rem;font-size:20px}
+.carMain.carSimple .fixedBannerArea .bannerArea ul li+li .titleArea .inner{background-position:center -130px}
+.carMain.carSimple .fixedBannerArea .bannerArea ul li:last-child .titleArea .inner{background-position:center -260px}
+.carMain.carSimple .fixedBannerArea .bannerArea ul li:after{content:'';display:block;position:absolute;top:55px;right:-35px;width:20px;height:30px;background:url('https://direct.hi.co.kr/images/motor/ic_arr_carSimple.png') no-repeat 0 0;}
+.carMain.carSimple .fixedBannerArea .bannerArea ul li:last-child:after{display:none}
+
+/** 고객체험기 영역 /1906 **/
+.carMain .fixedBannerArea .csReArea{margin:0 -20px;padding:0 30px 13px;width:560px;background:rgba(0,0,0,0.6)} /* 수정 /1912 */
+.carMain .fixedBannerArea .csReArea dl{display:flex;justify-content:space-between;overflow:hidden;padding:4px 16px 5px 25px;height:21px;border-radius:15px;background:rgba(0,0,0,0.5)}
+.carMain .fixedBannerArea .csReArea dl dt{width:90px;height:21px;line-height:21px;letter-spacing:0;color:#ffbb77}
+.carMain .fixedBannerArea .csReArea dl dd{overflow:hidden;height:21px;line-height:21px;font-size:13px;color:#ffffff}
+.carMain .fixedBannerArea .csReArea dl dd.reUp{width:19px;line-height:18px;text-align:center}
+.carMain .fixedBannerArea .csReArea dl dd.reUp a{display:inline-block;margin-top:1px;padding:6px 0;width:17px;height:7px}
+.carMain .fixedBannerArea .csReArea dl dd.reUp a img{vertical-align:top}
+.carMain .fixedBannerArea .csReArea dl dd.reContent,
+.carMain .fixedBannerArea .csReArea dl dd.reContent .reRol{width:410px}
+.carMain .fixedBannerArea .csReArea dl dd.reContent .reRol li span{display:block;height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} /* 말줄임 */
+.carMain .fixedBannerArea .csReArea dl dd.reContent .reRol li span.reTxt{width:310px;}
+.carMain .fixedBannerArea .csReArea dl dd.reContent .reRol li span.reName{width:100px;text-align:center}
+
+/** 고객체험기 영역 /개선 2109 **/
+.carMain .productImg{position:relative}
+.carMain .productImg .csReArea{position:absolute;bottom:25px;padding:0 25px;width:650px}
+.carMain .productImg .csReArea dl{display:flex;justify-content:space-between;overflow:hidden;padding:9px 16px 10px 25px;height:21px;border-radius:20px;background:rgba(0,0,0,0.5)}
+.carMain .productImg .csReArea dl dt{width:90px;height:21px;line-height:21px;letter-spacing:0;font-size:15px;color:#fce202}
+.carMain .productImg .csReArea dl dd{height:21px;line-height:21px;font-size:15px;color:#ffffff}
+.carMain .productImg .csReArea dl dd.reUp{width:19px;line-height:18px;text-align:center}
+.carMain .productImg .csReArea dl dd.reUp a{display:inline-block;margin-top:1px;width:21px;height:21px}
+.carMain .productImg .csReArea dl dd.reUp a img{vertical-align:top}
+.carMain .productImg .csReArea dl dd.reContent,
+.carMain .productImg .csReArea dl dd.reContent .reRol{width:470px}
+.carMain .productImg .csReArea dl dd.reContent .reRol li span{display:block;height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} /* 말줄임 */
+.carMain .productImg .csReArea dl dd.reContent .reRol li span.reTxt{width:350px;}
+.carMain .productImg .csReArea dl dd.reContent .reRol li span.reName{margin-left:20px;width:100px;text-align:center}
+/* Text Slider CSS3 Transition /1907 */
+.reRol{position:relative;overflow:visible}
+.reRol li.vSlide{display:flex;position:absolute;-webkit-transform:translateY(60px);-ms-transform:translateY(60px);transform:translateY(60px);}
+.reRol li.vSlideIn{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);-webkit-transition:0.4s;transition:0.4s;} /* 롤링 In 시간 */
+.reRol li.vSildeOut{-webkit-transform:translateY(-60px);-ms-transform:translateY(-60px);transform:translateY(-60px);-webkit-transition:0.4s;transition:0.4s;} /* 롤링 Out 시간 */
+/* 고객체험기 리스트 /개선 2109 */
+#csReList{z-index:5;position:absolute;left:0px;bottom:-25px;overflow:hidden;width:700px;height:0;background-color:#ffffff;opacity:0}
+#csReList .topArea{position:relative;padding:32px 0 0 40px;height:191px;-webkit-box-sizing:border-box;box-sizing:border-box;background:#ee5a00 url('https://direct.hi.co.kr/images/motor/bg_csReList.jpg') no-repeat right 0} /* 수정 /2110 */
+#csReList .topArea.bg01{background-image:url('https://direct.hi.co.kr/images/motor/bg_csReList2109.jpg')} /* 추가 /2110 */
+#csReList .topArea h2{margin-bottom:15px;font-size:38px;line-height:1em;color:#ffffff}
+#csReList .topArea .topTxt{line-height:1.5rem;font-size:17px;color:#ffffff}
+#csReList .topArea .csBn{position:absolute;top:25px;right:61px} /* 추가 /2110 */
+#csReList .reList{position:relative;padding:36px 40px 30px}
+#csReList .reList ul{overflow-y:scroll;padding:0 20px 0 4px;height:418px}
+#csReList .reList ul li{margin-top:10px;padding:11px 12px 12px;min-height:39px;border:1px solid #dedede;background-color:#f8f8f8}
+#csReList .reList ul li:first-child{margin-top:0}
+#csReList .reList ul li>p{overflow:hidden;padding-right:65px;min-height:23px;font-size:15px;color:#242424;line-height:1.3rem}
+#csReList .reList ul li div{display:flex;justify-content:flex-end;align-items:flex-end;height:18px}
+#csReList .reList ul li div p{height:17px;line-height:17px;color:#606060}
+#csReList .reList ul li div p.reDate{position:relative;padding-left:16px}
+#csReList .reList ul li div p.reDate:before{content:'';display:block;position:absolute;left:8px;top:3px;width:1px;height:12px;border-left:1px solid #ee5a00;}
+#csReList .btArea{text-align:center}
+#csReList .btArea a{display:inline-block;margin:0 auto;padding:0 11px 1px 28px;height:32px;line-height:33px;border:1px solid #cccccc;background:#ffffff url('https://direct.hi.co.kr/images/motor/bu_plus_blue.gif') no-repeat 9px center;font-size:15px;color:#555555}
+#csReList .btnCloseRe{position:absolute;top:22px;right:24px;width:19px;height:18px;transform:rotateZ(0deg);transition:0.6s all ease-in}
+#csReList .btnCloseRe.on{transform:rotateZ(450deg);transition:0.8s all ease-out}
+
+/* Icon */
+.f_skyBlue{color:#35d8f0}
+.f_yellow{color:#f0db2b}
+.iconNotice{padding-left:20px;background:url("https://direct.hi.co.kr/images/common/icon_alert.png") no-repeat left 5px}
+
+
+.specialDataArea{padding-top:20px}
+.specialDataArea > li{padding:40px 0 25px 0;text-align:left;border-bottom:1px solid #eeeeee}
+.specialDataArea > li:after{content:'';display:block;clear:both}
+.specialDataArea > li:first-child{padding-top:0}
+.specialDataArea > li .imgBox{float:left;padding:0 14px 0 0;width:234px}
+.specialDataArea > li .txtBox{float:left;width:380px}
+.specialDataArea > li .listStyle > li{font-size:15px;letter-spacing:-1px}
+.specialDataArea .pointBoxOrg{display:inline-block;margin-top:-1px;padding:0 10px;height:20px;line-height:20px;border-radius:12px;background:#ee5a00;font-size:14px;color:#fff;letter-spacing:-1px}
+
+
+.carMain.foreignCar{background:#000 url("https://direct.hi.co.kr/images/motor/main_bg_foreignCar.jpg") no-repeat center top}
+.carMain.foreignCar .productMainWrap .mainTitle .tit{font-size:52px}
+.carMain.foreignCar .productMainWrap .mainTitle .txt{font-size:37px}
+.carMain.foreignCar .fixedBannerArea{margin-left:-900px;width:620px;box-sizing:border-box;}
+.carMain.foreignCar .fixedBannerArea .logoArea{padding:5px 0 17px}
+.carMain.foreignCar .fixedBannerArea .logoArea.undline:before{background:#5f5f5f}
+.carMain.foreignCar .fixedBannerArea .bannerArea{padding:20px 20px 30px}
+.carMain.foreignCar .fixedBannerArea .infoArea{margin:18px 0 0;padding:15px 0 22px}
+.carMain.foreignCar .fixedBannerArea .infoArea .infoList{margin-left:10px}
+.carMain.foreignCar .fixedBannerArea .infoArea .infoList:after{content:'';display:block;clear:both}
+.carMain.foreignCar .fixedBannerArea .infoArea .infoList > li{float:left;padding:0 23px;font-size:16px;color:#eee}
+.carMain.foreignCar .fixedBannerArea .infoArea .infoList li:first-child:after{display:none}
+.carMain.foreignCar .fixedBannerArea .infoArea .infoList li:after{content:'';float:left;margin-top:-12px;margin-left:-23px;width:1px;height:27px;background:#333;}
+.carMain.foreignCar .fixedBannerArea .infoCt .tit{font-size:27px;line-height:2rem}
+.carMain.foreignCar .fixedBannerArea .infoCt .tit span{font-size:20px;color:#f0db2b}
+.carMain.foreignCar .fixedBannerArea .notice{padding-left:24px;background:url("https://direct.hi.co.kr/images/common/icon_exmark_orange.png") no-repeat 0 2px;line-height:18px;font-size:14px;color:#eee}
+
+/* 종합보험 가입유도팝업200219 */
+.totalChoice {background:#f4f4f4;}
+.totalChoice > dl{padding:20px 30px 20px; border-top:1px solid #e2e2e2;}
+.totalChoice > dl:after{content:'';display:block;clear:both}
+.totalChoice > dl:first-child{border-top:2px solid #555555; padding-top:23px;}
+.totalChoice > dl span.join {display:inline-block;padding:0 8px;height:23px;font-size:13px;line-height:23px;background:#009ab1;color:#fff; font-weight:normal; margin-left:7px; border-radius:16px;}
+.totalChoice > dl dt { font-size:17px; font-weight:bold}
+
+.infoTit_choice{color:#222222; font-size:17px; padding:10px 55px; display:block; background:url("https://direct.hi.co.kr/images/motor/icon_totalchoice.png") no-repeat 5px center; background-size:43px 41px; }
+
+/* 특약 조회 결과 /2102 */
+.srchReArea{display:flex}
+.srchReArea li{padding:10px 12px;min-width:160px;width:30%;background:#f5f5f5}
+.srchReArea li + li{margin-left:15px}
+.srchReArea li dl{font-weight:600}
+.srchReArea li dl dt{font-size:14px}
+.srchReArea li dl dd{margin-top:5px;text-align:right;font-size:18px;color:#ee5a00}
+
+/* HI-Biz 플랜 Checkbox /2104 */
+.chk_hibiz{display:flex;justify-content:flex-end;margin-bottom:10px;width:650px}
+.chk_hibiz .ti{margin-right:7px;padding:0 8px;height:24px;line-height:24px;background-color:#047db5;font-size:15px;color:#fff}
+.chk_hibiz .checkbox label{padding-left:24px}
+
+/* 이륜차 /2109 */
+body.insuJoinBg.insuCycWrap{background:#dae5f5 url('https://direct.hi.co.kr/images/internet_product/bg_insuJoin_cyc.jpg') no-repeat 0 0;background-size:cover}
+body.insuJoinBg.insuCycWrap .productMainWrap .productInputArea{padding:40px 40px 60px}
+body.insuJoinBg.insuCycWrap .productMainWrap .productInputArea .inputTable .inputArea{margin-top:10px}
+body.insuJoinBg.insuCycWrap .productMainWrap .productInputArea .inputTable .inputArea:first-child{margin-top:0}
+body.insuJoinBg.insuCycWrap .productMainWrap .productInputArea .insuBtnArea{position: static;}
+/* 가입정보입력 */
+.itemSelectArea.itemCycArea{margin-bottom:20px;padding-bottom:30px;border-bottom:1px solid #ddd}
+.itemSelectArea.itemCycArea .inputTable{margin-bottom:0;padding:0;border:0}
+.itemSelectArea .itemList.cycInput{margin-top:10px;}
+.itemSelectArea .itemList.cycInput li a{display:block;position:relative;width:220px;min-height:156px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;text-align:center;padding-top:72px;background-color:#ffffff !important;}
+.itemSelectArea .itemList.cycInput li a .ti{font-weight:normal;font-size:17px;color:#555}
+.itemSelectArea .itemList.cycInput li a .tx{margin-top:5px;line-height:1.3rem;font-weight:normal;font-size:14px;color:#777}
+.itemSelectArea .itemList.cycInput li.on a,
+.itemSelectArea .itemList.cycInput li.on a .ti,
+.itemSelectArea .itemList.cycInput li.on a .tx{color:#f6873d}
+/* 이륜차 상세정보 입력 /2109 */
+.carDetailWrap.cycWrap .lineTabList li.tab1{width:131px;}
+.carDetailWrap.cycWrap .lineTabList li.tab2{width:151px;}
+.carDetailWrap.cycWrap .lineTabList li.tab3{width:171px;}
+.carDetailWrap.cycWrap .lineTabList li.tab4{width:370px;}
+/* 이륜차 보험료확인 담보 배너 /2109 */
+.bnCycInfo{z-index:3;position:absolute;top:28px;left:0;}
+.bnCycInfo img{vertical-align:top;}
+.bnCycInfo a{display:block}
+
+/* Data Lab 보장 분석 서비스 /2201 */
+#dataLabWrap{z-index:15;outline:none;position:absolute;top:10%;left:50%;margin-left:-570px;width:1246px;height:100%;max-height:800px;}
+#dataLabWrap a:focus{outline:1px dashed #ee5a00} /* 접근성 2차 /2210 */
+#dataLabWrap a:focus:not(:focus-visible){/*border-radius:10px;box-shadow:0 0 6px 4px rgba(78, 201, 250, 0.2);*/outline:none;}
+/* Data Lab Tab /2201 */
+#dataLabWrap .dataLabTab{display:flex;position:absolute;top:-50px;right:0;}
+#dataLabWrap .dataLabTab > div{width:208px;height:58px;background:url('https://direct.hi.co.kr/images/motor/dataLab_tab_off.png') no-repeat 0 0;transition:all 0.3s ease;-moz-transition:all 0.3s ease;}
+/* .dataLabTab > div:focus-within{border-radius:10px;box-shadow: 0 0 4px 6px rgba(78, 201, 250, 0.2);} To.Focus부모 */
+#dataLabWrap .dataLabTab > div:nth-child(n+2){margin-left:-18px}
+#dataLabWrap .dataLabTab > div > a{display:block;padding-left:25px;box-sizing:border-box;width:208px;height:50px;line-height:50px;text-align:center;font-weight:600;font-size:18px;color:#ffffff;}
+#dataLabWrap .dataLabTab > div > a:focus{outline:1px dashed #ee5a00} /* 접근성 2차 /2210 */
+#dataLabWrap .dataLabTab > div > a:focus:not(:focus-visible){/*border-radius:10px;box-shadow:0 0 6px 4px rgba(78, 201, 250, 0.2);*/outline:none;}
+#dataLabWrap .dataLabTab > div.on{z-index:2;background:url('https://direct.hi.co.kr/images/motor/dataLab_tab_on.png') no-repeat 0 0;}
+/* Data Lab /2201 */
+.dataLabWrap{z-index:3;display:flex;overflow:auto;position:absolute;top:0;left:0;width:1246px;height:100%;max-height:800px;box-sizing:border-box;border-radius:10px;border:3px solid #003271;background-color:#ffffff}
+.dataLabWrap img{vertical-align:top;}
+.dataLabWrap .btnClose{z-index:6;position:absolute;top:10px;right:10px}
+.dataLabWrap .dataLabSide{display:flex;flex-direction:column;align-items:center;overflow:hidden;padding:55px 0 60px;width:233px;box-sizing:border-box;border-top-left-radius:10px;border-bottom-left-radius:10px;background-color:#edf3ff;letter-spacing:-1px;font-family:'NotoRegular';}
+.dataLabWrap .dataLabSide .tit{margin-bottom:29px}
+.dataLabWrap .dataLabSide .dataLabUser{text-align:center;color:#003271}
+.dataLabWrap .dataLabSide .dataLabUser .userSex{margin-bottom:18px;min-height:95px}
+.dataLabWrap .dataLabSide .dataLabUser .userName{line-height:1.5;font-weight:500;font-size:18px}
+.dataLabWrap .dataLabSide .sideInfo{margin-top:auto;padding-top:170px;background:url('https://direct.hi.co.kr/images/motor/dataLab_side-info.png') no-repeat center top}
+.dataLabWrap .dataLabSide .sideInfo .txt{line-height:1.4;text-align:center;font-weight:normal;font-size:14px;color:#003271}
+/* Data Lab Grid Layout */
+.dataLabWrap .dataLabArea{position:relative;overflow:hidden;width:1010px;height:794px;}
+.dataLabWrap .dataLabContent{
+	position:relative;padding:30px 20px 30px 30px;width:1010px;height:794px;box-sizing:border-box;background-color:#ffffff;
+	display:grid;
+	grid-template-columns:repeat(3, 1fr);
+	grid-template-rows:repeat(auto-fill, minmax(auto, 344px));
+	grid-column-gap:50px;
+	grid-row-gap:52px;
+	display:-ms-grid;
+	-ms-grid-columns:1fr 50px 1fr 50px 1fr;
+	-ms-grid-rows:1fr 52px 1fr;
+}
+.dataLabWrap .dataLabContent > .dataLabItem:nth-child(1){
+	-ms-grid-row:1;
+	-ms-grid-column:1;
+}
+.dataLabWrap .dataLabContent > .dataLabItem:nth-child(2){
+	-ms-grid-row:1;
+	-ms-grid-column:3;
+}
+.dataLabWrap .dataLabContent > .dataLabItem:nth-child(3){
+	-ms-grid-row:1;
+	-ms-grid-column:5;
+}
+.dataLabWrap .dataLabContent > .dataLabItem:nth-child(4){
+	-ms-grid-row:3;
+	-ms-grid-column:1;
+}
+.dataLabWrap .dataLabContent > .dataLabItem:nth-child(5){
+	-ms-grid-row:3;
+	-ms-grid-column:3;
+}
+.dataLabWrap .dataLabContent > .dataLabItem:nth-child(6){
+	-ms-grid-row:3;
+	-ms-grid-column:5;
+}
+.dataLabWrap .dataLabContent:after{content:'';display:block;position:absolute;top:50%;right:20px;width:970px;height:2px;background-color:#003271}
+.dataLabWrap .dataLabContent .dataLabItem{display:flex;flex-direction:column;position:relative;box-sizing:border-box;width:286px;background-color:#ffffff;color:#000000}
+.dataLabWrap .dataLabContent .dataLabItem .tit{height:22px;line-height:21px;font-weight:600;font-size:19px;color:#003271;}
+.dataLabWrap .dataLabContent .dataLabItem .tit > .txSub{display:inline-block;height:22px;line-height:21px;vertical-align:top;}
+/* 소제목 도움말 /2201 */
+.dataLabWrap .dataLabContent .dataLabItem .tit > .helpArea{display:inline-block;position:relative;margin-left:2px}
+.dataLabWrap .dataLabContent .dataLabItem .tit > .helpArea > .btHelp{display:inline-block;margin-left:2px;width:22px;height:22px;text-align:center;vertical-align:top;}
+.dataLabWrap .dataLabContent .dataLabItem .tit > .helpArea > .helpTxt{z-index:-1;position:absolute;top:30px;left:0;padding:20px 20px;width:345px;box-sizing:border-box;line-height:1.4em;border-radius:20px;border:1px solid #aed0ef;background-color:#edf4ff;font-weight:normal;font-size:14px;color:#565656;
+	transition:all 0.2s ease;opacity:0;
+}
+.dataLabWrap .dataLabContent .dataLabItem .tit > .helpArea > .helpTxt.on{opacity:1;z-index:3;}
+.dataLabWrap .dataLabContent .dataLabItem .txt{margin-top:10px;line-height:1.3em;letter-spacing:-1px;font-weight:normal;font-size:15px}
+/* 내 보장 점수 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg{position:relative;margin-top:15px;height:139px;background:url('https://direct.hi.co.kr/images/motor/dataLab_point_bg.png') no-repeat center 0;}
+.dataLabWrap .dataLabContent .dataLabItem .pointBg .pointPin{position:absolute;bottom:0;left:50%;margin-left:-27px;width:53px;height:53px;border-radius:100%;box-sizing:border-box;background-color:#e8f0f5;
+	transition:transform 1s ease;
+}
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point0 .pointPin{transform:rotate(-100deg)} /* 0점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point10 .pointPin{transform:rotate(-80deg)} /* 10점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point20 .pointPin{transform:rotate(-58deg)} /* 20점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point30 .pointPin{transform:rotate(-39deg)} /* 30점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point40 .pointPin{transform:rotate(-20deg)} /* 40점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point50 .pointPin{transform:rotate(0deg)} /* 50점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point60 .pointPin{transform:rotate(20deg)} /* 60점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point70 .pointPin{transform:rotate(39deg)} /* 70점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point80 .pointPin{transform:rotate(58deg)} /* 80점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point90 .pointPin{transform:rotate(80deg)} /* 90점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point100 .pointPin{transform:rotate(100deg)} /* 100점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg .pointPin:before{display:block;content:'';position:absolute;top:-20px;left:-3px;height:0;border-top:22px solid;border-left:30px solid rgba(0,0,0,0);border-right:30px solid rgba(0,0,0,0);
+	transform:rotate(-180deg) scaleX(0.25)
+}
+.dataLabWrap .dataLabContent .dataLabItem .pointBg:after{display:block;content:'';position:absolute;left:50%;bottom:0;margin-left:-26.5px;width:53px;height:53px;background:url('https://direct.hi.co.kr/images/motor/dataLab_point_smile3.png') no-repeat 0 0;transition:all 1s ease}
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point0:after,
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point10:after{background-image:url('https://direct.hi.co.kr/images/motor/dataLab_point_smile1.png')} /* 0~10점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point20:after,
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point30:after{background-image:url('https://direct.hi.co.kr/images/motor/dataLab_point_smile2.png')} /* 20~30점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point40:after,
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point50:after{background-image:url('https://direct.hi.co.kr/images/motor/dataLab_point_smile3.png')} /* 40~50점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point60:after,
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point70:after{background-image:url('https://direct.hi.co.kr/images/motor/dataLab_point_smile4.png')} /* 60~70점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point80:after,
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point90:after,
+.dataLabWrap .dataLabContent .dataLabItem .pointBg.point100:after{background-image:url('https://direct.hi.co.kr/images/motor/dataLab_point_smile5.png')} /* 80~100점 */
+.dataLabWrap .dataLabContent .dataLabItem .pointBg .pointTxt{padding-top:150px;line-height:1;text-align:center;font-weight:600;font-size:19px}
+.dataLabWrap .dataLabContent .dataLabItem .pointBg .pointTxt > strong{font-weight:600;font-size:25px;color:#fc6703}
+.dataLabWrap .dataLabContent .dataLabItem .rBoxOrg{overflow:hidden;margin-top:auto;padding:12px 5px 13px;max-height:70px;box-sizing:border-box;border-radius:10px;border:1px solid #f2ba81;background-color:#fef5ee;line-height:1.35;text-align:center;font-size:16px}
+/* 담보별 AI 추천 플랜 */
+.dataLabWrap .dataLabContent .dataLabItem .planPush{overflow:hidden;margin:12px 0 15px;height:24px}
+.dataLabWrap .dataLabContent .dataLabItem .planPush > p{display:inline-block;margin-left:2px;padding:0 11px 0 10px;height:24px;line-height:23px;border-radius:12px;background-color:#a29d99;text-align:center;color:#fff}
+.dataLabWrap .dataLabContent .dataLabItem .planPush > p.buCc{padding-left:33px;background:#a29d99 url('https://direct.hi.co.kr/images/motor/bu_plan_cc.png') no-repeat  13px center}
+.dataLabWrap .dataLabContent .dataLabItem .planList{display:flex;justify-content:space-between;position:relative;max-height:194px}
+.dataLabWrap .dataLabContent .dataLabItem .planList > dl{min-width:85px;text-align:center;color:#222222}
+.dataLabWrap .dataLabContent .dataLabItem .planList > dl > dt{margin-bottom:10px;line-height:1;font-weight:600;font-size:16px;}
+.dataLabWrap .dataLabContent .dataLabItem .planList > dl > dd{margin-bottom:4px;height:24px;line-height:23px;box-sizing:border-box;border:1px solid #000000;background-color:#ffffff;font-weight:300;font-size:14px;}
+.dataLabWrap .dataLabContent .dataLabItem .planList .listL > dd{border-color:#047db5;color:#047db5}
+.dataLabWrap .dataLabContent .dataLabItem .planList .listC{padding-top:25.5px}
+.dataLabWrap .dataLabContent .dataLabItem .planList .listC > dd{border:0;font-size:15px}
+.dataLabWrap .dataLabContent .dataLabItem .planList .listR > dd{border-color:#ee5a00;color:#ee5a00}
+/* Blind - 플랜 /2201 */
+.dataLabWrap .dataLabContent .dataLabItem .blindPlan{display:none;position:absolute;top:90px;left:0;box-sizing:border-box;width:100%;height:205px;background-color:rgba(255,255,255,0.75);}
+.dataLabWrap .dataLabContent .dataLabItem .blindPlan.on{display:block}
+.dataLabWrap .dataLabContent .dataLabItem .blindPlan .txtBox{margin:63px 15px 0;padding:15px 0;border-radius:10px;border:1px solid #019ab1;background-color:#f1fbfd;text-align:center;line-height:1.3em;letter-spacing:-1px}
+.dataLabWrap .dataLabContent .dataLabItem .blindPlan .txtBox strong{display:block;margin-bottom:2px;font-weight:600;font-size:15px;color:#019ab1}
+.dataLabWrap .dataLabContent .dataLabItem .blindPlan .txtBox span{display:block;font-weight:normal;font-size:14px;color:#000000}
+.dataLabWrap .dataLabContent .dataLabItem .blindPlan .closeBlind{display:block;position:absolute;top:0;right:0;width:25px;height:25px;pointer-events:auto;}
+.dataLabWrap .dataLabContent .dataLabItem .planBtn{margin-top:auto}
+.dataLabWrap .dataLabContent .dataLabItem .planBtn a{display:block;padding:9px 0;height:14px;line-height:13px;border-radius:7px;background-color:#009ab1;text-align:center;font-size:16px;color:#ffffff} /* 접근성28번 */
+
+/* 담보별 진단 점검 */
+.dataLabWrap .dataLabContent .dataLabItem .grtList{overflow:auto;margin-top:13px;height:312px;color:#222222}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul li{padding:10px 5px 10px 0;border-top:1px solid #dddddd;min-height:55px}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul li:first-child{border-top:0}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul dl{display:flex;height:17px;line-height:17px}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul dl dt{overflow:hidden;margin-right:10px;font-weight:600;font-size:15px;line-height:18px}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul dl dd{height:17px;line-height:17px}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul dl dd > em{display:inline-block;padding:0 5px 0 4px;font-weight:normal;font-size:12px;color:#ffffff}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul dl dd > span{display:inline-block;margin-left:2px;font-size:14px}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul dl dd.grtBlue > em{background-color:#047db5}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul dl dd.grtOrg > em{background-color:#ee5a00}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul dl dd.grtOrg > em + span{color:#ee5a00}
+.dataLabWrap .dataLabContent .dataLabItem .grtList ul li .txt{margin-top:5px;font-size:13px;color:#777777}
+/* 내 차 특약 점검 */
+.dataLabWrap .dataLabContent .dataLabItem .myCarInfo{display:flex;justify-content:space-between;margin-top:15px;padding-bottom:10px;max-height:90px;font-family:'NotoRegular';}
+.dataLabWrap .dataLabContent .dataLabItem .myCarInfo .img{overflow:hidden;width:143px;height:90px;}
+.dataLabWrap .dataLabContent .dataLabItem .myCarInfo ul.txtArea{overflow:hidden;padding-top:8px;width:143px;height:90px;}
+.dataLabWrap .dataLabContent .dataLabItem .myCarInfo ul.txtArea li{display:flex;margin-top:10px;min-height:12px;line-height:1.1}
+.dataLabWrap .dataLabContent .dataLabItem .myCarInfo ul.txtArea li:first-child{margin-top:0}
+.dataLabWrap .dataLabContent .dataLabItem .myCarInfo ul.txtArea li strong{display:block;min-width:60px;color:#777777}
+.dataLabWrap .dataLabContent .dataLabItem .myCarInfo ul.txtArea li span{display:block;color:#222222}
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList{margin-top:auto;height:168px}
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul{display:flex;flex-wrap:wrap;}
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li{position:relative;margin-left:8px;width:88px;height:49px;border-radius:8px;border:1px solid #d3d4d4;font-size:13px} /* 개선 /2201 */
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li:nth-child(3n+1){margin-left:0}
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li:nth-child(n+4){margin-top:8px}
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li > p{display:block;padding-top:17px;line-height:1.3;text-align:center;}
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li > em{position:absolute;top:-1px;left:-1px;display:inline-block;padding:0 5px 0 4px;height:17px;line-height:16px;background-color:#777777;text-align:center;font-weight:normal;font-size:13px;color:#ffffff;vertical-align: top;}
+/* 가입 */
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li.boxBlue{border:1px solid #047db5}
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li.boxBlue > em{background-color:#047db5}
+/* 미가입 */
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li.boxOrg{border:1px solid #d3d4d4}
+.dataLabWrap .dataLabContent .dataLabItem .mySpcList ul li.boxOrg > em{background-color:#ee5a00}
+/* 할인할증등급 */
+.dataLabWrap .dataLabContent .dataLabItem .disctChart{display:flex;justify-content:space-between;margin-top:12px}
+.dataLabWrap .dataLabContent .dataLabItem .disctChart .chartBg{position:relative;width:102px;height:102px}
+.dataLabWrap .dataLabContent .dataLabItem .disctChart .chartBg .pieChart{position:relative;width:102px;height:102px;font-family:'NotoRegular'}
+.dataLabWrap .dataLabContent .dataLabItem .disctChart .chartBg .pieChart .chartP{display:block;position:absolute;top:50%;left:50%;width:52px;height:52px;line-height:52px;border-radius:50%;text-align:center;font-size:16px;color:#ee5a00;transform:translate(-50%, -50%)}
+.dataLabWrap .dataLabContent .dataLabItem .disctChart .chartBg .pieChart .chartP > strong{font-size:21px}
+.dataLabWrap .dataLabContent .dataLabItem .disctChart .chartTxt{padding:12px 0 0 43px;min-width:146px;line-height:1.4;background:url('https://direct.hi.co.kr/images/motor/disct_point.png') no-repeat 4px 19px;font-size:15px;color:#000}
+.dataLabWrap .dataLabContent .dataLabItem .disctChart .chartTxt > strong{font-weight:600;font-size:16px;color:#ee5a00}
+/* 안전운전수준 */
+.dataLabWrap .dataLabContent .dataLabItem .disctSafe{margin-top:26px}
+.dataLabWrap .dataLabContent .dataLabItem .disctSafe ul{margin-top:18px;font-family:'NotoRegular';}
+.dataLabWrap .dataLabContent .dataLabItem .disctSafe ul li{display:flex;margin-top:8px;height:30px;border-radius:15px;background-color:#edf4ff}
+.dataLabWrap .dataLabContent .dataLabItem .disctSafe ul li:first-child{margin-top:0}
+.dataLabWrap .dataLabContent .dataLabItem .disctSafe ul li strong{display:block;padding:7px 0 8px;width:170px;height:15px;line-height:14px;border-radius:15px;background-color:#003170;text-align:center;font-size:15px;color:#ffffff}
+.dataLabWrap .dataLabContent .dataLabItem .disctSafe ul li span{display:block;padding:7px 18px 8px 0;width:80px;height:15px;line-height:14px;border-radius:15px;background:url('https://direct.hi.co.kr/images/motor/ic_disct_arw.png') no-repeat right 7px;text-align:right;font-size:15px;color:#003170}
+.dataLabWrap .dataLabContent .dataLabItem .disctSafe ul li.unAb span{background:none} /* 추가 /2201 */
+/* ECO마일리지할인안내 */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg{position:relative;margin-top:36px;height:118px;background:url('https://direct.hi.co.kr/images/motor/dataLab_eco_bg.png') no-repeat center 0;font-family:'NotoRegular';}
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoPin{position:absolute;bottom:-37px;left:50%;margin-left:-39.5px;width:79px;height:79px;border-radius:50%;box-sizing:border-box;
+	transition:transform 1s ease;
+}
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoPin.eco1{transform:rotate(-67deg)} /* 3천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoPin.eco2{transform:rotate(-40deg)} /* 5천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoPin.eco3{transform:rotate(-12deg)} /* 7천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoPin.eco4{transform:rotate(12deg)} /* 1만km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoPin.eco5{transform:rotate(40deg)} /* 1만2천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoPin.eco6{transform:rotate(67deg)} /* 1만5천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoPin:before{display:block;content:'';position:absolute;top:-59px;left:6px;height:0;
+	border-top:61px solid;border-left:34px solid rgba(71,71,71,0);border-right:34px solid rgba(71,71,71,0);transform:rotate(-180deg) scaleX(0.25);
+}
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg:after{display:block;content:'';position:absolute;bottom:0;left:50%;margin-left:-39.5px;width:79px;height:42px;border-radius:40px 40px 0 0;background-color:#cfd1d2}
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoTxt{padding-top:150px;line-height:1;text-align:center;font-weight:600;font-size:19px}
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoTxt > strong{font-weight:600;font-size:25px;color:#fc6703}
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoBtn > a{display:inline-block;padding:3px 5px 4px;height:14px;line-height:14px;border-radius:13px;border:2px solid #ee5a00;background-color:#fff;text-align:center;font-size:13px;color:#ee5a00;
+	transform:rotate(-20deg);
+}
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoBtn > a.bt1{position:absolute;top:65px;left:4px;} /* 3천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoBtn > a.bt2{position:absolute;top:18px;left:31px;} /* 5천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoBtn > a.bt3{position:absolute;top:-14px;left:90px;} /* 7천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoBtn > a.bt4{position:absolute;top:-17px;right:81px;} /* 1만km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoBtn > a.bt5{position:absolute;top:14px;right:17px;} /* 1만2천km */
+.dataLabWrap .dataLabContent .dataLabItem .ecoBg .ecoBtn > a.bt6{position:absolute;top:58px;right:-12px;} /* 1만5천km */
+.dataLabWrap .dataLabContent .dataLabItem .rBoxGry{margin-top:auto;padding:18px 5px;max-height:90px;box-sizing:border-box;line-height:1.35;border-radius:10px;border:1px solid #d3d4d4;background-color:#f7f8f8;text-align:center;font-size:16px}
+.dataLabWrap .dataLabContent .dataLabItem .rBoxGry .txt{margin:0 0 5px}
+.dataLabWrap .dataLabContent .dataLabItem .rBoxGry .ecoResult{font-size:15px;color:#047db5}
+.dataLabWrap .dataLabContent .dataLabItem .rBoxGry .ecoResult strong{display:inline-block;font-weight:600;font-size:22px;color:#fa6705}
+/* 직전계약 비교분석 /개선2201 */
+.dataLabWrap .dataLabSide .sideBtn{margin-top:25px;text-align:center}
+.dataLabWrap .dataLabSide .sideBtn > a{display:inline-block;padding:10px 20px;border-radius:6px;background-color:#003170;font-size:16px;color:#fff;
+	transition:all 0.3s ease
+}
+.dataLabWrap .dataLabSide .sideBtn.on > a{background-color:#ee5a00}
+.dataLabWrap .dataLabTable{z-index:5;display:flex;flex-direction:column;position:absolute;top:0;left:-1010px;padding:30px 40px 25px;width:1010px;height:794px;box-sizing:border-box;background-color:#ffffff;
+	opacity:0;
+	pointer-events:none;
+	transition:all 0.3s ease;
+} /* 개선 /2201 */
+.dataLabWrap .dataLabTable .tit{margin-bottom:10px;line-height:1;font-weight:600;font-size:21px;color:#003271}
+.dataLabWrap .dataLabTable .dataScrollArea{overflow:auto;max-height:635px} /* Table Scroll /2201 */
+.dataLabWrap .dataLabTable table.tbCompare{line-height:1.25}
+.dataLabWrap .dataLabTable table.tbCompare tr th,
+.dataLabWrap .dataLabTable table.tbCompare tr td{padding:10px 20px 10px;border-bottom:1px solid #eeeeee;color:#000000}
+.dataLabWrap .dataLabTable table.tbCompare tr:last-child td{border-bottom:0 !important}
+.dataLabWrap .dataLabTable table.tbCompare thead tr th{padding:12px 20px 15px;border-top:2px solid #555555;border-bottom:1px solid #cfcfcf;background-color:#f5f5f5}
+.dataLabWrap .dataLabTable table.tbCompare thead tr th.secSky{border-top:2px solid #009ab1;border-bottom:1px solid #009ab1;background-color:#c3f3f6}
+.dataLabWrap .dataLabTable table.tbCompare thead tr th.secSky > strong{margin-bottom:8px;display:inline-block;padding:6px 18px 7px;height:16px;line-height:16px;border-radius:15px;background-color:#009ab1;text-align:center;font-size:16px;color:#ffffff}
+.dataLabWrap .dataLabTable table.tbCompare thead tr th.secOrg{border-top:2px solid #ee5a00;border-bottom:1px solid #ee5a00;background-color:#fbdfc6}
+.dataLabWrap .dataLabTable table.tbCompare thead tr th.secOrg > strong{margin-bottom:8px;display:inline-block;padding:6px 18px 7px;height:16px;line-height:16px;border-radius:15px;background-color:#ee5a00;text-align:center;font-size:16px;color:#ffffff}
+.dataLabWrap .dataLabTable table.tbCompare thead tr th .dateTxt{font-size:14px;line-height:1}
+.dataLabWrap .dataLabTable table.tbCompare tfoot tr td{padding:15px 20px 17px;border-top:1px solid #cfcfcf;background-color:#f5f5f5;text-align:center}
+.dataLabWrap .dataLabTable table.tbCompare tfoot tr td.secSky{border-top:1px solid #009ab1;background-color:#c3f3f6;text-align:right;font-size:20px;color:#009ab1}
+.dataLabWrap .dataLabTable table.tbCompare tfoot tr td.secOrg{border-top:1px solid #ee5a00;background-color:#fbdfc6;text-align:right;font-size:20px;color:#ee5a00}
+.dataLabWrap .dataLabTable table.tbCompare tbody tr td.secSky{border-bottom:1px solid #c3f3f6;background-color:#ebfafc;font-size:15px;vertical-align:top;} /* 개선 /2201 */
+.dataLabWrap .dataLabTable table.tbCompare tbody tr td.secOrg{border-bottom:1px solid #fbdfc6;background-color:#fdf5ed;font-size:15px;vertical-align:top;} /* 개선 /2201 */
+.dataLabWrap .dataLabTable table.tbCompare tbody tr td.secSky .payTxt{color:#009ab1}
+.dataLabWrap .dataLabTable table.tbCompare tbody tr td.secOrg .payTxt{color:#ee5a00}
+.dataLabWrap .dataLabTable table.tbCompare tbody tr td .tdFlex{display:flex;justify-content:space-between;align-items:center;max-width:330px}
+.dataLabWrap .dataLabTable .dataLabNotice{display:flex;overflow:hidden;margin-top:auto;max-width:927px;max-height:65px;letter-spacing:-1px;color:#222222}
+.dataLabWrap .dataLabTable .dataLabNotice .nTit{padding-left:40px;min-width:147px;background:url('https://direct.hi.co.kr/images/motor/bu_bln_navy.png') no-repeat 0 0;line-height:1.3;font-weight:600;font-size:18px;color:#003171}
+.dataLabWrap .dataLabTable .dataLabNotice .nTit > strong{display:block;font-weight:600;color:#222222}
+.dataLabWrap .dataLabTable .dataLabNotice .nTxt{max-width:740px;font-size:15px;line-height:1.4;}
+.dataLabWrap .dataLabTable .dataLabNotice .nTxt > strong{color:#ee5a00}
+.dataLabWrap .dataLabTable.on{left:0;opacity:1;pointer-events:auto;} /* 개선 /2201 */
+/* 서비스 대상 안내 /2201 */
+.dataLabWrap .dataLabTable .serviceNotice{display:none;justify-content:center;align-items:center;z-index:6;position:absolute;top:60px;left:40px;width:930px;height:714px;background-color:#ffffff}
+.dataLabWrap .dataLabTable .serviceNotice.on{display:flex}
+/* 보험료 확인 화면 배너 /2112 /수정2204 */
+.topTitleArea .bnDataLab{position:absolute;top:16px;right:170px;z-index:4;}
+.topTitleArea .bnDataLab a{display:block;}
+.topTitleArea .bnDataLab img{vertical-align:top;}
+.topTitleArea .bnDataLab .bnDataLab-big{position:absolute;top:0;right:-10px;border-radius:15px;box-shadow:6px 7px 8px rgba(0,0,0,0.4);}
+.topTitleArea .bnDataLab .bnDataLab-big a.bnClose{display:block;position:absolute;top:19px;right:18px;width:19px;height:18px;}

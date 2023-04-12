@@ -1,0 +1,2015 @@
+@charset "utf-8";
+
+/* GNB-Wrap /개선 /202005 */
+
+.gnbWrapSet{z-index:12;position:absolute;top:0;left:0;width:100%;background:#ffffff;overflow:visible !important} /* jQuery animate 시 overflow:hidden 방지 /202005 */
+.gnbWrapSet.open{padding-bottom:1px;border-bottom:1px solid #555555;overflow:hidden !important} /* jQuery animate 시 overflow:hidden 방지 /202005 */
+.gnbWrap{position:relative;border-bottom:2px solid #ee5a00;background:#ffffff}
+
+.gnbWrap.main_view{position:relative;border-bottom:2px solid #003170;background:#ffffff}/* 메인 블루컬러 변경 */
+
+.gnbWrap .gnbArea{position:relative;margin:0 auto;padding-top:48px;width:1140px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.gnbWrap .gnbArea:after{content:'';display:block;clear:both}
+.gnbWrap .gnbArea .logo{float:left;position:relative;margin-top:3px;width:230px;}
+.gnbWrap .gnbArea .logo img.logo2{position:absolute; left:0; top:0; display:none;z-index:1}
+.gnbWrap .gnbArea .topmenu{position:absolute;right:0;top:9px}
+.gnbWrap .gnbArea .topmenu .menu{overflow:hidden; margin-right:15px; float:left;}
+.gnbWrap .gnbArea .topmenu .menu li{float:left; position:relative; padding-right:8px; margin-right:6px;}
+.gnbWrap .gnbArea .topmenu .menu li:after{display:block; content:''; position:absolute; right:0; top:50%; width:1px; height:12px; background:#eeeeee;margin-top:-6px;}
+.gnbWrap .gnbArea .topmenu .menu li:last-child{padding-right:0; margin-right:0;}
+.gnbWrap .gnbArea .topmenu .menu li:last-child:after{display:none;}
+.gnbWrap .gnbArea .topmenu .menu li a{line-height:28px; font-size:13px; color:#777777;}
+.gnbWrap .gnbArea .topmenu .menu li a:focus,
+.gnbWrap .gnbArea .topmenu .menu li a:hover{color:#ee5a00;}
+.gnbWrap .gnbArea .topmenu .type{float:left; margin-right:5px;}
+.gnbWrap .gnbArea .topmenu .type a{display:block; float:left;border:1px solid #cccccc; line-height:26px; font-size:13px; text-align:center;width:45px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; position:relative;}
+.gnbWrap .gnbArea .topmenu .type a:hover,
+.gnbWrap .gnbArea .topmenu .type a:focus,
+.gnbWrap .gnbArea .topmenu .type a.on{border:1px solid #ee5a00; color:#ee5a00;z-index:1}
+.gnbWrap .gnbArea .topmenu .type a:last-child{margin-left:-1px;}
+.gnbWrap .gnbArea .topmenu a.btnAllmenu{display:inline-block;height:28px}
+/* gnb /202005 */
+.gnbWrap .gnbArea .gnb{float:right}
+.gnbWrap .gnbArea .gnb:after{content:''; display:block;clear:both}
+.gnbWrap .gnbArea .gnb > li:first-child{padding-left:0}
+.gnbWrap .gnbArea .gnb > li{float:left;padding:11px 0 30px 74px}
+.gnbWrap .gnbArea .gnb > li > a{display:block;height:21px;line-height:1;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;font-size:20px;}
+.gnbWrap .gnbArea .gnb > li > a:hover,
+.gnbWrap .gnbArea .gnb > li > a:focus{color:#ee5a00}
+.gnbWrap .gnbArea .gnb > li.on > a{color:#ee5a00;}
+.gnbWrap .gnbArea .btnDirect{border:2px solid #ee5a00; text-align:center; display:block; width:230px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; position:absolute; right:0; top:47px;}
+.gnbWrap .gnbArea .btnDirect span{display:inline-block;color:#ee5a00; font-size:17px; padding:0 24px 0 27px; background:url('https://direct.hi.co.kr/images/common/btn_gnb_icon.png') no-repeat left center; line-height:36px;}
+.gnbWrap .gnbArea .btnDirect span:after{content:''; display:block; background:url('https://direct.hi.co.kr/images/common/gnb_down.png') no-repeat; width:16px; height:10px; position:absolute; right:18px; top:13px;}
+.gnbWrap .gnbArea .btnDirect.on{background:#ee5a00}
+.gnbWrap .gnbArea .btnDirect.on span{color:#ffffff;background:#ee5a00 url('https://direct.hi.co.kr/images/common/btn_gnb_icon_on.png') no-repeat left center; }
+.gnbWrap .gnbArea .btnDirect.on span:after{background:url('https://direct.hi.co.kr/images/common/gnb_up.png') no-repeat;}
+.gnbWrap .subMenuArea{display:none;position:absolute;top:112px;left:0;padding-left:228px;width:100%;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;background:#ffffff;}
+.gnbWrap .subMenuArea .submenuTitle{position:absolute; left:0; top:18px; width:228px;}
+.gnbWrap .subMenuArea .submenuTitle .tit{font-size:21px; color:#222222;}
+.gnbWrap .subMenuArea .submenuTitle .txt{font-size:17px; margin-top:7px;}
+.gnbWrap .subMenuArea .gnb_dep2{width:681px;background:url('https://direct.hi.co.kr/images/common/gnb_line.png') repeat-y;}
+.gnbWrap .subMenuArea .gnb_dep2:after{content:''; display:block;clear:both}
+.gnbWrap .subMenuArea .gnb_dep2 > li{float:left;min-height:300px;margin-left:-1px; position:relative; padding:18px 0 20px 0;width:221px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.gnbWrap .subMenuArea .gnb_dep2.many > li{min-height:150px;}
+.gnbWrap .subMenuArea .gnb_dep2 > li:first-child{margin-left:-1px;}
+.gnbWrap .subMenuArea .gnb_dep2 > li.on{background:#f5f5f5;}
+.gnbWrap .subMenuArea .gnb_dep2 > li.hover{background:#f5f5f5;}
+.gnbWrap .subMenuArea .gnb_dep2.many > li.on:after {display:block; content:''; position:absolute; left:0;bottom:0; background:#eeeeee; width:100%; height:1px;}
+.gnbWrap .subMenuArea .gnb_dep2.many > li.hover:after {display:block; content:''; position:absolute; left:0;bottom:0; background:#eeeeee; width:100%; height:1px;}
+
+.gnbWrap .subMenuArea .gnb_dep2 > li > a{display:block; font-size:19px; color:#003170;padding:0 0 7px 21px;}
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3{margin:0 -1px; position:relative;z-index:1}
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3 > li > a{display:block; line-height:22px;padding:6px 10px 6px 21px;}
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3 > li > a > span{display:inline-block;font-size:15px;padding-right:18px;word-break:keep-all}
+
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3 > li > a:hover,
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3 > li > a:focus,
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3 > li.on > a{background:#047db5;}
+
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3 > li > a:hover > span,
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3 > li > a:focus > span,
+.gnbWrap .subMenuArea .gnb_dep2 > li > .gnb_dep3 > li.on > a > span{color:#ffffff;padding-right:18px; background:url('https://direct.hi.co.kr/images/common/gnb_arr.png') no-repeat right center;}
+
+/* GNB 콜센터 안내 배너- 개선 /202005 */
+.gnBnCall{position:absolute;top:24px;right:0;padding:65px 0 0 25px;width:205px;height:128px;border:1px solid #dcdcdc}
+.gnBnCall.ic_internet{background:url('https://direct.hi.co.kr/images/common/ic_call_internet.png') no-repeat 25px 20px}
+.gnBnCall.ic_tel{background:url('https://direct.hi.co.kr/images/common/ic_call_tel.png') no-repeat 25px 20px}
+.gnBnCall .callCt .txTi{margin-bottom:10px}
+.gnBnCall .callCt .txTi strong{display:block;height:22px;line-height:1;font-weight:600;font-size:20px;color:#000000}
+.gnBnCall .callCt .txTi span{font-size:16px;color:#727171}
+.gnBnCall .callCt .txCall strong{display:inline-block;margin-bottom:3px;height:25px;line-height:22px;font-weight:600;font-size:31px}
+.gnBnCall .callCt .txCall strong.cOrg{color:#ee5a00}
+.gnBnCall .callCt .txCall strong.cBlue{color:#047db5}
+.gnBnCall .callCt .txCall span{display:block;font-size:14px;color:#727171}
+
+.directListArea{position:absolute;left:50%;top:85px;border:2px solid #ee5a00;width:653px;overflow:hidden;background:#ffffff;z-index:12;display:none;margin-left:-87px} /* 수정 /1911 */
+.directListArea ul{overflow:hidden;margin-top:-1px;}
+.directListArea ul li{border-right:1px solid #eeeeee;border-top:1px solid #eeeeee; float:left;width:33.33333333%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.directListArea ul li.gap{background:url('https://direct.hi.co.kr/images/common/gnb_gap.png') no-repeat center center; height:78px;}
+.directListArea ul li:nth-child(3n){border-right:0}
+.directListArea ul li a{padding-left:19px; display:block; position:relative;}
+.directListArea ul li a:hover,
+.directListArea ul li a:focus{background:#f5f5f5;}
+.directListArea ul li a:hover:after,
+.directListArea ul li a:focus:after{display:block; content:''; position:absolute; background:url('https://direct.hi.co.kr/images/common/gnb_btn_arr.png') no-repeat; width:13px; height:22px; right:20px;top:50%;margin-top:-11px}
+.directListArea ul li a:hover .inner .tit,
+.directListArea ul li a:focus .inner .tit{color:#047db5;}
+.directListArea ul li a .inner{display:block;padding:15px 0}
+.directListArea ul li a .inner .tit{font-size:17px; color:#222222;}
+.directListArea ul li a .inner .txt{font-size:14px; color:#777777;}
+
+.allmenuListArea{display:none;z-index:13;position:absolute;top:42px;left:50%;margin-left:-920px;width:1140px;border:1px solid #555555;background:#ffffff;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.allmenuListArea .allmenuList{padding:40px 30px}
+.allmenuListArea .allmenuList > ul > li{border-top:2px solid #555555; overflow:hidden; padding-top:13px;}
+.allmenuListArea .allmenuList .dep1{ float:left;font-size:19px; color:#222222; display:block; padding-bottom:9px; margin-bottom:9px; width:231px; line-height:28px;}
+.allmenuListArea .allmenuList .dep2{ float:left; overflow:hidden; padding-bottom:31px;max-width:846px}
+.allmenuListArea .allmenuList > ul > li:last-child .dep2{ padding-bottom:0;}
+.allmenuListArea .allmenuList > ul > li:last-child .dep2 > ul:last-child{ padding-bottom:0;}
+.allmenuListArea .allmenuList .dep2 > ul{ overflow:hidden; padding-bottom:10px;}
+.allmenuListArea .allmenuList .dep2 > ul > li{ float:left; width:282px;}
+.allmenuListArea .allmenuList .dep2 > ul > li > a{ font-size:17px; color:#047db5; display:block; line-height:36px;}
+.allmenuListArea .allmenuList .dep3{ margin:-1px 0 14px 0;}
+.allmenuListArea .allmenuList .dep3 > li > a{ font-size:15px;line-height:24px; display:block; position:relative; padding-left:8px;}
+.allmenuListArea .allmenuList .dep3 > li > a:after{ content:''; display:block; position:absolute; left:0; top:11px; width:3px; height:3px; background:#aaaaaa;}
+.allmenuListArea .allmenuList .dep3 > li > a:hover,
+.allmenuListArea .allmenuList .dep3 > li > a:focus{ color:#ee5a00;}
+
+.directWrap .contentArea{position:relative;width:100%;display:table;table-layout:fixed;padding-top:106px}
+.directWrap .contentArea{margin:0 auto; width:1140px; position:relative; display:table;table-layout:fixed; padding-top:106px;}
+.directWrap .contentArea.full{ padding-top:0;}
+.directWrap .lnbWrap{display:table-cell; width:230px; background:url('https://direct.hi.co.kr/images/common/lnb_line.png') repeat-y; padding-bottom:80px; vertical-align:top;}
+.directWrap .lnbWrap .lnbTitle{ background:#003170; font-size:24px; color:#ffffff;height:113px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;padding:45px 0 0 25px; margin-bottom:10px;}
+.directWrap .lnbWrap .lnb .dep2 > li{margin-bottom:7px;}
+.directWrap .lnbWrap .lnb .dep2 > li > a{ display:block; padding:7px 20px 6px 20px; position:relative; font-size:17px; color:#555555;}
+.directWrap .lnbWrap .lnb .dep2 > li.on > a{ background:#047db5; color:#ffffff;}
+.directWrap .lnbWrap .lnb .dep2 > li.on > a:after{ content:''; display:block; position:absolute;right:20px;top:50%; width:9px;height:14px; background:url('https://direct.hi.co.kr/images/common/lnb_dep2_arr.png') no-repeat center center;margin-top:-7px;}
+.directWrap .lnbWrap .lnb .dep2 > li.sub > a:after{ content:''; display:block; position:absolute;right:20px;top:50%; width:12px;height:12px; background:url('https://direct.hi.co.kr/images/common/lnb_plus.png') no-repeat center center;margin-top:-6px;}
+.directWrap .lnbWrap .lnb .dep2 > li.sub.on > a:after{ background:url('https://direct.hi.co.kr/images/common/lnb_minus.png') no-repeat center center;}
+.directWrap .lnbWrap .lnb .dep3{ border-bottom:1px solid #e5e5e5;padding:8px 0; display:none;}
+.directWrap .lnbWrap .lnb .dep3 > li{ display:block; padding-left:20px;color:#555555; font-size:15px;}
+.directWrap .lnbWrap .lnb .dep3 > li > a{ display:block;color:#555555; font-size:15px; position:relative; text-align:left;padding: 3px 7px;line-height: 22px;}
+.directWrap .lnbWrap .lnb .dep3 > li > a:before{ content:'-'; display:block; position:absolute; left:0; top:0;}
+.directWrap .lnbWrap .lnb .dep3 > li.on > a{ color:#ee5a00;}
+.directWrap .lnbWrap .lnb .dep3 > li.on > a:after{ content:''; display:block; position:absolute;right:22px;top:50%; width:8px;height:12px; background:url('https://direct.hi.co.kr/images/common/lnb_dep3_arr.png') no-repeat center center;margin-top:-6px;}
+.directWrap .content{display:table-cell;padding:0 0 80px 70px; vertical-align:top;}
+.directWrap .content{padding:0 0 80px 70px;vertical-align:top}
+.directWrap .content .location{ padding-top:31px; overflow:hidden;}
+.directWrap .content .location ul{ float:right;}
+.directWrap .content .location ul li{ float:left; padding-right:15px; margin-right:8px; position:relative; line-height:1;}
+
+.directWrap .content .location ul li.home{ padding-top:2px;}
+.directWrap .content .location ul li:after{ content:''; display:block; background:url('https://direct.hi.co.kr/images/common/location_arr.png') no-repeat; width:6px; height:13px; position:absolute; right:0; top:2px;}
+
+.directWrap .content .location ul li:last-child:after{ display:none;}
+.directWrap .content .location ul li a{ display:block; line-height:1; font-size:14px;}
+.directWrap .content .location ul li:last-child{ padding-right:0; margin-right:0; color:#222;}
+.directWrap .content .location ul li:last-child a{ color:#222;}
+.directWrap .content .contentTitle{font-size:32px; color:#222222; padding-bottom:28px}
+.directWrap .content .contentTitle .subTitle{display:block;font-size:19px;font-family:'NotoRegular';margin-top:-6px;}
+.directWrap .content .lnbTypeContentArea{ position:relative;}
+/* Footer - 개선 /202005 */
+.directWrap .footerWrap{border-top:1px solid #eeeeee}
+.directWrap .footerCustomerArea{background:#f5f5f5;border-bottom:1px solid #eeeeee}
+.directWrap .footerCustomer{margin:0 auto; width:1140px; position:relative;height:50px;}
+.directWrap .footerCustomer .telInfo{ float:left; line-height:50px; overflow:hidden;}
+.directWrap .footerCustomer .telInfo p{ float:left;}
+.directWrap .footerCustomer .telInfo p.txt{ color:#222222;}
+.directWrap .footerCustomer .telInfo p.tel{ color:#047db5; font-size:21px; font-family:'NotoRegular';margin:0 4px 0 8px;}
+.directWrap .footerCustomer .telInfo p.time{ color:#777777;}
+.directWrap .footerCustomer .infoTxt{ float:right; line-height:50px; overflow:hidden;}
+.directWrap .footerCustomer .infoTxt li{float:left; position:relative; padding-right:9px; margin-right:8px; font-size:15px;}
+.directWrap .footerCustomer .infoTxt li:after{ display:block; content:''; position:absolute; right:0; top:50%; width:1px; height:14px; background:#eeeeee;margin-top:-7px;}
+.directWrap .footerCustomer .infoTxt li:last-child{ padding-right:0; margin-right:0;}
+.directWrap .footerCustomer .infoTxt li:last-child:after{ display:none;}
+.directWrap .footerArea{position:relative;margin:0 auto;padding:30px 0;width:1140px;}
+.directWrap .footerArea:after{content:'';display:block;clear:both}
+.directWrap .footerArea .infoArea{float:left}
+.directWrap .footerArea .infoArea .footerMenu{}
+.directWrap .footerArea .infoArea .footerMenu:after{content:'';display:block;clear:both}
+.directWrap .footerArea .infoArea .footerMenu li{float:left;position:relative;margin-right:8px;padding-right:9px;height:16px}
+.directWrap .footerArea .infoArea .footerMenu li:after{content:'';display:block;position:absolute;top:50%;right:0;margin-top:-7px;width:1px;height:14px;background:#eeeeee}
+.directWrap .footerArea .infoArea .footerMenu li:last-child{margin-right:0;padding-right:0}
+.directWrap .footerArea .infoArea .footerMenu li:last-child:after{display:none}
+.directWrap .footerArea .infoArea .footerMenu li a{display:block;height:16px;line-height:1;font-size:15px;color:#555555}
+.directWrap .footerArea .infoArea .footerMenu li a.point{color:#26487c}
+.directWrap .footerArea .callArea{float:right;display:flex;}
+.directWrap .footerArea .callArea .callCt{letter-spacing:-1px}
+.directWrap .footerArea .callArea .callCt + .callCt{margin-left:65px}
+.directWrap .footerArea .callArea .callCt .txTi{margin-bottom:15px}
+.directWrap .footerArea .callArea .callCt .txTi strong{display:block;height:22px;line-height:1;font-weight:600;font-size:20px;color:#000000}
+.directWrap .footerArea .callArea .callCt .txTi span{font-size:16px}
+.directWrap .footerArea .callArea .callCt .txCall{}
+.directWrap .footerArea .callArea .callCt .txCall strong{display:block;margin-bottom:5px;height:25px;line-height:22px;font-weight:600;font-size:31px}
+.directWrap .footerArea .callArea .callCt .txCall strong.cOrg{color:#ee5a00}
+.directWrap .footerArea .callArea .callCt .txCall strong.cBlue{color:#047db5}
+.directWrap .footerArea .callArea .callCt .txCall span{font-size:14px}
+.directWrap .footerArea .snsArea{position:absolute;left:450px;top:99px;}
+.directWrap .footerArea .snsArea li:first-child{margin-left:0}
+.directWrap .footerArea .snsArea li{display:inline-block;margin-left:3px;}
+.directWrap .footerArea .snsArea li a{display:block;width:42px;height:42px}
+.directWrap .footerArea .snsArea li a img{vertical-align:top}
+.directWrap .footerArea .footerTxt{margin-top:30px;color:#777777}
+.directWrap .footerArea .footerTxt .line{display:inline-block; width:1px; height:13px; background:#e5e5e5;margin:5px 3px 0 5px; vertical-align:top;}
+.directWrap .footerArea .footerTxt .copyright{ color:#999999; display:block; margin-top:3px;}
+.directWrap .footerArea .bottomLogo{ position:absolute; right:0; top:81px;}
+.directWrap .footerArea .bottomLogo li{ float:left; margin-left:7px;}
+/* Footer - 수상 영역 /202005 */
+.directWrap .awardArea{padding:22px 0 60px;border-top:1px solid #eeeeee}
+.directWrap .awardArea ul.bottomLogo{display:flex;justify-content:space-between;margin:0 auto;width:1140px}
+.directWrap .awardArea ul.bottomLogo li a{display:block}
+
+/* Event Full Layout /2209 */
+.directWrap .contentArea.eventWrap{display:block;width:100%;padding-top:112px;}
+.directWrap .contentArea.eventWrap .content{display:block}
+.directWrap .contentArea.eventWrap .content .eventArea.view{padding:0;border:0}
+.directWrap .contentArea.eventWrap .content .eventArea.view .eventCt{display:block;position:relative;margin:0 auto;width:1080px}
+.directWrap .contentArea.eventWrap .content .btnAreaWrap{margin-top:40px !important}
+.directWrap .contentArea.eventWrap .content .tblViewList.eventli{margin:50px auto 0;width:1140px;box-sizing: border-box;}
+
+/* 퀙메뉴 - 개선 /202005 */
+.quickArea{position:fixed;z-index:13;top:152px;right:10px}
+.quickArea.ab{position:absolute}
+.quickArea ul{width:101px;}
+.quickArea ul li{position:relative;margin-bottom:6px;width:101px;height:102px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.quickArea ul li:last-child{margin-bottom:0}
+.quickArea ul li a{display:block;text-align:center;width:100%;height:102px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;text-align:center}
+.quickArea ul li a img{vertical-align:top}
+.quickArea ul li.top{height:36px}
+.quickArea ul li.top a{margin:0 auto;width:36px;height:36px}
+
+/* 자동차보험 간편설계 /202005 */
+.bannerFlt{display:none;position:fixed;z-index:13;bottom:20px;left:50%;margin-left:213px;width:377px;height:94px}
+.bannerFlt img{vertical-align:top}
+.bannerFlt a.btCalcCar{display:block;width:377px;height:94px}
+.bannerFlt a.btClose{position:absolute;top:30px;right:21px}
+
+.fullBannerWrap{ display:none;}
+.fullBannerWrap.ieLow{ position:absolute; left:0; top:0; width:100%;z-index:7;}
+.fullBannerWrap.ieLow .ieLowArea{ width:1140px;margin:0 auto; position:relative; text-align:center; padding-top:20px; height:202px;}
+.fullBannerWrap.ieLow .ieLowArea .tit{ background:url("https://direct.hi.co.kr/images/common/ie_alert.png") no-repeat left center; padding-left:26px; color:#ffffff; font-size:24px; display:inline-block;}
+.fullBannerWrap.ieLow .ieLowArea .con{ opacity:0.7;color:#ffffff; font-size:19px; text-align:center; margin-top:5px;}
+.fullBannerWrap.ieLow .ieLowArea .btnAreaWrap{ text-align:center; display:table; width:100%; font-size:0; margin-top:13px;}
+.fullBannerWrap.ieLow .ieLowArea .btnAreaWrap a{ display:inline-block;border:1px solid #4d6f9b; text-align:center; height:60px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; width:140px;margin:0 5px}
+.fullBannerWrap.ieLow .ieLowArea .btnAreaWrap a span{ display:inline-block; text-align:center; color:#ffffff; line-height:58px; font-size:15px;}
+.fullBannerWrap.ieLow .ieLowArea .btnAreaWrap a.ie span{ padding-left:38px; background:url("https://direct.hi.co.kr/images/common/ie_icon.png") no-repeat left center;}
+.fullBannerWrap.ieLow .ieLowArea .btnAreaWrap a.chrome span{ padding-left:38px; background:url("https://direct.hi.co.kr/images/common/chrome_icon.png") no-repeat left center;}
+.fullBannerArea{ width:1140px;margin:0 auto; position:relative;}
+.fullBannerArea img{ vertical-align:top;}
+.fullBannerArea .bannerArea{width:100%;font-size:0;text-align:center;padding-top:10px;/*구분?�값추�?2_181029*/}
+.fullBannerArea .bannerArea li{display:inline-block;width:50%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;vertical-align:top;text-align:center;/*구분?�값추�?181029*/border-left:1px solid #878787;}
+.fullBannerArea .bannerArea li:first-child{ padding-left:0; border-left:0; text-align:left;}/*구분?�값추�?3_181029*/
+
+
+.fullBannerArea .bannerArea li:only-child{width:100%}
+.fullBannerArea .bannerArea li a.banner{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;text-align:center}
+.fullBannerArea .bannerArea li .banner{ display:inline-block; width:500px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; text-align:left;}
+.fullBannerArea .bannerArea li .banner img{ width:500px; height:140px;}
+.fullBannerWrap .closeArea{ position:absolute; right:0; bottom:0; padding:0 38px 10px 0;}
+.fullBannerWrap .closeArea label{ color:#ffffff; opacity:0.7;}
+.fullBannerWrap .closeArea .checkbox input{opacity:0}
+.fullBannerWrap .closeArea .checkbox label:before{ display:block; content:'';border:1px solid rgba(100%,100%,100%,0.4); width:24px; height:24px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; position:absolute; left:0; top:0; background:transparent;z-index:1}
+.fullBannerWrap .closeArea .checkbox input:checked+label:before{ background:url("https://direct.hi.co.kr/images/common/checkbox_white.png") no-repeat center center; -webkit-background-size:100% 100%; background-size:100% 100%;}
+.fullBannerWrap .closeArea .btnBannerClose{ position:absolute; right:0; bottom:7px;}
+
+.fullBannerWrap .closeArea_gray{ position:absolute; right:0; bottom:0; padding:0 38px 10px 0;}
+.fullBannerWrap .closeArea_gray label{ color:#4b3a3c; opacity:0.7;}
+.fullBannerWrap .closeArea_gray .checkbox input{opacity:0}
+.fullBannerWrap .closeArea_gray .checkbox label:before{ display:block; content:'';border:1px solid rgb(183,149,32); width:24px; height:24px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; position:absolute; left:0; top:0; background:transparent;z-index:1}
+.fullBannerWrap .closeArea_gray input:focus+label:before{border:1px solid #b79520 !important;}
+.fullBannerWrap .closeArea_gray .checkbox input:checked+label:before{ background:url("https://direct.hi.co.kr/images/common/checkbox_gray.png") no-repeat center center !important; -webkit-background-size:100% 100%; background-size:100% 100%;}
+.fullBannerWrap .closeArea_gray .btnBannerClose{ position:absolute; right:0; bottom:7px;}
+
+/* listBase */
+.listBase{width:840px;overflow:hidden;}
+.listBase li{position:relative;padding-left:8px;font-size:15px;color:#777777;}
+.listBase li:before{content:'';position:absolute;left:0;top:11px;width:5px;height:1px;background:#777777;}
+.listBase.listline2 li{width:408px;float:left;}
+.listBase.listline3 li{width:272px;float:left;}
+
+/* conTxtbox */
+.conTitle01{margin-top:35px;margin-bottom:12px;}
+.conTitle01:after{ content:''; display:block;clear:both}
+.conTitle01.first{margin-top:0;}
+.conTitle01:first-child{margin-top:0;}
+.conTitle01 .tit{font-size:17px;color:#222;}
+.conTitle01 .subTxt{padding-top:3px;font-size:15px;}
+
+
+.conProcessTxt{margin-top:13px;}
+.conProcessTxt h5{margin-bottom:6px;color:#222;font-size:15px}
+.conProcessTxt .processList{width:100%;display:table;}
+.conProcessTxt .processList li{position:relative;height:68px;width:33.3%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;font-size:15px;display:table-cell;vertical-align:middle;}
+.conProcessTxt .processList li div{text-align:center;}
+.conProcessTxt .processList li:nth-child(1){background:#f5f5f5;border:1px solid #ddd;border-right:0;z-index:3}
+.conProcessTxt .processList li:nth-child(1) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:21px; height:66px;background:url("https://direct.hi.co.kr/images/common/img_process01.png") no-repeat right top;margin-right:-21px;}
+.conProcessTxt .processList li:nth-child(2){background:#eeeeee;border-top:1px solid #ddd;border-bottom:1px solid #ddd;z-index:2}
+.conProcessTxt .processList li:nth-child(2) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:21px; height:67px;background:url("https://direct.hi.co.kr/images/common/img_process02.png") no-repeat right top;}
+.conProcessTxt .processList li:nth-child(3){background:#dddddd;z-index:1}
+.conProcessTxt .processList li:nth-child(3) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:21px; height:68px;background:url("https://direct.hi.co.kr/images/common/img_process03.png") no-repeat right top;}
+.conProcessTxt .processList.type4 li{height:70px;width:25%;}
+.conProcessTxt .processList.type4 li:nth-child(1){z-index:4;}
+.conProcessTxt .processList.type4 li:nth-child(1) div:after{width:11px; height:69px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_type5_01.png") no-repeat right top;margin-right:-11px;}
+.conProcessTxt .processList.type4 li:nth-child(2){z-index:3;}
+.conProcessTxt .processList.type4 li:nth-child(2) div:after{height:68px;margin-right:0;}
+.conProcessTxt .processList.type4 li:nth-child(3){z-index:2;}
+.conProcessTxt .processList.type4 li:nth-child(3) div:after{width:21px; height:70px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_type5_06.png") no-repeat right top;margin-right:-10px;}
+.conProcessTxt .processList.type4 li:nth-child(4){z-index:1;background:#ee5a00;color:#ffffff;}
+.conProcessTxt .processList.type4 li:nth-child(4) div:after{display:block; content:''; position:absolute; right:0; bottom:0;width:20px; height:70px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_type5_05.png") no-repeat right top;}
+
+
+.txtstar{position:relative;padding-left:8px;}
+.txtstar:before {display: block;content: '*';position: absolute;left: 0; top: 3px;}
+.infotxtBot{margin-top:40px;padding-top:25px;border-top:1px solid #eeeeee;font-size:15px;overflow:hidden;}
+.infotxtBot .info{float:left;position:relative;margin-right:20px;padding-right:20px}
+.infotxtBot .info:after{content:'';position:absolute;right:0;top:5px;width:1px;height:13px;background:#e5e5e5;}
+.infotxtBot .info:last-child:after{display:none}
+.infotxtBot .info .small3{margin-left:18px;margin-top:-2px}
+
+/* arrR */
+.btn.small3{display:inline-block;border:1px solid #cccccc;padding:0 14px;line-height:30px;height:30px;background:#ffffff;vertical-align:top;font-size:15px;}
+.btn.small3 .arrR{padding-right:16px;background:url(https://direct.hi.co.kr/images/common/btn_arr_right_small.png) no-repeat right center;color:#555555;}
+.btn.arrOrg{display:inline-block;padding:0 14px;height:30px;line-height:1.8rem;border:1px solid #ee5a00;font-size:15px}
+.btn.arrOrg span{padding-right:16px;background:url('https://direct.hi.co.kr/images/common/btn_arr_right_org.png') no-repeat right center;color:#ee5a00}
+
+.conTitle02{margin-bottom:17px;}
+.conTitle02 .tit{font-size:19px;color:#222;}
+.conTitle02 .subTxt{padding-top:3px;font-size:17px;color:#777;}
+
+.conTitle03{margin-bottom:20px;} 
+.conTitle03 .tit{font-size:22px;color:#222;}
+.conTitle03 .subTxt{padding-top:3px;font-size:19px;color:#777;}
+
+.conTitle04 {margin-bottom:15px;margin-top:30px;} 
+.conTitle04 .tit{font-size:24px;color:#222;font-weight:bold;}
+.conTitle04 .tit2{font-size:24px;color:#222;font-weight:bold;margin-top:60px;}
+
+.textareaBase{position: relative;border: 1px solid #bbbbbb; min-height: 148px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; background: #ffffff;}
+.textareaBase > textarea{width:100%; height:100%;border:0; background:transparent; position:absolute; padding:15px; font-size:15px;z-index:1; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; line-height:25px; color:#555555; vertical-align:top;}
+
+.emailApply .radio{margin-right:30px;}
+.emailApply .listStyle.star{margin-top:18px;}
+.emailApply02.inputTable{padding-bottom:18px;border-top:0;border-bottom:1px solid #dddddd;}
+.emailApply02.inputTable .agreeBox{border-top:0 !important;}
+.emailApply02 .agreeBox li .titArea .txt{color:#222 !important;}
+
+
+.btn.serch {text-align: center;display: inline-block; padding: 0 9px; line-height: 34px; height: 34px; min-width: 60px; background: #777777;color:#fff;font-size:15px;}
+.serchWrap{float:right;overflow:hidden;margin-bottom:10px;}
+.serchWrap .selectItem{float:left;}
+.serchWrap .selectItem.small .select-title{height:34px;line-height:32px;}
+.serchWrap .inputBase{float:left;height:32px;margin:0 10px 0 5px}
+.serchWrap .inputBase.placeholder input{height:34px;}
+.btn.search {text-align: center;display: inline-block; padding: 0 9px; line-height: 40px; height: 40px; min-width: 80px; background: #777777;color:#fff;font-size:18px;}
+.searchWrap{clear:both; margin:0 auto; width:50%; overflow:hidden;margin-bottom:30px;}
+.searchWrap .selectItem{float:left;}
+.searchWrap .selectItem.small .select-title{height:40px;line-height:38px;}
+.searchWrap .inputBase{float:left;height:38px;margin:0 10px 0 5px}
+.searchWrap .inputBase.placeholder input{height:40px;}
+
+.tblList{border-top:2px solid #555555;table-layout:fixed}
+.tblList thead tr th{ background:#f5f5f5  url("https://direct.hi.co.kr/images/common/th_line.png") no-repeat right center; border-bottom:1px solid #dddddd; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; padding:12px 10px 13px 10px; color:#222; font-size:15px;}
+.tblList thead tr th:last-child{ background:#f5f5f5 ;}
+.tblList tbody tr td{ border-bottom:1px solid #eeeeee; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; padding:12px 10px 13px 10px; font-size:15px;text-align:center;}
+.tblList tbody tr td.alL0{text-align:left;padding-left:0}
+.tblList tbody tr td.alL{text-align:left;padding-left:18px}
+.tblList tbody tr td.alL20{text-align:left;padding-left:20px}
+.tblList tbody tr td a{color:#222;font-size:17px;}
+.tblList tbody tr td.date{color:#777}
+.tblList tbody tr td.tar{padding-right:0;}
+
+.tblList tr:last-child td {border-bottom:1px solid #dddddd !important;}
+.tblList tbody tr td.font{color:#222222;font-size:17px;}
+.tblList tbody tr td.font .wish{color:#777777;font-size:14px;margin-bottom:6px}
+.tblList tbody tr td .btnmodify{margin-top:5px}
+.tblList tbody tr td .btnmodify span{font-size:14px;color:#555555}
+.tblList tr td:nth-last-child(odd) {border-right:1px solid #dddddd }
+.tblList tr td:last-child {border-right:none; !important;}
+.tblList tr:last-child td {border-bottom:1px solid #dddddd; !important;}
+.tblList.tdheight tbody tr td{padding:18px 10px 17px 10px;}
+
+.tblView{width:100%;border-top:2px solid #555555;}
+.tblView .viewTitle {overflow:hidden; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; padding:12px 20px 13px 20px; color:#222; font-size:17px;background:#f5f5f5; border-bottom:1px solid #dddddd;line-height:32px}
+.tblView .viewTitle .viewtit{float:left;width:80%;word-break:break-all;white-space:normal;text-align:left;}
+.tblView .viewTitle .date{float:right;color:#777;font-size:15px}
+.tblView .viewTitle.employtb .viewtit{float:left;width:auto;}
+.tblView .viewTitle.employtb .employicon{margin:2px 10px 0 0}
+.tblView .viewTitle.employtb .apply02{margin:0 0 0 8px}
+
+.tblView .viewContent{border-bottom:1px solid #ddd; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; padding:30px 20px 50px 20px; font-size:15px;vertical-align:top;}
+.tblView .viewContent img{ vertical-align:top;}
+.tblView .viewContent .contentTable tr td.taL{text-align:left;padding-left:18px;padding-right:0;}
+.tblView .viewContent .contentTable tr th{font-size:15px;}
+.tblView .viewContent .contentTable tr td{color:#777;font-size:15px;}
+.tblView .viewContent .employmentCon .tit{font-size:17px;margin-top:50px;margin-bottom:13px; color:#222222;}
+.tblView .viewContent .employmentCon .tit:first-child{margin-top:0;}
+.tblView .viewContent .employmentCon *{ color:#222222 !important;}
+
+.tblViewList{margin-top:50px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+.tblViewList ul li{display:table;width:800px;padding:12px 20px 13px 20px;background:#fff;}
+.tblViewList ul li:first-child{border-bottom:1px solid #eeeeee}
+.tblViewList ul li p{display:table-cell;font-size:15px;color:#777;}
+.tblViewList ul li p.title{color:#222;width:68px;}
+.tblViewList ul li p a{color:#777;}
+.tblViewList ul li .prev{display:block; padding-right:26px;background:url("https://direct.hi.co.kr/images/common/icon_arr_up.png") no-repeat right center}
+.tblViewList ul li .next{display:block; padding-right:26px;background:url("https://direct.hi.co.kr/images/common/icon_arr_down.png") no-repeat right center}
+.tblViewList ul li p+p{padding-left:35px;}
+
+.employicon{display:inline-block;width:65px;height:24px;margin-left:20px;line-height:23px}
+.employicon em{display:block;font-size:13px;border:1px solid #ddd;background:#eeeeee;text-align:center;color:#555;}
+.employicon em.ing{color:#ee5a00;border:1px solid #ee5a00;background:#fff}
+.employicon em.deadline{color:#047db5;border:1px solid #047db5;background:#fff}
+.employicon em.documentClose{border:1px solid #cccccc;background:#eeeeee}
+.employicon em.documentPass{color:#047db5;border:1px solid #047db5;background:#fff}
+.employicon em.allPass{color:#ee5a00;border:1px solid #ee5a00;background:#fff}
+.employicon.join{margin-left:0;}
+
+
+.paging{position:relative;width:100%;text-align:center;margin-top:20px}
+.paging a{display:inline-block;color:#777;font-size:15px;width:28px;height:27px;vertical-align:middle;line-height:26px;}
+.paging .pageBtn{font-size:0;margin:0 2px;}
+.paging .btnFirst{background:url("https://direct.hi.co.kr/images/common/btn_paging_first.png") no-repeat;}
+.paging .btnPrev{margin-right:10px;background:url("https://direct.hi.co.kr/images/common/btn_paging_prev.png") no-repeat;}
+.paging .btnNext{margin-left:12px;background:url("https://direct.hi.co.kr/images/common/btn_paging_next.png") no-repeat;}
+.paging .btnLast{background:url("https://direct.hi.co.kr/images/common/btn_paging_last.png") no-repeat;}
+.paging a.on{color:#ee5a00;border:1px solid #ee5a00;}
+
+.pagingBtn{ position:relative; margin-top:20px;}
+.pagingBtn .paging{ margin-top:0;}
+.pagingBtn .rightBtn{ position:absolute; right:0; top:0;z-index:1}
+
+/* faq */
+.openContentArea.faq > li{border-bottom:1px solid #eeeeee;}
+.openContentArea.faq > li > a{line-height:49px; display:block; font-size:17px; color:#222222; position:relative;}
+.openContentArea.faq > li > a.faq{ padding-left:30px; background:url("https://direct.hi.co.kr/images/common/icon_faq_off.png") no-repeat left 18px;}
+.openContentArea.faq > li > a:after{ content:''; display:block;background:url("https://direct.hi.co.kr/images/common/icon_arr_down02.png") no-repeat; width:16px; height:10px; position:absolute; right:0; top:50%;margin-top:-5px;z-index:1}
+.openContentArea.faq > li > a.faq span{color:#777777;}
+.openContentArea.faq > li.on > a:after{ background:url("https://direct.hi.co.kr/images/common/icon_arr_up.png") no-repeat;}
+.openContentArea.faq > li.on{border-bottom:1px solid #ddd;}
+.openContentArea.faq > li.on a{color:#ee5a00}
+.openContentArea.faq > li.on > a.faq{background:url("https://direct.hi.co.kr/images/common/icon_faq_on.png") no-repeat left 18px;}
+.openContentArea.faq > li.on > a.faq span{color:#ee5a00;}
+.openContentArea.faq > li > .openContent{padding:20px 30px;font-size:15px}
+
+.openContentArea.faq > li > .openContent > .officeArea{overflow:hidden;}
+.openContentArea.faq > li > .openContent > .officeArea .officeMap{float:left;height:215px;}
+.openContentArea.faq > li > .openContent > .officeArea .officeInfo{float:left;padding:0 20px;width:424px;}
+.openContentArea.faq > li > .openContent > .officeArea .officeInfo:only-child{ padding-left:0; width:auto;}
+.openContentArea.faq > li > .openContent > .officeArea .officeInfo > dl > dt{color:#222222;margin-bottom:2px;}
+
+.listTab2nd{z-index:4;width:100%;height:56px;border-bottom:1px solid #565656;background-color:#fff;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.listTab2nd ul{display:flex;overflow:hidden;padding-left:28px}
+.listTab2nd ul li{position:relative}
+.listTab2nd ul li:after{content:'';display:block;position:absolute;right:0;top:22px;width:1px;height:13px;background:#868686}
+.listTab2nd ul li:last-child:after{display:none}
+.listTab2nd ul li a{display:block;padding:0 30px;line-height:56px;font-size:15px;text-align:center;letter-spacing:normal}
+.listTab2nd ul li.on a{color:#047db5}
+.listTab2nd ul.q6 li a{padding:0 23px}
+
+.faqserchBox{height:180px;margin-bottom:30px;padding:29px 29px 10px 29px;background:#f5f5f5;border:1px solid #e5e5e5; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.inputBase.blue{margin:0 auto;position: relative;padding-right: 46px;height: 47px;border:2px solid #047db5;}
+.inputBase.blue > input{height:43px !important;border:0 !important;color:#999;}
+.inputBase.blue > input::-ms-input-placeholder{font-size:15px;color:#999;}
+.inputBase.blue > input::-webkit-input-placeholder{font-size:15px;color:#999;}
+.inputBase.blue > input::-moz-input-placeholder{font-size:15px;color:#999;}
+.inputBase.blue .btnRight {position: absolute;right: 0;top: 0;}
+
+.faqkeyWordbox{ margin-top:12px;text-align:center;vertical-align:middle;}
+.faqkeyWordbox .tit{ display:inline-block;color:#222; margin-right:5px;}
+.faqkeyWordbox .keyWordList{display:inline-block;text-overflow:ellipsis; overflow:hidden;white-space:nowrap;word-break:keep-all;vertical-align:middle;margin-top:-3px;}
+.faqkeyWordbox .keyWordList a{ display:inline-block;font-size:15px; position:relative; padding-right:7px; margin-right:2px;}
+.faqkeyWordbox .keyWordList a:after{ content:''; display:block; width:1px; height:12px; background:#eee; position:absolute; right:0;top:6px;}
+.faqkeyWordbox .keyWordList a:last-child{ padding-right:0; margin-right:0;}
+.faqkeyWordbox .keyWordList a:last-child:after{ display:none;}
+
+.emailapply{overflow:hidden;border-top:1px solid #e5e5e5;margin-top:13px;padding-top:10px}
+.emailapply .listStyle{float:left;margin-top:4px;}
+.emailapply .btnAreaWrap{float:right;width:auto;}
+.emailapply .btnAreaWrap .mail{margin-right:5px;}
+
+/* listnumb */
+.titlist{display:block;font-weight:normal;margin-bottom:10px;font-size:17px;}
+.listnumb > li{position:relative;padding-left:22px;font-size:15px;padding-bottom:10px;}
+.listnumb .linumber{position:absolute;left:0;top:0;color:#222222;}
+
+/* datainfoArea */
+.tit24{font-size:24px;font-family:'NotoRegular';}
+.callnum{display:inline-block;margin-top:-5px;padding-left:10px;font-size:30px;color:#047db5;vertical-align:top;}
+.datainfoArea{padding-top:20px;border-top:2px solid #555555;}
+.callceninfo{position:relative;}
+.callceninfo .datelist{overflow:hidden;}
+.callceninfo .datelist li{position:relative;float:left;padding:0 9px;font-size:15px;}
+.callceninfo .datelist li:before{content:'';position:absolute;left:0;top:6px;width:1px;height:11px;background:#cccccc;}
+.callceninfo .datelist li:first-child{padding-left:0;}
+.callceninfo .datelist li:first-child:before{display:none;}
+.callceninfo .absolR{position:absolute;right:0;top:10px;}
+
+/* 전화가입상품 분류하면서 버튼탭추가191111 */
+.itemSelectArea.callArs .itemList.lineOnly li a{width: 80px;height:30px;padding-top:0;line-height:30px;font-size: 13px;}
+.itemSelectArea.callArs .itemList.lineOnly li.on a:after{ display:none;}
+.itemSelectArea.callArs {display:inline-block;vertical-align:top; right:100; vertical-align:middle;}
+
+.cenlist{padding-top:25px;}
+.cenlist:after{content:'';display:block;clear:both;}
+.cenlist li{position:relative;float:left;padding:0 10px;width:260px;text-align:center;font-size:15px;}
+.cenlist.type2 li{width:400px;}
+.cenlist li .listicon > img{padding-right:9px;vertical-align:middle;}
+.cenlist li:before{content:'';position:absolute;left:0;top:4px;width:1px;height:20px;background:#eeeeee;}
+.cenlist li:first-child:before{display:none;}
+
+.detaliList{position:relative;padding-top:30px;padding-left:20px;margin-top:20px;border-top:1px solid #eeeeee;}
+.detaliList .cellimg{position:absolute;left:288px;top:30px;}
+.detaliList .lfArea{overflow:hidden;min-height:477px;}
+.detaliList .lfArea .left{float:left;}
+.detaliList .lfArea .right{float:right;}
+.detaliList .lfArea li{position:relative;}
+.detaliList .lfArea > li{margin-top:-10px;width:260px;}
+.detaliList .lfArea .bnumlist > li{font-size:15px;color:#222222;padding:15px 0 15px 43px;}
+.detaliList .lfArea .snumlist > li{color:#777777;padding:3px 0;}
+.detaliList .lfArea .snumlist{margin-top:10px;}
+.detaliList .lfArea .numOrange{position:absolute;left:0;top:10px;width:34px;height:34px;line-height:34px;text-align:center;color:#ffffff;font-size:17px;background:#ee5a00;border-radius:50%;}
+.detaliList .lfArea .numGray{position:absolute;left:-37px;top:5px;width:20px;height:20px;line-height:20px;text-align:center;color:#555555;font-size:13px;background:#eeeeee;border:1px solid #cdcdcd;border-radius:50%;}
+
+.btn.small3.h45{padding:0 20px;width:179px;height:45px;line-height:45px;text-align:center;}
+
+/* tabconArea */
+.tabconArea{padding-top:25px;}
+.tabconArea.imgstart{padding-top:30px;}
+
+.contxtDl:last-child{margin-bottom:0;}
+.contxtDl > dl{padding-bottom:10px;}
+.contxtDl > dl:last-child{padding-bottom:0;}
+.contxtDl > dl dt{color:#222222;font-size:15px;}
+.contxtDl .listStep{}
+.contxtDl .listStep:after{content:'';clear:both;display:block;}
+.contxtDl .listStep > li{float:left;position:relative;border-top:2px solid #555555;text-align:center;margin-left:60px;width:240px;background:#f5f5f5;}
+.contxtDl .listStep > li:first-child{margin-left:0;}
+.contxtDl .listStep > li:first-child:before{display:none;}
+.contxtDl .listStep > li:before{content:'';position:absolute;left:-36px;top:50%;margin-top:-13px;width:17px;height:26px;background:url("https://direct.hi.co.kr/images/home_direct/arr_list_step.png") no-repeat;}
+.contxtDl .listStep > li .backgra{padding:20px;height:375px;border-left:1px solid #dddddd;border-right:1px solid #dddddd;border-bottom:1px solid #dddddd;}
+.contxtDl .listStep .titstep{display:block;margin-bottom:20px;font-size:19px;color:#222222;}
+.contxtDl .listStep > ol li em{margin-bottom:5px;}
+.contxtDl .listStep li .backgra > ol{display:table-cell;width:198px;height:340px;vertical-align: middle;}
+.contxtDl .listStep li .backgra > ol li{position:relative;height:94px;color:#777777;}
+.contxtDl .listStep li .backgra > ol li:before{content:'';position:absolute;left:50%;bottom:15px;margin-left:-15px;height:15px;width:29px;background:url("https://direct.hi.co.kr/images/home_direct/arr_list_substep.png") no-repeat;}
+.contxtDl .listStep li .backgra > ol li:last-child:before{display:none;}
+.contxtDl .listStep li .backgra > ol li .stit{display:block;margin-bottom:3px;}
+
+/* 보험금청구안내 /2112 */
+.tabInsuBf .contxtDl{position:relative}
+.tabInsuBf a.btn.small3,
+.tabInsuBf .contxtDl ul > li > a.btn.small3{position:absolute;bottom:0;right:10px;line-height:29px}
+.tabInsuBf .contxtDl ul > li{position:relative}
+.tabInsuBf .contxtDl ul > li .lineBtm{font-weight:600;border-bottom:1px solid #999999}
+.tabInsuBf .contxtDl ul.listLstyle > li > .btnArea{height:35px}
+.tabInsuBf .contxtDl .imgQrApp{position: absolute;top:0;right:10px}
+
+.conProcessTxt .processList.orange li{height:60px;color:#ffffff;}
+.conProcessTxt .processList.orange li:nth-child(1){background:#fea64c;border:0;}
+.conProcessTxt .processList.orange li:nth-child(1) div:after{height:60px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_orange01.png") no-repeat right top;margin-right:-20px;}
+.conProcessTxt .processList.orange li:nth-child(2){background:#fe9122;border:0;}
+.conProcessTxt .processList.orange li:nth-child(2) div:after{ height:60px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_orange02.png") no-repeat right top;margin-right:-10px;}
+.conProcessTxt .processList.orange li:nth-child(3){background:#f38413;}
+.conProcessTxt .processList.orange li:nth-child(3) div:after{height:60px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_orange03.png") no-repeat right top;}
+.conProcessTxt .processList.orange.unbal li{width:260px;}
+.conProcessTxt .processList.orange.unbal li:first-child{width:320px;}
+/* imgcompArea */
+.imgcompArea{overflow:hidden;}
+.imgcompArea > li{float:left;margin-right:19px;width:267px;height:269px;}
+.imgcompArea > li.lastimg{margin-right:0;}
+
+/* widList */
+.widList{overflow:hidden;margin-bottom:5px;font-size:15px;}
+.widList:last-child{margin-bottom:5px;}
+.widList > dt{float:left;width:100px;}
+.widList > dd{float:left;color:#222222;}
+
+/* imglist */
+.imglist{overflow:hidden;}
+.imglist li{float:left;width:167px;height:121px;border-right:1px solid #eeeeee;text-align:center;}
+.imglist li.lastLine{border-right:0;}
+.imglist li .iconArea{display:table-cell;width:168px;height:68px;vertical-align:middle;}
+.imglist li .icontxt{font-size:15px;}
+
+
+.listStyle .recruitEmail{text-decoration:underline;color:#047db5}
+.recruitInput{margin-bottom:25px;}
+
+.recruitLocation{float:right;margin-bottom:20px;}
+.recruitLocation:after{content:'';clear:both;display:block;}
+.recruitLocation li{float:left;position:relative;color:#777777;font-size:15px;padding-right:36px;margin-right:5px;}
+.recruitLocation li span{display:inline-block;margin-right:8px;width:23px;height:23px;border-radius:50%;background:#dddddd;border:1px solid #dddddd;color:#fff;text-align:center;line-height:23px;}
+.recruitLocation li:after{content:'';position:absolute;right:0;top:3px;height:18px;width:31px;background:url("https://direct.hi.co.kr/images/home_direct/icon_recruit_arr.png") no-repeat;}
+.recruitLocation li:last-child{padding-right:0;margin-right:0;}
+.recruitLocation li:last-child:after{display:none}
+.recruitLocation li.on{color:#ee5a00}
+.recruitLocation li.on span{background:#ee5a00;border:1px solid #ee5a00;}
+.recruitLocation li.on:after{background:url("https://direct.hi.co.kr/images/home_direct/icon_recruit_arr_on.png") no-repeat;}
+.recruitLocation li.on.end span{ overflow:hidden; text-indent:-99999px; vertical-align:top;background:url("https://direct.hi.co.kr/images/home_direct/icon_recruit_arr_end.png") no-repeat center center;}
+
+.recruitWrap{clear:both;}
+.recruitWrap .recruitArea{overflow:hidden;}
+.recruitWrap .recruitArea .conTitle01{margin-top:35px;}
+
+.recruitArea .photoEdit{float:left;width:162px;}
+.recruitArea .recruitbase{float:right;width:658px;}
+.photoEdit .photobox{width:162px;height:195px;overflow:hidden;}
+.photoEdit .photobox img{width:162px;height:195px;}
+.recruitArea .photoEdit .filebox{margin:10px 0 15px 0;}
+.recruitArea .photoEdit .filebox .replace{position:absolute;width:162px;height:45px;cursor:pointer;border:transparent;background:#ee5a00;color:#fff;font-size:15px;font-family:'NotoDemiLight';}
+.recruitArea .photoEdit .filebox .upload{position:relative;opacity:0;width:162px;height:45px;cursor:pointer;}
+.recruitArea .photoEdit .photoTxt{color:#777;}
+.recruitArea .photoEdit .photoTxt dt{padding-bottom:4px;}
+.recruitArea .recruitBox{position:relative;margin-top:10px;padding:17px 18px 18px 18px;background:#f5f5f5;border:1px solid #e5e5e5; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.recruitArea .recruitBox:first-child{margin-top:0;}
+.recruitArea .recruitBox .sutit{margin-bottom:12px;font-size:15px;color:#222;}
+.recruitArea .recruitBox .btnAddbox .btn.plus{position:absolute;top:8px;right:20px;}
+.recruitArea .recruitBox .btnAddbox .btn.btnDel{position:absolute;top:8px;right:90px;}
+.recruitArea .recruitBox .btnAddbox a{min-width:65px;}
+.recruitArea .recruitBox .tblList.recruitTbl{border-top: 1px solid #555555;}
+
+.tblList.recruitTbl tbody tr th{padding-left:15px;color:#222;text-align:left;background:#f5f5f5;border-bottom:1px solid #e5e5e5;border-left:1px solid #dddddd;}
+.tblList.recruitTbl tbody tr th:first-child{border-left:0;}
+.tblList.recruitTbl tbody tr th.bg{background:#eeeeee}
+.tblList.recruitTbl tbody tr td{text-align:left;border-bottom:1px solid #e5e5e5;background:#fff;}
+.tblList.recruitTbl tbody tr td.input{padding:10px;}
+.tblList.recruitTbl .inputArea.inlineBlock .item .gapTxt {line-height:40px}
+
+.tblList.recruitTbl .inputBase.datepickerSmall {padding-right: 0;}
+.tblList.recruitTbl .inputBase.datepickerSmall > input{ margin-top:0;}
+
+.introducetxt.textareaBase{min-height:172px; }
+.introducetxt.textareaBase .byte{color:#777;position:absolute;right:20px;bottom:1px; background:#ffffff; display:block; padding:10px;z-index:1}
+
+.serchSrcollArea h3{color:#222;font-size:15px;margin:25px 0 8px 0;}
+.serchSrcollArea .serchScrollcon{border-bottom:1px solid #dddddd; border-top:2px solid #555555;background:#f5f5f5;padding:10px 13px;overflow:auto; height:262px;}
+.serchSrcollArea .serchScrollcon .item{ margin-bottom:10px;}
+.serchSrcollArea .serchScrollcon .item:last-child{ margin-bottom:0;}
+
+.majorEdit{overflow:hidden;margin-top:12px}
+.majorEdit .checkbox{float:left;margin-top:8px}
+.majorEdit .inputBase{float:right;width:444px;}
+
+.popupContentArea .infoTit02{font-size:15px;margin-bottom:15px;}
+.popupContentArea .infoTit02 span{color:#222;font-size:17px;display:block;margin-bottom:3px;}
+
+.infoTableWrap.recruitoutput .infoTable{float:right;width:636px;}
+
+.recruitoutput{clear:both;overflow:hidden;border-top:2px solid #555555; padding:25px 0 20px 0;}
+.recruitoutput .photoEdit{float:left;}
+.recruitoutput .infotableArea{float:right;width:642px; }
+.recruitoutput.line{ border-bottom:1px solid #dddddd; padding-bottom:15px;}
+.recruitoutput .title{ font-size:17px; color:#222222; padding-top:13px; margin-bottom:6px;}
+.recruitoutput .infoTable{ font-size:15px; overflow:hidden;}
+.recruitoutput .infoTable.bline{ border-bottom:1px solid #eeeeee; padding-bottom:15px;}
+.recruitoutput .infoTable.harf .item{ width:50%; float:left;}
+.recruitoutput .infoTable .item.full{ width:100%; float:left;}
+.recruitoutput .infoTable .item.full dl{ margin-bottom:5px !important;}
+.recruitoutput .infoTable .item dl{ margin-bottom:4px; position:relative; padding-left:90px;}
+.recruitoutput .infoTable .item dl:last-child{ margin-bottom:0;}
+.recruitoutput .infoTable .item dl dt{ position:absolute; left:0; top:1px; color:#777777; font-size:14px;}
+.recruitoutput .infoTable .item dl dd{min-height:24px;}
+.recruitoutput .infoTable .item.base01{width:408px;}
+.recruitoutput .infoTable .item.ar{width:232px;}
+.recruitoutput .infoTable:first-child{margin-bottom:4px;margin-top:-6px;}
+
+.infoTableWrap.recruitoutput02{border-bottom:1px solid #dddddd;padding-bottom:12px;}
+.infoTableWrap.recruitoutput02 .infoTable{margin-bottom:0;}
+.infoTableWrap.recruitoutput02 .infoTable .item .rline{display:inline-block;position:relative;padding-right:10px;margin-right:8px;}
+.infoTableWrap.recruitoutput02 .infoTable .item .rline:after{display: block;content: '';position: absolute;right: 0;top: 5px;width:1px;height:14px;background:#e5e5e5}
+.infoTableWrap.recruitoutput02 .infoTable .item .rline:last-child:after{display:none;}
+.infoTableWrap.recruitoutput02 .infoTableCon{border-top:1px solid #eeeeee;margin-top:11px;}
+.infoTableWrap.recruitoutput02 .infoTableCon .title{font-size:15px;color:#222;padding-top:13px; margin-bottom:6px;}
+.infoTableWrap.recruitoutput02 .infoTableCon:first-child{margin-top:0;border-top:0;}
+.infoTableWrap.recruitoutput02 .infoTable .item dl.age{padding-left:50px;}
+.infoTableWrap.recruitoutput02.nobline{border-bottom:0;padding-bottom:0;}
+.infoTableWrap.recruitoutput02 .infoTable .item.family dl{ margin-bottom:5px !important;}
+
+.infoTableWrap.recruitoutput02 .selfIntroductbox{margin-top:20px;padding:19px 15px;height:172px;color:#999;background:#f5f5f5;border:1px solid #e5e5e5;overflow:auto;-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box;word-wrap:break-word;}
+
+.recruitResult{padding-bottom:55px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box;text-align:center;background:url("https://direct.hi.co.kr/images/home_direct/icon_recruit_result.png") no-repeat 48% 60px;}
+.recruitResult dl {padding-top:134px;}
+.recruitResult dl dt{color:#222;font-size:19px;margin-bottom:5px;}
+.recruitResult dl dd{font-size:15px}
+.recruitResult dl dd a{color:#047db5;text-decoration:underline;}
+
+.passwordSerch{overflow:hidden}
+.passwordSerch .listStyle{float:left;margin-top:6px;}
+.passwordSerch .btnbox{float:right;}
+.passwordSerch .btnbox a.btn{width:104px;height:34px;line-height:34px}
+.passwordSerch .btnbox a.btn span{font-size:14px;}
+.passwordSerch .btnbox a.btn:first-child{margin-right:3px;}
+
+
+.customerMainWrap .conTitle02{margin-top:-13px;}
+.customerMainWrap .customerMainArea{border-top:2px solid #555555; padding-top:20px;}
+.customerMainWrap .customerMainArea:after{ content:''; display:block; clear:both;}
+.customerMainArea .areaFl{float:left;width:470px;}
+.customerMainArea .areaFr{float:right;width:330px;}
+.customerMainArea .areaFr .listStyle li{ color:#555555;}
+
+.customerMainArea .subtit{margin-bottom:16px;color:#222222;font-size:22px;font-family:'NotoRegular';}
+.customerMainArea .questionList{margin-top:22px;}
+.customerMainArea .questionList dt{margin-bottom:5px;font-size:17px;color:#222222;}
+.customerMainArea .questionList dd ol li{position:relative;padding-left:22px;font-size:15px;}
+.customerMainArea .questionList dd ol li span{position:absolute;left:0;top:0;color:#047db5;}
+.customerMainArea.line{padding-top:40px;margin-top:35px;border-top:1px solid #e5e5e5}
+
+.customerFaq{margin-top:25px;}
+.customerFaq .tab{overflow:hidden;padding:0 0 1px 1px}
+.customerFaq .tab li{ float:left;width:156px;border:1px solid #e5e5e5;margin:0 0 -1px -1px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; position:relative;}
+.customerFaq .tab li a{ display:block; line-height:42px; text-align:center; font-size:15px;}
+.customerFaq .tab li.on{ position:relative;z-index:1}
+.customerFaq .tab li.on{color:#047db5;}
+.customerFaq .tab li.on a:after{ content:''; display:block; position:absolute; left:-1px; top:-1px;z-index:10;border:1px solid #047db5; width:156px; height:44px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+
+.callcenterbox{height:280px;padding:24px 30px 30px 30px;border:1px solid #e5e5e5;font-size:15px;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.callcenterbox .directTel{margin-bottom:10px;margin-top:-5px;font-size:36px;position:relative;letter-spacing:-0.05em}
+.callcenterbox .directTel:after{content:''; display:block;background:url("https://direct.hi.co.kr/images/home_direct/icon_direct_phone.png") no-repeat; width:36px; height:47px; position:absolute; right:50%; top:8px;z-index:1;margin-right:-69px;}
+.callcenterbox .directInfo{margin-bottom:15px}
+.callcenterbox .directInfo dt{margin-bottom:3px;color:#222;}
+.callcenterbox .directInfo dd{color:#777}
+.callcenterbox .btn span{color:#777;}
+.callcenterbox .btn.mail{margin-left:-1px;}
+
+.customerInfotab{overflow:hidden;width:100%;padding:0 0 1px 1px}
+.customerInfotab li{float:left;width:50%;height:62px;border:1px solid #e5e5e5;margin:0 0 -1px -1px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; position:relative;}
+.customerInfotab li a{ display:block; line-height:60px; text-align:left; font-size:15px;padding-left:60px;}
+.customerInfotab li a:after{content:''; display:block;background:url("https://direct.hi.co.kr/images/common/icon_arr_right02.png") no-repeat; width:10px; height:16px; position:absolute; right:16px; top:50%;margin-top:-7px;}
+.customerInfotab li:nth-child(1) a{background:url("https://direct.hi.co.kr/images/home_direct/icon_customer_main01.png") no-repeat 20px center; background-size:29px 32px}
+.customerInfotab li:nth-child(2) a{background:url("https://direct.hi.co.kr/images/home_direct/icon_customer_main02.png") no-repeat 20px center; background-size:31px 24px}
+.customerInfotab li:nth-child(3) a{background:url("https://direct.hi.co.kr/images/home_direct/icon_customer_main03.png") no-repeat 22px center; background-size:29px 27px}
+.customerInfotab li:nth-child(4) a{background:url("https://direct.hi.co.kr/images/home_direct/icon_customer_main04.png") no-repeat 20px 18px; background-size:32px 30px}
+.customerInfotab li:nth-child(5) a{background:url("https://direct.hi.co.kr/images/home_direct/icon_customer_main05.png") no-repeat 20px center; background-size:34px 28px}
+.customerInfotab li:nth-child(6) a{background:url("https://direct.hi.co.kr/images/home_direct/icon_customer_main06.png") no-repeat 19px center; background-size:32px 26px}
+
+.customerMainArea .lineTabWrap .lineTabList{padding-bottom:17px;}
+.customerMainArea .lineTabWrap .lineTabList li a{line-height:39px;background:#f5f5f5;}
+.customerMainArea .lineTabWrap .lineTabList li.on a{background:#fff;}
+.customerMainArea .lineTabWrap .listStyle li{text-overflow:ellipsis; overflow:hidden;white-space:nowrap;}
+
+.agreeTit{ font-size:17px; color:#047db5;padding:30px 0 6px 0}
+.agreeTit:first-child{ padding-top:0;}
+
+
+.cardToparea{margin-bottom:30px;padding:26px 0px 25px 30px;background:#cad8da;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.cardToparea .title{padding-bottom:20px;color:#222222;font-size:24px;font-family:"NotoRegular";line-height:34px;position:relative;}
+.cardToparea .title.hyundai{margin-right:30px;background: url(https://direct.hi.co.kr/images/partnership_discount/txt_hyundai_card02.png) no-repeat right 8px;}
+.cardToparea .title.shinhan{padding-bottom:16px;margin-right:30px;background: url(https://direct.hi.co.kr/images/partnership_discount/txt_shinhancard.png) no-repeat right 7px;}
+.cardToparea .monthCardlist{overflow:hidden;display:table; width:100%;margin-bottom:15px;}
+.cardToparea .monthCardlist ul li {display:table-cell;vertical-align:top;padding:0 38px 0 40px;border-right:1px solid #dae4e5;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.cardToparea .monthCardlist ul li:first-child{padding-left:0;}
+.cardToparea .monthCardlist ul li:last-child{border-right:0;}
+.cardToparea .monthCardlist dl dt{margin-bottom:10px;font-size:17px;color:#222222;}
+.cardToparea .monthCardlist dl dd{width:200px;line-height:0;overflow:hidden;margin-top:-3px;margin-left:-3px;}
+.cardToparea .monthCardlist dl dd span{float:left;margin-left:3px;margin-top:3px;}
+.cardToparea .monthCardlist dl dd span img{width:63px;height:42px;}
+.cardToparea.smallcar .listStyle{margin-top:-19px;}
+.cardTopbenefit{width:840px;margin-bottom:30px;height:296px;}
+.cardTopbenefit .hidden{display:block;height:0;width:0;font-size:0;line-height:0;margin:0;padding:0;overflow:hidden;}
+.smallcarInfo{padding:9px 0 40px 0;}
+.smallcarInfo.card{margin-right:30px;background: url(https://direct.hi.co.kr/images/partnership_discount/img_smallcar_hyundai01.png) no-repeat right 22px;}
+.smallcarInfo.cardshinhan{padding-bottom:40px;margin-right:30px;background: url(https://direct.hi.co.kr/images/partnership_discount/img__electronic_shinhan01.png) no-repeat right 26px;}
+.smallcarInfo ul{overflow:hidden;}
+.smallcarInfo ul li{float:left;font-size:15px;display:table;text-align:center;margin-right:10px;color:#777777;}
+.smallcarInfo ul li div{width:120px;height:120px;display:table-cell;background:#fff;border-radius:50%;border:1px solid #fff;vertical-align:middle;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;font-family:"NotoRegular";}
+
+.cardconArea .tabtit{color:#222222;font-size:24px;margin-bottom:16px; font-weight:bold;}
+.cardconArea .subtit{color:#222222;font-size:19px;margin-bottom:15px;font-family:"NotoRegular";}
+.cardconArea .conTitle01{margin-top:30px;}
+.cardconArea .conTitle01:first-child{margin-top:0;}
+.cardconArea .cardCon .conTitle01{margin-bottom:5px;}
+
+.cardconArea.smallcar .installmentsWrap{padding-top:24px;}
+.cardconArea.smallcar .installmentsWrap .conTitle01{margin-bottom:10px;}
+.cardconArea.smallcar .installmentsWrap .cardCon{margin-top:-3px}
+
+.installmentsWrap{overflow:hidden;border-top:2px solid #555555; padding-top:16px;margin-bottom:50px;position:relative;}
+.installmentsWrap.line{padding-bottom:60px;border-bottom:1px solid #eeeeee}
+.installmentsWrap:last-child{margin-bottom:0;}
+
+.installmentsWrap .infoTable li{ overflow:hidden; padding-left:124px; position:relative; margin-bottom:5px;font-size:15px}
+.installmentsWrap .infoTable li:last-child{ margin-bottom:0;}
+.installmentsWrap .infoTable li .tit{position:absolute; left:0; top:0; color:#777777;}
+.installmentsWrap .infoTable.bline{ border-bottom:1px solid #e5e5e5;padding-bottom:16px; margin-bottom:15px;}
+.installmentsWrap .call {font-size:15px;line-height:23px;}
+.installmentsWrap .call em{display:inline-block;font-size:30px;vertical-align:-5px;}
+.installmentsWrap .conTitle01{position:relative;}
+.installmentsWrap .conTitle01 .btn{position:absolute;right:0;bottom:0;}
+.installmentsWrap .cardcall{margin-top:13px;}
+.installmentsWrap .cardcall li{display:inline-block;color:#777777;margin-left:9px;padding-left:10px;position:relative;}
+.installmentsWrap .cardcall li:before{display: block; content: ''; position: absolute;left: 0; top: 50%; width: 1px;height: 12px; background: #eeeeee;margin-top: -5px;}
+.installmentsWrap .cardcall li:first-child{margin-left:0;padding-left:0;}
+.installmentsWrap .cardcall li:first-child:before{display:none}
+.installmentsWrap .qrcode{position:absolute;right:0;bottom:-5px;}
+
+.lnbTypeContentArea .cardImg{position:relative;height:122px;}
+.lnbTypeContentArea .cardImg .txt{font-size:19px;color:#222222;margin-top:5px;}
+.lnbTypeContentArea .cardImg .img{position:absolute;right:20px;top:0;}
+
+.cardOpenarea .open{display:block;height:50px;line-height:50px;text-align:center;border-top:1px solid #dddddd;border-bottom:1px solid #eeeeee;}
+.cardOpenarea .open span{padding-right:35px;color:#222;font-size:17px; background: url(https://direct.hi.co.kr/images/common/icon_arr_down02.png) no-repeat right 9px;}
+.cardOpenarea .open.on span{background: url(https://direct.hi.co.kr/images/common/icon_arr_up.png) no-repeat right 9px;}
+.cardOpenarea .cardCon{display:none;padding-top:24px;border-bottom:1px solid #eeeeee;padding-bottom:55px;}
+.cardOpenarea .cardCon.noline{border-bottom:0;padding-bottom:0;}
+.cardCon .listLstyle{padding-bottom:0;}
+.cardCon .listLstyle li{font-size:15px;}
+.cardCon .listLstyle .tit{color:#222222;}
+
+/* partnership_discount */
+.pb60{padding-bottom:60px;}
+.borBline{border-bottom:1px solid #eeeeee;}
+
+.installmentsWrap.type2{padding-top:23px;}
+.installmentsWrap.type3{padding-top:28px;}
+
+.titExplain{font-size:19px;color:#222222;line-height:28px;}
+
+.infoTableWrap.onlyBox.Boxtype2{padding:14px 18px 25px 18px;}
+
+/* conTitle01 */
+.conTitle01 .tit.regur{font-family:'NotoRegular';}
+.conTitle01.imgR{position:relative;}
+.conTitle01.imgR .memlogoArea{position:absolute;right:0;top:3px;}
+
+/* btn */
+.btn.small.type2{padding:0 14px;}
+
+/* mcardataArea */
+.mcardataArea > li{padding:42px 0 35px 0;text-align:left;border-bottom:1px solid #eeeeee;}
+.mcardataArea > li:first-child{padding-top:0;}
+.mcardataArea > li:last-child{border-bottom:0;padding-bottom:0;}
+.mcardataArea > li:after{content:'';clear:both;display:block;}
+.mcardataArea .mcardimgbox{float:left;padding-right:10px;margin-top:7px;width:178px;text-align:left;}
+.mcardataArea .mcardimgbox > img{width:149px;height:94px;}
+.mcardataArea .mcardinfobox{float:left;}
+.mcardataArea .mcardinfobox .conTitle01{margin-top:0;}
+.mcardataArea .mcardinfobox .mcardata{overflow:hidden;margin-bottom:5px;}
+.mcardataArea .mcardinfobox .mcardata:last-child{margin-bottom:0;}
+.mcardataArea .mcardinfobox .mcardata dt{float:left;width:84px;padding-right:10px;font-size:15px;color:#777777;}
+.mcardataArea .mcardinfobox .mcardata dd{float:left;width:547px;font-size:15px;}
+
+/* partnerArea */
+.partnerArea{position:relative;padding-bottom:30px;}
+.partnerArea .partxt{width:445px;}
+.partnerArea .partimg{width:390px;font-size:0;position:absolute;right:0;bottom:0;height:100%;}
+.partnerArea .partimg .partnerlogo{position:absolute;right:0;top:0;font-size:15px;z-index:20;}
+.partnerArea .partimg > img{position:absolute;right:0;bottom:0;}
+
+/* listnumb*/
+.listnumb.num2 li{padding-bottom:5px;font-size:17px;font-family:'NotoRegular';}
+
+/* listProduc */
+.listProduc:after{content:'';clear:both;display:block;}
+.listProduc li{float:left;padding-left:15px;}
+.listProduc li:first-child{padding-left:0;}
+.listProduc li .producttxt{color:#222222;font-size:15px;margin-bottom:10px;}
+.listProduc li .producttxt .protit{display:block;}
+.listProduc li .productimg{width:270px;height:150px;border:1px solid #eeeeee;box-sizing: border-box;}
+.listProduc li .productimg > img{width:268px;height:148px;}
+
+
+.certificateArea .btnAreaWrap{margin-bottom:30px;}
+.certificateArea .btn.big{width:296px;}
+.certificateArea .btn.big span{font-size:17px;color:#222222;}
+.certificateArea .btn.pc span{padding-left:33px;background:url("https://direct.hi.co.kr/images/common/icon_pc.png") no-repeat left center;}
+.certificateArea .btn.smart span{padding-left:30px;background:url("https://direct.hi.co.kr/images/common/icon_phone02.png") no-repeat left center;}
+.certificateArea .inputTable{margin-bottom:0;}
+.certificateArea .inputTable .title{padding-top:0;}
+.certificateArea .inputTable .title:first-child{padding-top:15px;}
+
+.certificateCopyBox ol{overflow:hidden;margin-left:-18px;}
+.certificateCopyBox ol li{float:left;width:411px;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;font-size:15px;margin-left:18px;margin-bottom:36px;line-height:1.6}
+.certificateCopyBox ol li .info{margin-bottom:16px;}
+.certificateCopyBox ol li p{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box}
+.certificateCopyBox ol li p.img{height:300px;width:411px;}
+.certificateCopyBox ol li a.fontPoint1{text-decoration:underline;}
+.certificateCopyBox.lineB{margin-bottom:35px;border-bottom:1px solid #eeeeee;}
+
+.clickcallWrap.borderBline{padding-bottom:55px}
+.clickcallWrap .conProcessTxt{margin-top:10px;}
+.clickcallWrap .conTitle01{margin-bottom:8px;}
+.clickcallWrap .certificateCopyBox ol:first-child li{margin-bottom:0;}
+
+
+.guidelist{overflow:hidden;}
+.guidelist > li{float:left;width:420px;}
+.guidelist .guidetxt{overflow:hidden;}
+.guidelist .guidetxt dt{margin-bottom:5px;font-size:15px;color:#222222;}
+.guidelist .guidetxt dd > ul{padding-right:10px;width:410px;}
+.guidelist .guidetxt.guide2 > dd{float:left;}
+.guidelist .guidetxt.guide2 > dd > ul{width:200px;}
+.guidelist .guidetxt.guide2 > dd:last-child > ul{width:183px;padding-right:0;}
+
+
+.linebox{border-top:2px solid #555555;}
+.linebox.noTline{border-top:0;}
+.linebox.linebottom{border-bottom:1px solid #eeeeee;}
+
+
+.itemSelectArea .tabList.tabintab{padding:20px;border:1px solid #e5e5e5;background:#f5f5f5;text-align:center;font-size:0;}
+.itemSelectArea .tabList.tabintab li{display:inline-block;font-size:15px;margin-left:10px;}
+.itemSelectArea .tabList.tabintab li:first-child{margin-left:0;}
+.itemSelectArea .tabList.tabintab li a{display:block;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;text-align:center;padding:0 19px;height:40px;line-height:40px;border:1px solid #cccccc;background:#ffffff;}
+.itemSelectArea .tabList.tabintab li.on a:after{display:none;}
+.itemSelectArea .tabList.tabintab li.on a{border:1px solid #ee5a00;background:#ee5a00;}
+.itemSelectArea .tabList.tabintab li.on a span{color:#ffffff;font-size:15px;}
+
+.installstep{overflow:hidden;margin-left:-20px}
+.installstep li{float:left;margin-left:20px;padding-bottom:40px;}
+.installstep > li .txt{width:410px;font-size:15px;}
+.installstep > li .guidimgArea{margin-top:15px;width:410px;height:300px;}
+.installstep > li .guidimgArea > img{width:410px;height:300px;}
+
+.installstep.type2 li .txt{height:73px;}
+.installstep.type2 li .guidimgArea{margin-top:0;}
+
+.installstep.type3 li .txt{height:86px;}
+.installstep.type3 > li .guidimgArea{margin-top:0;}
+.installstep.type3.plus > li .txt{height:96px;}
+
+
+.supportlist{padding:20px;border:1px solid #e5e5e5;background:#f5f5f5;}
+.supportlist > ul{text-align:center;}
+.supportlist > ul > li{display:inline-block;margin-left:10px;padding:0 20px;height:38px;line-height:38px;text-align:center;border:1px solid #cccccc;background:#ffffff;}
+.supportlist > ul > li:frist-child{margin-left:0;}
+.supportlist > ul > li.on{border:1px solid #ee5a00;background:#ee5a00;color:#ffffff;}
+
+.linetxtBlue{color:#047db5;text-decoration:underline;}
+
+/* customSlidTab */
+.tabList.customSlidTab{overflow:hidden;margin-left:-29px;}
+.tabList.customSlidTab li{float:left;margin-bottom:13px;}
+.tabList.customSlidTab li a{position:relative;display:block;margin-left:29px;width:188px;font-size:17px;}
+.tabList.customSlidTab li:last-child a{padding-right:0;}
+.tabList.customSlidTab li:last-child a:after{display:none;}
+.tabList.customSlidTab li.on a{color:#ee5a00;}
+.tabList.customSlidTab li a .numCircle{display:inline-block;margin-right:10px;width:25px;height:25px;background:#999999;border-radius:50%;color:#ffffff;line-height:25px;text-align:center;font-size:15px;}
+.tabList.customSlidTab li.on a .numCircle{background:#ee5a00;}
+.tabList.customSlidTab li a:before{display:none;}
+.tabList.customSlidTab li a:after{content:'';display:block;position:absolute;width:11px;height:18px;background:url(https://direct.hi.co.kr/images/common/pop_img_tab_arr_g.png) no-repeat;top:4px;right:0;}
+.tabList.customSlidTab li.on a:after{background:url(https://direct.hi.co.kr/images/common/pop_img_tab_arr.png) no-repeat;}
+
+.tabList.customSlidTab.notab{width:auto;margin-left:-10px;}
+.tabList.customSlidTab.notab li a{width:auto;margin-left:10px;}
+.tabList.customSlidTab.notab li a > span{margin-right:20px;}
+.tabList.customSlidTab.notab li:last-child a > span{margin-right:0;}
+
+/* 가이드 Small /1911 */
+.tabList.customSlidTab.notab.typeSmall li:first-child a{margin-left:10px}
+.tabList.customSlidTab.notab.typeSmall li a{margin-left:8px;font-size:15px;letter-spacing:-1px}
+.tabList.customSlidTab.notab.typeSmall li a > span{margin-right:16px;}
+.tabList.customSlidTab.notab.typeSmall li a .numCircle{margin-right:5px;width:22px;height:22px;line-height:22px}
+.tabList.customSlidTab.notab.typeSmall li a:after{width:8px;height:15px;background:url('https://direct.hi.co.kr/images/common/pop_img_tab_arr_g.png') no-repeat;top:5px;right:0;background-size:8px auto}
+.tabList.customSlidTab.notab.typeSmall li.on a:after{background:url('https://direct.hi.co.kr/images/common/pop_img_tab_arr.png') no-repeat;background-size:8px auto}
+
+/* customSlide */
+.customSlide{position:relative;}
+.customSlide .titbox{padding:13px 20px 15px 16px;background:#f5f5f5;}
+.customSlide .titbox .tit{font-size:19px;color:#222222;}
+.customSlide .customSlidimgArea{position:relative;margin-top:12px;border-top:2px solid #ee5a00;width:840px;height:500px;overflow:hidden;}
+.customSlide .customSlidimgArea .customSlidimg{overflow:hidden;width:999999px;position:absolute;left:0;top:0;}
+.customSlide .customSlidimgArea .customSlidimg > li{float:left;text-align:left;}
+.customSlide .customSlidimgArea .customSlidimg > li.on{display:block;}
+.customSlide .customSlidimgArea .customSlidimg > li > img{vertical-align:top;width:100%;}
+.customSlide .customSlidimgArea .preN{display:block;position:absolute;top:50%;margin-top:-32px;width:32px;height:63px;background-repeat:no-repeat;font-size:0;text-indent:-99999px;line-height:0;}
+.customSlide .customSlidimgArea .customSlidePrev{background-image:url(https://direct.hi.co.kr/images/common/pop_img_arr_l.png);left:30px;z-index:11}
+.customSlide .customSlidimgArea .customSlideNext{background-image:url(https://direct.hi.co.kr/images/common/pop_img_arr_r.png);right:30px;z-index:11}
+.customSlide .customSlidimgArea .customSlideBtn{overflow:hidden;position:absolute;right:30px;top:460px;left:auto; width:auto;z-index:12}
+.customSlide .customSlidimgArea .customSlideBtn .swiper-pagination-bullet{display:inline-block;margin-left:10px;width:12px;height:12px;background:#cccccc;border-radius:50%;vertical-align:top;opacity:1}
+.customSlide .customSlidimgArea .customSlideBtn .swiper-pagination-bullet.swiper-pagination-bullet-active{background:#ee5a00;}
+
+/* 모바일 보험료계산 가이드 수정 /1911 */
+.customSlide .customSlidimgArea.infoMobile{padding-top:20px;height:634px}
+.customSlide .customSlidimgArea.infoMobile .customSlidimg{top:20px}
+.customSlide .customSlidimgArea.infoMobile .customSlideBtn{top:620px;height:12px}
+.customSlide.onlyimg .customSlidimgArea{height:577px;border:0;}
+.customSlide.onlyimg .customSlidimgArea .customSlidePrev.black,
+.customSlide .customSlidimgArea.infoMobile .customSlidePrev.black{background-image:url('https://direct.hi.co.kr/images/common/gide_img_balckarr_l.png');left:0;}
+.customSlide.onlyimg .customSlidimgArea .customSlideNext.black,
+.customSlide .customSlidimgArea.infoMobile .customSlideNext.black{background-image:url('https://direct.hi.co.kr/images/common/gide_img_balckarr_R.png');right:0;}
+
+.customSlide.onlyimg .customSlidimgArea{height:577px;border:0;}
+.customSlide.onlyimg .customSlidimgArea .customSlidePrev.black{background-image:url(https://direct.hi.co.kr/images/common/gide_img_balckarr_l.png);left:0;}
+.customSlide.onlyimg .customSlidimgArea .customSlideNext.black{background-image:url(https://direct.hi.co.kr/images/common/gide_img_balckarr_R.png);right:0;}
+
+.infotxtBot.type02{margin-top:0;padding-top:0;border-top:0;}
+.infotxtBot.type02 .info{margin-right:10px;padding-right:12px;}
+.contxtDl{font-size:15px;}
+
+.borderBline{margin-bottom:25px;border-bottom:1px solid #e5e5e5 !important;}
+.tit30S{font-size:30px;font-family:'NotoRegular';}
+.letspac6{letter-spacing:-0.06em;}
+
+.pb50{padding-bottom:50px;}
+.pb55{padding-bottom:55px;}
+.txtfile{margin-left:10px;}
+
+/* button */
+.btn.grayBB22{display:inline-block;margin-left:5px;padding:0 4px;height:22px;line-height:20px;font-size:13px;color:#777777;border:1px solid #cccccc;background:#f5f5f5;}
+.absolR{position:absolute;top:0;right:0;}
+.btnRmt{margin-top:-3px;}
+.btn.h40.orange{background:#ee5a00;border:0;line-height:42px;min-width:90px;}
+.btn.h40.orange > span{color:#ffffff;}
+.btn.grayBB22.ml0{margin-left:0;}
+
+/* rolist */
+.rolist{overflow:hidden;padding-bottom:25px;}
+.rolist > li{float:left;}
+.rolist > li:first-child{width:443px;}
+.rolist .phonelist{overflow:hidden;}
+.rolist .phonelist > li{float:left;padding-left:24px;}
+.rolist .phonelist > li:first-child{padding-left:0;}
+
+/* listLstyle */
+.listLstyle{overflow:hidden;padding-bottom:60px;}
+.listLstyle li{float:left;position:relative;padding-left:20px;width:260px;}
+.listLstyle li:first-child{padding-left:0;width:280px;}
+.listLstyle li:before{content:'';position:absolute;left:0;top:0;height:107px;width:1px;background:#eeeeee;}
+.listLstyle li:first-child:before{display:none;}
+.listLstyle.type4 li{width:190px;}
+.listLstyle.type4 li:first-child{width:210px;}
+
+/* conProcessTxt */
+.conProcessTxt{position:relative;}
+.conProcessTxt .absolR{position:absolute;right:0;top:-40px;}
+.conProcessTxt .processList.type5 li{height:70px;width:20%; padding-right:10px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.conProcessTxt .processList.type5 li:nth-child(1){background:#f5f5f5;border:1px solid #ddd;border-right:0;z-index:5;}
+.conProcessTxt .processList.type5 li:nth-child(1) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:11px; height:70px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_type5_01.png") no-repeat right 1px;margin-right:0;}
+.conProcessTxt .processList.type5 li:nth-child(2){background:#eeeeee;border-top:1px solid #ddd;border-bottom:1px solid #ddd;z-index:4}
+.conProcessTxt .processList.type5 li:nth-child(2) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:20px; height:70px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_type5_02.png") no-repeat right 1px;}
+.conProcessTxt .processList.type5 li:nth-child(3){background:#dddddd;z-index:3}
+.conProcessTxt .processList.type5 li:nth-child(3) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:21px; height:70px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_type5_03.png") no-repeat right top;}
+.conProcessTxt .processList.type5 li:nth-child(4){background:#cccccc;z-index:2}
+.conProcessTxt .processList.type5 li:nth-child(4) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:21px; height:70px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_type5_04.png") no-repeat right top;}
+.conProcessTxt .processList.type5 li:nth-child(5){background:#ee5a00;z-index:1;color:#ffffff;}
+.conProcessTxt .processList.type5 li:nth-child(5) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:20px; height:70px;background:url("https://direct.hi.co.kr/images/home_direct/img_process_type5_05.png") no-repeat right top;}
+
+/* table */
+.tbltitS{display:block;font-size:15px;color:#222222;margin-bottom:5px;font-family:'NotoRegular';font-weight:normal;}
+.tblbtnA > a{display:inline-block;margin:0 1px;}
+.tblbtnA.big{padding:6px 0 3px 0;}
+.tbltit{display:inline-block;color:#222222;margin-top:14px;margin-bottom:5px;}
+.tbltit:first-child{margin-top:0;}
+.intxtlist{margin-top:6px;padding-left:7px;}
+.intxtlist.line2{margin-bottom:5px;}
+.intxtlist.line2 > li{margin-bottom:3px;}
+.intxtlist.line2 > li:last-child{margin-bottom:0;}
+.intxtarea{padding-left:8px;}
+
+/* widlistBig */
+.widlistBig{padding-bottom:50px;}
+.widlistBig dl dt{width:180px;color:#222222;}
+.widlistBig dl dd{color:#555555;}
+
+/* lineTabList */
+.lineTabWrap .lineTabList.item6 li{ width:141px;}
+
+/* checkbox */
+.checkboxGray{padding:15px 20px 20px 20px;border:1px solid #e5e5e5;background:#f5f5f5;}
+.checkboxGray .typechek{ overflow:hidden;}
+.checkboxGray .typechek li{margin-left:10px; width:80px; height:80px; line-height:80px; float:left; text-align:center;}
+.checkboxGray .typechek.full li{margin-left:20px; width:auto; height:auto; line-height:1; float:left; text-align:center;}
+.checkboxGray .typechek li:first-child{ margin-left:0;}
+.checkboxGray .typechek.full.check4 li{width:189px;margin-left:0;padding:7px 10px 7px 0;text-align:left;}
+
+/* plusbtnR */
+.plusbtnR{position:relative;}
+.plusbtnR > a{display:block;position:absolute;right:0;top:-9px;width:156px;}
+
+@charset "utf-8";
+
+/* exceptionWrap /수정1909 */
+.exceptionWrap{position:relative;width:1140px;margin:0 auto;height:100%;border-left:1px solid #eeeeee;border-right:1px solid #eeeeee;}
+.exceptionWrap .contentArea{padding-top:105px;}
+.exceptionWrap .logo{position:absolute;left:50px;top:55px;width:230px}
+.exceptionWrap .logo img.logo2{ position:absolute; left:0; top:0; display:none;z-index:1}
+.exceptionWrap .content{padding:0 50px;min-height:735px;}
+.exceptionWrap .content .lineB{border-bottom:1px solid #eeeeee;}
+.exceptionWrap .content .contit{padding-top:35px;font-size:17px;}
+
+/* conAdressbox */
+.conAdressbox{width:1040px;background:#f5f5f5;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;}
+.conAdressbox .boxsize{width:472px;padding:15px 0 17px 0;margin:0 auto;}
+.conAdressbox .boxsize2{width:900px;padding:25px 0 25px 0;margin:0 auto;} /* 20190724 추가 */
+.conAdressbox .boxsizeCenter{ text-align:center; display:table; font-size:0; width:100%; padding:30px 0}
+.conAdressbox .boxsizeCenter .tit{ display:inline-block; line-height:45px;}
+
+/* sertesting */
+.sertesting{width:895px;padding:20px 0 0 145px;}
+.sertesting dt{font-size:17px;color:#047db5;}
+.sertesting dd{color:#777777;font-size:17px;}
+.sertesting .sertestxt{overflow:hidden;margin-bottom:10px;}
+.sertesting .sertestxt > dt{float:left;width:130px;}
+.sertesting .sertestxt > dd{float:left;width:680px;}
+
+.sertesting.testing02{width:auto;padding:22px 0 0 0;}
+.sertesting.testing02 .sertestxtM{text-align:center;}
+.sertesting.testing02 > ul.listStyle{width:752px;margin:0 auto;}
+
+/* btn */
+.btn.gray100{text-align:center;width:100%;padding:0 15px;height:45px;line-height:45px;font-size:15px;background:#eeeeee;border:1px solid #cccccc;color:#999999;}
+.btn.gray100.orange{background:#ee5a00;color:#ffffff;border:0;}
+.btn.gray100.orange .arrRw{display:inline-block;width:100%;background:url(https://direct.hi.co.kr/images/common/btn_icon_arrRw100.png) no-repeat right center;}
+
+/* protectboxtxt */
+.protectboxtxt .titleArea{padding-bottom:24px;color:#222222;}
+.protectboxtxt .titleArea.rightimg{background:url(https://direct.hi.co.kr/images/common/icon_security_down.png) no-repeat right top;}
+.protectboxtxt .titleArea.topimg{padding-top:115px;background:url(https://direct.hi.co.kr/images/common/icon_err.png) no-repeat center top;}
+.protectboxtxt .titleArea.topimg2{padding-top:115px;background:url(https://direct.hi.co.kr/images/common/icon_limit.png) no-repeat center top;} /* 20190724 추가 */
+.protectboxtxt .titleArea .maintit{font-size:32px;font-family:'NotoRegular';}
+.protectboxtxt .titleArea .subtxt{font-size:24px;}
+
+/* secudownlist */
+.secudownlist{overflow:hidden;padding:38px 0 40px 0;border-top:2px solid #555555;}
+.secudownlist li{float:left;position:relative;padding:0 28px;width:305px;}
+.secudownlist > li:first-child{padding-left:0;}
+.secudownlist > li:last-child{padding-right:0;width:309px}
+.secudownlist > li:before{content:'';position:absolute;right:0;top:0;width:1px;height:100%;background:#eeeeee;}
+.secudownlist > li:last-child:before{display:none}
+.secudownlist li .titA{padding-bottom:20px;position:relative;}
+.secudownlist li .titA > a{position:absolute;top:0;right:0;}
+.secudownlist li .titA .tit{display:block;color:#222222;font-size:19px;}
+
+/* leftWlist */
+.leftWlist{overflow:hidden;margin-top:5px;}
+.leftWlist dt{float:left;width:85px;color:#777777;font-size:15px;}
+.leftWlist dd{float:left;width:220px;font-size:15px;}
+.leftWlist.type2 dt{float:left;width:110px;padding-right:5px;color:#222222;}
+.leftWlist.type2 dd{float:left;width:923px;color:#777777;}
+
+/* arsBox */
+.arsBox{padding:16px 29px;overflow:hidden;background:#f5f5f5;border:1px solid #e5e5e5;margin-top:60px;}
+.arsBox .leftbox{float:left;width:303px;line-height:44px;}
+.arsBox .rightbox{float:left;overflow:hidden;}
+.arsBox .numberbig{margin-left:5px;font-size:21px;color:#047db5;font-family:'NotoRegular';vertical-align:-2px;}
+.arsBox li{float:left;position:relative;padding-left:29px;width:309px;}
+.arsBox li:before{content:'';position:absolute;left:0;top:0;width:1px;height:100%;background:#e5e5e5;}
+.arsBox li:first-child:before{display:none;}
+.arsBox .arstit{display:inline-block;font-size:15px;color:#222222;}
+
+.arsBox.inpage{margin-top:30px;}
+.arsBox.inpage .leftbox{width:292px;}
+.arsBox.inpage li{padding-left:20px;width:224px;}
+
+
+@charset "utf-8";
+
+/* EVENT */
+.content.event{padding:0 0 80px 70px}
+.content.event.pl0{padding-left:0}
+.content.event .tblList td > a{margin:-2px 0;}
+
+/* eventArea  */
+.eventArea{}
+.eventArea.view{padding:30px;border-bottom:1px solid #dddddd;}
+
+/* eventimglist */
+.eventimglist{}
+.eventimglist:after{display:block;content:"";clear:both}
+.eventimglist li{float:left;padding-right:40px;width:400px;height:273px;}
+.eventimglist li:nth-child(even){padding-right:0}
+.eventimglist li a{display:block}
+.eventimglist .previewImg{margin-bottom:8px;width:400px;height:200px}
+.eventimglist .txt{font-size:17px;color:#222222;}
+.eventimglist .txt .txttit{text-overflow:ellipsis; overflow:hidden;white-space:nowrap;}
+.eventimglist .txt .evntdate{padding-top:3px;color:#777777;font-size:15px;}
+.eventimglist .txt .evntdate .tit{display:inline-block;padding-right:8px;color:#555555;}
+
+/* button */
+.more{padding-right:27px;background:url(https://direct.hi.co.kr/images/home_direct/icon_plus.png) no-repeat right 17px;}
+
+/* tab */
+.tabArea{}
+.tabArea .tablist{text-align:center;}
+.tabArea .tablist li{display:inline-block;margin-left:7px;}
+.tabArea .tablist li:first-child{margin-left:0;}
+.tabArea .tablist li a{display:inline-block;padding:0 15px;width:130px;height:47px;line-height:47px;font-size:19px;border:1px solid #cccccc;background:#f5f5f5;}
+.tabArea .tablist > li.on a{height:49px;line-height:49px;border:0;background:#047db5;color:#ffffff;}
+
+
+.tblViewList.eventli ul li{width:1100px;}
+.tblViewList.eventli ul li .evdate{width:200px;text-align:right;font-size:14px;}
+
+
+@charset "utf-8";
+
+.content.product{padding: 50px 0 80px 0}
+.productTopArea{ height:420px; padding-top:106px;min-width:1140px; position:relative;}
+.productTopArea .productTop{ height:420px; background-repeat:no-repeat;background-position:center top; -webkit-background-size:cover; background-size:cover; position:relative;}
+.productTopArea .objArea{ position:absolute; top:50%; left:0; right:0;width:1140px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;margin:0 auto; text-align:center;transform: translate(0, -50%);-webkit-transform: translate(0, -50%);-ms-transform: translate(0, -50%);}
+.productTopArea .objArea .obj{
+    transition:all 0.5s;
+    -webkit-transition:all 0.5s;
+    transform:translate(0, 40px);
+	-webkit-transform:translate(0, 40px);-ms-transform:translate(0, 40px);
+    opacity:0;
+}
+.productTopArea .objArea .txt1{ font-size:48px; font-family:"NotoRegular"; color:#ffffff;}
+.productTopArea .objArea .txt2{font-size:26px;color:#ffffff; margin-top:-3px;}
+.productTopArea .objArea .btnArea{ margin-top:25px; text-align:center; display:table; font-size:0; width:100%;}
+.productTopArea .objArea .btnArea .btn{ width:200px; line-height:45px; height:45px; display:inline-block;margin:0 5px;}
+.productTopArea .objArea .btnArea .btn.widS{ width:157px;}
+.productTopArea .objArea .btnArea .btn span{ font-size:17px;}
+.productTopArea .objArea .btnArea .btn.blue{ background:#047db5;}
+.productTopArea .objArea .btnArea .telbox{ margin:0 5px;}
+.productTopArea .objArea.play{z-index:3}
+.productTopArea .objArea.play .obj{
+    transform:translate(0, 0);
+	-webkit-transform:translate(0, 0);-ms-transform:translate(0, 0);
+    opacity:1;
+}
+.productTopArea .objArea.play .obj.txt1{
+    transition-delay:0.5s;-webkit-transition-delay:0.5s
+}
+.productTopArea .objArea.play .obj.txt2{
+    transition-delay:0.6s;-webkit-transition-delay:0.6s
+}
+.productTopArea .objArea.play .obj.telbox{
+    transition-delay:0.7s;-webkit-transition-delay:0.7s
+}
+.productTopArea .objArea.play .obj.btnSet{
+    transition-delay:0.7s;-webkit-transition-delay:0.7s
+}
+.productTopArea .objArea.play .obj.telboxBlue{
+    transition-delay:0.7s;-webkit-transition-delay:0.7s
+}
+.productTopArea .objArea.play .obj.btnArea{
+    transition-delay:0.8s;-webkit-transition-delay:0.8s
+}
+
+.productTopArea .btn_prev{ display:block; position:absolute; left:50%;margin:0 0 0 -602px; top:50%;z-index:3; text-align:center; color:#ffffff; font-size:17px; width:95px; padding-top:75px; background:url("https://direct.hi.co.kr/images/main/btn_prev.png") no-repeat center top; line-height:24px;}
+.productTopArea .btn_next{ display:block; position:absolute; right:50%;margin:0 -602px 0 0; top:50%;z-index:3; text-align:center; color:#ffffff; font-size:17px; width:95px;padding-top:75px; background:url("https://direct.hi.co.kr/images/main/btn_next.png") no-repeat center top; line-height:24px;}
+
+.productTopArea .objArea .telbox{display:inline-block;background:#ee5a00;height:45px; font-size:0;line-height:45px;padding:0 20px; margin-top:25px; vertical-align:top;}
+.productTopArea .objArea .telbox > dl{ overflow:hidden;}
+.productTopArea .objArea .telbox > dl > dt{ display:block; float:left;font-size:17px;color:#ffffff;}
+.productTopArea .objArea .telbox > dl > dt{ display:block; float:left;font-size:17px;color:#ffffff;}
+.productTopArea .objArea .telbox > dl > dt .phoneicon{padding-left:25px;background:url(https://direct.hi.co.kr/images/telephone_product/topimg_phoneicon.png) no-repeat left 4px;}
+.productTopArea .objArea .telbox > dl > dd{display:block; float:left;position:relative;padding-left:10px;font-size:24px;color:#ffffff; margin-left:10px;}
+.productTopArea .objArea .telbox > dl > dd:before{content:'';display:block;position:absolute;top:15px;left:0;width:1px;height:16px;background:rgba(255,255,255,0.2);}
+.productTopArea .objArea .btnTelbox{display:inline-block;background:#ee5a00;height:45px; font-size:0;line-height:45px;padding:0 20px; vertical-align:top; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; width:200px;margin:0 5px;}
+.productTopArea .objArea .btnTelbox .phoneicon{padding-left:25px;background:url(https://direct.hi.co.kr/images/telephone_product/topimg_phoneicon.png) no-repeat left center; display:inline-block; color:#ffffff; font-size:17px; line-height:45px;}
+
+.productTopArea .objArea .telboxBlue{display:inline-block;background:#047db5;height:42px; font-size:0;line-height:42px;padding:0 30px; margin-top:25px; vertical-align:top;border-radius:42px;}
+.productTopArea .objArea .telboxBlue { overflow:hidden;}
+.productTopArea .objArea .telboxBlue  > dt{ display:block; float:left;font-size:19px;color:#ffffff; margin-top:-1px;}
+.productTopArea .objArea .telboxBlue  > dt .phoneicon{padding-left:25px;background:url(https://direct.hi.co.kr/images/telephone_product/topimg_phoneicon.png) no-repeat left 6px; line-height:42px;}
+.productTopArea .objArea .telboxBlue  > dd{display:block; float:left;position:relative;padding-left:10px;font-size:24px;color:#ffffff; margin-left:10px;margin-top:-2px;}
+.productTopArea .objArea .telboxBlue  > dd:before{content:'';display:block;position:absolute;top:14px;left:0;width:1px;height:18px;background:rgba(255,255,255,0.2);}
+
+/* 전화가입상품 /202006 */
+.productTopArea.product_tel{padding-top:112px;padding-bottom:35px;height:839px}
+.productTopArea.product_tel .productTop{height:839px;border-bottom:1px solid #ddd}
+.productTopArea.product_tel .productTop.tel_children{background:#fff url('https://direct.hi.co.kr/images/telephone_product/top_visual_tel-children.jpg') no-repeat center 0;background-size:cover}
+.productTopArea.product_tel .productTop.tel_hicall{background:#fff url('https://direct.hi.co.kr/images/telephone_product/top_visual_tel-driver.jpg') no-repeat center 0;background-size:cover}
+.productTopArea.product_tel .productTop.tel_dental{background:#fff url('https://direct.hi.co.kr/images/telephone_product/top_visual_tel-dental.jpg') no-repeat center 0;background-size:cover}
+.productTopArea.product_tel .productTop.tel_perfect{background:#fff url('https://direct.hi.co.kr/images/telephone_product/top_visual_tel-perfect.jpg') no-repeat center 0;background-size:cover}
+.productTopArea.product_tel .productTop.tel_cancer{background:#fff url('https://direct.hi.co.kr/images/telephone_product/top_visual_tel-cancer.jpg') no-repeat center 0;background-size:cover}
+.productTopArea.product_tel .productTop.tel_simple{background:#fff url('https://direct.hi.co.kr/images/telephone_product/top_visual_tel-simple.jpg') no-repeat center 0;background-size:cover}
+.productTopArea.product_tel .productTop .productCt{position:relative;margin:0 auto;width:1140px;height:100%}
+.productTopArea.product_tel .productTop .productCt .txtArea{padding-top:80px}
+.productTopArea.product_tel .productTop .productCt .txtArea .txt1{margin-bottom:30px;line-height:1em;letter-spacing:-1px;font-size:52px;color:#000}
+.productTopArea.product_tel .productTop .productCt .txtArea .txt1 em.sup{display:block;margin-bottom:5px;line-height:1em;font-size:28px}
+.productTopArea.product_tel .productTop .productCt .txtArea .txt2{margin-bottom:5px;line-height:1.4em;letter-spacing:-1px;font-size:24px;color:#000}
+.productTopArea.product_tel .productTop .productCt .txtArea .txt3{line-height:1.4em;font-size:20px;color:#595757}
+.productTopArea.product_tel .productTop .productCt .imgArea{padding-top:30px} /* 추가 /2106 */
+.productTopArea.product_tel .productTop .productCt .imgArea img{vertical-align:top} /* 추가 /2106 */
+.productTopArea.product_tel .productTop .productCt .insuNum{position:absolute;bottom:40px;right:510px;line-height:1rem;letter-spacing:-1px;font-size:14px;color:#595757}
+.productTopArea.product_tel .productMainContentArea{position:absolute;top:0;right:0;padding:0 35px;width:470px;min-height:839px;box-sizing:border-box;background:#fff}
+.productTopArea.product_tel .productMainContentArea .topTitleArea{padding-top:30px}
+.productTopArea.product_tel .productMainContentArea .topTitleArea .tiTxt{line-height:1.3em;letter-spacing:-1px;font-size:32px;color:#ee5a00}
+.productTopArea.product_tel .productMainContentArea .productAgree li .agreeRadio{float:none}
+.productTopArea.product_tel .productMainContentArea .productAgree li .agreeTxt{padding:10px 12px;border:1px solid #ddd;background-color:#fff;font-size:13px}
+.productTopArea.product_tel .productMainContentArea .btnArea{display:flex;justify-content:space-between}
+.productTopArea.product_tel .productMainContentArea .btnArea li{float:none}
+.productTopArea.product_tel .productMainContentArea .btnArea li+li{margin-left:10px}
+.productTopArea.product_tel .productMainContentArea .btnArea li a{text-align:center}
+
+/* 전화가입 상품안내 영역 /202006 */
+.contentArea.tel_content .productIconContent ul li{width:29%}
+
+/* 메뉴 수정 /20200616 */
+.productFixedMenu.product_tel_menu{top:986px}
+.productFixedMenu{position:absolute;left:0;top:526px;width:100%;height:50px;border-top:1px solid #dddddd;border-bottom:1px solid #dddddd;background:#eeeeee;text-align:center;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;z-index:5}
+.productFixedMenu.fixed{position:fixed;top:0}
+.productFixedMenu ul{display:inline-block}
+.productFixedMenu ul li{float:left; position:relative;}
+.productFixedMenu ul li:after{content:''; display:block; position:absolute; right:0; top:17px; width:1px;height:17px; background:#dddddd;}
+.productFixedMenu ul li:last-child:after{display:none;}
+.productFixedMenu ul li a{display:block;line-height:48px;padding:0 43px; font-size:19px; text-align:center}
+.productFixedMenu ul li a span{display:inline-block; position:relative;}
+.productFixedMenu ul li a:hover,
+.productFixedMenu ul li a:focus,
+.productFixedMenu ul li.on a{color:#047db5;}
+.productFixedMenu ul li a:hover span:after,
+.productFixedMenu ul li a:focus span:after,
+.productFixedMenu ul li.on a span:after{content:''; display:block; position:absolute; left:0; bottom:0; width:100%;height:2px;background:#047db5}
+.productFixedMenu ul li a:focus{outline:none} /* 202209 접근성 */
+.productFixedMenu ul li a:focus-visible{outline:1px dotted #ee5a00} /* 202209 접근성 */
+
+.productMenuIn{position:absolute;top:50px;left:0;width:100%;height:58px;border-bottom:1px solid #ddd;background-color:#fff;text-align:center;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;z-index:4}
+.productMenuIn.fixed{position:fixed;top:49px} /* 수정 /20200616 */
+.productMenuIn ul{display:inline-block}
+.productMenuIn ul:after{content:'';display:block;clear:both}
+.productMenuIn ul li{float:left;position:relative}
+.productMenuIn ul li:after{content:'';display:block;position:absolute;right:0;top:23px;width:1px;height:13px;background:#868686}
+.productMenuIn ul li:last-child:after{display:none}
+.productMenuIn ul li a{display:block;padding:0 12px;line-height:57px;font-size:18px;text-align:center}
+.productMenuIn ul li.on a{color:#047db5;border-bottom:2px solid #047db5} /* 202209 접근성 */
+.productMenuIn ul li a:focus{outline:none} /* 202209 접근성 */
+.productMenuIn ul li a:focus-visible{outline:1px dotted #ee5a00} /* 202209 접근성 */
+
+/* 법인 자동차보험 /20200612 */
+.corpWrap .productMenuIn.fixed{top:49px}
+
+
+.productInfoSection{padding:80px 0; border-bottom:1px solid #dddddd;}
+.productInfoSection:first-child{ padding-top:60px;}
+.productInfoSection.noline{ border-bottom:0;}
+.productInfoSection .productTitle{ font-size:26px;line-height:38px;text-align:center;margin-top:-9px;letter-spacing:-1px;margin-bottom:17px;color:#222222} /* 수정 /2109 */
+.productInfoSection .txtContent{margin-bottom:55px;font-size:17px;text-align:center} /* 수정 /202008 */
+.productInfoSection .txtContent:last-child{ margin-bottom:0;}
+
+.productInfoSection.type2{margin-bottom:20px;padding:92px 95px 80px;border-bottom:1px solid #dddddd}
+.productInfoSection.type2:first-child{padding-top:60px}
+.productInfoSection.type2.noline{border-bottom:0}
+.productInfoSection.type2 .productTitle{overflow:hidden;margin-top:0;margin-bottom:30px;line-height:3rem;text-align:left;color:#222222}
+.productInfoSection.type2 .productTitle:after{content:'';display:block;clear:both}
+.productInfoSection.type2 .productTitle .titArea{float:left;font-size:34px}
+.productInfoSection.type2 .productTitle .titArea strong{display:block}
+.productInfoSection.type2 .productTitle .titArea span{display:inline-block;margin-top:10px;line-height:2.4rem;font-size:28px}
+.productInfoSection.type2 .productTitle .imgArea{float:right}
+.productInfoSection.type2 .txtContent{font-size:17px;text-align:center;margin-bottom:35px}
+.productInfoSection.type2 .txtContent:last-child{margin-bottom:0}
+
+/* 보험상품 안내 개선 /2205 */ /* H건강보험200629 */
+.productInfoSection .txtSub {position:relative;margin-bottom:25px;text-align:center;font-weight:normal;font-size:18px;color:#000;}
+.productInfoSection .contentsBox{padding:60px 0 50px 0;border-bottom:1px solid #ddd;}
+.productInfoSection .contentsBox:first-child{padding-top:45px;}
+.productInfoSection .contentsBox.noline{border-bottom:none;}
+.productInfoSection .contentsBox .w875{margin:0 auto;width:875px}
+.productInfoSection .contentsBox .w875.productIconContent ul{display:flex;justify-content:space-between;width:auto;}
+.productInfoSection .contentsBox .w875.productIconContent .productIconList ul{justify-content:center;}
+.productInfoSection .contentsBox .productQnA .txtQ,
+.productInfoSection .contentsBox .productQnA .txtA{padding-top:5px;padding-left:57px;min-height:40px;line-height:30px;font-size:22px;letter-spacing:-1px;box-sizing: border-box;color:#222;} /* 수정 /2205 */
+.productInfoSection .contentsBox .productQnA .txtQ{background:url('https://direct.hi.co.kr/images/internet_product/hHouseFire/bu_insuInfo_Q.png') no-repeat 0 0;}
+.productInfoSection .contentsBox .productQnA .txtA{margin-top:10px;background:url('https://direct.hi.co.kr/images/internet_product/hHouseFire/bu_insuInfo_A.png') no-repeat 0 0;}
+.productInfoSection .contentsBox .productQnA .txtA .txs{font-size:19px;color:#555} /* 추가 /2205 */
+.productInfoSection .contentsBox .productQnA .txtQ.chkImg{display:inline-block;position:relative} /* 추가 /2206 */
+.productInfoSection .contentsBox .productQnA .txtQ.chkImg .img{position:absolute;top:0;right:-133px;margin-top:-4px;height:48px} /* 추가 /2206 */
+.productInfoSection .contentsBox .productImg{text-align:center;}
+.productInfoSection .contentsBox .productImg img{vertical-align:top;}
+.productInfoSection .contentsBox .productHi{display:flex;justify-content:center;align-items:flex-start;}
+.productInfoSection .contentsBox .productHi .hiImg{margin-right:68px;}
+.productInfoSection .contentsBox .productHi .hiTxt{position:relative;padding:33px 35px;border-radius:20px;border:1px solid #ee5a00;line-height:1.4;font-size:22px;color:#333;}
+.productInfoSection .contentsBox .productHi .hiTxt:before{content:'';display:block;position:absolute;top:50px;left:-40px;width:40px;height:31px;background:url('https://direct.hi.co.kr/images/internet_product/hHouseFire/bg_maum_talktail.png') no-repeat 0 0;}
+.productInfoSection .contentsBox .exBoxSky{display:flex;padding:15px 0;text-align:center;font-family:'NotoRegular';} /* 추가 /2205 */
+.productInfoSection .contentsBox .exBoxSky .exBox{padding:0 11px 1px 10px;height:25px;line-height:24px;border-radius:13px;background-color:#0091a0;font-size:16px;color:#ffffff;vertical-align:top;} /* 추가 /2205 */
+.productInfoSection .contentsBox .exBoxSky .exTxt{margin-left:15px;height:26px;line-height:24px;font-size:17px;color:#555555;vertical-align:top;} /* 추가 /2205 */
+.productInfoSection .contentsBox .exBoxSky .exTxt strong{color:#0091a0;} /* 추가 /2205 */
+/* 보험상품 안내 BOX /2208 */
+.productInfoSection .contentsBox .insuInfoBox{display:flex;justify-content:space-between;margin-top:45px;padding:35px 0;border:1px solid #c8e8fa;background-color:#ecf8ff;text-align:center;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList{display:flex;justify-content:space-between;position:relative;padding:0 30px;width:100%;box-sizing:border-box;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList:nth-child(n+2){border-left:1px solid #c8e8fa;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dt.infoTit{display:inline-block;position:absolute;top:-57px;left:50%;transform:translate(-50%);padding:0 25px;min-width:200px;box-sizing:border-box;height:43px;line-height:42px;border-radius:22px;background-color:#047db4;font-size:19px;color:#fff;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dt.infoTit.buArw{padding-right:50px;background:#047db4 url('https://direct.hi.co.kr/images/internet_product/bu_down_w.png') no-repeat right 25px center;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd{padding:0;width:100%;border:0;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd .infoIco,
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd .infoImg{display:flex;justify-content:center;align-items:center;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd .infoIco{overflow:hidden;margin:0 auto;box-sizing:border-box;width:100px;height:100px;border-radius:50px;background-color:#fff;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd .infoImg{position:relative;margin:0 auto;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd:not(:first-of-type) .infoImg:before{display:block;content:'';position:absolute;top:50%;left:0;margin:-12px 0 0 -12px;width:24px;height:24px;background:url('https://direct.hi.co.kr/images/internet_product/bu_plus_blue.png') no-repeat 0 center;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd .infoTxt{margin-top:12px;min-height:auto;line-height:1.3em;font-weight:normal;font-size:17px;color:#000;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd .infoTxt strong{color:#047db4;}
+.productInfoSection .contentsBox .insuInfoBox .infoBoxList dd .infoTxt span{display:inline-block;line-height:1.3em;font-size:14px;color:#777;}
+/* BOX Color Sky */
+.productInfoSection .contentsBox .insuInfoBox.boxSky{border:1px solid #bde6e8;background-color:#f0f9fa;}
+.productInfoSection .contentsBox .insuInfoBox.boxSky .infoBoxList:nth-child(n + 2){border-left:1px solid #bde6e8;}
+.productInfoSection .contentsBox .insuInfoBox.boxSky .infoBoxList dt.infoTit{background-color:#25acb4;}
+.productInfoSection .contentsBox .insuInfoBox.boxSky .infoBoxList dd:not(:first-of-type) .infoImg:before{background:url('https://direct.hi.co.kr/images/internet_product/bu_plus_blue.png') no-repeat 0 center;}
+.productInfoSection .contentsBox .insuInfoBox.boxSky .infoBoxList dd .infoTxt strong{color:#078b93;}
+
+.productInfoSection.type3{margin-bottom:20px;padding:92px 95px 80px;}
+.productInfoSection.type3 .top {border-bottom:1px solid #ee5a00; text-align:center; min-height:320px;}
+.productInfoSection.type3 .subTitle{font-size:34px;letter-spacing:-1px; color:#222222; margin:18px 0 10px 0;}
+.productInfoSection.type3 .txtContent{ font-size:20px; letter-spacing:-1px;}
+.productInfoSection.type3 .img {height:150px;}
+.productInfoSection.type3 .conArea {margin-top:45px;}
+.productInfoSection.type3 .conArea .tit{color:#047db5;font-size:17px;margin:20px 0 5px 0}
+.productInfoSection.type3 .conArea .tit:first-child{margin-top:0}
+.productInfoSection.type3 .conArea .contentTable{margin-top:13px}
+.productInfoSection.type3 .conArea .contentTable th{color:#222222}
+.productInfoSection.type3 .conArea .line {margin-top:10px; padding-bottom:57px; border-bottom:1px solid #ddd;}
+
+/* 상품안내 요소 /2109 /수정2205 */
+.productInfoSection .boxOrg{padding:30px 20px;margin:0 auto;max-width:875px;-webkit-box-sizing:border-box;box-sizing:border-box;border-radius:10px;border:1px solid #fbe1c7;background-color:#fdf4eb;text-align:center}
+.productInfoSection .boxOrg .tit{margin-bottom:5px;line-height:1.4em;font-weight:normal;font-size:24px;color:#000}
+.productInfoSection .boxOrg .txt{line-height:1.4em;font-weight:normal;font-size:18px;color:#595757}
+.productInfoSection .boxIcon{padding:34px 0 45px;width:260px;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #e0dede;background-color:#f4f4f4;text-align:center}
+.productInfoSection .boxIcon .icon{margin:0 auto;padding:31px 0;width:150px;height:150px;-webkit-box-sizing:border-box;box-sizing:border-box;border-radius:75px;background-color:#fff;text-align:center;}
+.productInfoSection .boxIcon .tit{margin-top:20px;line-height:1.4em;font-weight:normal;font-size:20px;color:#000}
+.productInfoSection .boxIcon .txt{margin-top:5px;line-height:1.4em;font-weight:normal;font-size:15px;color:#808684}
+.productInfoSection .flexCenter{display:flex;justify-content:center;}
+.productInfoSection .flexCenter li{margin-left:27px}
+.productInfoSection .flexCenter li:first-child{margin-left:0}
+
+/* 상품안내 그래프 /202008 */
+.productGraphArea{margin:30px 0 40px;text-align:center}
+
+.healthSaleInfotab {margin-top:30px;} 
+.healthSaleInfotab .tab{overflow:hidden;width:834px; padding:0 0 1px 1px;  display:block; margin:0 auto;}
+.healthSaleInfotab .tab li{border:1px solid #cccccc;margin:0 0 20px -1px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; position:relative;}
+.healthSaleInfotab .tab li a{ display:block; line-height:30px; text-align:left; font-size:19px;padding-left:244px; color:#222222; height:108px;}
+.healthSaleInfotab .tab li a .sub {color:#777777; font-size:17px;}
+.healthSaleInfotab .tab li a:after{content:''; display:block;background:url("https://direct.hi.co.kr/images/common/icon_arr_right03.png") no-repeat; width:14px; height:22px; position:absolute; right:30px; top:50%;margin-top:-7px;}
+.healthSaleInfotab .tab li:first-child a:after {display:none;}
+.healthSaleInfotab .tab li p {padding-top:26px;}
+.healthSaleInfotab .tab li:nth-child(1) a{background:url("https://direct.hi.co.kr/images/internet_product/health/tab_icon_healthSaleTab01.png") no-repeat 90px center; background-size:87px 75px}
+.healthSaleInfotab .tab li:nth-child(2) a{background:url("https://direct.hi.co.kr/images/internet_product/health/tab_icon_healthSaleTab02.png") no-repeat 90px center; background-size:87px 67px}
+.healthSaleInfotab .tab li:nth-child(3) a{background:url("https://direct.hi.co.kr/images/internet_product/health/tab_icon_healthSaleTab03.png") no-repeat 90px center; background-size:87px 72px}
+.healthSaleInfotab .tab li:nth-child(4) a{background:url("https://direct.hi.co.kr/images/internet_product/health/tab_icon_healthSaleTab04.png") no-repeat 90px center; background-size:87px 70px}
+.healthSaleInfotab .tab li:nth-child(5) a{background:url("https://direct.hi.co.kr/images/internet_product/health/tab_icon_healthSaleTab05.png") no-repeat 90px center; background-size:87px 68px}
+.healthSaleInfotab .tab li span.num {display:inline-block;width:36px;height:36px;background:#448aca;color:#ffffff;line-height:35px;text-align:center;font-size:20px; position:absolute; left:0}
+
+.hihealthChallengeBox {margin-top:11px;}
+.hihealthChallengeBox ol{overflow:hidden;margin-left:-18px;}
+.hihealthChallengeBox ol li{float:left;width:411px;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;font-size:15px;margin-left:18px;line-height:1.6}
+.hihealthChallengeBox ol li .info{margin-bottom:8px;font-size:17px; color:#ee5a00;}
+.hihealthChallengeBox ol li .num {display:inline-block;margin-right:10px;width:34px;height:34px;background:#ee5a00;color:#fff;line-height:35px;text-align:center;border-radius:50%; font-size:17px;}
+.hihealthChallengeBox ol li p{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box}
+.hihealthChallengeBox ol li .conImg{height:265px;width:411px;margin:24px 0 35px 0; }
+.hihealthChallengeBox ol li a.fontPoint1{text-decoration:underline;}
+
+
+.circleBoxArea.imgbg3{height:304px;background:url("https://direct.hi.co.kr/images/internet_product/circleBox_bg3.png") no-repeat center 13px;}
+.circleBoxArea.imgbg3 li .tit{ color:#047db5; font-size:25px;}
+.circleBoxArea.imgbg3 li .con{ color:#555555; font-size:17px; margin-top:9px; line-height:24px;}
+.circleBoxArea.imgbg3 li.circle1{left:164px; top:3px;}
+.circleBoxArea.imgbg3 li.circle2{left:454px; top:3px;}
+.circleBoxArea.imgbg3 li.circle3{left:745px; top:3px;}
+
+.productIconContent{ position:relative;}
+.productIconContent ul{ overflow:hidden; display:table; width:100%; font-size:0; text-align:center;}
+.productIconContent ul li{ display:inline-block;width:25%; border-right:1px solid #eeeeee; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; text-align:center;padding:20px 0; vertical-align:top;}
+.productIconContent ul li > div{ min-height:183px; vertical-align:top;}
+.productIconContent ul li:nth-child(4n){ border-right:0;}
+.productIconContent ul li:last-child{ border-right:0;}
+.productIconContent ul li .icon{ height:94px;}
+.productIconContent ul li .txt{display:block;margin:0 0 13px 0;line-height:1.4em;font-size:17px;color:#222;} /* 수정 /2208 */
+.productIconContent ul li .txt{ color:#222222; margin:-6px 0 13px 0; font-size:17px;}
+.productIconContent ul li .txt:last-child{ margin-bottom:0;}
+.productIconContent ul li .txt > span{display:inline-block;margin-top:2px;line-height:1.35em;} /* 추가 /2208 */
+.productIconContent ul li .txs{display:inline-block;line-height:1.35em;font-size:14px;color:#777777;} /* 추가 /2208 *
+.productIconContent ul li .btn{ width:111px;}
+.productIconContent ul li.top{vertical-align:top;}
+
+.productIconContent.line3T ul li{width:30%;}
+.productIconContent.line3T ul li:nth-child(3n){border-right:0;}
+.productIconContent.line3T ul li:nth-child(4n){border-right:1px solid #eeeeee;}
+.productIconContent.line3T ul li:nth-child(6n){border-right:0;}
+
+/* 상품안내 /개선2104 */
+.productInfoWrap{}
+.productInfoWrap .productInfoSection{padding:0; border-bottom:0}
+.productInfoWrap .productIconContent .insuTop{padding:50px 0;border-bottom:1px solid #ddd}
+.productInfoWrap .productInfoSection .productInfoTxt{padding:50px 0;text-align:center;font-size:28px} /* 추가 /2106 */
+.productInfoWrap .productIconContent ul.insuInfo{display:block;padding:20px 0 0}
+.productInfoWrap .productIconContent ul.insuInfo li{display:block;padding:0 0 0 218px;width:1140px;border:0;background-repeat:no-repeat;background-position:0 36px;text-align:left}
+.productInfoWrap .productIconContent ul.insuInfo li .txtArea{padding:36px 0;min-height:104px;border-bottom:1px solid #ddd}
+.productInfoWrap .productIconContent ul.insuInfo li .txtArea .txTi{margin-bottom:10px;font-weight:normal;font-size:26px;color:#222}
+.productInfoWrap .productIconContent ul.insuInfo li .txtArea .txTi > span{display:block;line-height:24px;font-size:20px}
+.productInfoWrap .productIconContent ul.insuInfo li .txtArea .txTi > strong{color:#047db5}
+.productInfoWrap .productIconContent ul.insuInfo li .txtArea .txTi > em{font-size:20px;color:#555}
+.productInfoWrap .productIconContent ul.insuInfo li .txtArea .txt{margin:0;font-size:18px;color:#555}
+.productInfoWrap .productIconContent ul.insuInfo li:last-child .txtArea{border-bottom:0}
+/* 뉴간편플러스종합보험 /2104 */
+.productInfoWrap .productIconContent ul.insuInfo li.info_simple01{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_newsimple01.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_simple02{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_newsimple02.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_simple03{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_newsimple03.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_simple04{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_newsimple04.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_simple05{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_newsimple05.gif')}
+/* 계속받는암보험 /2104 */
+.productInfoWrap .productIconContent ul.insuInfo li.info_cancer01{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_cancer01.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_cancer02{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_cancer02.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_cancer03{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_cancer03.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_cancer04{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_cancer04.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_cancer05{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_cancer05.gif')}
+/* 퍼펙트치아보험 /2106 */
+.productInfoWrap .productIconContent ul.insuInfo li.info_dental01{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_dental01.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_dental02{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_dental02.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_dental03{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_dental03.gif')}
+/* 하이콜운전자상해보험 /2106 */
+.productInfoWrap .productIconContent ul.insuInfo li.info_driver01{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_driver01.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_driver02{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_driver02.gif')}
+.productInfoWrap .productIconContent ul.insuInfo li.info_driver03{background-image:url('https://direct.hi.co.kr/images/telephone_product/ic_driver03.gif')}
+
+.circleBoxArea{ position:relative; height:304px;background:url("https://direct.hi.co.kr/images/internet_product/circleBox_bg.png") no-repeat;}
+.circleBoxArea li{ position:absolute; left:0; top:0;border:1px solid transparent; width:229px; height:229px;border-radius:229px; text-align:center; display:table;}
+.circleBoxArea li .inner{ display:table-cell; vertical-align:middle;}
+.circleBoxArea li.circle1{left:194px; top:-1px}
+.circleBoxArea li.circle2{left: 454px;top: 74px;}
+.circleBoxArea li.circle3{left: 714px;top: 12px;}
+.circleBoxArea li .tit{ color:#047db5; font-size:19px;}
+.circleBoxArea li .con{ color:#555555; font-size:17px; margin-top:9px; line-height:26px;}
+.circleBoxArea.imgbg2{height:304px;background:url("https://direct.hi.co.kr/images/internet_product/circleBox_bg2.png") no-repeat 0 13px;}
+.circleBoxArea.imgbg2 li.circle1{left:326px; top:12px}
+.circleBoxArea.imgbg2 li.circle2{left: 585px;top: 74px;}
+
+.customerInfoArea{ overflow:hidden; position:relative;display:table; font-size:0; text-align:center; width:100%;}
+.customerInfoArea .leftCon{ display:inline-block; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; padding:0 30px 25px 0; border-right:1px solid #eeeeee; text-align:left; vertical-align:top;}
+.customerInfoArea .leftCon .tit{ color:#222222; font-size:19px; margin-top:-5px;}
+.customerInfoArea .leftCon .con{ color:#777777; font-size:15px; margin-top:10px;}
+.customerInfoArea .leftCon .btn{margin:14px 0 0 0; width:111px; text-align:center;}
+.customerInfoArea .rightCon{ display:inline-block; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;padding:0 0 0 30px; text-align:left;vertical-align:top;}
+.customerInfoArea .rightCon .tit{ color:#222222; font-size:19px; margin-top:-5px;}
+.customerInfoArea .rightCon ul{ overflow:hidden;}
+.customerInfoArea .rightCon ul li{ float:left; margin-right:40px;}
+.customerInfoArea .rightCon ul li:last-child{ margin-right:0;}
+.customerInfoArea .rightCon ul li .txt{ font-size:17px; line-height:24px; margin:11px 0 6px 0;}
+.customerInfoArea .rightCon ul li .tel .number{ font-family:"NotoRegular"; font-size:24px;}
+.customerInfoArea .rightCon ul li .tel .info{ display:inline-block; vertical-align:top; font-size:15px; color:#ee5a00; margin-top:9px;}
+.customerInfoArea .rightCon .callCenter{margin-top:10px;}
+.customerInfoArea .rightCon .callCenter li{float:none;overflow:hidden;margin-right:0;}
+.customerInfoArea .rightCon .callCenter li .txt{float:left;font-size:15px;width:230px;margin:0;}
+.customerInfoArea .rightCon .callCenter li .tel{float:left;line-height:22px;}
+.customerInfoArea .rightCon .callCenter li .tel .line{padding-right:10px;margin-right:10px;position:relative;}
+.customerInfoArea .rightCon .callCenter li .tel .line:after{display: block;content: ''; position: absolute;right: 0; top: 50%; width: 1px;height: 18px;background: #e5e5e5; margin-top: -18px;}
+.customerInfoArea .rightCon .callCenter li:last-child{font-size:15px;}
+.telinfoBox{overflow:hidden;text-align:center;width:100%;display:table;font-size:0;}
+.telinfoBox ul li{display:inline-block;border-right:1px solid #eeeeee;padding-right:19px;margin-right:20px;vertical-align:top;font-size:17px;text-align:left;}
+.telinfoBox div{display:inline-block;color:#555555;margin-top:-6px;vertical-align:top;}
+.telinfoBox ul li:last-child{border-right:0;padding-right:0;margin-right:0;}
+.telinfoBox .tit{color:#222222;font-size:19px;margin-right:30px;vertical-align:top;}
+.telinfoBox .call .line{position:relative;padding-right:11px;margin-right:7px;}
+.telinfoBox .call .line:after{ display: block;content: ''; position: absolute;right: 0; top: 50%; width: 1px;height: 18px;background: #e5e5e5; margin-top: -10px;}
+.telinfoBox .call .num{font-family:"NotoRegular"; font-size:24px;}
+
+.bottomGrayBox{border:1px solid #e5e5e5; background:#f5f5f5;padding:17px 0;}
+.bottomGrayBox ul{ overflow:hidden;}
+.bottomGrayBox ul li{ float:left; width:50%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; line-height:35px; padding-left:29px; overflow:hidden;}
+.bottomGrayBox ul li:first-child{ border-right:1px solid #e5e5e5;}
+.bottomGrayBox ul li .txt{ font-size:15px; padding-left:9px; position:relative; float:left;}
+.bottomGrayBox ul li .txt.star:after{ content:'*'; position:absolute; left:0; top:3px;}
+.bottomGrayBox ul li .btnAreaBox{ float:left; margin-left:20px;}
+.bottomGrayBox ul li .btnAreaBox a{ display:block; float:left;border:1px solid #cccccc; background:#ffffff; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; line-height:33px; height:35px; margin-left:-1px; text-align:center; width:70px;}
+.bottomGrayBox ul li .btnAreaBox a:first-child{ margin-left:0;}
+.bottomGrayBox ul li .btnAreaBox a:only-child{ margin-left:0; font-size:15px; width:111px;}
+.bottomGrayBox ul li .btnAreaTxt{ float:left; margin-left:20px;}
+.bottomGrayBox ul li .btnAreaTxt a{ color:#777777; display:inline-block; position:relative;}
+.bottomGrayBox ul li .btnAreaTxt a:after{ content:''; display:block; width:100%; height:1px; background:#999999; position:absolute; left:0;bottom:5px}
+
+
+/* 상품안내 개선 /2201/ 수정2208 */
+.bottomGrayBox .txtStarArea{display:flex;padding:0 30px;box-sizing:border-box;line-height:34px;}
+.bottomGrayBox .txtStarArea > p{position:relative;padding-left:15px;font-size:16px;vertical-align:top;}
+.bottomGrayBox .txtStarArea > p:before{display:block;content:'*';position:absolute;left:0;top:4px;}
+/* Button Area /2208 */
+.bottomGrayBox .txtStarArea .btnAreaBox{margin-left:10px;line-height:1em}
+.bottomGrayBox .txtStarArea .btnAreaBox:first-of-type{margin-left:50px;}
+.bottomGrayBox .txtStarArea .btnAreaBox > span{display:inline-block;}
+.bottomGrayBox .txtStarArea .btnAreaBox > span:not(:first-of-type){margin-left:10px}
+.bottomGrayBox .txtStarArea .btnAreaBox a{display:block;float:left;box-sizing:border-box;min-width:70px;height:34px;line-height:32px; margin-left:-1px;border:1px solid #cccccc;text-align:center;font-size:15px;background:#ffffff;}
+.bottomGrayBox .txtStarArea .btnAreaBox a:first-child{margin-left:0;}
+.bottomGrayBox .txtStarArea .btnAreaBox a:only-child{margin-left:0;width:86px;font-size:15px;}
+.bottomGrayBox .txtStarArea .btnAreaTxt{display:inline-block;margin-left:10px;vertical-align:top;}
+.bottomGrayBox .txtStarArea .btnAreaTxt a{color:#777777;display:block;position:relative;}
+.bottomGrayBox .txtStarArea .btnAreaTxt a:after{content:'';display:block;position:absolute;left:0;bottom:5px;width:100%;height:1px;background:#999999;}
+
+/* 개선 /2201 */
+.bottomGrayBox .txtStarArea{padding:0 30px;}
+.bottomGrayBox .txtStarArea > p{display:inline-block;position:relative;padding-left:15px;font-size:16px;vertical-align:top;}
+.bottomGrayBox .txtStarArea > p:before{display:block;content:'*';position:absolute;left:0;top:4px;}
+.bottomGrayBox .txtStarArea > p.btnLine{line-height:34px;} /* 추가 /2201 */
+.bottomGrayBox .txtStarArea .btnAreaBox{display:inline-block;margin-left:10px;vertical-align:top;}
+.bottomGrayBox .txtStarArea .btnAreaBox a{display:block;float:left;border:1px solid #cccccc; background:#ffffff; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; line-height:33px; height:35px; margin-left:-1px; text-align:center; width:70px;}
+.bottomGrayBox .txtStarArea .btnAreaBox a:first-child{margin-left:0;}
+.bottomGrayBox .txtStarArea .btnAreaBox a:only-child{margin-left:0;width:86px;font-size:15px;}
+.bottomGrayBox .txtStarArea .btnAreaTxt{display:inline-block;margin-left:10px;vertical-align:top;}
+.bottomGrayBox .txtStarArea .btnAreaTxt a{color:#777777;display:block;position:relative;}
+.bottomGrayBox .txtStarArea .btnAreaTxt a:after{content:'';display:block;position:absolute;left:0;bottom:0;width:100%;height:1px;background:#999999;}
+ 
+/* 보험상품안내 개선 /2201 */
+.productTopArea.typeBlk{padding-top:112px;height:414px;border-bottom:1px solid #dddddd}
+.productTopArea.typeBlk .objArea .obj{font-family:'NotoRegular';color:#000000}
+.productTopArea.typeBlk .objArea .txt1{line-height:1.6em;font-size:48px;} /*줄간격,폰트크기변경2208*/
+.productTopArea.typeBlk .objArea .txt2{line-height:1.2em;font-size:30px;}  /*줄간격,폰트크기변경2208*/
+.productTopArea.typeBlk .productTop .objArea .obj.btnArea{margin-top:30px}
+.productTopArea.typeBlk .productTop .objArea .obj.btnArea .btn{line-height:44px}
+.productTopArea.typeBlk .btn_prev{top:51%;background:url('https://direct.hi.co.kr/images/main/btn_prev_blk.png') no-repeat center top;color:#000000}
+.productTopArea.typeBlk .btn_next{top:51%;background:url('https://direct.hi.co.kr/images/main/btn_next_blk.png') no-repeat center top;color:#000000}
+/* 상품안내 내용  2211 추가 */
+.contentArea.typeBlk{padding-top:0}
+.contentArea.typeBlk .content{padding:0 0 80px}
+.contentArea.typeBlk .content .productInfoSection{padding:60px 0}
+.contentArea.typeBlk .content .productInfoSection .productTitle{margin:0 0 30px}
+.contentArea.typeBlk .content .productInfoSection .productTitle .txs{font-size:17px;color:#777777}
+.contentArea.typeBlk .content .productInfoSection .contentsBox .productIconContent .productInfoBox{margin:25px auto 20px;padding:24px 20px 24px 34px;max-width:820px;line-height:1.5;border:1px solid #e5e5e5;background-color:#f5f5f5;font-size:16px}
+.contentArea.typeBlk .content .productInfoSection .contentsBox .productIconContent .productInfoBox strong{position:relative;color:#047db5}
+.contentArea.typeBlk .content .productInfoSection .contentsBox .productIconContent .productInfoBox strong:before{content:'*';display:inline-block;position:absolute;top:0;left:-8px;font-size:16px;color:#047db5}
+.contentArea.typeBlk .content .productInfoSection .contentsBox .productIconContent .productInfoBox strong.bld:before{content:'※';left:-18px;}
+.contentArea.typeBlk .content .productInfoSection .contentsBox .productIconContent .productInfoBox .buList{padding-left:15px}
+.contentArea.typeBlk .content .productInfoSection .contentsBox .productIconContent .productInfoBox .buList:not(:first-of-type){margin-top:5px}
+
+/* 상품안내 List /2201 */
+.productIconList{position:relative;}
+.productIconList ul{display:flex;flex-wrap:wrap;justify-content:center;overflow:hidden;}
+.productIconList ul li{margin:0;padding:0 0 25px;box-sizing:border-box;text-align:center;vertical-align:top}
+.productIconList ul li .icImg{margin-bottom:5px;text-align:center}
+.productIconList ul li .icImg img{vertical-align:top;}
+.productIconList ul li .txt{line-height:1.5em;color:#222222;font-size:17px;}
+.productIconList ul li .txs{margin-top:5px;font-size:15px;color:#777777}
+.productIconList ul.numIcon li{text-align:left;}
+.productIconList ul.numIcon li .icImg{margin-bottom:18px;padding-right:38px}
+.productIconList ul.numIcon li .txt{position:relative;padding-left:38px;text-align:left}
+.productIconList ul.numIcon li .txt > .num{display:block;position:absolute;top:0;left:0;width:28px;height:28px;line-height:26px;border-radius:14px;background-color:#ee5a00;text-align:center;font-size:17px;color:#ffffff}
+.productIconList ul.numIcon li .txs{padding-left:38px}
+
+
+/* 특약 안내 수정 /2006 */
+.imgContentArea{overflow:hidden; padding-top:9px;}
+.imgContentArea .imgArea{ float:left; padding-right:70px; width:500px; text-align:right;}
+.imgContentArea .conArea{ float:left; width:570px; margin-top:-7px; padding-right:40px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.imgContentArea .conArea .tit{ color:#047db5; font-size:17px; margin:20px 0 5px 0;}
+.imgContentArea .conArea .tit:first-child{ margin-top:0;}
+.imgContentArea .conArea .contentTable{ margin-top:13px;}
+.imgContentArea .conArea .contentTable th{ color:#222222;}
+.imgContentArea .conArea .tit_box_blue{display:inline-block;padding:0 15px;height:24px;box-sizing:border-box;border-radius:12px;border:1px solid #047db5;font-size:14px;text-align:center;color:#047db5}
+.type2 .imgContentArea{overflow:hidden;padding-top:9px}
+.type2 .imgContentArea .imgArea{float:none;padding-right:70px;width:500px;text-align:right}
+.type2 .imgContentArea .conArea{float:none;width:100%;margin-top:0;padding-right:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.type2 .imgContentArea .conArea .tit{color:#047db5;font-size:17px;margin:20px 0 5px 0}
+.type2 .imgContentArea .conArea .tit:first-child{margin-top:0}
+.type2 .imgContentArea .conArea .contentTable{margin-top:13px}
+.type2 .imgContentArea .conArea .contentTable th{color:#222222}
+/* 내부 탭 - conAreaTab /2005 */
+.imgContentArea .tabConArea{display:flex;margin-bottom:40px;border-bottom:1px solid #555}
+.imgContentArea .tabConArea li{display:inline-block;margin-bottom:-1px;border-top:1px solid #ddd;border-right:1px solid #ddd;border-left:1px solid #ddd;border-bottom:1px solid #555}
+.imgContentArea .tabConArea li + li{margin-left:-1px}
+.imgContentArea .tabConArea li + li + li{margin-left:-2px}
+.imgContentArea .tabConArea li a{display:block;padding:17px 0 18px;width:172px;height:50px;box-sizing:border-box;background-color:#eee;text-align:center;line-height:1;font-size:15px;color:#555}
+.imgContentArea .tabConArea li.on{z-index:1;border-top:1px solid #555;border-right:1px solid #555;border-left:1px solid #555;border-bottom:1px solid #fff}
+.imgContentArea .tabConArea li.on a{background-color:#fff;color:#ee5a00}
+.imgContentArea .conAreaTab{}
+/* 자동차 보험 FAQ /2005 */
+.carFaqArea{}
+.carFaqArea li + li{margin-top:30px}
+.carFaqArea li .txQ{padding:10px 0 10px 30px;border-bottom:1px solid #ddd;background:url('https://direct.hi.co.kr/images/common/icon_faq_off.png') no-repeat left center;font-size:17px;color:#222}
+.carFaqArea li .txA{padding:18px 30px;border-bottom:1px solid #ddd;background:#f5f5f5;font-size:15px;}
+
+/* 할인특약(new아이콘)200619 */
+.infoNewWrap{margin:20px 0 30px;}
+.infoNewWrap.box{ border:1px solid #ee5a00; background:#fff;padding:14px 18px;}
+.infoNewWrap .btArea {color:#047db5;font-size:15px; margin-right:20px;}
+.infoNewWrap .btArea span{ background:url("https://direct.hi.co.kr/images/common/btn_arr_right_small_blue.png") no-repeat right center; padding-right:16px;}
+.infoNewWrap.box ul {position:relative;}
+.infoNewWrap.box ul:after{content:'NEW';display:block;position:absolute;background:url("https://direct.hi.co.kr/images/common/icon_conNew.png") no-repeat 0 0;width:43px;height:19px;font-size:0;text-align:center; top:-45px;}
+
+/* 이륜차 인터넷 가입 할인 /2109 */
+.imgContentArea.cycContentDisc .imgArea{padding-right:20px;width:550px}
+.imgContentArea.cycContentDisc .conArea{padding-right:0;padding-left:50px;width:550px}
+
+.productTxtContent{ padding-top:2px; padding-bottom:55px;}
+.productTxtContent .titleLevel1{ font-size:21px; color:#222222; padding:50px 0 0 0; margin-bottom:13px;position:relative;}
+.productTxtContent .titleLevel1 + .titleLevel2{ margin-top:-27px;}
+.productTxtContent .titleLevel2{ font-size:17px; color:#047db5; padding:21px 0 4px 0;}
+.productTxtContent .titleLevel1 .subtitleLevel{position:absolute;right:0;bottom:2px;font-size:14px;color:#777777;}
+.productTxtContent > .listStyle > li{ font-size:15px; color:#555555;}
+.productTxtContent > .listStyle.fontLevel2 > li{ color:#777777;}
+.productTxtContent > .listStyle.fontLevel2.fz14 li{font-size:14px;}
+.productTxtContent .harfContent{ overflow:hidden;}
+.productTxtContent .harfContent .titleLevel2{ padding-top:0;margin-top:-6px;}
+.productTxtContent .harfContent .leftCon{ float:left; width:549px;}
+.productTxtContent .harfContent .rightCon{ float:right; width:549px;}
+
+.olListFocusBox{ margin-top:60px;border:1px solid #e5e5e5; background:#f5f5f5;padding:30px 10px; overflow:hidden; margin-bottom:53px;}
+.olListFocusBox ol{ -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; float:left; width:50%; border-right:1px solid #e5e5e5;padding:0 20px; overflow:hidden;}
+.olListFocusBox.item3 ol{ width:33%;}
+.olListFocusBox ol:last-child{ border-right:0;}
+.olListFocusBox ol li{ line-height:1; font-size:15px; margin-bottom:15px;}
+.olListFocusBox ol li:last-child{ margin-bottom:0;}
+.olListFocusBox ol li a .number{ color:#7d7d7d;} /* 202209 접근성22 */
+.olListFocusBox ol li a .indent{display:block;margin-left:21px;margin-top:8px;}
+.olListFocusBox ol li a:hover,
+.olListFocusBox ol li a:focus,
+.olListFocusBox ol li.on a{ color:#ee5a00 !important;}
+.olListFocusBox ol li a:hover span.number,
+.olListFocusBox ol li a:focus span.number,
+.olListFocusBox ol li.on a span.number{ color:#ee5a00 !important;}
+.scrollBoxArea{ margin-top:60px;border:1px solid #e5e5e5; background:#f5f5f5;padding:30px 10px; overflow:hidden; margin-bottom:53px;}
+.scrollBoxArea ol{ -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; float:left; width:50%; border-right:1px solid #e5e5e5;padding:0 20px; overflow:hidden;}
+.scrollBoxArea.item3 ol{ width:33%;}
+.scrollBoxArea ol:last-child{ border-right:0;}
+.scrollBoxArea ol li{ line-height:1; font-size:15px; margin-bottom:15px;}
+.scrollBoxArea ol li:last-child{ margin-bottom:0;}
+.scrollBoxArea ol li a .number{ color:#999999;}
+.scrollBoxArea ol li a .indent{display:block;margin-left:21px;margin-top:8px;}
+.scrollBoxArea ol li a:hover,
+.scrollBoxArea ol li a:focus,
+.scrollBoxArea ol li.on a{ color:#ee5a00 !important;}
+.scrollBoxArea ol li a:hover span.number,
+.scrollBoxArea ol li a:focus span.number,
+.scrollBoxArea ol li.on a span.number{ color:#ee5a00 !important;}
+
+
+.focusContentArea{ padding-bottom:60px;}
+.focusContentArea .focusCon .numberTitle{ font-size:19px; color:#222222;margin:48px 0 7px 0}
+.focusContentArea .focusCon .numberTitle > span.fontLevel3{color:#777777 !important;} /* 202209 접근성22 */
+.focusContentArea .focusCon:first-child .numberTitle{ margin-top:0;}
+.focusContentArea .focusCon .subTitle{ color:#047db5; font-size:17px; margin-bottom:5px;}
+.focusContentArea .focusCon .subTitle:first-child{ margin-top:0;}
+.focusContentArea .focusCon .infoBox{ border:1px solid #e5e5e5; background:#f5f5f5;padding:15px 20px; overflow:hidden; margin-top:17px;}
+.focusContentArea .focusCon .infoBox dl{ overflow:hidden; margin-bottom:6px;}
+.focusContentArea .focusCon .infoBox dl:last-child{ margin-bottom:0;}
+.focusContentArea .focusCon .infoBox dl dt{ float:left; width:129px; color:#222222; font-size:15px;}
+.focusContentArea .focusCon .infoBox.boxbig dl dt{ float:left; width:184px; color:#222222; font-size:15px;}
+.focusContentArea .focusCon .infoBox dl dd{ float:left; width:910px; color:#777777;}
+.focusContentArea .focusCon .infoBox dl.type2 dt{ float:left; width:225px; color:#222222; font-size:15px;}
+.focusContentArea .focusCon .infoBox dl.type2 dd{ float:left; width:800px; color:#777777;}
+.focusContentArea .focusCon .infoBox ul{ overflow:hidden; display:table; width:100%;margin:5px 0}
+.focusContentArea .focusCon .infoBox ul li{ display:table-cell; vertical-align:middle;}
+.focusContentArea .focusCon .infoBox ul li.customer{width:234px; padding-left:10px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border-right:1px solid #e5e5e5;}
+.focusContentArea .focusCon .infoBox ul li.customer .txt{ float:left; color:#222222; font-size:15px; margin-right:20px; line-height:30px;}
+.focusContentArea .focusCon .infoBox ul li.customer .tel{ float:left; color:#047db5; font-size:24px; line-height:30px;}
+.focusContentArea .focusCon .infoBox ul li.con{ color:#777777; padding-left:30px;}
+.focusContentArea .focusCon .conProcessTxtArea{margin:15px 0}
+.focusContentArea .focusCon .conProcessTxtArea .processList{width:100%;display:table;}
+.focusContentArea .focusCon .conProcessTxtArea .processList li{position:relative;height:60px;width:33.3%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;font-size:15px;display:table-cell;vertical-align:middle;}
+.focusContentArea .focusCon .conProcessTxtArea .processList li div{text-align:center;}
+.focusContentArea .focusCon .conProcessTxtArea .processList li:nth-child(1){background:#eeeeee;;z-index:3}
+.focusContentArea .focusCon .conProcessTxtArea .processList li:nth-child(1) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:21px; height:60px;background:url("https://direct.hi.co.kr/images/internet_product/img_process01.png") no-repeat right top;margin-right:-21px;}
+.focusContentArea .focusCon .conProcessTxtArea .processList li:nth-child(2){background:#dddddd;z-index:2}
+.focusContentArea .focusCon .conProcessTxtArea .processList li:nth-child(2) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:21px; height:60px;background:url("https://direct.hi.co.kr/images/internet_product/img_process02.png") no-repeat right top;margin-right:-10px;}
+.focusContentArea .focusCon .conProcessTxtArea .processList li:nth-child(3){background:#cccccc;z-index:1}
+.focusContentArea .focusCon .conProcessTxtArea .processList li:nth-child(3) div:after{display:block; content:''; position:absolute; right:0; bottom:0; width:21px; height:60px;background:url("https://direct.hi.co.kr/images/internet_product/img_process03.png") no-repeat right top;}
+
+.conProcessTxt.typePbtn{position:relative;}
+.conProcessTxt.typePbtn .absolR{position:absolute;right:0;top:-40px;}
+
+.grayB.infoBox{ border:1px solid #e5e5e5; background:#f5f5f5;padding:15px 20px; overflow:hidden; margin-top:17px;}
+.grayB.infoBox.small{padding:11px 20px;}
+.grayB.infoBox dl{ overflow:hidden; margin-bottom:6px;}
+.grayB.infoBox dl:last-child{ margin-bottom:0;}
+.grayB.infoBox dl dt{ float:left; width:90px; color:#222222; font-size:15px;}
+.grayB.infoBox dl dd{ float:left; width:708px; color:#777777;}
+.grayB.infoBox dl.type2 dt{ float:left; width:228px; color:#222222; font-size:15px;}
+.grayB.infoBox dl.type2 dd{ float:left; width:570px; color:#777777;}
+.grayB.infoBox ul{ overflow:hidden; display:table; width:100%;margin:5px 0}
+.grayB.infoBox ul li{ display:table-cell; vertical-align:middle;}
+.grayB.infoBox ul li.customer{width:215px; padding-left:10px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border-right:1px solid #e5e5e5;}
+.grayB.infoBox ul li.customer .txt{ float:left; color:#222222; font-size:15px; margin-right:20px; line-height:30px;}
+.grayB.infoBox ul li.customer .tel{ float:left; color:#047db5; font-size:24px; line-height:30px;}
+.grayB.infoBox ul li.con{ color:#777777; padding-left:30px;}
+
+/* contentTable */
+.productTable{border-top:1px solid #dddddd;margin:0 auto;}
+.productTable tr th{border-left:1px solid #eeeeee;border-bottom:1px solid #eeeeee; text-align:center;height:57px;color:#222222;padding:14px 10px 13px 10px; font-size:15px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; text-align:center;}
+.productTable tr th:first-child{ border-left:0;}
+.productTable tr td{border-left:1px solid #eeeeee;border-bottom:1px solid #eeeeee; text-align:center;height:57px; color:#555555;padding:14px 10px 13px 10px; font-size:15px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; text-align:center;}
+.productTable tr td:first-child{ border-left:0;}
+.productTable tr th.tal,
+.productTable tr td.tal{ padding-left:40px;}
+.productTable tr th.noLeft,
+.productTable tr td.noLeft{ border-left:0;}
+.productTable tr:last-child td{border-bottom:1px solid #e5e5e5;}
+
+.driverMain{ background:url("https://direct.hi.co.kr/images/longterm/driver_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.childrenMain{ background:url("https://direct.hi.co.kr/images/telephone_product/main_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.childrenMain .mainTitle .tit .lineh{margin-top:-17px;}
+
+.toothMain{ background:url("https://direct.hi.co.kr/images/telephone_product/tooth_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.cancerMain{ background:url("https://direct.hi.co.kr/images/longterm/cencer_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.hifaceMain{ background:url("https://direct.hi.co.kr/images/longterm/hiface_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;} /* 하이좋은얼굴보험이미지추가181030 */
+.dementiaMain{ background:url("https://direct.hi.co.kr/images/telephone_product/dementia_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}/*간단하고 편리한 치매보험추가190321*/
+
+.productAgree{padding-top:5px;padding-bottom:5px;}
+.productAgree li{ margin-bottom:10px; overflow:hidden;}
+.productAgree li:last-child{ margin-bottom:0;}
+.productAgree li .titArea{ float:left; position:relative;max-width:400px;}
+.productAgree li .titArea .txt{ display:inline-block; color:#555;}
+.productAgree li .titArea .btn{ position:absolute; left:195px; top:0; width:77px;}
+.productAgree li .agreeRadio{ float:right;}
+.productAgree li .agreeRadio .radio{ margin-left:10px;}
+.productAgree li .agreeRadio .radio label{font-size:14px;}
+.productAgree li .agreeRadio .radio:first-child{ margin-left:0;}
+
+
+.btnAllChkArea{ text-align:right; margin-bottom:10px;}
+.endBox{border:1px solid #e5e5e5; background:#f5f5f5; text-align:center;padding:29px 0 25px 0;clear:both}
+.endBox .endTxt{ background:url("https://direct.hi.co.kr/images/home_direct/end_icon.png") no-repeat center top; padding-top:71px; font-size:17px; color:#222222;}
+
+.personChkArea{ border-top:2px solid #555555; padding-top:60px;}
+.personChkArea .iconTxtArea{ text-align:center; background:url("https://direct.hi.co.kr/images/home_direct/icon_chk.png") no-repeat center top; padding:74px 0 30px 0; font-size:15px;}
+.personChkArea .inputBox{border:1px solid #e5e5e5; background:#f5f5f5;padding:19px 0}
+
+/* mobilSerbox */
+.mobilSerbox{position:relative;}
+.mobilSerbox > .imgArea{position:absolute;top:0;right:0;}
+.mobilSerbox > .maintxt{font-size:19px;color:#222222;}
+.mobilSerbox .btnArea > a{width:238px;text-align:center;}
+.mobilSerbox .btnArea .iconGoogle{display:inline-block;padding-left:29px;background:url(https://direct.hi.co.kr/images/home_direct/icon_google.png) no-repeat left 9px;}
+.mobilSerbox .btnArea .iconAppstore{display:inline-block;padding-left:35px;background:url(https://direct.hi.co.kr/images/home_direct/icon_appstore.png) no-repeat left 8px;}
+
+/* bChektext */
+.bChektext{margin-bottom:10px;color:#777777;text-align:right;}
+
+
+.exceptionWrap.tempora .contentArea{padding-top:115px;}
+.exceptionWrap.tempora .logo{left:50%;top:55px;margin-left:-82px;}
+.exceptionWrap.tempora .titleArea{margin-top:82px;padding-bottom:36px;}
+.exceptionWrap.tempora .titleArea > h2{line-height:40px;}
+.exceptionWrap.tempora .teminfolist .btn.temlogin{text-align: center;background: #ee5a00;font-family: "NotoRegular";}
+.exceptionWrap.tempora .teminfolist{width:400px;margin:0 auto;padding-bottom:80px;}
+.exceptionWrap.tempora .teminfolist .item{padding:0;}
+.exceptionWrap.tempora .teminfolist > li{margin-bottom:10px;}
+.exceptionWrap.tempora .teminfolist > li:last-child{margin-bottom:0;}
+.exceptionWrap.tempora .copyarea{padding:13px;border-top:1px solid #eeeeee;text-align:center;}
+.exceptionWrap.tempora .copyarea .copyright{color:#999999;font-size:13px;}
+
+/* 기부하기 /수정2110 */
+.directWrap .donationTitle{padding:15px 0}
+.directWrap .donationTitle .contentTitle{padding-bottom:10px;line-height:1.3}
+.directWrap .donationTitle .titImg img{vertical-align:top}
+.directWrap .donationTitle .totalArea{position:relative;display:flex;justify-content:space-between;overflow:hidden;width:840px;height:79px;color:#fff}
+.directWrap .donationTitle .totalArea > div{display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;height:79px}
+.directWrap .donationTitle .totalArea > div.totalL{padding:22px 15px 20px 20px;width:51%;background:#ee5a00}
+.directWrap .donationTitle .totalArea > div.totalR{padding:22px 25px 20px 30px;width:49%;background:#009ab1  url('https://direct.hi.co.kr/images/donation/total_wall.jpg') no-repeat 0 0;} /* 접근성31번 */
+.directWrap .donationTitle .totalArea > div > span{display:inline-block;height:20px;line-height:19px;font-size:19px}
+.directWrap .donationTitle .totalArea > div > strong{display:inline-block;height:37px;line-height:35px;font-weight:600;font-size:35px;text-align:right}
+.directWrap .donationTitle .totalArea > div > strong > em{display:inline-block;margin-left:4px;height:29px;line-height:28px;font-weight:normal;font-size:27px}
+.directWrap .donationTitle .bannerArea{overflow:hidden} /* 기부이벤트 /202012 */
+.directWrap .donationTitle .bannerArea img{vertical-align:top} /* 기부이벤트 /202012 */
+
+.tabDo a{width:120px}
+.donationWrap{position:relative;margin-bottom:50px}
+.donationList{}
+.donationList > li{display:flex;justify-content:space-between;padding:26px 0;width:840px;border-bottom:1px solid #ddd}
+.donationList > li:last-child{margin-bottom:42px;border-bottom:0}
+.donationList .doPhoto{position:relative;width:280px;height:190px}
+.donationList .doPhoto img{width:100%}
+.donationList .doContent{width:487px}
+.donationList .doContent h4{font-size:24px;color:#222;line-height:1.35;letter-spacing:-1.5px}
+.donationList .doContent .txt1{font-size:18px;color:#555;line-height:1.4}
+.donationList .doContent .txt2{font-size:14px;color:#898989}
+.donationList .doContent .txt3{font-size:17px;color:#555}
+.donationList .doContent .dDay{display:inline-block;margin-left:5px;padding:0 8px;height:20px;line-height:20px;background-color:#009ab1;font-size:13px;color:#fff;} /* 접근성31번 */
+.donationList .doContent .doGraph1{margin-top:15px;width:487px;height:45px}
+.donationList .doContent .doGraph1:after{content:'';display:block;clear:both}
+.donationList .doContent .doGraph1 .graphBg{height:18px;border:1px solid #ee5a00;background-color:#fff}
+.donationList .doContent .doGraph1 .graphBg .doFull1{width:0;height:100%;background:url('https://direct.hi.co.kr/images/donation/bg_graph_org.gif') repeat-x 0 0}
+.donationList .doContent .doGraph1 .doP1{float:left;line-height:1.4;font-size:13px;color:#ee5a00}
+.donationList .doContent .doGraph1 .doP1 span{font-weight:600}
+.donationList .doContent .doGraph1 .doW1{float:right;font-size:13px;color:#ee5a00}
+
+.donationList .doContent .doGraph2{margin-top:15px;width:487px;height:45px}
+.donationList .doContent .doGraph2:after{content:'';display:block;clear:both}
+.donationList .doContent .doGraph2 .graphBg{height:18px;border:1px solid #ee5a00;background-color:#fff}
+.donationList .doContent .doGraph2 .graphBg .doFull2{width:0;height:100%;background:url('https://direct.hi.co.kr/images/donation/bg_graph_org.gif') repeat-x 0 0}
+.donationList .doContent .doGraph2 .doP2{float:left;line-height:1.4;font-size:13px;color:#ee5a00}
+.donationList .doContent .doGraph2 .doP2 span{font-weight:600}
+.donationList .doContent .doGraph2 .doW2{float:right;font-size:13px;color:#ee5a00}
+
+.donationList .doContent .doGraph3{margin-top:15px;width:487px;height:45px}
+.donationList .doContent .doGraph3:after{content:'';display:block;clear:both}
+.donationList .doContent .doGraph3 .graphBg{height:18px;border:1px solid #ee5a00;background-color:#fff}
+.donationList .doContent .doGraph3 .graphBg .doFull3{width:0;height:100%;background:url('https://direct.hi.co.kr/images/donation/bg_graph_org.gif') repeat-x 0 0}
+.donationList .doContent .doGraph3 .doP3{float:left;line-height:1.4;font-size:13px;color:#ee5a00}
+.donationList .doContent .doGraph3 .doP3 span{font-weight:600}
+.donationList .doContent .doGraph3 .doW3{float:right;font-size:13px;color:#ee5a00}
+
+.donationList .doContent .btArea{margin-top:11px}
+.donationList .doInfo{flex-wrap:wrap}
+.donationList .doInfo .btView{display:flex;justify-content:space-between}
+.donationList .doInfo .doPhoto{width:220px;height:150px}
+.donationList .doInfo .doContent{margin-left:60px;width:560px}
+.donationList .doDetail{margin-top:30px;padding-top:30px;border-top:1px dashed #c9c9c9}
+.donationList .doDetail .txtDetail p{margin-top:25px;line-height:1.7;font-size:15px;color:#3d3d3d}
+.donationList .doDetail .txtDetail p strong{font-size:18px;}
+.donationList a.btDonation{display:block;width:240px;height:54px;line-height:54px;background-color:#047db5;font-size:18px;text-align:center;color:#fff}
+.snsShareArea{display:flex;justify-content:space-between;align-items:center;padding:13px 27px;height:44px;border:1px solid #ddd;background:#efefef}
+.snsShareArea .txt{font-size:20px;color:#222}
+.snsShareArea .btArea{height:44px}
+.snsShareArea .btArea a{display:block;height:44px}
+.inputTable.type2 li{font-size:16px;color:#222}
+
+.donationList .doSuc .doPhoto:after{content:'기부 목표 금액 달성 감사합니다';display:block;position:absolute;bottom:0;left:0;width:280px;height:67px;background:url('https://direct.hi.co.kr/images/donation/pin_donation_success.png') no-repeat 0 0;font-size:0}
+.donationList .doInfo.doSuc .doPhoto:after{width:220px;height:53px;background:url('https://direct.hi.co.kr/images/donation/pin_donation_success_xs.png') no-repeat 0 0}
+.donationList a.btDonation{display:block;width:240px;height:54px;line-height:54px;background-color:#047db5;font-size:18px;text-align:center;color:#fff}
+.donationList a.btDonation.gray{background-color:#a39d98}
+
+.donationList .doEnd .doContent .dDay{background-color:#a39d98}
+.donationList .doEnd .doContent .doGraph1 .graphBg{border:1px solid #a39d98}
+.donationList .doEnd .doContent .doGraph1 .graphBg .doFull1{background:url('https://direct.hi.co.kr/images/donation/bg_graph_gry.gif') repeat-x 0 0}
+.donationList .doEnd .doContent .doGraph1 .doP1,
+.donationList .doEnd .doContent .doGraph1 .doW1{color:#a39d98}
+.donationList .doEnd .doContent .checkbox{display:none}
+
+.donationList .doEnd .doContent .dDay{background-color:#a39d98}
+.donationList .doEnd .doContent .doGraph2 .graphBg{border:1px solid #a39d98}
+.donationList .doEnd .doContent .doGraph2 .graphBg .doFull2{background:url('https://direct.hi.co.kr/images/donation/bg_graph_gry.gif') repeat-x 0 0}
+.donationList .doEnd .doContent .doGraph2 .doP2,
+.donationList .doEnd .doContent .doGraph2 .doW2{color:#a39d98}
+.donationList .doEnd .doContent .checkbox{display:none}
+
+.donationList .doEnd .doContent .dDay{background-color:#a39d98}
+.donationList .doEnd .doContent .doGraph3 .graphBg{border:1px solid #a39d98}
+.donationList .doEnd .doContent .doGraph3 .graphBg .doFull3{background:url('https://direct.hi.co.kr/images/donation/bg_graph_gry.gif') repeat-x 0 0}
+.donationList .doEnd .doContent .doGraph3 .doP3,
+.donationList .doEnd .doContent .doGraph3 .doW3{color:#a39d98}
+.donationList .doEnd .doContent .checkbox{display:none}
+
+.mobilSerbox .conTitle01 .inputArea .item .inputBase label { padding-top:10px;}
+.mobilSerbox .conTitle01 .inputArea .item .inputBase{ width:383px; height:45px;}
+
+
+/******* H 주택화재상해보험 *******/
+.productIconContent.etcStyle > ul > li{width:18%;padding:0;border-right:none;}
+.productIconContent.etcStyle > ul > li .icon{height:79px;padding-left:0;}
+.productIconContent.etcStyle > ul > li ul.underEtc > li{width:100%;padding:10px 0 0;}
+.productIconContent.etcStyle > ul > li ul.underEtc > li .icon{height:170px;}
+
+/* 아이콘 이미지의 높이 조절시 */
+.productIconContent ul li .h125{min-height:125px;}
+.productIconContent ul li .h140{min-height:140px;}
+
+/* 상품안내 속 numbering */
+.squareNum{width:36px;height:36px;margin:20px auto;color:#fff;background-color:#4489ca;text-align:center;line-height:34px;}
+
+/* 랜딩화면 /2201 */
+.landingWrap img{vertical-align:top}
+.landingWrap .bnTopArea{width:100%;height:90px;background-color:#0b236d;text-align:center}
+.landingWrap .footer{padding:50px 0 75px;background-color:#ffffff}
+.landingWrap .footer.inBtn{padding-bottom:165px}
+.landingWrap .footer .noticeArea{margin:0 auto;width:1100px;}
+.landingWrap .footer .noticeArea > .tit{position:relative;margin-bottom:10px;padding-left:10px;height:19px;line-height:18px;font-weight:600;font-size:19px;color:#003070}
+.landingWrap .footer .noticeArea > .tit:before{content:'';display:block;position:absolute;top:2px;left:0;width:5px;height:16px;background-color:#003070;}
+.landingWrap .footer .noticeArea > ul > li{position:relative;padding-left:8px;line-height:1.6em;font-size:14px;color:#555555}
+.landingWrap .footer .noticeArea > ul > li:before{content:'';display:block;position:absolute;top:10px;left:0;width:4px;height:2px;background-color:#bcbcbc;}
+.landingWrap .footer .noticeArea > ul > li:nth-child(n+2){margin-top:5px;}
+.landingWrap .footer .infoArea{display:flex;align-items:center;margin:35px auto 0;padding-top:35px;width:1100px;border-top:2px solid #d9d9d9}
+.landingWrap .footer .infoArea .imgLogo{margin-right:42px}
+.landingWrap .footer .infoArea .imgLogo > a{display:block}
+.landingWrap .footer .infoArea .txt{line-height:1.6em;font-size:12px;color:#909090}
+.landingWrap .btFixed{position:fixed;bottom:0;width:100%;height:90px;background-color:#ee7700;text-align:center;}
+.landingWrap .btFixed > a{display:block}
+/* 랜딩-이륜차 /2201 */
+.landingWrap .cycWrap{margin-bottom:25px;width:100%;background:#c9dfff url('https://direct.hi.co.kr/images/others/landing_bg_cyc.jpg') no-repeat center top;}
+.landingWrap .cycWrap .cycTopArea{position:relative;margin:0 auto;padding-top:162px;width:1100px;height:758px;box-sizing:border-box}
+.landingWrap .cycWrap .cycTopArea .tit{margin:0;padding:0}
+.landingWrap .cycWrap .cycTopArea .btArea{display:flex;position:absolute;bottom:187px;left:0;}
+.landingWrap .cycWrap .cycTopArea .btArea a{margin-right:20px}
+.landingWrap .cycWrap .faqArea{padding:96px 0 100px;background-color:#ecf4ff;text-align:center;}
+/* 랜딩-운전자 /2201 */
+.landingWrap .topTiArea{background-color:#ffffff;text-align:center}
+.landingWrap .driverCardWrap{width:100%;background:url('https://direct.hi.co.kr/images/others/landing_bg_driver.jpg') no-repeat center 0;text-align:center}
+.landingWrap .driverCardWrap .cardImg{position:relative;margin:0 auto;padding-top:39px;max-width:1140px}
+.landingWrap .driverCardWrap .cardImg img{width:100%}
+.landingWrap .driverCardWrap .cardImg > a{display:block;position:absolute;top:43%;width:13.2%;min-width:125px}
+.landingWrap .driverCardWrap .cardImg a.bt1{left:4.3%}
+.landingWrap .driverCardWrap .cardImg a.bt2{left:37.5%}
+.landingWrap .driverCardWrap .cardImg a.bt3{left:70.5%}
+/* 랜딩-장기 /2202 */
+.landingWrap .longHead{height:72px;border-bottom:1px solid rgba(255,255,255,0.5);background-color:#ff8e1d;box-sizing:border-box}
+.landingWrap .longHead .logoArea{display:flex;justify-content:space-between;align-items:center;margin:0 auto;width:1200px;height:71px}
+.landingWrap .longWrap{padding:93px 0 95px;background-color:#ff8e1d}
+.landingWrap .longWrap .longInsuLink{margin:0 auto;width:1200px;background:url('https://direct.hi.co.kr/images/others/landing_bg_long.png') no-repeat right top;}
+.landingWrap .longWrap .longInsuLink .tit{margin-bottom:65px}
+.landingWrap .longWrap .longInsuLink .flexWrap{justify-content:space-between;}
+.landingWrap .longWrap .longInsuLink .gridInsu{width:600px;
+  display:grid;grid-template-columns:repeat(3, 1fr);grid-template-rows:repeat(auto-fill, minmax(180px, auto));grid-column-gap:15px;grid-row-gap:15px;
+  display:-ms-grid;-ms-grid-columns:1fr 15px 1fr 15px 1fr;-ms-grid-rows:1fr 15px 1fr;
+}
+.landingWrap .longWrap .longInsuLink .gridInsu .item{box-shadow:7px 8px 11px rgba(248,123,21,1);border-radius:10px}
+.landingWrap .longWrap .longInsuLink .gridInsu .item:nth-child(2){-ms-grid-column:3;-ms-grid-row:1}
+.landingWrap .longWrap .longInsuLink .gridInsu .item:nth-child(3){-ms-grid-column:5;-ms-grid-row:1}
+.landingWrap .longWrap .longInsuLink .gridInsu .item:nth-child(4){-ms-grid-column:1;-ms-grid-row:3}
+.landingWrap .longWrap .longInsuLink .gridInsu .item:nth-child(5){-ms-grid-column:3;-ms-grid-row:3}
+.landingWrap .longWrap .longInsuLink .gridInsu .item:nth-child(6){-ms-grid-column:5;-ms-grid-row:3}
+.landingWrap .longWrap .longInsuLink .gridEtc{width:580px;
+  display:grid;grid-template-columns:repeat(2, 1fr);grid-template-rows:repeat(auto-fill, minmax(180px, auto));grid-column-gap:15px;grid-row-gap:15px;
+  display:-ms-grid;-ms-grid-columns:1fr 15px 1fr;-ms-grid-rows:1fr 15px 1fr;
+}
+.landingWrap .longWrap .longInsuLink .gridEtc .item:nth-child(1){grid-column:1 / span 2;}
+.landingWrap .longWrap .longInsuLink .gridEtc .item:nth-child(2){-ms-grid-column:1;-ms-grid-row:3}
+.landingWrap .longWrap .longInsuLink .gridEtc .item:nth-child(3){-ms-grid-column:3;-ms-grid-row:3}
+.landingWrap .longWrap + .footer .noticeArea{width:1200px}
+.landingWrap .longWrap + .footer .infoArea{width:1200px}
+/* 랜딩-자동차 /2202 */
+.landingWrap .carHead{height:72px;border-bottom:1px solid rgba(255,255,255,0.5);background-color:#2431a6;box-sizing:border-box}
+.landingWrap .carHead .logoArea{display:flex;justify-content:space-between;align-items:center;margin:0 auto;width:1100px;height:71px}
+.landingWrap .carHead .logoArea .navArea{display:flex;}
+.landingWrap .carHead .logoArea .navArea li{margin-left:70px;text-align:center;}
+.landingWrap .carHead .logoArea .navArea li > a{display:block;height:20px;line-height:19px;font-size:19px;color:#ffffff;}
+.landingWrap .carWrap .carContent{background-color:#2431a6}
+.landingWrap .carWrap .carContent:nth-child(even){background:#f3f2f1}
+.landingWrap .carWrap .carContent .carInsuLink{margin:0 auto;padding:215px 0 55px;width:1100px;background:url('https://direct.hi.co.kr/images/others/landing_bg_car.jpg') no-repeat right 148px}
+.landingWrap .carWrap .carContent .carInsuLink .tit{margin-bottom:178px}
+.landingWrap .carWrap .carContent .carInsuSub1,
+.landingWrap .carWrap .carContent .carInsuSub2,
+.landingWrap .carWrap .carContent .carInsuSub3{margin:0 auto;width:1100px}
+.landingWrap .carWrap .carContent:nth-child(2){background:#f3f2f1 url('https://direct.hi.co.kr/images/others/landing_bg_carSub1.png') no-repeat right bottom}
+.landingWrap .carWrap .carContent .carInsuSub1{padding:354px 0 344px;}
+.landingWrap .carWrap .carContent .carInsuSub1 .tit{margin-bottom:68px}
+.landingWrap .carWrap .carContent:nth-child(3){background:#18226e url('https://direct.hi.co.kr/images/others/landing_bg_carSub2.jpg') no-repeat center bottom}
+.landingWrap .carWrap .carContent .carInsuSub2{padding:255px 0 776px;}
+.landingWrap .carWrap .carContent .carInsuSub2 .tit{text-align:center}
+.landingWrap .carWrap .carContent .carInsuSub3{padding:292px 0 344px;background:url('https://direct.hi.co.kr/images/others/landing_bg_carSub3.png') no-repeat right 171px}
+.landingWrap .carWrap .carContent .carInsuSub3 .tit{margin-bottom:70px;}
+.landingWrap .carWrap .carInsuBn{height:149px;background-color:#ff9400;text-align:center}
+.landingWrap .carWrap .carInsuBn > img{margin-top:-54px}
+.landingWrap .carWrap + .footer.inBtn{padding-bottom:155px}
+.landingWrap .footer.inBtn .btFixed.btCalc_car{background-color:#101d38;height:80px;text-align:center}
+.landingWrap .footer.inBtn .btFixed.btCalc_car a{padding:26px 0 27px;height:27px;line-height:26px;font-weight:600;font-size:26px;color:#fff}
+.landingWrap .lawArea{margin:15px auto 0;width:1100px;text-align:right;font-size:13px;color:#898989}
+
+/* 전체 배경화면 이벤트 220811 */
+.eventTopArea {padding-top:106px;position:relative;}
+.eventTopArea .eventTop {background-repeat:no-repeat;background-position:center top; -webkit-background-size:cover; background-size:cover; position:relative;}
+
+/* 보험계약변경 2301 */
+.contractBox{display:flex;justify-content:flex-start;flex-wrap:wrap;}
+.contractBox .boxGray{width:264px;height:99px;background-color:#fafafa}
+.contractBox .boxGray:not(:nth-child(3n+1)){margin-left:24px;}
+.contractBox .boxGray:nth-child(4){margin-top:16px;}
+.contractBox .boxGray a{display:block;padding:24px 5px 20px 22px;min-height:99px;height:100%;box-sizing:border-box;border:1px solid #d3d3d3;line-height:1.4em;letter-spacing:-1px;}
+.contractBox .boxGray a .tit{font-size:19px;color:#3c3c3c;}
+.contractBox .boxGray a .txt{margin-top:12px;font-size:15px;color:#555;}

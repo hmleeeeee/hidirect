@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>alert</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <script>
+        $(function(){
+            alertPopup("상품소개 항목에 동의하지 않을 경우 1:1상담 서비스11", "",function(callback){
+                alertPopup("상품소개 항목에 동의하지 않을 경우 1:1상담 서비스2222", "")
+            })
+        });
+
+    </script>
+</head>
+<body>
+<a href="javascript:alertPopup('상품소개 항목에 동의하지 않을 경우 1:1상담 서비스<br>및 이벤트 안내 등 다양한 서비스를 제공받으실 수<br>없습니다. 동의하지 않고 진행하시겠습니까?','ok',null)">단순 확인</a><br>
+<a href="javascript:alertPopup('상품소개 항목에 동의하지 않을 경우 1:1상담 서비스<br>및 이벤트 안내 등 다양한 서비스를 제공받으실 수<br>없습니다. 동의하지 않고 진행하시겠습니까?',null,null)">확인 취소</a>
+</body>
+</html>

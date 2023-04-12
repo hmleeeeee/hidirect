@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>증명서 발급</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>증명서 발급</h1>
+	<a href="#none" class="btnBack">메인페이지로 이동</a>
+	<a href="#none" class="btnMenu">입력정보 팝업</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<div class="certifiVisual">
+		<p><!-- 0715 문구수정 JJY-->
+			<strong>유지중인 다이렉트 보험의<br>증권 또는 가입증명서 발급이 가능합니다.</strong>
+			<span>가입증명서는 자동차보험 가입자만 발급 가능</span>
+		</p>
+	</div>
+
+	<section>
+		<h2>현재 유지중인 보험</h2>
+		<ul class="contractBox">
+			<li>
+				<div class="contractTit">
+					<a href="#">하이카다이렉트자동차보험</a>
+				</div>
+				<div class="contractWhiteBox">
+					<ul class="">
+						<li>
+							<span class="titl">대상차량</span>
+							<span class="data">03가1234</span>
+						</li>
+						<li>
+							<span class="titl">만기일</span>
+							<span class="data">2017-01-01</span>
+						</li>
+						<li>
+							<span class="titl">계약자</span>
+							<span class="data">박현대</span>
+						</li>
+						<li>
+							<span class="titl">피보험자</span>
+							<span class="data">박현대</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="contractTit">
+					<a href="#">해외여행보험</a>
+				</div>
+				<div class="contractWhiteBox">
+					<ul class="">
+						<li>
+							<span class="titl">보험기간</span>
+							<span class="data">2017-01-01 ~ 2017-05-01 </span>
+						</li>
+						<li>
+							<span class="titl">계약자</span>
+							<span class="data">박현대</span>
+						</li>
+						<li>
+							<span class="titl">피보험자</span>
+							<span class="data">박현대</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="contractTit">
+					<a href="#">연금저축손해보험노후사랑보험</a>
+				</div>
+				<div class="contractWhiteBox">
+					<ul class="">
+						<li>
+							<span class="titl">보험기간</span>
+							<span class="data">2017-01-01 ~ 2017-05-01 </span>
+						</li>
+						<li>
+							<span class="titl">계약자</span>
+							<span class="data">박현대</span>
+						</li>
+						<li>
+							<span class="titl">피보험자</span>
+							<span class="data">edward walter furlong</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="noResult">
+					<p>'해당상태의 계약건'이 없습니다.</p>
+				</div>
+			</li>
+		</ul>
+
+		<!-- <div class="btnMore mgRL0">
+			<a href="#" role="button"><span>더보기(10/19)</span></a>
+		</div>
+
+		<ul class="contractLink specialList0">
+			<li>
+				<div class="tac">
+					<a href="#"><span class="name">콜센터 <br>(1588-5656)</span></a>
+				</div>
+			</li>
+			<li>
+				<div class="tac">
+					<a href="#"><span class="name">스마트 <br>고객센터 <br>바로가기</span></a>
+				</div>
+			</li>
+			<li>
+				<div class="tac">
+					<a href="#layerPopup1"><span class="name">유의사항</span></a>
+				</div>
+			</li>
+		</ul> -->
+		<!-- 0704 버튼 수정 JJY-->
+		<div class="btn">
+			<a href="#" title="새창">유의사항</a>
+		</div>
+
+		<div class="btnWrap">
+			<span><a href="#" role="button">이전</a></span>
+			<span class="on"><a href="#" role="button">다음</a></span>
+		</div>
+	</section>
+
+	<!-- 레이어팝업 : 도움말 -->
+	<div class="layerPopup" id="layerPopup1">
+		<div class="layerWrap">
+			<h2>유의사항</h2>
+			<div class="layerCont">
+				<ul class="listDot">
+					<li>일반보험 보험증권은 원계약 기준으로 발급되며, 계약에 변경사항이 있는 경우 계약담당자 및 지점을 통해 발급받으시길 바랍니다.</li>
+					<li>발급 받으실 내용에 따라서 가능 대상을 확인하시기 바랍니다.</li>
+					<li>일반보험은 최근 3년 이내 계약만 조회 할 수 있습니다. (단, 보험개시일 기준 3년)<br>
+						<span class="fontOrg">보험 증권 </span> : 유지중인 보험계약 계약자, 피보험자, 친권자<br>(계약자가 만 14세 미만인 경우 친권자 등록시)<br>
+						<span class="fontOrg">가입증명서 </span> : 유지중인 자동차보험 계약자, 피보험자
+					</li>
+				</ul>
+			</div>
+			<div class="layerBtn">
+				<a href="#close">확인</a>
+			</div>
+			<a href="#" role="button" class="layerClose">창닫기</a>
+		</div>
+	</div>
+
+</body>
+</html>

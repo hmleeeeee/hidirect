@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>대표차명 선택 | 차량 상세정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>차량 상세정보 입력</h1>
+	<a href="#none" class="btnHome">메인페이지로 이동</a>
+	<a href="#none" class="btnInfo">입력정보 팝업</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<section class="dataDetail poTop">
+		<ul class="carDetail">
+			<li>
+				<strong class="type4a">제조사</strong>
+				<span class="type4a">현대</span>
+				<strong class="type4a">대표차명</strong>
+				<span class="type4d">쏘나타</span>
+			</li>
+			<li>
+				<strong>등록연도</strong>
+				<span>2015년 (고객님 차량의 등록연도)</span>
+			</li>
+			<li>
+				<strong>세부차명</strong>
+				<span>LF쏘나타 플러그인 하이브리드(PHEV)</span>
+			</li>
+			<li>
+				<strong>세부형식</strong>
+				<span>LF쏘나타 플러그인 하이브리드(PHEV)</span>
+			</li>
+		</ul>
+	</section>
+	<section>
+		<div class="mgtS">
+			<div class="searchBox"> <!-- style cssname 변경 -->
+				<input type="search" id="txt_sch" class="txt_inp search" placeholder="자동차명 입력하여 검색">
+				<label for="txt_sch" class="hide">자동차명 입력하여 검색</label>
+				<a href="#" class="schBtn" role="button"><span class="icoSch">자동차명 입력</span></a>
+			</div>
+			<div class="searchResultBox">
+				<h2 class="hide">검색결과</h2>
+				<p class="searchResultInfo"><span class="">'아'</span>로 검색한 결과입니다.</p>
+				<div class="searchResult">
+					<a href="#" role="button"><span>아반떼</span></a>
+					<a href="#" role="button"><span>아이오닉</span></a>
+					<a href="#" role="button"><span>아토스</span></a>
+					<a href="#" role="button"><span>넥시아</span></a>
+					<a href="#" role="button"><span>피아트</span></a>
+					<a href="#" role="button"><span>아반떼</span></a>
+				</div>
+				<div class="nosearchResult">
+					<p>
+						<span>'소나타'</span> 검색 결과가 없습니다.
+					</p>
+				</div>
+
+				<div class="btn">
+					<a href="#" role="button">취소</a>
+				</div>
+			</div>
+
+			<div class="h2Btn mgT15 mgB10">
+				<h2>대표차명을 선택해주세요</h2>
+				<a href="#layerPop1" class="btnHelp"><span>도움말</span></a>
+			</div>
+
+			<ul class="wrapTab typeTwoSm clFix ChkChois">
+				<li class="on">
+					<div>
+						<a href="#" role="button">
+							<span>2017년</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#" role="button">
+							<span>2016년 09월 28일 이후</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#" role="button">
+							<span>2016년 09월 27일 이전</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#" role="button">
+							<span>2015년<em class="carNameAddDesc">(고객님 차량의 등록연도)</em></span>
+						</a>
+					</div>
+				<li>
+					<div>
+						<a href="#" role="button">
+							<span>2017년</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#" role="button">
+							<span>2016년 09월 28일 이후</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#" role="button">
+							<span>2016년 09월 27일 이전</span>
+						</a>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</section>
+	<section class="dataDetail poTopPo">
+		<ul class="carDetail">
+			<li>
+				<strong class="type4a">제조사</strong>
+				<span class="type4a">현대</span>
+				<strong class="type4a">대표차명</strong>
+				<span class="type4d">쏘나타</span>
+			</li>
+			<li>
+				<strong>등록연도</strong>
+				<span>2015년 (고객님 차량의 등록연도)</span>
+			</li>
+			<li>
+				<strong>세부차명</strong>
+				<span>LF쏘나타 플러그인 하이브리드(PHEV)</span>
+			</li>
+			<li>
+				<strong>세부형식</strong>
+				<span>LF쏘나타 플러그인 하이브리드(PHEV)</span>
+			</li>
+		</ul>
+	</section>
+	<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+		<a href="#" role="button">이전</a>
+	</div>
+	<!-- content -->
+</div>
+<!-- 레이어팝업 -->
+<div class="layerPopup" id="layerPop1">
+	<div class="layerWrap">
+		<h2>차량 연식/최초등록일 안내</h2>
+		<section>
+			<h3>차량 연식과 차량 최초 등록일이 다르신가요?</h3>
+			<ul class="listBasic mgT15">
+				<li>역수입 차량, 개별 수입 등의 경우 차량 연식과 최초 등록일이 상이할 수 있습니다.</li>
+				<li>이에 해당 될 경우 등록연도 선택 화면에서 [직접 입력] 항목을 선택하셔서 차량 최초 등록일을 입력해주시기 바랍니다.</li>
+			</ul>
+			<ul class="listEtc">
+				<li>연식 : 차량 출고 연식</li>
+				<li>최초등록일 : 소유자가 차량을 최초 등록한 날짜</li>
+			</ul>
+		</section>
+		<div class="layerBtn">
+			<a href="#close">확인</a>
+		</div>
+		<a href="#layerPop2" class="layerClose">닫기</a>
+	</div>
+</div>
+
+<div class="layerPopup" id="layerPop2">
+	<div class="layerWrap">
+		<h2>차량 최초 등록일 입력</h2>
+		<section>
+			<div class="grayBox mgT0">
+				<p>차량 기본정보를 [차대번호] 또는 [구입예정]으로 입력 하셨거나 역수입 차량, 개별 수입 차량의 차량 연식과 최초 등록일이 상이한 경우 차량 최초 등록일을 입력하셔야 됩니다.</p>
+			</div>
+			<h3 class="mgT15 mgB10">차량 최초 등록일</h3>
+			<div class="inputWrap three">
+				<input type="date" name="" title="년월일 선택" placeholder="년도 선택">
+				<!-- <span>
+					<select>
+						<option>년도 선택</option>
+						<option value="1">1월</option>
+						<option value="2">2월</option>
+					</select>
+				</span>
+				<span>
+					<select>
+						<option>월 선택</option>
+						<option value="1">1월</option>
+						<option value="2">2월</option>
+					</select>
+				</span>
+				<span>
+					<select>
+						<option>일 선택</option>
+						<option value="1">1일</option>
+						<option value="2">2일</option>
+					</select>
+				</span> -->
+			</div>
+		</section>
+		<div class="layerBtn">
+			<a href="#close">확인</a>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+</body>
+</html>

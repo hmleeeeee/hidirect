@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>계약자정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Content">본문 바로가기</a></div>
+<header>
+	<h1>계약자정보 입력</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">4</a>
+</header>
+<div id="h1Wrap">
+	<!-- content -->
+	<p class="topTxt">피보험자/계약자 정보를 입력해주세요.</p>
+	<section>
+		<h2>계약자(피보험자) 정보</h2>
+		<form>
+			<fieldset>
+				<legend>정보입력</legend>
+				<div class="inputWrap">
+					<input type="text" id="name" disabled="disabled">
+					<label for="name">이름</label>
+				</div>
+				<div class="inputWrap two">
+					<input type="tel" id="number01" disabled="disabled">
+					<label for="number01">주민등록번호<em class="hide">앞자리</em></label>
+					<input type="password" placeholder="●●●●●●●" id="number02" disabled="disabled">
+					<label for="number02" class="hide">주민등록번호뒷자리</label>
+				</div>
+				<div class="inputWrap">
+					<input type="tel" id="phone" required />
+					<label for="phone">휴대폰 번호</label>
+				</div>
+				<div class="inputWrap">
+					<input type="email" id="email" required />
+					<label for="email">이메일 주소</label>
+				</div>
+				<div class="inputWrap select">
+					<select title="등록 주소지 선택">
+						<option selected="selected" value="0">선택</option>
+						<option value="1">자택</option>
+					</select>
+					<input type="text" value="" title="우편번호" placeholder="우편번호">
+					<a href="#" role="button">우편번호 검색</a>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="add01_1" disabled="disabled">
+					<label for="add01_1">기본 주소</label>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="add01_2" disabled="disabled">
+					<label for="add01_2">상세 주소</label>
+				</div>
+			</fieldset>
+		</form>
+		<!-- 0822 문구수정 -->
+		<ul class="listDot">
+			<li>입력된 이메일로 보험증권을 발송해드립니다.</li>
+			<li>입력된 정보로 개인정보가 업데이트 됩니다.</li>
+			<li>대리 청구인 지정을 희망하시는 경우, 가입 또는 가입 후 고객센터(1588-5656)으로 문의 주시기 바랍니다.</li>
+		</ul>
+		<!--// 0822 문구수정 -->
+
+		<h2>피보험자/계약자 직업 정보</h2>
+		<div class="searchBox">
+			<input type="search" id="txt_sch" class="txt_inp search" placeholder="직업 검색">
+			<label for="txt_sch" class="hide">직업 검색</label>
+			<a href="#" class="schBtn" role="button"><span class="icoSch">직업 검색</span></a>
+		</div>		
+		
+	</section>
+
+	<div class="btnWrap">
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">다음</a></span>
+	</div>
+	<!-- //content -->
+</div>
+</body>
+</html>
+

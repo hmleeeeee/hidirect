@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>공통_05보험료결제</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <script>
+        $(function(){
+        })
+    </script>
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="형대해상 다이렉트"></p>
+            <h1>해외여행보험 <span class="fz17">(개인형)</span></h1>
+        </div>
+
+        <!-- stepArea : s-->
+        <div class="stepArea">
+            <ol>
+                <li class="step step1 insertEnd">
+                    <div class="titleArea">
+                        <p class="number">1</p>
+                        <strong class="tit">고객정보</strong>
+                        <a href="#" class="btnEdit"><img src="https://direct.hi.co.kr/images/common/btn_edit.png" alt="수정"></a>
+                    </div>
+                    <ul class="infoList">
+                        <li>
+                            홍길동 (791017-1******)<br>
+                            2017-12-31 (14시 ) ~<br>
+                            2018-01-11 (14시 까지)
+                        </li>
+                    </ul>
+                </li>
+                <li class="step step2 insertEnd">
+                    <div class="titleArea">
+                        <p class="number">2</p>
+                        <strong class="tit">보험료확인</strong>
+                        <a href="#" class="btnEdit"><img src="https://direct.hi.co.kr/images/common/btn_edit.png" alt="수정"></a>
+                    </div>
+                    <ul class="infoList">
+                        <li>
+                            스탠다드 플랜<br>
+                            최종 보험료: 5,000원
+                        </li>
+                    </ul>
+                </li>
+                <li class="step step3 insertEnd">
+                    <div class="titleArea">
+                        <p class="number">3</p>
+                        <strong class="tit">계약자 정보</strong>
+                        <a href="#" class="btnEdit"><img src="https://direct.hi.co.kr/images/common/btn_edit.png" alt="수정"></a>
+                    </div>
+                    <ul class="infoList">
+                        <li>
+                            계약자<br>
+                            - 홍길동 (791017-1******)<br>
+                            - Hong gildong
+                        </li>
+                        <li>
+                            피보험자<br>
+                            - 홍길동 (791017-1******)
+                        </li>
+                    </ul>
+                </li>
+                <li class="step step4 insertEnd">
+                    <div class="titleArea">
+                        <p class="number">4</p>
+                        <strong class="tit">청약내용 확인</strong>
+                        <a href="#" class="btnEdit"><img src="https://direct.hi.co.kr/images/common/btn_edit.png" alt="수정"></a>
+                    </div>
+
+                    <ul class="infoList">
+                        <li>
+                            다이렉트 해외여행보험
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="step step5 active">
+                    <div class="titleArea">
+                        <p class="number">5</p>
+                        <strong class="tit">보험료 결제</strong>
+                        <a href="#" class="btnEdit"><img src="https://direct.hi.co.kr/images/common/btn_edit.png" alt="수정"></a>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <!-- stepArea : e-->
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>보험료 결제하기</h2>
+            <p class="txt">원하시는 방법을 선택해 주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+        <div class="itemSelectArea tabWrap">
+            <ul class="itemList tabList mb30">
+                <li class="on"><a href="#" class="card"><span>신용카드</span></a></li>
+                <li><a href="#" class="bank"><span>실시간 계좌이체</span></a></li>
+                <li><a href="#" class="kakaopay"><span>카카오페이 간편결제</span></a></li>
+            </ul>
+            <div class="tabCon on">
+                <div class="tabHiddenTitle">신용카드 탭 내용</div>               
+
+                <!--inputTable : s-->
+                <div class="inputTable inputBline onlyInput">
+					<div class="title">
+                        <h3 class="tit">보험료를 결제하실 홍길동 님의 <span class="fontPoint2">결제 정보를 입력하세요.</span></h3>
+                    </div>
+                    <ul class="inputArea cardNumber mt0">
+                        <li class="item">
+                            <div class="selectItem">
+                                <select name="selectHp" title=" 카드정류를 선택해주세요">
+                                    <option value="">카드종류</option>
+                                    <option value="1">bc</option>
+                                    <option value="2">신한</option>
+                                    <option value="3">현대</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="inputBase placeholder">
+                                <input type="text" placeholder="4자리" title="카드번호 처음 4자리">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="inputBase placeholder">
+                                <input type="text" placeholder="4자리" title="카드번호 두번째 4자리">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="inputBase placeholder">
+                                <input type="text" placeholder="4자리 또는 5자리"  title="카드번호 세번째 4자리 또는 5자리">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="inputBase placeholder bg">
+                                <input type="text" placeholder="뒤자리" title="카드 뒤자리">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea item2">
+                        <li class="item">
+                            <div class="inputBase placeholder">
+                                <input type="text" placeholder="유효기간(MM/YY)" title="유효기간(mm/yy)">
+                            </div>
+                        </li>
+                        <!--5만원 이하였을때 : s--
+                        <li class="item">
+                            <div class="selectItem">
+                                <select name="selectMonth" title="결제방법을 선택해주세요">
+                                    <option value="all">일시불</option>
+                                    <option value="1">1개월</option>
+                                    <option value="2">2개월</option>
+                                    <option value="3">3개월</option>
+                                    <option value="4">4개월</option>
+                                    <option value="5">5개월</option>
+                                </select>
+                            </div>
+                        </li>
+                        <!--5만원 이하였을때 : e-->
+
+                        <!--5만원 이상이였을때 : s-->
+                        <li class="item">
+                            <div class="selectItem">
+                                <select name="selectMonth" title="결제방법을 선택해주세요" class="fl" style="width: 165px;">
+                                    <option value="all">일시불</option>
+                                    <option value="1">1개월</option>
+                                    <option value="2">2개월</option>
+                                    <option value="3">3개월</option>
+                                    <option value="4">4개월</option>
+                                    <option value="5">5개월</option>
+                                </select>
+                                <a href="#" class="btn big fl ml10" style="width: 230px;"><span>5만원이상 무이자 카드할부</span></a>
+                            </div>
+                        </li>
+                        <!--5만원 이상이였을때 : e-->
+                    </ul>
+                </div>
+                <!--inputTable : e-->
+
+                <!--noticeBox : s-->
+                <div class="noticeBox mb30">
+                    <div class="conArea">
+                        <p class="title">Notice</p>
+                        <p class="txt">보험료 결제 시 현대오일뱅크 포인트 사용 일시 중단안내</p>
+                        <p class="con">
+                            일시  : 2017-08-11 (금) 18:00 ~ 08-14(월) 09:00<br>
+                            내용 : 현대오일뱅크 시스템점검으로 인한 보험료 결제 시 현대오일뱅크 포인트 사용불가
+                        </p>
+                    </div>
+                </div>
+                <!--noticeBox : e-->
+
+                <!--alertInfo : s-->
+                <div class="alertInfo">
+                    <p class="title">유의사항</p>
+                    <div class="conArea">
+                        <ul class="listStyle dot">
+                            <li>국내에서 발급된 계약자의 신용카드, 체크카드만 사용할 수 있습니다.(법인카드, 가족카드 결제불가)</li>
+                            <li>보험계약 체결을 위해서는 휴대폰 직접서명 또는 공인인증 전자서명이 필요합니다.</li>
+                            <li>신용카드사의 정책에 따라 최소 결제금액에 제한이 있을 수 있습니다.</li>
+                            <li>보험가입 완료 시 입력해주신 이메일로 계약내용을 보내드립니다.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--alertInfo : e-->
+
+            </div>
+            <div class="tabCon">
+                <div class="tabHiddenTitle">실시간 계좌이체 텝 내용</div>                
+
+                <!--inputTable : s-->
+                <div class="inputTable inputBline onlyInput">
+					<div class="title">
+                        <h3 class="tit">보험료를 결제하실 홍길동 님의 <span class="fontPoint2">결제 정보를 입력하세요.</span></h3>
+                    </div>
+                    <ul class="inputArea harf28 mt0">
+                        <li class="item">
+                            <div class="selectItem">
+                                <select name="selectBank" title="은행을 선택해주세요">
+                                    <option value="">은행선택</option>
+                                    <option value="1">bc</option>
+                                    <option value="2">신한</option>
+                                    <option value="3">현대</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="bank_number">계좌번호(‘-’없이)</label>
+                                <input type="text" id="bank_number">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--inputTable : e-->
+
+
+                <!--alertInfo : s-->
+                <div class="alertInfo">
+                    <p class="title">유의사항</p>
+                    <div class="conArea">
+                        <ul class="listStyle dot">
+                            <li>실시간 계좌이체는 계약자 명의의 계좌에서 출금이 가능하며, 공인인증 전자서명 시<br> 실시간 계좌이체 선택 후 입력하신 계좌에서 보험료가 납입되는 것에 동의하는 것으로 처리됩니다.</li>
+                            <li>금융권 전산시스템의 운영시간에 맞춰 즉시이체는 오전 9시부터 오후9시 50분 사이에만 이용이 가능합니다.</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!--alertInfo : e-->
+            </div>
+
+            <div class="tabCon">
+                <div class="tabHiddenTitle">간편결제 텝 내용</div>
+
+
+            </div>
+        </div>
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item55">
+                    <li><a href="#" class="btn blue rightArr"><span>휴대폰 직접서명 인증</span></a></li>
+                    <li><a href="#" class="btn orange rightArr"><span>공인인증서 인증</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

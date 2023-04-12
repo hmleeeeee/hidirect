@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+//=======================================================
+// Util.mixins
+//=======================================================
+
+
+//------------------------------------
+// shadow
+//------------------------------------
+@mixin shadow($type){
+	@if $type =='lg'{ // 0 ~ 1280
+		$penumbra-opacity: 0.14 !default;
+		$ambient-opacity: 0.12 !default;
+		$umbra-opacity: 0.2 !default;
+		box-shadow: 0 16px 38px -12px rgba(0, 0, 0, $penumbra-opacity * 4),
+		0  4px 25px 0px rgba(0, 0, 0, $ambient-opacity),
+		0  8px 10px -5px rgba(0, 0, 0, $umbra-opacity);
+	}
+	@else if $type =='md'{
+		box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, .2),
+		0 1px 10px -5px rgba(#000, 0.08);
+	}
+	@else if $type =='sm'{
+		box-shadow: 0 1px 10px 0px rgba(0, 0, 0, .04),
+		0 1px 10px -5px rgba(#000, 0.02);
+	}
+	@else if $type =='none'{
+		box-shadow: none;
+	}
+	@content;
+}
+
+
+//------------------------------------
+// transition
+//------------------------------------
+@mixin transitions($prop, $time, $type){
+	-webkit-transition: $prop $time $type;
+	-moz-transition: $prop $time $type;
+	-o-transition: $prop $time $type;
+	-ms-transition: $prop $time $type;
+	transition: $prop $time $type;
+}
+
+
+@mixin common-transition($obj : all, $time : 0s){
+	$transition : cubic-bezier(0.685, 0.0473, 0.346, 1);
+	-webkit-transition : $obj .33s $transition $time;
+	-moz-transition : $obj .33s $transition $time;
+	-o-transition : $obj .33s $transition $time;
+	-ms-transition : $obj .33s $transition $time;
+	transition:$obj .33s $transition $time;
+}
+
+@mixin rotate($value) {
+	transform: rotate($value);
+}
+
+
+@mixin background($svg, $posx:center, $posy:center, $rotate:0, $new_color:#222, $find_color :'%23xxx'){
+	$svg : str-replace(str-replace($svg, $find_color,  $new_color), '#', '%23');
+	transform : rotate(#{$rotate}deg);
+	background:url($svg) no-repeat $posx $posy; 
+}
+
+
+//------------------------------------
+// mediaQuery
+//------------------------------------
+// $breakpoint_xg : 1920px;
+$breakpoint_xg_gutter: 1800px;//세로 스크롤 영역 제외
+// $breakpoint_xg_margin : 80px;
+
+// $screen_width: 1280px;//gap: 40, content: 1200
+// $screen_max_width: 1920px;// gap: 40, content: 1840
+
+@mixin mediaQuery($swidth){
+	//Under : 미만 
+	@if $swidth =='md_under'{ // 0 ~ 1280
+		@media (min-width: 0) and (max-width: $screen_width){
+			@content;
+		}
+	}
+
+	@else if $swidth =='xg_under'{
+		@media (min-width: 0) and (max-width: $breakpoint_xg_gutter){
+			@content;
+		}
+	}
+}
+
+
+//사용안함
+@mixin headerHeight($attr:height){
+	#{$attr} : $gnb_dep1_height_wide;
+	@include mediaQuery('xg_under'){
+		#{$attr} : $gnb_dep1_height;
+	}
+}
+
+//사용안함
+@mixin responsive($attr, $value1, $value2){
+	#{$attr}: $value1;
+	@include mediaQuery('xg_under'){
+		#{$attr}: $value2;
+	}
+}
+
+//사용안함
+@mixin responsive_md($attr, $value1, $value2){
+	@include mediaQuery('xg_under'){
+		#{$attr}: $value1;
+	}
+	@include mediaQuery('md_under'){
+		#{$attr}: $value2;
+	}
+}
+
+
+//------------------------------------
+// button
+//------------------------------------
+// Button sizes
+@mixin button_size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+	padding: $padding-y $padding-x;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+}
+
+@mixin button-focus-outline($_focus : #FF7B02, $_active : #000){
+	$focus-shadow :0 0 0 .2rem rgba($_focus, .25) ;
+	$active-shadow : inset 0 3px 5px rgba($_focus, .125) ;
+
+	&:hover,
+	&:focus {box-shadow:$focus-shadow;}
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active {box-shadow:$active-shadow;
+		&:focus {box-shadow: $focus-shadow, $active-shadow; }
+	}
+}
+
+@mixin btn_gab($_gap : 4px) {
+		&{margin-right: $_gap;}
+		&:first-child{margin-left:0;}
+		&:not(:first-child){margin-left:$_gap;}
+		&:last-child{margin-right:0;}
+}
+
+
+// a.btn,
+@mixin btn() {
+	display: inline-block;
+	font-weight: $fw-base;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align:middle;
+	user-select: none;
+	border: 1px solid transparent;
+	letter-spacing: -0.5px;
+	background-color: #FF7B02;
+	color: #fff;
+	margin-left:4px; margin-right: 4px;
+
+	// @include button_size(5px, 12px, 12px, 20px, 8px);
+	@include button_size(5px, 16px, 12px, 20px, 8px);
+	// @include transition($btn-transition);
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	@include button-focus-outline();
+
+	&:hover,
+	&:focus {text-decoration: none; outline: 0; }
+	&.disabled, &:disabled {box-shadow: none; }
+	&:not(:disabled):not(.disabled) {cursor: pointer; }
+
+	&.disabled,
+	&:disabled {background-color: #dbdbdb; color: #fff;pointer-events: none; }
+
+	//focus color
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active {background-color: #F18D00; color: #fff; border: 1px solid transparent;}
+}
+
+// Button sizes
+@mixin btn_lg() {
+	//$padding-y, $padding-x, $font-size, $line-height, $border-radius
+	@include button_size(24px, 12px, 18px, 23px, 8px);
+	@include btn_gab(8px);
+	min-width: 160px;
+}
+
+@mixin btn_nm() {
+	@include button_size(9px, 18px, 14px, 20px, 8px);
+	@include btn_gab(4px);
+	// font-size: 14px;
+}
+
+@mixin btn_md() {
+	@include button_size(13px, 18px, 14px, 20px, 8px);
+	// margin-left:4px; margin-right: 4px;
+	@include btn_gab(4px);
+	font-size: 14px;
+}
+
+
+
+//------------------------------------
+// Grid
+//------------------------------------
+// flex grid
+@mixin grid($_grid:2, $_gutter:1, $_hgap:0){
+	$gutter: $_gutter;
+	$hgap :$_hgap;
+	$width1: calc(100% / $_grid);
+	$width: calc( #{$width1} - #{$gutter} );
+	$mgutter: calc((100% - ( ((100% / #{$_grid}) - #{$gutter}) * #{$_grid})) / (#{$_grid} - 1));
+
+	@if $_grid == 1 {$mgutter : 0 }
+
+	& {display:flex; flex-wrap: wrap;}
+	& > * {width: $width; margin-top: #{$hgap}; margin-right: $mgutter;}
+	& > *:nth-of-type(#{$_grid}n) {margin-right: 0; }
+	@for $c from 1 through $_grid{
+		& > *:nth-of-type(#{$c}) {margin-top: 0;}
+	}
+
+	&.no_pad > *{width: $width1; margin-right: 0;}
+	&.no_gap > *{margin-top: 0;}
+}
+
+
+@mixin div($_grid:2, $_gutter:2%, $_hgap:20px){
+	$gutter: calc($_gutter);
+	$first: calc(($_grid / $grid_column) * 100%) - calc($gutter / 2);
+	$second: calc(100% - ($first + $gutter));
+	$first_nopad: calc(($_grid / $grid_column) * 100%);
+	$second_nopad: calc(100% - $first) - calc($gutter / 2);
+
+	@if $_grid == 1 {$_gutter : 0 }
+
+	& {display:flex; flex-wrap: wrap;justify-content: space-between;}
+	& > *:nth-of-type(odd) {width: $first; margin-top: #{$_hgap};}
+	& > *:nth-of-type(even) {width: $second; margin-top: #{$_hgap};}
+	& > *:nth-of-type(1) {margin-top: 0;}
+	& > *:nth-of-type(2) {margin-top: 0;}
+	&.no_pad > *:nth-of-type(odd) {width: $first_nopad;}
+	&.no_pad > *:nth-of-type(even) {width: $second_nopad;}
+	&.no_gap > *{margin-top: 0;}
+}
+
+
+//float_grid
+@mixin float_grid($_grid:2, $_gutter:1, $_hgap:0){
+	@include clearfix();
+	$gutter: $_gutter;
+	$hgap :$_hgap;
+	$width1: calc(100% / $_grid);
+	$width: calc( #{$width1} - #{$gutter} );
+	$mgutter: calc((100% - ( ((100% / #{$_grid}) - #{$gutter}) * #{$_grid})) / (#{$_grid} - 1));
+
+	@if $_grid == 1 {$mgutter : 0 }
+
+	& > * {
+		box-sizing: border-box;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		float:left;
+		width: $width;
+		margin-right: $mgutter !important;
+		margin-top: #{$hgap};
+	}
+
+	@if $_grid == 2 {
+		$gutter2: calc($gutter / 2);
+		$width: calc( #{$width1} - #{$gutter2} );
+
+		& > * {
+			width: $width;
+			float: left;
+			margin-right: 0 !important;
+		}
+
+		& > *:nth-child(2n) {
+			float:right;
+		}
+	}
+	@else{
+		& > *:nth-of-type(#{$_grid}n) {
+			float:right;
+			margin-right: 0 !important;
+		}
+	}
+
+	//hgap
+	@for $c from 1 through $_grid{
+		& > *:nth-of-type(#{$c}) {
+			margin-top: 0;
+		}
+	}
+}
+
+
+//One Page 2등분 : 마지막 item 바닥에 붙게;
+@mixin grid-col-between($height : calc(100vh - 202px), $align : left) {
+	display: flex ;flex-direction: column;min-height: $height;
+
+	& > :last-child{
+		display: flex; flex-grow:1; flex-direction: column; justify-content: flex-end; align-items:$align;
+	}
+}
+
+
+//------------------------------------
+// Box
+//------------------------------------
+@mixin box($type:white, $pad:20px){
+	position:relative;
+	box-sizing: border-box;
+	padding:$pad;
+	border-radius:12px;
+
+	@if $type == white {
+		border:1px solid #EAEBED;
+		background-color:#fff;
+	}
+
+	@if $type == gray {
+		border:1px solid #f3f4f6;
+		background-color:#f3f4f6;
+	}
+
+	@if $type == blue {
+		border:1px solid #F3F9FF;
+		background-color:#F3F9FF;
+	}
+
+	@content;
+}

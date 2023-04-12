@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 바이오인증 서비스 가입/변경</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>바이오인증 서비스 가입/변경</h1>
+		</header>
+		<div class="popContent">
+			<section>
+				<h2>바이오인증(지문인증) 등록 절차</h2>
+				<ul class="bioProcess">
+					<li><div class="step1"><span>약관동의</span></div></li>
+					<li><div class="step2"><span>실명인증</span></div></li>
+					<li><div class="step3"><span>본인인증<br>(휴대폰 인증)</span></div></li>
+					<li><div class="step4"><span>지문등록</span></div></li>
+				</ul>
+
+				<div class="toggleWrap">			
+					<div class="tabBox open">
+						<div class="toggleTitle"><a href="#none" class="toggleBtn" role="button">주의사항<span class="hide"> 하위콘텐츠 닫기</span></a></div>
+						<div class="toggleDetail">
+							<ul class="listDot">
+								<li>당사는 고객님의 지문 정보를 저장하지 않고 고객님의 스마트폰에 저장된 지문을 이용하여 지문인증 서비스를 제공하므로 <span>스마트폰에 등록된 지문의 관리 및 사용에 대한 책임</span>은 고객님에게 있습니다.</li>
+								<li><span>고객님의 지문정보가 타인에게 유출되지 않도록 유의</span>해주시기 바라며, 타인의 이용이 의심되는 경우 즉시 스마트폰의 지문정보를  삭제하거나 지문인증 서비스 해지 또는 재등록하여 이용하시기 바랍니다.</li>
+								<li>당사는 고객님의 스마트폰에 저장된 지문정보와 서비스 등록 시 입력한 지문정보의 <span>일치 여부를  확인</span>하여 인증을 진행합니다.</li>
+								<li>일치하지 않는 지문정보를 누적 5회 입력 시, <span>지문인증 서비스 이용은 불가능</span>하며, 재등록 시 정상이용이 가능합니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="agreeBox">
+					<strong>위 유의사항을 모두 확인하고, 바이오인증(지문인증) 등록/ 재등록 절차를 진행합니다.</strong>
+					<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">약관동의</span></label><span>확인</span></p>
+				</div>
+
+   			</section>
+   			<div class="btnWrap">
+		    	<span><a href="#" role="button">취소</a></span>
+		    	<span><a href="#" role="button">다음</a></span>
+		    </div>
+		</div>
+		<!-- //content -->
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>
+

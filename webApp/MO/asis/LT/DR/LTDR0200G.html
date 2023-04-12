@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>추가정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>추가정보 입력</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">2</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<!-- 2017-05-25 공통디자인 적용 -->
+	<p class="topTxt">고객님의 추가정보를 입력해주세요.</p>
+	<section>
+
+		<h2>운전 용도</h2>
+		<!-- 0715 JJY-->
+		<div class="orgboxBtn">
+			<a href="#none" class="on" role="button">자가용<span class="hide">선택됨</span></a>
+			<a href="#none" role="button">영업용</a>
+		</div>
+		
+
+		<h2>차종 정보</h2>
+		<div class="itemPack">
+			<ul class="itemListN4">
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">
+							<!-- itemdata -->
+							승용차
+							<!-- //itemdata -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">
+							<!-- itemdata -->
+							승합차
+							<!-- //itemdata -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">
+							<!-- itemdata -->
+							화물차
+							<!-- //itemdata -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">
+							<!-- itemdata -->
+							기타
+							<!-- //itemdata -->
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<h2>직업 정보</h2>
+		<!-- 0715 JJY-->
+		<div class="searchBox">
+			<input type="search" id="txt_sch" class="txt_inp search" placeholder="직업 검색">
+			<label for="txt_sch" class="hide">직업 검색</label>
+			<a href="#" class="schBtn" role="button"><span class="icoSch">직업 검색</span></a>
+		</div>
+
+
+
+
+		<div class="agreeBox mgtM">
+			<strong>피보험자가 이륜자동차 운전중에 발생한 상해사고는 보험에서 보상되지 않습니다.</strong>
+			<!-- 2017-06-23 웹접근성 label Text 수정 -->
+			<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">피보험자가 이륜자동차 운전중에 발생한 상해사고는 보험에서 보상되지 않음 확인</span></label><span>위 내용에 동의합니다.</span></p>
+			<!-- //2017-06-23 웹접근성 label Text 수정 -->
+		</div>
+	</section>
+
+	<div class="btnWrap">
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">다음</a></span>
+	</div>
+</div>
+</body>
+</html>

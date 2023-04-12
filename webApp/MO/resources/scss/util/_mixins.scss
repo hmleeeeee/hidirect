@@ -273,41 +273,53 @@ $breakpoint_xg_gutter: 1800px;//세로 스크롤 영역 제외
 //------------------------------------
 // Box
 //------------------------------------
-@mixin box($type: white, $pad: 24px){
+@mixin box($type: white, $pad: 24px, $radius:16px){
 	position:relative;
 	box-sizing: border-box;
 	padding:$pad;
-	border-radius:16px;
+	border-radius:$radius;
 
 	@if $type == white {
 		border:1px solid #EAEBED;
 		background-color:#fff;
 	}
+	@if $type == white_shadow {
+		background-color:#fff;
+		box-shadow:0px 4px 16px rgba(0, 0, 0, 0.08);
+	}
 
 	@if $type == gray {
-		border:1px solid #F9F9FB;
+		border-color:#F9F9FB;
 		background-color: #F9F9FB;
 	}
 
 	@if $type == gray_line {
-		border:1px solid #EFEFF1;
+		border-color:#EFEFF1;
 		background-color: #F9F9FB;
 	}
 
 	@if $type == blue {
-		border:1px solid #F3F9FF;
+		border-color:#F3F9FF;
 		background-color:#F3F9FF;
 	}
 
 	@content;
 }
 
+//레이아웃 
+@mixin layoutFull(){
+	margin-left: -20px;margin-right: -20px;
+	.modal.bottom &{
+		margin-left: -24px;margin-right: -24px;
+	}
+}
 
 
 @mixin hr($hr_height: 12px, $hr_hgap: 32px){
 	& {
 		position: relative;
 		height: $hr_height;
+		padding-top: $hr_height;//추가
 		&:before{
 			content:'';
 			position: absolute;
@@ -315,22 +327,42 @@ $breakpoint_xg_gutter: 1800px;//세로 스크롤 영역 제외
 			height: $hr_height;
 			background: #F9F9FB;
 		}
-		&.mtb{margin-top: $hr_hgap;margin-bottom: $hr_hgap;}
-		&.mtb_sm{margin-top: calc($hr_hgap / 2);margin-bottom: calc($hr_hgap / 2);}
+
+		&.mtb{margin-top: $hr_hgap;margin-bottom: $hr_hgap; padding-top: 0;}
+		&.mtb_sm{margin-top: calc($hr_hgap / 2);margin-bottom: calc($hr_hgap / 2); padding-top: 0;}
 	}
 
 	& + .comp{margin-top: 0;}
 	&.section,
 	&.comp{
-		margin-top: $hr_height;
+		// margin-top: $hr_height;
 		height: auto;
 		&:before{
-			top: - $hr_height;
+			// top: - $hr_height;
+			top:0;
 		}
 		&.mtb{margin-top: calc($hr_hgap + $hr_hgap + $hr_height); //margin-bottom:0;
 			&:before{
 				top: - calc($hr_hgap + $hr_height);
 			}
 		}
+		&:last-child{
+			margin-bottom:0;
+		}
+	}
+}
+
+//76
+//44
+
+@mixin hr_top(){
+	position: relative;padding-top: 44px; 
+	&:after{content:''; position: absolute;  left: -20px; right: -20px; top:0; height: 12px; background: #F9F9FB;
+	}
+}
+
+@mixin hr_bottom(){
+	position: relative;padding-bottom: 44px; 
+	&:after{content:''; position: absolute;  left: -20px; right: -20px; bottom:0; height: 12px; background: #F9F9FB;
 	}
 }

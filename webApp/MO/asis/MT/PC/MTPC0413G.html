@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 자기차량손해 담보</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>자기차량손해 담보</h1>
+		</header>
+		<div class="popContent">
+			<p class="topTxt">물적사고 할증기준 금액을 선택해 주세요.</p>
+			<div class="tabMenuBox bg">
+				<div class="tabMenu four">
+					<a href="#none" class="on" role="button"><span>50만원</span><span class="hide"> 선택됨</span></a>
+					<a href="#none" role="button"><span>100만원</span></a>
+					<a href="#none" role="button"><span>150만원</span></a>
+					<a href="#none" role="button"><span>200만원</span></a>
+				</div>
+			</div>
+			<section>
+				<h2>자기차량손해 가입 조건을 선택해주세요.</h2>
+				<!-- 50만원 -->
+				<!-- 2017-06-19 접근성을 위하여 tabOpen on 추가후  style="display:block" 제거 -->
+				<div class="tabOpen on">
+					<div class="radioBox">
+						<span class="off">
+							<input type="radio" id="list01" name="radioBox1"><label for="list01">미가입</label>
+							<strong>0원</strong>
+						</span>
+						<span class="on">
+							<input type="radio" id="list02" name="radioBox1" checked="checked"><label for="list02">손해액의20%/20~50만원<em class="tagGrn">인기</em></label>
+							<strong>172,190원</strong>
+						</span>
+						<span class="off">
+							<input type="radio" id="list03" name="radioBox1"><label for="list03">손해액의20%/20~100만원</label>
+							<strong>172,190원</strong>
+						</span>
+						<span class="off">
+							<input type="radio" id="list04" name="radioBox1"><label for="list04">손해액의20%/20~200만원</label>
+							<strong>172,190원</strong>
+						</span>
+					</div>
+				</div>
+				<!--// 50만원 -->
+
+				<!-- 100만원 -->
+				<div class="tabOpen">
+					<div class="radioBox">
+						<span class="off">
+							<input type="radio" id="list01" name="radioBox1"><label for="list01">미가입</label>
+							<strong>0원</strong>
+						</span>
+						<span class="on">
+							<input type="radio" id="list02" name="radioBox1" checked="checked"><label for="list02">손해액의20%/20~50만원<em class="tagGrn">인기</em></label>
+							<strong>172,190원</strong>
+						</span>
+					</div>
+				</div>
+				<!--// 100만원 -->
+
+				<!-- 150만원 -->
+				<div class="tabOpen">
+					<div class="radioBox">
+						<span class="on">
+							<input type="radio" id="list02" name="radioBox1" checked="checked"><label for="list02">손해액의20%/20~50만원<em class="tagGrn">인기</em></label>
+							<strong>172,190원</strong>
+						</span>
+						<span class="off">
+							<input type="radio" id="list03" name="radioBox1"><label for="list03">손해액의20%/20~100만원</label>
+							<strong>172,190원</strong>
+						</span>
+						<span class="off">
+							<input type="radio" id="list04" name="radioBox1"><label for="list04">손해액의20%/20~200만원</label>
+							<strong>172,190원</strong>
+						</span>
+					</div>
+				</div>
+				<!--// 150만원 -->
+
+				<!-- 200만원 -->
+				<div class="tabOpen">
+					<div class="radioBox">
+						<span class="">
+							<input type="radio" id="list02" name="radioBox1" checked="checked"><label for="list02">손해액의20%/20~50만원</label>
+							<strong>172,190원</strong>
+						</span>
+						<span class="off">
+							<input type="radio" id="list03" name="radioBox1"><label for="list03">손해액의20%/20~100만원</label>
+							<strong>172,190원</strong>
+						</span>
+						<span class="on">
+							<input type="radio" id="list04" name="radioBox1"><label for="list04">손해액의20%/20~200만원</label>
+							<strong>172,190원</strong>
+						</span>
+					</div>
+				</div>
+				<!--// 200만원 -->
+
+				<!-- 0707 텍스트 추가 JJY -->
+				<div class="listEtc"><p><strong>9년이상 국산차의 경우</strong><br />20%-50만원, 30%-100만원, 50%-200만원만 선택가능</p></div>
+
+				<div class="toggleWrap">
+					<div class="tabBox open">
+						<div class="toggleTitle"><a href="#none" class="toggleBtn">담보 상세정보 보기</a></div>
+						<div class="toggleDetail">
+							<dl>
+								<dt>보상책임</dt>
+								<dd>피보험자동차를 소유, 사용, 관리하는 동안에 피보험자동차에 직접적으로 생긴 손해를 보상</dd>
+								<dd>
+									<ul class="listBasic">
+										<li>타차와의 직접적인 충돌 또는 접촉으로 인한 손해</li>
+										<li>피보험자동차 전부의 도난(일부 부속품, 장치만의 도난제외)</li>
+									</ul>
+								</dd>
+							</dl>
+							<div class="listEtc">
+								<p>타차 이외의 물체와의 충돌, 피보험자동차 단독사고, 침수 등의 손해에 대해서는 ‘자기차량손해 보장확대 특약’을 가입해야 보상 가능</p>
+							</div>
+							<dl class="mgT10">
+								<dt>보상내용</dt>
+								<dd>피보험자동차에 생긴 손해액+비용-보험증권에 기재된 자기부담금
+									<p class="listEtc">전부손해일 경우 자기부담금을 공제하지 않음</p>
+								</dd>
+								<dd>보상한도 : 피보험자동차의 사고 당시 보험가액(가입금액 한도)</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+
+			</section>
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<span><a href="#none" role="button">취소</a></span>
+				<span><a href="#none" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

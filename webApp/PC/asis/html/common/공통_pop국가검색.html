@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>공통_pop국가검색</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+</head>
+<body>
+<!-- 공통_pop국가검색 : s-->
+<!--layerPopWrap : s-->
+<script>
+    $(function(){
+
+        $(document).on("change",".noHaveSelect",function(){
+            var $target = $(this).closest(".layerPopWrap");
+            if($(this).val()=="noHave"){
+                $(".nohaveInput").show();
+            }else{
+                $(".nohaveInput").hide();
+            }
+        })
+    })
+</script>
+<div class="dim_bg"></div>
+<div class="layerPopWrap countrySearch w450">
+    <div class="titleArea">
+        <h2>국가검색</h2>
+    </div>
+    <div class="popupContentArea">
+
+        <div class="wordSelect">
+            <ul class="tab">
+                <li class="on"><a href="#">ㄱ</a></li>
+                <li><a href="#">ㄴ</a></li>
+                <li><a href="#">ㄷ</a></li>
+                <li><a href="#">ㄹ</a></li>
+                <li><a href="#">ㅁ</a></li>
+                <li><a href="#">ㅂ</a></li>
+                <li><a href="#">ㅅ</a></li>
+                <li><a href="#">ㅇ</a></li>
+                <li><a href="#">ㅈ</a></li>
+                <li><a href="#">ㅊ</a></li>
+                <li><a href="#">ㅋ</a></li>
+                <li><a href="#">ㅌ</a></li>
+                <li><a href="#">ㅍ</a></li>
+                <li><a href="#">ㅎ</a></li>
+            </ul>
+            <div class="wordSelectTabCon">
+                <div class="tabCon on">
+                    <div class="item">
+                        <div class="radio">
+                            <input type="radio" name="word1_1" id="word1_1">
+                            <label for="word1_1">가나</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="radio">
+                            <input type="radio" name="word1_1" id="word1_2">
+                            <label for="word1_2">가나</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="radio">
+                            <input type="radio" name="word1_1" id="word1_3">
+                            <label for="word1_3">가봉</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="radio">
+                            <input type="radio" name="word1_1" id="word1_4">
+                            <label for="word1_4">가이아나</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="radio">
+                            <input type="radio" name="word1_1" id="word1_5">
+                            <label for="word1_5">감비아</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="radio">
+                            <input type="radio" name="word1_1" id="word1_6">
+                            <label for="word1_6">기니</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inputSet">
+            <div class="selectItem mb10">
+                <select name="what" class="noHaveSelect" title="납세자번호 미기재사유 선택하세요">
+                    <option value="">납세자번호 미기재사유 선택 </option>
+                    <option value="1">미발급 국가</option>
+                    <option value="2">미요구 국가</option>
+                    <option value="noHave">미취득</option>
+                </select>
+            </div>
+            <div class="inputBase nohaveInput" style="display: none;">
+                <label for="text1" >미취득 사유</label>
+                <input type="text"  id="text1">
+            </div>
+        </div>
+
+        <div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 공통_pop국가검색 : e-->
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_고객콜센터_03모바일이용안내_01보안프로그램설치및안내</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <script>
+        $(function(){
+            gnb(999,0,0)
+            $(window).scroll(function(){
+				$(".bannerFlt.on").fadeIn("slow");
+			});
+			$(".bannerFlt .btClose").click(function(){
+				$(".bannerFlt").fadeOut("fast").removeClass('on');
+			});		
+        })
+    </script>
+</head>
+<body class="directHomepage">
+    <!--skipNavi : s-->
+    <ul class="skipNavi">
+        <li><a href="#contents">본문바로가기</a></li>
+        <li><a href="#gnb">메뉴바로가기</a></li>
+    </ul>
+    <div class="directWrap">
+        <script type="text/javascript" src="../../_ui_include_asis/gnb.js"></script>
+        <!--contentArea : s-->
+        <div class="contentArea">
+            <!--lnbWrap : s-->
+            <div class="lnbWrap">
+                <h2 class="lnbTitle">고객센터</h2>
+                <div class="lnb">
+                    <ul class="dep2">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">홈페이지 이용안내</a>
+                            <ul class="dep3">
+                                <li><a href="#">메뉴1</a></li>
+                                <li><a href="#">메뉴2</a></li>
+                            </ul>
+                        </li>
+                        <li class="on"><a href="#">모바일 이용안내</a>
+                            <ul class="dep3" style="display: block;">
+                                <li class="on"><a href="#">보안프로그램 설치 및 안내</a></li>
+                                <li><a href="#">공인인증서 이용안내</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">이메일 상담신청</a></li>
+                        <li><a href="#">고객콜센터안내</a></li>
+                        <li><a href="#">상담원 채용</a>
+                            <ul class="dep3">
+                                <li><a href="#">메뉴1</a></li>
+                                <li><a href="#">메뉴2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">전자민원접수</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--lnbWrap : e-->
+            <!--content : s-->
+            <div class="content" id="contents">
+                <div class="location">
+                    <ul>
+                        <li class="home"><a href="#"><img src="https://direct.hi.co.kr/images/common/location_home.png" alt="메인으로"></a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">모바일 이용안내</a></li>
+                        <li><a href="#">보안프로그램 설치 및 안내</a></li>
+                    </ul>
+                </div>
+                <h3 class="contentTitle">보안프로그램 설치 및 안내</h3>
+            </div>
+            <!--content : e-->
+        </div>
+        <!--contentArea : e-->
+        <!--quickArea : s -->
+        <div class="quickArea">
+            <ul>
+                <li class="quick01" id="id_chatBot_coco0124g_01"><a href="javascript:void(0);" onclick="fnPopUpCCCS();" title="챗봇상담"><img src="https://direct.hi.co.kr/images/main/img_quick_m07.png" alt="챗봇상담"></a></li>
+                <li class="quick01"><a href="#" title="무이자할부"><img src="https://direct.hi.co.kr/images/main/img_quick_m01.png" alt="무이자할부"></a></li>
+                <li class="quick02"><a href="#" title="계약체결서명"><img src="https://direct.hi.co.kr/images/main/img_quick_m02.png" alt="계약체결서명"></a></li>
+                <li class="quick03"><a href="#" id="openCallCenterQ" title="상담신청 열림"><img src="https://direct.hi.co.kr/images/main/img_quick_m03.png" alt="상담신청"></a></li>      
+                <li class="quick04"><a href="#" title="FAQ"><img src="https://direct.hi.co.kr/images/main/img_quick_m04.png" alt="FAQ"></a></li>
+                <li class="quick05"><a href="#" title="모바일안내"><img src="https://direct.hi.co.kr/images/main/img_quick_m05.png" alt="모바일안내"></a></li>
+                <li class="top"><a href="javascript:void(0);" title="위로 이동"><img src="https://direct.hi.co.kr/images/main/img_quick_top.png" alt="TOP"></a></li>
+            </ul>
+        </div>
+        <!--quickArea : e -->
+        <div class="bannerFlt on">
+            <a href="/service.do?m=28680681ee&amp;spcalc=sim" class="btCalcCar" title="자동차보험 간편설계">
+                <img src="https://direct.hi.co.kr/images/common/bn_flt.png" alt="자동차보험 간편설계 1분이면 가능한 내 차 보험료 확인">
+          </a>
+          <a href="javascript:void(0);" class="btClose" title="닫기"><img src="https://direct.hi.co.kr/images/common/bn_flt_close.png" alt="닫기"></a>
+        </div>
+        <!--footerWrap : s-->
+        <script type="text/javascript" src="../../_ui_include_asis/footer.js"></script>
+        <!--footerWrap : e-->
+    </div>
+</body>
+</html>

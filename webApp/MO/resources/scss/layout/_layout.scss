@@ -4,8 +4,6 @@
 * Layout
 * ------------------
 */
-// 
-//1140+80
 
 // * height100
 //-----------------
@@ -34,9 +32,18 @@ html,body{min-height:100%;height:100%;}
 	// flex-direction:column;
 	// justify-content:flex-end;
 	// height:138px;
-	padding:16px 20px 34px 20px;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 19.79%);
-	backdrop-filter: blur(2px);
+	padding:0 20px 34px 20px;
+	&:before{
+		content:'';
+		position:absolute;
+		top:-16px;
+		right:0;
+		bottom:0;
+		left:0;
+		z-index:-1;
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, #FFFFFF 19.79%);
+		backdrop-filter: blur(2px);
+	}
 }
 
 
@@ -58,23 +65,38 @@ html.mobile{
 
 // * Case 
 //-----------------
-//Case: main
+// Case: main
 [data-category="main"]{
 }
 
+// Case: gray bg
+[data-bg=gray]{
+	background-color:#F9F9FB;
+	.tab_content,.content_wrap{
+		background-color:#F9F9FB;
+	}
+	.section{
+		background-color:#FFFFFF;
+	}
 
-//Case: 
+	.tab_content > .comp .title_area:first-child{
+		margin-top:0;
+		padding-top:32px;
+	}
+}
+
 
 
 // Case: 유의사항 등 컨테트 bottom fix
-.section.bottom_fix{opacity:0 ;}
-.section.bottom_fix.show{opacity:1 ;}
+.modal .modal_body .wrapper.bottom_fix, 
+#content .content_wrap.bottom_fix{
+	display: flex; flex-wrap:wrap; padding-bottom: 0;
+	// min-height: calc(100vh - 200px); //스크립트 계산
+	.section.bottom_fix{display: flex; flex-direction: column;align-items: center; justify-content: flex-end; padding-bottom: 24px;}
+	&.no_footer .section.bottom_fix{padding-bottom: 64px;}
 
-.modal .modal_body .wrapper.bottom_fix{padding-bottom: 0;
-	.btn_area.sub{padding-bottom: 56px;} //pin번호를 잊어버리셨나요?
+	// .btn_area.sub{padding-bottom: 56px;}//pin번호를 잊어버리셨나요?
 }
 
-#content .content_wrap.bottom_fix{padding-bottom: 0;
-	.btn_area.sub{padding-bottom: 56px;}
-}
+
 

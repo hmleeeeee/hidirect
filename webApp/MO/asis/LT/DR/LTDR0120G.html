@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>개인정보 동의</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>개인정보 동의</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">1</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+		<p class="topTxt">보험료 계산을 위해 필요한 개인정보 약관에 동의해 주세요.</p>
+
+	<section>
+		<!-- EDIT 약관동의 -->
+		<div class="agreeCtr">
+			<a href="#none" class="allAgr" role="button" title="약관 전체동의하기">전체동의하기</a>
+			<button class="btnView"><span class="state">약관 숨기기</span></button>
+		</div>
+		<!-- //EDIT 약관동의 -->
+		<!-- 2017-06-23 웹접근성 label Text 수정 -->
+		<ul class="termCont">
+			<li>
+				<input type="checkbox" id="ckA01"><label for="ckA01"><span class="hide">개인(신용)정보의 수집 이용에 관한 사항 동의</span></label>
+				<a href="#">개인(신용)정보의 수집 이용에 관한 사항</a>
+			</li>
+			<li>
+				<input type="checkbox" id="ckA02"><label for="ckA02"><span class="hide">개인(신용)정보의 조회에 관한 사항 개인(신용)정보의 조회에 관한 사항 동의</span></label>
+				<a href="#">개인(신용)정보의 조회에 관한 사항 개인(신용)정보의 조회에 관한 사항</a>
+			</li>
+			<li>
+				<input type="checkbox" id="ckA03"><label for="ckA03"><span class="hide">개인(신용)정보의 제공에 관한 사항 동의</span></label>
+				<a href="#">개인(신용)정보의 제공에 관한 사항</a>
+			</li>
+			<li>
+				<input type="checkbox" id="ckA04"><label for="ckA04"><span class="hide">질병·상해정보 처리 동의</span></label>
+				<a href="#">질병·상해정보 처리 동의</a>
+			</li>
+			<li>
+				<input type="checkbox" id="ckA05"><label for="ckA05"><span class="hide">주민등록번호·외국인등록번호 처리 동의</span></label>
+				<a href="#">주민등록번호·외국인등록번호 처리 동의</a>
+			</li>
+		</ul>
+		<!-- //2017-06-23 웹접근성 label Text 수정 -->
+		<a href="#" class="allAgr01 mgtS" role="button" title="전체동의하기">상품 소개를 위한 동의(선택)</a>
+		<!-- 2017-06-23 웹접근성 label Text 수정 -->
+		<ul class="termCont">
+			<li>
+				<input type="checkbox" id="ckB01"><label for="ckB01"><span class="hide">상품 소개 등을 위한 동의</span></label>
+				<a href="#">상품 소개 등을 위한 동의</a>
+			</li>
+			<li>
+				<input type="checkbox" id="ckB03"><label for="ckB03"><span class="hide">개인(신용)정보의 제공에 관한 사항</span></label>
+				<a href="#">개인(신용)정보의 제공에 관한 사항</a>
+			</li>
+		</ul>
+		<!-- //2017-06-23 웹접근성 label Text 수정 -->
+		<div class="termBox">
+			<a href="#">소비자 권익보호에 관한 사항</a>
+		</div>
+
+		<div class="checkBox">
+			<input type="checkbox" id="ckC01"><label for="ckC01"><span class="hide">실손담보 중복 사전조회</span></label>
+			<span>실손담보 중복 사전조회를 진행하시겠습니까?<br>(일부 담보의 경우 비례보상처리가 되므로 타보험의 가입 여부를 확인하는 절차입니다.)</span>
+		</div>
+
+		<!-- <ul class="termCont">
+			<li>
+				<input type="checkbox" id="ckC01"><label for="ckC01"><span class="hide">실손담보 중복 사전조회</span></label>
+				<a href="#">실손담보 중복 사전조회를 진행하시겠습니까?<br><span class="">(일부 담보의 경우 비례보상처리가 되므로 타보험의 가입 여부를 확인하는 절차입니다.)</a>
+			</li> -->
+		</ul>
+		<ul class="listDot">
+			<li>관련 법률 및 제 규정에 의거 [다음] 버튼 선택 시 보험료 계산을 위한 본인인증을 진행합니다.</li>
+		</ul>
+
+		<div class="btnWrap">
+			<span><a href="#">이전</a></span>
+			<span class="on"><a href="#">다음</a></span>
+		</div>
+
+
+	</section>
+	<!-- 2017-05-25 공통디자인 적용
+	<section>
+
+		<div class="termHead btnset">
+			<h2>개인(신용)정보 처리동의(필수)</h2>
+			<a href="#">전체동의</a>
+		</div>
+
+
+		<ul class="termCont">
+			<li>
+				<a href="#" target="_blank" title="약관보기 새창">개인(신용)정보의 수집 이용에 관한 사항</a>
+				<input type="checkbox" id="ch01"><label for="ch01">약관동의</label>
+			</li>
+			<li>
+				<a href="#" target="_blank" title="약관보기 새창">개인(신용)정보의 조회에 관한 사항 개인(신용)정보의 조회에 관한 사항</a>
+				<input type="checkbox" id="ch02"><label for="ch02">약관동의</label>
+			</li>
+			<li>
+				<a href="#" target="_blank" title="약관보기 새창">개인(신용)정보의 제공에 관한 사항</a>
+				<input type="checkbox" id="ch03"><label for="ch03">약관동의</label>
+			</li>
+			<li>
+				<a href="#" target="_blank" title="약관보기 새창">질병·상해정보 처리 동의</a>
+				<input type="checkbox" id="ch04"><label for="ch04">약관동의</label>
+			</li>
+			<li>
+				<a href="#" target="_blank" title="약관보기 새창">주민등록번호·외국인등록번호 처리 동의</a>
+				<input type="checkbox" id="ch05"><label for="ch05">약관동의</label>
+			</li>
+		</ul>
+
+		<div class="termHead btnset">
+			<h2>상품 소개를 위한 동의(선택)</h2>
+			<a href="#">전체동의</a>
+		</div>
+		<ul class="termCont">
+			<li>
+				<a href="#">상품 소개 등을 위한 동의</a>
+				<input type="checkbox" id="ch06"><label for="ch06">약관동의</label>
+			</li>
+			<li>
+				<a href="#">개인(신용)정보의 제공에 관한 사항</a>
+				<input type="checkbox" id="ch07"><label for="ch07">약관동의</label>
+			</li>
+		</ul>
+
+		<div class="termBox">
+			<a href="#">소비자 권익보호에 관한 사항</a>
+		</div>
+
+		<ul class="termCont">
+			<li>
+				<a href="#">실손담보 중복 사전조회를 진행하시겠습니까?<br><span class="">(일부 담보의 경우 비례보상처리가 되므로 타보험의 가입 여부를 확인하는 절차입니다.)</span></a>
+				<input type="checkbox" id="ch01"><label for="ch01">실손담보 중복 사전조회</label>
+			</li>
+		</ul>
+
+		<div class="btnWrap">
+			<span><a href="#">이전</a></span>
+			<span class="on"><a href="#">다음</a></span>
+		</div>
+
+			<ul class="listDot">
+				<li>관련 법률 및 제 규정에 의거 [다음] 버튼 선택 시 보험료 계산을 위한 본인인증을 진행합니다.</li>
+			</ul>
+	</section>
+	-->
+
+	<!-- content -->
+</div>
+</body>
+</html>
+

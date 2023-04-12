@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] ECO마일리지 특약</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>ECO마일리지 특약</h1>
+		</header>
+
+		<div class="popContent">
+			<!-- 0629 마크업 전체 수정 -->
+			<div class="tabMenuBox">
+				<div class="tabMenu joinBtn">
+					<a href="#none" class="on" role="button">가 입<span class="hide">선택됨</span></a>
+					<a href="#none" role="button">미가입</a>
+				</div>
+			</div>
+
+			<section>
+				<div class="tabOpen on">
+					<h2>거리 측정 방식</h2>
+					<div class="lineSize1">
+						<div class="itemPack">
+							<ul class="itemListN2">
+								<li class="on">
+									<a href="#none" role="button"><div class="cont">사진</div></a>
+								</li>
+								<li>
+									<a href="#none" role="button"><div class="cont">운행정보 확인 장치</div></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<h2>약정 주행거리</h2>
+					<div class="tabOpen on">
+						<div class="radioBox">
+							<span class="on">
+								<input type="radio" id="ex01" name="radioBox" checked="checked"><label for="ex01">3,000Km 이하 32% 환급</label>
+							</span>
+							<span class="off">
+								<input type="radio" id="ex02" name="radioBox"><label for="ex02">5,000Km 이하 27% 환급</label>
+							</span>
+							<span class="off">
+								<input type="radio" id="ex03" name="radioBox"><label for="ex03">10,000Km 이하 20% 환급</label>
+							</span>
+							<span class="off">
+								<input type="radio" id="ex04" name="radioBox"><label for="ex04">15,000Km 이하 6% 환급</label>
+							</span>
+						</div>
+						<ul class="listDot">
+							<li>마일이지 특약 약정주행거리 초과 운행 시에도 15,000Km이하면 환급됩니다. 단, 주행거리 사진 미송부 시 특약해지 및 재가입이 불가능합니다.</li>
+						</ul>
+					</div>
+
+					<div class="tabOpen">
+						<div class="radioBox">
+							<span class="on">
+								<input type="radio" id="ex11" name="radioBox" checked="checked"><label for="ex11">3,000Km 이하 33% 환급</label>
+							</span>
+							<span class="off">
+								<input type="radio" id="ex12" name="radioBox"><label for="ex12">5,000Km 이하 28% 환급</label>
+							</span>
+							<span class="off">
+								<input type="radio" id="ex13" name="radioBox"><label for="ex13">10,000Km 이하 21% 환급</label>
+							</span>
+							<span class="off">
+								<input type="radio" id="ex14" name="radioBox"><label for="ex14">15,000Km 이하 7% 환급</label>
+							</span>
+						</div>
+						<ul class="listDot">
+							<li>마일이지 특약 약정주행거리 초과 운행 시에도 15,000Km이하면 환급됩니다. 단, 주행거리 사진 미송부 시 특약해지 및 재가입이 불가능합니다.</li>
+							<li>운행정보확인 장치방식은 현대자동차의  Blue Link서비스 가입 또는 기아자동차의 UVO서비스 가입 차량만 해당되며 계약완료 이후 고객센터(1577-1001)을 통해 중도 가입이 가능합니다.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tabOpen">
+				</div>
+
+				<div class="toggleWrap">
+					<div class="tabBox open">
+						<div class="toggleTitle"><a href="#none" class="toggleBtn">특약 상세정보 보기</a></div>
+						<!-- 2017-07-11 기획 요청 컨텐츠 수정
+						<div class="toggleDetail">
+							거리측정 방식을 '사진'으로 선택하여 보험 가입 시 청약내용 확인 단계에서 아래 2가지 사진 등록이 필요합니다.(사진이 없어도 보험료 계산은 가능)
+							<ol class="numList">
+								<li>계기판 사진</li>
+								<li>차량 정면 사진</li>
+							</ol>
+							<ul class="listDot">
+								<li>주행거리를 임의로 조작하거나 식별이 어려운 사진을 제출할 경우 해당 특약은 무효가 될 수 있습니다.</li>
+								<li>추가 특약 및 긴급 출동 특약 보험료는 할인 적용에서 제외됩니다.</li>
+								<!-- <li>마일리지 특약 약정주행거리 초과 운행 시에도 15,000km 이하면 환급됩니다. 단, 주행거리 사진 미송부 시 특약해지 및 재가입이 불가능합니다.</li>
+								<li>연간 3,000 ㎞<em class="hide">(킬로미터)</em> 이하 주행 시, 보험료를 22.0% 할인해 드리며, 보험 만기 시 할인된 보험료를 환급해 드립니다.(단, 추가 특약 및 긴급 출동 특약 보험료는 할인 적용에서 제외 됩니다.)</li> -->
+								<!-- <li>운행정보 확인 장치 방식을 선택하신 경우 최초 주행거리(보험개시일±<span class="hide">(가산 또는 감산)</span>15일)와 최종주행거리(만기일 30일전~<span class="hide">(부터)</span>만기일) 정보를 알려주셔야 됩니다.</li>
+								<li>주행거리 정보는 보험 가입 시에는 필요하지 않으며, 가입 완료 후 등록해 주시기 바랍니다.</li>
+							</ul>
+						</div> -->
+						<div class="toggleDetail">
+							<ul class="listDot">
+								<li><span>연간 3,000km 이하</span> 주행 시, <span>보험료를 32.0% 할인</span>해 드리며, 보험 만기 시 할인된 보험료를 환급해드립니다.<br><!-- 0814 수정 -->
+									(단, 추가 특약 및 긴급출동 특약 보험료는 할인 적용에서 제외됩니다.)</li>
+								<li>특약에 가입하시면 ‘최초주행거리와 최종주행거리 정보를 알려주셔야 합니다. 단, 무선통신 운행정보 확인장치의 경우 가입시에 '사고 및 긴급상황 통보장치 가입확인서'에 기재된 기준일 및 최초주행거리를 입력해 주셔야 합니다.</li>
+								<li>보험기간이 1년인 경우만 가입가능하며, 동일증권으로 가입하는 경우 보험기간이 3개월 이상인 경우에 한하여 가입 가능합니다.</li>
+								<li>운행정보장치 특약, 사고 및 긴급상황 통보장치를 선택하여 가입시 추후 변경 및 재가입은 불가합니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div class="btnWrap">
+				<span><a href="#none" role="button">취소</a></span>
+				<span><a href="#none" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

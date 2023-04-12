@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>실손의료보험_01_고객정보</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/longterm.css" />
+</head>
+
+
+<body class="ltmdMain">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="productMainWrap">
+	<div class="objFixedWrap">
+        <div class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_black.png" alt="현대해상 다이렉트"></a></div>
+        <h1 class="mainTitle black">
+            <span class="tit">실손의료비보장보험</span>
+            <span class="txt">크고 작은 질병과 사고 위험들에<br>편리하고 간편하게 대비해보세요.</span>
+        </h1>
+    </div>
+
+
+    <!--contentArea : s -->
+    <div class="productMainContentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>고객정보</h2>
+            <p class="txt">고객님의 정보를 입력해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+
+        <!-- tap : s-->
+		<div class="lineTabWrap tabWrap">
+            <ul class="lineTabList tabList">
+                <li class="on"><a href="#"><span>19세이상 가입</span></a></li>
+                <li><a href="#"><span>어린이 가입 (19세 미만)</span></a></li>
+            </ul>
+            <div class="tabCon on">
+                <div class="tabHiddenTitle">19세이상 가입</div>
+                <!--inputTable : s-->
+                <div class="inputTable onlyInput noTline">
+                    <ul class="inputArea">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="name1">이름</label>
+                                <input type="text" id="name1">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea item2">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="personNumber1">주민등록번호</label>
+                                <input type="text" id="personNumber1">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="inputBase placeholder">
+                                <input type="password" id="personNumber2_last" placeholder="뒷 7자리" title="주민등록번호뒤자리">
+                                <div class="nospos">
+                                    <input type="checkbox" id="mouse1">
+                                    <label for="mouse1">마우스 입력기</label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea mt15">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="hp1">휴대폰번호 (‘-’없이)</label>
+                                <input type="text" id="hp1">
+                            </div>
+                        </li>
+                    </ul>                 
+                </div>
+                <!--inputTable : e-->         
+            </div>
+
+			<!-- tabCon : 가족형 : s -->
+            <div class="tabCon">
+                <div class="tabHiddenTitle">어린이 가입 (19세 미만)</div>
+				<!--2017-11-09 수정	: s-->
+				<div class="inputTableAppendArea">
+					<!--inputTable : s-->
+					<div class="inputTable onlyInput noTline">
+						<h3 class="title"><span class="tit">피보험자</span><span class="fontLevel2 fz14">(만 19세 미만 어린이)</span></h3>
+						<ul class="inputArea mt0">
+							<li class="item">
+								<div class="inputBase">
+									<label for="name2">이름</label>
+									<input type="text" id="name2">
+								</div>
+							</li>
+						</ul>
+						<ul class="inputArea item2">
+							<li class="item">
+								<div class="inputBase">
+									<label for="personNumber2">주민등록번호</label>
+									<input type="text" id="personNumber2">
+								</div>
+							</li>
+							<li class="item">
+								<div class="inputBase placeholder">
+									<input type="password" id="personNumber2_last" placeholder="뒷 7자리" title="주민등록번호뒤자리">
+									<div class="nospos">
+										<input type="checkbox" id="mouse2">
+										<label for="mouse2">마우스 입력기</label>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--inputTable : e-->
+
+					<!--inputTable : s-->
+					<div class="inputTable onlyInput noTline">
+						<h3 class="title linet"><span class="tit">계약자</span><span class="fontLevel2 fz14">(보험료를 납입하실 분으로 피보험자의 친권자)</span></h3>
+						<ul class="inputArea mt0">
+							<li class="item">
+								<div class="inputBase">
+									<label for="name3">이름</label>
+									<input type="text" id="name3">
+								</div>
+							</li>
+						</ul>
+						<ul class="inputArea item2">
+							<li class="item">
+								<div class="inputBase">
+									<label for="personNumber3">주민등록번호</label>
+									<input type="text" id="personNumber3">
+								</div>
+							</li>
+							<li class="item">
+								<div class="inputBase placeholder">
+									<input type="password" id="personNumber2_last" placeholder="뒷 7자리" title="주민등록번호뒤자리">
+									<div class="nospos">
+										<input type="checkbox" id="mouse3">
+										<label for="mouse3">마우스 입력기</label>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<ul class="inputArea mt15">
+							<li class="item">
+								<div class="inputBase">
+									<label for="hp2">휴대폰번호 (‘-’없이)</label>
+									<input type="text" id="hp2">
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--inputTable : e-->	
+				</div>                				
+
+                <!--openContent : s-->
+                <ul class="openContentArea">
+                    <li>
+                        <a href="#" class="iconAlert">보험가입시 유의사항</a>
+                        <div class="openContent">
+                            <ul class="listStyle dot">
+                                <li>관련 법률(민법 제 920조의 2)에 따라, 공동친권자의 동의를 받아<br>
+									보험가입을 진행합니다.<br>
+									다만, 추후 보험계약을 해지하는 경우, 미성년자의 권리가<br>
+									제한될 수 있어 친권자 모두의 동의가 필요합니다. 
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <!--openContent : e-->
+				<!--2017-11-09 수정	: e-->
+            </div>
+			<!-- tabCon : 가족형 : e -->
+        </div>
+
+        <!-- tap : e-->
+
+        <div class="bottomFixed">
+            <div class="fontLevel2 mb30">
+                보험료 계산을 위해 본인인증(휴대폰/공인인증서) 및 개인(신용)정보<br>
+                수집·이용에 동의가 필요합니다.
+            </div>
+            <div class="btnAreaWrap">
+                <ul class="btnArea item55">
+                    <li><a href="#" class="btn plus_minus pass"><span>보험료 계산하기</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fixedBannerArea">
+            <div class="bannerArea plusMiddle">
+                <!--2017-12-21 : s-->
+                <ul>
+                    <li style="width: 197px;">
+                        <div class="titleArea">
+                            <div class="inner"><strong>필요한 의료비 보장!</strong><br>간편하게 가입!</div>
+                        </div>
+                    </li>
+                    <li style="width: 203px;">
+                        <div class="titleArea">
+                            <div class="inner">인터넷 전용 상품<br><strong>저렴한 보험료!</strong></div>
+                        </div>
+                    </li>
+                    <li style="width: 220px;">
+                        <div class="titleArea">
+                            <div class="inner"> 최대 <strong>100세까지</strong> 보장<br></div>
+                        </div>
+						<div class="conArea">
+                            1년갱신, 최대 15년까지 갱신<br>
+                            15년마다 재가입 (약관참조)
+                        </div>
+                    </li>
+                </ul>
+                <!--2017-12-21 : e-->
+            </div>
+			<!-- infopopup : s -->
+			<ul class="infopopup">
+				<li><a href="#"><span class="icon exmark">알아두실 사항</span></a></li>
+				<li><a href="#"><span class="icon quesmark">보험상품안내</span></a></li>
+			</ul>
+			<!-- infopopup : e -->
+        </div>
+		
+
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

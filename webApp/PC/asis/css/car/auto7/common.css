@@ -1,0 +1,105 @@
+* {
+	margin: 0px; padding: 0px;
+}
+body {
+	margin: 0px; padding: 0px; font-family: Dotum,Gulim,arial,serif,sans-serif; font-size: 12px;
+}
+h1 {
+	margin: 0px; font-size: 100%;
+}
+h2 {
+	margin: 0px; font-size: 100%;
+}
+h3 {
+	margin: 0px; font-size: 100%;
+}
+h4 {
+	margin: 0px; font-size: 100%;
+}
+h5 {
+	margin: 0px; font-size: 100%;
+}
+h6 {
+	margin: 0px; font-size: 100%;
+}
+p {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+ul {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+ol {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+li {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+dl {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+dt {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+dd {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+form {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+fieldset {
+	margin: 0px; padding: 0px; border: 0px currentColor; font-size: 100%;
+}
+ul {
+	list-style: none; font-size: 100%;
+}
+ol {
+	list-style: none; font-size: 100%;
+}
+li {
+	list-style: none; font-size: 100%;
+}
+table {
+	font-size: 100%; border-collapse: collapse;
+}
+th {
+	vertical-align: top;
+}
+td {
+	vertical-align: top;
+}
+a {
+	font-size: 100%; text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+img {
+	border: 0px currentColor; font-size: 0px; vertical-align: top;
+}
+input {
+	font-size: 100%; vertical-align: top;
+}
+iframe {
+	border: 0px currentColor;
+}
+.blind {
+	width: 0px; height: 0px; line-height: 0px; overflow: hidden; font-size: 0px; visibility: hidden; position: absolute; z-index: -1;
+}
+legend {
+	width: 0px; height: 0px; line-height: 0px; overflow: hidden; font-size: 0px; visibility: hidden; position: absolute; z-index: -1;
+}
+caption {
+	width: 0px; height: 0px; line-height: 0px; overflow: hidden; font-size: 0px; visibility: hidden; position: absolute; z-index: -1;
+}
+#accessibility {
+	width: 0px; height: 0px; line-height: 0px; overflow: hidden; font-size: 0px; visibility: hidden; position: absolute; z-index: -1;
+}
+.hidden {
+	visibility: hidden;
+}
+hr {
+	visibility: hidden;
+}

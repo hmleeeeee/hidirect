@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>운전자 정보 입력 | 운전자 정보</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>운전자 정보 입력</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">3</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<div class="drive accodion on">
+		<!-- 테이터 없음 Default 상태 -->
+		<div class="carViewMemberBox on">
+			<dl>
+				<dt class="carViewName">운전자 연령한정 특약</dt>
+				<dd class="carViewNameDesc">운전자 범위를 선택해주세요</dd>
+			</dl>
+			 <a href="#layerPop" class="btnHelp2"><span>도움말</span></a>
+		</div>
+	</div>
+	<section class="carViewMemberChois">
+		<div class="carViewMemberBoxoff on">
+			<h2 class="hide">운전자 범위를 선택</h2><!-- EDIT text del-->
+		</div>
+		<div class="itemPack carBtnWarp pibClick">
+			<ul class="itemListN3">
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">본인</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">부부</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">가족</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">본인+지정1인</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">부부+지정1인</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">제한 없음</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="wrapDriverPic">
+		<!-- 남자인 경우 class="man" 추가 여자인 경우 제거 -->
+		<div id="driverPicWrap" class="man1">
+			<div id="drvPic" class="bg_driverPic">
+				<ul class="drvMember">
+					<li data-no="2" class="pos_parent_left" aria-hidden="true">
+						<span>나의 부모</span>
+					</li>
+					<li data-no="3" class="pos_parent_right" aria-hidden="true">
+						<span>배우자의 부모</span>
+					</li>
+					<li data-no="0" class="pos_me" aria-hidden="false">
+						<span>임재흥님</span>
+					</li>
+					<li data-no="1" class="pos_spouse" aria-hidden="false">
+						<span>배우자</span>
+					</li>
+					<li data-no="5" class="pos_strainger" aria-hidden="true">
+						<span>지정1인</span>
+					</li>
+					<li data-no="4" class="pos_child" aria-hidden="true">
+						<span>자녀 + 자녀의 배우자</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+	</section>
+	<section class="carAttCont pdtNone">
+		<!-- 배우자정보 입력 -->
+		<div class="carAttType carAtt2">
+			<h2>배우자 정보 입력</h2>
+			<form>
+				<!-- style form element 변경 -->
+				<fieldset>
+					<legend>배우자 정보입력</legend>
+					<div class="inputWrap">
+						<input type="text" id="name01" required />
+						<label for="name01">이름</label>
+					</div>
+					<div class="inputWrap">
+						<input type="text" id="birth01" required />
+						<label for="birth01">생년월일(ex.881201)</label>
+					</div>
+				</fieldset>
+				<!-- //style -->
+			</form>
+	    </div>
+		<!-- 지정 1인 정보 입력 -->
+		<div class="carAttType carAtt1">
+			<h2>지정 1인 정보 입력</h2>
+			<form>
+				<!-- style form element 변경 -->
+				<fieldset>
+					<legend>지정 1인 정보입력</legend>
+					<div class="inputWrap">
+						<input type="text" id="name02" required />
+						<label for="name02">이름</label>
+					</div>
+					<div class="inputWrap birth">
+						<input type="text" title="생년월일" id="birth02" required />
+						<label for="birth02">생년월일(ex.881201)</label>
+						<div class="gender">
+							<span>
+								<input type="radio" id="man02" name="gender02"><label for="man02">남</label>
+							</span>
+							<span class="off">
+								<input type="radio" id="woman02" name="gender02"><label for="woman02">여</label>
+							</span>
+						</div>
+					</div>
+					<div class="inputWrap">
+						<select title="지정1인 관계 선택">
+							<option>지정1인 관계 선택</option>
+							<option value="5120">고용주</option>
+							<option value="5131">부모</option>
+							<option value="5140">조부모</option>
+							<option value="5146">형제자매</option>
+							<option value="5338">자녀</option>
+							<option value="5339">기타가족or타인</option>
+							<option value="5417">피고용인</option>
+							<option value="5427">손자손녀</option>
+							<option value="5428">기타</option>
+							<option value="5506">배우자의부모</option>
+							<option value="6010">사위며느리</option>
+							<option value="5143">가족외타인</option>
+						</select>
+					</div>
+				</fieldset>
+				<!-- //style -->
+			</form>
+	    </div>
+		<!-- 최연소자 정보 입력 -->
+		<div class="carAttType carAtt4">
+			<h2>가장 나이 어린 사람의 정보입력</h2><!-- 0814 문구수정 -->
+			<form>
+				<!-- style form element 변경 -->
+				<fieldset>
+					<legend>가장 나이 어린 사람의 정보입력</legend><!-- 0814 문구수정 -->
+					<div class="inputWrap">
+						<input type="text" id="name03" required />
+						<label for="name03">이름</label>
+					</div>
+					<div class="inputWrap birth">
+						<input type="text" title="생년월일" id="birth03" required />
+						<label for="birth03">생년월일(ex.881201)</label>
+						<div class="gender">
+							<span>
+								<input type="radio" id="man03" name="gender03"><label for="man03">남</label>
+							</span>
+							<span class="off">
+								<input type="radio" id="woman03" name="gender03"><label for="woman03">여</label>
+							</span>
+						</div>
+					</div>
+				</fieldset>
+				<!-- //style -->
+			</form>
+	    </div>
+		<!-- 최연소자 나이 선택 -->
+		<div class="carAttType carAtt5">
+			<h2>가장 어린 나이를 선택</h2>
+			<form>
+				<!-- style form element 변경 -->
+				<div class="inputWrap">
+					<select title="연령대 선택">
+						<option>연령대 선택</option>
+						<option value="18">18세</option>
+						<option value="19">19세</option>
+						<option value="20">20세</option>
+						<option value="20">20세</option>
+						<option value="21">21세</option>
+						<option value="22">22세</option>
+						<option value="23">23세</option>
+						<option value="24">24세</option>
+						<option value="25">25세</option>
+						<option value="26">26세</option>
+						<option value="27">27세</option>
+					</select>
+				</div>
+				<!-- //style -->
+			</form>
+	    </div>
+		<ul class="listDot mgtS">
+			<li>가족한정의 경우 <span>형제자매</span>는 해당되지 않습니다.</li>
+			<li>보험 가입 후 보험 개시일 시점에서 가입 대상 범위에 해당되는 운전자의 만 나이가 올라가는 경우 ‘미래특약’에 가입됩니다.</li>
+			<li><span>만 65세 이상 고객</span>은 안전교육 할인 특약에 가입하실 수 있습니다. 도로교통공단에서 시행하는 교통 안전교육을 이수하신 후 증빙서류를 준비하시어 현대해상 대표 홈페이지를 통해 가입해주십시오.</li>
+		</ul>
+	</section>
+	<div class="accodionPo">
+		<div class="carViewMemberBox">
+			<dl>
+				<dt class="carViewName">운전자 연령한정 특약</a></dt>
+				<dd class="carViewNameDesc">만 30세 이상 본인 한정</dd>
+			</dl>
+			 <a href="#layerPop" class="btnHelp2"><span>도움말</span></a>
+		</div>
+	</div>
+	<div class="btnWrap">
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">보험료 확인하기</a></span>
+	</div>
+	<!-- content -->
+</div>
+<!-- 레이어팝업 -->
+<div class="layerPopup" id="layerPop">
+	<div class="layerWrap">
+		<h2>운전자 정보 입력 도움말</h2>
+		
+		<div class="layerCont">
+			<ul class="listDot mgtNone">
+				<li><strong>운전자 범위/한정 안내</strong>
+					<ul class="listBasic">
+						<li>운전자 범위는 작게 선택할수록 보험료가 절약됩니다</li>
+					</ul>
+				</li>
+				<li><strong>운전자 범위 선택 유의사항</strong>
+					<ul class="listBasic">
+						<li>선택 범위 이외 운전자가 운행 중 사고 시 대인배상I (책임보험)만 보상됩니다.</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="layerBtn">
+			<a href="#close">확인</a>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+</body>
+</html>

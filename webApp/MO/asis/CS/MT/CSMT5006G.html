@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 긴급출동 서비스 신청</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>긴급출동 서비스 신청</h1>
+		</header>
+		<div class="popContent">
+			<p class="topTxt">가입하신 자동차보험을 선택해 주세요.</p>
+			<section>
+				<!-- 0704 수정 JJY-->
+				<h2>대상차량 확인</h2>
+				<fieldset>
+					<legend>확인정보입력</legend>
+		       		<div class="inputWrap">
+		       			<input type="tel" id="number01" required>
+						<label for="number01">주민등록번호<em class="hide">앞자리</em></label>
+					</div>
+					<div class="inputWrap">
+						<input type="text" id="carnum" required />
+						<label for="carnum">차량번호</label>
+					</div>
+				</fieldset>
+				
+				<h2>이용동의</h2>
+				<ul class="listBox">
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat01" id="collat01_01"><label for="collat01_01"><span class="hide">위치기반 서비스 이용 동의</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">위치기반 서비스 이용 동의</p>
+						</div>
+						<a href="#collatLayerpop" class="btnLink"><span>더보기</span></a>
+					</li>
+				</ul>
+				<!-- <div class="checkBox pdtNone">
+					<input type="checkbox" id="ch01"><label for="ch01"><span class="hide">동의 체크</span></label>
+					<span>위치기반 서비스 이용 동의 <a href="#collatLayerpop" class="btnHelp"><span>더보기</span></a></span>
+				</div> -->
+			</section>
+			<div class="btnWrap">
+				<a href="#" role="button">다음</a>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

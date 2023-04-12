@@ -75,27 +75,30 @@ $modal_pad_alert: $modal_pad;
 
 	.modal_header{
 		.wrapper{padding: 15px 20px 16px;
-			.modal_title{@include fz15(); color:#1F1F21;padding-right:40px;}
+			.modal_title{@include fz15(); color:#1F1F21;padding-right:40px;
+				strong{color:$terms_point_color}
+				strong:first-child{font-size:19px;line-height:1.4em}
+			}
 		}
 	}
 
 	.modal_body{position: relative; 
-		.wrapper{position: relative; height:auto; margin-bottom:-16px; padding:0 0 80px; overflow-y: auto; word-break:break-all;}
+		.wrapper{position: relative; height:auto;padding:0 0 64px; overflow-y: auto; overflow-x: hidden;}
 	}
 
-	.modal_footer{ position: relative;
-		&.fix{
-			// padding-top: $modal_footer_pad_top;
-		}
-	}
+	.modal_footer{ position: relative; z-index: 1;}
 
-	.btn_modal_close{position:absolute; top:12px; right:10px; background:url($svg_btn_modal_close) no-repeat center center; width:28px; height:28px;
+	.btn_modal_close{position:absolute; top:11px; right:10px; background:url($svg_btn_modal_close) no-repeat center center; width:28px; height:28px;
 		span{@include blind();}
+		&:after{
+			width:36px;
+			height:36px;
+			@include bg_center();
+		}
 	}
 
 	.btn_modal_handle{width: 56px; height: 4px; background: #E8E8EA; border-radius: 3px;}
 }
-
 
 
 
@@ -106,14 +109,11 @@ $modal_pad_alert: $modal_pad;
 	.modal_content{border-radius: 0;
 		.governing{
 			.governing_title+.info_text{
-				margin-top:24px;
+				// margin-top:24px;
 				&+.info_text{
 					margin-top:12px;
 				}
 			}
-		}
-		.btn_area.sub{
-			margin-top:24px;
 		}
 	}
 	&.complete{
@@ -127,6 +127,12 @@ $modal_pad_alert: $modal_pad;
 	}
 }
 
+// * Modal full.modal_terms
+//--------------------------------
+// 약관 팝업 관련 
+.modal.full.modal_terms{
+	
+}
 
 
 // * Modal bottom
@@ -135,10 +141,12 @@ $modal_pad_alert: $modal_pad;
 	.modal_dialog{align-items: end;}
 	.modal_content{border-bottom-left-radius:0;border-bottom-right-radius:0;}
 
-	.modal_header .wrapper{padding: 40px 20px 20px;}
-	.modal_body .wrapper{padding:0 0 56px;
+	.modal_header .wrapper{padding: 40px 24px 20px;}
+	.modal_body .wrapper{padding:0 0 40px;
 		//margin-top: 40px; //.modal_header 없을경우 script로 삽입 
-
+		&.no_footer{
+			padding-bottom: 56px;
+		}
 		// ------
 		.comp:first-child{margin-top: 12px;}
 		.modal_subtitle{margin-top: -12px;margin-bottom:32px;@include fz15;font-weight:400;color:#555557}
@@ -171,53 +179,40 @@ $modal_pad_alert: $modal_pad;
 				content:''; position: absolute; top:50%; left:50%; 
 				width: 56px;
 				height: 4px;
+				margin-left: -28px;
 				background: #E8E8EA; border-radius: 3px;
 			}
 		}
 	}
+	.modal_body .wrapper{
+		.comp:first-child{margin-top: 0;}
+		.modal_subtitle{margin-top: 0}
+	}
 
-	// .modal_body .wrapper{padding:0 0 56px;
-	// 	//margin-top: 40px; //.modal_header 없을경우 script로 삽입 
-
-	// 	// ------
-	// 	.comp:first-child{margin-top: 12px;}
-	// 	.modal_subtitle{margin-top: -12px;margin-bottom:32px;@include fz15;font-weight:400;color:#555557}
-	// 	.comp.border_top:first-child{margin-top: 0; border-top: 1px solid #1F1F21;
-	// 		.modal_subtitle{margin-top: 0px;}
-	// 	}
-	// 	// ------
-	// }
-	// .modal_header, 
-	// .modal_body{
-	// 	.wrapper .modal_title{
-	// 		@include fz17_700();
-	// 		@include line_clamp(1.4em,48,2);
-	// 	}
-	// }
+	
 	.btn_modal_close{display: none;}
 }
 
 
 //modal trigger bar
 .content_footer.fix{
-	&.calc_footer{padding:12px 20px 32px; box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.08);
+	&.calc_footer{padding:12px 20px 32px; box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.08); background-color:#FFFFFF;
+		&:before{display:none;}
 		.calc_wrap{@include div_px(calc(100% - 116px), 20px);
-			.modalbar_trigger{position: relative;
-				cursor:default;
-				.title{@include fz12();color: #555557;
+			.modalbar_trigger{position: relative;cursor:default;
+				.title{@include fz12_400();color: #555557;
 					span{color: #767678;}
 					em{color: $point_color;}
 				}
 				.num_txt{@include fz14_700();}
 			}
 
-			.modalbar_trigger:not(.disabled){
-				cursor:pointer;
+			.modalbar_trigger:not(.disabled){cursor:pointer;
 				&:after{content:'';position: absolute; right:16px; top:12px; width: 24px;height: 24px; background: url($svg_arrow_up_24) center center no-repeat;
 				}
 			}
 
-			.btn_area{position: relative;
+			.btn_area{margin-top: 0;
 				.btn{width: 100%;}
 				&:after{content:'';position: absolute; left: -20px; height: 100%; width: 1px; border-left: 1px solid #EFEFF1;
 				}
@@ -225,6 +220,7 @@ $modal_pad_alert: $modal_pad;
 		}
 	}
 }
+
 
 
 // * Modal md

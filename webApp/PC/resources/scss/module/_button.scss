@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/**
+* Module.Button
+* ------------------
+*/
+
+
+.btn_chk,
+.btn{@include btn_gab(4px);}
+
+
+// * Btn
+//-----------------
+.btn{
+	@include btn();
+}
+
+a.btn.disabled, 
+fieldset:disabled a.btn {pointer-events: none; }
+
+
+
+// * Block button
+//-----------------
+.btn_block {display: block; width: 100%;
+	+ .btn_block {margin-top: 10px; }
+}
+
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn_block {width: 100%; }
+}
+
+
+
+// * Button Sizes
+//-----------------
+.btn_lg {
+	@include btn_lg();
+}
+
+.btn_nm {
+	@include btn_nm();
+}
+
+.btn_md {
+	@include btn_md();
+}
+
+
+
+// * Button Type
+//-----------------
+.btn_ok{
+	@include btn_lg();
+	background-color: #FF7B02; color: #fff;
+
+	&.disabled,
+	&:disabled {background-color: #dbdbdb; color: #fff; }
+
+	//focus color
+	// &:not(:disabled):not(.disabled):active,
+	// &:not(:disabled):not(.disabled).active {background-color: #F18D00; color: #fff; }
+
+	&.btn_nm{
+		@include btn_nm();
+		min-width:86px;
+	}
+}
+
+.btn_cancel{
+	@include btn_lg();
+	background-color: #fff; color: #FF7B02;border: 1px solid #FF7B02;
+
+	&.disabled,
+	&:disabled {background-color: #dbdbdb; color: #bdbdbd;border : 1px solid #e0e0e0;}
+
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active {background-color: #efefef; color: #FF7B02;border: 1px solid #FF7B02;}
+
+	@include button-focus-outline(#ccc);
+
+	&.btn_nm{
+		@include btn_nm();
+		min-width:86px;
+	}
+}

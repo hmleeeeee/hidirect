@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+		$('.btn_samples').find('.btn+.btn').click();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">로그인</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Modal</h2>
+						</div>
+						<div class="comp">
+							<div class="btn_area cta btn_samples">
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#MCOCO0709U'));" class="btn fill01">주소확인</a>
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#MCOCO0709U_2'));" class="btn fill01">주소결과</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Modal Full -->
+		<div class="modal full fade" id="MCOCO0709U" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">주소검색</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+                <div class="governing ta_l">
+                  <h2 class="governing_title">03186 <br>서울 종로구 세종대로 145-2</h2>
+                </div>
+								<div class="comp">
+                  <div class="form_area">
+                    <div class="form_item">
+                      <div class="form_label"><label for="detail_address">상세주소</label></div>
+                      <div class="form_wrap">
+                        <input type="text" id="detail_address" placeholder="상세주소 입력">
+                      </div>
+                      <div class="none_detail">
+                        <input type="checkbox" id="none_detail">
+                        <label for="none_detail">상세주소 없음</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="uol_list mt40 light">
+                    <ul>
+                      <li>상세주소 입력 후 <strong>[주소 확인]</strong>을 눌러 주소를 한 번 더 확인해 주세요.</li>
+                    </ul>
+                  </div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer type02">
+							<button type="button" class="btn fill02">이전</button>
+							<button type="button" class="btn fill01">주소확인</button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#MCOCO0709U'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Full -->
+		<!-- Modal Full -->
+		<div class="modal full fade" id="MCOCO0709U_2" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">주소검색</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+                <div class="governing ta_l">
+                  <h2 class="governing_title">03186 <br>서울 종로구 세종대로 145-2, 11 (세종로)</h2>
+                </div>
+								<div class="comp">
+                  <div class="select_address">
+                    <div class="item">
+                      <input type="radio" id="select_address01" name="select_address" checked="checked">
+                      <label for="select_address01">
+                        <span class="number">65432</span>
+                        <span class="address_name">
+                          <span>도로명</span>
+                          <strong>서울 종로구 세종대로 145-2, 11(세종로)</strong>
+                        </span>
+                        <span class="address_name">
+                          <span>지번</span>
+                          <strong>서울 종로구 세종로 215번지 11</strong>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="item">
+                      <input type="radio" id="select_address02" name="select_address">
+                      <label for="select_address02">
+                        <span class="number">12345</span>
+                        <span class="address_name">
+                          <span>도로명</span>
+                          <strong>서울 종로구 세종대로 145-2, 11(세종로)</strong>
+                        </span>
+                        <span class="address_name">
+                          <span>지번</span>
+                          <strong>서울 종로구 세종로 215번지 11</strong>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="uol_list mt40 light">
+                    <ul>
+                      <li>도로명 주소 전면시행에 따라 <strong>도로명 주소만 사용 가능</strong>합니다. (주택화재보험 목적물은 도로명주소/지번주소 병행 사용 가능)</li>
+                    </ul>
+                  </div>
+								</div>
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<div class="modal_footer fix">
+						<div class="btn_area footer type02">
+							<button type="button" class="btn fill02">이전</button>
+							<button type="button" class="btn fill01">주소결과 입력</button>
+						</div>
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#MCOCO0709U_2'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Full -->
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

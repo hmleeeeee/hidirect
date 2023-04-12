@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>02_차량정보_01차량기본정보_01자동차선택</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+    <script>
+        $(function(){
+            $("input[name='car']").on("change",function(){
+                if($(this).is(":checked")){
+                    $(".carInfoInput").slideUp();
+                    $(this).closest(".item").find(".carInfoInput").slideDown();
+                    $(".selectRadioListBox").removeClass("on inner");
+                    $(".carInfoInputSelect").removeClass("on");
+                    $(".carInfoInputSelectContent").slideUp();
+                    $(this).closest(".selectRadioListBox").addClass("on");
+                }else{
+                    $(".carInfoInput").slideUp();
+                    $(this).closest(".selectRadioListBox").removeClass("on");
+                }
+            })
+            $(document).on("click",".carInfoInputSelect > .car",function(e){
+                e.preventDefault();
+                $(this).closest(".selectRadioListBox").addClass("inner");
+                if(!$(this).closest(".carInfoInputSelect").hasClass("on")){
+                    $(".carInfoInputSelect").removeClass("on");
+                    $(this).closest(".carInfoInputSelect").addClass("on")
+                    $(".carInfoInputSelectContent").slideUp();
+                    $(this).closest(".carInfoInputSelect").find(".carInfoInputSelectContent").slideDown();
+                }else{
+                    $(this).closest(".carInfoInputSelect").removeClass("on")
+                    $(".carInfoInputSelectContent").slideUp();
+                }
+
+            })
+        })
+    </script>
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="형대해상 다이렉트"></a></p>
+            <h1>자동차보험 <span class="fz17">(법인용)</span></h1>
+        </div>
+        <div class="stepArea">
+        </div>
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>차량 기본정보 입력</h2>
+            <p class="txt">보험료를 계산할 자동차를 선택하세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+        <!--inputTable : s-->
+        <div class="inputTable">
+            <ul class="selectRadioListBox inner">
+                <li class="item">
+                    <div class="radio">
+                        <input type="radio" name="car" id="car1">
+                        <label for="car1">보유중인 자동차</label>
+                    </div>
+                    <div class="carInfoInput type2">
+                        <div class="carInfoInputSelect">
+                            <a href="#" class="car"><span class="fontBase">[06버6870]</span> 카렌스Ⅱ2.0(LPG)</a>
+                            <div class="moreData">
+                                2016-10-30 ~ 2017-10-29 <span class="fontPoint2">(보험만기 D-81)</span>
+                                <a href="#" class="btn small2 time"><span>만기 알림 신청</span></a>
+                            </div>
+                            <ul class="listStyle star fz14">
+                                <li>보험 만기일이 OOOO년 OO월 OO일 이후이신 경우 만기 알람 신청으로 진행 하실 수 있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="carInfoInputSelect">
+                            <a href="#" class="car"><span class="fontBase">[06버6870]</span> 카렌스Ⅱ2.0(LPG)</a>
+                            <div class="moreData">
+                                2016-10-30 ~ 2017-10-29
+                                <a href="#" class="btn small2 math"><span>계산가능</span></a>
+                            </div>
+                            <div class="carInfoInputSelectContent">
+                                <!--inputTable : s-->
+                                <div class="inputTable titleInput noTline">
+                                    <div class="title inputTitle">
+                                        <h3 class="tit">차량번호 입력 및 차량 유형 선택 </h3>
+                                    </div>
+
+                                    <div class="inputSet">
+                                        <ul class="inputArea inlineBlock">
+                                            <li class="item pr21">
+                                                <div class="inputBase disabled" style="width: 375px;">
+                                                    <label for="carNumber">차량번호 (예: 11가1234)</label>
+                                                    <input type="text" id="carNumber" value="01가 1234" disabled>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="inputBase datepicker" style="width: 170px;">
+                                                    <label for="carNumber_start">보험기간</label>
+                                                    <input type="text" id="carNumber_start" value="2018-08-09">
+                                                </div>
+                                                <span class="gapTxt">~</span>
+                                                <div class="inputBase datepicker" style="width: 170px;">
+                                                    <label for="carNumber_end">보험기간</label>
+                                                    <input type="text" id="carNumber_end" value="2018-08-09">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="inputArea">
+                                            <li class="item">
+                                                <div class="radio mr20">
+                                                    <input type="radio" name="carNumber_carType_a" id="carNumber_carType_a1" checked>
+                                                    <label for="carNumber_carType_a1">승용차</label>
+                                                </div>
+                                                <div class="radio mr20 ">
+                                                    <input type="radio" disabled name="carNumber_carType_a" id="carNumber_carType_a2">
+                                                    <label for="carNumber_carType_a2">승합차</label>
+                                                </div>
+                                                <div class="radio mr20 ">
+                                                    <input type="radio" disabled name="carNumber_carType_a" id="carNumber_carType_a3">
+                                                    <label for="carNumber_carType_a3">화물차</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="listStyle star mt5">
+                                            <li class="fontPoint2 carTypeInfo">승차정원 10인 이하 승용차</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--inputTable : e-->
+
+
+                                <ul class="listStyle star fontLevel2 noGap">
+                                    <li>보험개시일 익일부터 적용되므로 하루 전에 미리 가입하셔야 하며, 보험효력은 개시일의 24시(다음날0시)부터 종료일의 24시까지 입니다.</li>
+                                    <li>1년으로 가입하는 경우 보험기간이 개시일과 종료일이 같아야 합니다. (2017-04-05 ~ 2018-04-05)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="selectRadioListBox">
+                <li class="item">
+                    <div class="radio">
+                        <input type="radio" name="car" id="carBuy">
+                        <label for="carBuy" class="fontBase">자동차를 새로 구입했거나, 구입할 예정</label>
+                    </div>
+                    <div class="carInfoInput">
+                        <!--itemSelectArea : s-->
+                        <div class="itemSelectArea tabWrap">
+                            <ul class="itemList tabList">
+                                <li class="on"><a href="#" class="carNumber"><span>차량번호</span></a></li>
+                                <li><a href="#" class="carSerialNumber"><span>차대번호</span></a></li>
+                                <li><a href="#" class="buySoon"><span>구입예정</span></a></li>
+                            </ul>
+                            <div class="tabCon on">
+                                <div class="tabHiddenTitle">차량번호</div>
+                                <!--inputTable : s-->
+                                <div class="inputTable titleInput noTline">
+                                    <div class="title inputTitle">
+                                        <h3 class="tit">차량번호 입력 및 차량 유형 선택 </h3>
+                                    </div>
+
+                                    <div class="inputSet">
+                                        <ul class="inputArea inlineBlock">
+                                            <li class="item pr21">
+                                                <div class="inputBase" style="width: 375px;">
+                                                    <label for="carNumber">차량번호 (예: 11가1234)</label>
+                                                    <input type="text" id="carNumber" value="01가 1234">
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="inputBase datepicker" style="width: 170px;">
+                                                    <label for="carNumber_start">보험기간</label>
+                                                    <input type="text" id="carNumber_start" value="2018-08-09">
+                                                </div>
+                                                <span class="gapTxt">~</span>
+                                                <div class="inputBase datepicker" style="width: 170px;">
+                                                    <label for="carNumber_end">보험기간</label>
+                                                    <input type="text" id="carNumber_end" value="2018-08-09">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="inputArea">
+                                            <li class="item">
+                                                <div class="radio mr20">
+                                                    <input type="radio" name="carNumber_carType" id="carNumber_carType1" checked>
+                                                    <label for="carNumber_carType1">승용차</label>
+                                                </div>
+                                                <div class="radio mr20 ">
+                                                    <input type="radio" disabled name="carNumber_carType" id="carNumber_carType2">
+                                                    <label for="carNumber_carType2">승합차</label>
+                                                </div>
+                                                <div class="radio mr20 ">
+                                                    <input type="radio" disabled name="carNumber_carType" id="carNumber_carType3">
+                                                    <label for="carNumber_carType3">화물차</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="listStyle star mt5">
+                                            <li class="fontPoint2 carTypeInfo">승차정원 10인 이하 승용차</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--inputTable : e-->
+                            </div>
+                            <div class="tabCon">
+                                <div class="tabHiddenTitle">차대번호</div>
+                                <!--inputTable : s-->
+                                <div class="inputTable titleInput noTline">
+                                    <div class="title inputTitle">
+                                        <h3 class="tit">차대번호 입력 및 차량 유형 선택 </h3>
+                                    </div>
+
+                                    <div class="inputSet">
+                                        <ul class="inputArea inlineBlock">
+                                            <li class="item pr21">
+                                                <div class="inputBase" style="width: 375px;">
+                                                    <label for="carSerialNumber">차대번호(17자리) 입력 (예: AAABB1111CC)</label>
+                                                    <input type="text" id="carSerialNumber">
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="inputBase datepicker" style="width: 170px;">
+                                                    <label for="carSerialNumber_start">보험기간</label>
+                                                    <input type="text" id="carSerialNumber_start" value="2018-08-09">
+                                                </div>
+                                                <span class="gapTxt">~</span>
+                                                <div class="inputBase datepicker" style="width: 170px;">
+                                                    <label for="carSerialNumber_end">보험기간</label>
+                                                    <input type="text" id="carSerialNumber_end" value="2018-08-09">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="inputArea">
+                                            <li class="item">
+                                                <div class="radio mr20">
+                                                    <input type="radio" name="carSerialNumber_carType" id="carSerialNumber_carType1">
+                                                    <label for="carSerialNumber_carType1">승용차</label>
+                                                </div>
+                                                <div class="radio mr20 ">
+                                                    <input type="radio" name="carSerialNumber_carType" id="carSerialNumber_carType2">
+                                                    <label for="carSerialNumber_carType2">승합차</label>
+                                                </div>
+                                                <div class="radio mr20 ">
+                                                    <input type="radio" name="carSerialNumber_carType" id="carSerialNumber_carType3">
+                                                    <label for="carSerialNumber_carType3">화물차</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--inputTable : e-->
+
+                            </div>
+                            <div class="tabCon">
+                                <div class="tabHiddenTitle">구입예정</div>
+                                <!--inputTable : s-->
+                                <div class="inputTable titleInput noTline noLine">
+                                    <div class="title inputTitle">
+                                        <h3 class="tit">차량 유형 선택 및 기본정보 입력</h3>
+                                    </div>
+
+                                    <div class="inputSet">
+                                        <ul class="inputArea inlineBlock">
+                                            <li class="item pr21">
+                                                <div class="lineBox">
+                                                    <div class="radio mr20">
+                                                        <input type="radio" name="buySoon_carType" id="buySoon_carType1">
+                                                        <label for="buySoon_carType1">승용차</label>
+                                                    </div>
+                                                    <div class="radio mr20 ">
+                                                        <input type="radio" name="buySoon_carType" id="buySoon_carType2">
+                                                        <label for="buySoon_carType2">승합차</label>
+                                                    </div>
+                                                    <div class="radio mr20 ">
+                                                        <input type="radio" name="buySoon_carType" id="buySoon_carType3">
+                                                        <label for="buySoon_carType3">화물차</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="inputBase datepicker" style="width: 170px;">
+                                                    <label for="buySoon_start">보험기간</label>
+                                                    <input type="text" id="buySoon_start" value="2018-08-09">
+                                                </div>
+                                                <span class="gapTxt">~</span>
+                                                <div class="inputBase datepicker" style="width: 170px;">
+                                                    <label for="buySoon_end">보험기간</label>
+                                                    <input type="text" id="buySoon_end" value="2018-08-09">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--inputTable : e-->
+                            </div>
+                        </div>
+                        <!--itemSelectArea : e-->
+
+                        <ul class="listStyle star fontLevel2 noGap">
+                            <li>차량구매의 경우 보험 가입 후 가입 증명서를 등록사업소에 제출하시면 차량 등록이 가능합니다.</li>
+                            <li>보험개시일 익일부터 적용되므로 하루 전에 미리 가입하셔야 하며, 보험효력은 개시일의 24시(다음날0시)부터 종료일의 24시까지 입니다.</li>
+                            <li>1년으로 가입하는 경우 보험기간이 개시일과 종료일이 같아야 합니다. (2017-04-05 ~ 2018-04-05)</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--inputTable : e-->
+
+
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item37">
+                    <li><a href="#" class="btn prev"><span>이전</span></a></li>
+                    <li><a href="#" class="btn next"><span>다음</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

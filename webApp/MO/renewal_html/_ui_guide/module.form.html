@@ -16,7 +16,7 @@
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="true" data-category="guide" data-category-sub="">
+<body data-channel="mobile" data-login="true" data-category="guide">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -77,7 +77,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 
 								<div class="form_item">
 									<div class="form_label"><label for="inp03">readonly</label></div>
@@ -87,7 +87,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="inp04">disabled</label></div>
 									<!-- input disabled시 form_wrap class disabled 추가 -->
@@ -96,7 +96,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="inp05">confirm</label></div>
 									<!-- 벨리데이션 체크 성공시 form_wrap class confirm 추가 -->
@@ -132,7 +132,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="inp13">디폴트(포커스)</label></div>
 									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
@@ -141,7 +141,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="inp14">readonly</label></div>
 									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
@@ -150,7 +150,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="inp15">disabled</label></div>
 									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
@@ -159,7 +159,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="inp16">confirm</label></div>
 									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
@@ -179,15 +179,21 @@
 									<div class="form_msg error">실패 메시지</div>
 								</div>
 								<div class="form_item">
-									<div class="form_label"><label for="inp18">디폴트+삭제버튼</label></div>
+									<div class="form_label"><label for="inp18">디폴트+삭제버튼: input[data-clear="true"]</label></div>
 									<!-- 텍스트 좌측 정렬 시 form_wrap class form_right 추가 -->
-									<div class="form_wrap form_right form_clear">
-										<input type="text" id="inp18" placeholder="placeholder">
-										<button type="button" class="btn_clear"><span class="blind">입력값 초기화</span></button>
+									<div class="form_wrap form_right">
+										<input type="text" id="inp18" placeholder="placeholder" value="222" data-clear="true"><!-- data-clear="true" -->
+										<!-- Guide: 개발시 삭제: input에 data-clear="true"에서 스크립트에서 처리됨 -->
+										<div class="append">
+											<span class="unit clear">
+												<button type="button" class="btn_clear"><span class="blind">입력값 초기화</span></button>
+											</span>
+										</div>
+										<!-- //Guide -->
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 							</div>
 						</div>
 
@@ -198,26 +204,32 @@
 							<div class="form_area grid2">
 								<div class="form_item">
 									<div class="form_label"><label for="inp07">디폴트+삭제버튼</label></div>
-									<div class="form_wrap form_clear">
-										<input type="text" id="inp07" placeholder="placeholder">
-										<button type="button" class="btn_clear"><span class="blind">입력값 초기화</span></button>
+									<div class="form_wrap">
+										<input type="text" id="inp07" placeholder="placeholder" data-clear="true"><!-- data-clear="true" -->
+										<!-- Guide: 개발시 삭제: input에 data-clear="true"에서 스크립트에서 처리됨 -->
+										<div class="append">
+											<span class="unit clear"><button type="button" class="btn_clear"><span class="blind">입력값 초기화</span></button></span>
+										</div>
+										<!-- //Guide -->
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="inp08">인증번호 입력</label></div>
-									<div class="form_wrap form_time">
+									<div class="form_wrap">
 										<input type="number" id="inp08" placeholder="숫자 6자리 입력" maxlength="6">
-										<button type="button" class="btn_form"><span>인증번호 재요청</span></button>
+										<div class="append">
+											<span class="unit"><button type="button" class="btn_form"><span>인증번호 재요청</span></button></span>
+										</div>
 									</div>
 									<div class="time_msg">
 										<span>남은시간 <em>02:59</em></span>
-										<button type="button" class="btn_text">시간 연장<span></span></button>
+										<button type="button" class="btn_text">시간 연장</button>
 									</div>
 								</div>
 								<div class="form_item">
-									<div class="form_label"><spab class="form_title">보안키패드</ㄴ></div>
+									<div class="form_label"><span class="form_title">보안키패드</span></div>
 									<div class="form_wrap form_key">
 										<div class="pin_area">
 											<strong class="active"><span class="blind">1번째 번호</span></strong>
@@ -231,7 +243,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 							</div>
 						</div>
 
@@ -258,17 +270,129 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
+								</div>
+
+								<div class="form_item col2">
+									<div class="form_label"><label for="jumin_read">주민등록번호/외국인등록번호(readonly</label></div>
+									<div class="form_wrap">
+										<input type="text" id="jumin_read" placeholder="앞 6자리" readonly="readonly" value="000000">
 									</div>
+									<div class="form_wrap form_key">
+										<div class="pin_area readonly">
+											<strong class=""><span class="blind">1번째 번호</span></strong>
+											<strong><span class="blind">2번째 번호</span></strong>
+											<strong><span class="blind">3번째 번호</span></strong>
+											<strong><span class="blind">4번째 번호</span></strong>
+											<strong><span class="blind">5번째 번호</span></strong>
+											<strong><span class="blind">6번째 번호</span></strong>
+											<strong><span class="blind">7번째 번호</span></strong>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form_area mt30">
 								<div class="form_item">
 									<div class="form_label"><label for="inp11">금액 입력</label></div>
-									<div class="form_wrap form_amount">
+									<div class="form_wrap">
 										<input type="number" id="inp11" placeholder="숫자만 입력">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
+								</div>
+							</div>
+
+							<div class="form_area mt30">
+								<div class="form_item">
+									<div class="form_phone">
+										<div class="form_label"><label for="phone">휴대폰번호</label></div>
+										<div class="form_wrap">
+											<select id="phone">
+												<option>010</option>
+											</select>
+										</div>
+										<div class="form_wrap">
+											<input type="number" placeholder="‘-’없이 숫자 8자리 입력" title="휴대폰번호 입력">
+										</div>
 									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+								</div>
+							</div>
+							
+							<div class="form_area mt30">
+								<div class="grid2">
+									<div class="form_item dash">
+										<div class="form_label"><label for="inp10_01">정산시작일</label></div>
+										<div class="form_wrap">
+											<input type="text" id="inp10_01" placeholder="">
+										</div>
+									</div>
+									<div class="form_item">
+										<div class="form_label"><label for="inp10_02">기준일</label></div>
+										<div class="form_wrap">
+											<input type="text" id="inp10_02" placeholder="">
+										</div>
+									</div>
+								</div>
+								<div class="form_msg confirm">성공 메시지</div>
+								<div class="form_msg error">실패 메시지</div>
+							</div>
+
+							<div class="form_area mt30">
+								<div class="grid2">
+									<div class="form_item dash">
+										<div class="form_label"><label for="inp10_01">정산시작일</label></div>
+										<div class="form_wrap">
+											<input type="number" id="inp11" placeholder="숫자만 입력">
+											<div class="append">
+												<span class="unit">km</span>
+												<span class="unit"><button type="button" class="btn_form">전액</button></span>
+											</div>
+										</div>
+									</div>
+									<div class="form_item">
+										<div class="form_label"><label for="inp10_02">기준일</label></div>
+										<div class="form_wrap">
+											<input type="number" id="inp11" placeholder="숫자만 입력">
+											<div class="append">
+												<span class="unit">km</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form_msg confirm">성공 메시지</div>
+								<div class="form_msg error">실패 메시지</div>
+							</div>
+						
+							<div class="form_area mt30">
+								<div class="form_item">
+									<div class="form_label"><label for="card">카드번호</label></div>
+									<div class="form_card">
+										<div class="form_wrap">
+											<input type="text" id="card" placeholder="4자리" title="카드번호 첫번째 4자리 입력">
+										</div>
+										<div class="form_wrap">
+											<input type="text" placeholder="4자리" title="카드번호 두번째 4자리 입력">
+										</div>
+										<div class="form_wrap">
+											<input type="text" placeholder="4자리" title="카드번호 세번째 4자리 입력">
+										</div>
+										<div class="form_wrap form_key">
+											<div class="pin_area">
+												<strong class="active"><span class="blind">1번째 번호</span></strong>
+												<strong><span class="blind">2번째 번호</span></strong>
+												<strong><span class="blind">3번째 번호</span></strong>
+											</div>
+										</div>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+								</div>
 							</div>
 						</div>
 
@@ -278,59 +402,71 @@
 							</div>
 							<div class="form_area grid2">
 								<div class="form_item form_box">
-									<div class="form_wrap form_amount">
+									<div class="form_wrap ">
 										<input type="number" placeholder="숫자만 입력">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item form_box">
-									<div class="form_wrap form_amount focus">
+									<div class="form_wrap focus">
 										<input type="number" placeholder="숫자만 입력">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item form_box">
-									<div class="form_wrap form_amount readonly">
+									<div class="form_wrap readonly">
 										<input type="number" placeholder="숫자만 입력" readonly="readonly">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item form_box">
-									<div class="form_wrap form_amount disabled">
+									<div class="form_wrap disabled">
 										<input type="number" placeholder="숫자만 입력" disabled="disabled">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form" disabled="disabled">전액<span></span></button>
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form" disabled="disabled"><span>전액</span></button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item form_box">
-									<div class="form_wrap form_amount error">
+									<div class="form_wrap error">
 										<input type="number" placeholder="숫자만 입력">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item form_box">
-									<div class="form_wrap form_amount confirm">
+									<div class="form_wrap confirm">
 										<input type="number" placeholder="숫자만 입력">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 							</div>
 						</div>
 
@@ -338,6 +474,29 @@
 							<div class="title_area">
 								<h2 class="h2">셀렉트박스</h2>
 							</div>
+
+
+							<!-- 박스형, 버튼형 셀렉트 -->
+							<div class="form_area grid2">
+								<div class="form_item select_box">
+									<div class="form_label"><label for="select01">박스형 셀렉트</label></div>
+									<div class="form_wrap ">
+										<select id="select01">
+											<option value="">하*현</option>
+										</select>
+									</div>
+								</div>
+								<div class="form_item select_box">
+									<div class="form_label"><label for="select02">박스버튼형 셀렉트</label></div>
+									<div class="form_wrap placeholder">
+										<button type="button" id="btn_select01" class="btn_select"><span>은행 선택</span></button>
+									</div>
+									<div class="form_msg confirm">성공 메시지</div>
+									<div class="form_msg error">실패 메시지</div>
+								</div>
+							</div>
+
+							<hr class="hr2 mtb">
 
 							<!-- 디폴트 셀렉트 -->
 							<div class="form_area grid2">
@@ -352,7 +511,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="select02">기본형 (선택 후)</label></div>
 									<div class="form_wrap">
@@ -364,7 +523,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="select03">focus</label></div>
 									<div class="form_wrap focus">
@@ -376,7 +535,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="select04">disabled</label></div>
 									<div class="form_wrap disabled">
@@ -388,7 +547,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="select05">error</label></div>
 									<div class="form_wrap error">
@@ -400,7 +559,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="select06">confirm</label></div>
 									<div class="form_wrap confirm">
@@ -412,7 +571,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 							</div>
 
 							<hr class="hr2 mtb">
@@ -427,7 +586,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="btn_select02">버튼형 셀렉트박스 기본형 (선택 후)</label></div>
 									<div class="form_wrap">
@@ -435,7 +594,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="btn_select03">버튼형 셀렉트박스 focus</label></div>
 									<div class="form_wrap focus">
@@ -443,7 +602,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="btn_select04">버튼형 셀렉트박스 disabled</label></div>
 									<div class="form_wrap disabled">
@@ -451,7 +610,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="btn_select05">버튼형 셀렉트박스 error</label></div>
 									<div class="form_wrap error">
@@ -459,7 +618,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 								<div class="form_item">
 									<div class="form_label"><label for="btn_select06">버튼형 셀렉트박스 confirm</label></div>
 									<div class="form_wrap confirm">
@@ -467,7 +626,7 @@
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-									</div>
+								</div>
 							</div>
 						</div>
 
@@ -482,19 +641,21 @@
 									<div class="form_wrap placeholder">
 										<button type="button" id="mix01" class="btn_select"><span>은행 선택</span></button>
 									</div>
-									<div class="form_wrap form_amount">
-										<input type="number" id="inp11" placeholder="숫자만 입력">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+									<div class="form_wrap">
+										<input type="number" id="inp11" placeholder="숫자만 입력" data-clear="true">
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-										<div class="option_area">
-										<button type="button" class="btn option">1만<span></span></button>
-										<button type="button" class="btn option">10만<span></span></button>
-										<button type="button" class="btn option">50만<span></span></button>
-										<button type="button" class="btn option">100만<span></span></button>
-										<button type="button" class="btn option">정정<span></span></button>
+									<div class="option_area">
+										<button type="button" class="btn option"><span>1만</span></button>
+										<button type="button" class="btn option"><span>10만</span></button>
+										<button type="button" class="btn option"><span>50만</span></button>
+										<button type="button" class="btn option"><span>100만</span></button>
+										<button type="button" class="btn option"><span>정정</span></button>
 									</div>
 								</div>
 							</div>
@@ -502,18 +663,20 @@
 							<!-- 박스 안에 금액 입력 들어간 경우 -->
 							<div class="form_area">
 								<div class="form_item form_box">
-									<div class="form_wrap form_amount">
-										<input type="number" placeholder="숫자만 입력">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+									<div class="form_wrap">
+										<input type="number" placeholder="숫자만 입력" data-clear="true">
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-										<div class="option_area">
-										<button type="button" class="btn option">1만<span></span></button>
-										<button type="button" class="btn option">10만<span></span></button>
-										<button type="button" class="btn option">50만<span></span></button>
-										<button type="button" class="btn option">정정<span></span></button>
+									<div class="option_area">
+										<button type="button" class="btn option"><span>5만</span></button>
+										<button type="button" class="btn option"><span>10만</span></button>
+										<button type="button" class="btn option"><span>50만</span></button>
+										<button type="button" class="btn option"><span>정정</span></button>
 									</div>
 								</div>
 							</div>
@@ -524,19 +687,21 @@
 									<div class="form_wrap confirm">
 										<button type="button" id="btn_select06" class="btn_select"><span>은행 선택</span></button>
 									</div>
-									<div class="form_wrap form_amount">
+									<div class="form_wrap">
 										<input type="number" placeholder="숫자만 입력">
-										<span class="form_unit">만원</span>
-										<button type="button" class="btn_form"><span>전액</span></button>
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
 									</div>
 									<div class="form_msg confirm">성공 메시지</div>
 									<div class="form_msg error">실패 메시지</div>
-										<div class="option_area">
-										<button type="button" class="btn option">1만<span></span></button>
-										<button type="button" class="btn option">10만<span></span></button>
-										<button type="button" class="btn option">50만<span></span></button>
-										<button type="button" class="btn option">100만<span></span></button>
-										<button type="button" class="btn option">정정<span></span></button>
+									<div class="option_area">
+										<button type="button" class="btn option"><span>1만</span></button>
+										<button type="button" class="btn option"><span>10만</span></button>
+										<button type="button" class="btn option"><span>50만</span></button>
+										<button type="button" class="btn option"><span>100만</span></button>
+										<button type="button" class="btn option"><span>정정</span></button>
 									</div>
 								</div>
 							</div>
@@ -577,6 +742,44 @@
 										<td><input type="checkbox" id="chk06" class="box_chk" checked><label for="chk06">레이블</label></td>
 										<td><input type="checkbox" id="chk07" class="box_chk" disabled><label for="chk07">레이블</label></td>
 										<td><input type="checkbox" id="chk08" class="box_chk" checked disabled><label for="chk08">레이블</label></td>
+									</tr>
+									<tr>
+										<th scope="row">toggle</th>
+										<td>
+											<p>텍스트 레이블 있는 경우</p>
+											<label for="switch_toggle01">스위치 토글</label>
+											<div class="switch_toggle">
+												<input type="checkbox" id="switch_toggle01">
+												<label for="switch_toggle01" aria-hidden="true"></label>
+											</div>
+											<p>텍스트 레이블 없는 경우</p>
+											<div class="switch_toggle">
+												<input type="checkbox" id="switch_toggle02" checked>
+												<label for="switch_toggle02"><span class="blind">XXXX 선택</span></label>
+											</div>
+										</td>
+										<td>
+											<div class="switch_toggle">
+												<input type="checkbox" id="switch_toggle03" checked>
+												<label for="switch_toggle03" aria-hidden="true"></label>
+											</div>
+										</td>
+										<td>
+											<div class="switch_toggle">
+												<input type="checkbox" id="switch_toggle04" disabled>
+												<label for="switch_toggle04" aria-hidden="true"></label>
+											</div>
+										</td>
+										<td>
+											<div class="switch_toggle">
+												<input type="checkbox" id="switch_toggle05" checked disabled>
+												<label for="switch_toggle05" aria-hidden="true"></label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">전체선택</th>
+										<td rowspan="3"><input type="checkbox" class="right_chk" id="chk09"><label for="chk09" class="all_chk">전체선택</label></td>
 									</tr>
 								</tbody>
 							</table>

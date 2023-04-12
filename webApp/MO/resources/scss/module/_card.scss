@@ -6,139 +6,97 @@
 */
 
 .card{
-  &_item{
-    &+.card_item{
-      margin-top:24px;
-    }
-    input+.card_wrap{
-      display:block;
-      padding:24px;
-      .card_header{
-        padding-right:30px;
-      }
-      &:before{
-        top:20px;
-        right:20px;
-        left:auto;
-      }
-    }
-    input:checked+.card_wrap{
-      border: 1px solid #F8670D;
-      box-shadow: 0px 3px 10px rgba(248, 103, 13, 0.14);
-    }
-    input:disabled+.card_wrap{
-      background:#F9F9FB;
-      border-color:transparent;
-      box-shadow: none;
-      &:before{
-        display:none;
-      }
-    }
-    &.icon {
-      .card_wrap {
-        padding: 0;
-        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
-        
-        .item_link {
-          position: relative;
-          padding: 24px 50px 24px 68px;
-          display: block;
-          &:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            width: 32px;
-            height: 32px;
-            background: url($svg_icon_car) 50% 50% no-repeat;
-            background-size: 100%;
-            transform: translateY(-50%);
-          }
-          &:after{
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            width: 24px;
-            height: 24px;
-            background: url($svg_arrow_right_24) 50% 50% no-repeat;
-            background-size: 100%;
-            transform: translateY(-50%);
-          }
-        }
-      }
-      .card_header {
-        color: #3F3F41;
-        font-size: 15px;
-        font-weight: $fw_medium;
-        +.card_body:not(.border_top) {
-          margin-top: 6px;
-        }
-      }
-      .card_body {
-        margin-top: 6px;
-        color: #767678;
-        font-size: 13px;
-      }
-      +.icon {
-        margin-top: 10px;
-      }
-    }
-  }
-  &_wrap{
-    display:block;
-    padding:24px;
-    border-radius:16px;
-    background:#FFFFFF;
-    border: 1px solid transparent;
-    box-shadow:0px 3px 10px rgba(0, 0, 0, 0.1);
-    &.focus{
-      border: 1px solid #F8670D;
-      box-shadow: 0px 3px 10px rgba(248, 103, 13, 0.14);
-      .form_wrap.focus{
-        border-color:#1F1F21;
-      }
-    }
-  }
-  &_header{
-    &+.card_body{
-      margin-top:20px;
-      &:not(.border_top){
-        margin-top:32px;
-      }
-    }
-  }
-  &_body{
-    &.border_top{
-      padding-top:20px;
-      border-top:1px solid #EFEFF1;
-    }
-    &.border_bottom{
-      padding-bottom:20px;
-      border-bottom:1px solid #EFEFF1;
-    }
-    &+.card_footer{
-      margin-top:20px;
-    }
-  }
-  &_footer{
+	&_item{
+		&+.card_item{
+			margin-top:24px;
+		}
 
-  }
-}
+		&.check_type .card_wrap,
+		input+.card_wrap{
+			display:block;
+			padding:24px;
+			border:1px solid transparent;
+			&:before{
+				top:20px;
+				right:20px;
+				left:auto;
+			}
+			.card_header,
+			.dl_head{
+				padding-right:30px;
+				.title{
+					@include fz16();
+					letter-spacing:-0.04em;
+				}
+			}
+		}
+		&.check_type .card_wrap{
+			.card_header,
+			.dl_head{padding-right:0;}
+		}
+		&.check_type.checked .card_wrap,
+		input:checked+.card_wrap{
+			border-color:#F8670D;
+			box-shadow: 0px 3px 10px rgba(248, 103, 13, 0.14);
+		}
+		&.check_type.disabled .card_wrap,
+		input:disabled+.card_wrap{
+			background:#F9F9FB;
+			border-color:transparent;
+			box-shadow: none;
+			&:before{
+				display:none;
+			}
+			.dl_head{
+				.title{
+					color: #555557;
+				}
+			}
+		}
+	}
+	&_wrap{
+		display:block;
+		padding:24px;
+		border-radius:16px;
+		background:#FFFFFF;
+		border: 1px solid transparent;
+		box-shadow:0px 3px 10px rgba(0, 0, 0, 0.1);
+		&.focus{
+			border-color:#F8670D !important;
+			box-shadow: 0px 3px 10px rgba(248, 103, 13, 0.14);
+			.form_wrap.focus{
+				border-color:#1F1F21;
+			}
+		}
+	}
+	&_header{
+		&+.card_body{
+			margin-top:20px;
+			&:not(.border_top){
+				margin-top:32px;
+			}
+		}
+	}
+	&_body{
+		&.border_top{
+			padding-top:20px;
+			border-top:1px solid #EFEFF1;
+		}
+		&.border_bottom{
+			padding-bottom:20px;
+			border-bottom:1px solid #EFEFF1;
+		}
+		&+.card_footer{
+			margin-top:20px;
+		}
+	}
+	&_footer{
 
-.card_list {
-  .title_area {
-    align-items: center;
-    i {
-      width: 26px;
-      height: 26px;
-    }
-  }
-  .h3 {
-    > a.link {
-      color: $gray850;
-      font-size: $fz_lg;
-      font-weight: $fw_medium;
-    }
-  }
+	}
+	&_utill{
+		text-align:right;
+		&+.card_item{
+			margin-top:20px;
+		}
+	}
 }

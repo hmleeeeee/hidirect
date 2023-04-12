@@ -1,0 +1,403 @@
+/* ***************************************************************************
+ * 2020-05 - Main Design New *
+ * ************************************************************************* */
+
+/* Slider */
+.slick-slider{
+	position:relative;
+	display:block;
+	box-sizing:border-box;
+	-webkit-user-select:none;
+		 -moz-user-select:none;
+			-ms-user-select:none;
+					user-select:none;
+	-webkit-touch-callout:none;
+	-khtml-user-select:none;
+	-ms-touch-action:pan-y;
+			touch-action:pan-y;
+	-webkit-tap-highlight-color:transparent}
+.slick-list{
+	position:relative;
+	display:block;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+}
+.slick-list:focus{outline:none}
+.slick-list.dragging{cursor:pointer;cursor:hand}
+.slick-slider .slick-track,
+.slick-slider .slick-list{
+	-webkit-transform:translate3d(0, 0, 0);
+		 -moz-transform:translate3d(0, 0, 0);
+			-ms-transform:translate3d(0, 0, 0);
+			 -o-transform:translate3d(0, 0, 0);
+					transform:translate3d(0, 0, 0)}
+.slick-track{
+	position:relative;
+	top:0;
+	left:0;
+	display:block}
+.slick-track:before,
+.slick-track:after{
+	display:table;
+	content:''}
+.slick-track:after{clear:both}
+.slick-loading .slick-track{visibility:hidden}
+.slick-slide{
+	display:none;
+	float:left;
+	height:100%;
+	min-height:100%}
+[dir='rtl'] .slick-slide{float:right}
+.slick-slide img{display:block;width:100%}
+.slick-slide.slick-loading img{display:none}
+.slick-slide.dragging img{pointer-events:none}
+.slick-initialized .slick-slide{display:block}
+.slick-loading .slick-slide{visibility:hidden}
+.slick-vertical .slick-slide{display:block;height:auto; border:1px solid transparent}
+.slick-arrow.slick-hidden{display:none}
+
+.slick .slick-dots{position:absolute;bottom:1.7rem;left:0;width:100%;height:1.6rem;text-align:center}
+.slick .slick-dots li{position:relative;display:inline-block;width:1.3rem;height:1.3rem;margin:0 5px;padding:0;cursor:pointer;border-radius:5rem;background:#b8b8b8}
+.slick .slick-dots li.slick-active{background:#fc843b}
+.slick .slick-dots li button{font-size:0;line-height:0;display:block;width:1.3rem;height:1.3rem;padding:0.55rem;cursor:pointer;border:0}
+.slick .slick-dots li button:focus{outline:0.1rem dotted #777;cursor:pointer}
+
+/* main - 개선/202005 */
+#h1Main{overflow:hidden;background:#fff}
+#h1Main img{border:0;vertical-align:top}
+header.mainHeader{position:absolute;border-bottom:none;height:32px;background:transparent !important}
+header.mainHeader h1{overflow:hidden;position:absolute;top:15px;left:18px;margin:0;padding:0;width:105px;height:16px}
+header.mainHeader h1 img{position:absolute;top:0;left:0;height:100%;transition:all .5s}
+
+header.mainHeader .btnAll{position:absolute;top:12px;right:18px;width:19px;height:17px}
+header.mainHeader .bellArea{position:absolute;top:12px;right:47px}
+header.mainHeader .bellArea a{display:block;width:18px;height:18px}
+header.mainHeader .bellArea a em{position:absolute;top:-4px;right:-3px;display:inline-block;width:11px;height:11px;line-height:1rem;border-radius:10px;border:1px solid #000000;background-color:#e67201;text-align:center;font-size:8px;color:#ffffff;letter-spacing:-1px;text-indent:-1px}
+header.mainHeader .btnAll img,
+header.mainHeader .bellArea img{width:100%;vertical-align:top}
+
+/*
+.topArea{position:relative;overflow:hidden;padding:32px 0 0;min-height:364px;box-sizing:border-box;background:url('https://mdirect.hi.co.kr/images/main/img_top_visual202005.jpg') no-repeat;border-bottom:1px solid #dcdcdc;background-size:cover;line-height:1.3}
+.topArea .txArea{padding:15px 18px 0;color:#2d2d2d;text-align:left;font-size:13px;}
+.topArea .txArea > .txTi{margin-top:6px;line-height:1.1em;letter-spacing:0;font-weight:500;font-size:25px;color:#e67401}
+.topArea .txArea > .tx1{line-height:1.2em;font-size:12px;color:#000}
+.topArea .txArea > .tx2{font-family:'NotoSans-light';letter-spacing:-1px;font-size:12px;color:#727171}
+.topArea .txArea > .btArea{margin:1rem 0}
+.topArea .txArea > .btArea a.btJoin{display:inline-block;padding:7px 15px 8px;height:17px;line-height:16px;background:#e67401;text-align:center;font-family:'NotoSans-light';font-weight:600;font-size:16px;color:#fff;letter-spacing:-0.7px}
+*/ 
+
+/* Main Top Area /2206 */
+.topArea{position:relative;overflow:hidden;padding:32px 0 0;min-height:335px;box-sizing:border-box;background:url('https://mdirect.hi.co.kr/images/main/img_top_visual2022.jpg') no-repeat left 10%;border-bottom:1px solid #dcdcdc;background-size:cover;line-height:1.3}
+.topArea .txArea{padding:15px 18px 0;color:#2d2d2d;text-align:left;font-size:13px;}
+.topArea .txArea > .btArea{margin:1.5rem 0 0}
+.topArea .txArea > .btArea a.btJoin{display:inline-block;max-width:104px;}
+.topArea .txArea > .btArea a.btJoin > img{display:inline-block;width:100%;}
+.topArea .txArea > img{display:inline-block;width:75%;max-width:230px}
+/* Slider Banner */
+.topArea .topBn{position:absolute;bottom:20px;width:100%;height:105px}
+.topArea .topBn #topSlider{position:relative;height:105px;background:none}
+.topArea .topBn #topSlider ul{display:flex;white-space:nowrap;width:100%}
+.topArea .topBn #topSlider ul li:first-child{padding-left:18px}
+.topArea .topBn #topSlider ul li:last-child{padding-right:18px}
+.topArea .topBn #topSlider ul li{padding-left:10px;width:105px;height:105px;}
+.topArea .topBn #topSlider ul li a{display:block;box-sizing:border-box;width:105px;height:105px;border:1px solid #9fa0a0}
+.topArea .topBn #topSlider ul li a img{width:100%}
+.topArea .topBn #topSlider .touchflow-scrollbar{position:absolute;bottom:-12px;right:0;overflow:hidden;background:rgba(0,0,0,0.1);transition:300ms}
+.topArea .topBn #topSlider .touchflow-scrollbar > div{position:absolute;top:0;left:0;background:rgba(0,0,0,0.3)}
+
+/* 다이렉트 보험상품 /수정2209 */
+.directInsuArea{padding:23px 18px 0;color:#f0f0f0}
+.directInsuArea h3{margin:0 0 12px;height:18px;line-height:16px;font-size:17px;text-align:center;letter-spacing:-0.5px}
+.directInsuArea h3 strong{color:#e67401}
+.directInsuArea .insuList{
+display:grid;		
+grid-template-columns:repeat(2, 1fr);
+grid-template-rows:57px 57px 57px 57px 57px 57px 57px;
+grid-auto-columns:1fr;
+grid-gap:6px
+}
+.directInsuArea .insuList p{position:relative;width:100%;height:100%;box-sizing:border-box;border:1px solid #9fa0a0;background-color:#fff}
+.directInsuArea .insuList p a{display:block;width:100%;height:100%}
+.directInsuArea .insuList p .ti{display:inline-block;margin-left:10px;padding-top:11px;height:15px;line-height:14px;font-size:13px;color:#222;letter-spacing:-0.5px}
+.directInsuArea .insuList p .tiArea{display:flex;padding-top:12px;line-height:14px}
+.directInsuArea .insuList p .tiArea > .ti{position:relative;padding-top:0}
+.directInsuArea .insuList p .tiArea > .ti + em{display:inline-block;margin-left:3px;padding:0 6px;height:15px;line-height:14px;border-radius:7.5px;background-color:#00afc9;text-align:center;font-family:'NotoSans-light';font-weight:normal;font-size:12px;color:#fff;letter-spacing:-1px;vertical-align:top}
+.directInsuArea .insuList p .tiArea > .ti .flagImg{display:inline-block;position:absolute;top:-5px;right:-26px;width:23.5px;}
+.directInsuArea .insuList p .tiArea > .ti .flagImg img{width:100%}
+.directInsuArea .insuList p .tiArea .pointEvent{display:inline-block;margin-left:3px;width:33px;height:15px}
+.directInsuArea .insuList p .tiArea .pointEvent img{width:100%}
+.directInsuArea .insuList p .tiArea .fgBlue{display:inline-block;margin-left:5px;padding:0 4px 0 3px;box-sizing:border-box;height:15px;line-height:14px;letter-spacing:-1px;background-color:#009ab1;text-align:center;font-weight:300;font-size:9px;color:#fff;vertical-align: top;}/* 웹접근성 202209 */
+.directInsuArea .insuList p .tx{display:block;margin-top:3px;margin-left:10px;font-size:11px;color:#666;line-height:1.3em;letter-spacing:-0.8px}
+.directInsuArea .insuList p .tx span{color:#e67401}
+/* Insurance ICON /2209 */
+.directInsuArea .insuList p.bgDriver{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_driver.png');background-repeat:no-repeat;background-position:right 10px center;background-size:20px auto}
+.directInsuArea .insuList p.bgAbroad{background-image:url('https://mdirect.hi.co.kr/images/main/bg_insu_abroad-ic.png');background-repeat:no-repeat;background-position:right 10px center;background-size:21px auto}
+.directInsuArea .insuList p.bgAbroad2{background-image:url('https://mdirect.hi.co.kr/images/main/bg_insu_abroad.png');background-repeat:no-repeat;background-position:right bottom;background-size:75% auto}
+.directInsuArea .insuList p.bgFire{background-image:url('https://mdirect.hi.co.kr/images/main/bg_insu_fire.png');background-repeat:no-repeat;background-position:right bottom;background-size:80% auto}
+.directInsuArea .insuList p.bgFire2{background-image:url('https://mdirect.hi.co.kr/images/main/bg_insu_fire2.png');background-repeat:no-repeat;background-position:right bottom;background-size:58% auto}
+.directInsuArea .insuList p.bgFire3{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_fire3.png');background-repeat:no-repeat;background-position:right 10px center;background-size:20px auto}
+.directInsuArea .insuList p.bgLong{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_long.png');background-repeat:no-repeat;background-position:right 10px center;background-size:23px auto}
+.directInsuArea .insuList p.bgLong2{background-image:url('https://mdirect.hi.co.kr/images/main/bg_insu_long.png');background-repeat:no-repeat;background-position:right bottom;background-size:85% auto}
+.directInsuArea .insuList p.bgLong3{background-image:url('https://mdirect.hi.co.kr/images/main/bg_insu_long2.png');background-repeat:no-repeat;background-position:right bottom;background-size:75% auto}
+.directInsuArea .insuList p.bgCpFire{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_cpFire.png');background-repeat:no-repeat;background-position:right 10px center;background-size:20px auto}
+.directInsuArea .insuList p.bgTrain{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_train.png');background-repeat:no-repeat;background-position:right 10px center;background-size:17px auto}
+.directInsuArea .insuList p.bgTravel{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_travel2007.png');background-repeat:no-repeat;background-position:right bottom;background-size:80% auto}
+.directInsuArea .insuList p.bgChildren{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_children.png');background-repeat:no-repeat;background-position:right 5px center;background-size:26px auto}
+.directInsuArea .insuList p.bgPet{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_pet.png');background-repeat:no-repeat;background-repeat:no-repeat;background-position:right 9px center;background-size:18px auto}
+.directInsuArea .insuList p.bgHealth{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_health.png');background-repeat:no-repeat;background-position:right 10px center;background-size:20px auto}
+.directInsuArea .insuList p.bgDamage{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_damage.png');background-repeat:no-repeat;background-position:right 10px center;background-size:20px auto}
+.directInsuArea .insuList p.bgGolf{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_golf.png');background-repeat:no-repeat;background-position:right 10px center;background-size:18.5px auto}
+.directInsuArea .insuList p.bgGolf2{background-image:url('https://mdirect.hi.co.kr/images/main/bg_insu_golf.png');background-repeat:no-repeat;background-position:right bottom;background-size:80% auto}
+.directInsuArea .insuList p.bgCancer{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_heart.png');background-repeat:no-repeat;background-position:right 10px center;background-size:20px auto}
+.directInsuArea .insuList p.bgPens{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_pens.png');background-repeat:no-repeat;background-position:right 10px center;background-size:16px auto}
+.directInsuArea .insuList p.bgFace{background-image:url('https://mdirect.hi.co.kr/images/main/bg_insu_face.png');background-repeat:no-repeat;background-position:right bottom;background-size:80% auto}
+.directInsuArea .insuList p.bgLuggage{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_luggage.png');background-repeat:no-repeat;background-position:right 10px center;background-size:20px auto}
+.directInsuArea .insuList p.bgAirplane{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_airplane.png');background-repeat:no-repeat;background-position:right 10px center;background-size:20px auto}
+.directInsuArea .insuList p.bgWind{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_wind.png');background-repeat:no-repeat;background-position:right 11px center;background-size:20.5px auto}
+.directInsuArea .insuList p.bgArw a{background-image:url('https://mdirect.hi.co.kr/images/main/img_insu_arw.png');background-repeat:no-repeat;background-position:left 10px bottom 10px;background-size:39px auto}
+.directInsuArea .insuList p.flagB:after,
+.directInsuArea .insuList p.flagO:after,
+.directInsuArea .insuList p.flagNew:after{display:block;position:absolute;top:-1px;right:-1px;width:36px;height:31px;line-height:26px;text-align:center;font-family:'NotoSans-light';font-weight:normal;font-size:12px;color:#fff;letter-spacing:-1px;}
+.directInsuArea .insuList p.flagB:after{content:'추천';background:url('https://mdirect.hi.co.kr/images/main/bg_flag_blue.png') no-repeat 0 0;background-size:100% 100%}
+.directInsuArea .insuList p.flagO:after{content:'이벤트';background:url('https://mdirect.hi.co.kr/images/main/bg_flag_org.png') no-repeat 0 0;background-size:100% 100%}
+.directInsuArea .insuList p.flagNew:after{content:'NEW';top:5px;right:3px;width:27px;height:27px;background:url('https://mdirect.hi.co.kr/images/main/bg_flag_new.png') no-repeat 0 0;background-size:100% 100%;font-size:1px;text-indent:-99999px}
+
+/* 타임쉐어 자동차보험 /수정202007 */
+.timeBnArea{position:relative;margin-top:23px;width:100%;min-height:66px}
+.timeBnArea #topSlider2{position:relative;}
+.timeBnArea #topSlider2 ul{display:flex;white-space:nowrap;width:100%}
+.timeBnArea #topSlider2 ul li{padding-right:9px;min-width:260px}
+.timeBnArea #topSlider2 ul li a{display:block}
+.timeBnArea #topSlider2 ul li a img{width:100%}
+.timeBnArea #topSlider2 ul li:first-child{padding-left:18px}
+.timeBnArea #topSlider2 ul li:last-child{padding-right:18px}
+
+/* 혜택/이벤트 /202005 */
+.eventAreaMain{padding:23px 18px 25px;border-bottom:1px solid #e5e7e7;background-color:#fff}
+.eventAreaMain img{width:100%}
+.eventAreaMain h3{margin:0 0 12px;height:18px;line-height:16px;font-size:17px;text-align:center;letter-spacing:-0.5px} /* 수정 /200525 */
+.eventAreaMain h3 strong{color:#e67401}
+.eventAreaMain ul > li:first-child{margin-top:0}
+.eventAreaMain ul > li{margin-top:10px}
+
+/* MY 다이렉트 /202005 */
+.myDirectArea{padding:23px 18px 25px;border-bottom:1px solid #e5e7e7;background-color:#f0f0f0}
+.myDirectArea h3{margin:0 0 12px;height:18px;line-height:16px;font-size:17px;text-align:center;letter-spacing:-0.5px} /* 수정 /200525 */
+.myDirectArea h3 strong{color:#e67401}
+.myDirectArea ul{display:flex;flex-wrap:wrap;border:1px solid #e5e7e7 }
+.myDirectArea ul li{width:50%;box-sizing:border-box}
+.myDirectArea ul li:nth-child(even){border-left:1px solid #e5e7e7}
+.myDirectArea ul li:nth-child(n+3){border-top:1px solid #e5e7e7}
+.myDirectArea ul li a{display:block;padding:13px 0 13px 23%;height:14px;line-height:13px;font-size:13px;color:#221815;letter-spacing:-1px}
+.myDirectArea ul li.ic01{background:#fff url('https://mdirect.hi.co.kr/images/main/ic_myDirect01.png') no-repeat 8% center;background-size:13px auto}
+.myDirectArea ul li.ic02{background:#fff url('https://mdirect.hi.co.kr/images/main/ic_myDirect02.png') no-repeat 6% center;background-size:15px auto}
+.myDirectArea ul li.ic03{background:#fff url('https://mdirect.hi.co.kr/images/main/ic_myDirect03.png') no-repeat 6% center;background-size:19px auto}
+.myDirectArea ul li.ic04{background:#fff url('https://mdirect.hi.co.kr/images/main/ic_myDirect04.png') no-repeat 8% center;background-size:13px auto}
+.myDirectArea ul li.ic05{background:#fff url('https://mdirect.hi.co.kr/images/main/ic_myDirect05.png') no-repeat 6% center;background-size:15px auto}
+.myDirectArea ul li.ic06{background:#fff url('https://mdirect.hi.co.kr/images/main/ic_myDirect06.png') no-repeat 6% center;background-size:15px auto}
+
+/* 기부안내 /수정202007 */
+.donationArea{background-color:#00afc9;color:#fff;letter-spacing:-0.5px}
+.donationArea a{display:block;padding:15px 18px;background:url('https://mdirect.hi.co.kr/images/main/img_bg_donation.png') no-repeat right 12px bottom 13px;background-size:120px auto;color:#fff}
+.donationArea .ti{display:block;height:14px;line-height:1.4em;font-size:14px} /* 2201변경 */
+.donationArea .tx{display:block;margin-top:26px;line-height:1.3em;font-size:12px;color:#b8f3fc} /* 2201변경 */
+.donationArea .tx strong{color:#fdee05}
+.donationArea .btDon{display:inline-block;margin-top:6px;padding:4px 7px 5px;height:13px;line-height:12px;border:1px solid #fff;text-align:center;font-size:12px;color:#fff}
+
+/* 공지사항 /202005 */
+.noticeArea{padding:25px 18px;background-color:#fff}
+.noticeArea .tiArea{display:flex;justify-content:space-between;padding-bottom:8px;height:14px;border-bottom:1px solid #000}
+.noticeArea .tiArea img{width:100%}
+.noticeArea .tiArea h3{margin:0;height:15px;line-height:13px;font-size:14px;color:#000}
+.noticeArea .tiArea a.btMore{display:block;width:14px;height:14px;font-size:0}
+.noticeArea .listNotice{padding-top:2px}
+.noticeArea .listNotice li{margin-top:10px}
+.noticeArea .listNotice li > a{display:block;overflow:hidden;height:14px;line-height:13px;font-size:13px;color:#595757;letter-spacing:-0.5px;vertical-align:top;white-space: nowrap;text-overflow: ellipsis}
+
+/* 고객센터 /202005 */
+.centerArea{display:flex;flex-wrap:wrap;padding:0 18px 25px;background-color:#fff}
+.centerArea > div{box-sizing:border-box;padding:12px 0 13px 4%;width:49%;border:1px solid #e5e7e7}
+.centerArea > div .ti{display:inline-block;height:15px;line-height:14px;font-size:14px;color:#000}
+.centerArea > div .tx{display:block;margin-top:3px;height:12px;line-height:11px;font-size:12px;color:#727171}
+.centerArea > div .tx2{display:block;margin-top:3px;height:12px;line-height:11px;font-size:12px;color:#727171}
+.centerArea > div a.btCall{display:block;margin-top:5px;height:18px;line-height:17px;font-size:18px;color:#e67401}
+.centerArea > div a.btCall span{display:inline-block;color:#047db5}
+.centerArea div.interArea{margin-right:2%;background:url('https://mdirect.hi.co.kr/images/main/ic_center_internet.png') no-repeat right 11px top 12px;background-size:15% auto}
+.centerArea div.callArea{background:url('https://mdirect.hi.co.kr/images/main/ic_center_call.png') no-repeat right 11px top 12px;background-size:15% auto}
+.centerArea div.acdArea{margin-top:2%;width:100%;background:url('https://mdirect.hi.co.kr/images/main/ic_center_acd.png') no-repeat right 12px center;background-size:12% auto}
+.centerArea div.acdArea .tiArea{display:flex}
+.centerArea div.acdArea .tiArea > .ti{font-weight:normal}
+.centerArea div.acdArea .tiArea > .ti + em{margin-left:3px;padding:0 8px;height:15px;line-height:14px;border-radius:7.5px;background-color:#00afc9;text-align:center;font-family:'NotoSans-light';font-weight:normal;font-size:12px;color:#fff;letter-spacing:-1px;} /* 수정 /202006 */
+
+/* 자동차보험가입 버튼 지속 노출 /1905 */
+.joinBtnArea{position:fixed;top:-182px;left:0;z-index:50;padding:12px 7% 16px;width:86%;border-bottom:1px solid #f0aa64;background:rgba(255,255,255,1);transition:all .2s linear} /* 접근성 /2005 */
+.joinBtnArea:focus, .joinBtnArea.on{top:0} /* 접근성 /2005 */
+.joinBtnArea .img{margin-bottom:16px;text-align:center}
+.joinBtnArea .img img{width:100%;max-width:365px}
+.joinBtnArea .btArea{display:flex;justify-content:space-around;padding:0 2px}
+.joinBtnArea .btArea span{flex:1;margin:0 5px 0 0}
+.joinBtnArea .btArea span a{display:block;padding:10px 0;height:22px;line-height:22px;border:1px solid #e67401;background:#e67401;text-align:center;font-size:17px;font-weight:normal;color:#ffffff;letter-spacing:-1px}
+.joinBtnArea .btArea span+span{margin:0 0 0 5px}
+.joinBtnArea .btArea span+span a{border:1px solid #047db5;background-color:#047db5}
+
+/* 간편설계 배너 /202005 */
+.btEasyCar{position:absolute;right:0;bottom:30px;width:260px;height:40px;background:url('https://mdirect.hi.co.kr/images/main/img_bg_easyJoin.png') no-repeat 0 0;background-size:100% auto}
+.btEasyCar a{position:relative;display:block;width:100%;height:100%}
+.btEasyCar a img{width:100%;vertical-align:top}
+.btEasyCar a.btClose{position:absolute;right:10px;top:50%;width:20px;height:20px;transform:translate(0, -55%)}
+
+/* 레이어 슬라이드 배너 /수정202007 */
+.dim_main{position:fixed;top:0;left:0;z-index:110;width:100%;height:100%;background:rgba(0,0,0,0.3);touch-action:none}
+.layerSlide{position:absolute;top:50%;left:50%;z-index:111;width:85%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);touch-action:none;outline:none} /* 수정/2101 */
+.layerSlide img{width:100%;vertical-align:top}
+.layerSlide .btArea{display:flex;justify-content:space-between}
+.layerSlide .btArea a{display:block;flex:1}
+.layerSlide .slick-prev{font-size:0;line-height:0;color:transparent;position:absolute;top:50%;left:0;width:8%;height:auto;background:none;cursor:pointer;z-index:1;transform:translate(0, -50%)} /* 수정/2101 */
+.layerSlide .slick-next{font-size:0;line-height:0;color:transparent;position:absolute;top:50%;right:0;width:8%;height:auto;background:none;cursor:pointer;z-index:1;transform:translate(0, -50%)} /* 수정/2101 */
+.layerSlide .slick-prev > a,
+.layerSlide .slick-next > a{display:block} /* 추가/2101 */
+
+/* QuickMenu */
+.quickMenu{position:fixed;bottom:1.9rem;right:1.9rem;z-index:101}
+.quickMenu > .bnArea{position:relative;width:100%;height:25.2rem} /* 수정 /202006 */
+.listQm{display:none;position:relative;bottom:-5.1rem;padding-right:0.3rem}
+.listQm > li{display:block;overflow:hidden;position:relative;left:0;height:5.1rem;margin-top:5.1rem;padding:0.1rem 0.1rem 1rem;text-align:right;box-sizing:border-box}
+.listQm > li.qm1{display:block;top:15.3rem} 
+.listQm > li.qm2{top:5.1rem} 
+.listQm > li.qm3{top:-5.1rem}
+.listQm > li.qmAll{top:-15.3rem} 
+.listQm > li > a{display:inline-block;min-height:4rem;padding:1.2rem 5rem 0 0;font-weight:bold;font-size:1.3rem;color:rgba(255,255,255,0);box-sizing:border-box}
+.listQm > li.qm1 > a{background:url('https://mdirect.hi.co.kr/images/main/ico_qm1.png') no-repeat 100% 50%;background-size:4rem auto}
+.listQm > li.qm2 > a{background:url('https://mdirect.hi.co.kr/images/main/ico_qm2.png') no-repeat 100% 50%;background-size:4rem auto}
+.listQm > li.qm3 > a{background:url('https://mdirect.hi.co.kr/images/main/ico_qm3.png') no-repeat 100% 50%;background-size:4rem auto}
+.listQm > li.qmAll > a{background:url('https://mdirect.hi.co.kr/images/main/ico_qmAll.png') no-repeat 100% 50%;background-size:4rem auto}
+/* .listQm > li > a:focus{outline:0.1rem dotted #f7f7f7} */
+.btnQm{position:absolute;bottom:0;right:0;z-index:101;width:4.8rem;height:4.8rem;border-radius:50%;box-shadow:0 0.15rem 0.5rem 0.05rem rgba(0,0,0,0.2)}
+.btnQm a{display:block;width:4.8rem;height:4.8rem;background:url('https://mdirect.hi.co.kr/images/main/btn_qm.png') no-repeat 100% 50%;background-size:4.8rem auto}
+.btnQm a.on{background:url('https://mdirect.hi.co.kr/images/main/btn_qm_close.png') no-repeat 100% 50%;background-size:4.8rem auto}
+.btnQm a .state{overflow:hidden;position:absolute;top:0;left:0;width:0.1rem;height:0.1rem}
+.qmDim{position:fixed;left:0;top:0;z-index:99;width:100%;height:100%;background:rgba(0,0,0,0.5)}
+
+.qmallMenu{display:none;overflow:hidden;margin:auto 0px;position:relative;min-width:280px}
+.qmallMenu .allmenu{padding:10px;background:#fff}
+.qmallMenu .allmenu > li{display:block;float:left;width:50%;background:url('https://mdirect.hi.co.kr/images/main/bg_mArr.png') no-repeat 95% -197px;background-size:14px auto;box-sizing:border-box}
+.qmallMenu .allmenu > li:nth-child(odd){content:"";clear:both}
+.qmallMenu .allmenu > li > a{display:block;color:#636363;font-size:12px;padding:7px 0px 10px 5px;letter-spacing:-0.8px} /* line-height:43px;*/
+.qmallMenu .allmenu > li:nth-child(1){background-position:95% 10px}
+.qmallMenu .allmenu > li:nth-child(2){background-position:95% 10px}
+.qmallMenu .allmenu > li:nth-child(3){background-position:95% -94px}
+.qmallMenu .allmenu > li:nth-child(4){background-position:95% -94px}
+.qmallMenu .allmenu > li:nth-child(5){background-position:95% -94px}
+.qmallMenu .allmenu:after{content:"";display:block;clear:both}
+
+.qmallMenu .titleBar{background:#fc8842;color:#fff;font-size:1.3rem;font-weight:bold;padding:10px 15px;letter-spacing:-0.8px}
+.qmallMenu .titleBar a.Close{color:transparent;display:block;width:37px;height:37px;position:absolute;right:0;bottom:0;background:url('https://mdirect.hi.co.kr/images/common/bg_close.png') no-repeat;background-size:20px auto;background-position:0px 8px}
+
+/* 전체메뉴 개선 /202007 */
+.allMenuWrap{display:none;position:fixed;top:0;right:-100%;width:100%;height:100%;z-index:9999;box-sizing:border-box;background:#f6f6f6;transition:right 0.3s;-webkit-transition:right 0.3s;} /* 수정 /202007 */
+.allMenuWrap.on{right:0%}
+
+.allMenuWrap .logo{box-sizing:border-box;height:42px;background:url('https://mdirect.hi.co.kr/images/main/img_logo01.png') no-repeat center center;border-bottom:1px solid #e0e0e0;background-size:auto 16px;color:transparent}
+.allMenuWrap .menuArea{position:relative;box-sizing:border-box;height:100%}
+.allMenuWrap .menuArea .menuList{position:relative;box-sizing:border-box;height:100%;background:#454c5e}
+.allMenuWrap .menuArea .menuList > li{width:100%;height:100%;}
+.allMenuWrap .menuArea .menuList > li > a.dept01,
+.allMenuWrap .menuArea .menuList > li > a.dept02{display:block;position:absolute;left:0;box-sizing:border-box;z-index:2;padding-left:14px;width:31%;height:50px;line-height:54px;text-align:left;font-size:13px} /* 보험상품 */
+.allMenuWrap .menuArea .menuList > li + li > a.dept01{top:50px} /* MY다이렉트 */
+.allMenuWrap .menuArea .menuList > li + li + li > a.dept01{top:100px} /* 혜택/이벤트 */
+.allMenuWrap .menuArea .menuList > li + li + li + li > a.dept01{top:150px} /* 따뜻한 나눔 */
+.allMenuWrap .menuArea .menuList > li + li + li + li + li > a.dept01{top:200px} /* 고객센터 */
+.allMenuWrap .menuArea .menuList > li + li + li + li + li + li > a.dept02{top:250px} /* 앱설정 */
+.allMenuWrap .menuArea .menuList > li.has > a.dept01,
+.allMenuWrap .menuArea .menuList > li.has > a.dept02{background:#454c5e;color:#fff} 
+.allMenuWrap .menuArea .menuList > li.hasOn > a.dept01{background:#fff;color:#ee5a00} /* 웹접근성 202209 */
+.allMenuWrap .menuArea .menuList > li.hasOn > a.dept01:after{content:'';display:block;position:absolute;top:16px;left:14px;width:8px;height:2px;background-color:#fc843b}
+.allMenuWrap .menuArea .menuList > li.hasOn .submenuList{z-index:2}
+
+.allMenuWrap .menuArea .menuList > li .submenuList{position:absolute;top:0;right:0;overflow:hidden;box-sizing:border-box;padding:0 4%;width:69%;height:100%;background-color:#fff;}
+.allMenuWrap .menuArea .menuList > li .submenuList li{box-sizing:border-box}
+.allMenuWrap .menuArea .menuList > li .submenuList li:last-child dl{border-bottom:0}
+.allMenuWrap .menuArea .menuList > li .submenuList li > a{z-index:2;padding:8px 0;height:13px;line-height:12px;font-size:12px;color:#636363;cursor:pointer}
+.allMenuWrap .menuArea .menuList > li .submenuList li dl{padding:12px 0;border-bottom:1px solid #c9caca}
+.allMenuWrap .menuArea .menuList > li .submenuList li dl dt{padding:8px 0 9px;height:14px;line-height:13px;font-size:13px;color:#057eb7}
+.allMenuWrap .menuArea .menuList > li .submenuList li dl dd{box-sizing:border-box}
+.allMenuWrap .menuArea .menuList > li .submenuList li dl dd > a{display:block;z-index:2;padding:8px 0;height:13px;line-height:12px;font-size:12px;color:#636363;cursor:pointer}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuMenu{display:flex;align-items:center;box-sizing:border-box;height:50px} /* 수정 /202007 */
+.allMenuWrap .menuArea .menuList > li .submenuList .insuMenu p{margin-left:3%}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuMenu p:first-child{margin-left:0}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuMenu p:first-child a{background:url('https://mdirect.hi.co.kr/images/common/bt_insuMenuI_off.png') no-repeat 0 0;background-size:100% auto}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuMenu p:first-child.on a{background:url('https://mdirect.hi.co.kr/images/common/bt_insuMenuI_on.png') no-repeat 0 0;background-size:100% auto}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuMenu p:last-child a{background:url('https://mdirect.hi.co.kr/images/common/bt_insuMenuT_off.png') no-repeat 0 0;background-size:100% auto}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuMenu p:last-child.on a{background:url('https://mdirect.hi.co.kr/images/common/bt_insuMenuT_on.png') no-repeat 0 0;background-size:100% auto}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuMenu p a{display:block;z-index:3;width:95px;height:30px;cursor:pointer} /* 수정 /202007 */
+
+/* .allMenuWrap .menuArea .menuList > li .submenuList .insuListArea{position:relative;height:100%} */
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea{position:relative;height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea > ul{position:relative;height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;box-shadow:inset 0px 0px 0px 0px rgba(0,0,0,0)} /* 수정 /202007 */
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea > ul.insetShadow{box-shadow:inset 0px -71px 13px -80px rgba(0,0,0,1)} /* 수정 /202007 */
+.allMenuWrap .menuArea .menuList > li:first-child .submenuList .insuListArea .callBox{bottom:70px} /* 보험상픔 메뉴 적용 */
+.allMenuWrap .menuArea .menuList > li:first-child .submenuList .insuMenu + .insuListArea{/*min-height:750px*/} /*보험상픔 - 인터넷가입 메뉴 적용 */
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox{position:absolute;bottom:20px;padding:15px 0 14px 14px;box-sizing:border-box;width:100%;border:1px solid #e6e6e6;}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox.bg_internet{background:url('https://mdirect.hi.co.kr/images/common/ic_allmenu_call2.png') no-repeat right 14px top 15px;background-size:36px auto}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox.bg_tel{background:url('https://mdirect.hi.co.kr/images/common/ic_allmenu_call3.png') no-repeat right 14px top 15px;background-size:34px auto}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox .txTi{display:block;height:15px;line-height:14px;font-size:14px;color:#000}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox .tx{display:inline-block;height:13px;line-height:12px;letter-spacing:-0.5px;font-size:12px;color:#727171}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox .txTelArea{display:flex;align-items:center;margin-top:5px}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox .txTelArea > .tx{margin-left:2px}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox .txTel{display:inline-block;height:19px;line-height:18px;font-weight:500;font-size:18px;color:#047db5}
+.allMenuWrap .menuArea .menuList > li .submenuList .insuListArea .callBox .txTel > strong{font-weight:500;color:#e67401}
+
+.allMenuWrap .menuArea .menuList li p.infoTxt{border-top:1px solid #e6e6e6}
+.allMenuWrap .menuArea .menuList li p.infoTxt a{display:block;font-size:1.2rem;color:#636363;overflow:hidden;padding:1.5rem; background:url('https://mdirect.hi.co.kr/images/main/bg_mArr01.png') no-repeat 95% 50%;background-size:auto 15px;box-sizing:border-box;letter-spacing:-0.8px}
+.allMenuWrap .menuArea .menuList li p.infoTxt a em{color:#fa6705}
+.allMenuWrap .btnMenuClose{position:absolute;top:0px;right:5px;width:40px;height:40px;color:transparent;overflow:hidden;line-height:0;background:url('https://mdirect.hi.co.kr/images/main/btn_close.png') no-repeat center center;background-size:16px 16px}
+
+.allMenuWrap .bnBox{display:none;padding:1.5rem 1.5rem 3rem;background:#f6f6f6}
+.allMenuWrap .bnBox > a[class^=directBanner]{display:block;border:1px solid #e0e0e0;padding:1.2rem;color:#282828}
+.allMenuWrap .bnBox > a[class^=directBanner] strong{display:block; margin-bottom:5px}
+.allMenuWrap .bnBox > a[class^=directBanner] span{display:block;color:#636363;width:77%;line-height:1.7rem;font-size:1.2rem;word-break:keep-all}
+.allMenuWrap .bnBox > a[class^=directBanner] em{color:#fa6705}
+.allMenuWrap .bnBox > a.directBanner01{background:#fff url('https://mdirect.hi.co.kr/images/main/bg_direct01.png') no-repeat right 10px top 50%;background-size:40px auto;min-height:55px}
+.allMenuWrap .bnBox > a.directBanner02{background:#fff url('https://mdirect.hi.co.kr/images/main/bg_direct02.png') no-repeat right 10px top 50%;background-size:46px auto;min-height:55px}
+
+.allMenuWrap .menuArea .menuList > li.callAcd{display:block;position:absolute;top:inherit;bottom:18px;left:0;padding-top:47px;width:31%;height:auto;background:url('https://mdirect.hi.co.kr/images/common/ic_allmenu_call1.png') no-repeat center 0;background-size:50px auto;text-align:center}
+.allMenuWrap .menuArea .menuList > li.callAcd .tx{margin-bottom:10px;line-height:1.4;font-size:13px;color:#fff}
+.allMenuWrap .menuArea .menuList > li.callAcd .txTel{display:inline-block;height:16px;line-height:15px;margin-bottom:2px;font-weight:500;font-size:15px;color:#047db5}
+.allMenuWrap .menuArea .menuList > li.callAcd .txTel strong{font-weight:500;color:#e67401}
+.allMenuWrap .menuArea .menuList > li.callAcd .txBox{display:inline-block;padding:0 7px;height:16px;line-height:15px;border-radius:8px;background-color:#009ab1;text-align:center;font-family:'NotoSans-light';font-weight:normal;font-size:11px;color:#fff;letter-spacing:-1px;vertical-align:top;}/* 웹접근성 202209 */
+/* //전체메뉴 개선 /202006 */
+
+@media screen and (min-width :390px) {
+/* 다이렉트 보험상품 /추가2206 */
+.directInsuArea .insuList p .ti,
+.directInsuArea .insuList p .tiArea > .ti{font-size:14px}
+.directInsuArea .insuList p .tiArea > .ti + em{font-size:12px}
+.directInsuArea .insuList p .tx{margin-top:4px;letter-spacing:-0.5px;}
+}
+
+@media screen and (max-width :360px) {
+/* 다이렉트 보험상품 /수정2206 */
+.directInsuArea .insuList p .tiArea > .ti + em{height:14px;border-radius:7px;line-height:1.3rem;font-size:9px}
+.directInsuArea .insuList p .tx{letter-spacing:-1px;}
+.directInsuArea .insuList p.flagB:after,
+.directInsuArea .insuList p.flagO:after{width:28px;height:25px;line-height:21px;font-size:10px}
+
+/* 타임쉐어 자동차보험 /202005 */
+.timeBnArea .txArea{width:160px}
+
+/* MY 다이렉트 */
+.myDirectArea ul li a{padding:13px 0 13px 21%;height:13px;line-height:1;font-size:12px}
+
+/* 기부안내 */
+.donationArea{background-size:110px auto}
+.donationArea .ti{font-size:13px}
+.donationArea .tx{font-size:11px}
+
+/* 고객센터 /202005 */
+.centerArea > div .ti{height:14px;line-height:13px;font-size:13px}
+.centerArea > div .tx{margin-top:3px;height:11px;line-height:10px;font-size:11px}
+.centerArea > div .tx2{margin-top:3px;height:10px;line-height:9px;font-size:10px}
+.centerArea > div a.btCall{margin-top:6px;height:17px;line-height:16px;font-size:17px}
+.centerArea div.acdArea .tiArea > .ti + em{height:14px;border-radius:7px;line-height:13px;font-size:9px} /* 수정 /202006 */
+}

@@ -1,0 +1,286 @@
+@charset "utf-8";
+
+//=======================================================
+// Util.include
+//=======================================================
+@mixin blind() {
+	position:absolute;display:inline-block;font-size:1px;width:1px;height:1px;padding:0;margin:-1px;visibility:hidden;overflow:hidden;border:0;clip:rect(0, 0, 0, 0);
+}
+@mixin clearfix() {
+	&::after {display: block; content: ""; clear: both;}
+}
+@mixin clearfix {
+	&::after {display: block; content: ""; clear: both;}
+}
+@mixin ellipsis($width: 100%) {
+	display: inline-block; max-width: $width; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-wrap: normal;
+}
+//SVG icon Align Center
+@mixin bg-center {
+	content:'';position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+}
+
+//=======================================================
+// List Style
+//=======================================================
+@mixin list_dot(){
+	position: relative;padding-left: 16px; line-height: 26px; 
+	&:before{content: ""; position: absolute; left: 7px; top: 9px; width:3px; height:3px; background-color: #757679; border-radius: 50%;}
+}
+
+@mixin list_bar(){
+	position: relative;padding-left: 15px;line-height: 26px;
+	&:before{
+		position: absolute; content: ''; top: 12px; left: 0; width: 7px; height: 1px;background: #757679; 
+	}
+}
+
+// EAEBED
+@mixin list_basic(){
+	p{margin-bottom: 4px;}
+	p + p{margin-top: 12px;}
+	.imp_txt{margin-top: 12px;}
+
+	p, div{text-indent: 0;}
+
+	ul + p,
+	ol + p,
+	p + ul,
+	p + ol{margin-top: 12px;}
+
+	ul + ul,
+	ol + ol,
+	ul + ol,
+	ol + ul{margin-top: 12px;}
+
+	strong{color: #111; font-weight: $fw_medium;}
+
+	//list-type
+	ul, ol{
+		li{position: relative; margin-top: 8px;color: #757679;;
+			// word-break: keep-all; 
+			word-break: break-all; 
+			ul, ol{margin-top: 8px; 
+				li{
+					font-size: 15px;
+					line-height: 24px;
+					margin-top: 4px;
+				}
+			} //4px 
+		}
+		li:first-child{margin-top: 0; }
+	}
+	ol{
+		li{margin-top:20px;padding-left: 20px;text-indent:-17px; 
+			li{padding-left: 15px;text-indent:-15px; }
+			ul{
+				li{padding-left: 16px;text-indent:0px; 
+					@include list_bar(); 
+				}
+			}
+		}
+	}
+
+	ul > li{@include list_dot(); padding-left: 16px;
+		> ul >li{
+			@include list_bar(); 
+			padding-left: 16px;
+		}
+	}
+
+	ul.list_bar > li{
+		@include list_bar();padding-left: 16px;
+	}
+
+	ul, ol{
+		li{
+			.btn_area{margin-top: 6px; text-align: left;}
+			[class*=btn_]{text-indent:0}
+		}
+	}
+
+	p + [class*='btn_']{margin-top: 8px;}
+	p.tit + [class*='btn_']{margin-top: 0;}
+	ul + [class*='btn_'],
+	ol + [class*='btn_']{margin-top: 8px;}
+	li{
+		br + [class*='btn_']{margin-top: 8px;}
+	}
+}
+
+
+@mixin table(){
+	//[Style based]: border-left, border-bottom
+
+	$table_border_top: 2px solid #000;
+	$table_border_bottom: 1px solid #000;
+	$table_border_side: none;
+
+	$thead_th_border_bottom: 1px solid #000;
+	$thead_th_border_left: 1px solid #000;
+	$thead_td_border_bottom: 1px solid #000;
+	$thead_last_border_bottom: 3px solid #000;
+
+	$tbody_th_border_bottom: 1px solid #000;
+	$tbody_th_border_left: 1px solid #000;
+	$tbody_td_border_bottom: 1px solid #ccc;
+	$tbody_td_border_left: 1px solid #ccc;
+
+	$tfoot_border_top: 3px solid #ff9900cc;
+	$tfoot_td_border_left: none;
+
+	//etc: bd_top
+	$tr_bd_strong: 2px solid #000; //구분 강조 라인
+
+	//bg
+	$thead_th_bg: #f9f9f9;
+	$tbody_th_bg: #f9f9f9;
+	$tbody_td_bg: #fff;
+	$tfoot_th_bg: #fff6ed;
+	$tfoot_td_bg: #fff6ed;
+
+	// style: bd, bg
+	//----------
+	& { 
+		position: relative; border-collapse: collapse;
+		border-top: $table_border_top; border-bottom: $table_border_bottom;
+		border-left:$table_border_side; border-right:$table_border_side;
+
+		th {border-left: $thead_th_border_left; border-bottom: $tbody_th_border_bottom; }
+		td {border-left: $tbody_td_border_left; border-bottom: $tbody_td_border_bottom; }
+		tr > *:first-child {border-left: none;}// Table left-border:none
+		tr:last-child{
+			td, th {border-bottom: none;}
+		}
+		thead{
+			th {border-left: $thead_th_border_left; border-bottom: $thead_th_border_bottom; background: $thead_th_bg;}
+			tr:last-child th{border-bottom: $thead_last_border_bottom;}
+			th[rowspan]{border-bottom: $thead_last_border_bottom;}
+		}
+		tbody{
+			th {border-left: $tbody_th_border_left;border-bottom: $tbody_th_border_bottom;background: $tbody_th_bg;}
+			td {border-left: $tbody_th_border_left;border-bottom: $tbody_th_border_bottom;background: $tbody_td_bg;}
+			th + td{border-left: $tbody_th_border_left;}
+		}
+		tfoot{
+			th{background: $tfoot_th_bg;}
+			td{border-left: $tfoot_td_border_left;background: $tfoot_td_bg;}
+			tr{
+				&:first-child{
+					th, td{border-top: $tfoot_border_top;}
+				}
+			}
+		}
+
+		//Border option
+		tr {
+			th.bd_l{border-left: $tbody_th_border_left;}
+			td.bd_l{border-left: $tbody_td_border_left;}
+			th.bd_r{border-right: $tbody_th_border_left;}
+			&.bd_strong{
+				th, td{border-top: $tr_bd_strong;}
+			}
+		}
+	}
+}
+
+
+@mixin table_style(){
+	& {
+		color: #000;font-size: 16px; font-weight: 300; 
+		strong {font-weight: 500; }
+
+		th,
+		td {height: 50px; padding: 10px 20px; line-height:1.2; text-align: left; vertical-align: middle;}
+
+		thead{
+			th{text-align: center;}
+		}
+		tbody{}
+		tfoot{
+			th,
+			td{font-weight:500;}
+			th{color:#000; text-align: left;}
+			td{color:$point_color;text-align:right;}
+		}
+	}
+}
+
+
+.ellipsis{@include ellipsis();}
+.list_basic{@include list_basic();}
+
+
+// .content_wrap{@include basicContent();}
+
+
+
+//--------------------
+//font
+@mixin fz14{
+	font-size: 14px;
+	line-height: 22px;
+	letter-spacing: -0.25px;
+	font-weight: $fw-bold;
+}
+@mixin fz15{
+	font-size: 15px;
+	line-height: 24px;
+	letter-spacing: -0.25px;
+	font-weight: $fw-regular;
+}
+@mixin fz16{
+	font-size: 16px;
+	line-height: 26px;
+	letter-spacing: -0.25px;
+	font-weight: $fw-regular;
+}
+@mixin fz18{
+	font-size: 18px;
+	color: #111;
+	line-height: 28px;
+	letter-spacing: -0.5px;
+	font-weight: $fw-medium;
+}
+@mixin fz20{
+	font-size: 20px;
+	color: #111;
+	line-height: 30px;
+	letter-spacing: -0.5px;
+	font-weight: $fw-medium;
+}
+@mixin fz22{
+	font-size: 22px;
+	color: #111;
+	line-height: 33px;
+	letter-spacing: -0.5px;
+	font-weight: $fw-bold;
+}
+@mixin fz24{
+	font-size: 24px;
+	color: #111;
+	line-height: 38px;
+	letter-spacing: -0.5px;
+	font-weight: $fw-bold;
+}
+@mixin fz28{
+	color: #111;
+	font-size: 28px;
+	line-height: 42px;
+	letter-spacing: -0.5px;
+	font-weight: $fw-bold;
+}
+
+@mixin h6{@include fz16();}
+@mixin h5{@include fz18();}
+@mixin h4{@include fz20();}
+@mixin h3{@include fz22();}
+@mixin h2{@include fz24();}
+
+// @mixin fontSize($value : 16px) {
+// 	font-size: $value;
+// 	@include mediaQuery(xs){
+// 		font-size: $value - 1;
+// 	}
+// }
+

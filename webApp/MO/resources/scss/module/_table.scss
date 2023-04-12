@@ -16,9 +16,9 @@
 // * Structure
 //-----------------
 .table_area{
-	.table_top{margin-bottom: 18px;display: flex; align-items: flex-end;}
+	.table_top{margin-bottom: 24px;display: flex; align-items: flex-end;}
 	.table_bottom{@include clearfix();margin-top: 12px;
-		.btn_area{
+		.btn_area{margin-top: 0;
 			.btn + .btn{margin-left: 5px;}
 		}
 	}
@@ -32,22 +32,22 @@
 .table{
 	&.col2{
 		colgroup{
-			col:nth-of-type(1){width:180px;}
+			col:nth-of-type(1){width:112px;}
 			col:nth-of-type(2){width:auto;}
 		}
 	}
 	&.col3{
 		colgroup{
-			col:nth-of-type(1){width:180px;}
+			col:nth-of-type(1){width:112px;}
 			col:nth-of-type(2){width:auto;}
 			col:nth-of-type(3){width:auto;}
 		}
 	}
 	&.col4{
 		colgroup{
-			col:nth-of-type(1){width:180px;}
-			col:nth-of-type(2){width:calc(50% - 180px);}
-			col:nth-of-type(3){width:180px;}
+			col:nth-of-type(1){width:112px;}
+			col:nth-of-type(2){width:calc(50% - 112px);}
+			col:nth-of-type(3){width:112px;}
 			col:nth-of-type(4){width:auto;}
 		}
 	}
@@ -83,12 +83,17 @@
 }
 
 
-
-
 // * Variation Type
 //-----------------
 .table{
 	&.ta_c{
+		th,
+		td {text-align: center;}
+	}
+
+	
+
+	&.ta_thc{
 		th,
 		td {text-align: center;}
 	}
@@ -161,8 +166,9 @@ table{
 
 
 
-// * table Type3: table_horizon
+// * table Type3: table_horizon 
 //-----------------
+//사용안함
 .table_horizon {position:relative;
 	.tbl_scroll_guide {display:none;}
 	.table_clone{position: relative; height: 50px; overflow: hidden; border-top: 1px solid $table_bdc_strong; border-bottom: 1px solid $table_bdc;
@@ -172,14 +178,14 @@ table{
 	}
 }
 
-
+//사용안함
 .horizon_scrollbar{position: relative;overflow-y: auto; max-height: calc(100vh - 350px);min-height: 50px;
 	padding-bottom: 8px;
 	table{position: relative;margin-top: 1px;  margin-top: -50px;}
 	& + .list_dot { margin-top: 20px; }
 	&.empty{height: 13px; min-height: 0; overflow-y: hidden !important;}
 }
-
+//사용안함
 .dialog {
 	.horizon_scrollbar{max-height: calc(100vh - 650px);}
 }

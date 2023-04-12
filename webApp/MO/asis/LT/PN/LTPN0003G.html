@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>연금보험 조건 설정</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>연금보험 조건 설정</h1>
+		<a href="#none" class="btnHome">메인으로 이동</a>
+		<a href="#none" class="btnInfo">5</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<p class="topTxt">연금 설계 조건을 설정해 주세요.</p><!-- 0822 텍스트 수정 -->
+
+	<section>
+		<ul class="inputWrap title">
+			<li class="two">
+				<dl>
+					<dt>납입 방법</dt>
+					<dd>
+						<select id="change1" title="납입 방법 선택">
+							<option value="">월납</option>
+							<option value="">일시불</option>
+						</select>
+					</dd>
+				</dl>
+			</li>
+			<li class="two">
+				<dl>
+					<dt>보험료</dt>
+					<dd>
+						<div class="inputWrap">
+							<input type="tel" id="won" required="">
+							<label for="won">보험 금액</label>
+						</div>
+					</dd>
+				</dl>
+			</li>
+		</ul>
+		<ul class="listDot">
+			<li>월납 : 보험료 최소 5만원 ~ 최대 150만원</li>
+			<li>연납 : 보험료 최소 60만원 ~ 최대 1800만원</li>
+		</ul>
+
+		<h2>납입기간</h2>
+		<div class="inputWrap">
+			<select title="납입기간 선택">
+				<option value="">월납</option>
+			</select>
+		</div>
+
+		<ul class="inputWrap title">
+			<li class="two">
+				<dl>
+					<dt>개시 연령</dt>
+					<dd>
+						<select id="change1" title="개시 연령 선택">
+							<option value="">선택</option>
+						</select>
+					</dd>
+				</dl>
+			</li>
+			<li class="two">
+				<dl>
+					<dt>수령 기간</dt>
+					<dd>
+						<select id="change1" title="수령 기간 선택">
+							<option value="">선택</option>
+						</select>
+					</dd>
+				</dl>
+			</li>
+		</ul>
+
+		<h2>수령방법</h2>
+		<div class="inputWrap">
+			<select title="수령방법 선택">
+				<option value="">매월</option>
+			</select>
+		</div>
+
+		<h2>추가 담보 선택</h2>
+		<ul class="listBox">
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" name="collata02" id="collata02_01"><label for="collata02_01"><span class="hide">특정여가활동 상해후유장해담보 동의</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">특정여가활동 상해후유장해담보</p>
+				</div>
+				<a href="#layerPopDetail1" class="btnLink"><span>더보기</span></a>
+			</li>
+		</ul>
+	</section>
+	 <div class="btnWrap">
+		<a href="#" role="button">예상 연금수령액 확인</a><!-- 0822 텍스트 수정 -->
+	</div>
+	<!-- content -->
+</div>
+
+<!-- 레이어팝업 : 상세보기 -->
+<div class="layerPopup" id="layerPopDetail1">
+	<div class="layerWrap">
+		<h2>특정여가 활동 상해 후유장해 담보</h2>
+		<div class="layerCont">
+			<p><strong>가입금액 : 1,000만원</strong></p>
+
+			<p class="mgtM">특정여가활동 중 사고로 발생한 상해로 후유장해 지급율이 3% 이상에 해당하는 장해상태가 된 경우 장해분류표에서 정한 지급률을 이 특약의 보험가입금액에 곱하여 산출한 금액을 지급하여 드립니다. 자세한 설명은 가입설계서 또는 약관을 참고해 줏기 바랍니다.</p>
+		</div>
+		<div class="layerBtn">
+			<a href="#close">확인</a>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+</body>
+</html>
+

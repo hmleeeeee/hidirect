@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 계산내역문자로 받기</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>계산내역 문자로 받기</h1>
+		</header>
+		<div class="popContent">
+			<!--0621 디자인 추가 -->
+			<div class="smsVisual">
+				<p>
+					<strong>고객님께서 <em>계산하신 내역</em>을 문자로 전송받으실 수 있습니다.</strong>
+				</p>
+			</div>
+
+
+			<!-- EDIT text del-->
+			<!-- <p class="topTxt">보험료 계산하신 내역을 받아 보실 휴대폰 번호를 입력해주세요.</p> -->
+			<section>
+				<!-- style form element 변경 -->
+				<fieldset>
+					<legend>발송 정보입력</legend>
+					<div class="inputWrap">
+						<input type="tel" id="phone" required />
+						<label for="phone">휴대폰 번호</label>
+					</div>
+				</fieldset>
+
+				<div class="agreeBox mgtS">
+					<strong>입력하신 정보는 보험료 계산 결과 발송 목적으로만 수집&middot;이용됩니다.</strong>
+					<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">확인 및 동의 체크</span></label><span>확인</span></p>
+				</div>
+
+				<!-- //style -->
+			</section>
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<span><a href="#none" role="button">취소</a></span>
+				<span><a href="#none" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose">창닫기</button>
+	</div>
+
+	<!-- 레이어팝업 : 도움말 -->
+	<div class="layerPopup" id="useInfoLayerpop">
+		<div class="layerWrap">
+			<h2>기존정보 불러오기</h2>
+			<div class="layerCont">
+				<div class="conBox">
+					<strong class="tit">title</strong>
+					<p>text</p>
+				</div>
+
+				<div class="conBox">
+					<strong class="tit">title</strong>
+					<ul class="listBasic">
+						<li>title</li>
+						<li>title</li>
+					</ul>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<a href="#close">확인</a>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+</body>
+</html>

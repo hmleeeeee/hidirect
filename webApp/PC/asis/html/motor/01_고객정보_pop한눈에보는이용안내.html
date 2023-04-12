@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>01_고객정보_pop한눈에보는이용안내</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/lib/swiper.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/swiper.css" />
+</head>
+
+
+<body>
+<!-- 01_고객정보_pop한눈에보는이용안내 : s-->
+<!--layerPopWrap : s-->
+<script>
+	$(function(){
+	    $(".popupContentArea .tabCon").addClass("on").css({"height":0,"overflow":"hidden"});
+	    $(".popupContentArea .tabCon").eq(0).css({"height":"auto","overflow":"hidden"});
+//	    2017-12-04 수정
+	    $(".popSlidimgArea").each(function(){
+	        var _this = $(this);
+	        var target = $(this);
+            target.find(".popSlidePrev").on("click",function(){
+                if(target.find(".swiper-slide-active").index() == 0){
+                    var idx = $(".popSlidTab li.on").index()-1;
+                    if(idx >= 0){
+                        $(".popSlidTab li").eq(idx).find("a").click();
+					}
+
+				}
+            })
+            target.find(".popSlideNext").on("click",function(){
+                if(target.find(".swiper-slide-active").index() == target.find(".swiper-slide").length-1){
+                    var idx = $(".popSlidTab li.on").index()+1;
+                    $(".popSlidTab li").eq(idx).find("a").click();
+                }
+            })
+            var swiper = new Swiper(target, {
+                nextButton: _this.find('.popSlideNext'),
+                prevButton: _this.find('.popSlidePrev'),
+                pagination: _this.find('.popSlideBtn'),
+                wrapperClass: 'swiper-wrapper',
+                slideClass: 'swiper-slide',
+                paginationElement: 'a',
+                paginationClickable : true
+            });
+
+		})
+//	    2017-12-04 수정 : e
+		setTimeout(function(){
+            $(".popupContentArea .tabCon").removeClass("on").css({"height":"auto","overflow":"hidden"}).eq(0).addClass("on");
+		},500)
+
+	})
+</script>
+<div class="dim_bg"></div>
+<div class="layerPopWrap w1030">
+    <div class="titleArea">
+        <h2>한 눈에 보는 이용안내</h2>
+    </div>
+    <div class="popupContentArea">
+       
+	   <!-- tab : s -->
+		<div class="tabWrap">
+			<ul class="tabList popSlidTab">
+				<li class="on"><a href="#"><span><span class="numCircle">1</span>고객정보</span></a></li>
+				<li><a href="#"><span><span class="numCircle">2</span>차량정보</span></a></li>
+				<li><a href="#"><span><span class="numCircle">3</span>운전자정보</span></a></li>
+				<li><a href="#"><span><span class="numCircle">4</span>보험료확인</span></a></li>
+				<li><a href="#"><span><span class="numCircle">5</span>계약자정보</span></a></li>
+				<li><a href="#"><span><span class="numCircle">6</span>청약내용확인</span></a></li>
+				<li><a href="#"><span><span class="numCircle">7</span>보험료계산</span></a></li>
+				<li><a href="#"><span><span class="numCircle">8</span>가입완료</span></a></li>
+			</ul>
+		
+			<!-- tabCon : 01 고객정보 : s -->
+			<div class="tabCon on">
+				<div class="tabHiddenTitle">고객정보 이용안내</div>
+				<div class="popSlide">
+					<div class="popSlidimgArea">
+						<ul class="popSlidimg swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_01.jpg" alt="고객님의 정보를 입력 후, 보험료 계산하기를 클릭 해주세요. 고객님의 정보를 입력 후, 최근계산내역을 클릭하시면최근 45일 간 보험료 계산 내역을 확인할 수 있습니다." />
+								<h3 class="tit">고객정보 입력</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_01_2.jpg" alt="보험가입/설계를 위해서는 개인(신용)정보 동의 및 본인인증이 필요합니다." />
+								<h3 class="tit">본인인증</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_01_3.jpg" alt="다른 차량의 보험료를 알아보시거나, 새로 계산하시려면 보험료 새로계산하기를 클릭하세요. 최근 45일 간 보험료 계산 내역으로 고객님의 보험료를 다시 확인 할 수 있습니다." />
+								<h3 class="tit">최근계산내역</h3>
+							</li>
+						</ul>
+						<a href="#" class="preN popSlidePrev">이전 페이지로</a>
+						<a href="#" class="preN popSlideNext">다음 페이지로</a>
+						<div class="popSlideBtn"></div>
+					</div>	
+				</div>
+			</div>
+			<!-- tabCon : 01 고객정보 : e -->
+
+			<!-- tabCon : 02 차량정보 : s -->
+			<div class="tabCon">
+				<div class="tabHiddenTitle">차량정보 이용안내</div>
+				<div class="popSlide">
+					<div class="popSlidimgArea">
+						<ul class="popSlidimg swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_02_1.jpg" alt="본인인증 시간을 연장할 수 있습니다. 이전 단계에서 입력하신 내용을 한눈에 확인하고 수정할 수 있습니다. 현재 보유중인 자동차 중 보험료를 계산할 차량을 선택하세요." />
+								<h3 class="tit">차량기본정보 1</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_02_2.jpg" alt="자동차를 새로 구입했거나 구입예정일 경우 직접차량 정보를 입력하세요. 바로 전 단계 화면으로 이동합니다.모든 내용을 입력하신 후, 보험료 계산을 진행해주세요." />
+								<h3 class="tit">차량기본정보 2</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_02_3.jpg" alt="인기검색어와 유사차명검색을 이용하시면 더욱 편리하게 검색할 수 있습니다. 차량 상세정보를 선택하세요." />
+								<h3 class="tit">차량상세정보</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_02_4.jpg" alt="차량 부가정보를 선택하세요" />
+								<h3 class="tit">차량부가정보</h3>
+							</li>
+						</ul>
+						<a href="#" class="preN popSlidePrev">이전 페이지로</a>
+						<a href="#" class="preN popSlideNext">다음 페이지로</a>
+						<div class="popSlideBtn"></div>
+					</div>	
+				</div>
+			</div>
+			<!-- tabCon : 02 차량정보 : e -->
+
+			<!-- tabCon : 03 운전자정보 : s -->
+			<div class="tabCon">
+				<div class="tabHiddenTitle">차량정보 이용안내</div>
+				<div class="popSlide">
+					<div class="popSlidimgArea">
+						<ul class="popSlidimg swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_03_1.jpg" alt="운전자 범위/연령특약을 선택하세요. 연령한정특약 관련하여 가장 나이가 어린 분 기분으로 정보를 입력하세요." />
+								<h3 class="tit">운전자정보 입력</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_03_2.jpg" alt="할인 받으실 특약을 선택하세요!" />
+								<h3 class="tit">추가할인 특약 선택</h3>
+							</li>
+						</ul>
+						<a href="#" class="preN popSlidePrev">이전 페이지로</a>
+						<a href="#" class="preN popSlideNext">다음 페이지로</a>
+						<div class="popSlideBtn"></div>
+					</div>	
+				</div>
+			</div>
+			<!-- tabCon : 03 운전자정보 : e -->
+
+			<!-- tabCon : 04 보험료확인 : s -->
+			<div class="tabCon">
+				<div class="tabHiddenTitle">보험료확인 이용안내</div>
+				<div class="popSlide">
+					<div class="popSlidimgArea">
+						<ul class="popSlidimg swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_04_1.jpg" alt="나에게 꼭 맞는 맞춤 플랜을 선택하세요.할인 받으실 특약을 선택하세요!원하는 담보 조건을 직접 선택하세요." />
+								<h3 class="tit">보험료 플랜 및 담보확인 1</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_04_2.jpg" alt="최종보험료를 확인하세요. 산출 내역을 저장하시면 45일 간 확인 가능합니다." />
+								<h3 class="tit">보험료 플랜 및 담보확인 2</h3>
+							</li>
+						</ul>
+						<a href="#" class="preN popSlidePrev">이전 페이지로</a>
+						<a href="#" class="preN popSlideNext">다음 페이지로</a>
+						<div class="popSlideBtn"></div>
+					</div>	
+				</div>
+			</div>
+			<!-- tabCon : 04 보험료확인 : e -->
+
+			<!-- tabCon : 05 계약자정보 : s -->
+			<div class="tabCon">
+				<div class="tabHiddenTitle">계약자정보 이용안내</div>
+				<div class="popSlide">
+					<div class="popSlidimgArea">
+						<ul class="popSlidimg swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_05_1.jpg" alt="피보험자/계약자 정보를 입력하세요. 계약자 : 보험료 납입자 / 피보험자 : 자동차 소유자" />
+								<h3 class="tit">계약자 정보 입력</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_05_2.jpg" alt="피보험자와 계약자가 동일하지 않을 경우 피보험자 정보를 입력합니다." />
+								<h3 class="tit">피보험자 정보 입력</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_05_3.jpg" alt="피보험자와 계약자가 동일하지 않을 경우 피보험자 본인인증이 필요합니다." />
+								<h3 class="tit">피보험자 본인인증 (계약자와 다를 경우)</h3>
+							</li>
+						</ul>
+						<a href="#" class="preN popSlidePrev">이전 페이지로</a>
+						<a href="#" class="preN popSlideNext">다음 페이지로</a>
+						<div class="popSlideBtn"></div>
+					</div>	
+				</div>
+			</div>
+			<!-- tabCon : 05 계약자정보 : e -->
+
+			<!-- tabCon : 06 청약내용 확인 : s -->
+			<div class="tabCon">
+				<div class="tabHiddenTitle">청약내용 확인 이용안내</div>
+				<div class="popSlide">
+					<div class="popSlidimgArea">
+						<ul class="popSlidimg swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_06_1.jpg" alt="수정이 필요할 경우 버튼을 클릭하시면 해당 화면으로 이동합니다. 가입내용을 다시 한번 확인해주세요." />
+								<h3 class="tit">청약내용 확인</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_06_2.jpg" alt="특약 가입을 위한 사진을 등록해주세요. 블랙박스 특약 가입 시,휴대폰에 있는 사진을 등록하시려면 모바일 등록버튼을 클릭해 주세요." />
+								<h3 class="tit">추가정보 등록</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_06_3.jpg" alt="휴대폰번호를 입력 후, 문자 받기 버튼을 클릭하시면입력하신 휴대폰으로 URL이 전송됩니다." />
+								<h3 class="tit">추가정보 등록 (휴대폰에 있는 사진)</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_06_4.jpg" alt="전송된 URL에서 사진을 등록하시면 해당 사진이 자동 적용됩니다." />
+								<h3 class="tit">사진등록 완료</h3>
+							</li>
+						</ul>
+						<a href="#" class="preN popSlidePrev">이전 페이지로</a>
+						<a href="#" class="preN popSlideNext">다음 페이지로</a>
+						<div class="popSlideBtn"></div>
+					</div>	
+				</div>
+			</div>
+			<!-- tabCon : 06 청약내용 확인 : e -->
+
+			<!-- tabCon : 07 보험료결제: s -->
+			<div class="tabCon">
+				<div class="tabHiddenTitle">보험료결제 이용안내</div>
+				<div class="popSlide">
+					<div class="popSlidimgArea">
+						<ul class="popSlidimg swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_07_1.jpg" alt="신용카드 결제를 선택하신 경우,계약자 소유의 신용카드만 결제 가능합니다.제휴 신용카드 혜택을 확인하세요!" />
+								<h3 class="tit">신용카드 결제 (제휴 신용카드 혜택)</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_07_2.jpg" alt="실시간 계좌이체를 선택하신 경우,계약자명의의 계좌만 결제 가능합니다." />
+								<h3 class="tit">실시간 계좌이체</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_07_3.jpg" alt="해당 은행 계좌로 보험시작일 전까지 입금이 완료 되어야 자동차보험 효력이 발생합니다." />
+								<h3 class="tit">가상계좌 입금</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_07_4.jpg" alt="본인인증 완료 후, 선택하신 간편 결제를 통한 정보입력 시 보험료결제가 완료됩니다." />
+								<h3 class="tit">간편결제</h3>
+							</li>
+						</ul>
+						<a href="#" class="preN popSlidePrev">이전 페이지로</a>
+						<a href="#" class="preN popSlideNext">다음 페이지로</a>
+						<div class="popSlideBtn"></div>
+					</div>	
+				</div>
+			</div>
+			<!-- tabCon : 07 보험료결제 : e -->
+
+			<!-- tabCon : 08 가입완료 s -->
+			<div class="tabCon">
+				<div class="tabHiddenTitle">가입완료 이용안내</div>
+				<div class="popSlide">
+					<div class="popSlidimgArea">
+						<ul class="popSlidimg swiper-wrapper">
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_08_1.jpg" alt="마일리지 특약 가입 고객이시면 사진을 등록해 주세요." />
+								<h3 class="tit">가입완료 (마일리지 특약 사진등록)</h3>
+							</li>
+							<li class="swiper-slide">
+								<img src="https://direct.hi.co.kr/images/motor/popimg_08_2.jpg" alt="보험 약관을 반드시 확인하세요."/>
+								<h3 class="tit">가입완료 (보험 약관 확인)</h3>
+							</li>
+						</ul>
+						<a href="#" class="preN popSlidePrev">이전 페이지로</a>
+						<a href="#" class="preN popSlideNext">다음 페이지로</a>
+						<div class="popSlideBtn"></div>
+					</div>	
+				</div>
+			</div>
+			<!-- tabCon : 08 가입완료 : e -->
+
+		</div>
+		<!-- tab : e -->
+		
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 01_고객정보_pop한눈에보는이용안내 : e-->
+</body>
+</html>

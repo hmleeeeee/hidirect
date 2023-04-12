@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>행사참여완료</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+
+<script>
+$(document).ready(function () {
+	//퍼블리싱 화면에서 보이기 위한 조건노출용 레이어 팝업처리.
+	$('.layerPopup').css({zIndex: '999999',opacity:'1'}).attr('aria-hidden' , false);
+});
+</script>
+</head>
+
+<body>
+<!-- 레이어팝업 : 알럿 -->
+<div class="layerPopup" id="layerPopAlert">
+	<div class="layerWrap">
+		<h2>행사참여완료</h2>
+		<div class="layerCont">
+			<div class="eventClip">
+				<strong>행사 참여가 <em>완료</em>되었습니다</strong>
+				<span>적립포인트가 <em>지급</em>되었으니 클립앱에서<br />확인해주시기 바랍니다 감사합니다.</span>
+			</div>
+		</div>
+		<div class="layerBtn">
+			<a href="#none">취소</a>
+		</div>
+		<a href="#" role="button" class="layerClose">창닫기</a>
+	</div>
+</div>
+
+</body>
+</html>
+

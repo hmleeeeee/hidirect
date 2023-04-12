@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_고객콜센터_07상담원채용_01채용공고__입사지원01</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+	<script type="text/javascript">
+	function inputAppend(){
+	  $(".inputBase.datepicker.datepickerSmall input").each(function(){
+        var $this = $(this);
+        if($(this).closest(".datepicker.datepickerSmall").hasClass("multi")){
+            $(this).datepicker({
+                showOn:"both",
+                buttonImage:"https://direct.hi.co.kr/images/common/btn_cal2.png",
+                buttonImageOnly : true,
+                buttonText : "달력",
+                dayNamesMin : ["일","월","화","수","목","금","토"],
+                monthNames : ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+                dateFormat : "yy-mm-dd",
+                numberOfMonths : 2,
+                beforeShowDay : function(date){
+                    var date1 = $this.closest(".inputTable").find(".start").datepicker("getDate");
+                    var date2 = $this.closest(".inputTable").find(".end").datepicker("getDate");
+                    return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+                },
+                onSelect : function(){
+                    $this.closest(".inputBase").addClass("value")
+                }
+            })
+        }else{
+            $(this).datepicker({
+                showOn:"both",
+                buttonImage:"https://direct.hi.co.kr/images/common/btn_cal2.png",
+                buttonImageOnly : true,
+                buttonText : "달력",
+                dayNamesMin : ["일","월","화","수","목","금","토"],
+                monthNames : ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+                dateFormat : "yy-mm-dd",
+                onSelect : function(){
+                    $this.closest(".inputBase").addClass("value")
+                }
+            })
+        }
+     })
+	}
+	
+	</script>
+</head>
+<body class="directHomepage">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#gnb">메뉴바로가기</a></li>
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<div class="directWrap">
+    <script type="text/javascript" src="../../_ui_include_asis/gnb.js"></script>
+    <!--contentArea : s-->
+    <div class="contentArea">
+        <!--lnbWrap : s-->
+        <div class="lnbWrap">
+            <h2 class="lnbTitle">고객센터</h2>
+            <div class="lnb">
+                <ul class="dep2">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">홈페이지 이용안내</a>
+                        <ul class="dep3">
+                            <li><a href="#">메뉴1</a></li>
+                            <li><a href="#">메뉴2</a></li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="#">모바일 이용안내</a>
+                        <ul class="dep3">
+                            <li class=""><a href="#">보안프로그램 설치 및 안내</a></li>
+                            <li><a href="#">공인인증서 이용안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">이메일 상담신청</a></li>
+                    <li><a href="#">고객콜센터안내</a></li>
+                    <li class="on"><a href="#">상담원 채용</a>
+                        <ul class="dep3" style="display:block;">
+                            <li class="on"><a href="#">채용공고</a></li>
+							<li><a href="#">인사제도 안내</a></li>
+                            <li><a href="#">입사지원현황</a></li>
+							<li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">전자민원접수</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--lnbWrap : e-->
+        <!--content : s-->
+        <div class="content">
+            <div class="location">
+                <ul>
+                    <li class="home"><a href="#"><img src="https://direct.hi.co.kr/images/common/location_home.png" alt="메인으로"></a></li>
+                    <li><a href="#">상담원 채용</a></li>
+                    <li><a href="#">채용공고</a></li>
+                </ul>
+            </div>
+            <h3 class="contentTitle">입사지원</h3>
+			<div class="lnbTypeContentArea">
+				<ol class="recruitLocation">
+					<li class="on"><span>1</span>입사지원 정보 입력</li>
+					<li><span>2</span>입사지원서 확인</li>
+					<li><span>3</span>입사지원서 제출</li>
+				</ol>
+
+				<!--입사지원wrap : s-->
+				<div class="recruitWrap">
+					<!--기본사항:s-->
+					<div class="recruitArea Step0101">
+						<div class="photoEdit">
+							<div class="photobox"><img src="https://direct.hi.co.kr/images/home_direct/img_photo_none.png" alt="사진" /></div><!--171110 수정-->
+							<div class="filebox">
+								<button class="replace">사진 등록하기</button>
+								<input type="file" value="사진등록하기" class="upload"/>
+							</div>
+							<dl class="photoTxt">
+								<dt>다음 조건 충족 시만 등록 가능</dt>
+								<dd>- 확장자 jpg, gif </dd>
+								<dd>- 최적사이즈 100x120px</dd>
+								<dd>- 용량 3MB 미만</dd>
+							</dl>
+						</div>
+						<div class="recruitbase">
+							<table class="tblList recruitTbl">
+								<caption>입사지원 내용 입력 테이블 : 모집부문,응시분야,희망근무지,이름,성별,생년월일,나이,이메일,결혼여부,현주소,전화번호,휴대폰번호,장애여부,보훈여부,보훈여부에 관한 표입니다.</caption>
+								<colgroup>
+									<col width="111px">
+									<col width="222px">
+									<col width="111px">
+									<col width="222px">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">모집부문</th>
+										<td colspan="3">본사직영POM 상담직 특별채용</td>
+									</tr>
+									<tr>
+										<th scope="row">응시분야</th>
+										<td class="input">
+											<div class="selectItem small">
+												<select name="field" id="field" title="응시분야">
+													<option value="">선택</option>
+													<option value="1">선택1</option>
+													<option value="2">선택2</option>
+												</select>
+											</div>
+										</td>
+										<th scope="row">희망근무지</th>
+										<td class="input">
+											<div class="selectItem small">
+												<select name="work" id="work" title="희망근무지">
+													<option value="">선택</option>
+													<option value="1">선택1</option>
+													<option value="2">선택2</option>
+												</select>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">이름</th>
+										<td>홍길동</td>
+										<th scope="row">영문이름</th>
+										<td>Honggildong</td>
+									</tr>
+									<tr>
+										<th scope="row">생년월일</th>
+										<td>940602 (만 23세)</td>
+										<th scope="row">성별</th>
+										<td>남</td>
+									</tr>
+									<tr>
+										<th scope="row">이메일</th>
+										<td>hong@hong.com</td>
+										<th scope="row">결혼여부</th>
+										<td>
+											<ul class="inputArea">
+												<li class="item">
+													<div class="radio mr18">
+														<input type="radio" name="marriage" id="single" checked>
+														<label for="single">미혼</label>
+													</div>
+													<div class="radio">
+														<input type="radio" name="marriage" id="married_person">
+														<label for="married_person">기혼</label>
+													</div>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">현주소</th>
+										<td colspan="3" class="input">
+											<ul class="inputArea inlineBlock">
+												<li class="item">
+													<div class="inputBase inputOnly h40" style="width:102px;">
+														<input type="text" id="hp" readonly title="우편번호">
+													</div>
+												</li>
+												<li class="item">
+													<a href="#" class="btn middle h40 lineOrange" style="width: 101px;"><span>주소검색</span></a>
+												</li>
+												<li class="item">
+													<div class="inputBase disabled placeholder h40" style="width:312px;">
+														<input type="text" disabled id="addr1" placeholder="기본주소">
+													</div>
+												</li>
+											</ul>
+											<ul class="inputArea item2 mt10">
+												<li class="item">
+													<div class="inputBase disabled placeholder h40" style="width:535px;">
+														<input type="text" disabled id="addr2" placeholder="상세주소">
+													</div>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">전화번호</th>
+										<td class="input"><!--171110 수정-->
+											<ul class="inputArea inlineBlock">
+												<li class="item">
+													<div class="selectItem small">
+														<select name="selectTel" title="지역번호를 선택해주세요" style="width: 80px;">
+															<option value="02">02</option>
+															<option value="031">031</option>
+														</select>
+													</div>
+													<div class="inputBase h40 ml5" style="width: 116px;">
+														<input type="text" placeholder="‘-’없이 작성" title="‘-’없이 작성">
+													</div>
+												</li>
+											</ul>
+										</td><!--//171110 수정-->
+										<th scope="row">휴대폰번호</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" placeholder="‘-’없이 작성" title="‘-’없이 작성">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">장애여부</th>
+										<td class="input">
+											<div class="selectItem small">
+												<select name="lesion1" id="lesion1" title="장애여부를 선택해주세요">
+													<option value="">선택</option>
+													<option value="1">선택1</option>
+													<option value="2">선택2</option>
+												</select>
+											</div>
+										</td>
+										<th scope="row">장애사유</th>
+										<td class="input"><!--171110 수정-->
+											<div class="inputBase h40">
+												<input type="text" title="장애사유입력">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">보훈여부</th>
+										<td class="input">
+											<div class="selectItem small">
+												<select name="Veterans" id="Veterans" title="보훈여부를 선택해주세요">
+													<option value="">선택</option>
+													<option value="1">선택1</option>
+													<option value="2">선택2</option>
+												</select>
+											</div>
+										</td>
+										<th scope="row">추천인</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" placeholder="예 : 김현대 또는 없음" title="예 : 김현대 또는 없음">
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<ul  class="listStyle star mt15">
+								<li> 지원 우대 사항 
+								<ul class="listStyle bar noGap">
+									<li>현대해상에 근무중인 직원 소개로 지원하신 경우 우대 혜택이 있습니다. 추천인 직원 이름을 정확히 기재해주세요.</li>
+									<li>추천인이 없는 경우 : ‘없음’이라고 기재</li>
+								</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--기본사항:s-->
+					
+					<!--학력사항:s-->
+					<div class="recruitArea Step0102">
+						<div class="conTitle01">
+							<h4 class="tit"><span class="fontPoint1">학력사항</span></h4>
+						</div>
+						<table class="tblList recruitTbl">
+							<caption>학력관련 내용 입력 테이블 : 최종학력에 관한 표입니다.</caption>
+							<colgroup>
+								<col width="111px">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr><!--1711-08 라디오박스수정-->
+									<th scope="row">최종학력</th>
+									<td colspan="3">
+										<ul class="inputArea">
+											<li class="item">
+												<div class="radio">
+													<input type="radio" name="school" id="school1">
+													<label for="school1">고등학교</label>
+												</div>
+												<div class="radio ml20">
+													<input type="radio" name="school" id="school2">
+													<label for="school2">대학(2,3년제), 대학교, 대학원</label>
+												</div>
+											</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<ul class="listStyle star mt5 mb18">
+							<li>편입의 경우, 편입전의 학력사항도 입력하여 주십시오. (입력순서 : 편입 전 학교 → 편입 후 학교)</li>
+						</ul>
+						
+						<div class="recruitBox">
+							<h5 class="sutit">고등학교</h5>	
+							<table class="tblList recruitTbl">
+								<caption>학력사항 관련 내용 입력 테이블 : 학교명,재학기간에 관한 표입니다.</caption>
+								<!-- 2017-11-24 테이블 수정(colgroup의 col 값 수정) : s -->
+								<colgroup>
+									<col width="98px">
+									<col width="286px">
+									<col width="98px">
+									<col width="*">
+								</colgroup>
+								<!-- 2017-11-24 테이블 수정(colgroup의 col 값 수정) : e -->
+								<tbody>
+									<tr>
+										<th scope="row" class="bg">학교명</th>
+										<td class="input">
+											<ul class="inputArea inlineBlock">
+												<li class="item">
+													<div class="inputBase h40" style="width:128px;">
+														<input type="text" id="" title="학교명">
+													</div>
+												</li>
+												<li class="item">
+													<div class="selectItem small">
+														<select name="name1" id="name1" style="width:128px;" title="지역을 선택해주세요">
+															<option value="">서울특별시</option>
+															<option value="1">경기도</option>
+															<option value="2">인천광역시</option>
+														</select>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<th scope="row" class="bg">재학기간</th>
+										<td class="input">
+											<div class="inputSet">
+												<ul class="inputArea inlineBlock">
+													<li class="item">
+														<div class="inputBase datepicker datepickerSmall" style="width: 140px;">
+															<input type="text" id="" value="2018-08-09" title="재학기간 시작">
+														</div>
+														<span class="gapTxt">~</span>
+														<div class="inputBase datepicker datepickerSmall" style="width: 140px;">
+															<input type="text" id="" value="2018-08-09" title="재학기간 끝">
+														</div>
+													</li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="recruitBox">
+							<h5 class="sutit">대학(2,3년), 대학교, 대학원1</h5>	
+							<table class="tblList recruitTbl">
+								<caption>학력사항 관련 내용 입력 테이블 : 분류, 학교명,재학기간,전공명,부전공에 관한 표입니다.</caption>
+								<!-- 2017-11-24 테이블 수정(colgroup의 col 값 수정) : s -->
+								<colgroup>
+									<col width="98px">
+									<col width="303px">
+									<col width="97px">
+									<col width="*">
+								</colgroup>
+								<!-- 2017-11-24 테이블 수정(colgroup의 col 값 수정) : e -->
+								<tbody>
+									<tr><!--1711-08 분류 및 부전공 추가-->
+										<th scope="row" class="bg">분류</th>
+										<td colspan="3">
+											<ul class="inputArea">
+												<li class="item">
+													<div class="radio">
+														<input type="radio" name="college" id="college1">
+														<label for="college1">대학(2,3년제)</label>
+													</div>
+													<div class="radio ml20">
+														<input type="radio" name="college" id="college2">
+														<label for="college2">대학교</label>
+													</div>
+													<div class="radio ml20">
+														<input type="radio" name="college" id="college3">
+														<label for="college3">대학원</label>
+													</div>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg">학교명</th>
+										<td colspan="3"  class="input">
+											<ul class="inputArea inlineBlock">
+												<li class="item">
+													<div class="inputBase inputOnly h40" style="width:195px;" title="학교명">
+														<input type="text" id="hp" readonly>
+													</div>
+												</li>
+												<li class="item">
+													<a href="#" class="btn middle h40 lineOrange" style="width: 80px;"><span>검색</span></a>
+												</li>
+												<li class="item">
+													<div class="selectItem small">
+														<select name="area1" id="area1" style="width:146px;" title="지역을 선택해주세요">
+															<option value="">서울특별시</option>
+															<option value="1">경기도</option>
+															<option value="2">인천광역시</option>
+														</select>
+													</div>
+												</li>
+												<li class="item">
+													<div class="selectItem small">
+														<select name="area2" id="area2" style="width:111px;" title="학교 타입을 선택해주세요">
+															<option value="">본교</option>
+														</select>
+													</div>
+												</li>
+												<li class="item">
+													<div class="selectItem small">
+														<select name="area3" id="area3" style="width:112px;" title="시간별을 선택해주세요">
+															<option value="">주간</option>
+														</select>
+													</div>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg">재학기간</th>
+										<td colspan="3"  class="input">
+											<div class="inputSet">
+												<ul class="inputArea inlineBlock">
+													<li class="item">
+														<div class="inputBase datepicker datepickerSmall" style="width: 195px;">
+															<input type="text" id="" value="2018-08-09" title="재학기간 시작">
+														</div>
+														<span class="gapTxt">~</span>
+														<div class="inputBase datepicker datepickerSmall" style="width: 195px;">
+															<input type="text" id="" value="2018-08-09" title="재학기간 끝">
+														</div>
+													</li>
+													<li class="item">
+														<div class="selectItem small">
+															<select name="area7" id="area7" style="width:142px;" title="재학여부를 선택해주세요">
+																<option value="">졸업</option>
+															</select>
+														</div>
+													</li>
+													<li class="item">
+														<div class="checkbox mt8">
+															<input type="checkbox" id="chk1">
+															<label for="chk1">편입</label>
+														</div>
+													</li>
+												</ul>
+											</div>
+										
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg">전공명</th>
+										<td colspan="3"  class="input">
+											<ul class="inputArea inlineBlock">
+												<li class="item">
+													<div class="inputBase inputOnly h40" style="width:593px;" title="전공명">
+														<input type="text" id="" readonly>
+													</div>
+													<a href="#" class="btn middle h40 lineOrange ml10" style="width: 80px;"><span>검색</span></a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg">복수전공</th>
+										<td class="input">
+											<ul class="inputArea inlineBlock">
+												<li class="item">
+													<div class="inputBase inputOnly h40" style="width:193px;" title="복수전공">
+														<input type="text" id="" readonly>
+													</div>
+													<a href="#" class="btn middle h40 lineOrange ml10" style="width: 80px;"><span>검색</span></a>
+												</li>
+											</ul>
+										</td>
+										<th scope="row" class="bg">부전공</th>
+										<td class="input">
+											<ul class="inputArea inlineBlock">
+												<li class="item">
+													<div class="inputBase inputOnly h40" style="width:193px;" title="부전공">
+														<input type="text" id="" readonly>
+													</div>
+													<a href="#" class="btn middle h40 lineOrange ml10" style="width: 80px;"><span>검색</span></a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btnAddbox"><a href="#" class="btn middle plus btnAdd"><span>추가</span></a></div>
+						</div>
+
+						<div class="recruitBox">
+							<h5 class="sutit">대학(2,3년), 대학교, 대학원2</h5>	
+							<table class="tblList recruitTbl">
+								<caption>학력사항 관련 내용 입력 테이블 : 분류,학교명,재학기간,전공명,부전공에 관하나 표입니다.</caption>
+								<colgroup>
+									<col width="98px">
+									<col width="303px">
+									<col width="97px">
+									<col width="*">
+								</colgroup>
+								<tbody>
+								<tr><!--1711-08 분류 및 부전공 추가-->
+									<th scope="row" class="bg">분류</th>
+									<td colspan="3">
+										<ul class="inputArea">
+											<li class="item">
+												<div class="radio">
+													<input type="radio" name="college" id="college1">
+													<label for="college1">대학(2,3년제)</label>
+												</div>
+												<div class="radio ml20">
+													<input type="radio" name="college" id="college2">
+													<label for="college2">대학교</label>
+												</div>
+												<div class="radio ml20">
+													<input type="radio" name="college" id="college3">
+													<label for="college3">대학원</label>
+												</div>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="bg">학교명</th>
+									<td colspan="3"  class="input">
+										<ul class="inputArea inlineBlock">
+											<li class="item">
+												<div class="inputBase inputOnly h40" style="width:195px;" title="학교명">
+													<input type="text" id="hp" readonly>
+												</div>
+											</li>
+											<li class="item">
+												<a href="#" class="btn middle h40 lineOrange" style="width: 80px;"><span>검색</span></a>
+											</li>
+											<li class="item">
+												<div class="selectItem small">
+													<select name="area1" id="area1" style="width:146px;" title="지역을 선택해주세요">
+														<option value="">서울특별시</option>
+														<option value="1">경기도</option>
+														<option value="2">인천광역시</option>
+													</select>
+												</div>
+											</li>
+											<li class="item">
+												<div class="selectItem small">
+													<select name="area2" id="area2" style="width:111px;" title="학교 타입을 선택해주세요">
+														<option value="">본교</option>
+													</select>
+												</div>
+											</li>
+											<li class="item">
+												<div class="selectItem small">
+													<select name="area3" id="area3" style="width:112px;" title="시간별을 선택해주세요">
+														<option value="">주간</option>
+													</select>
+												</div>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="bg">재학기간</th>
+									<td colspan="3"  class="input">
+										<div class="inputSet">
+											<ul class="inputArea inlineBlock">
+												<li class="item">
+													<div class="inputBase datepicker datepickerSmall" style="width: 195px;">
+														<input type="text" id="" value="2018-08-09" title="재학기간 시작">
+													</div>
+													<span class="gapTxt">~</span>
+													<div class="inputBase datepicker datepickerSmall" style="width: 195px;">
+														<input type="text" id="" value="2018-08-09" title="재학기간 끝">
+													</div>
+												</li>
+												<li class="item">
+													<div class="selectItem small">
+														<select name="area7" id="area7" style="width:142px;" title="재학여부를 선택해주세요">
+															<option value="">졸업</option>
+														</select>
+													</div>
+												</li>
+												<li class="item">
+													<div class="checkbox mt8">
+														<input type="checkbox" id="chk1">
+														<label for="chk1">편입</label>
+													</div>
+												</li>
+											</ul>
+										</div>
+
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="bg">전공명</th>
+									<td colspan="3"  class="input">
+										<ul class="inputArea inlineBlock">
+											<li class="item">
+												<div class="inputBase inputOnly h40" style="width:593px;" title="전공명">
+													<input type="text" id="" readonly>
+												</div>
+												<a href="#" class="btn middle h40 lineOrange ml10" style="width: 80px;"><span>검색</span></a>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="bg">복수전공</th>
+									<td class="input">
+										<ul class="inputArea inlineBlock">
+											<li class="item">
+												<div class="inputBase inputOnly h40" style="width:193px;" title="복수전공">
+													<input type="text" id="" readonly>
+												</div>
+												<a href="#" class="btn middle h40 lineOrange ml10" style="width: 80px;"><span>검색</span></a>
+											</li>
+										</ul>
+									</td>
+									<th scope="row" class="bg">부전공</th>
+									<td class="input">
+										<ul class="inputArea inlineBlock">
+											<li class="item">
+												<div class="inputBase inputOnly h40" style="width:193px;" title="부전공">
+													<input type="text" id="" readonly>
+												</div>
+												<a href="#" class="btn middle h40 lineOrange ml10" style="width: 80px;"><span>검색</span></a>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+							<div class="btnAddbox">
+								<a href="#" class="btn middle plus"><span>추가</span></a>
+								<a href="#" class="btn middle btnDel"><span>삭제</span></a>
+							</div>
+						</div>
+					</div>
+					<!--학력사항:e-->
+
+					<!--가족사항:s-->
+					<div class="recruitArea Step0103">
+						<div class="conTitle01">
+							<h4 class="tit"><span class="fontPoint1">가족사항</span></h4>
+						</div>
+												
+						<div class="recruitBox">
+							<h5 class="sutit">가족1</h5>	
+							<table class="tblList recruitTbl">
+								<caption>가족 관련 내용 입력 테이블 : 관계,성명,연령에 관한 표입니다.</caption>
+								<colgroup>
+									<col width="98px">
+									<col width="166px">
+									<col width="98px">
+									<col width="166px">
+									<col width="98px">
+									<col width="166px">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg">관계</th>
+										<td class="input">
+											<div class="selectItem small">
+												<select name="family1" id="family1" style="width:147px;" title="관계를 선택해주세요">
+													<option value="">선택</option>
+													<option value="1">부</option>
+												</select>
+											</div>
+										</td>
+										<th scope="row" class="bg">성명</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" title="성명입력">
+											</div>
+										</td>
+										<th scope="row" class="bg">연령</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" title="연령입력">
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btnAddbox">
+								<a href="#" class="btn middle plus"><span>추가</span></a>
+							</div>
+						</div>
+
+						<div class="recruitBox">
+							<h5 class="sutit">가족2</h5>	
+							<table class="tblList recruitTbl">
+								<caption>가족 관련 내용 입력 테이블 : 관계,성명,연령에 관한 표입니다.</caption>
+								<colgroup>
+									<col width="98px">
+									<col width="166px">
+									<col width="98px">
+									<col width="166px">
+									<col width="98px">
+									<col width="166px">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"  class="bg">관계</th>
+										<td class="input">
+											<div class="selectItem small">
+												<select name="family2" id="family2" style="width:147px;" title="관계를 선택해주세요">
+													<option value="">선택</option>
+													<option value="1">부</option>
+												</select>
+											</div>
+										</td>
+										<th scope="row"  class="bg">성명</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" title="성명입력">
+											</div>
+										</td>
+										<th scope="row" class="bg">연령</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" title="연령입력">
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btnAddbox">
+								<a href="#" class="btn middle plus"><span>추가</span></a>
+								<a href="#" class="btn middle btnDel"><span>삭제</span></a>
+							</div>
+						</div>
+						
+						<ul  class="listStyle star mt15">
+							<li>현재 생존하고 계신 부모, 배우자, 형제자매, 자녀 순으로 입력하여 주십시오.</li>
+							<li>가족사항은 최대 5명까지 입력 가능합니다.</li>
+						</ul>
+					</div>
+					<!--가족사항:e-->
+
+					<!--경력사항:s-->
+					<div class="recruitArea Step0104">
+						<div class="conTitle01">
+							<h4 class="tit"><span class="fontPoint1">경력사항</span></h4>
+						</div>
+												
+						<div class="recruitBox">
+							<h5 class="sutit">직장1</h5>	
+							<table class="tblList recruitTbl">
+								<caption>직장 관련 내용 입력 테이블 : 직장명,근무기간,직위,직무,연봉총액,정규직에관한 표입니다.</caption>
+								<colgroup>
+									<col width="98px">
+									<col width="286px">
+									<col width="98px">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg">직장명</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" title="직장명입력">
+											</div>
+										</td>
+										<th scope="row" class="bg">근무기간</th>
+										<td class="input">
+											<div class="inputSet">
+												<ul class="inputArea inlineBlock">
+													<li class="item">
+														<div class="inputBase datepicker datepickerSmall" style="width: 140px;">
+															<input type="text" id="" value="2018-08-09" title="근무기간 시작">
+														</div>
+														<span class="gapTxt">~</span>
+														<div class="inputBase datepicker datepickerSmall" style="width: 140px;">
+															<input type="text" id="" value="2018-08-09" title="근무기간 끝">
+														</div>
+													</li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg">직위</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" title="직위입력">
+											</div>
+										</td>
+										<th scope="row" class="bg">직무</th>
+										<td class="input">
+											<div class="inputBase h40">
+												<input type="text" title="직무입력">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg">연봉총액</th>
+										<td class="input">
+											<div class="labelTitleInput h40">
+												<div class="inputSetAlign" style="width:265px;">
+													<div class="inputSet">
+														<div class="input"><input type="text" id="won" title="연봉총액"></div>
+														<div class="rightTxt">만원</div>
+													</div>
+												</div>
+											</div>
+										</td>
+										<th scope="row" class="bg">정규직</th>
+										<td class="input">
+											<div class="selectItem small">
+												<select name="part" id="part" style="width:300px;" title="정규직 여부를 선택해주세요">
+													<option value="">정규직</option>
+													<option value="1">정규직</option>
+												</select>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="btnAddbox">
+								<a href="#" class="btn middle plus"><span>추가</span></a>
+								<!--<a href="#" class="btn middle btnDel"><span>삭제</span></a>-->
+							</div>
+						</div>
+					
+						<ul  class="listStyle star mt15">
+							<li>경력사항은 이전 경력 → 최근 경력 순으로 최대 3개까지 입력 가능합니다.</li>
+						</ul>
+					</div>
+					<!--가족사항:e-->
+
+					<!--자기소개서:s-->
+					<div class="recruitArea Step0105">
+						<div class="conTitle01">
+							<h4 class="tit"><span class="fontPoint1">자기소개서(경력사항 중심)</span></h4>
+						</div>
+						
+						<div class="textareaBase introducetxt">
+							<textarea name="txtinput" id="txtinput" title="자기소개서(경력사항 중심) 최대 700자 까지 입력 가능합니다." placeholder="최대 700자 까지 입력 가능합니다."></textarea>
+							<span class="byte">0/700</span>
+						</div>
+					</div>
+					<!--가족사항:e-->
+				
+				</div>
+				<!--입사지원wrap : e-->
+
+				<!--버튼 :s--->
+				 <div class="btnAreaWrap tac mt30">
+					<a href="#" class="btn line inlineBlock orange"><span>저장</span></a>
+				</div>
+				<!--버튼 :e--->
+			</div>
+        </div>
+        <!--content : e-->
+
+    </div>
+    <!--contentArea : e-->
+    <!--quickArea : s -->
+    <script type="text/javascript" src="../../_ui_include_asis/quick.js"></script>
+    <!--quickArea : e -->
+    <!--2017-11-21 수정 : s-->
+    <!--footerWrap : s-->
+    <script type="text/javascript" src="../../_ui_include_asis/footer.js"></script>
+    <!--footerWrap : e-->
+    <!--2017-11-21 수정 : e-->
+</div>
+</body>
+</html>

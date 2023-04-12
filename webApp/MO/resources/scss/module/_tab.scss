@@ -13,7 +13,7 @@
 	.tab_wrap{@include clearfix();position: relative;}
 }
 
-.tab_content{margin-top: 24px;
+.tab_content{margin-top: 24px; display: none;
 	.tab_con_title{}//스크립트에서 .blind 삽입중
 }
 .tab_content .tab_con_title + .comp{margin-top: 0;}
@@ -23,6 +23,12 @@
 // * tab_line
 //-----------------
 .tab_line{
+	&.hr{
+		height:auto;
+		padding-top:12px;
+	}
+
+
 	.tab_wrap{position: relative; display: flex; border-bottom: 1px solid #EFEFF1;}
 	li{position: relative; flex: 1 1 0;
 		&:after{content:''; position: absolute; left: 50%; right: 50%; bottom:0; height: 1px; background-color: transparent; 
@@ -38,6 +44,10 @@
 	}
 }
 
+.comp + .tab_line{margin-top: 32px;}
+// .tab_content .comp > h3:first-child{ padding-top: 32px;}
+
+// }
 
 // * tab_line_width_auto: left 정렬
 //-----------------
@@ -67,6 +77,7 @@
 		}
 	}
 }
+
 
 // * tab_scroll
 //-----------------

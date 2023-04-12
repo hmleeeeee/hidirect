@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>신용카드결제 | 보험료 결제하기</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>보험료 결제하기</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">5</a>
+</header>
+
+<div id="h1Wrap">
+	<!-- content -->
+	<a href="#" class="subConOpen" role="button">
+		<strong>결제금액</strong>
+		<span>1,200,000원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+	</a>
+	<div class="dataDetail">
+		<ul>
+			<li>
+				<strong class="titl">기존 보험료</strong>
+				<span class="cost">1,210,000원</span>
+			</li>
+			<li>
+				<strong class="titl">할인</strong><span class="cost">-100,000만원</span>
+				<span class="info">다이렉트 할인 (평균 15.4%)<br>초회 보험료 12%할인</span>
+			</li>
+			<li>
+				<strong class="titl">자동이체 금액</strong>
+				<span class="cost">11,000원</span>
+			</li>
+			<li class="total">
+				<strong class="titl">최종 보험료</strong>
+				<span class="cost">1,000,000원</span><!-- 0628 ￦삭제 JJY -->
+			</li>
+		</ul>
+	</div>
+	<section class="bg">
+		<div class="wrapTab tabChois">
+			<a href="#" role="button" class="icoPayment1 on"><span>신용카드</span></a>
+			<a href="#" role="button" class="icoPayment2"><span>실시간 계좌이체</span></a>
+			<a href="#" role="button" class="icoPayment3"><span>간편결제</span></a>
+		</div>
+	</section>
+
+
+	<section>
+		<div class="h2Btn">
+			<h2>결제정보 입력</h2>
+			<a href="#layerPopup1" class="btnLink" role="button" title="새창열림"><span>카드사별 혜택보기</span></a>
+		</div>
+		<fieldset>
+			<legend>결제정보 입력</legend>
+			<div class="inputWrap">
+				<select title="카드사 선택">
+					<option>카드사를 선택해주세요</option>
+					<option value="1">현대카드</option>
+					<option value="2">LG카드</option>
+					<option value="3">BC카드</option>
+				</select>
+			</div>
+
+			<div class="radioBtn">
+				<span><input type="radio" id="yes" name="radioBox" checked="checked"><label for="yes">일반결제</label></span>
+				<span><input type="radio" id="no" name="radioBox"><label for="no">앱카드 결제</label></span>
+			</div>
+
+			<!-- <div class="itemPack mgtM">
+				<ul class="itemListN2">
+					<li>
+						<a href="#none" role="button"><div class="cont">일반 결제</div></a>
+					</li>
+					<li>
+						<a href="#none" role="button"><div class="cont">앱카드 결제</div></a>
+					</li>
+				</ul>
+			</div> -->
+
+			<h2>할부기간</h2>
+			<div class="inputWrap">
+				<select title="카드사 선택">
+					<option>할부기간 선택</option>
+					<option value="1">일시불</option>
+					<option value="2">할부</option>
+				</select>
+			</div>
+		</fieldset>
+		<ul class="listDot">
+			<li>국내 발급된 본인명의의 신용카드만 사용하실 수 있습니다.</li>
+		</ul>
+	</section>
+	<div class="btnWrap">
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">다음</a></span>
+	</div>
+</div>
+</body>
+</html>
+

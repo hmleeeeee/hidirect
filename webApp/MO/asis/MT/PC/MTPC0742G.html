@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 계약자 휴대폰 직접서명</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>계약자 휴대폰 직접서명</h1>
+		</header>
+		<!-- style 체크 콘텐츠 변경 
+		<div class="popContent">
+			<a href="#" class="subConOpen" role="button">
+				<strong>계약번호</strong>
+				<strong class="data">F17KA0000956</strong>
+				<em>하위컨텐츠 열기</em>
+			</a>
+			<div class="dataDetail">
+				<ul>
+					<li>
+						<span class="titl">가입일</span>
+						<span class="data">2017년 4월 7일 16:16:10</span>
+					</li>
+					<li>
+						<span class="titl">보험상품명</span>
+						<span class="data">HiCar개인용(CM)</span>
+					</li>
+					<li>
+						<span class="titl">보험료</span>
+						<span class="data"><em>1,000,000</em>원</span>
+					</li>
+					<li>
+						<span class="titl">신청자IP</span>
+						<span class="data">110.70.58.***</span>
+					</li>
+					<li>
+						<span class="titl">계약자명</span>
+						<span class="data">박현대</span>
+					</li>
+					<li>
+						<span class="titl">수납방법</span>
+						<span class="data">신용카드(일시납)</span>
+					</li>
+				</ul>
+			</div>-->
+			
+			<section>
+				<div class="agreeBox">
+					<strong>현대해상 다이렉트 보험 계약의 체결 및 이행을 위한 <span>제반사항(청약내용, 가입안내서, 상품설명서)</span>을 확인했음을 공인인증 전자서명 합니다.</strong>
+					<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">현대해상 다이렉트 보험 계약의 체결 및 이행을 위한  제반사항(청약내용, 가입안내서, 상품설명서) 확인 및 동의</span></label><span>위 내용에 동의합니다.</span></p>
+				</div>
+
+				<div class="signArea">
+					<button type="button" class="btnInit">서명초기화</button>
+					<div class="sign"></div>
+				</div>
+			</section>
+		</div>
+		<div class="btnWrap">			
+			<a href="#none" role="button">확인</a>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

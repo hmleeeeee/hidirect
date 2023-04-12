@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 대인배상Ⅱ 담보</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>대인배상Ⅱ<span class="hide">유형2</span> 담보</h1>
+		</header>
+		<div class="popContent">
+			<!-- EDIT del
+			<p class="topTxt">가입조건을 선택해 주세요.</p>-->
+			<section>
+				<div class="radioBox">
+					<span class="off">
+						<input type="radio" id="list01" name="radioBox1"><label for="list01">미가입</label>
+						<strong>0원</strong>
+					</span>
+					<span class="on">
+						<input type="radio" id="list02" name="radioBox1" checked="checked"><label for="list02">목록1</label>
+						<strong>172,190원</strong>
+					</span>
+					<span class="off">
+						<input type="radio" id="list03" name="radioBox1"><label for="list03">목록2</label>
+						<strong>172,190원</strong>
+					</span>
+				</div>
+				<div class="toggleWrap">
+					<div class="tabBox open">
+						<div class="toggleTitle"><a href="#none" class="toggleBtn">담보 상세정보 보기</a></div>
+						<div class="toggleDetail">
+							<dl>
+								<dt>보상책임</dt>
+								<dd>피보험자동차의 사고로 인하여 남을 죽게 하거나 다치게 한 경우에 법률상 손해배상책임을 짐으로써 입은 손해를 보상</dd>
+							</dl>
+							<dl class="mgT10">
+								<dt>보상내용</dt>
+								<dd>대인배상I로 지급되는 (지급할 수 있는) 금액 초과액</dd>
+							</dl>
+							<p class="listEtc">배상액이 큰 사고 까지 생각하신다면 대인배상Ⅱ 의 경우 ‘무한’으로 가입하시는 것이 든든합니다. </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<!-- EDIT del
+				<div class="botFixed">
+					<div class="dataDetail">
+						<ul>
+							<li>
+								<strong class="stit">대인배상Ⅱ</strong><span class="cost">1,000,172,190원</span>
+								<span class="info">무한</span>
+							</li>
+						</ul>
+					</div>
+					<p class="total">
+						<strong class="titl">최종보험료</strong>
+						<span class="price">￦ 450,000원</span>
+					</p>
+				</div>	-->
+
+			</section>
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<span><a href="#none" role="button">취소</a></span>
+				<span><a href="#none" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

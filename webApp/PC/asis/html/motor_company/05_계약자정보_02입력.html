@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_계약자정보_02입력</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+    <script>
+        $(function(){
+            $(document).on("change",".person02",function(){
+                var target = $(this).val();
+				$(".personSameCon").slideUp();
+                $(".personSameCon."+target).slideDown();
+                setTimeout(function(){
+                    var maxWidth = 0;
+                    $(".agreeBox .titArea .txt:not('.full')").each(function(){
+                        if(maxWidth < $(this).outerWidth()){
+                            maxWidth = $(this).outerWidth();
+                        }
+                    })
+                    $(".agreeBox .titArea .btn").css("left",maxWidth+20);
+                },100)
+                selectChg();
+                selectChg();
+            })
+
+            //계약자 정보 입력 연락방식 선택
+            $(document).on("change","#personType2",function(e){
+                e.preventDefault();
+                var val = $(this).val();
+                $(".selectPersonType").hide()
+                if(val == "etc"){
+                    $(".selectPersonType.etcTypeCon").show()
+                }else{
+                    $(".selectPersonType.otherTypeCon").show()
+                }
+
+            })
+        })
+    </script>
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="현대해상 다이렉트"></a></p>
+            <h1>자동차보험 <span class="fz17">(법인용)</span></h1>
+        </div>
+        <!-- stepArea : s-->
+        <div class="stepArea">
+
+        </div>
+        <!-- stepArea : e-->
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>계약자정보 입력</h2>
+            <p class="txt">계약자(피보험자) 정보를 입력해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+        <!--inputTable : s-->
+        <div class="inputTable titleInput">
+            <div class="title inputTitle">
+                <h3 class="tit">계약자(피보험자)</h3>
+            </div>
+
+            <div class="inputSet">
+                <ul class="inputArea">
+                    <li class="item">
+                        <div class="inputBase disabled">
+                            <label for="name">법인명</label>
+                            <input type="text" disabled id="name" value="현대해상">
+                        </div>
+                    </li>
+                </ul><!--연락처 종류 선택 부분 수정 : s-->
+                <ul class="inputArea inlineBlock">
+                    <li class="item">
+                        <div class="inputBase disabled" style="width: 302px;">
+                            <label for="person1">사업자번호</label>
+                            <input type="text" disabled id="person1" value="790110-1******">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="selectItem">
+                            <select name="selectHp" id="telType" class="telType" title="연락처 종류를 선택해주세요" style="width: 109px;">
+                                <option value="hpTypeCon">휴대폰</option>
+                                <option value="telTypeCon">자택</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="item ">
+                        <div class="selectTelType hpTypeCon">
+                            <div class="inputBase" style="width: 389px;">
+                                <label for="hpNumber">휴대폰번호 (‘-’없이)</label>
+                                <input type="text" id="hpNumber" value="01087584589">
+                            </div>
+                        </div>
+                        <div class="selectTelType telTypeCon" style="display: none;">
+                            <div class="selectItem">
+                                <select name="selectTel" title="지역번호를 선택해주세요" style="width: 109px;">
+                                    <option value="02">02</option>
+                                    <option value="031">031</option>
+                                </select>
+                            </div>
+                            <div class="inputBase ml10" style="width: 270px;">
+                                <label for="telNumber">전화번호 (‘-’없이)</label>
+                                <input type="text" id="telNumber" value="01087584589">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--연락처 종류 선택 부분 수정 : e-->
+                <ul class="inputArea inlineBlock">
+                    <li class="item">
+                        <div class="inputBase" style="width: 302px;">
+                            <label for="email1">이메일계정</label>
+                            <input type="text" id="email1">
+                        </div>
+                        <span class="gapTxt">@</span>
+                        <div class="inputBase inputOnly" style="width:290px;">
+                            <input type="text" id="email2">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="selectItem">
+                            <select name="selectHp" title="이메일 종류를 선택해주세요" style="width: 198px;">
+                                <option value="1">직접입력</option>
+                                <option value="2">naver.com</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="inputArea inlineBlock">
+                    <li class="item">
+                        <div class="selectItem">
+                            <select name="selectHp" title="주소종류를 선택해주세요" style="width: 198px;">
+                                <option value="1">자택</option>
+                                <option value="2">회사</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="inputBase inputOnly" style="width:404px;">
+                            <input type="text" id="hp" readonly>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="btn big" style="width: 198px;"><span>주소검색</span></a>
+                    </li>
+                </ul>
+                <ul class="inputArea item2 mt10">
+                    <li class="item">
+                        <div class="inputBase disabled">
+                            <label for="addr1">기본주소</label>
+                            <input type="text" disabled id="addr1">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="inputBase disabled">
+                            <label for="addr2">상세주소</label>
+                            <input type="text" disabled id="addr2">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--inputTable : e-->
+        <!--inputTable : s-->
+        <div class="inputTable mb20 companyPerson">
+            <div class="title">
+                <h3 class="tit">계약자(보험료 납입자) 정보를 선택해 주세요.</h3>
+                <div class="same">
+                    <div class="radio">
+                        <input type="radio" name="personSame" class="person02" id="radio1_1" value="no">
+                        <label for="radio1_1">피보험자(자동차소유자)와 동일한 법인</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="personSame" class="person02" id="radio1_2" value="otherCompany">
+                        <label for="radio1_2">다른법인</label>
+                    </div>
+					 <div class="radio">
+                        <input type="radio" name="personSame" class="person02" id="radio1_3" value="person">
+                        <label for="radio1_3">개인</label>
+                    </div>
+                </div>
+            </div>
+            <div class="personSameCon otherCompany">
+                <div class="boxArea">
+                    <div class="inputSet">
+						<ul class="inputArea">
+							<li class="item">
+                                <div class="inputBase">
+                                    <label for="personType1">법인명</label>
+                                    <input type="text" id="personType1">
+                                </div>
+							</li>
+						</ul>
+						<ul class="inputArea inlineBlock">
+							<li class="item pr20">
+								<div class="inputBase disabled" style="width: 305px;">
+									<label for="person3">사업자번호 (‘-없이’)</label>
+									<input type="text" disabled id="person3" value="000-00-000000">
+								</div>
+							</li>
+							<li class="item">
+								<div class="inputBase disabled" style="width: 455px;">
+									<label for="hpNumber">휴대폰번호 (‘-’없이)</label>
+									<input type="text" disabled id="hpNumber" value="01087584589">
+								</div>
+							</li>
+						</ul>
+						<ul class="inputArea inlineBlock">
+							<li class="item">
+								<div class="inputBase" style="width: 305px;">
+									<label for="personSame_email1">이메일계정</label>
+									<input type="text" id="personSame_email1">
+								</div>
+								<span class="gapTxt">@</span>
+								<div class="inputBase inputOnly" style="width:246px;">
+									<input type="text" id="personSame_email2">
+								</div>
+							</li>
+							<li class="item">
+								<div class="selectItem">
+									<select name="selectHp" title="이메일 종류를 선택해주세요" style="width: 199px;">
+										<option value="1">직접입력</option>
+										<option value="2">naver.com</option>
+									</select>
+								</div>
+							</li>
+						</ul>
+
+                        <div class="checkbox small block mt15">
+                            <input type="checkbox" id="personSame_address">
+                            <label for="personSame_address" class="fz13">계약자 주소와 동일</label>
+                        </div>
+                        <ul class="inputArea inlineBlock mt8">
+                            <li class="item">
+                                <div class="selectItem">
+                                    <select name="selectHp" title="주소종류를 선택해주세요" style="width: 198px;">
+                                        <option value="1">자택</option>
+                                        <option value="2">회사</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="inputBase inputOnly" style="width:364px;">
+                                    <input type="text" id="personSame_hp" readonly>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <a href="#" class="btn big" style="width: 198px;"><span>주소검색</span></a>
+                            </li>
+                        </ul>
+                        <ul class="inputArea item2 mt10">
+                            <li class="item">
+                                <div class="inputBase disabled">
+                                    <label for="personSame_addr1">기본주소</label>
+                                    <input type="text" disabled id="personSame_addr1">
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="inputBase disabled">
+                                    <label for="personSame_addr2">상세주소</label>
+                                    <input type="text" disabled id="personSame_addr2">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="listStyle star mt15">
+                        <li>계약자가 계약변경/환급금수령/소득공제 권한을 갖습니다.</li>
+                    </ul>
+                </div>
+			</div>
+            <div class="personSameCon person" style="display: none;">
+                <div class="boxArea">
+                    <div class="inputSet">
+                        <ul class="inputArea inlineBlock">
+                            <li class="item">
+                                <div class="selectItem" style="width: 305px;">
+                                    <select name="selectHp" id="personType" title="피보험자와의 관계를 선택해주세요">
+                                        <option value="">피보험자와의 관계</option>
+                                        <option value="1">배우자</option>
+                                        <option value="other">타인</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="personType type1 on">
+                                    <div class="inputBase disabled" style="width:465px">
+                                        <label for="personSame_name1">이름</label>
+                                        <input type="text" disabled id="personSame_name1" value="홍길동">
+                                    </div>
+                                </div>
+                                <div class="personType type2">
+                                    <div class="inputBase" style="width:225px">
+                                        <label for="personSame_type">관계</label>
+                                        <input type="text" id="personSame_type">
+                                    </div>
+                                    <div class="inputBase ml10" style="width:230px">
+                                        <label for="personSame_name2">이름</label>
+                                        <input type="text" id="personSame_name2">
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+                        <ul class="inputArea inlineBlock">
+                            <li class="item">
+                                <div class="inputBase disabled" style="width:147px;">
+                                    <label for="personNumber1">주민등록번호</label>
+                                    <input type="text" id="personNumber1" disabled value="790154">
+                                </div>
+                            </li>
+                            <li class="item" style="width:259px;">
+                                <div class="inputBase rightMouse" style="width: 148px;">
+                                    <label for="personNumber1_last">뒷 7자리</label>
+                                    <input type="password" id="personNumber1_last">
+                                    <div class="nospos">
+                                        <input type="checkbox" id="mouse">
+                                        <label for="mouse">마우스 입력기</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="inputBase disabled" style="width: 364px;">
+                                    <label for="personSame_hpNumber">휴대폰번호 (‘-’없이)</label>
+                                    <input type="text" disabled id="personSame_hpNumber" value="01087584589">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="inputArea inlineBlock">
+                            <li class="item">
+                                <div class="inputBase" style="width: 305px;">
+                                    <label for="personSame_email1">이메일계정</label>
+                                    <input type="text" id="personSame_email1">
+                                </div>
+                                <span class="gapTxt">@</span>
+                                <div class="inputBase inputOnly" style="width:246px;">
+                                    <input type="text" id="personSame_email2">
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="selectItem">
+                                    <select name="selectHp" title="이메일 종류를 선택해주세요" style="width: 199px;">
+                                        <option value="1">직접입력</option>
+                                        <option value="2">naver.com</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="checkbox small block mt15">
+                            <input type="checkbox" id="personSame_address">
+                            <label for="personSame_address" class="fz13">계약자 주소와 동일</label>
+                        </div>
+                        <ul class="inputArea inlineBlock mt8">
+                            <li class="item">
+                                <div class="selectItem">
+                                    <select name="selectHp" title="주소종류를 선택해주세요" style="width: 198px;">
+                                        <option value="1">자택</option>
+                                        <option value="2">회사</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="inputBase inputOnly" style="width:364px;">
+                                    <input type="text" id="personSame_hp" readonly>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <a href="#" class="btn big" style="width: 198px;"><span>주소검색</span></a>
+                            </li>
+                        </ul>
+                        <ul class="inputArea item2 mt10">
+                            <li class="item">
+                                <div class="inputBase disabled">
+                                    <label for="personSame_addr1">기본주소</label>
+                                    <input type="text" disabled id="personSame_addr1">
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="inputBase disabled">
+                                    <label for="personSame_addr2">상세주소</label>
+                                    <input type="text" disabled id="personSame_addr2">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="listStyle star mt15">
+                        <li>계약자가 계약변경/환급금수령/소득공제 권한을 갖습니다.</li>
+                    </ul>
+                </div>
+                <!--inputTable : s-->
+                <div class="inputTable checkAllSet boxStyle mb10">
+                    <div class="title">
+                        <h3 class="tit"><span class="fontPoint2">(필수)</span> 관련법률 및 규정에 따른 개인(신용)정보 수집/이용, 조회, 제공 동의
+                        </h3>
+                        <div class="rightArea">
+                            <div class="checkbox checkAll">
+                                <input type="checkbox" id="agreeAll1">
+                                <label for="agreeAll1">전체동의</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agreeBox checkAllSetItem">
+                        <ul>
+                            <li>
+                                <div class="titArea">
+                                    <span class="txt">개인(신용)정보의 수집ㆍ이용에 관한 사항</span>
+                                    <a href="#" class="btn small2" title="자세히보기"><span>자세히보기</span></a>
+                                </div>
+                                <div class="agreeRadio">
+                                    <div class="radio">
+                                        <input type="radio" name="agree1" id="agree1_1" class="yes">
+                                        <label for="agree1_1">동의함</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="titArea">
+                                    <span class="txt">개인(신용)정보의 조회에 관한 사항</span>
+                                    <a href="#" class="btn small2" title="자세히보기"><span>자세히보기</span></a>
+                                </div>
+                                <div class="agreeRadio">
+                                    <div class="radio">
+                                        <input type="radio" name="agree2" id="agree2_1" class="yes">
+                                        <label for="agree2_1">동의함</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="titArea">
+                                    <span class="txt">개인(신용)정보의 제공에 관한 사항</span>
+                                    <a href="#" class="btn small2" title="자세히보기"><span>자세히보기</span></a>
+                                </div>
+                                <div class="agreeRadio">
+                                    <div class="radio">
+                                        <input type="radio" name="agree3" id="agree3_1" class="yes">
+                                        <label for="agree3_1">동의함</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <h4 class="subTit tline">민감정보 및 고유식별정보의 처리에 관한 사항</h4>
+                        <ul>
+                            <li>
+                                <div class="titArea">
+                                    <span class="txt">질병ㆍ상해정보 처리 동의</span>
+                                    <a href="#" class="btn small2" title="자세히보기"><span>자세히보기</span></a>
+                                </div>
+                                <div class="agreeRadio">
+                                    <div class="radio">
+                                        <input type="radio" name="agree6" id="agree6_1" class="yes">
+                                        <label for="agree6_1">동의함</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="titArea">
+                                    <span class="txt">주민등록번호ㆍ외국인등록번호 처리 동의</span>
+                                    <a href="#" class="btn small2" title="자세히보기"><span>자세히보기</span></a>
+                                </div>
+                                <div class="agreeRadio">
+                                    <div class="radio">
+                                        <input type="radio" name="agree7" id="agree7_1" class="yes">
+                                        <label for="agree7_1">동의함</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--inputTable : e-->
+                <!--inputTable : s-->
+                <div class="inputTable checkAllSet mb15 boxStyle">
+                    <div class="title">
+                        <h3 class="tit"><span class="fontLevel2">(선택)</span> 상품 소개를 위한 동의</h3>
+                        <div class="rightArea">
+                            <div class="checkbox checkAll">
+                                <input type="checkbox" id="agreeAll2">
+                                <label for="agreeAll2">전체동의</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agreeBox checkAllSetItem">
+                        <ul>
+                            <li>
+                                <div class="titArea">
+                                    <span class="txt">개인(신용)정보의 수집·이용에 관한 사항</span>
+                                    <a href="#" class="btn small2" title="자세히보기"><span>자세히보기</span></a>
+                                </div>
+                                <div class="agreeRadio">
+                                    <div class="radio">
+                                        <input type="radio" name="agree8" id="agree8_1" class="yes">
+                                        <label for="agree8_1">동의함</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" name="agree8" id="agree8_2" class="no">
+                                        <label for="agree8_2">동의하지 않음</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--inputTable : e-->
+                <div class="txtContent mb15">
+                    <h4>소비자 권익보호에 관한 사항</h4>
+                    <div class="con">
+                        본 동의를 거부하시는 경우에는 보험계약 상담 등 정상적인 서비스 제공이 불가능하며, 본 동의서에 의한 개인(신용) 정보 조회는<br>
+                        귀하의 신용등급에 영향을 주지 않습니다. 또한, 동의하시더라도 당시 홈페이지 및 고객콜센터(1577-1001)를 통해 철회하거나<br>
+                        보험계약상담 목적의 연락에 대한 중단을 요청하실 수 있습니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--inputTable : e-->
+
+        <!--inputTable : s-->
+        <div class="inputTable line">
+            <div class="title">
+                <h3 class="tit">보험계약자료(보험증권, 약관 등) 수령방법</h3>
+                <div class="rightArea same">
+                    <div class="radio">
+                        <input type="radio" name="sendType" id="post">
+                        <label for="post">우편</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="sendType" id="email">
+                        <label for="email">이메일</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--inputTable : e-->
+
+        <!--alertInfo : s-->
+        <div class="alertInfo">
+            <p class="title">유의사항</p>
+            <div class="conArea">
+                <ul class="listStyle dot">
+                    <li>계약자가 계약변경/환급금 수령/소득공제 권한을 갖습니다.</li>
+                    <li>당사에 등록된 개인정보가 보험가입 시 입력하신 정보(주소, 전화번호, 휴대폰번호, 이메일 등)로 업데이트되오니 <br />이 점 유의하시기 바랍니다. 단, 주소는 사업자의 본점 주소를 입력해 주세요.</li>
+                </ul>
+            </div>
+        </div>
+        <!--alertInfo : e-->
+
+		<div class="btnAreaWrap right"><a href="#" class="btn small mail"><span>이메일/문자로 받기</span></a></div>
+
+		<div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item37">
+                    <li><a href="#" class="btn prev"><span>이전</span></a></li>
+                    <li><a href="#" class="btn next"><span>다음</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+
+</body>
+</html>

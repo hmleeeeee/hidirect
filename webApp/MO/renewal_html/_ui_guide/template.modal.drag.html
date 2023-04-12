@@ -22,7 +22,7 @@
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="true" data-category="" data-category-sub="">
+<body data-channel="mobile" data-login="true" data-category="">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -55,15 +55,16 @@
 				<!-- content_footer -->
 				<div class="content_footer fix calc_footer">
 					<div class="calc_wrap">
-						<a href="javascript:void(0)" role="button" onclick="javascript:layerPop.open($('#sampleModal_Drag'));" class="modalbar_trigger"><!-- 링크 없는 CASE: .disaabled -->
+						<a href="javascript:void(0)" role="button" onclick="javascript:layerPop.open($('#sampleModal_Drag'));" class="modalbar_trigger">
 							<p class="title">출금예상금액 <span>(원금+ <em>이자</em>)</span></p>
 							<p class="num_txt">3,001,000<em>원</em></p>
 						</a>
-						<!-- 링크 없는 CASE: .disaabled -->
-						<!-- <div class="modalbar_trigger">
-							<p class="title">출금예상금액</p>
-							<p class="num_txt">0<em>원</em></p>
-						</div> -->
+						<!-- 링크 없는 CASE: .modalbar_trigger 에 .disabled 추가 -->
+						<!-- <a href="javascript:void(0)" role="button" class="modalbar_trigger disabled">
+							<p class="title">출금예상금액 <span>(원금+ <em>이자</em>)</span></p>
+							<p class="num_txt">3,001,000<em>원</em></p>
+						</a> -->
+						<!-- //링크 없는 CASE -->
 						<div class="btn_area">
 							<a href="javascript:void(0);" class="btn fill01">다음</a>
 						</div>
@@ -89,8 +90,10 @@
 						<div class="wrapper">
 							<div class="section">
 								<div class="comp">
-									<div class="modal_subtitle">Lorem ipsum dolor sit.</div>
-									<div class="box blue "style="height:160px;"></div>
+									<div class="modal_subtitle">대출신청금액</div>
+									<div class="box blue">
+										<a href="MMYLO0021U" class="btn text arrow" target="_blank">MMYLO0021U</a>
+									</div>
 								</div>
 							</div>
 						</div>

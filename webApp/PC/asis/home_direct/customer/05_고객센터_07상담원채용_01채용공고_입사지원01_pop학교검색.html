@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_고객콜센터_07상담원채용_01채용공고_입사지원01_pop학교검색</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+</head>
+<script type="text/javascript">
+ $(document).on("change",".self",function(e){
+	if($(this).is(":checked")){
+		$(".majorEdit .inputedit").show();
+		$(".majorEdit .inputdisabled").hide();
+	}else{
+		$(".majorEdit .inputedit").hide();
+		$(".majorEdit .inputdisabled").show();
+	}
+})
+</script>
+<body class="boxType">
+
+<!--01_pop학교검색 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap w600">
+    <div class="titleArea">
+        <h2>학교 검색</h2>
+    </div>
+    <div class="popupContentArea">
+       
+	  <!--inputTable : s-->
+		<div class="inputTable onlyInput noTline mb10">
+			<div class="inputSet">
+				<ul class="inputArea inlineBlock">
+					<li class="item">
+						<div class="inputBase placeholder" style="width:410px;">
+							<input type="text" placeholder="학교명을 검색하세요." title="학교명을 검색하세요." id="search1">
+						</div>
+					</li>
+					<li class="item">
+						<a href="#" class="btn big" style="width: 120px;"><span>검색</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--inputTable : e-->
+		<ul class="listStyle star">
+			<li>한국대학교인 경우 ‘한국’으로 검색하시고 선택하여 주시기 바랍니다.</li>
+			<li>검색 결과가 없는 경우, 좌측 하단 체크박스 선택 후 직접 입력해 주십시오.</li>
+			<li>해외 대학이나 대학원을 졸업하신 경우에도 직접 입력해 주십시오.</li>
+		</ul>
+
+		<div class="serchSrcollArea">
+			<h3>학교명</h3>
+			<div class="serchScrollcon">
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_1">
+						<label for="university1_1">한국교통</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_2">
+						<label for="university1_2">디지털서울문화예술</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_3">
+						<label for="university1_3">성삼외국어</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_4">
+						<label for="university1_4">송워</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_5">
+						<label for="university1_5">송호</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_6">
+						<label for="university1_6">수도침례</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_7">
+						<label for="university1_7">수원</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_8">
+						<label for="university1_8">수원가톨릭</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="university" id="university1_9">
+						<label for="university1_9">서울</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="majorEdit">
+			<div class="checkbox">
+				<input type="checkbox" id="self" class="self">
+				<label for="self">직접입력</label>
+			</div>
+			<div class="inputBase h40 disabled inputdisabled">
+				<label for="none">검색 결과가 없는 경우 직접 입력해 주세요.</label>
+				<input type="text" disabled="" id="none">
+			</div>
+			<div class="inputBase h40 inputedit placeholder" style="display:none;">
+				<input type="text" id="edit" title="학교명 직접입력">
+			</div>
+		</div>
+		<!--btn:s-->
+		<div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock orange" style="width: 90px;"><span>확인</span></a>
+        </div>
+		<!--btn:e-->
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!--01_pop학교검색 : e-->
+
+</body>
+</html>

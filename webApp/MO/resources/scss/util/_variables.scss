@@ -11,8 +11,8 @@ $channel: "mobile";
 
 // * 경로
 //-----------------
-$path:      '../../resources/images/';
-$font_path: '../../resources/fonts/';
+$path:      '../images/new/';
+$font_path: './new_fonts/';
 
 
 
@@ -113,11 +113,11 @@ $heding1:     22px;
 // $heding2:     28px;
 // $heding3:     26px;
 
-$fz_sm:       13px; 
-$fz_msm:      13px; 
-$fz_md:       14px !default; 
-$fz_lg:       16px; 
-$fz_base:     $fz_md; 
+// $fz_sm:       13px; 
+// $fz_msm:      13px; 
+// $fz_md:       14px !default; 
+// $fz_lg:       16px; 
+// $fz_base:     $fz_md; 
 
 // $h1:          $fz_base * 2.5 !default;
 // $h2:          $fz_base * 2 !default;
@@ -130,24 +130,8 @@ $fz_base:     $fz_md;
 // * Color
 //-----------------
 $point_color: #F8670D;//orange 
+$terms_point_color: #FF2D55; //red
 $error_color: #f93636; //red
-
-// Greyscale
-$gray100 : #000000;
-$gray850 : #1F1F21;
-$gray750 : #3F3F41;
-$gray700 : #555557;
-$gray650 : #6C6C6E;
-$gray500 : #949496;
-$gray400 : #B7B7B9;
-$gray350 : #C8C8CA;
-$gray300 : #DFDFE1;
-$gray250 : #E8E8EA;
-$gray200 : #EFEFF1;
-$gray190 : #F1F1F3;
-$gray170 : #F3F4F6;
-$gray150 : #F5F5F7;
-$gray130 : #F9F9FB;
 
 
 

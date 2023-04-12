@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>01_pop전화상담신청</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+</head>
+<body class="boxType">
+
+<!--01_pop전화상담신청 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<script>
+    $(function(){
+        $(document).on("change","input[name='insurance']",function(){
+            var val = $(this).val();
+            $(".insurance").hide();
+            $(".insurance."+val).show();
+        })
+    })
+</script>
+<div class="layerPopWrap failjoin w600 tellApply">
+    <div class="titleArea">
+        <h2>전화상담 신청</h2>
+    </div>
+    <div class="popupContentArea">
+        <div class="failimg phone">
+            <h3 class="poinTit">고객님, 무엇을 도와드릴까요?</h3>
+            <div class="con">
+				상담신청을 남겨주시면, 전문 상담원이 직접 연락 드리겠습니다.
+			</div>
+        </div>
+		<!--inputTable : s-->
+		<div class="inputTable onlyInput bline">
+			<ul class="inputArea">
+                <li class="item">
+                    <div class="radio">
+                        <input type="radio" name="insurance" id="help1" value="tel" class="yes" checked>
+                        <label for="help1">보험료 계산/가입</label>
+                    </div>
+                    <div class="radio ml20">
+                        <input type="radio" name="insurance" id="help2" value="homepage" class="no">
+                        <label for="help2">홈페이지 이용문의</label>
+                    </div>
+                </li>
+            </ul>
+            <!--2017-11-06 수정 : s-->
+			<ul class="inputArea inlineBlock">
+				<li class="item">
+					<div class="selectItem">
+						<select name="selectHp" id="telType" class="telType" title="연락처를 선택해주세요" style="width: 200px;">
+							<option value="hpTypeCon">휴대폰</option>
+							<option value="telTypeCon">자택</option>
+							<option value="jobTypeCon">직장</option>
+						</select>
+					</div>
+				</li>
+				<li class="item">
+                    <div class="selectTelType hpTypeCon">
+                        <div class="inputBase" style="width: 330px;">
+                            <label for="hpNumber">휴대폰번호 (‘-’없이)</label>
+                            <input type="text" id="hpNumber" value="01087584589">
+                        </div>
+                    </div>
+
+                    <div class="selectTelType telTypeCon" style="display: none;">
+                        <div class="selectItem">
+                            <select name="selectTel" title="지역번호를 선택해주세요" style="width: 100px;">
+                                <option value="02">02</option>
+                                <option value="031">031</option>
+                            </select>
+                        </div>
+                        <div class="inputBase ml10" style="width: 220px;">
+                            <label for="telNumber">전화번호 (‘-’없이)</label>
+                            <input type="text" id="telNumber" value="">
+                        </div>
+                    </div>
+                    <div class="selectTelType jobTypeCon" style="display: none;">
+                        <div class="selectItem">
+                            <select name="selectJob" title="지역번호를 선택해주세요" style="width: 100px;">
+                                <option value="02">02</option>
+                                <option value="031">031</option>
+                            </select>
+                        </div>
+                        <div class="inputBase ml10" style="width: 220px;">
+                            <label for="jobNumber">전화번호 (‘-’없이)</label>
+                            <input type="text" id="jobNumber" value="">
+                        </div>
+                    </div>
+				</li>
+			</ul>
+            <!--2017-11-06 수정 : s-->
+
+			<ul class="listStyle star">
+				<li>상담전화 신청을 위한 연락처 수집·이용에 동의합니다.</li>
+				<li>수집 정보는 상담 목적 외 용도로 이용되지 않습니다.</li>
+			</ul>
+
+		</div>
+		<!--inputTable : e-->
+
+		<!--btn:s-->
+		<div class="btnAreaWrap tac">
+            <a href="#" class="btn line inlineBlock gray" style="width: 150px;"><span>취소</span></a>
+            <a href="#" class="btn line inlineBlock orange" style="width: 150px;"><span>전화상담 신청</span></a>
+        </div>
+		<!--btn:e-->
+
+		<div class="insuranceLink">
+			<ul class="insurance tel">
+				<li><a href="#1"><span>자동차보험 계산</span></a></li>
+				<li><a href="#1"><span>해외여행보험 계산</span></a></li>
+				<li><a href="#1"><span>운전자보험 계산</span></a></li>
+			</ul>
+			<ul class="insurance homepage"  style="display:none;">
+				<li><a href="#1"><span>고객님께서 자주 하시는 질문과 궁금해 하시는 질문들을 정리했습니다.</span></a></li>
+			</ul>
+		</div>
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!--01_pop전화상담신청 : e-->
+
+</body>
+</html>

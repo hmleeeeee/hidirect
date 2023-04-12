@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>추가정보</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Content">본문 바로가기</a></div>
+<header>
+	<h1>추가정보</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">3</a>
+</header>
+<div id="h1Wrap">
+	<!-- content -->
+	<p class="topTxt">보험에 가입할 내용을 입력해 주세요.</p>
+	<section>
+		<h2>건물선택</h2>
+		<div class="wrapTab tabChois">
+			<a href="#none" class="house01 on" role="button"><span>아파트/주상<br>복합아파트</span><span class="hide"> 선택됨</span></a>
+			<a href="#none" class="house02" role="button"><span>연립(다세대)빌라</span></a>
+			<a href="#none" class="house03" role="button"><span>단독주택</span></a>
+		</div>
+		<div class="listDot">
+			<p>연립(다세대)빌라와 아파트의 차이는 건물 층으로 구분합니다.</p>
+		</div>
+		<ul class="listBasic">
+			<li>연립빌라 : 1~4층 건물</li>
+			<li>아파트 : 5층이상 건물</li>
+		</ul>
+
+		<h2>주택정보</h2>
+		<div class="inputWrap two">
+			<span>
+				<input type="text" id="name01" required="">
+				<label for="name01">총 층수</label>
+			</span>
+			<span>
+				<input type="text" id="name02" required="">
+				<label for="name02">주거 층수</label>
+			</span>
+		</div>
+		<div class="listDot">
+			<p>건물의 총 층수와 주거층수를 입력해주시기 바랍니다.</p>
+		</div>
+
+		<div class="inputWrap two mgtM">
+			<span>
+				<input type="text" id="name01" required="">
+				<label for="name01">주택면적(㎥)</label>
+			</span>
+			<span>
+				<input type="text" id="name02" required="">
+				<label for="name02">주택면적(평)</label>
+			</span>
+		</div>
+		<ul class="listDot">
+			<li>전용면적은 등기부등본상의 전용면적을 입력해주시기 바랍니다.</li>
+			<li>주택면적의 ㎥와 평은 한쪽을 입력 시 자동계산 됩니다.</li>
+		</ul>
+
+		<h2>주택 구조</h2>
+		<h3>기둥형태</h3>
+		<ul class="imgList01">
+			<li class="on">
+				<a href="#none" role="button"><img src="https://mdirect.hi.co.kr/images/content/img_house01.png" alt="콘크리트 기둥 이미지"></a>
+				<span>콘크리트 기둥</span>
+			</li>
+			<li>
+				<a href="#none" role="button"><img src="https://mdirect.hi.co.kr/images/content/img_house02.png" alt="벽돌(조직) 기둥 이미지"></a>
+				<span>벽돌(조직) 기둥</span>
+			</li>
+		</ul>
+
+		<h3>지붕형태</h3>
+		<ul class="imgList01">
+			<li>
+				<a href="#none" role="button"><img src="https://mdirect.hi.co.kr/images/content/img_house03.png" alt="콘크리트 슬레이트 지붕 이미지"></a>
+				<span>콘크리트 슬레이트 지붕</span>
+			</li>
+			<li class="on">
+				<a href="#none" role="button"><img src="https://mdirect.hi.co.kr/images/content/img_house04.png" alt="판넬 지붕 이미지"></a>
+				<span>판넬 지붕</span>
+			</li>
+		</ul>
+
+		<h3>외벽 형태</h3>
+		<ul class="imgList01">
+			<li>
+				<a href="#none" role="button"><img src="https://mdirect.hi.co.kr/images/content/img_house05.png" alt="콘크리트 외벽 이미지"></a>
+				<span>콘크리트 외벽</span>
+			</li>
+			<li>
+				<a href="#none" role="button"><img src="https://mdirect.hi.co.kr/images/content/img_house06.png" alt="벽돌(조직) 외벽 이미지"></a>
+				<span>벽돌(조직) 외벽</span>
+			</li>
+			<li class="on">
+				<a href="#none" role="button"><img src="https://mdirect.hi.co.kr/images/content/img_house07.png" alt="블록 외벽 이미지"></a>
+				<span>블록 외벽</span>
+			</li>
+		</ul>				
+		
+		<ul class="listDot">
+			<li>위 주택구조 이외의 다른 주택 구조는 인터넷으로 보험 가입이 불가능하오니 현대해상 설계사를 통해 가입해주세요.</li>
+			<li><span>가입불가주택 : 기둥형태가 철골조나 목조, 지붕형태가 슬레이트지붕, 기와지붕, 천막지붕, 외박형태가 판넬, 유리외벽인 주택</span></li>
+		</ul>
+
+
+		<div class="agreeBox">
+			<strong>피보험자가 이륜자동차 운전중에 발생한 상해사고는 보험에서 보상되지 않습니다.</strong>
+			<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">내용동의</span></label><span>위 내용에 동의합니다.</span></p>
+		</div>
+	</section>
+
+	<div class="btnWrap">
+		<span><a href="#none" role="button">취소</a></span>
+		<span><a href="#none" role="button">다음</a></span>
+	</div>
+	<!-- //content -->
+</div>
+</body>
+</html>
+

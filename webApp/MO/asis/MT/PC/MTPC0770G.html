@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 공인인증 전자서명</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+<!-- <script src="../../js/popup.js"></script> -->
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>공인인증 전자서명</h1>
+		</header>
+		<div class="popContent">
+			<section class="signatureSection">
+				<div class="infBox">
+					<a href="#none" class="subConOpen" role="button">
+						<p>
+							<strong class="titl">계약번호</strong>
+							<span class="data">F17KA0000956</span>
+							<span class="btn"><em class="subOpenBtn up">하위컨텐츠 열기</em></span>
+						</p>
+					</a>
+				</div>
+				<div class="dataDetail subContCarlist">
+					<ul>
+						<li>
+							<span class="titl">보험상품명</span>
+							<span class="data">HiCar개인용(CM)</span>
+						</li>
+						<li>
+							<span class="titl">총 보험료</span>
+							<span class="data"><em>1,000,000</em>원</span>
+						</li>
+						<li>
+							<span class="titl">신청자IP</span>
+							<span class="data">110.70.58.***</span>
+						</li>
+						<li>
+							<span class="titl">계약자명</span>
+							<span class="data">박현대</span>
+						</li>
+						<li>
+							<span class="titl">결제수단</span>
+							<span class="data">신용카드(일시납)</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="conbox">
+					<ul class="termCont">
+						<li>
+							<a href="#none">현대해상 다이렉트 보험 계약의 체결 및 이행을 위한 <span>제반사항(청약내용, 가입안내서, 상품설명서)</span>을 확인했음을 공인인증 전자서명 합니다.</a>
+							<input type="checkbox" id="ch01"><label for="ch01">확인 및 동의</label>
+						</li>
+					</ul>
+
+					<div class="cerArea">
+						<h2>공인인증서를 선택하세요.</h2>
+						<div class="wrapLineBox">
+							<ul class="CerList">
+								<li>
+									<div class="CerBox">
+										<strong class="certName">박해상</strong>
+										<dl class="certDesc">
+											<dt>발급자</dt>
+											<dd>yessign</dd>
+											<dt>구분</dt>
+											<dd>은행개인</dd>
+											<dt>만료일</dt>
+											<dd>2017.08.27</dd>
+										</dl>
+										<a href="#none" class="btn"><span class="hide">인증서 선택</span></a>
+									</div>
+								</li>
+								<li>
+									<div class="CerBox">
+										<strong class="certName">박해상</strong>
+										<dl class="certDesc">
+											<dt>발급자</dt>
+											<dd>yessign</dd>
+											<dt>구분</dt>
+											<dd>은행개인</dd>
+											<dt>만료일</dt>
+											<dd>2017.08.27</dd>
+										</dl>
+										<a href="#none" class="btn"><span class="hide">인증서 선택</span></a>
+									</div>
+								</li>
+								<li>
+									<div>
+										<p class="txtGuideInfo">저장 된 공인인증서가 없습니다.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<a href="#none" role="button">취소</a>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

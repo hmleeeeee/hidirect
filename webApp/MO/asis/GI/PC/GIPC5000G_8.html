@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>가입 전 알릴 사항</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		/* 다중 선택 */
+		$(".termHead > a").click(function() {
+			var _this = $(this);
+			var _parent = $(this).parent();
+			if(!_this.hasClass('on')) {
+				console.log('a');
+				_this.addClass('on');
+				if($('.radioChois').length > 0) {
+					$('.radioChois > ul').each(function() {
+						$(this).find('li').first().addClass('on').siblings().removeClass('on');
+					});
+				}
+			} else {
+				_this.removeClass('on');
+				if($('.radioChois').length > 0) {
+					$('.radioChois > ul').each(function() {
+						$(this).find('li').first().removeClass('on');
+					});
+				}
+			}
+		});
+		$(".radioChois > ul > li > a").click(function() {
+			var _this = $(this);
+			var _parent = $(this).parent();
+			if(!_this.hasClass('on')) {
+				_parent.addClass('on').siblings().removeClass('on');
+			} else {
+				_parent.removeClass('on').siblings();
+			}
+		});
+
+	});
+
+</script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>가입 전 알릴 사항</h1>
+	<a href="#" class="btnHome">메인페이지로 이동</a>
+	<a href="#" class="btnInfo">2</a>
+</header>
+
+<div id="h1Wrap">
+	<!-- content -->
+	<p class="topTxt">가입 전 알릴 사항에 [예] 또는 [아니오]를 선택해주세요. <span>[예] 선택 시 보험 가입이 제한</span> 될 수 있습니다.</p>
+
+	<section>
+		<h2>가입 전 알릴 사항</h2>
+		<a href="#" class="allAgr02" role="button" title="모두 아니오">모두 아니오</a>
+
+		<div class="whiteBox typeTwo mgtM pdbNone">
+			<div class="questionChois">
+				<span class="question">해외영주권자 또는 해외시민권자(이중국적자 포함)이면서 체류국가가 해당 국가입니까?</span>
+			</div>
+			<div class="radioChois">
+				<ul>
+					<li><a href="#none" class="tabChois" role="button">아니오</a></li>
+					<li class="on"><a href="#none" class="tabChois" role="button">예</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="whiteBox typeTwo mgtM pdbNone">
+			<div class="questionChois">
+				<span class="question">현지취업, 해외거주, 운동경기, 선교사 및 봉사활동을 체류목적으로 하십니까?
+				</span>
+			</div>
+			<div class="radioChois">
+				<ul>
+					<li class=""><a href="#none" class="tabChois" role="button">아니오</a></li>
+					<li><a href="#none" class="tabChois" role="button">예</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="whiteBox typeTwo mgtM pdbNone">
+			<div class="questionChois">
+				<span class="question">최근 3년 이내에 의사로부터 진찰 또는 검사(건강검진 포함)를 통하여 의료행위(질병확정진단, 질병의심소견, 치료, 입원, 수술(제왕절개포함),투약)을 받은 사실이 있습니까?
+				</span>
+			</div>
+			<div class="radioChois">
+				<ul>
+					<li class=""><a href="#none" class="tabChois" role="button">아니오</a></li>
+					<li><a href="#layerPopNotice1" class="tabChois" role="button">예</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="whiteBox typeTwo mgtM pdbNone">
+			<div class="questionChois">
+				<span class="question">현재 해외로 출국하였거나 이미 체류중이십니까?
+				</span>
+			</div>
+			<div class="radioChois">
+				<ul>
+					<li class=""><a href="#none" class="tabChois" role="button">아니오</a></li>
+					<li><a href="#none" class="tabChois" role="button">예</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="whiteBox typeTwo mgtM pdbNone">
+			<div class="questionChois">
+				<span class="question">당사 또는 타사 갱신 계약에 해당하십니까?
+				</span>
+			</div>
+			<div class="radioChois">
+				<ul>
+					<li class=""><a href="#none" class="tabChois" role="button">아니오</a></li>
+					<li><a href="#layerPopNotice2" class="tabChois" role="button">예</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<ul class="listDot">
+			<li>보험가입에 필요한 내용입니다. 사실대로 선택해주세요.</li>
+			<li>알릴 의무를 위반하는 경우 보험금의 지급이 거절될 수 있으며 보험계약이 해지될 수 있습니다.</li>
+		</ul>
+	</section>
+
+	<div class="btnWrap">
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">다음</a></span>
+	</div>
+	<!-- content -->
+</div>
+<!-- 레이어팝업 : 의료행위 항목입력 -->
+<div class="layerPopup" id="layerPopNotice1">
+	<div class="layerWrap">
+		<h2>의료행위 항목입력</h2>
+		<div class="layerCont">
+			<div class="inputWrap">
+				<input type="text" class="inputClick" value="" title="의료 행위 항목" placeholder="최근 실시한 의료행위 항목을 입력해주세요">
+			</div>
+		</div>
+		<div class="layerBtn">
+			<span><a href="#close">취소</a></span>
+			<span class="on"><a href="#">확인</a></span>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+
+<!-- 레이어팝업 : 타사 갱신 계약 여부 -->
+<div class="layerPopup" id="layerPopNotice2">
+	<div class="layerWrap">
+		<h2>타사 갱신 계약 여부</h2>
+		<div class="layerCont">
+			<div class="inputWrap">
+				<input type="text" class="inputClick" value="" title="타사명" placeholder="타사명을 입력해주세요">
+			</div>
+		</div>
+		<div class="layerBtn">
+			<span><a href="#close">취소</a></span>
+			<span class="on"><a href="#">확인</a></span>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+</body>
+</html>

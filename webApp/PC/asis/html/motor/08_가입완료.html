@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>자동차보험_08_가입완료</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+    <script>
+        $(function(){
+            $(document).on("click",".btnPhoto",function(){
+                if(!$(this).hasClass("on")){
+                    $(".btnPhoto").addClass("on");
+                    $(".motorEndbox").slideDown();
+                }else{
+                    $(".btnPhoto").removeClass("on");
+                    $(".motorEndbox").slideUp();
+                }
+            })
+            $(document).on("click",".motorEndbox .btnClose",function(){
+                $(".btnPhoto").removeClass("on");
+                $(".motorEndbox").slideUp();
+            })
+        })
+    </script>
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap end">
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--endTitle : s-->
+        <div class="endTitle motor">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/overseas_trip/end_logo.png" alt="현대해상 다이렉트"></a></p>
+            <h1 class="title">자동차보험</h1>
+            <p class="txt">홍길동님 계약체결이 완료되었습니다. 항상 마음을 전하는 현대해상이 되겠습니다.</p>
+        </div>
+        <!--endTitle : e-->
+
+		<div class="btnAreaWrap right mt30"><a href="#" class="btn middle serch photo btnPhoto"><span>마일리지 특약 사진등록</span></a></div>
+        <!--2017-10-20 수정 : s-->
+        <!-- motorEndbox : s -->
+		<div class="motorEndbox">
+			<div class="title">
+				<h3 class="tit">Eco 마일리지 특약가입을 위하여 <span class="fontPoint1">사진 2매(차량번호판, 계기판 사진)을 등록해 주세요.</span></h3>
+			</div>
+			<div class="morpicArea bline mt15">
+				<ul class="mopic">
+					<li>
+						<img src="https://direct.hi.co.kr/images/motor/img_sample_02.png" alt="" class="img" />
+						<div class="txtContent">
+							<h4>차량번호판 사진 등록</h4>
+							<div class="con">차량과 차량번호가 명확하게 나오도록 찍어주세요.</div>
+						</div>
+						<div class="btnAreaWrap tac mt10">
+							<a href="#" class="btn middle inlineBlock" style="width:125px"><span>PC에서 등록</span></a>
+							<a href="#" class="btn middle inlineBlock" style="width:125px"><span>모바일 등록</span></a>
+                            <!--<a href="#" class="btn middle orange inlineBlock" style="width:125px"><span>사진확인</span></a>-->
+                            <!--<a href="#" class="btn middle orange inlineBlock" style="width:125px"><span>모바일 변경</span></a>-->
+						</div>
+					</li>
+					<li>
+						<img src="https://direct.hi.co.kr/images/motor/img_sample_03.png" alt="" class="img" />
+						<div class="txtContent">
+							<h4>차량 계기판 사진</h4>
+							<div class="con">계기판이 정면에 나오도록 찍어주세요.</div>
+						</div>
+						<div class="btnAreaWrap tac mt10">
+							<a href="#" class="btn middle orange inlineBlock" style="width:125px"><span>PC에서 변경</span></a>
+                            <a href="#" class="btn middle inlineBlock" style="width:125px"><span>모바일 등록</span></a>
+                            <!--<a href="#" class="btn middle orange inlineBlock" style="width:125px"><span>사진확인</span></a>-->
+                            <!--<a href="#" class="btn middle orange inlineBlock" style="width:125px"><span>모바일 변경</span></a>-->
+						</div>
+					</li>
+				</ul>
+                <div class="optionArea">
+                    <div class="inputBase datepicker" style="width: 210px;">
+                        <label for="drive">주행거리 기준일</label>
+                        <input type="text" id="drive" value="2017-08-09">
+                    </div>
+                    <div class="inputBase rightTxtType ml10" style="width: 210px;">
+                        <label for="text1">주행거리</label>
+                        <div class="inputSet">
+                            <div class="input"><input type="text" id="text1"></div>
+                            <div class="rightTxt">km</div>
+                        </div>
+                    </div>
+                    <div class="txtArea">
+                        주행거리 기준일과 계기판의<br>
+                        주행거리를 입력해주세요.
+                    </div>
+                </div>
+				<div class="btnAreaWrap tac mt30">
+					<a href="#" class="btn line inlineBlock orange" style="width:154px;"><span>등록사진 저장</span></a>
+				</div>
+			</div>
+			<ul class="listStyle star fontLevel2 noGap mt15">
+                <li>이미지 등록이 되지 않을 경우 고객콜센터(1577-1001)를 통해 중도 가입하실 수 있습니다.</li>
+                <li>중도가입 시 보험료 할인은 가입일로부터 보험 종료일까지 일할 계산되어 적용됩니다.</li>
+                <li>등록 사진이 부적합한 경우(허위 및 해당 이미지가 아닌 경우)특약가입은 무효가 되며 할인보험료를 환입하셔야 합니다.</li>
+                <li>10M이하의 JPG, JPEG, GIF, PNG 파일만 등록가능 합니다.</li>
+            </ul>
+			<a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/motor/btn_motor_close.png" alt="닫기"></a>
+		</div>
+		<!-- motorEndbox : e -->
+        <!--2017-10-20 수정 : e-->
+		
+
+        <!--infoTableWrap : s-->
+        <div class="infoTableWrap end">
+            <h3 class="title pt10">계약 정보</h3>
+            <ul class="infoTable harf bline pb5">
+                <!--2017-10-20 수정 : s-->
+                <li class="item">
+                    <dl>
+                        <dt>보험상품</dt>
+                        <dd>다이렉트 자동차보험</dd>
+                    </dl>
+					<dl>
+                        <dt>차량명칭</dt>
+                        <dd>카렌스 2.0(LPG)</dd>
+                    </dl>
+					<dl>
+                        <dt>계약자</dt>
+                        <dd>홍길동 (791017-1******)</dd>
+                    </dl>
+					<dl>
+                        <dt>추가부속품</dt>
+                        <dd>ABS</dd>
+                    </dl>
+					<dl>
+                        <dt>기타 보유차량</dt>
+                        <dd>
+							<div class="selectItem inTable tal" style="width: 100px;">
+								<select name="priceSelect1" id="priceSelect1" title="가입금액을 선택해주세요">
+									<option value="1">11가1111</option>
+									<option value="2">11가1111</option>
+									<option value="3">11가1111</option>
+								</select>
+							 </div>
+							 <a href="#" class="btn small2"><span>동일증권 설정</span></a><br>
+						</dd>
+                    </dl>                   
+                </li>
+                <li class="item">
+					<dl>
+                        <dt>보험기간</dt>
+                        <dd>2017-08-10 ~ 2027-08-10</dd>
+                    </dl>
+                    <dl>
+                        <dt>차량번호</dt>
+                        <dd>12가3456</dd>
+                    </dl>
+					<dl>
+                        <dt>피보험자</dt>
+                        <dd>홍길동 (7915,000원017-1******)</dd>
+                    </dl>
+                    <dl>
+                        <dt>결제방식</dt>
+                        <dd>가상계좌 (우리은행 111-11-11111)</dd>
+                    </dl>
+                    <dl>
+                        <dt>총 보험료</dt>
+                        <dd class="fontPoint2">1,456,620원</dd>
+                    </dl>
+                </li>
+                <!--2017-10-20 수정 : e-->
+            </ul>
+			
+
+			<!--openContent : s-->
+			<ul class="openContentArea noTline">
+				<li class="on">
+					<a href="#" class="fz14">가입담보확인</a>
+					<div class="openContent" style="display: block;">
+						<ul class="productInfoList left">
+							<li>
+								<p class="tit">대인배상 Ⅰ</p>
+								<p class="price">2억원</p>
+							</li>
+							<li>
+								<p class="tit">대인배상 Ⅱ</p>
+								<p class="price">무한</p>
+							</li>
+							<li>
+								<p class="tit">대물배상</p>
+								<p class="price">무한</p>
+							</li>
+							<li>
+								<p class="tit">무보험차상해</p>
+								<p class="price">2억원</p>
+							</li>
+							<li>
+								<p class="tit">자기신체사고</p>
+								<p class="price">자기신체사고(5천/부상 3천)</p>
+							</li>
+							<li>
+								<p class="tit">자기차량손해</p>
+								<p class="price">3,210만원(손해액의 20%) 자기부담금(20~50만원)</p>
+							</li>
+							<li>
+								<p class="tit">물적사고할증기준</p>
+								<p class="price">자기신체사고(5천/부상 3천)</p>
+							</li>
+							<li>
+								<p class="tit">긴급출동특약</p>
+								<p class="price">하이카서비스</p>
+							</li>
+							<li>
+								<p class="tit">가입특약</p>
+								<p class="price">보험대차운전중사고보상특약, Eco  Point 리워드 특별약관(자차)</p>
+							</li>							
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<!--openContent : e-->
+
+
+			<h3 class="title">운전자 범위</h3>
+            <ul class="infoTable harf">
+                </li>
+                <li class="item">
+					<dl>
+                        <dt>보험상품</dt>
+                        <dd>기명피보험자 1인</dd>
+                    </dl>
+				
+                <li class="item">
+					<dl>
+                        <dt>연령한정</dt>
+                        <dd>만35세 이상</dd>
+                    </dl>
+                </li>
+            </ul>                    
+        </div>
+        <!--infoTableWrap : e-->
+        
+		<!--2017-11-17 수정:s-->
+        <!--btnAreaWrap : s-->
+        <div class="btnAreaWrap txtBtn">
+            <!--listStyle : s-->
+            <ul class="listStyle star txtArea noGap fontLevel2">
+                <li>더 나은 서비스를 위해 <a href="#" class="btn small" style="width:84px;"><span class="fontLevel1 fz14">만족도 조사</span></a>를 부탁드립니다.</li>
+            </ul>
+            <!--listStyle : e-->
+            <div class="btnArea">
+                <a href="#" class="btn line pdf"><span>보험 약관 다운로드</span></a>
+            </div>
+        </div>
+        <!--btnAreaWrap : e-->
+		<!--bannerWrap : s-->
+        <div class="bannerWrap harf">
+            <div class="overseas_trip">
+                <p class="title">즐거운 해외여행을<br>안전하게 <span class="fontPoint2">즐기는 방법!</span></p>
+                <a href="#" class="btn middle"><span>해외여행 보험 조회</span></a>
+            </div>
+            <div class="driver">
+                <p class="title">자동차보험과 함께<br>가입해야 하는 <span class="fontPoint2">안전 필수품!</span></p>
+                <a href="#" class="btn middle"><span>운전자 보험 조회</span></a>
+            </div>
+            <!--
+            <div class="car">
+                <p class="title">자동차보험 오프라인 대비<br><span class="fontPoint2">최대 58.7%할인!</span></p>
+                <a href="#" class="btn middle"><span>자동차 보험 조회</span></a>
+            </div>
+            -->
+        </div>
+        <!--bannerWrap : e-->
+		<!--2017-11-17 수정:e-->
+
+        <!--lineTabWrap : e-->
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <a href="#" class="btn home"><span>홈으로</span></a>
+            </div>
+        </div>
+    </div>
+    <!--contentArea : e -->
+
+    <!--rightBannerArea : s-->
+    <div class="rightBannerArea">
+        <div class="bannerWrap rightBanner">
+            <a href="#" class="imgType"><img src="https://direct.hi.co.kr/images/common/end_right_banner.png" alt="만족도 조사에 참여해 보세요! 추첨을 통해 스타벅스 아메리카노를 드립니다.(월 50명 한정)"></a>
+            <!--
+            <a href="#" class="endBanner2">
+                <p class="txt">이벤트 참여하고</p>
+                <p class="title">스타벅스 커피<br>받아가세요 ~</p>
+            </a>
+            <a href="#" class="endBanner3">
+                <p class="txt">지금 현대카드 </p>
+                <p class="title">M, X, ZERO를 쓰면<br>150% 적립 할인!</p>
+            </a>
+            <a href="#" class="endBanner4">
+                <p class="txt">GS 칼텍스 보너스 포인트</p>
+                <p class="title">보험료 결제시<br>3만원 청구할인</p>
+            </a>
+            -->
+        </div>
+    </div>
+    <!--rightBannerArea : e-->
+</div>
+</body>
+</html>

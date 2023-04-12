@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+/*!
+ * ====================================
+ * 다이렉트 보험 서비스 플랫폼 구축 PC
+ * ====================================
+ * Modify: 2023/02/02
+ */
+
+ // * - css 변환시 : ^\s
+
+
+//------------------------------------
+// Util
+//------------------------------------
+@import "util/variables";
+@import "util/function";
+@import "util/mixins";
+@import "util/include";
+
+//------------------------------------
+// Vendor
+//------------------------------------
+@import "vendor/normalize";
+@import "vendor/swiper";
+
+
+//------------------------------------
+// base
+//------------------------------------
+@import "base/font/noto-sans";
+// @import "base/font/himaum";
+
+@import "base/magic";
+@import "base/reset";
+
+@import "base/form";
+
+//------------------------------------
+// svg
+//------------------------------------
+@import "svg/common";
+// @import "svg/main";
+// @import "svg/product";
+
+
+//------------------------------------
+// layout
+//------------------------------------
+@import "layout/layout";
+@import "layout/layout.grid";
+
+@import "layout/skip";//PC
+@import "layout/gnb";//PC
+@import "layout/breadcrumb";//PC
+
+// @import "layout/sidebar";//MO
+// @import "layout/navbar";//MO
+
+@import "layout/footer";
+@import "layout/quick";
+@import "layout/modal";
+@import "layout/content";
+
+
+//------------------------------------
+// module
+//------------------------------------
+@import "module/accordion";
+@import "module/badge";
+@import "module/button";
+@import "module/datepicker";
+@import "module/loading";
+@import "module/motion";
+@import "module/state";
+@import "module/swiper";
+@import "module/tab";
+@import "module/table";
+
+
+//------------------------------------
+// page
+//------------------------------------
+@import "page/login";
+@import "page/main";
+
+
+//------------------------------------
+// work
+//------------------------------------
+@import "work/work-hj"; 
+@import "work/work-mm"; 
+
+
+
+
+
+
+//------------------------------------
+// 추후삭제 : BrowserSync Connected 
+#__bs_notify__{display: none !important;}

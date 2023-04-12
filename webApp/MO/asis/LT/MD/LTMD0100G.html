@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>보험료 계산하기</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Content">본문 바로가기</a></div>
+<header>
+	<h1>보험료 계산하기</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<!-- <a href="#none" class="btnInfo">1</a> -->
+</header>
+<div id="h1Wrap">
+	<!-- content -->
+	<div class="clinicVisual">
+		<p>
+			<strong>필요한 의료비<br />보장만 쏙!</strong>
+			<span>저렴한 보험료로 실속있고<br />합리적이게 준비하세요!</span>
+		</p>
+	</div>
+	<p class="topTxt">인터파크 임직원 현대카드 결제 시, 3만원 추가할인</p>
+	<section>
+		<fieldset>
+			<legend>개인형 정보입력</legend>
+			<div class="inputWrap">
+				<input type="text" id="name" required />
+				<label for="name">이름</label>
+			</div>
+			<div class="inputWrap two">
+				<input type="tel" id="number01" required>
+				<label for="number01">주민등록번호<em class="hide">앞자리</em></label>
+				<input type="password" placeholder="●●●●●●●" id="number02" />
+				<label for="number02" class="hide">주민등록번호뒷자리</label>
+			</div>
+			<div class="inputWrap">
+				<input type="tel" id="phone" required />
+				<label for="phone">본인명의 휴대폰번호('-없이')</label>
+			</div>
+		</fieldset>
+			<!-- 0822 del
+		<ul class="listDot">
+			<li>최근 계산 내역이 있을 경우 이름, 주민등록번호, 휴대폰 번호 입력하여 내역 확인 후 보험료 계산을 이어서 진행할 수 있습니다.</li>
+			<li>본 제휴 페이지를 통해 보험료 산출 후'보험료 저장'/'다음 단계'를 진행한 경우에만 정상적으로 쿠폰 지급이 가능합니다.</li>
+		</ul>-->
+	</section>
+
+	<div class="btnWrap two">
+		<span><a href="#" role="button">최근 계산 내역</a></span>
+		<span class="btnCalc"><a href="#" role="button">보험료 계산하기</a></span><!-- 0822 class 추가-->
+	</div>
+	<!-- //content -->
+</div>
+</body>
+</html>
+

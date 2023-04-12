@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>보험료 확인</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>보험료 확인</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">4</a>
+</header>
+
+<div id="h1Wrap">
+	<!-- content -->
+	<div class="accodion on">
+		<div>
+			<a href="#;" class="subConOpen" role="button">
+				<strong>최종보험료</strong>
+				<span>1,000,000원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+			</a>
+		</div>
+		<div class="dataDetail">
+			<ul>
+				<li>
+					<strong class="titl">할인</strong><span class="cost">100,000만원</span>
+					<span class="info">다이렉트 할인 (평균 15.4%), 블릭박스 특약, 하이카 그린서비스 특약, 자녀할인, ECO마일리지 특약, 사고 및 긴급상황 통보장치 특약</span>
+				</li>
+				<li>
+					<strong class="titl">ECO마일리지 환급 예상</strong>
+					<span class="cost">(120,000~20,000원)</span>
+				</li>
+				<!-- 0718 JJY-->
+				<li>
+					<strong class="titl">환급 후 실보험료 <a href="#layerPopup1" class="btnHelp" role="button"><span>도움말</span></a></strong>
+					<span class="cost"><em>120,0000원</em></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<section>
+		<div class="bannerCard">
+			<a href="#layerPopup2" role="button"><span>지금 바로 신용카드 추가 할인 혜택을 확인하세요</span></a>
+		</div>
+
+		<h2>할인 특약 선택</h2>
+		<div class="specialsList onbtn">
+			<a href="#" role="button">
+				<span class="name">자녀할인</span>
+				<span class="desc">7%할인</span>
+			</a>
+			<a href="#" role="button">
+				<span class="name">ECO마일리지</span>
+				<span class="desc">6~32%할인</span>
+			</a>
+			<a href="#" role="button">
+				<span class="name">블랙박스장착</span>
+				<span class="desc">3%할인</span>
+			</a>
+			<a href="#" role="button">
+				<span class="name">자녀할인</span>
+				<span class="desc">7%할인</span>
+			</a>
+			<a href="#" role="button">
+				<span class="name">전기차</span>
+			</a>
+			<a href="#" role="button">
+				<span class="name">나눔특약</span>
+				<span class="desc">보험료 N할인</span>
+			</a>
+		</div>
+
+		<div class="h2Btn">
+			<h2>담보 상세 확인/변경</h2>
+			<a href="#none" class="btnLink" role="button"><span>추천담보</span></a>
+		</div>
+
+		<ul class="listBox">
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="check01"><label for="check01"><span class="hide">대인배상Ⅰ</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">대인배상Ⅰ<em>가입</em></p><!-- 0814 class수정  -->
+				</div>
+				<a href="#" class="btnLink"><span>더보기</span></a>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="check01"><label for="check01"><span class="hide">대인배상Ⅱ</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">대인배상Ⅱ<em>무한</em></p>
+				</div>
+				<a href="#" class="btnLink"><span>더보기</span></a>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="check02"><label for="check02"><span class="hide">대물배상</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">대물배상<em>1억원</em></p>
+				</div>
+				<a href="#" class="btnLink"><span>더보기</span></a>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="check03"><label for="check03"><span class="hide">자기신체사고</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">자기신체사고<em>손해액의 20%/20~50만원</em></p>
+				</div>
+				<a href="#" class="btnLink"><span>더보기</span></a>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="check04"><label for="check04"><span class="hide">무보험차상해</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">무보험차상해<em>1억원</em></p>
+				</div>
+				<a href="#" class="btnLink"><span>더보기</span></a>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="check05"><label for="check05"><span class="hide">자기차량 손해</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">자기차량 손해<em>손해액의 20%/20~50만원</em></p>
+				</div>
+				<a href="#" class="btnLink"><span>더보기</span></a>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="check06"><label for="check06"><span class="hide">긴급출동 서비스</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">긴급출동 서비스<em>하이카서비스</em></p>
+				</div>
+				<a href="#" class="btnLink"><span>더보기</span></a>
+			</li>
+			<li>
+				<div class="check">
+					<span>
+						<input type="checkbox" id="check06"><label for="check06"><span class="hide">부가담보</span></label>
+					</span>
+				</div>
+				<div class="item">
+					<p class="tit2">부가담보</p>
+				</div>
+				<a href="#" class="btnLink"><span>더보기</span></a>
+			</li>
+		</ul>
+
+		<div class="btn">
+			<span><a href="#" role="button" class="blueSave">보험료 저장</a></span>
+			<span><a href="#" role="button" class="orgSms">문자로 받기</a></span>
+		</div>
+
+	</section>
+
+	<div class="accodionPo">
+		<a href="#" class="subConOpen" role="button">
+			<strong>최종보험료</strong>
+			<span>1,000,000원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+		</a>
+		<div class="dataDetail">
+			<ul>
+				<li>
+					<strong class="titl">기본 보험료</strong>
+					<span class="cost">1,210,000원</span>
+				</li>
+				<li>
+					<strong class="titl">할인</strong><span class="cost">-100,000만원</span>
+					<span class="info">다이렉트 할인 (평균 15.4%)</span>
+					<span class="info">블릭박스 특약,</span>
+					<span class="info">하이카 그린서비스 특약</span>
+				</li>
+				<li>
+					<strong class="titl">ECO마일리지 환급 예상</strong>
+					<span class="cost"> -120,000~20,000원</span>
+				</li>
+				<li class="total">
+					<strong class="titl">최종 보험료</strong>
+					<span class="cost">1,000,000원</span><!-- 0628 ￦삭제 JJY -->
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="btnWrap">
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">보험 가입하기</a></span>
+	</div>
+	<!-- //content -->
+</div>
+<!-- 최초 노출 레이어 팝업 -->
+<div class="layerPopup" id="layerPopup0">
+	<div class="layerWrap">
+		<h2>안내</h2>
+		<div class="layerCont">
+			<p>아래의 <span>할인 특약 가입</span>을 통해 보험료를 보다 더 <span>저렴하게 가입</span>하실 수 있습니다.</p>
+			<h3>할인 특약 정보</h3>
+			<ul class="listDot">
+				<li>블랙박스 장착 : <span>3%</span></li>
+				<li>자녀할인(만7세 이하) : <span>7%</span></li>
+				<li>ECO마일리지 : <span>6~32%</span></li>
+				<li>사고통보장치 : <span>7%</span></li>
+				<li>나눔특약 : <span>2.8% (특약 가입대상 한정)</span></li>
+			</ul>
+			<ul class="listEtc">
+				<li>카드사 추가할인 혜택을 확인하세요.</li><!-- 0814 문구수정 -->
+				<li>나눔특약을 위해서는 <span>반드시 상담원을 통한 서류 첨부와 심사가 필요</span>합니다.
+			</ul>
+		</div>
+		<div class="layerBtn">
+			<a href="#close">확인</a>
+		</div>
+		<a href="#" role="button" class="layerClose">창닫기</a>
+	</div>
+</div>
+
+<div class="layerPopup" id="layerPopup1">
+	<div class="layerWrap">
+		<h2>유의사항</h2>
+		<div class="layerCont">
+			<p>환급 후 실보험료는 고객님께서 설정한 <span>결제 보험료에서 ECO마일리지 환급 예상 금액(사진, 3,000km 이하 32% 환급기준)</span>을 제외한 금액입니다.</p>
+
+			
+			<ul class="listEtc">
+				<li>ECO마일리지 특약 가입하지 않는 경우에는 해당되지 않는 사항입니다.</li>
+				<li>특약 옵션에 따라 실보험료 변동이 있을 수 있을 수 있습니다.</li>
+			</ul>
+		</div>
+		<div class="layerBtn">
+			<a href="#close">확인</a>
+		</div>
+		<a href="#" role="button" class="layerClose">창닫기</a>
+	</div>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>보험료 계산하기</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Content">본문 바로가기</a></div>
+<header>
+	<h1>보험료 계산하기</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">1</a>
+</header>
+<div id="h1Wrap">
+	<!-- content -->
+	<div class="houseVisual">
+		<p>
+			<strong>현대해상 주택화재<br />종합보험 ‘생활의기술’</strong>
+			<span>주택화재와 재물손해, 상해배상책임까지</span>
+		</p>
+	</div>
+	<p class="topTxt">인터파크 임직원 현대카드 결제 시, 3만원 추가할인</p>
+	<div class="tabMenuBox">
+		<div class="tabMenu">
+			<a href="#none" class="on" role="button"><span>개인형</span><span class="hide"> 선택됨</span></a>
+			<a href="#none" role="button"><span>가족형(10% 할인)</span></a>
+		</div>
+	</div>
+	<section>
+		<div class="tabOpen on">
+			<strong class="hide">개인형</strong>
+			<fieldset>
+				<legend>개인형 정보입력</legend>
+				<div class="inputWrap">
+					<input type="text" id="name" required />
+					<label for="name">이름</label>
+				</div>
+				<div class="inputWrap two">
+					<input type="tel" id="number01" required>
+					<label for="number01">주민등록번호<em class="hide">앞자리</em></label>
+					<input type="password" placeholder="●●●●●●●" id="number02" />
+					<label for="number02" class="hide">주민등록번호뒷자리</label>
+				</div>
+				<div class="inputWrap">
+					<input type="tel" id="phone" required />
+					<label for="phone">본인명의 휴대폰번호('-없이')</label>
+				</div>
+			</fieldset>
+		</div>
+
+		<div class="tabOpen">
+			<strong class="hide">가족형(10% 할인)</strong>
+			<fieldset>
+				<legend>계약자 정보입력</legend>
+				<div class="inputWrap">
+					<input type="text" id="f_name" required />
+					<label for="f_name">이름</label>
+				</div>
+				<div class="inputWrap two">
+					<input type="tel" id="f_number01" required>
+					<label for="f_number01">주민등록번호<em class="hide">앞자리</em></label>
+					<input type="password" placeholder="●●●●●●●" id="f_number02" />
+					<label for="f_number02" class="hide">주민등록번호뒷자리</label>
+				</div>
+				<div class="inputWrap">
+					<input type="tel" id="f_phone" required />
+					<label for="f_phone">본인명의 휴대폰번호('-없이')</label>
+				</div>				
+			</fieldset>			
+
+			<div class="h2Btn">
+				<h2>가족(피보험자)</h2>
+				<a href="#none" class="btnDel" role="button">삭제</a>
+			</div>
+			<fieldset>
+				<legend>가족(피보험자) 정보입력</legend>
+				<div class="inputWrap">
+					<select title="피보험자 가족과의 관계">
+						<option value="0" selected="selected">관계 선택</option>
+						<option value="1">배우자</option>
+					</select>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="f_name1" required />
+					<label for="f_name1">이름</label>
+				</div>
+				<div class="inputWrap birth">
+					<input type="tel" title="생년월일" id="birth1" required />
+					<label for="birth1">생년월일(ex.881201)</label>
+					<div class="gender">
+						<span>
+							<input type="radio" id="man1" name="gender"><label for="man1">남</label>
+						</span>
+						<span class="off">
+							<input type="radio" id="woman1" name="gender"><label for="woman1">여</label>
+						</span>
+					</div>
+				</div>
+			</fieldset>
+
+			<div class="h2Btn">
+				<h2>가족(피보험자)2</h2>
+				<a href="#none" class="btnDel" role="button">삭제</a>
+			</div>
+			<fieldset>
+				<legend>가족(피보험자) 정보입력</legend>
+				<div class="inputWrap">
+					<select title="피보험자 가족과의 관계">
+						<option value="0" selected="selected">관계 선택</option>
+						<option value="1">배우자</option>
+					</select>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="f_name2" required />
+					<label for="f_name2">이름</label>
+				</div>
+				<div class="inputWrap birth">
+					<input type="tel" title="생년월일" id="birth2" required />
+					<label for="birth2">생년월일(ex.881201)</label>
+					<div class="gender">
+						<span>
+							<input type="radio" id="man2" name="gender"><label for="man2">남</label>
+						</span>
+						<span class="off">
+							<input type="radio" id="woman2" name="gender"><label for="woman2">여</label>
+						</span>
+					</div>
+				</div>
+			</fieldset>
+			<div class="btn">
+				<a href="#" role="button">추가</a>
+			</div>
+		</div>
+
+		<ul class="listDot">
+			<li>가입가능 연령(개인형: 만 19~80세, 가족형: 만 1~80세)</li>
+			<li>최근 계산 내역이 있을 경우 이름, 주민등록번호, 휴대폰 번호 입력하여 내역 확인 후 보험료 계산을 이어서 진행할 수 있습니다.</li>
+		</ul>
+	</section>
+
+	<div class="btnWrap two">
+		<span><a href="#" role="button">최근 계산 내역</a></span>
+		<span><a href="#" role="button">보험료 계산하기</a></span>
+	</div>
+	<!-- //content -->
+</div>
+</body>
+</html>
+

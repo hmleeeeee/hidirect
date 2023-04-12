@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>계약선택 | 운전자범위/연령 특약 변경 | 현대해상다이렉트</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="./css/directH1.css">
+<link rel="stylesheet" type="text/css" href="./css/roundslider.css">
+<script type="text/javascript">
+var sCurDate = "202210";
+var _currDate = new Date(1664870720253);
+var _menuId = '12d892d5f0';
+var _menuIdcNm = '운전자 범위/연령 특약 변경 대상계약목록';
+var _menuGb = '5900000000';
+</script>
+<script type="text/javascript" src="./js/jquery/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="./js/jquery.touchFlow.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery-dateFormat.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery.blockUI.js"></script>
+<script type="text/javascript" src="./js/min/json2.js"></script>
+<script type="text/javascript" src="./js/jquery/jquery.history.js"></script>
+<script type="text/javascript" src="./js/min/hi-framework-jquery.js"></script>
+<script type="text/javascript" src="./js/min/HiJS.js"></script>
+<script type="text/javascript" src="./js/common/common.js"></script>
+<script type="text/javascript" src="./js/common/min/common_app.js"></script>
+<script type="text/javascript" src="./js/common/common_ui.js"></script>
+<script type="text/javascript" src="./js/common/common_combo.js"></script>
+<script type="text/javascript" src="./js/common/min/validation.js"></script>
+<script type="text/javascript" src="./js/common/min/commonTime.js"></script>
+<script type="text/javascript" src="./js/common/min/cDate.js"></script>
+<script type="text/javascript" src="./js/xecuresmart.js"></script>
+<script type="text/javascript" src="./js/min/slick.js"></script>
+<script type="text/javascript" src="./js/ui.js"></script>
+<script type="text/javascript" src="./js/min/ui_common.js"></script>
+<script type="text/javascript" src="./js/jquery/roundslider.js"></script>
+<script type="text/javascript" src="./js/countUp.js"></script>
+<script type="text/javascript">
+
+// 계약관리(40), 자동차보험(45), 단기운전자보험(50), 장기운전자(46), 연금보험(47), 국내여행(51), 해외여행(52), 골프보험(53), 화재보험(54)
+// 계약관리(80), 자동차보험(82), 운전자보험(84), 국내여행(86), 해외여행(85), 골프보험(91), (무)연금보험(93), 화재보험(94), 건강보험(97), 주택화재상해보험(98), 어린이보험(99)
+// var histArray = ['40', '45', '50', '51', '52'];
+var histArray = ['80', '82', '84', '85', '86', 'd8', '91', '93', '94','4e','97','98','99'];
+/*---------네이버 유입하고 뒤로가기 버튼 선택시 네이버로 이동하게  START--------
+utm_source=="naver"==>유입처가 네이버
+*/
+var utm_source = "";
+
+utm_source = sessionStorage.getItem("utm_source");
+
+console.log("utm_source", utm_source);
+
+if (utm_source == "naver" || utm_source == "daum") {
+  //네이버 또는 다음 유입 시 뒤로가기 모두 허용 ( 2018.02.08 제휴에서 필요하다고 했다고 고미연 대리가 요청함 )
+  //histArray = ['80', '84', '85', '86', '91', '93', '94'];
+  histArray = [];
+}
+//---------네이버 유입하고 뒤로가기 버튼 선택시 네이버로 이동하게  END---------
+var referrer = document.referrer;	//다른 사이트에서 유입된 경우 백버튼 활성
+if(referrer.indexOf("mdirect") == -1){
+  histArray = [];
+}
+
+var histMenuGb = '';
+if (typeof(_menuGb) == 'string' && _menuGb.length >= 2) {
+  histMenuGb = _menuGb.substring(0, 2);
+}
+
+var histPushFnc = function(url, title) {
+  if (typeof (history.pushState) == 'function') {
+    // 사파리
+    if (checkWebOS.sf) {
+      History.pushState(null, title, url + '&');
+    } else if(checkWebOS.iph) {
+      History.pushState(null, title, url + ' ');
+      location.href = "#none";
+    } else if(checkWebOS.and && window.navigator.userAgent.indexOf("Android 4.4.2") > -1) {
+      History.pushState(null, title, url + ' ');
+      location.href = "#none";
+    } else {
+      History.pushState(null, title, url + ' ');
+    }
+  } else {
+    History.pushState(null, title, '.HICAR');
+  }
+};
+
+(function() {
+  // 히스토리 관리메뉴 체크
+  var histChcek = false;
+  $.each(histArray, function(idx, val) {
+    if (val == histMenuGb) {
+      histChcek = true;
+      return false;
+    }
+  });
+  if (!histChcek) {
+    return;
+  }
+  
+  var History = window.History;
+  if (!History.enabled) {
+    return;
+  }
+  
+  var histUrl = location.href;
+  var histTitle = document.title;
+  
+  History.replaceState(null, histTitle, histUrl);
+  histPushFnc(histUrl, histTitle);
+  
+  setTimeout(historyOnload, 300);
+  
+})();
+
+
+function historyOnload() {
+  History.Adapter.bind(window, 'statechange', function() {
+    var url = History.getLastSavedState().url;
+    
+    var histUrl = location.href;
+    var histTitle = document.title;
+     //alert(url.substr(url.length - 1));
+    if (url.substr(url.length - 1) == "&" || (url.substr(url.length - 1) == " " &&  url.match("ceda0cf40f") != 'ceda0cf40f')  || url.substr(url.length - 1) == "R") {
+      lpOpener("_backBtnLayer");
+    } else {
+      histPushFnc(histUrl, histTitle);
+    }
+  });
+}
+
+$(function() {
+  setPtyId();
+});
+
+function setPtyId(){
+  if (window.HiDirect != undefined) {
+    HiJS.svr.doRequestAjax('DHCO0101M03S', {
+      data : null,
+      messageEnabled : false,
+      loadingbar : false,
+      callback : {
+        success : function(responseData) {
+          if(responseData != undefined && responseData != null && responseData.data != undefined && responseData.data != null
+            && responseData.data.ptyId != undefined && responseData.data.ptyId != null && responseData.data.ptyId != ''){
+             window.HiDirect.NA_SetPtyId(responseData.data.ptyId);							
+          }
+        },
+        failure : function(responseObj){
+          
+        }
+      }
+    });
+  }
+}
+
+function closeTimeLayer() {
+  closeLayer();
+  location.href = "/service.do?m=7c6641ec8a";
+}
+
+
+</script>  
+<script type="text/javascript">
+
+$(function() {
+  if (window.HiDirect != undefined) {
+    setAppMenu();
+    getPushAlarmCount(); // 알리미 카운트 확인 
+  }else{
+    
+    // 모바일웹인경우 앱설정 버튼 선택시 설치안내 노출
+    $("#cc865273fe").prop("href", "javascript:openInstallLayer();");
+  }
+  
+  // 공인인증서관리
+  $("#f05a6f2271").prop("href", "javascript:fnOpenAppCertifyManager();");
+  // 바이오인증관리
+  $("#b0b1129284").prop("href", "javascript:fnOpenAppBIOCertiFyManager();");
+  
+  // 제휴사 정보
+  var partnerShipInfoVal = JSON.parse(sessionStorage.getItem('partnerShipInfoVal'));
+  
+  if(partnerShipInfoVal != null && partnerShipInfoVal.cncNo != undefined){
+    $("body a").each(function(){
+      if($(this).attr("href").indexOf("b5eef5f9a4") > -1){//자동차
+        $(this).attr("href",$(this).attr("href")+"&cnc_no="+partnerShipInfoVal.cncNo+"&media_no="+partnerShipInfoVal.mediaNo+"&company_id="+partnerShipInfoVal.campaignId);
+      }else if($(this).attr("href").indexOf("817c44de32") > -1){//해외여행
+        $(this).attr("href",$(this).attr("href")+"&geCncNo="+partnerShipInfoVal.cncNo+"&geMediaNo="+partnerShipInfoVal.mediaNo);
+      }else if($(this).attr("href").indexOf("4jd59k8345") > -1){//운전자
+        $(this).attr("href",$(this).attr("href")+"&geCncNo="+partnerShipInfoVal.cncNo+"&geMediaNo="+partnerShipInfoVal.mediaNo);
+      }
+    });
+  }
+});
+
+function openInstallLayer(){  // 앱설정 안내 레이어 오픈, 웹접근성을 위해 포커스 클래스 추가 
+  lpOpener('appInstallLayer');
+  $("#cc865273fe").addClass('backFocus');
+}
+
+var customerCenterConfirm = function(){
+  if (confirm('고객센터로 연결하시겠습니까', "customerCenterSuccess()", "customerCenterFail()")){
+    return;
+  }
+};
+
+var customerCenterSuccess = function(){
+  location.href = 'tel:1899-6782';
+};
+
+var customerCenterFail = function(){
+  
+};
+
+function webLogTagging(type1, type2){
+  
+  if(typeof(_BT_get_simple_inline_tag) != 'undefined'){
+  
+//		console.log('type1 : ' + type1 + ', type2 : ' + type2);
+    _BT_get_simple_inline_tag( type1, type2 );
+  }
+}
+
+</script>
+</head>
+<body class="boxType">
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<!-- header -->
+<header id="topHeader">
+  <h1>계약선택</h1>
+  <a href="javascript:void(0);" role="button" class="btnMenu"><span>전체메뉴</span></a>
+  <!-- // 메뉴 열림 버튼 -->
+  <div class="allMenuWrap" role="navigation" aria-labelledby="전체메뉴" style="height: 826px;"> <!-- 수정 /202007 -->
+    <p class="logo" aria-labelledby="현대해상다이렉트">현대해상다이렉트</p> <!-- 수정 /202007 -->
+    <div class="menuArea">	  	
+      <ul class="menuList">
+        
+    
+          <li class="hasOn">
+                  <a class="dept01" id="2200000000" href="javascript:void(0);">보험상품<span class="hide">하위메뉴 닫기</span></a>
+                  <div class="submenuList" style="display:block">
+                  <div class="insuMenu">
+                    <p class="on"><a href="javascript:void(0);" role="button" title="선택됨"><span class="blind">인터넷가입</span></a></p> <!-- 202209 접근성 -->
+                    <p><a href="javascript:void(0);" role="button"><span class="blind">전화가입</span></a></p> <!-- 202209 접근성 -->
+                    
+                  </div>
+                    <!-- // insuMenu -->
+          
+                  <div class="insuListArea">
+                    <h2 class="blind">인터넷가입</h2> <!-- 202209 접근성 -->
+                      <ul>
+                
+                <li>
+                          <dl>
+                            <dt>보험진단서비스</dt>
+            
+                                <dd>
+                                  <a id="bedb11d7fe" href="/service.do?m=b54bcc4e54" title="내 보험 진단받기 〉">내 보험 진단받기 〉</a>
+                                </dd>
+            
+                            </dl>
+                          </li>
+            
+                <li>
+                          <dl>
+                            <dt>자동차</dt>
+            
+                                <dd>
+                                  <a id="d54704105e" href="/service.do?m=d54704105e" title="자동차보험">자동차보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="5fc42abe3a" href="/service.do?m=5fc42abe3a" title="이륜차보험">이륜차보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="da700546ea" href="/service.do?m=da700546ea" title="타임쉐어자동차보험">타임쉐어자동차보험</a>
+                                </dd>
+            
+                            </dl>
+                          </li>
+            
+                <li>
+                          <dl>
+                            <dt>운전자/건강</dt>
+            
+                                <dd>
+                                  <a id="3521103689" href="/service.do?m=3521103689" title="운전자보험">운전자보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="bd3bfff730" href="/service.do?m=bd3bfff730" title="건강보험">건강보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="924cc5f6c2" href="/service.do?m=924cc5f6c2" title="암보험">암보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="830b7d740e" href="/service.do?m=8cdea2348c&amp;tmpCtrtrCat=N" title="실손의료비보험(만19세이상)">실손의료비보험(만19세이상)</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="3aa52dd794" href="/service.do?m=3aa52dd794" title="어린이보험(만19세 이상)">어린이보험(만19세 이상)</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="fae7a9c810" href="/service.do?m=740b0dd1fe" title="실손의료비보험(계약전환용)">실손의료비보험(계약전환용)</a>
+                                </dd>
+            
+                            </dl>
+                          </li>
+            
+                <li>
+                          <dl>
+                            <dt>여행/레저</dt>
+            
+                                <dd>
+                                  <a id="f772765632" href="/service.do?m=f772765632" title="해외여행보험">해외여행보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="41dc5209a2" href="/service.do?m=41dc5209a2" title="해외장기체류보험">해외장기체류보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="316fb9fe57" href="/service.do?m=316fb9fe57" title="국내여행보험">국내여행보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="bfeaca844a" href="/service.do?m=bfeaca844a" title="하이펫보험">하이펫보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="cd8661766b" href="/service.do?m=cd8661766b" title="골프보험">골프보험</a>
+                                </dd>
+            
+                            </dl>
+                          </li>
+            
+                <li>
+                          <dl>
+                            <dt>어린이(만18세이하)</dt>
+            
+                                <dd>
+                                  <a id="a31f0f2ded" href="/service.do?m=8cdea2348c&amp;tmpCtrtrCat=Y" title="실손의료비보험">실손의료비보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="d4e6ee0155" href="/service.do?m=d4e6ee0155" title="어린이보험">어린이보험</a>
+                                </dd>
+            
+                            </dl>
+                          </li>
+            
+                <li>
+                          <dl>
+                            <dt>생활/연금</dt>
+            
+                                <dd>
+                                  <a id="abc1d85b54" href="/service.do?m=abc1d85b54" title="주택화재상해보험">주택화재상해보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="9603fb07ad" href="/service.do?m=9603fb07ad" title="사업장화재보험">사업장화재보험</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="175c608253" href="/service.do?m=175c608253" title="연금보험(유배당)">연금보험(유배당)</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="c33ecb2e74" href="/service.do?m=c33ecb2e74" title="풍수해보험(주택용)">풍수해보험(주택용)</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="c2a431e028" href="/service.do?m=c2a431e028" title=" 풍수해보험(소상공인)"> 풍수해보험(소상공인)</a>
+                                </dd>
+            
+                            </dl>
+                          </li>
+                    
+                        </ul>
+                    <!-- 다이렉트 고객센터 -->
+                    <!-- 고객센터 배너 삭제 /202007 
+                    <div class="callBox bg_internet">
+                      <strong class="txTi">다이렉트 고객센터</strong>
+                      <span class="tx">인터넷가입/계약변경</span>
+                      <div class="txTelArea">
+                        <a href="tel:1899-6782" class="txTel" title="다이렉트 고객센터 전화연결">1899<strong>-6782</strong></a>
+                        <span class="tx">(평일 9시~18시)</span>
+                      </div>
+                    </div>-->   
+                    <!-- // callBox -->
+                  </div>
+                  <!-- // insuList -->
+                  <div class="insuListArea" style="display:none">
+                    <h2 class="blind">전화가입</h2> <!-- 202209 접근성 -->
+                    <ul>
+                  <li>
+                          <dl>
+                            <dt>전화가입상품</dt>
+              
+                                <dd>
+                                  <a id="5a47ac113d" href="https://m.hi.co.kr/serviceAction.do?menuId=929000" title="굿앤굿 어린이 종합보험Q">굿앤굿 어린이 종합보험Q</a>
+                                </dd>
+              
+                                <dd>
+                                  <a id="557a7849d5" href="https://m.hi.co.kr/serviceAction.do?menuId=929010" title="하이콜 운전자 상해보험">하이콜 운전자 상해보험</a>
+                                </dd>
+              
+                                <dd>
+                                  <a id="eee63fe4ab" href="https://m.hi.co.kr/serviceAction.do?menuId=929040" title="퍼펙트 치아보험">퍼펙트 치아보험</a>
+                                </dd>
+              
+                                <dd>
+                                  <a id="061936c84e" href="https://m.hi.co.kr/serviceAction.do?menuId=929030" title="계속받는 암보험">계속받는 암보험</a>
+                                </dd>
+              
+                                <dd>
+                                  <a id="caa649d412" href="https://m.hi.co.kr/serviceAction.do?menuId=929020" title="퍼펙트플러스보험">퍼펙트플러스보험</a>
+                                </dd>
+              
+                                <dd>
+                                  <a id="dd7f0597c7" href="https://m.hi.co.kr/serviceAction.do?menuId=929050" title="뉴간편플러스보험">뉴간편플러스보험</a>
+                                </dd>
+              
+                          </dl>
+                        </li>			
+                    </ul>
+
+                    <!-- 전화가입상담센터 -->
+                    <div class="callBox bg_tel">
+                      <strong class="txTi">전화가입상담센터</strong>
+                      <span class="tx">장기보험 가입상담</span>
+                      <div class="txTelArea">
+                        <a href="tel:1899-6782" class="txTel" title="전화가입상담센터 전화연결">1588<strong>-5656</strong></a>
+                        <span class="tx">(평일 9시~18시)</span>
+                      </div>
+                    </div>
+                    <!-- // callBox -->
+                  </div>
+                  <!-- // insuList -->
+                </div>
+              </li>
+    
+          <li class="has">
+                <a class="dept01" id="5900000000" href="javascript:void(0);">MY다이렉트<span class="hide">하위메뉴 열기</span></a>
+                  <div class="submenuList" style="display:block">
+                  <!-- <div class="insuMenu">
+                    <p class="on"><a href="javascript:void(0);" title="MY다이렉트 메뉴 열림"><span class="blind">MY다이렉트</span></a></p>
+                  </div> -->
+                    <!-- // insuMenu -->
+          
+                  <div class="insuListArea">
+                    <p class="blind">MY다이렉트</p>            
+                      <ul>
+                
+                <li>
+                          <dl>
+                            <dt>계약확인 및 고객정보관리</dt>
+            
+                                <dd>
+                                  <a id="5e686aaf2b" href="/service.do?m=5e686aaf2b" title="고객정보 확인/변경">고객정보 확인/변경</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="d4858fd7d3" href="/service.do?m=d4858fd7d3" title="마케팅정보 활용 동의,철회">마케팅정보 활용 동의,철회</a>
+                                </dd>
+            
+                                  <dd>
+                                    <a id="a6b08e7229" href="javascript:window.open('https://m.hi.co.kr/serviceAction.do?menuId=100101')" title="계약조회 및 변경">계약조회 및 변경</a>
+                                  </dd>
+                              
+                            </dl>
+                        </li>
+            
+                <li>
+                          <dl>
+                            <dt>장기보험 계약관리</dt>
+            
+                                <dd>
+                                  <a id="70b3752ad0" href="/service.do?m=70b3752ad0" title="자동이체신청/계좌변경">자동이체신청/계좌변경</a>
+                                </dd>
+            
+                                  <dd>
+                                    <a id="0e798c3ab1" href="javascript:window.open('https://m.hi.co.kr/serviceAction.do?menuId=100411')" title="보험금 청구">보험금 청구</a>
+                                  </dd>
+                              
+                            </dl>
+                        </li>
+            
+                <li>
+                          <dl>
+                            <dt>자동차보험 계약관리</dt>
+            
+                                <dd>
+                                  <a id="c062baaa98" href="/service.do?m=c062baaa98" title="단기운전자 확대특약 신청/변경">단기운전자 확대특약 신청/변경</a>
+                                </dd>
+            
+                                  <dd>
+                                    <a id="a4b6b105ea" href="javascript:window.open('https://m.hi.co.kr/serviceAction.do?menuId=100616')" title="자동차보험 가입증명서">자동차보험 가입증명서</a>
+                                  </dd>
+                              
+                                <dd>
+                                  <a id="af0d426800" href="/service.do?m=af0d426800" title="타임쉐어 자동차보험 가입/변경">타임쉐어 자동차보험 가입/변경</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="ed1b57bcae" href="/service.do?m=ed1b57bcae" title="고장출동/사고접수">고장출동/사고접수</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="496fd588ce" href="/service.do?m=496fd588ce" title="자동차 사고처리안내">자동차 사고처리안내</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="8b2537169d" href="/service.do?m=8b2537169d" title="가입경력인정 신청/변경">가입경력인정 신청/변경</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="6466e4656f" href="/service.do?m=6466e4656f" title="자동차번호 확정/변경">자동차번호 확정/변경</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="35cd37caac" href="/service.do?m=35cd37caac" title="Eco 마일리지특약 추가 가입">Eco 마일리지특약 추가 가입</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="4a9bad040d" href="/service.do?m=4a9bad040d" title="Eco 마일리지특약 사진 등록">Eco 마일리지특약 사진 등록</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="f90e772c9d" href="/service.do?m=f90e772c9d" title="운전자 범위/연령 특약 변경">운전자 범위/연령 특약 변경</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="52de2727d6" href="/service.do?m=52de2727d6" title="담보/특약 변경">담보/특약 변경</a>
+                                </dd>
+            
+                            </dl>
+                        </li>
+            
+                <li>
+                          <dl>
+                            <dt>일반보험(~3년) 계약관리</dt>
+            
+                                <dd>
+                                  <a id="8a85dbc847" href="/service.do?m=8a85dbc847" title="해외여행 기간연장">해외여행 기간연장</a>
+                                </dd>
+            
+                                <dd>
+                                  <a id="f69877bdc3" href="/service.do?m=f69877bdc3" title="해외여행/일반보험 계약취소">해외여행/일반보험 계약취소</a>
+                                </dd>
+            
+                            </dl>
+                        </li>
+                    
+                      </ul>
+                    <!-- 다이렉트 고객센터 -->
+                    <!-- 고객센터 배너 삭제 /202007 -->  
+                    <!-- <div class="callBox bg_internet">
+                      <strong class="txTi">다이렉트 고객센터</strong>
+                      <span class="tx">인터넷가입/계약변경</span>
+                      <div class="txTelArea">
+                        <a href="tel:1899-6782" class="txTel" title="다이렉트 고객센터 전화연결">1899<strong>-6782</strong></a>
+                        <span class="tx">(평일 9시~18시)</span>
+                      </div>
+                    </div> -->
+                    <!-- // callBox -->
+                  </div>
+                  <!-- // insuList -->
+                  
+                </div>
+              </li>
+    
+          <li class="has">
+            <a class="dept01" id="83bd39235f" href="javascript:void(0);">혜택/이벤트<span class="hide">하위메뉴 열기</span></a>
+            <ul class="submenuList">											
+                  <li class="insuListArea" style="border-bottom: none;">
+                    <dl>
+                      <dt>혜택/이벤트</dt>
+                      
+                            <dd>
+                              <a id="eb9d96909d" href="/service.do?m=eb9d96909d" title="이달의 카드 할인/혜택">이달의 카드 할인/혜택</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="269619eecd" href="/service.do?m=269619eecd" title="포인트 결제">포인트 결제</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="3200000000" href="/service.do?m=3200000000" title="이벤트">이벤트</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="e18a2684b3" href="/service.do?m=e18a2684b3" title="오토오아시스">오토오아시스</a>
+                            </dd>
+                      
+                      </dl>
+                      <!-- 다이렉트 고객센터 -->
+              <div class="callBox bg_internet">
+                <strong class="txTi">다이렉트 고객센터</strong>
+                <span class="tx">인터넷가입/계약변경</span>
+                <div class="txTelArea">
+                  <a href="tel:1899-6782" class="txTel" title="다이렉트 고객센터 전화연결">1899<strong>-6782</strong></a>
+                  <span class="tx">(평일 9시~18시)</span>
+                </div>
+              </div>
+              <!-- // callBox -->
+            </li><!-- class="submenuList" -->
+            </ul><!-- class="insuListArea" -->
+          </li>
+    
+          <li class="has">
+            <a class="dept01" id="6080000000" href="javascript:void(0);">따뜻한 나눔<span class="hide">하위메뉴 열기</span></a>
+            <ul class="submenuList">											
+                  <li class="insuListArea" style="border-bottom: none;">
+                    <dl>
+                      <dt>따뜻한 나눔</dt>
+                      
+                            <dd>
+                              <a id="6080100000" href="/service.do?m=6080100000" title="기부하기">기부하기</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="6080200000" href="/service.do?m=6080200000" title="기부결과">기부결과</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="6080400000" href="/service.do?m=6080400000" title="기부처소개">기부처소개</a>
+                            </dd>
+                      
+                      </dl>
+                      <!-- 다이렉트 고객센터 -->
+              <div class="callBox bg_internet">
+                <strong class="txTi">다이렉트 고객센터</strong>
+                <span class="tx">인터넷가입/계약변경</span>
+                <div class="txTelArea">
+                  <a href="tel:1899-6782" class="txTel" title="다이렉트 고객센터 전화연결">1899<strong>-6782</strong></a>
+                  <span class="tx">(평일 9시~18시)</span>
+                </div>
+              </div>
+              <!-- // callBox -->
+            </li><!-- class="submenuList" -->
+            </ul><!-- class="insuListArea" -->
+          </li>
+    
+          <li class="has">
+            <a class="dept01" id="ed5e68bdfe" href="javascript:void(0);">고객센터<span class="hide">하위메뉴 열기</span></a>
+            <ul class="submenuList">											
+                  <li class="insuListArea" style="border-bottom: none;">
+                    <dl>
+                      <dt>고객센터</dt>
+                      
+                            <dd>
+                              <a id="1ab8c162b0" href="/service.do?m=1ab8c162b0" title="하이카프라자 안내">하이카프라자 안내</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="7176a32bf9" href="/service.do?m=7176a32bf9" title="우수정비업체 안내">우수정비업체 안내</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="5bfce0bf85" href="/service.do?m=5bfce0bf85" title="FAQ(자주하는질문)">FAQ(자주하는질문)</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="5bfce0bf81" href="/service.do?m=5bfce0bf81" title="공지사항">공지사항</a>
+                            </dd>
+                      
+                            <dd>
+                              <a id="f05a6f2271" href="javascript:fnOpenAppCertifyManager();" title="공동인증서 관리">공동인증서 관리</a>
+                            </dd>
+                      
+                      </dl>
+                      <!-- 다이렉트 고객센터 -->
+              <div class="callBox bg_internet">
+                <strong class="txTi">다이렉트 고객센터</strong>
+                <span class="tx">인터넷가입/계약변경</span>
+                <div class="txTelArea">
+                  <a href="tel:1899-6782" class="txTel" title="다이렉트 고객센터 전화연결">1899<strong>-6782</strong></a>
+                  <span class="tx">(평일 9시~18시)</span>
+                </div>
+              </div>
+              <!-- // callBox -->
+            </li><!-- class="submenuList" -->
+            </ul><!-- class="insuListArea" -->
+          </li>
+    
+
+        <li class="has">
+          <a class="dept02" id="cc865273fe" href="javascript:openInstallLayer();" title="앱설정 안내 열림">
+            앱설정
+          </a>
+          <ul class="submenuList" role="none"> <!-- 수정 /202007 -->
+            <li style="border-bottom: none;"></li>
+          </ul>
+        </li>
+        <!-- 사고접수 고장출동 -->
+        <li class="callAcd">
+          <p class="tx" style="color:#fff">사고접수<br>고장출동</p>
+          <a href="tel:1588-5656" class="txTel">1588<strong>-5656</strong></a><br>
+          <em class="txBox">24시간 운영</em>
+        </li>
+        <!-- // 사고접수 고장출동 -->
+      </ul>
+      <!-- // menuList -->
+      
+      <div class="bnBox">
+        <a href="javascript:void(0);" class="directBanner01">
+          <strong>공동인증서 없이 더 간편하게</strong>
+          <span>업계 유일 <em>휴대폰 직접 서명</em> 방식으로<br>다이렉트 보험 상품 간편 가입 가능</span>
+        </a>
+      </div>
+      <!-- // bnBox -->
+    </div>
+    <!-- // menuArea -->
+    <button type="button" class="btnMenuClose">전체메뉴보기 창닫기</button>
+  </div>
+  <!-- // allMenuWrap -->
+  <!-- // 전체메뉴 개선 /202007 -->
+  <a href="/service.do?m=7c6641ec8a" class="btnHome" role="button">메인페이지로 이동</a>
+</header>
+<!--// header -->
+<div class="popWrap" id="spConPopup1" style="display: block;">
+  <div class="popContent">
+    <p class="topTxt">운전자 범위 또는 연령을 변경할 차량을<br>선택해 주시기 바랍니다.</p>
+    <section>
+      <h2>유지중인 계약</h2>
+      <ul class="contractBox typeRdo" id="prdList">
+        
+          
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F409869' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220826' , '20230826' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD0" name="chkCar"><label for="rdoD0">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-08-26</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F409863' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220826' , '20230826' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD1" name="chkCar"><label for="rdoD1">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-08-26</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F409871' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220826' , '20230826' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD2" name="chkCar"><label for="rdoD2">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-08-26</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">이*신</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만43세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F409873' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220826' , '20230826' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD3" name="chkCar"><label for="rdoD3">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-08-26</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">이*신</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만43세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F409870' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220826' , '20230826' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD4" name="chkCar"><label for="rdoD4">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-08-26</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F411328' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220831' , '20230831' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD5" name="chkCar"><label for="rdoD5">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-08-31</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F412691' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220902' , '20230902' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD6" name="chkCar"><label for="rdoD6">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-02</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F412687' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220902' , '20230902' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD7" name="chkCar"><label for="rdoD7">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-02</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F413104' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220913' , '20230913' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD8" name="chkCar"><label for="rdoD8">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-13</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">이*신</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만43세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F413105' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220913' , '20230913' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD9" name="chkCar"><label for="rdoD9">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-13</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">이*신</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만43세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F413120' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220914' , '20230914' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD10" name="chkCar"><label for="rdoD10">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-14</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F413181' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220915' , '20230915' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD11" name="chkCar"><label for="rdoD11">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-15</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F413295' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220919' , '20230919' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD12" name="chkCar"><label for="rdoD12">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-19</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F413294' , '00000' , '5117' , '' , 'Hicar 개인용(CM)' , '20220919' , '20230919' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD13" name="chkCar"><label for="rdoD13">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-19</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만35세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+              <li>
+                <div class="contractTit">
+                  <div class="radioBox" onclick="javascript:fn_setValue( 'M2022F412929' , '00000' , '5117' , '55무9834' , 'Hicar 개인용(CM)' , '20220921' , '20230921' , '', '{list.currDrvrRngeLmtCd}' , '{list.currDrvrRngeLmtVal}' , '{list.currDrvrAgeLmtCd}' , '{list.currDrvrAgeLmtVal}' , '{list.insDrvrRngeLmtCd}')">
+                    <span class="off"><input type="radio" id="rdoD14" name="chkCar"><label for="rdoD14">Hicar 개인용(CM)</label></span>
+                  </div>
+                </div>
+                <div class="contractWhiteBox">
+                  <ul class="">
+                    <li>
+                      <span class="titl">대상차량</span> 
+                      <span class="data">
+                      
+                        
+                        
+                           55무**34
+                        
+                      
+                      </span>
+                    </li>
+                  
+                    <li>
+                      <span class="titl">만기일</span>
+                      <span class="data">2023-09-21</span>
+                    </li>
+                  
+                  
+                    <li>
+                      <span class="titl">계약자</span> 
+                      <span class="data">김*원</span>
+                    </li>
+                    <li>
+                      <span class="titl">피보험자</span> 
+                      <span class="data">이*신</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자범위</span> 
+                      <span class="data">기명피보험자 1인한정</span>
+                    </li>
+                    <li>
+                      <span class="titl">운전자연령</span> 
+                      <span class="data">만43세이상</span>
+                    </li>
+                    
+
+                  </ul>
+                </div>
+              </li>
+            
+          
+          
+        
+      </ul>
+      <div class="btnWrap">
+        <span><a href="javascript:void(0);" role="button" onclick="javascript:fnMovePre();">이전</a></span>
+        <span class="on"><a href="javascript:fn_goStep2();" role="button" id="">다음</a></span>
+      </div>
+    </section>
+  </div>
+  <button type="button" class="btnClose" onclick="javascript:fnMovePre();">창닫기</button>
+</div>
+
+<!-- 동일증권 추가시 마일리지가입 경고창 -->
+<div class="layerPopup" id="alertPop" aria-hidden="true" style="opacity: 0;">
+  <div class="layerWrap">
+    <h2>서비스 이용에 불편을 드려 죄송합니다.</h2>
+  <div class="layerCont">
+    <p class="topTxt01">
+        운전자(범위/연령)특약 변경은 해당일 24시부터 계약 만기일까지 적용되는 서비스입니다.<br>
+        현재 선택하신 계약은 <em class="fontOrg">미래연령특약</em>이 가입된 상태로 홈페이지를 통해서는 만기일까지 적용된 정확한 보험료 산출이 어렵습니다.<br><br>
+        계약변경 및 문의사항은 <em class="fontOrg">현대해상 다이렉트 콜센터(1577-1001)</em> 상담시간에 연락주시면 친절한 상담으로 도와드리겠습니다.<br>
+        감사합니다.
+    </p>
+  </div>
+  
+  <div class="layerBtn">
+    <a href="javascript:lpCloser('alertPop');" role="button" class="on">확인</a>
+  </div>
+  
+    <a href="javascript:lpCloser('alertPop');" class="layerClose" role="button">닫기</a>
+  </div>
+</div>
+<!-- //동일증권 추가시 마일리지가입 경고창 -->
+
+<!-- layer -->
+
+</body>
+</html>

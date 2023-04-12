@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+	});
+</script>
+</head>
+<body data-channel="pc" data-login="true" data-category="template" data-category-sub="">
+	<script type="text/javascript" src="../_ui_include/skip.js"></script><!-- //Include: skip -->
+	<!-- wrap -->
+	<div id="wrap">
+		<div id="header">
+			<script type="text/javascript" src="../_ui_include/gnb.js"></script><!-- //Include: gnb -->
+		</div>
+		<script type="text/javascript" src="../_ui_include/breadcrumb.js"></script><!-- //Include: breadcrumb-->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<div class="section">
+					<div class="comp">
+						<div class="title_area under_line">
+							<h3 class="h3 type2">Form</h3>
+						</div>
+						<div class="table_area">
+							<!-- <div class="table_top">
+								<h2 class="h3">Base</h2>
+							</div> -->
+							<table class="tbl_col  col4">
+								<caption>Form</caption>
+								<colgroup>
+									<col />
+									<col />
+									<col />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="seperate">구분</th>
+										<th scope="col">Default</th>
+										<th scope="col">Disabled</th>
+										<th scope="col">Readonly</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">Input</th>
+										<td><input type="text"></td>
+										<td><input type="text" disabled=""></td>
+										<td><input type="text" readonly=""></td>
+									</tr>
+									<tr>
+										<th scope="row">Select</th>
+										<td>
+											<select><option>선택</option></select>
+										</td>
+										<td><select disabled=""><option>선택</option></select></td>
+										<td><select readonly=""><option>선택</option></select></td>
+									</tr>
+									<tr>
+										<th scope="row">Checkbox</th>
+										<td>
+											<span class="radio_box">
+												<input type="checkbox" id="ch01_01" name="ch01"><label for="ch01_01">Default</label>
+											</span>
+											<span class="radio_box">
+												<input type="checkbox" id="ch01_02" name="ch01" checked=""><label for="ch01_02">Default</label>
+											</span>
+										</td>
+										<td>
+											<span class="radio_box">
+												<input type="checkbox" id="ch02_01" name="ch02" disabled=""><label for="ch02_01">Disabled</label>
+											</span>
+											<span class="radio_box">
+												<input type="checkbox" id="ch02_02" name="ch02" disabled="" checked=""><label for="ch02_02">Disabled</label>
+											</span>
+										</td>
+										<td>
+											<span class="radio_box">
+												<input type="checkbox" id="ch03_01" name="ch02" readonly=""><label for="ch03_01">Readonly</label>
+											</span>
+											<span class="radio_box">
+												<input type="checkbox" id="ch03_02" name="ch02" readonly="" checked=""><label for="ch03_02">Readonly</label>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">Radio</th>
+										<td>
+											<span class="radio_box">
+												<input id="ra01_01" type="radio" name="ra01">
+												<label for="ra01_01">예</label>
+											</span>
+											<span class="radio_box">
+												<input id="ra01_02" type="radio" name="ra01" checked="">
+												<label for="ra01_02">예</label>
+											</span>
+										</td>
+										<td>
+											<span class="radio_box">
+												<input id="ra02_01" type="radio" name="ra02" disabled="">
+												<label for="ra02_01">예</label>
+											</span>
+											<span class="radio_box">
+												<input id="ra02_02" type="radio" name="ra02" disabled="" checked="">
+												<label for="ra02_02">예</label>
+											</span>
+										</td>
+										<td>
+											<span class="radio_box">
+												<input id="ra03_01" type="radio" name="ra03" readonly="">
+												<label for="ra03_01">예</label>
+											</span>
+											<span class="radio_box">
+												<input id="ra03_02" type="radio" name="ra03" readonly="" checked="">
+												<label for="ra03_02">예</label>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">Textarea</th>
+										<td>
+											<div class="textarea_wrap">
+												<textarea rows="2" ></textarea>
+											</div>
+										</td>
+										<td>
+											<div class="textarea_wrap">
+												<textarea rows="2" disabled=""></textarea>
+											</div>
+										</td>
+										<td>
+											<div class="textarea_wrap">
+												<textarea rows="2" readonly=""></textarea>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">Datepicker</th>
+										<td>
+											<div class="date_box">
+												<input type="text" class="inp_date" title="날짜선택">
+											</div>
+										</td>
+										<td>
+											<div class="date_box">
+												<input type="text" class="inp_date" title="날짜선택" disabled="">
+											</div>
+										</td>
+										<td>
+											<div class="date_box">
+												<input type="text" class="inp_date" title="날짜선택" readonly="">
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+		<script type="text/javascript" src="../_ui_include/quick.js"></script><!-- //Include: quick -->
+		<div id="footer" class="footer">
+			<script type="text/javascript" src="../_ui_include/footer.js"></script><!-- //Include: footer -->
+		</div>
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Code Here~!! -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

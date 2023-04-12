@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>04_보험료확인_pop특약_마일리지</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+</head>
+<body class="boxType">
+
+
+
+<!-- 04_보험료확인_pop특약_마일리지 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap failjoin w600">
+    <div class="titleArea">
+        <h2>마일리지 할인 특약</h2>
+    </div>
+    <div class="popupContentArea">
+		<h3 class="infoTit mb5">마일리지 특약을 가입 합니다. <span class="fontPoint2">(최대 32%할인)</span></h3>
+		<div class="con mb15 fz15">마일리지 특약 거리층정방식과 약정주행거리를 선택해 주세요. (할인시기- 후할인)</div>
+		<!--inputTable : s-->
+		<div class="inputTable inputBline onlyInput mb10">			
+			<ul class="inputArea inlineBlock">
+				<li class="item">					
+					<div class="radio mr20">
+					   <input type="radio" name="mileage" id="pic">
+						<label for="pic"><span class="fontLevel1">사진</label>
+					</div>
+					<div class="radio mr20">
+					   <input type="radio" name="mileage" id="obd">
+						<label for="obd"><span class="fontLevel1">OBD</label>
+					</div>
+					<div class="radio mr20">
+					   <input type="radio" name="mileage" id="rundata">
+						<label for="rundata"><span class="fontLevel1">무선통신 운행정보 확인장치 (차량 기장착)</label>
+					</div>
+				</li>
+			</ul>
+			<!--2017-12-21 : s-->
+			<ul class="inputArea inlineBlock">
+				<li class="item">
+					<div class="selectItem small" style="width: 180px;">
+						<select name="" id="" title="약정주행거리를 선택해주세요">
+							<option value="">약정주행거리 선택</option>
+							<option value="1">100km</option>
+							<option value="2">200km</option>
+							<option value="3">300km</option>
+						</select>
+					</div>
+				</li>
+				<li class="item">
+					<div class="inputBase placeholder h40" style="width: 170px;">
+						<input type="text" title="기준일" placeholder="기준일 (ex 20171010)">
+					</div>
+				</li>
+				<li class="item">
+					<div class="inputBase placeholder h40" style="width: 170px;">
+						<input type="text" title="최초주행거리" placeholder="최초주행거리 (ex 1234)">
+					</div>
+				</li>
+			</ul>
+			<!--2017-12-21 : e-->
+
+		</div>
+		<!--inputTable : e-->
+
+		<ul class="listStyle star">			
+			<li>
+				<span class="fontPoint2">연간 0000km 이하</span> 주행 시, 보험료를 <span class="fontPoint2">00%</span>할인해 드리며, 보험 만기 시 할인된 보험료를 환급해<br>
+				드립니다. (단, 고장출동과 특약 보험료는 할인 적용에서 제외됩니다.)
+			</li>
+			<li>
+				특약에 가입하시면 ‘최초주행거리’와 ‘최종주행거리’ 정보를 알려주셔야 합니다.<br>
+				(단, 무선통신 운행정보 확인장치의 경우 가입시 에 ‘사고 및 긴급상황 통보장치 가입확인서’에<br>
+				기재된 기준일 및 최초주행거리를 입력해 주셔야 합니다.)
+			</li>
+			<li>
+				보험기간이 1년인 경우만 가입가능하며, 동일증권으로 가입하는 경우 보험기간이 3개월 이상인<br>
+				경우에 한하여 가입 가능합니다.
+			</li>
+			<li>운행정보장치 특약, 사고 및 긴급상황 통보장치를 선택하여 가입 시 추후 변경 및 재가입은 불가<br>합니다.</li>
+
+		</ul>
+		<div class="btnAreaWrap tac mt15">
+            <a href="#" class="btn line inlineBlock gray"><span>취소</span></a>
+            <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 04_보험료확인_pop특약_마일리지 : e-->
+
+</body>
+</html>

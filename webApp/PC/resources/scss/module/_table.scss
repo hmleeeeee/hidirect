@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+/**
+* Module.Table
+* ------------------
+*/
+
+
+//라인 색상 선명하게 (세로)
+// $table_bgc: #f9f9f9; //bg
+// $table_bdc: #ccc; //border_color
+// $table_bdc_strong: #aaa;
+// $table_bdbc: #bbb; //bottom_color
+
+
+
+
+
+// * Structure
+//-----------------
+.table_area{
+	.table_top{margin-bottom: 14px;display: flex; align-items: flex-end;}
+	.table_bottom{@include clearfix();margin-top: 20px;
+		.btn_area{
+			.btn + .btn{margin-left: 5px;}
+		}
+	}
+
+	& + .table_area{margin-top: 20px;}
+}
+
+
+
+// * Colgroup
+//-----------------
+.table{
+	&.col2{
+		colgroup{
+			col:nth-of-type(1){width:180px;}
+			col:nth-of-type(2){width:auto;}
+		}
+	}
+	&.col4{
+		colgroup{
+			col:nth-of-type(1){width:180px;}
+			col:nth-of-type(2){width:calc(50% - 180px);}
+			col:nth-of-type(3){width:180px;}
+			col:nth-of-type(4){width:auto;}
+		}
+	}
+
+	//정분할
+	&.col2_same{
+		colgroup{
+			col{width:50%;}
+		}
+	}
+	&.col3_same{
+		colgroup{
+			col{width:33.333%;}
+			col:nth-of-type(3){width:auto;}
+		}
+		tbody {
+			th:not([rowspan]), td {width: calc(100% / 3);}
+		}
+	}
+	&.col4_same{
+		colgroup{
+			col{width:25%;}
+		}
+	}
+}
+
+
+// * Basic
+//-----------------
+.table{
+	@include table();
+	@include table_style();
+}
+
+
+// * Variation Type
+//-----------------
+.table{
+	&.ta_c{
+		th,
+		td {text-align: center;}
+	}
+
+	&.table_list{
+		&.table_odd{
+		
+		}
+	}
+
+	&.hover{
+		
+	}
+
+	// Compact
+	.table_horizon table,
+	.table.compact,
+	.dialog .table{
+		th, td{padding: 7px 9px;}
+	}
+
+
+	// Inner Table
+	& table{
+		border-top:1px solid #545557;
+
+		col:nth-of-type(1){width: 200px;}
+		col:nth-of-type(2){width: auto;}
+
+		th, td{
+			height: 48px;
+			padding:20px;
+			color:#757679;
+			font-size:15px;
+			font-weight:$fw_regular;
+			line-height:24px;
+		}
+		th{
+			color:#111;
+		}
+		thead th{
+			padding: 12px 20px;
+			font-weight: $fw-regular;
+		}
+	}
+}
+
+
+// * Gap
+//-----------------
+.table{
+	& {
+		.list_dot,
+		.imp_txt {margin-top:5px;}
+		.list_dot .list_bar > li{font-weight:$fw_light;}
+		td > .list_dot:first-child,
+		td > .imp_txt:first-child {margin-top:0px;}
+	}
+}
+
+table{
+	& + table,
+	& + p { margin-top: 20px; }
+	.link{color: #000; text-decoration: underline; }
+	.link:hover{ color: $point_color;}
+}
+
+
+
+
+// * table Type3: table_horizon
+//-----------------
+.table_horizon {position:relative;
+	.tbl_scroll_guide {display:none;}
+	.table_clone{position: relative; height: 50px; overflow: hidden; border-top: 1px solid $table_bdc_strong; border-bottom: 1px solid $table_bdc;
+		.table_clone_wrapper{position: absolute; left: 0; right: 0;overflow: hidden; 
+			table.clone thead{visibility: visible;}
+		}
+	}
+}
+
+
+.horizon_scrollbar{position: relative;overflow-y: auto; max-height: calc(100vh - 350px);min-height: 50px;
+	padding-bottom: 8px;
+	table{position: relative;margin-top: 1px;  margin-top: -50px;}
+	& + .list_dot { margin-top: 20px; }
+	&.empty{height: 13px; min-height: 0; overflow-y: hidden !important;}
+}
+
+.dialog {
+	.horizon_scrollbar{max-height: calc(100vh - 650px);}
+}
+
+
+

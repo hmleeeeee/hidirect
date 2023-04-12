@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>교통사고 피해확인서 발급</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>교통사고 피해확인서 발급</h1>
+		</header>
+		<div class="popContent">
+			<p class="topTxt">발급 받으실 항목을 선택해 주십시오.</p><!-- 0715 문구수정 JJY-->
+
+			<div class="tabMenuBox">
+				<div class="tabMenu">
+					<a href="#none" class="on" role="button"><span>대 인</span><span class="hide"> 선택됨</span></a>
+					<a href="#none" role="button"><span>대 물</span></a>
+				</div>
+			</div>
+			<section class="trafficAcc">
+				<h2>조회 조건</h2>
+
+				<!-- EDIT input -->
+				<div class="tabOpen on">
+					<fieldset>
+						<legend>대인 조회 정보입력</legend>
+						<div class="inputWrap two">
+							<span>
+								<input type="text" id="date01" required />
+								<label for="date01">기간 시작일</label>
+							</span>
+							<span>
+								<input type="text" id="date02" required />
+								<label for="date02">기간 종료일</label>
+							</span>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="tabOpen">
+					<fieldset>
+						<legend>대물 조회 정보입력</legend>
+						<div class="inputWrap two">
+							<span>
+								<input type="text" id="date21" required />
+								<label for="date21">기간 시작일</label>
+							</span>
+							<span>
+								<input type="text" id="date22" required />
+								<label for="date22">기간 종료일</label>
+							</span>
+						</div>
+						<div class="inputWrap">
+							<input type="text" id="carnum" required />
+							<label for="carnum">차량번호</label>
+						</div>
+					</fieldset>
+				</div>
+				<!-- //EDIT input -->
+				<div class="btn">
+					<a href="#" role="button" class="on">조회</a>
+				</div>
+
+				<ul class="contractBox">
+					<li>
+						<div class="contractTit">
+							<a href="#layerPop">123-121215(사고번호)</a>
+						</div>
+						<div class="contractWhiteBox"><!-- 대인 조회결과 -->
+							<ul>
+								<li>
+									<span class="titl">피해자/물</span>
+									<span class="data">박현대</span>
+								</li>
+								<li>
+									<span class="titl">사고일자</span>
+									<span class="data">2017-01-01</span>
+								</li>
+								<li>
+									<span class="titl">보험금 합계</span>
+									<span class="data">100,000 원</span>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="contractTit">
+							<a href="#layerPop">123-121215(사고번호)</a>
+						</div>
+						<div class="contractWhiteBox"><!-- 대물 조회결과 -->
+							<ul>
+								<li>
+									<span class="titl">피해자/물</span>
+									<span class="data">12가12**</span>
+								</li>
+								<li>
+									<span class="titl">피보험자</span>
+									<span class="data">박현대</span>
+								</li>
+								<li>
+									<span class="titl">사고일자</span>
+									<span class="data">2017-01-01</span>
+								</li>
+								<li>
+									<span class="titl">보험금 합계</span>
+									<span class="data">100,000 원</span>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+
+				<div class="noResult">
+					<p>
+						조회 결과가 없습니다.
+					</p>
+				</div>
+
+				<div class="btnMore">
+					<a href="#" role="button"><span>더보기(10/19)</span></a>
+				</div>
+			</section>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+
+	<!-- 레이어팝업 : 교통사고 피해확인서발급 신청 -->
+	<div class="layerPopup" id="layerPop">
+		<div class="layerWrap">
+			<h2>교통사고 피해확인서발급 신청</h2>
+			<div class="layerCont">
+				<ul class="listDot">
+					<li>선택된 사고번호 : <strong class="bColor">123-121215</strong></li>
+					<li>제출용도와 제출처, 발급 받을 팩스번호를 입력해주시기 바랍니다. 발급방법은 팩스만 가능합니다.</li>
+				</ul>
+
+				<fieldset class="mgtS">
+					<legend>교통사고 피해확인서발급 신청 정보입력</legend>
+					<div class="inputWrap">
+						<select title="제출용도 선택">
+							<option value="0" selected="selected">제출용도 선택</option>
+							<option value="1">제출용도1</option>
+						</select>
+					</div>
+					<div class="inputWrap">
+						<input type="text" id="applplace" required />
+						<label for="applplace">제출처</label>
+					</div>
+					<div class="inputWrap">
+						<input type="tel" id="fax" required />
+			        	<label for="fax">팩스번호</label>
+			        </div>
+				</fieldset>
+			</div>
+			<div class="layerBtn">
+				<a href="#close" class="on">발급요청</a>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,2483 @@
+/* ***************************************************************************
+*  * 2017-08-30          20:01                            *
+* ************************************************************************* */
+
+
+@charset "utf-8";
+
+/* page skipNavi */
+#skipNavi {display:none; position:absolute; z-index:10000; width:100%; text-align:center}
+#skipNavi a, .skip_navi a {display:block; overflow:hidden; width:1px; height:1px; margin-bottom:-1px; text-align:center; color:#FFF; white-space:nowrap}
+#skipNavi a:focus,#skipNavi a:active, .skip_navi a:focus {width:auto; height:auto; padding:5px; background:#0989cb}
+#skipNaviReturn{position:relative}
+#skipNaviReturn a{display:block; overflow:hidden; height:1px; width:1px; margin-bottom:-1px; text-align:center; color:#FFF; white-space:nowrap}
+#skipNaviReturn a:focus,#skipNaviReturn a:active{width:auto; height:auto; padding:5px; margin-bottom:10px; background:#0989cb}
+
+
+
+
+/* common class */
+.hidden,
+.hide{overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%)} /* 접근성 /20200616 */
+.hideTxt {overflow:hidden; opacity:0;font-size:1px; line-height:1px; color:transparent  !important; }
+/* 접근성을 위한 마크업에 넣는 css */
+
+/* 정렬 */
+.textL{text-align:left !important;}
+.textR{text-align:right !important;}
+.textC{text-align:center !important;} 
+
+/* 공통마진 */
+.mgNone{margin:0  !important}
+.mgtNone {margin-top:0 !important;}
+.mgtSs {margin-top:0.5rem !important;}
+.mgtS {margin-top:1rem !important;}
+.mgtM {margin-top:1.5rem !important;}
+.mgtL {margin-top:2.5rem !important;}
+
+.mgrNone {margin-right:0 !important;}
+.mgrS {margin-right:1rem !important;}
+.mgrM {margin-right:1.5rem !important;}
+.mgrL {margin-right:2.5rem !important;}
+
+.mglNone {margin-left:0 !important;}
+.mglS {margin-left:1rem !important;}
+.mglM {margin-left:1.5rem !important;}
+.mglL {margin-left:2.5rem !important;}
+
+.mgbNone {margin-bottom:0 !important;}
+.mgbSs {margin-bottom:0.5rem !important;}
+.mgbS {margin-bottom:1rem !important;}
+.mgbM {margin-bottom:1.5rem !important;}
+.mgbL {margin-bottom:2.5rem !important;}
+
+/* 공통 패딩 */
+.pdNone {padding:0 !important}
+.pdtNone {padding-top:0 !important}
+.pdtS {padding-top:1rem !important}
+.pdtSs{padding-top:0.5rem !important} /* 값추가200715 */
+.pdtM {padding-top:1.5rem !important;}
+.pdtL {padding-top:2.5rem !important;}
+
+.pdrNone {padding-right:0 !important}
+.pdrS {padding-right:1rem !important}
+.pdrM {padding-right:1.5rem !important;}
+.pdrL {padding-right:2.5rem !important;}
+
+.pdbNone {padding-bottom:0 !important}
+.pdbS {padding-bottom:1rem !important}
+.pdbM {padding-bottom:1.5rem !important;}
+.pdtM2 {padding-top:2.0rem !important;} /* 높이추가1712 */
+.pdbL {padding-bottom:2.5rem !important;}
+
+.pdlNone {padding-left:0 !important}
+.pdlS {padding-left:1rem !important}
+.pdlM {padding-left:1.5rem !important;}
+.pdlL {padding-bottom:2.5rem !important;}
+
+.pdrlSs {padding-right:0.5rem !important;padding-left:0.5rem !important;}
+.pdrlS {padding-right:1rem !important;padding-left:1rem !important;}
+.pdrlM {padding-right:1.5rem !important;padding-left:1.5rem !important;}
+.pdrlL {padding-right:2rem !important;padding-left:2rem !important;} /*2006추가*/
+/*.pdtLineNone {padding-top:0 !important;border-top:none;}*/
+
+/* 포인트 컬러 */
+.bColor {color:#0073ae !important}
+.oColor {color:#fc843b !important} /* dd620d */
+.blColor {color:#111111 !important}
+.pColor {color:#af006e !important}
+.gColor {color:#636363 !important}
+.blueColor {color:#047db5 !important;}/* 202105 */
+
+/* .clear {content:"";display:block;clear:both} */
+.clear:after {content:""; display:block; clear:both;}
+
+.bold {font-weight:700}
+.normal {font-weight:normal}
+
+/* 배경색*/
+.bgWhite {background-color:#fff;}
+.bgGray {background-color:#e6e6e6;}
+
+/* float */
+.floatL {float:left}
+.floatR {float:right}
+.floatN {float:none !important}
+.floatN:before {content:'';display:block;clear:both;}
+
+/*포지션 UI*/
+.poTopPo {display:none;border-bottom:1px solid #e6e6e6;}
+
+/* 상단 border 202010 */
+.topLine{border-top:1px solid #d4d4d4;}
+
+/* border 제거 202010 */
+.bdn{border:none !important;}
+
+
+input::placehoder {color:#999;font-weight:normal;}
+.blind{overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%)} /* 접근성 /20200616 */
+.blind-in{display:inline-block;overflow:hidden;margin:-1px;width:1px;height:1px;border:0;clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%)} /* 접근성 /2005 */
+
+.clear {overflow:hidden;}
+.por {position:relative;}
+.poa {position:absolute;}
+.pdt0 {padding-top:0;}
+.pd0 {padding:0 !important;}
+.pdB0 {padding-bottom:0 !important;}
+.pd10 {padding:1.0rem !important;}
+.pdL10 {padding-left:1.0rem !important;}
+.pdB10 {padding-bottom:1.0rem !important;}
+.pdR10 {padding-right:1.0rem !important;}
+.pdB15 {padding-bottom:1.5rem !important;} /* 수정 /2110 */
+.pd15 {padding:1.5rem !important;}
+
+.pdT0 {padding-top:0 !important;}
+.pdTB0 {padding-top:0;padding-bottom:0;}
+.pdT23 {padding-top:2.3rem !important;}/* 202010 */
+.pdRL05 {padding-right:0.5rem !important;padding-left:0.5rem !important;}
+.pdL15 {padding-left:1.5rem;}
+.pdR15 {padding-right:1.5rem;}
+.pdRL15 {padding-right:1.5rem;padding-left:1.5rem;}
+.pd15 {padding:1.5rem;}
+
+.mgT0 {margin-top:0 !important;}
+.mgB0 {margin-bottom:0 !important;}
+.mgT5 {margin-top:0.5rem !important;}
+.mgT10 {margin-top:1.0rem !important;}
+.mgT15 {margin-top:1.5rem !important;}
+.mgT18 {margin-top:1.8rem !important;}/* 202010 */
+.mgT20 {margin-top:2.0rem !important;}/* 202010 */
+.mgT25 {margin-top:2.5rem !important;}
+.mgT30 {margin-top:3.0rem !important;}/* 202010 */
+.mgB10 {margin-bottom:1.0rem !important;}
+.mgB15 {margin-bottom:1.5rem !important;}
+.mgRL0 {margin-right:0 !important;margin-left:0 !important;}
+.w100 {width:100% !important;}
+.w110 {width:110px !important} /* 20180719 kjh */
+
+/* layout Flex /2110 */
+.flexWrap{display:flex !important;justify-content:space-between;}
+.flexWrap > *{float:none}
+.flexWrap.startFlex{justify-content: flex-start;}
+.flexWrap.endFlex{justify-content: flex-end;}
+
+.tac {text-align:center;}
+.tal {text-align:left;}
+.tar {text-align:right;}
+
+.disB {display:block;}
+.disIB {display:inline-block;}
+.disNone {display:none;}
+
+.bgNonepdT15 {padding-top:0.5rem;}
+.bgNonepdT15 li:before {content:'';display:block;clear:both;}
+.bgNonepdT15 li {padding-left:0;}
+
+/* letter-spacing */
+.lsm1{letter-spacing:-1px}
+
+/* font color */
+.font12 {font-size:1.2rem !important;} /* 수정 /2201 */
+.font13 {font-size:1.3rem !important;}/* 추가 2007 */
+.font14 {font-size:1.4rem !important;}/* 202010 */
+.font15 {font-size:1.5rem !important;} /* 추가 /2201 */
+.font16 {font-size:1.6rem !important;} /* 추가 /2207 */
+.font17 {font-size:1.7rem !important;} /* 추가 /2207 */
+.font18 {font-size:1.8rem !important;} /* 추가 /2207 */
+.fontOrg {color:#fc843b !important;} /* 수정 /2204 */
+.fontBlue {color:#047db5 !important;} /* 수정 /2204 */
+.fontDefault {color:#282828 !important;} /* 수정 /2204 */
+.fontRed {color:#f00 !important;} /* 수정 /2204 */
+
+/* height */
+
+.height13 a  {height:1.3rem !important;}
+.height4 a  {height:4rem !important;}
+.height5 a {height:5rem !important;}
+.height8 a {height:8rem !important;}
+.height10 a {height:10rem !important;}
+.height68 a {height:6.8rem !important;}
+.height75 a {height:7.5rem !important;}
+.height90 {height:9rem !important;}
+.height100 {height:10rem !important;}
+
+/* Line /2104 */
+.bdT{border-top:1px solid #e6e6e6 !important}
+.bdB{border-bottom:1px solid #e6e6e6 !important}
+
+/* dim mask */
+.dim {position:absolute; left:0; right:0; top:0; bottom:0;width:100%;height:100%; background:url('https://mdirect.hi.co.kr/images/common/bg_dim.png') 0% 0% repeat; z-index:999;}
+
+/* 컨텐츠 padding 초기화 */
+
+section.contenttypeA {background-color:#fff;}
+section.contenttypeA .contBgGray {background-color:#f6f6f6;}
+
+.clFix {*zoom: 1;}
+.clFix::after, .clFix::before {display: table;line-height: 0;content: "";}
+
+/* text info */
+.txtGuideInfo {position:relative; color:#fc843b;margin:1.0rem 0;padding-left:1.0rem;}
+.txtGuideInfo:before {content:'*'; font-size:1.5rem; position:absolute; left:0; top:0;}
+.h2Txt {color: #282828; font-size: 1.3rem; font-weight: normal; margin-bottom: 1.5rem;}
+
+/* select */
+.selectArea {position:relative; margin-top:1rem;}
+.selectArea:first-of-type {margin-top:1.5rem} 
+.selectArea select:invalid {color:#999;font-weight:normal;}
+.selectArea select {height:40px;padding:0.5rem 1.5rem 0 1.5rem;line-height:39px;-webkit-appearance:none;-moz-appearance:none;border:1px solid #e0e0e0;background:url('https://mdirect.hi.co.kr/images/common/select_icon.png') 96.5% 50% no-repeat #fff;background-size:1.3em;vertical-align:middle; font-weight:bold;}
+.selectArea select:active {border:1px solid #666; box-shadow:0 0 5px #666; outline:none;}
+.selectArea input::placehoder{color:#999;font-weight:normal;}
+
+
+/* 단어 자르기 */
+.wbKa{word-break:keep-all;}
+.wbba{word-break:break-all;}
+table.wbba tr td{white-space:normal !important;}
+
+/* 상단안내텍스트 /수정1904 */
+.topTxt{font-size:1.6rem;text-align:center;border-bottom:1px solid #d6d6d6;background:#fff;padding:2rem;line-height:2.3rem;word-break:keep-all}
+.topTxt strong{color:#fa6705;display:block;margin-bottom:2px;font-weight:normal}
+.topTxt span{color:#fa6705}
+.topTxt.typeS{line-height:2.1rem;font-size:1.5rem;color:#636363}
+.topTxt01{font-size:1.6rem;text-align:center;padding:2rem 2rem 0;background:#fff;line-height:2.3rem}
+.topTxt02{font-size:1.6rem;border-bottom:1px solid #e6e6e6;padding-bottom:2rem;line-height:2.3rem}
+.topStxt{color:#636363;margin-top:1rem}
+.popTxt{font-size:1.6rem;margin:1.5rem}
+.topTxt.hyundaiCard {color:#fff;background:#0088c0;} /* 제휴-현대카드,해외여행 해외장기 220802 */
+
+/* 공통텍스트 스타일 */
+/* .txtLine {margin-top:1.5rem; color:#636363; padding-bottom:1.5rem; border-bottom:1px solid #e0e0e0;} */
+.txtLine {display:inline-block; /*padding-bottom:0.1rem; */border-bottom:1px solid #636363;}
+.txtLine a {display:inline-block;}
+
+/* 스크롤박스 */
+.innerScroll {margin-top:15px; border:1px solid #e0e0e0; padding:0px 15px 5px 5px; height:120px; overflow-y:scroll;}
+.sizeL .innerScroll {margin-top:15px; border:1px solid #e0e0e0; padding:0px 15px 5px 5px; height:150px; overflow-y:scroll;}
+.innerScroll .inner {margin:5px;}
+
+/* 약관박스 */
+.allAgr01 {position:relative; background:#fc843b url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 10px -85px; background-size:2.4rem auto; cursor:pointer; border:1px solid #eb7b36; display:block; padding:1rem 1rem 1rem 4rem; color:#fff; font-size:1.5rem; line-height:25px;} 
+.allAgr01.on {border:1px solid #e6e6e6; background-color:#fff; background-position:10px -180px; font-size:1.5rem;}
+a.allAgr01:hover, a.allAgr01:focus, a.allAgr01:active {color:#fff;}
+a.allAgr01.on:hover, a.allAgr01.on:focus, .allAgr01.on:active {color:#282828;}
+/* .allAgr01:focus, .allAgr02:focus {outline:0.1rem dotted #777;} */
+.allAgr01:after {content:""; display:inline-block; position:absolute; top:50%; right:2rem; width:1.2rem; height:0.7rem; margin-top:-0.35rem; background:url('https://mdirect.hi.co.kr/images/common/bu_arrdown.png') no-repeat 0 0; background-size:1.2rem 0.7rem;}
+.allAgr01.on:after {background:url('https://mdirect.hi.co.kr/images/common/icon_arrupOrg.png') no-repeat 0 0; background-size:1.2rem 0.7rem;}
+
+.allAgr02 {background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 10px 10px; background-size:2.4rem auto; cursor:pointer; border-top:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6; display:block; padding:1rem 1rem 1rem 4rem; font-size:1.5rem; line-height:25px;} 
+.allAgr02.on {background-position:10px -180px; font-size:1.5rem;}
+
+.allAgr03 {background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 10px 10px; background-size:2.4rem auto; cursor:pointer; border-top:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6; display:block; padding:1rem 1rem 1rem 4rem; color:#282828; font-size:1.5rem; line-height:25px;} 
+.allAgr03.on {background-position:10px -180px; font-size:1.5rem;}
+
+/* 약관박스(전체동의하기,토글버튼,약관을 함께 사용하는 경우) */
+.agreeCtr {position:relative; border:1px solid #e0e0e0; padding-right:4rem; background:#fff; box-sizing:border-box; overflow:hidden;}
+.agreeCtr .allAgr {display:block; overflow:hidden; height:48px; line-height:45px; padding-left:45px; background:url('https://mdirect.hi.co.kr/images/common/bg_check2.png') no-repeat 10px 12px; background-size:25px auto; font-size:1.5rem; color:#282828; cursor:pointer;}
+.agreeCtr.on .allAgr{background-position:10px -120px;} /* 수정 /2003 */
+.agreeCtr button.btnView, .popWrap .agreeCtr button.btnView {text-indent:0;}
+.agreeCtr .btnView {display:inline-block; overflow:hidden; position:absolute; top:0; right:0; width:40px; height:48px; background:url('https://mdirect.hi.co.kr/images/common/bg_prev02.png') no-repeat 50% 50%; background-size:12px auto;} /* (기본) 전체동의하기 미체크, 약관보여진 상태 */
+.agreeCtr .btnView .state {display:inline-block; width:48px; height:48px; color:transparent;}
+.agreeCtr .btnView.act {background:url('https://mdirect.hi.co.kr/images/common/bg_next02.png') no-repeat 50% 50%; background-size:1.2rem 0.7rem;} /* 전체동의하기 미체크, 약관숨겨진 상태 */
+.agreeCtr.on .btnView {background:url('https://mdirect.hi.co.kr/images/common/bg_prev02.png') no-repeat 50% 50%; background-size:1.2rem 0.7rem;} /* 전체동의하기 체크, 약관보여진 상태 */
+.agreeCtr.on .btnView.act {background:url('https://mdirect.hi.co.kr/images/common/bg_next02.png') no-repeat 50% 50%; background-size:1.2rem 0.7rem;} /* 전체동의하기 체크, 약관숨겨진 상태 */
+
+/* 동의수정하면서추가200715 */
+.termCont.lineB{border-bottom:1px solid #d6d6d6;padding:5px 10px 15px;}
+
+.agreeCtr .radioBtn{overflow:hidden;border:none !important; background:#fff;padding:1.3rem 1.5rem 1.3rem;} /* 패딩수정200721 */
+.agreeCtr .radioBtn:after{content:"";display:block;clear:both}
+.agreeCtr .radioBtn span{display:block;float:left;position:relative;width:45%;font-size:1.5rem;} /* width수정200721 */
+.agreeCtr .radioBtn span input{position:absolute;left:20px;top:15px;width:0.1rem;height:0.1rem}
+.agreeCtr .radioBtn span label{display:table-cell;color:#636363;cursor:pointer;padding-left:3rem;height:24px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/bg_radio2.png') no-repeat 0 -150px;background-size:24px auto}
+.radioBtn span input:checked + label{background-position: 0 0rem;color:#282828}
+
+.agreeCtr .allAgr.square{display:block;overflow:hidden;height:48px;line-height:45px;padding-left:45px;background:url('https://mdirect.hi.co.kr/images/common/bg_check3.png') no-repeat 10px 12px;background-size:25px auto;font-size:1.5rem;color:#282828;cursor:pointer}
+.agreeCtr.on .allAgr.square{background-position:10px -120px}
+
+/* 20171101 수정후 약관박스(전체동의하기,토글버튼,약관을 함께 사용하는 경우) */
+.agreeCtr01 {position:relative; border:1px solid #e0e0e0; background:#fff; box-sizing:border-box; overflow:hidden;}
+.agreeCtr01 .allAgr {display:block; overflow:hidden; height:48px; line-height:45px; padding-left:45px; background:url('https://mdirect.hi.co.kr/images/common/bg_check2.png') no-repeat 10px 12px; background-size:25px auto; font-size:1.5rem; color:#282828; cursor:pointer;}
+.agreeCtr01.on .allAgr {display:block; overflow:hidden;height:48px; line-height:45px; padding-left:45px;background:#fc843b url('https://mdirect.hi.co.kr/images/common/bg_checkOn2.png') no-repeat 10px 12px; background-size:25px auto; font-size:1.5rem; color:#fff; cursor:pointer;}
+.agreeCtr01 button.btnView, .popWrap .agreeCtr button.btnView {text-indent:0;}
+.agreeCtr01 .btnView {display:inline-block; overflow:hidden; position:absolute; top:0; right:0; width:40px; height:48px; background:url('https://mdirect.hi.co.kr/images/common/bg_prev02.png') no-repeat 50% 50%; background-size:12px auto;} /* (기본) 전체동의하기 미체크, 약관보여진 상태 */
+.agreeCtr01 .btnView .state {display:inline-block; width:48px; height:48px; color:transparent;}
+.agreeCtr01 .btnView.act {background:url('https://mdirect.hi.co.kr/images/common/bg_next02.png') no-repeat 50% 50%; background-size:1.2rem 0.7rem;} /* 전체동의하기 미체크, 약관숨겨진 상태 */
+.agreeCtr01.on .btnView {background:url('https://mdirect.hi.co.kr/images/common/bg_prev02.png') no-repeat 50% 50%; background-size:1.2rem 0.7rem;} /* 전체동의하기 체크, 약관보여진 상태 */
+.agreeCtr01.on .btnView.act {background:url('https://mdirect.hi.co.kr/images/common/bg_next02.png') no-repeat 50% 50%; background-size:1.2rem 0.7rem;} /* 전체동의하기 체크, 약관숨겨진 상태 */
+.agreeCtr01 + .termCont label {display:inline-block; width:25px; height:27px; background:url('https://mdirect.hi.co.kr/images/common/bg_check2.png') no-repeat; background-size:25px auto; cursor:pointer;}
+.agreeCtr01 + .termCont input:checked + label {background-position:0 -130px}
+
+.termCont {border-bottom:1px solid #e6e6e6; padding:5px 10px;}
+.termCont li {position:relative; padding-top:5px}
+.termCont li:after {content:''; display:block;clear:both;}
+.termCont li a {float:right; width:calc(100% - 55px); /*동의서변경210526width:calc(100% - 33px);*/ display:block; min-height:21px; color:#636363; margin-top:3px; padding-right:20px; background:url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat right 3px top 3px; background-size:auto 12px;} /* 수정 /1911 */
+.termCont li span {float:right; width:calc(100% - 35px); display:block; color:#636363; margin-top:5px;}
+.termCont input {position:absolute; top:4px; left:0; width:25px; height:27px; color:transparent;}
+.termCont label {display:inline-block; width:2.4rem; height:2.4rem; background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat; background-size:25px auto; cursor:pointer;}
+
+.agreeCtr + .termCont label, .termCont.type2 label {display:inline-block; width:25px; height:27px; background:url('https://mdirect.hi.co.kr/images/common/bg_check2.png') no-repeat; background-size:25px auto; cursor:pointer;} /* 20180719 kjh */
+/* .termCont input:focus + label {outline:0.1rem dotted #777; } */
+.termCont input:checked + label {background-position:0 -192px;}
+.agreeCtr + .termCont input:checked + label, .termCont.type2 input:checked + label{background-position:0 -131px} /* 수정 /2101 *
+.termCont input:checked + label  + a {color:#282828;}
+
+h2 + .termCont {border-top:1px solid #e6e6e6;} 
+
+/* 전화가입상품 동의 /2108 */
+.termSubTxt{position:relative;margin:1rem 0;min-height:25px}
+.termSubTxt > a{position:absolute;top:0;right:0}
+.termCont.tmAgree{padding:0 0 1rem;border:0}
+.termCont.tmAgree .radioBtn{display:flex;padding:0;border:0;background:none}
+.termCont.tmAgree .radioBtn span{flex:1}
+.termCont.tmAgree .radioBtn span label{display:inline-block;width:auto}
+
+/* 보험료확인 기타특약 /1812 */
+.ti_chk{padding: 0 2rem 1.5rem;letter-spacing:-1px}
+.termCont_chk{padding:1.2rem;border-top:1px solid #e0e0e0;background-color:#feede3}
+.termCont_chk li{position:relative;padding:6px 0 1px;border-top:0 !important;min-height:2.4rem}
+.termCont_chk li div{display:inline-block;position:relative;margin-left:5px;width:85%;min-height:2.4rem;line-height:22px;vertical-align:top;} /* 수정 /1903 */
+.termCont_chk li input{position:absolute;top:6px;left:0;width:24px;height:24px;color:transparent}
+.termCont_chk li label{display:inline-block;width:2.4rem;height:2.4rem;background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat;background-size:24px auto;cursor:pointer}
+.termCont_chk li input:checked + label{background-position:0 -192px}
+.termCont_chk li input:checked + label + a{color:#282828}
+
+/* 보험료확인 기타특약 /수정1904 */
+.ti_chk{padding: 0 2rem 1.5rem;letter-spacing:-1px}
+.termCont_chk{padding:1.2rem;border-top:1px solid #e0e0e0;background-color:#feede3}
+.termCont_chk li{display:flex !important;justify-content:space-between;padding:6px 0 1px;border-top:0 !important;min-height:24px;line-height:22px}
+.termCont_chk li .txName{flex:1;position:relative;margin-left:4px;text-align:left}
+.termCont_chk li .txName .btnHelp{margin-top:-1px}
+.termCont_chk li .fontOrg{height:24px}
+.termCont_chk li input{position:absolute;top:6px;left:0;width:24px;height:24px;color:transparent}
+.termCont_chk li label{display:inline-block;width:2.4rem;height:2.4rem;background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat;background-size:24px auto;cursor:pointer}
+.termCont_chk li input:checked + label{background-position:0 -192px}
+.termCont_chk li input:checked + label + a{color:#282828}
+
+/* Type:Radio/1710 */
+.termCont_rdo{border-bottom:1px solid #e0e0e0}
+.termCont_rdo .radioBtn{position:relative;padding:1rem 1.5rem 1.2rem 1rem;border:none;border-bottom:1px dashed #e0e0e0;;background:none}
+.termCont_rdo .radioBtn:last-child{border-bottom:none}
+.termCont_rdo .radioBtn span{width:40%}
+.termCont_rdo .radioBtn span+span{width:50%}
+.termCont_rdo .radioBtn p{clear:both;margin-bottom:10px}
+.termCont_rdo .radioBtn a{position:absolute;top:0;right:0;display:block;width:16px;height:100%;background:url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat center center; background-size:auto 12px;}
+
+/* Type:Radio2/20171023 */
+.termCont_rdo2{border-bottom:1px solid #e0e0e0;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0;background:#fff;font-size:11px; color:#999; }
+.termCont_rdo2 .radioBtn{position:relative;padding:1rem 1.5rem 1.2rem 1rem;border:none;border-bottom:1px solid #e0e0e0;;background:none; margin-left:3px;}
+.termCont_rdo2 .radioBtn:last-child{border-bottom:none}
+.termCont_rdo2 .radioBtn span{width:40%}
+.termCont_rdo2 .radioBtn span+span{width:50%}
+.termCont_rdo2 .radioBtn p{clear:both;font-size:13px; color:#282828;margin-bottom:10px}
+.termCont_rdo2 .radioBtn label{font-size:11px; color:#999;}
+.termCont_rdo2 .radioBtn a{position:absolute;top:0;right:0;display:block;width:16px;height:100%;background:url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat center center; background-size:auto 12px;}
+
+.termBox {position:relative; margin-top:1.5rem; background:#f0f0f0; padding:1.5rem; box-sizing:border-box; border:1px solid #d4d4d4;}
+.termBox input {position:absolute; top:15px; left:15px; width:24px; height:24px;}
+.termBox label {display:block; float:left; margin-right:5px; width:24px; height:24px; min-height:2.4rem; background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 0 0; background-size:24px auto; cursor:pointer;}
+.termBox input:checked + label {background-position:0 -192px;}
+
+.termBox1 {position:relative; margin-top:1rem; background:#fff; padding:1.5rem; box-sizing:border-box; border:1px solid #d4d4d4;}
+.termBox a, .termBox1 a {display:block;padding-right:1.5rem; background:url('https://mdirect.hi.co.kr/images/common/bu_arr05.png') no-repeat right center; background-size:0.8rem auto;}
+
+.termCont.bgGray {background-color:#e6e6e6;}
+.termCont.bgGray li input[type=checkbox] {right:2rem; width:0.7rem; height:0.7rem;}
+
+
+h2 + .checkBox {padding-top:0}
+
+.checkBox {padding:1.5rem 0;position:relative;}
+.checkBox > label {margin-right:0;}
+.checkBox > a.link {float:left; display:block; color:#949494; width:85%; background:url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat right 4px; background-size:auto 12px;}
+.agreeBox {margin-bottom:1.5rem; border:1px solid #e0e0e0; background:#fff; padding:1.5rem;}
+.termBox + .agreeBox {margin-top:1.5rem;}
+.agreeBox strong, .checkBox strong {display:block; font-weight:normal; word-break:break-all;}
+.agreeBox p, .checkBox p {margin-top:1.5rem; padding-top:1rem; border-top:1px solid #e0e0e0; position:relative;}
+.agreeBox p.mpdT0 {margin-top:0; padding-top:0; border-top:none;}
+.agreeBox strong span {color:#fc843b;}
+.agreeBox p span, .checkBox p span, .checkBox span {display:block; float:left; margin-top:3px;}
+.agreeBox input {position:absolute; top:15px; left:15px; width:2.4rem; height:2.4rem;}
+.agreeBox p input, .checkBox p input,  .checkBox input {position:absolute; top:10px; left:0px;}
+
+.agreeBox label, .checkBox label {display:block; float:left; margin-right:5px; width:24px; height:24px; min-height:2.4rem; background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 0 0; background-size:24px auto; cursor:pointer;}
+.agreeBox p input:checked + label, .checkBox input:checked + label {background-position:0 -192px;}
+.agreeBox:after, .checkBox:after {content:""; display:block; clear:both;}
+.checkBox em {display:block; color:#636363; font-size:1.2rem;}
+/* labelBox /2108 */
+.agreeBox.labelBox label, .checkBox.labelBox label{margin-right:0;padding-left:2.9rem;line-height:2.4rem}
+.agreeBox.labelBox .inputArea, .checkBox.labelBox .inputArea{display:flex;justify-content:flex-end;align-items:flex-end;margin-top:0.5rem}
+.agreeBox.labelBox .inputArea span, .checkBox.labelBox .inputArea span{position: relative;}
+.agreeBox .inputArea input{position:absolute; top:0; left:0}
+.agreeBox .inputArea input:checked + label{background-position:0 -192px;}
+
+
+.inputWrap.select + .agreeBox {margin-top:1.5rem;}
+.inputWrap.birth + .agreeBox {border-top:none;}
+
+.checkBoxA {padding:1.8rem 0;position:relative;background:#fff;border:solid 1px #e0e0e0;}
+.checkBoxA.topLineNone {border-top:none;}
+.checkBoxA.BtmLineNone {border-bottom:none;}
+.checkBoxA.topBtmLineNone {border-top:none;border-bottom:none;}
+.checkBoxA > a.link {float:right; width:calc(100% - 4rem); display:block; color:#949494;  padding-right:10px; background:url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat right 4px; background-size:auto 12px;}
+.checkBoxA strong {display:block; font-weight:normal; word-break:break-all;}
+.checkBoxA p {position:relative;padding-left:1.5rem;}
+.checkBoxA p span, .checkBoxA span {display:block; float:left; width:calc(100% - 3rem); margin-left:5px; margin-top:1px; vertical-align:top;}
+.checkBoxA input {position:absolute; top:0; left:0; width:0.1rem; height:0.1rem; opacity:0;}
+.checkBoxA label {display:block; float:left; width:2.4rem; height:2.4rem; min-height:2.4rem;vertical-align:middle; background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 0 0; background-size:2.4rem auto; cursor:pointer;}
+.checkBoxA input:checked + label {background-position:0 -192px;}
+.checkBoxA:after {content:""; display:block; clear:both;}
+.checkBoxA em {display:block; color:#636363; font-size:1.2rem;}
+
+/* checkbox List /2202 */
+.checkBoxList input{position:absolute;top:0;left:0;width:0.1rem;height:0.1rem;opacity:0;}
+.checkBoxList label{display:block;padding:.3rem 0 .4rem 3.2rem;min-height:1.7rem;line-height:1.7rem;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/bg_check2.png') no-repeat 0 0; background-size:2.4rem auto; cursor:pointer;font-weight:normal;font-size:1.3rem;color:#8a8a8a;}
+.checkBoxList input:checked + label {background-position:0 -126px;color:#fc843b}
+
+/* paging */
+.paging{ clear:both; text-align:center; padding:30px 0 0 0}
+.paging a {display:inline-block; vertical-align:top;border:1px solid #e5e5e5;}
+
+
+/* tab */
+.tabWrap {display:table; width:100%; background:#fff;}
+.tabWrap li {display:table-cell; width:50%;height:5.5rem;box-sizing:border-box;vertical-align:middle;}
+.tabWrap li a {display:table-cell;height:5.3rem;vertical-align:middle;text-align:center;padding-bottom:0.2rem;color:#636363; font-weight:bold;}
+.tabWrap li.on a {border-bottom:2px solid #666;padding-bottom:0;}
+.tabWrap.three li {width:33.3%}
+.tabWrap.three li:nth-child(3n+2) {width:33.4%;}
+.tabWrap {display:table; overflow:hidden;width:100%;}
+.tabWrap > a {display:table;float:left; width: calc(100% - 0.2rem);height:100%;padding:0.1rem 0; color:#636363; background:#fff; font-weight:bold;border:0.1rem solid #e0e0e0; color:#282828;}
+.tabWrap > a:after {content:"";display:block;clear:both}
+.tabWrap > a.on {border:0.2rem solid #666; color:#282828; width: calc(100% - 0.4rem);padding:0;}
+.tabWrap > a > span {display:table-cell;vertical-align:middle;}
+.tabWrap.two > a {width: calc(50% - 0.2rem);}
+.tabWrap.two > a.on {width: calc(50% - 0.4rem);padding:0;}
+.tabWrap.three > a {width: calc(32.8% - 0.2rem);}
+.tabWrap.three > a.on {width: calc(32.8% - 0.4rem);padding:0;}
+.tabWrap.three > a:nth-child(3n+2) {width: calc(34.4% - 0.2rem);}
+.tabWrap.three > a:nth-child(3n+2).on {width: calc(34.4% - 0.4rem);padding:0;}
+.tabWrap.four > a {width: calc(25% - 0.2rem);}
+.tabWrap.four > a.on {width: calc(25% - 0.4rem);}
+
+
+
+
+.tabMenuBox{position:relative;padding:0 1.5rem;border-bottom:1px solid #d6d6d6;background-color:#fff}
+.tabMenu {overflow:hidden;width:100%; background:#fff; z-index:1;}
+.tabMenu a{display:table;float:left; width:50%;height:5.5rem;padding-bottom:0.2rem;box-sizing:border-box;vertical-align:middle;text-align:center;}
+.tabMenu a span {display:table-cell;height:5.5rem;vertical-align:middle;margin: 0 auto;color:#949494; font-weight:normal; word-break:keep-all;}
+.tabMenu a span em{display:block; font-size:1.2rem;}
+.tabMenu a span em.fontOrg {display:inline;}
+.tabMenu a.on {border-bottom:3px solid #fc843b; padding-bottom:0;}
+.tabMenu a.on span {font-weight:bold; color:#fc843b;}
+.tabMenu.three a {width:33.3%}
+.tabMenu.three a:nth-child(3n+2) {width:33.4%;}
+.tabMenu.four a {width:25%}
+.tabMenu.four a:nth-child(3n+2) {width:25%;}
+.tabMenu a span.iconChild{background:url('https://mdirect.hi.co.kr/images/common/bg_iconChild.png') no-repeat right 9% center;background-size:auto 25px} /* 실손자녀(19세미만) 탭 아이콘210412 */
+
+/* 탭메뉴 공지 배너 /2101 */
+.tabMenuBox .notiFixedTab{display:block;position:absolute;top:-5px;left:50%;min-width:220px;border:1px solid #047db6;background-color:#fff;font-size:12px;color:#2465a9;-webkit-transform:translate(-50%,0);transform:translate(-50%,0);text-align:center}
+.tabMenuBox .notiFixedTab p{position:relative;padding:1px 0 2px}
+.tabMenuBox .notiFixedTab p:after{content:'';display:block;position:absolute;bottom:-9px;left:50%;width:13px;height:9px;background:url('https://mdirect.hi.co.kr/images/common/arw_dn_blue2.png') no-repeat 0 0;background-size:13px auto;-webkit-transform:translate(-50%,0);transform:translate(-50%,0);}
+.tabMenuBox .notiFixedTab p em{color:#f73d42}
+
+
+/* point /1812 */
+.tabMenu a span em.pint{display:inline-block;position:relative;margin-left:3px;padding-left:4px}
+.tabMenu a span em.pint span{display:inline-block;padding:0 7px;height:20px;border-radius:10px;background:#009ab1;line-height:20px;font-weight:normal;font-size:1.1rem;color:#fff !important;vertical-align:middle} /* 접근성 2차 /2210 */
+.tabMenu a span em.pint:before{content:'';display:block;position:absolute;top:5px;left:0;border-radius:0;border-style:solid;border-color:transparent #009ab1 transparent transparent;border-width:5px 7px 5px 0;} /* 접근성 2차 /2210 */
+.tabMenu.joinBtn{overflow:hidden;padding:1.5rem 0}
+.tabMenu.joinBtn > a{display:block;float:left;color:#636363;height:50px;padding:1.5rem 0.5rem;width:calc(50% - 5px);border:1px solid #e0e0e0;box-sizing:border-box}
+.tabMenu.joinBtn > a.on{background:#f6873d url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png') no-repeat 1rem 1rem;background-size:12px auto;border:1px solid #eb7b36;font-weight:bold;color:#fff}
+.tabMenu.joinBtn > a.disable{background:#fafafa;border:1px solid #e0e0e0;color:#ddd;cursor:pointer}
+.tabMenu.joinBtn > a:nth-child(2){float:right}
+.tabMenu.joinBtn > a:after{content:"";display:block;clear:both}
+.tabMenu.joinBtn > a.three{width:32%}
+/*.tabMenu.joinBtn > a.three:nth-child(1){margin-left:0}*/
+.tabMenu.joinBtn > a.three:nth-child(2){margin:0 2%;float:left}
+.tabMenu.joinBtn > a.three:nth-child(3){float:left}
+/* 배경 이미지 없음 /1812 */
+.tabMenu.joinBtn.bgNone a{padding-top:1.4rem}
+.tabMenu.joinBtn.bgNone a.on{background:#f6873d}
+.three > li{width:33.3%}
+.three > li:first-child{width:33.4%}
+.four > li{width:25%}
+
+/* 자기신체사고/자동차상해 탭 /2107  */
+.tabMenuBox.typeWide{padding:0}
+.tabMenuBox.typeWide .tabMenu.joinBtn.bgNone{padding:0}
+.tabMenuBox.typeWide .tabMenu.joinBtn.bgNone a{width:50%;border-left:0;border-right:0;border-bottom:0;font-size:14px}
+.tabMenuBox.typeWide .tabMenu.joinBtn.bgNone a.on{font-weight:normal}
+.tabMenuBox.typeWide .tabMenu.joinBtn.bgNone a span[class^=tag], 
+.tabMenuBox.typeWide .tabMenu.joinBtn.bgNone a em[class^=tag]{margin-left:5px}
+
+/* 청약내용 탭 /2111 /수정2112 */
+.tabDetailWrap{padding-bottom:1rem;border:1px solid #e0e0e0;background-color:#fff}
+.tabDetailWrap .tabMenuBox.typeBox{padding:0;border:0}
+.tabDetailWrap .tabMenuBox.typeBox .tabMenu{display:flex;overflow:unset;}
+.tabDetailWrap .tabMenuBox.typeBox .tabMenu a{padding:0;height:4.5rem;box-sizing:border-box;border:0;border-bottom:1px solid #e0e0e0;border-left:1px solid #e0e0e0;background-color:#f0f0f0}
+.tabDetailWrap .tabMenuBox.typeBox .tabMenu a em{display:table-cell;width:100%;height:4.5rem;box-sizing:border-box;vertical-align:middle;}
+.tabDetailWrap .tabMenuBox.typeBox .tabMenu a.on{border-bottom:1px solid #fff;background-color:#fff;}
+.tabDetailWrap .tabMenuBox.typeBox .tabMenu a.on em{color:#000}
+.tabDetailWrap .tabMenuBox.typeBox .tabMenu a:first-child{border-left:0}
+.tabDetailWrap .tabMenuBox.typeBox .tabMenu a span.hide{height:1px;}
+.tabDetailWrap .tabOpen .dataListBtn{border:0}
+
+/* step */
+.stepList {display:table; width:100%; border-bottom:1px solid #f4c5a5; font-size:14px; margin-bottom:20px;}
+.stepList li {display:table-cell; width:34px; height:38px; color:#e36f1e}
+.stepList li:last-child {width:28px;}
+.stepList li em {display:inline-block; width:26px; height:26px; border:1px solid #f4c5a5; border-radius:14px; text-align:center; line-height:26px;}
+.stepList li span, .stepList li .hide {position:absolute; left:-9999px;}
+.stepList li.on {width:auto;}
+.stepList li.on em {background:#dd620d; color:#fff; font-weight:bold; width:27px; height:27px;}
+.stepList li.on span {position:static; display:inline-block; color:#dd620d; font-weight:bold; margin-left:5px;}
+
+/* select List Box /수정2003 */
+section.addCollat > .listBox:first-of-type {margin-top:0; padding-top:0;}
+.listBox {margin-top:1.5rem; border:solid #e0e0e0; border-width:0.1rem; background-color:#fff;} 
+.listBox li:first-child {border-top:0;}
+.listBox li{display:block; position:relative; min-height:2.4rem; border-top:0.1rem solid #e0e0e0; box-sizing:border-box;padding:1.5rem 1.5rem 1.5rem 4.8rem;}
+.listBox li.infoTit {padding-left:1.5rem; display:block; color:#636363; }
+.listBox li.infoBox {padding-left:1.5rem;}
+.listBox li.infoBox strong {display:block; color:#fc843b;}
+.listBox li.infoBox a span {position:absolute;right:1.5rem;top:1.2rem;width:1.7rem;height:1.7rem;color:transparent;text-indent:-999px;background: url('https://mdirect.hi.co.kr/images/common/icon_arrup.png') no-repeat right 70%; background-size:1.7rem auto;}
+.listBox li.infoBox.on a span {background: url('https://mdirect.hi.co.kr/images/common/icon_arrdown.png') no-repeat right 70%; background-size:1.7rem auto;}
+
+.listBox li.infoBox span {display:block; color:#949494; margin-top:2px;}
+.listBox .check,
+.listBox2 .check{position:absolute; top:50%; left:1.3rem; width:2.4rem; height:2.4rem; margin-top:-1.2rem;}
+.listBox .check > span,
+.listBox2 .check > span{display:block; position:relative;}
+.listBox .check input,
+.listBox2 .check input{position:absolute; top:0; left:0; width:2.4rem; height:2.4rem; color:transparent;}
+.listBox .check label,
+.listBox2 .check label{display:inline-block; width:2.4rem; height:2.4rem; background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 0 0; background-size:2.4rem auto;}
+.listBox .check input:checked + label,
+.listBox2 .check input:checked + label{background:url('https://mdirect.hi.co.kr/images/common/bg_checkOn.png') no-repeat; background-size:24px auto;}
+.listBox .check input:disabled + label,
+.listBox2 .check input:disabled + label{background-position: 0 -288px;}
+
+.listBox .item .tit {font-weight:normal; display:inline-block; line-height:1.8rem; width:60%; }
+.listBox.widthFull .item .tit{width:auto;}/* 추가 2007 */
+.listBox .item .tit > em.disIB {display:inline-block;}
+.listBox .item em {color:#fc843b; font-weight:normal; display:block; font-size:1.2rem}
+.listBox .item em.point {display:inline-block; margin-right:3px;}
+.listBox .item span {display:block; width:50%; font-size:1.2rem; margin-top:3px;}
+.listBox .item .titl {display:block; float:left; width:50%; padding-right:1rem;}
+.listBox .item .title {display:block; float:left; width:65%;}
+.listBox .item .tit2 {display:block; float:left; width:90%;}
+.listBox .btnHelp {position:absolute; top:50%; right:1.5rem; margin-top:-1rem; padding-right:0}
+.listBox .won {float:right; text-align:right; font-weight:bold;}
+.listBox .btnHelp em {color:transparent;}
+.listBox .item .price {position:absolute; top:50%; right:4rem; margin-top:-1rem;}
+.listBox + .listBox {margin-top:1rem}
+.listBox li:after {content:""; display:block; clear:both;}
+.listBox .btnLink {position:absolute; top:50%;  right:10px; margin-top:-1rem; width:2rem; height:2rem; background:url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat center center; background-size:auto 1.5rem;}
+.listBox .btnLink span {overflow:hidden; color:transparent; width:2rem; height:2rem; display:block;}
+
+/* 안내 말풍선 /2004 */
+.listBox .item .title.innerBox{width:75%}
+.listBox .item .title.innerBox .box-dash-blue{position:relative;display:inline-block;margin-top:3px;padding:0 4px 1px;box-sizing:border-box;min-height:17px;line-height:16px;border:1px dashed #06b1ca;background:#ffffff;color:#06b1ca;font-weight:normal;font-size:12px;text-align:center;letter-spacing:-1px}
+.listBox .item .title.innerBox .box-dash-blue:after{content:'';display:block;position:absolute;top:-3px;left:8px;width:4px;height:4px;transform:scaleY(1.2) rotateZ(45deg);border-top:1px dashed #06b1ca;border-left:1px dashed #06b1ca;background-color:#ffffff}
+
+
+/* ListBox2 /1812 */
+.listBox2{margin-top:1.5rem;border:solid #e0e0e0;border-width:0.1rem;background-color:#fff}
+.listBox2 li:first-child{border-top:0}
+.listBox2 li{display:block;position:relative;border-top:0.1rem solid #e0e0e0;box-sizing:border-box}
+.listBox2 li .listSub{position:relative;padding:1.5rem;min-height:2.4rem;line-height:19px}
+.listBox2 li .listSub:after{content:"";display:block;clear:both}
+.listBox2.chkIn li .listSub{padding:1.5rem 1.5rem 1.5rem 4.8rem} /* 추가 /2003 */
+.listBox2 li .listSub .item .tit{font-weight:normal;display:inline-block;line-height:1.8rem;width:60%;}
+.listBox2 li .listSub .item .tit > em.disIB{display:inline-block}
+.listBox2 li .listSub .item em{color:#047db5;font-weight:normal;display:block;font-size:1.2rem}
+.listBox2 li .listSub .item em.point{display:inline-block;margin-right:3px}
+.listBox2 li .listSub .item .titl{display:block;float:left;width:50%;padding-right:1rem}
+.listBox2 li .listSub .item .title{display:block;float:left;width:65%}
+.listBox2 li .listSub .item .tit2{display:block;float:left;width:90%;color:#000}
+.listBox2 li .listSub .item .price{display:block;position:absolute;top:50%;right:4rem;margin-top:-1.5rem;height:2rem;line-height:2.8rem;font-weight:600;font-size:1.4rem;color:#fa6705} /* 수정 /2101 */
+.listBox2 li .listSub .item .price em.tagGrn{display:inline-block;position:relative;margin-right:5px;padding:5px 8px;text-align:center} /* 수정 /2101 */
+.listBox2 li .listSub .item .price em.tagGrn:after{content:'';display:block;position:absolute;top:1.2rem;right:-0.3rem;width:0.6rem;height:0.6rem;background:#00bbc9;transform:rotate(45deg)} /* 수정 /2101 */
+.listBox2 li .listSub .btOpen{position:absolute;top:50%; right:10px;margin-top:-1rem;width:2rem;height:2rem;background:url('https://mdirect.hi.co.kr/images/common/icon_arrdown.png') no-repeat center center;background-size:1.5rem auto}
+.listBox2 li .listSub .btOpen span{overflow:hidden;color:transparent;width:2rem;height:2rem;display:block}
+.listBox2 li .listSub.on{background-color:#e6e6e6}
+.listBox2 li .listSub.on .btOpen{background:url('https://mdirect.hi.co.kr/images/common/icon_arrup.png') no-repeat center center;background-size:1.5rem auto}
+.listBox2 li .listCt{box-sizing:border-box;border-top:0.1rem solid #e0e0e0}
+.listBox2 li .listCt .tx{padding:1.5rem;font-size:12px;color:#636363}
+.listBox2 li .listCt .txTip{padding-bottom:4px;text-align:center}
+.listBox2 li .listCt .txTip:after{content:'';display:block;margin-top:-1px;width:100%;height:9px;background:url('https://mdirect.hi.co.kr/images/common/box_tip_org.png') no-repeat center 0;background-size:9px auto;}
+.listBox2 li .listCt .txTip a{display:block;margin:0 auto;padding:6px 0 7px;max-width:250px;border-radius:2rem;border:1px solid #fa6705;color:#fa6705;letter-spacing:-1px}
+.listBox2 li .listCt .txBn a{display:block;margin:0 auto;padding:6px 0 7px;max-width:250px;border-radius:2rem;border:1px solid #00bbc9;color:#00bbc9;background:url('https://mdirect.hi.co.kr/images/common/bu_arr05.png') no-repeat right 30px center;background-size:7px auto;letter-spacing:-1px;text-align:center} /* 추가 /202011 */
+.listBox2 li .listCt .imgBn{margin:1.5rem 1.5rem 0;border-radius:7px;background:#00bbc9 url('https://mdirect.hi.co.kr/images/common/bu_arr04.png') no-repeat right 1.2rem center;background-size:auto 13px} /* 수정 /2107 */
+.listBox2 li .listCt .imgBn a{display:block;padding:1.5rem 2rem 1.5rem 9rem;background:url('https://mdirect.hi.co.kr/images/content/img_rec_bn.png') no-repeat 1.5rem bottom;background-size:auto 6rem} /* 수정 /2107 */
+.listBox2 li .listCt .imgBn a span{display:block;font-weight:normal;font-size:14px;color:#fff} /* 추가 /2101 */
+.listBox2 li .listCt .imgBn a strong{display:block;font-weight:normal;font-size:17px;color:#fff} /* 추가 /2101 */
+.listBox2 li .listCt .radioBox span{display:flex;justify-content:space-between;align-items:center;padding:10px}
+.listBox2 li .listCt .radioBox span.on{border:1px solid #666 !important;background-color:#fff}
+.listBox2 li .listCt .radioBox span.off{border-left:1px solid #feede3;border-right:1px solid #feede3;background-color:#feede3}
+.listBox2 li .listCt .radioBox span:last-child{border-bottom:1px solid #feede3}
+.listBox2 li .listCt .radioBox span input{top:50%;margin-top:-11px}
+.listBox2 li .listCt .radioBox span label{padding:0 0 0 30px}
+.listBox2 li .listCt .radioBox span .priceArea strong{display:block;position:relative;top:0;right:0}
+.listBox2 li .listCt .radioBox span .priceArea{text-align:right}
+.listBox2 li .listCt .radioBox span .priceArea em{display:inline-block;right:0;margin:4px 0 0;padding-left:15px;height:13px;line-height:13px;border:0;font-weight:600;font-size:12px}
+.listBox2 li .listCt .radioBox span .priceArea em.pUp{background:url('https://mdirect.hi.co.kr/images/common/ic_upndown.png') no-repeat 0 1px;background-size:11px auto;color:#eb0f0f;}
+.listBox2 li .listCt .radioBox span .priceArea em.pDn{background:url('https://mdirect.hi.co.kr/images/common/ic_upndown.png') no-repeat 0 -14px;background-size:11px auto;color:#047db5}
+.listBox2 li.infoTit{padding-left:1.5rem;display:block;color:#636363;}
+.listBox2 li.infoBox{padding-left:1.5rem}
+.listBox2 li.infoBox strong{display:block;color:#fa6705}
+.listBox2 li.infoBox a span{position:absolute;right:1.5rem;top:1.2rem;width:1.7rem;height:1.7rem;color:transparent;text-indent:-999px;background: url('https://mdirect.hi.co.kr/images/common/icon_arrup.png') no-repeat right 70%;background-size:1.7rem auto}
+.listBox2 li.infoBox.on a span{background: url('https://mdirect.hi.co.kr/images/common/icon_arrdown.png') no-repeat right 70%;background-size:1.7rem auto}
+.listBox2 li.infoBox span{display:block;color:#949494;margin-top:2px}
+.listBox2 .won{float:right;text-align:right;font-weight:bold}
+.listBox2 + .listBox{margin-top:1rem}
+.listBox2 li .listSub .btOpen{position:absolute;top:50%; right:10px;margin-top:-1rem;width:2rem;height:2rem;background:url('https://mdirect.hi.co.kr/images/common/icon_arrdown.png') no-repeat center center;background-size:1.5rem auto}
+.listBox2 li .listSub .btOpen span{overflow:hidden;color:transparent;width:2rem;height:2rem;display:block}
+
+/* listBox3 - checkbox /202011 /수정2208 */
+.listBox3{padding:0.5rem 1.5rem;border:1px solid #e0e0e0;background-color:#fff}
+.listBox3 li{position:relative;padding:1.5rem 0;min-height:2.4rem;line-height:1.9rem;border-top:1px dashed #e0e0e0}
+.listBox3 li:first-child{border-top:0}
+.listBox3 li .ti{margin-bottom:1.3rem;font-weight:600;font-size:1.3rem;color:#0786bb}
+.listBox3 li .chkArea{display:flex;position:relative} /* 수정 /2208 */
+.listBox3 li .chkArea + .chkArea{margin-top:1rem}
+.listBox3 li .chkArea .checkBox{padding:0}
+.listBox3 li .chkArea .txt{flex:1;padding-right:1rem}
+.listBox3 li .chkArea .txt strong{display:inline-block;line-height:2.2rem;font-weight:600;font-size:1.3rem;color:#333}
+.listBox3 li .chkArea .txt a.btnHelp{vertical-align:top;margin-top:2px}
+.listBox3 li .chkArea .txt span{display:block;font-size:1.2rem;color:#636363;letter-spacing:-1px}
+.listBox3 li .chkArea .txt em{display:block;font-size:1.2rem;color:#f20000;letter-spacing:-1px}
+.listBox3 li .chkArea .price{margin-left:auto;font-size:1.4rem;color:#fa6705;text-align:right}
+.listBox3 li .chkArea .price em.tagGrn{display:inline-block;margin-right:5px;padding:0 4px 0 4px;text-align:center}
+.listBox3 li .chkArea .fgSky{position:absolute;top:-20px;left:30px;padding:0 5px 0 4px;height:16px;line-height:15px;background-color:#009ab1;text-align:center;font-size:12px;color:#fff;} /* 접근성 2차 /2210 */
+/* checkbox Best List /2208 */
+.listBox3 li .chkArea.bestList{margin:1.5rem 0 3.2rem;}
+.listBox3 li .chkArea.bestList:last-child{margin-bottom:0}
+
+.boxBasic {margin-top:1.5rem; border:1px solid #e0e0e0; background-color:#fff;}
+.boxBasic li {border-top:1px solid #e0e0e0; padding:1.2rem 1.5rem 1.5rem;}
+.boxBasic li:first-child {border-top:none;}
+.boxBasic li > strong {display:block; color:#636363; box-sizing:border-box; margin-bottom:5px;}
+.boxBasic li > span {display:block; font-weight:bold;box-sizing:border-box;}
+.boxBasic li > em {display:block; color:#fc843b; font-size:1.2rem;}
+
+
+
+/* listType */
+.listDot.Line {border-top:1px solid #e0e0e0; padding-top:1rem;}
+.listBasic, .listDot {margin-top:1.5rem;}
+/*.listDot:first-of-type, */h2 + .listDot {margin-top:0}
+.listDot > li .listBasic {margin-top:0.5rem}
+.listBasic > li {position:relative; color:#636363; padding-left:1rem; margin-bottom:0.5rem; font-size:1.2rem; line-height:1.7rem;}
+.listBasic > li:before {content:'-'; position:absolute; left:0;}
+li .listBasic > li:before {content:'-' !important; position:absolute; left:0;}
+.listBasic > li:last-child {margin-top:0}
+.listBasic > p {position:relative; color:#636363; padding-left:1rem; margin-bottom:0.5rem; font-size:1.2rem; line-height:1.7rem;}
+.listBasic > p:before {content:'-';font-size:1.4rem; position:absolute; left:0; top:-2px;}
+ul.listBasic + .agreeBox {margin-top:1.5rem;}
+
+.listDot li {position:relative; color:#636363; padding-left:1rem; margin-top:0.5rem;}
+.listDot li:before {content:'•'; font-size:1.4rem; position:absolute; left:0; top:0px; color:#8a8a8a;}
+li .listDot li:before {content:'•' !important; font-size:1.4rem; position:absolute; left:0; top:-2px; color:#8a8a8a;}
+.listDot li:first-child {margin-top:0}
+.listDot li span, .listDot p span  {color:#fc843b;line-height:1.7rem;}
+.listDot li span.txtLine, .listDot p span.txtLine {color:#636363;}
+.listDot > p {position:relative; color:#636363; padding-left:1rem; margin-bottom:0.5rem; font-size:1.2rem; line-height:1.7rem;}
+.listDot > p:before {content:'•'; font-size:1.4rem; position:absolute; left:0; top:-2px; color:#8a8a8a;}
+.listDot li .titl {display:block; width:30%; float:left; color:#636363;}
+.listDot li .data {display:block; width:70%; float:left; color:#282828; font-weight:bold;}
+.listDot li:after {content:""; display:block; clear:both;}
+
+.listDot.mgbS + .inputWrap {border-top:1px solid #e0e0e0;}
+div.listDot + .listBasic {margin-top:0px;}
+ul.listBasic + .agreeBox, .listDot + .agreeBox {margin-top:1.5rem;}
+
+
+.listEtc {margin-top:1.5rem;}
+.listEtc > li {position:relative; color:#636363; padding-left:1.5rem; margin-bottom:0.5rem; font-size:1.2rem; line-height:1.7rem;}
+.listEtc > li:before {content:'※'; font-size:1.4rem; position:absolute; left:0; top:0px;}
+li .listEtc > li:before {content:'※' !important; font-size:1.4rem; position:absolute; left:0; top:-2px;}
+.listEtc > li:last-child {margin-bottom:0}
+.listEtc > p {position:relative; color:#636363; padding-left:1.5rem; margin-bottom:0.5rem; font-size:1.2rem; line-height:1.7rem;}
+.listEtc > p:before {content:'※'; font-size:1.4rem; position:absolute; left:0; top:0px;}
+
+/* listStar /수정2104 */
+.listStar li{position:relative;color:#636363;padding-left:1rem;margin-top:0.5rem;font-size:1.3rem;text-align:left}
+.listStar li:before{content:'*';font-size:1.3rem;position:absolute;left:0;top:3px;color:#8a8a8a}
+li .listStar li:before{content:'*' !important;font-size:1.3rem;position:absolute;left:0;top:1px;color:#8a8a8a}
+.listStar li:first-child{margin-top:0}
+.listStar li span, .listDot p span{color:#fc843b;line-height:1.7rem}
+.listStar li span.txtLine, .listDot p span.txtLine{color:#636363}
+.listStar > p{position:relative;color:#636363;padding-left:1rem;margin-bottom:0.5rem;font-size:1.3rem;line-height:1.7rem}
+.listStar > p:before{content:'*';font-size:1.3rem;position:absolute;left:0;top:1px;color:#8a8a8a}
+.listStar li .titl{display:block;width:30%;float:left;color:#636363}
+.listStar li .data{display:block;width:70%;float:left;color:#282828;font-weight:bold}
+.listStar li:after{content:"";display:block;clear:both}
+.listStar li a{font-size:1.3rem}
+
+
+ol.numList {margin:1.5rem 0 0 1.5rem;}
+ol.numList > li {list-style-type:decimal; margin-bottom:0.5rem; font-size:1.2rem; line-height:1.7rem;}
+ol.numList li:first-child {margin-top:0;}
+
+/* listNum 내부 /추가2104 */
+ul > li > .numList{margin:0}
+ul > li > .numList > li{position:relative;padding-left:17px;text-align:left;list-style:none}
+ul > li > .numList > li:before{display:block;content:'';position:absolute;left:0;top:0;}
+ul > li > .numList > li:nth-child(1):before{content:'①'}
+ul > li > .numList > li:nth-child(2):before{content:'②'}
+ul > li > .numList > li:nth-child(3):before{content:'③'}
+ul > li > .numList > li:nth-child(4):before{content:'④'}
+ul > li > .numList > li:nth-child(5):before{content:'⑤'}
+ul > li > .numList > li:nth-child(6):before{content:'⑥'}
+ul > li > .numList > li:nth-child(7):before{content:'⑦'}
+ul > li > .numList > li:nth-child(8):before{content:'⑧'}
+ul > li > .numList > li:nth-child(9):before{content:'⑨'}
+ul > li > .numList > li:nth-child(10):before{content:'⑩'}
+ul > li > .numList > li:nth-child(11):before{content:'⑪'}
+ul > li > .numList > li:nth-child(12):before{content:'⑫'}
+ul > li > .numList > li:nth-child(13):before{content:'⑬'}
+
+.whiteBox {border:solid 1px #e0e0e0;background-color:#fff;padding: 1.5rem 0;}
+.whiteBoxpd15 {border:solid 1px #e0e0e0;background-color:#fff;padding: 1.5rem;}
+.whiteBoxpdRD15 {border:solid 1px #e0e0e0;background-color:#fff;padding:0 1.5rem;}
+.whiteBoxpdRBD15 {border:solid 1px #e0e0e0;background-color:#fff;padding:0 1.5rem 1.5rem;}
+
+
+.whiteBoxpd15 > strong.tit {display:block; color:#047db5;}
+.whiteBoxpd15 > span.stit {display:block; color:#fc843b; font-weight:bold; margin:3px 0}
+.whiteBoxpd15 > p.txt {color:#636363;}
+.whiteBoxpd15 > .listDot li {font-size:1.2rem;}
+.whiteBoxpd15 > .listDot {margin-top:0}
+
+.pointWBox {position: relative;border:solid 1px #e0e0e0;background-color:#fff;padding: 1.5rem;}
+.pointWBox .titl {color:#fc843b;line-height: 26px;}
+.pointWBox .titText {color:#282828;line-height: 26px;}
+.pointWBox > a {position:absolute; right:1rem; top:1.4rem; display:inline-block; text-align:center; color:#fc843b; border:1px solid #fc843b; border-radius:15px; padding:0 12px; line-height:26px; letter-spacing:-1px;} 
+
+.questionChois {display:table; width:calc(100% - 3.0rem);padding: 0 1.5rem}
+.questionChois .question {display:table-cell; width:auto; vertical-align:middle;font-weight:bold;}
+.questionChois .question span {font-size:1.2rem;color:#fc843b}
+.questionChois .question ul li {font-weight:normal;}
+.questionChois .question h2 {margin:0}
+.logTabChois {margin-top:1.5rem;}
+.logTabChois ul {overflow: hidden; width: 100%;}
+.logTabChois ul li{float:left; position:relative;width:50%;text-align:center;background:url('https://mdirect.hi.co.kr/images/content/bg_leftDash.png') no-repeat left center; background-size:auto 10px;}
+.logTabChois li a{display:block; height:3.0rem; line-height:2.9rem; font-size:1.5rem; font-weight:bold;border-bottom:none;}
+.logTabChois li:first-of-type a {border-left:none;}
+.logTabChois li:first-of-type {margin:0;background:#fff none;}
+.logTabChois li.on {border-bottom:none; background:#fff none;background:#fff; z-index:1}
+.logTabChois li.on a{padding:0 0 0.1rem; color:#222;border:0.2rem solid #666; border-bottom:none; background:#fff;}
+.logTabChoisBox {overflow: hidden;display:none;width:auto;margin: -0.2rem 0 -1.5rem;padding: 1rem;border: 0.2rem solid #666;background-color: #fff;}
+.logTabChoisBox.on {display:block;} 
+.logTabChoisBox .title {float:left;width:60%;text-align:left;line-height:2.2rem;}
+.logTabChoisBox .price {float:left;width:40%;text-align:right;color:#fc843b;}
+.logTabChoisBox .price a {margin-left:0.5rem;}
+.logTabChoisBox .price a em {display:inline-block;padding:0.2rem 0.7rem;font-weight:normal;font-size:1.2rem;color:#282828;border:solid 1px #ccc;}
+.logTabChoisBoxNone {overflow: hidden;display:block;width:auto;padding:1.5rem 0 0;background-color: #fff;}
+.logTabChoisBoxNone .title {float:left;width:60%;text-align:left;line-height:2.2rem;}
+.logTabChoisBoxNone .price {float:left;width:40%;text-align:right;color:#fc843b;}
+.logTabChoisBoxNone .price a {margin-left:0.5rem;}
+.logTabChoisBoxNone .price a em {display:inline-block;padding:0.2rem 0.7rem;font-weight:normal;font-size:1.2rem;color:#282828;border:solid 1px #ccc;}
+.typeTwo .logTabChois li.on a{border-bottom:0.2rem solid #666;}
+
+.radioChois {margin-top:1.5rem;}
+.radioChois ul {overflow: hidden; width: 40%;padding-left: 60%;}
+.radioChois ul li{float:left; position:relative;width:50%;text-align:center;background:url('https://mdirect.hi.co.kr/images/content/bg_leftDash.png') no-repeat left center; background-size:auto 10px;}
+.radioChois li a{display:block; height:3.0rem;padding:0.2rem 0 0.3rem; line-height:2.9rem; font-size:1.5rem; font-weight:normal;border-bottom:none;}
+.radioChois li.on a{font-weight:bold;}
+.radioChois li:first-of-type a {border-left:none;}
+.radioChois li:first-of-type {margin:0;background:#fff none;}
+.radioChois li.on {border-bottom:none; background:#fff none;background:#fff; z-index:1}
+.radioChois li.on a{padding:0 0 0.1rem; color:#222;border:0.2rem solid #666; background:#fff;}
+
+.boxDownView {overflow:hidden;width:100%; display:table;}
+.boxDownView li {display:block;}
+.boxDownView li div{display: block;width:100%; height:100%;box-sizing:border-box;}
+.boxDownView li div a {display:table; width:100%; height:100%; border:1px solid #e0e0e0; background-color:#fff;color:#636363; font-size:1.2rem;}
+.boxDownView li div a:focus {border:0.1rem dotted #777;}
+.boxDownView li div a:after {content:'';dispaly:table;}
+.boxDownView li div a span {display:table-cell; vertical-align:middle;padding:0 40px 0 1rem;}
+.boxDownView li > div {display: block;width:100%; height:100%;box-sizing:border-box;}
+.boxDownView.two:after {content:"";display:block;clear:both}
+.boxDownView.two li {float:left;width: calc(50% - 0.5rem);height:6rem; padding:0 0.5rem 1rem;}
+.boxDownView.two li div {display: block;width:100%; height:100%;box-sizing:border-box;}
+.boxDownView.two li div a {display:table; width:100%; height:100%; border:1px solid #e0e0e0; background-color:#fff;color:#636363; font-size:1.2rem;}
+.boxDownView.two li div a:after {content:'';dispaly:table;}
+.boxDownView.two li div a span {display:table-cell; vertical-align:middle;padding:0 40px 0 1rem;}
+.boxDownView.two li:nth-child(2n+1) {padding-left:0;}
+.boxDownView.two li:nth-child(2n+2) {padding-right:0;}
+.boxDownView li:first-of-type {padding-left:0px;}
+.boxDownView li:last-child {padding-right:0;}
+.boxDownView li div a.down {background:#fff url('https://mdirect.hi.co.kr/images/common/bg_down.png') no-repeat 85% calc(100% - 15px); background-size:auto 2rem;}
+.boxDownView li div a.view {background:#fff url('https://mdirect.hi.co.kr/images/common/bg_view.png') no-repeat 85% calc(100% - 15px); background-size:auto 2rem;}
+
+.boxDownView.three:after {content:"";display:block;clear:both}
+.boxDownView.three li {float:left;width: calc(32.8% - 0.5rem);height:9rem; padding:0 0.5rem 1rem;}
+.boxDownView.three li div {display: block;width:100%; height:100%;box-sizing:border-box;}
+.boxDownView.three li div a {display:table; border:1px solid #e0e0e0; background-color:#fff;color:#636363; font-size:1.2rem;}
+.boxDownView.three li div a span {vertical-align:top;padding:1.5rem;}
+.boxDownView.three li:nth-child(3n+1) {padding-left:0;}
+.boxDownView.three li:nth-child(3n+2) {width: calc(34.4% - 1rem);}
+.boxDownView.three li:nth-child(3n+3) {padding-right:0;}
+.boxDownView.three li.lastadd {width:100%;height:3.8rem;}
+
+
+
+.btnLink a {background:#009ab1 url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png') no-repeat 90% center; background-size:12px auto;top:1.0rem;} /* 접근성 2차 /2210 */
+
+.twoType {overflow:hidden; display:table; width:100%;}
+.twoType li {display:table-cell; width:50%;}
+.twoType li:first-of-type {padding-left:0}
+.twoType li:last-child {padding-right:0}
+.twoType li > h2 {margin-bottom:0;}
+.twoType li > strong {font-size:1.5rem; display:inline-block; margin-bottom:1.2rem;}
+.linkGuideWarp {padding-top:10px;}
+.linkGuideWarp .tabBox {padding-top:1rem;}
+.linkGuideWarp .tabBox:first-of-type {padding-top:0;}
+.linkGuideWarp .linkTitle {display:block;padding-top:1.5rem;background-color:#e6e6e6}
+.linkGuideWarp .linkTitle a {display:inline-block;background: url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat; background-position:100% 50%; background-size:1.0rem auto;padding-left:0;padding-right:1.5rem;letter-spacing:-0.15rem;}
+.linkGuideWarp .linkTitle h2 {display:inline-block;width:calc(100% - 13.5rem);margin-top:0;padding-left:1.0rem;}
+.linkGuideWarp .linkTitle a {}
+.linkGuideWarp .linkDetail {display:block; background:#fff; padding:1.2rem 1.2rem 0.9rem 1.3rem; border:1px solid #e0e0e0;}
+
+
+
+.payAgree {display:block;position:relative;width:100%;height: 5rem;}
+.payAgree:after {display:block;content:"선택함";clear:both;}
+.payAgree input[type=checkbox] {width:26px; height:26px; margin:0;background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 0 -5.55rem;; background-size:24px auto;}
+.payAgree label {padding-left:1.0rem;}
+
+
+/* 디자인 체크박스 */
+.ChkWrap {width:100%;}
+.ChkWrap > span {display:block; position:relative;overflow:hidden;}
+.ChkWrap input {position:absolute; top:0; left:0; width:1rem; height:1rem; opacity:0;}
+.ChkWrap label {display:inline-block;padding-right: 3.5rem;width:calc(100% - 3.5rem);height: 2.4rem;line-height: 2.4rem;background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat; background-size:2.4rem auto;background-position: right 0;}
+.ChkWrap input:focus + label {outline:0.1rem dotted #777;}
+.ChkWrap input:checked + label {background-position: right -5.5rem;}
+.ChkWrap input:disabled + label {opacity:0.5}
+
+.btn a.cacaoLink {margin-top:0.5rem;} 
+/*
+.cacaoLink a {display: inline-block;color: #fff;margin-top: 1.0rem;padding: 0 3.5rem 0 1rem;line-height: 30px;background: #00bbc9 url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png') no-repeat 90% center;background-size: 12px auto;}
+*/
+.payAgree {background-position:0 0}
+.payAgree.on {background-position:0 -55px}
+
+/* scroll */
+.scroll {overflow:auto;}
+.scroll:after {content:'';display:block;clear:both}
+.scroll.maxH150 {max-height:15rem;}
+.scroll.maxH250 {max-height:25rem;}
+.scroll.maxH450 {max-height:45rem;}
+.scroll.H250 {height:25rem;}
+
+.borderTLine section:first-of-type {border-top: 1px solid #e0e0e0;}
+
+
+
+#popContent .cardInfoBox {display:block;margin-top:1rem;overflow:hidden;}
+#popContent .cardInfoDesc strong {display:block;}
+#popContent.cardInfoBox .cardlogoimg {margin:2.0rem auto 1rem;}
+
+.chkboxWrap {display: block;border: 1px solid #e0e0e0; background: #fff; margin-top:1.0rem;padding: 1rem 0.5rem 1.3rem 1.5rem; text-indent: 1rem;}
+.chkboxWrap > span {display:block; position:relative;}
+.chkboxWrap input {position:absolute; top:0; left:0; width:1rem; height:1rem; opacity:0;}
+.chkboxWrap label {display:block;padding-right: 3.4rem;height: 2.4rem;line-height: 2.4rem;background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 95% 0;background-position: 95% 0; background-size:2.4rem auto;}
+.chkboxWrap label + input:focus , .chkboxWrap input:focus + label {outline:0.1rem dotted #777;}
+.chkboxWrap label + input:checked, .chkboxWrap input:checked + label {background-position: 95% -5.5rem;}
+
+.pointViewWrap {overflow:hidden;position:relative;/*margin-top:-1.6rem;margin-bottom:-0.1rem;*/ background: #fff; border: 1px solid #e0e0e0; border-top:none; box-sizing:border-box;}
+.pointViewWrap .pointguideBox {display:table;width:80%;height:3.8rem;padding-right:12rem; padding: 1.0rem 1.0rem 1.0rem 0.5rem; text-indent: 1rem;}
+.pointViewWrap > a {position:absolute; right:1rem; top:1.4rem; display:inline-block; text-align:center; color:#636363; border:1px solid #666; border-radius:15px; padding:0 12px; line-height:26px; letter-spacing:-1px;} 
+.pointViewWrap .pointguideBox:after {display:table;content:'';clear:both;vertical-align:middle;}
+.pointViewWrap .pointguideBox .pointTit {display: table-cell;font-size:1.3rem;color:#949494;vertical-align:middle;}
+.pointViewWrap .pointguideBox .pointTit.on {font-size:1.1rem;color:636363;}
+.pointViewWrap .pointguideBox .point {display: block;font-size:1.5rem;color:#fc843b;}
+
+.inputTextWarp {display:block;overflow:hidden;border:1px solid #e0e0e0; background:#fff;margin-bottom:-0.1rem;padding:1rem 1.5rem;line-height:2.9rem;}
+.inputTextWarp > .title {float:left;width:25%;color:#636363;}
+.inputTextWarp > .name {width:75%;color:#282828;font-weight:bold;}
+
+
+
+
+/* 게시판 */
+.bbsHeadWarp {position:relative; margin-bottom:15px;}
+.bbsHeadWarp strong {font-size:19px; color:#111; display:block; font-weight:normal; margin-bottom:15px;}
+
+/*이전글 &다음글 */
+.list_paging {position:relative; line-height:22px;}
+.list_paging dt {position:absolute; left:20px; background:url('https://mdirect.hi.co.kr/https://mdirect.hi.co.kr/images/content/bg_paging.gif') no-repeat; width:70px; color:#111; padding:10px 0 10px 28px;}
+.list_paging dd {padding:10px 10px 10px 120px; border-bottom:1px solid #d1d0ce; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.list_paging dt.prev {background-position:0 11px; top:0;}
+.list_paging dt.next {background-position:0 -32px; bottom:0;}
+
+/* button /수정1911 */
+/* flex 적용
+.btnWrap{position:fixed;bottom:-1px;left:0;z-index:9;display:flex;width:100%;line-height:5.5rem;-webkit-backface-visibility:hidden}
+.btnWrap a{display:inline-block;width:100%;background:#f6873d;text-align:center;font-size:1.5rem;color:#fff} */
+.btnWrap{position:fixed;bottom:-1px;left:0;width:100%;line-height:5.5rem;z-index:9;display:table; -webkit-backface-visibility:hidden}
+.btnWrap a{color:#fff;font-size:1.5rem;display:inline-block;width:100%;text-align:center;background:#ee5a00} /* 접근성 2차 /2210 */
+.btnWrap a:focus, .btnWrap a:hover, .btnWrap span:nth-child(2) a:hover, .btnWrap span:nth-child(2) a:focus{background:#ee5a00} /* 접근성 2차 /2210 */
+.btnWrap a[class^=on]{background:#ee5a00} /* 접근성 2차 /2210 */
+
+/* 하단 버튼 개선 /2206 */
+.btnWrap.mType{position:fixed;bottom:-1px;left:0;width:100%;z-index:9;display:table; -webkit-backface-visibility:hidden}
+.btnWrap.mType a{display:inline-flex;justify-content:center;align-items:center;width:100%;min-height:5.5rem;line-height:1.8rem;vertical-align:middle;text-align:center;background:#ee5a00;font-size:1.5rem;color:#fff;} /* 접근성 2차 /2210 */
+
+.btnWrap span:nth-child(1){display:table-cell;width:30%}
+.btnWrap span:nth-child(2){display:table-cell;width:70%}
+.btnWrap span:nth-child(1) a{background:#a39d98}
+.btnWrap span:nth-child(2) a{background:#ee5a00} /* 접근성 2차 /2210 */
+
+.btnWrap.one span,
+.btnWrap>span.btnCalc{width:100% !important}
+/* 클릭이벤트 제외 /1911 */
+.btnWrap.eventNone span a{background:#a39d98 !important;pointer-events:none}
+.btnWrap.eventNone span:nth-child(2) a{background:#8e8985 !important;pointer-events:none}
+
+.btnWrap.two span{width:50%}
+.btnWrap.two span:nth-child(1) a{background:#009ab1} /* 접근성 2차 /2210 */
+.btnWrap.two span:nth-child(1) a.grey{background:#a39d98} 
+.btnWrap.two span:nth-child(2) a{background:#ee5a00} /* 접근성 2차 /2210 */
+.btnWrap span a[class^=on]{background:#ee5a00} /* 접근성 2차 /2210 */
+
+.btnWrap.tree span:nth-child(1){width:24%}
+.btnWrap.tree span:nth-child(2){width:38%}
+.btnWrap.tree span:nth-child(3){width:38%}
+.btnWrap.tree span a{background:#000000}
+.btnWrap.tree span a.bgG{background:#a39d98}
+.btnWrap.tree span a.bgB{background:#009ab1} /* 접근성 2차 /2210 */
+.btnWrap.tree span a.bgO{background:#ee5a00} /* 접근성 2차 /2210 */
+
+/* Fixed button three /2101 */
+.btnWrap.three span a{line-height:1.6rem;font-size:1.4rem}
+.btnWrap.three span:nth-child(1){width:33%}
+.btnWrap.three span:nth-child(2){width:34%}
+.btnWrap.three span:nth-child(3){width:33%}
+/* button bg /2101 */
+.btnWrap span.btKakao a, .btnWrap span.btKakao a:focus, .btnWrap span.btKakao a:hover{background:#fae102 !important;color:#000 !important}
+.btnWrap span.btOrg a, .btnWrap span.btOrg a:focus, .btnWrap span.btOrg a:hover{background:#ee5a00 !important;color:#fff !important} /* 접근성 202209 */
+.btnWrap span.btSky a, .btnWrap span.btSky a:focus, .btnWrap span.btSky a:hover{background:#009ab1 !important;color:#fff !important} /* 접근성 2차 /2210 */
+.btnWrap span.btGry a, .btnWrap span.btGry a:focus, .btnWrap span.btGry a:hover{background:#545454 !important;color:#fff !important}
+
+/* 여러줄 button /1911 */
+.btnWrap.multiLine{display:flex;line-height:1.9rem}
+.btnWrap.multiLine span{}
+.btnWrap.multiLine a{display:flex;justify-content:center;align-items:center;padding:10px 0;min-height:60px;box-sizing:border-box}
+
+/* PIN번호인증 210726 */
+.btn.three span {width:32%}
+.btn.three span:nth-child(2) {margin-left:1%;}
+.btn.three span:nth-child(3) {width:33%; float:right;}
+.btn.pin1 span {display:block; border:1px #9F9F9F solid; background:#C1C1C1; text-align:center; color:#FFF; padding:5px; line-height:23px; box-sizing:border-box; width:31%; margin:1%}
+.btn.pin span {display:block; border:1px #0926b7 solid; background:#fff; text-align:center; padding:5px; line-height:23px; box-sizing:border-box;width:97%; margin:1%}
+
+/* 내용에 들어가는 기본버튼  */
+.btn {margin-top:1rem;}
+.btn a {display:block; border:1px #ccc solid; background:#fff; text-align:center; padding:5px; line-height:23px; box-sizing:border-box;}
+.btn a + a {margin-top:1rem;}
+.btn span, .btn div {float:left; display:inline-block; width:49.5%}
+.btn span:nth-child(1), .btn div:nth-child(1) {margin-right:0.5%;}
+.btn span:nth-child(2), .btn div:nth-child(2) {margin-left:0.5%;}
+
+/* 상품안내 개선 /2201 */
+.btn.insuInfoBtn span, .btn.insuInfoBtn div{width:30%}
+.btn.insuInfoBtn span:nth-child(n+2), .btn.insuInfoBtn div:nth-child(n+2){margin-left:1rem}
+
+/* PIN번호 인증 개발하면서 추가210726 */
+.btn.three span {width:32%}
+.btn.three span:nth-child(2) {margin-left:1%;}
+.btn.three span:nth-child(3) {width:33%; float:right;}
+.btn.pin1 span {display:block; border:1px #9F9F9F solid; background:#C1C1C1; text-align:center; color:#FFF; padding:5px; line-height:23px; box-sizing:border-box; width:31%; margin:1%}
+.btn.pin span {display:block; border:1px #0926b7 solid; background:#fff; text-align:center; padding:5px; line-height:23px; box-sizing:border-box;width:97%; margin:1%}
+
+.btn:after {content:""; display:block; clear:both;}
+.btn a[class^=on] {border:1px dashed #ee7700; color:#fc843b;} /* 접근성 /2005 */
+a.btn {margin-top:0.5rem; display:inline-block; padding:3px 10px 5px; border:1px solid #ccc; background:#fff; color:#636363} 
+a.btnArr {display:inline-block; font-size:1.2rem; box-sizing:border-box; line-height:23px; font-weight:normal; padding:0px 15px 0px 7px; border:1px solid #ccc; color:#636363; background:#fff url('https://mdirect.hi.co.kr/images/common/bu_arr02.png') no-repeat calc(100% - 5px) center; background-size:auto 10px;} 
+.btn .calc:before {content:""; display:inline-block; width:10px; height:10px; background:url('https://mdirect.hi.co.kr/images/common/btn_calc.png') no-repeat left 100%; background-size:7.5px auto;}
+.btn .btBlue{padding:10px 5px;border:0;background-color:#047db5;color:#fff}
+.btn .btnOrange{padding:10px 5px;border:0;background-color:#ee5a00;color:#fff} /* 접근성 2차 /2210 */
+
+/* 우측 화살표 있는 버튼 */
+.btn.arrowThin.h32{display:inline-block;height:32px;line-height:32px;padding:0 12px;border:none;background-color:#e67401;color:#fff;}
+.btn.arrowThin.h32 em{ display:block;padding-right:20px;background:url('https://mdirect.hi.co.kr/images/common/bu_arr04.png') no-repeat right center;background-size:8px auto;}
+
+/* 선택시 주황색박스 버튼 */
+.orgboxBtn {overflow:hidden;width:100%;margin-bottom:1rem;}
+.orgboxBtn a {display:block; word-break:keep-all; width:50%; min-height:40px; float:left; margin-left:5px; border:1px solid #e0e0e0; box-sizing:border-box; background:#fff; padding:15px; text-align:center; color:#636363;}
+.orgboxBtn a:first-child, .orgboxBtn a:nth-child(3) {margin-left:0;}
+.orgboxBtn a:nth-child(2), .orgboxBtn a:nth-child(4) {width:calc(50% - 5px);}
+.orgboxBtn a.on {color:#fff; background:#ee5a00 url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png') no-repeat 10px 7px; background-size:1.2rem auto;}  /* 접근성 2차 /2210 */
+.orgboxBtn:after {content:''; display:block; clear:both;}
+.orgboxBtn a:nth-child(3), .orgboxBtn a:nth-child(4) {margin-top:5px;}
+.orgboxBtn.three a{width:calc(33.3% - 5px);min-height:60px;height:100%}
+.orgboxBtn.three a:nth-child(3) {margin-left:5px; margin-top:0; width:33.4%;}
+/* 20171124 선택시 주황색박스 예 아니오 버튼 간격 추가 */
+.orgboxBtn a:last-child {width:calc(50% - 5px); margin-left:5px;}
+.orgboxBtn a.onlyOne {
+    width: 100% !important;
+    margin-left: 0px !important; 
+}
+
+/* 풍수해보험 이미지 추가 : 20180427 */
+.orgboxBtn.storm a {position:relative;height:135px !important;padding-top:85px;box-sizing:border-box}
+.orgboxBtn.storm a:before {display:block;content:"";position:absolute;top:22px;left:50%;margin-left:-30px;width:60px;height:48px;background:url('https://mdirect.hi.co.kr/images/content/img_storm_01.png') no-repeat center center;background-size:90%}
+.orgboxBtn.storm a.on:before {background-image:url('https://mdirect.hi.co.kr/images/content/img_storm_01_1.png')}
+.orgboxBtn.storm a:nth-child(2):before {top:30px;margin-left:-21px;width:42px;height:42px;background-image:url('https://mdirect.hi.co.kr/images/content/img_storm_02.png')}
+.orgboxBtn.storm a:nth-child(2).on:before {background-image:url('https://mdirect.hi.co.kr/images/content/img_storm_02_1.png')}
+.orgboxBtn.storm a:nth-child(3):before {top:35px;margin-left:-26px;width:52px;height:35px;background-image:url('https://mdirect.hi.co.kr/images/content/img_storm_03.png')}
+.orgboxBtn.storm a:nth-child(3).on:before {background-image:url('https://mdirect.hi.co.kr/images/content/img_storm_03_1.png')}
+
+
+.orgBtn {overflow:hidden;width:100%;margin-bottom:1rem;} /* 수정 /2002 */
+.orgBtn a {display:block; word-break:keep-all; width:50%; min-height:40px; float:left; margin-left:5px; border:1px solid #e0e0e0; box-sizing:border-box; background:#fff; padding:15px; text-align:center; color:#636363;}
+.orgBtn a:first-child, .orgboxBtn a:nth-child(3) {margin-left:0;}
+.orgBtn a:nth-child(2), .orgboxBtn a:nth-child(4) {width:calc(50% - 5px);}
+.orgBtn a.on {color:#fff; background:#ee5a00 url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png') no-repeat 10px 7px; background-size:1.2rem auto;} /* 접근성 2차 /2210 */
+.orgBtn:after {content:''; display:block; clear:both;}
+.orgBtn a:nth-child(3), .orgboxBtn a:nth-child(4) {margin-top:5px;}
+.orgBtn.three a{width:calc(33.3% - 5px);min-height:60px;height:100%} /* 수정 /2002 */
+.orgBtn.three a:nth-child(3) {margin-left:5px; margin-top:0; width:33.4%;}
+
+
+.orgbtnList:after {content:""; display:block; clear:both;}
+.orgbtnList {display:table; width:100%; margin-bottom:1.5rem; overflow:hidden;}
+.orgbtnList a {display:block; background:#fff; color:#636363; padding:1rem 0.5rem 1.2rem 2.5rem; border:1px solid #e0e0e0; border-top:none; box-sizing:border-box;}
+.orgbtnList a:first-child {border-top:1px solid #e0e0e0;}
+.orgbtnList a.on {border:1px solid #ee7700; color:#fc843b; background:#fff url('https://mdirect.hi.co.kr/images/common/bu_added.png') no-repeat 7px 15px; background-size:11px auto;}
+.orgbtnList a strong {display:block; font-weight:normal; margin-bottom:3px;}
+.orgbtnList a.on strong {font-weight:bold;}
+.orgbtnList a span {display:inline-block; font-size:1.2rem; line-height:1.7rem;}
+.orgbtnList a span:nth-child(3):before {display:inline-block; content:'|'; color:#797979; width:5px; height:16px;}
+.orgbtnList a.on span:nth-child(3):before {display:inline-block; content:'|'; color:#fdc19d; width:5px; height:16px;}
+.orgbtnList a.on + a.on {border-top-width:0;}
+
+
+
+/* 혜택다모아 로고이미지 정렬 */
+.btnImg {overflow:hidden;}
+.btnImg li {float:left; width:33.3%; padding-left:5px; margin-top:5px; box-sizing:border-box;}
+.btnImg li a {display:block; background:#fff; border:1px solid #e0e0e0; box-sizing:border-box; padding:15px; height:50px;}
+.btnImg li:nth-child(1), .btnImg li:nth-child(4) {padding-left:0;}
+.btnImg li:nth-child(1), .btnImg li:nth-child(2), .btnImg li:nth-child(3) {margin-top:0px;} 
+.btnImg li a img {display:block; width:100%;}
+.btnImg:after {content:""; display:block; clear:both;}
+
+/* 파란색 아이콘 버튼 /카카오페이추가1911 */
+.btn a[class^=blue]{ border:1px #047db5 solid;color:#047db5}
+.btn a.blueTerms:before{content:"";display:inline-block;margin-bottom:2px;width:30px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_terms.png') no-repeat;background-size:25px auto}
+.btn a.blueCerti:before{content:"";display:inline-block;margin-bottom:2px;width:30px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_certi.png') no-repeat;background-size:25px auto}
+.btn a.blueCall:before{content:"";display:inline-block;margin-bottom:2px;width:30px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_call.png') no-repeat;background-size:25px auto}
+.btn a.blueSave:before{content:"";display:inline-block;margin-bottom:2px;width:30px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_save.png') no-repeat;background-size:25px auto}
+.btn a.blue.buKakao:before{content:"";display:inline-block;margin-right:5px;margin-bottom:2px;width:20px;height:20px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/content/buKakaoBlue.png') no-repeat;background-size:20px auto}
+
+/* 흰색 아이콘 버튼 /수정1812 */
+.btn a[class^=white]{background-color:#047db5;color:#fff}
+.btn a.whiteDuck:before{content:"";display:inline-block;margin-bottom:2px;width:24px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_duck.png') no-repeat 0 7px;background-size:16px auto}
+
+/* 주황색 아이콘 버튼 /수정1812 */
+.btn a[class^=org]{border:1px #ee7700 solid;color:#fa6705}
+.btn a.orgCenter:before{content:"";display:inline-block;;margin-bottom:2px;width:30px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_center.png') no-repeat;background-size:25px auto}
+.btn a.orgSos:before{content:"";display:inline-block;margin-bottom:2px;width:30px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_sos.png') no-repeat;background-size:25px auto}
+.btn a.orgSms:before{content:"";display:inline-block;margin-bottom:2px;width:30px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_sms.png') no-repeat;background-size:25px auto}
+.btn a.orgCalc:before{content:"";display:inline-block;margin-bottom:2px;width:30px;height:25px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/btn_calc.png') no-repeat;background-size:25px auto}
+.btn a.blueTerms, .btn a.blueCerti, .btn a.blueCall, .btn a.blueSave, .btn a.orgCenter, .btn a.orgSos, .btn a.orgSms, .btn a.orgCalc{padding:10px 0px 8px;letter-spacing:-1px}
+
+/* 도움말 /수정1812 */
+.btnHelp{display:inline-block;margin-left:5px;vertical-align:middle;width:19px;height:19px;background:url('https://mdirect.hi.co.kr/images/common/ico_question.png') no-repeat 50% 50%;background-size:19px 19px}
+.btnHelp2{position:absolute;top:20px;right:1.5rem;display:block;border-radius:2.4rem;border:1px solid #fff;text-align:center;width:24px;height:24px;background:url('https://mdirect.hi.co.kr/images/common/ico_questionwhite.png') no-repeat 50% 50%;background-size:auto 16px}
+.btnHelp3{display:inline-block;margin-left:5px;vertical-align:middle;width:19px;height:19px;background:url('https://mdirect.hi.co.kr/images/common/ico_question_org.png') no-repeat 50% 50%;background-size:19px 19px}
+.btnHelp span, .btnHelp2 span{overflow:hidden;opacity:0;font-size:0px}
+
+/* 버튼추가200525 */
+.btnMoreagree{display:inline-block;margin-left:5px;vertical-align:middle;width:10px;height:20px;background:url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat right 3px top 2px;background-size:auto 16px;}
+.btnMoreagree span{overflow:hidden;opacity:0;font-size:0px}
+
+/* 더보기  */
+.btnMore {margin-top:1.5rem; border:1px #ccc solid; background:#fff;}
+.btnMore a {display:block; text-align:center; color:#636363; vertical-align:middle;}
+.btnMore span {display:block; padding:7px 20px 12px;}
+.btnMore span:before {content:""; display:inline-block; width:20px; height:18px; background:url('https://mdirect.hi.co.kr/images/common/btn_more.png') no-repeat 50% 100%; background-size:12px auto;}
+
+.btnMore.side, .btnList.side {margin-left:2rem; margin-right:2rem;} /*하단에 왼쪽오른쪽 여백이 있을때 */
+.itemPack + .btnDisable {margin-top:0.1rem;}
+.btnDisable {display:table; align-content:center; width:100%; overflow:hidden;}
+.btnDisable span {display:table; float:left; background:#fafafa; color:#bdbdbd; margin-left:0.5rem; padding: 1.4rem 1rem; border:1px solid #e0e0e0; box-sizing:border-box; text-align:center;}
+.btnDisable span:first-child {border-left:1px solid #e0e0e0; margin-left:0;}
+.btnDisable.three span {display:table;float:left;width:calc(33.3% - 5px); background:#fafafa; color:#bdbdbd; padding: 1.4rem 1rem; border:1px solid #e0e0e0; box-sizing:border-box; text-align:center;}
+.btnDisable.three span:nth-child(3n+2) {width:calc(33.4% - 5px);}
+.btnDisable span:after {display:table;content:'';clear:both;}
+.btnDisable span > em{height:100%;display:table-cell;vertical-align:middle; text-align:center;}
+.btnDisable.two span {width:calc(50% - 5px);}
+.btnDisable.four span {width:calc(25% - 5px);}
+.btnDisable.two span:first-child {width:calc(50%);}
+.btnDisable.three span:first-child {width:calc(33.3%);}
+.btnDisable.four span:first-child {width:calc(25%);}
+
+/* 전화상담신청 버튼 /1812 */
+.btConTel{position:fixed;bottom:67px;left:12px;border-radius:50%;background:#717171 url('https://mdirect.hi.co.kr/images/common/bt_conTel.png') no-repeat center center;background-size:20px 22px;box-shadow:0 4px 6px 0 rgba(0,0,0,0.2), 0 4px 8px 0 rgba(0,0,0,0.05)}
+.btConTel a{display:block;width:37px;height:37px;border-radius:50%}
+
+/* 보험료확인 말풍선 */
+.notiAbs{display:inline-block;z-index:2;position:absolute;right:0;top:-13px;box-sizing:border-box;padding:5px 6px;line-height:13px;border:1px solid #2465a9;background:#ffffff;text-align:center;font-weight:normal;font-size:13px;color:#2465a9;letter-spacing:-1px}
+.notiAbs:after{content:'';display:block;position:absolute;bottom:-12px;right:12px;width:12px;height:12px;background:url('https://mdirect.hi.co.kr/images/common/arw_dn_blue.png') no-repeat 0 0;background-size:12px auto;}
+.notiAbs em{color:#f63d3d}
+
+/* 보험료확인 말풍선 추가 /2103 */
+.notiElec{display:inline-block;z-index:2;position:absolute;right:0;top:-13px;box-sizing:border-box;padding:5px 6px;line-height:13px;border:1px solid #2465a9;background:#ffffff;text-align:center;font-weight:normal;font-size:13px;color:#2465a9;letter-spacing:-1px}
+.notiElec:after{content:'';display:block;position:absolute;bottom:-12px;right:12px;width:12px;height:12px;background:url('https://mdirect.hi.co.kr/images/common/arw_dn_blue.png') no-repeat 0 0;background-size:12px auto;}
+.notiElec em{color:#f63d3d}
+
+/* 부가담보-안내 레이어 /2101 */
+.notiRec{display:inline-block;position:absolute;right:8px;top:-14px;box-sizing:border-box;padding:4px 6px 5px;line-height:11px;border:1px solid #009ab1;background:#009ab1;text-align:center;font-weight:normal;font-size:12px;color:#fff;letter-spacing:-1px} /* 접근성 2차 /2210 */
+.notiRec:after{content:'';display:block;position:absolute;bottom:-9px;right:8px;width:13px;height:9px;background:url('https://mdirect.hi.co.kr/images/common/arw_dn_sky.png') no-repeat 0 0;background-size:13px auto;}
+.notiRec em{color:#fee901}
+
+/* 간편설계-Fixed 안내 레이어 /1909 */
+.notiFixed{position:fixed;left:2rem;bottom:68px;padding:3px 7px 4px 5px;border:1px solid #2465a9;background-color:#ffffff;box-sizing:border-box;line-height:1.4em;font-weight:normal;font-size:12px;color:#2465a9}
+.notiFixed{z-index:2;position:fixed;left:2rem;bottom:68px;padding:3px 7px 4px 5px;border:1px solid #2465a9;background-color:#ffffff;box-sizing:border-box;line-height:1.4em;font-weight:normal;font-size:12px;color:#2465a9}
+.notiFixed:after{content:'';display:block;position:absolute;bottom:-12px;left:15px;width:12px;height:12px;background:url('https://mdirect.hi.co.kr/images/common/arw_dn_blue.png') no-repeat 0 0;background-size:12px auto;}
+.notiFixed em{color:#f63d3d}
+/* Notice Right /2201 */
+.notiFixed.notiRight{left:inherit;right:2rem}
+.notiFixed.notiRight:after{left:inherit;right:15px}
+
+
+/* 간편설계-보험료계산 로딩 /1908 */
+.insuCalcHead{padding:2rem;border-bottom:1px solid #d6d6d6;background:#ffffff;font-size:1.7rem;text-align:center;word-break:keep-all;}
+.insuCalcHead h1{margin-bottom:2rem}
+.insuCalcHead h1 img{width:134px}
+.insuCalcHead p.txt{}
+.insuCalcHead p.txt em{color:#fc843b}
+.insuCalcHead .loadingImgCar{position:relative;margin-top:15px;padding-top:46px;background:url('https://mdirect.hi.co.kr/images/common/bg_loadingCar.png') repeat-x 0 0;background-size:auto 46px}
+.insuCalcHead .loadingImgCar ul{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;height:24px;border:1px solid #047db5}
+.insuCalcHead .loadingImgCar ul li{flex:1;border-left:1px solid #047db5;line-height:24px;text-align:center;font-size:1.3rem;color:#047db5}
+.insuCalcHead .loadingImgCar ul li:first-child{border-left:0}
+.insuCalcHead .loadingImgCar ul li.on{color:#ffffff;transition:all ease}
+.insuCalcHead .loadingImgCar .loadingIcon{z-index:1;position:absolute;bottom:24px;left:0;width:0;height:35px;background:url('https://mdirect.hi.co.kr/images/common/img_loadingCar.png') no-repeat right 0;background-size:auto 35px;} /* 로딩 게이지 width % */
+.insuCalcHead .loadingImgCar .loadingBar{z-index:1;position:absolute;bottom:0;left:0;width:0%;height:24px;background:#047db5;} /* 로딩 게이지 width % */
+
+/* Box Orange /202007 */
+.boxOrg{position:relative;padding:1.5rem;border:1px solid #fc843b;background:#ffffff}
+.boxOrg dl{text-align:center;line-height:2rem}
+.boxOrg dl dt{font-size:1.4rem}
+.boxOrg dl dt strong{color:#fc843b}
+.boxOrg dl dd{font-size:1.3rem}
+.boxOrg .ti{margin:0 0 5px;font-size:13px;color:#0786bb}
+.boxOrg .pointBlue{position:absolute;top:-10px;left:8px;display:inline-block;padding:3px 8px;height:13px;line-height:12px;border-radius:9px;background:#0786bb;font-size:12px;color:#fff}
+
+/* BOX Type /1812 */
+.boxType1{padding:1.5rem;box-sizing:border-box;border:1px solid #e6e6e6;background:#f6f6f6;color:#636363}
+.boxType1 .titPlus{display:block;margin-bottom:8px;padding-left:20px;height:16px;line-height:16px;background:url('https://mdirect.hi.co.kr/images/common/bu_plus_org.png') no-repeat 0 1px;background-size:15px auto;vertical-align:top;color:#282828}
+.boxType1 .titPlus .cost{float:right}
+.boxType1 .flex{display:flex;justify-content:space-between}
+/* BOX Type - Mileage /2104 */
+.boxType-mlg{padding:1.5rem;box-sizing:border-box;border:1px solid #beeef2;background:#e1fbfc;color:#02aab5}
+.boxType-mlg .tit{display:block;margin-bottom:8px;padding-left:25px;height:19px;line-height:18px;background:url('https://mdirect.hi.co.kr/images/common/bu_mlg_sky.gif') no-repeat 0 0;background-size:19px auto;vertical-align:top;color:#02aab5}
+.boxType-mlg .txt{font-size:13px;color:#282828}
+.boxType-mlg .txt strong{font-weight:normal;font-size:13px;color:#fb6705}
+
+/* 레이어팝업 버튼 */
+.layerWrap .layerBtn {width:100%}
+.layerWrap .layerBtn span {width:50%;}
+.layerWrap .layerBtn span:nth-child(1) {float:left;}
+.layerWrap .layerBtn span:nth-child(2) {float:right;}
+/*.layerWrap .layerBtn span a {background:#7e7e7e;}*/
+.layerWrap .layerBtn a[class^=on] {background:#ee5a00;} /* 접근성 2차 /2210 */
+.layerWrap .layerBtn span[class^=on] a {background:#ee5a00;}  /* 입력완료후 그림자 box-shadow:0 0 0.4rem #ee5a00; */ /* 접근성 2차 /2210 */
+/*.layerWrap .layerBtn span.on a:before, .btnWrap a.on:before {content:""; display:inline-block; width:17px; height:15px;}*/
+.layerWrap .layerBtn:after {content:""; display:block; clear:both;}
+
+/* 삭제버튼 (용례 : 해외여행 보험 - 보험료 계산하기) */
+.btnGray {display:inline-block; padding:0.5rem 1rem; background-color:#97a8af; color:#fff;}
+a.btnGray:hover, a.btnBgGray:focus {color:#fff;}
+.btnGray .icoDelete {padding-right:1.5rem; background:url('https://mdirect.hi.co.kr/images/common/bg_delete.png') no-repeat 100% 50%; background-size:1.1rem;}
+
+/* 추가버튼 (용례 : 해외여행 보험 - 보험료 계산하기) */
+.btnLineGray {display:inline-block; padding:1rem 0.5rem; border:0.1rem solid #ccc; color:#636363; text-align:center; box-sizing:border-box;}
+a.btnLineGray:hover, a.btnLineGray:focus {color:#636363;}
+.btnLineGray .icoAdd {padding-right:2rem; background:url('https://mdirect.hi.co.kr/images/common/bg_plus.png') no-repeat 100% 50%; background-size:1.2rem;}
+
+/* 흰색버튼 (용례 : 해외여행 보험 - 보험료 확인) */
+.btnWhite .btnWrap a.btnWhite {display:inline-block; padding:1rem 0.5rem; background-color:#fff; border:0.1rem solid #e0e0e0; color:#636363; text-align:center; box-sizing:border-box;}
+a.btnWhite:hover, a.btnWhite:focus {color:#636363;}
+.btnWhite .icoArrow {padding-right:1.2rem; background:url('https://mdirect.hi.co.kr/images/common/bu_arr02.png') no-repeat 100% 50%; background-size:0.6rem auto; font-weight:bold;}
+.btnWrap a.btnWhite > span {display:inline-block; float:none; width:auto;}
+
+/*보험료 계산하기버튼 */
+.btnWrap .btnCalc a:before, .btnWrap .btnCalcOn a:before {content:""; display:inline-block; width:15px; height:15px; background:url('https://mdirect.hi.co.kr/images/common/btn_bg_calc.png') no-repeat left bottom; background-size:70% 80%;}
+.btnWrap .btnCalcOn a {background:#ee5a00; box-shadow:0 0 0.5rem #8c8c8c;}  /* 접근성 2차 /2210 */
+
+/* 암보장예시버튼(주황배경)200608 */
+.btn_exDiagnosis {display:block;border:1px #ee5a00;background:#ee5a00;text-align:center;padding:5px;line-height:23px;box-sizing:border-box; } /* 접근성 2차 /2210 */
+.btn_exDiagnosis a {color:#fff;}
+
+/* btn blue Arrow /2201 */
+.btBlueArw {background:#eaf7fd}
+.btBlueArw a {display:block;padding:.8rem 2rem;line-height:1.35;border:1px solid #bcdfef;position:relative;background:url('https://mdirect.hi.co.kr/images/common/bu_arr_blue.png') no-repeat right 2rem top 50%; background-size:auto 12px;}
+.btBlueArw a:nth-child(1) {border-top:1px #e0e0e0 solid;} 
+.btBlueArw a strong {display:block; font-weight:normal; color:#047db5;}
+
+/* 게시판버튼 */
+.btnList {/*margin-top:1.5rem; */background:#fff;}
+.btnList a {display:block; padding:1.2rem 1.5rem; border:1px #e0e0e0 solid; border-top:none; position:relative;background:url('https://mdirect.hi.co.kr/images/common/bu_arr01.png') no-repeat right 1rem top 50%; background-size:auto 12px;}
+.btnList a:nth-child(1) {border-top:1px #e0e0e0 solid;} 
+.btnList a strong {display:block; font-weight:normal; color:#636363; width:70%;}
+.btnList a span {display:block; color:#636363;}
+.btnList a em {display:inline-block; color:#ee5a00; font-size:1.2rem; position:absolute; right:25px; top:50%; margin-top:-1rem;} /* 접근성 2차 /2210 */
+.btnList a.on {border:1px #ccc solid; color:#282828; font-weight:bold;}
+.btnList a.on strong {font-weight:bold;}
+.btnList a.on + a.on {border-top-width:0;}
+
+/* 긴급출동 */
+.calloutVisual p > strong {letter-spacing:-0.8px;}
+.coService > a[class^=coApp0] {display:block; border:1px solid #e0e0e0; padding:1rem 1rem 1rem 7rem; color:#282828; margin-bottom:1rem;} /* 접근성 2차 /2210 */
+.coService > a[class^=coApp0] strong {display:block; color:#ee5a00}
+.coService > a.coApp01 {background:#fff url('https://mdirect.hi.co.kr/images/content/ico_appaply.gif') no-repeat 20px 50%; background-size:30px auto; min-height:40px;}
+.coService > a.coApp01  strong {margin-top:1rem;}
+.coService > a.coApp02 {background:#fff url('https://mdirect.hi.co.kr/images/content/ico_callcenter.gif') no-repeat 20px 50%; background-size:30px auto;}
+
+
+
+
+/* 유의사항 */
+strong.hide + .toggleWrap {margin-top:0px;}
+.toggleWrap {margin-top:1.5rem;}
+.toggleWrap .tabBox {margin-top:1rem;}
+.toggleWrap .toggleTitle a {display:block; padding-left:1rem; line-height:40px; background:#e6e6e6 url('https://mdirect.hi.co.kr/images/common/btn_toggle.png') no-repeat right 25px top; background-size:15px auto;box-sizing:border-box;}
+.toggleWrap .open .toggleTitle a {background-position:right 25px bottom}
+.toggleWrap .toggleDetail {display:none;}
+.toggleWrap .open .toggleDetail {display:block; color:#282828; background:#fff; padding:1.2rem 1.2rem 0.9rem 1.3rem; border:1px solid #e0e0e0;}
+.toggleWrap .open .toggleDetail p {margin-bottom:1rem; line-height:19px;}
+.toggleWrap .tabBox.open .toggleDetail strong {display:block; margin:20px 0 10px;}
+
+.toggleWrap .toggleDetail dt {font-size:1.2rem; margin:1rem 0; font-weight:bold;}
+.toggleWrap .toggleDetail dt:first-child {margin-top:0;}
+.toggleWrap .toggleDetail dd {font-size:1.2rem; color:#636363; margin-top:0.3rem; line-height:1.7rem; }
+.toggleWrap .toggleDetail > .listDot, .toggleWrap .toggleDetail > .listEtc {margin-top:0; height:auto;}
+
+.toggleWrap.toggleSlideArea{margin-top:1rem}
+.toggleWrap.toggleSlideArea h2{font-size:1.5rem}
+.toggleWrap.toggleSlideArea .toggleTitle a{padding-left:1.5rem;line-height:50px;border:1px solid #e0e0e0;background:#fff url('https://mdirect.hi.co.kr/images/common/btn_toggle.png') no-repeat right 20px top 8px;background-size:13px auto;color:#727171}
+.toggleWrap.toggleSlideArea .open .toggleTitle a{background-position:right 20px bottom 8px}
+.toggleWrap.toggleSlideArea .toggleDetail{display:none;padding:0;border:0;background:none}
+.toggleWrap.toggleSlideArea .toggleDetail .photoArea{border:1px solid #666;background-color:#fff}
+.toggleWrap.toggleSlideArea .toggleDetail .photoArea .txArea{padding:10px;line-height:1.4;border:0;font-size:14px}
+.toggleWrap.toggleSlideArea .toggleDetail .photoArea .txArea .listDot{margin-top:1rem;margin-bottom:.5rem;padding:1rem 2rem 1rem 1.5rem;background-color:#fff}
+.toggleWrap.toggleSlideArea .toggleDetail .photoArea .txArea .listDot p{margin-bottom:0;line-height:1.4;border:0;text-align:left}
+.toggleWrap.toggleSlideArea .toggleDetail .infoArea{padding:20px;line-height:1.4;border:1px solid #666;background-color:#fff;font-size:14px;text-align:center}
+.toggleWrap.toggleSlideArea .toggleDetail .infoArea .infoTxt{display:block}
+.toggleWrap.toggleSlideArea .toggleDetail .infoArea .btOrg{display:inline-block;margin:10px auto 0;padding:12px 25px;background-color:#ee5a00;text-align:center;color:#fff} /* 접근성 2차 /2210 */
+.toggleWrap.toggleSlideArea .toggleDetail .infoArea + .photoArea{border-top:0}
+
+.toggleWrap.select .toggleTitle a {background:#fff url('https://mdirect.hi.co.kr/images/common/bg_select.png') no-repeat right 15px center; background-size:15px auto;}
+.toggleWrap.select .tabBox.open {border:1px solid #666;}
+.toggleWrap.select .tabBox.open .toggleTitle a {background:#fff url('https://mdirect.hi.co.kr/images/common/icon_arrupOrg.png') no-repeat right 15px center; background-size:12px auto;}
+
+.toggleWrap.select .toggleDetail .job li a {display:block; color:#636363; border-top:1px solid #e0e0e0; padding:1.5rem 0;}
+.toggleWrap.select .toggleDetail .job li a:focus, .toggleWrap.select .toggleDetail .job li a:hover {color:#ee5a00} /* 접근성 2차 /2210 */
+.toggleWrap.select .toggleDetail .job li:first-child a {padding-top:0; border-top:none}
+.toggleWrap.select .toggleTitle.selectOn a {line-height:22px; padding:0.5rem 1.5rem 1rem;}
+.toggleWrap.select .toggleTitle.selectOn a span {display:block; color:#ee5a00; font-size:1.2rem} /* 접근성 2차 /2210 */
+
+.toggleWrap + .agreeBox {margin-top:1.5rem}
+
+.noteBox, .noteBox2 {margin-top:1rem;} /* 유의사항 아코디언형태가 아닐때 */
+.noteBox p, .noteBox2 p {overflow:hidden;width:calc(100% - 1.5rem); padding-left:1.5rem;background:#e6e6e6; line-height:42px;}
+.noteBox div,.noteBox2 div {border-left:1px solid #e0e0e0; border-right:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; padding:1.5rem;}
+.noteBox2 div {background:#fff;}
+.noteBox div > .listDot, .noteBox2 div > .listDot {margin-top:0;}
+.noteBox p .title, .noteBox2 p .title {display:block; width:30%; float:left; color:#636363;}
+.noteBox p .name, .noteBox2 p .name  {display:block; width:70%; float:left; color:#282828; font-weight:bold;}
+.noteBox p .name em, .noteBox2 p .name em  {color:#047db5;}
+.noteBox div.noteText P,.noteBox2 div.noteText p { padding-left:0;line-height:2.2rem;background:#fff;}
+.noteBox div.noteText P em,.noteBox2 div.noteText p em {color:#ee5a00;} /* 접근성 2차 /2210 */
+.noteBox .stxt {font-size:1.2rem; color:#282828; display:block; margin-bottom:1rem; font-weight:normal;}
+.noteBox .stxtLine {display:block; color:#636363; border-top:1px solid #e0e0e0; font-size:1.2rem; margin-top:1rem; padding-top:1rem;}
+.noteBox.bdBlue div,
+.noteBox2.bdBlue div{border:1px solid #047db5 !important} 
+.noteBox.bdOrg div,
+.noteBox2.bdOrg div{border:1px solid #ee5a00 !important} /* 접근성 2차 /2210 */
+
+
+.btnBgNone a.on:before{background:none}
+
+/* search form */
+.searchBox {position:relative;}
+.searchBox input {border:solid 2px #666; padding:9px 10px 12px; box-sizing:border-box;}
+.schBtn {position:absolute;right:0;top:0;width:42px;height:42px;}
+input.search {padding-right:4.3rem;}
+.icoSch {display:inline-block;overflow:hidden; width:40px; height:40px; background:url('https://mdirect.hi.co.kr/images/common/btn_search.png') no-repeat 50% 50%; background-size:18px auto;color:transparent;}
+
+
+/* input form */
+fieldset:after {content:'';display:block;clear:both;}
+fieldset > .inputWrap {position:relative; overflow:hidden; margin-top:0} 
+fieldset > .inputWrap input {border-top:none; color:#282828; }
+fieldset > .inputWrap:first-of-type input {border-top:1px solid #e0e0e0;}
+/*fieldset > .inputWrap select {border-top:none;}*/
+.twoType + .inputWrap.selectR {border-top:1px solid #e0e0e0} 
+h2 + .inputWrap input[type=tel] {border-top:1px solid #e0e0e0}
+
+fieldset > .inputWrap.two input[type="password"] {padding:20px 15px}
+fieldset > .inputWrap.two input, fieldset > .inputWrap.two select {float:left; display:block; width:50%;}
+/*fieldset > .inputWrap.two span:nth-child(1), .inputWrap.two span:nth-child(1) {border-right:1px solid #e0e0e0;}*/
+fieldset > .inputWrap.two label:nth-child(4) {left:53%;}
+/* 상담신청개선 /2003 */
+fieldset > .inputWrap.two input.vPhone{border-left:0}
+
+fieldset .inputWrap.four > input {display:inline-block; width: 25%;}
+fieldset .inputWrap.four > input {border-left:0; padding:5px 5px 5px 15px; font-size:13px;}
+fieldset .inputWrap.four > input:first-child {border-left:1px solid #e0e0e0;}
+fieldset h2 + .inputWrap.four input {border-top:1px solid #e0e0e0;}
+#pBox1 > .inputWrap.four + .inputWrap input {border-top:none;}
+fieldset .inputWrap#korDiv input {border-bottom:none}
+fieldset .inputWrap#engDiv input {border-top:1px solid #e0e0e0; border-bottom:none} 
+
+fieldset .inputWrap.infour {overflow:hidden;}
+fieldset .inputWrap.infour span {display:inline-block;width:25%;}
+fieldset .inputWrap.infour span > input {display:block;}
+fieldset .inputWrap.infour span > input {border-right:0;}
+
+fieldset > .inputWrap.birth > input:first-of-type {width:calc(100% - 120px);}
+.inputWrap.birth + .inputWrap > select {border-top:none;}
+
+fieldset > .checkBox {background:#fff; border:1px solid #e0e0e0; padding-left:1.5rem;} 
+fieldset > .checkBox a {display:inline-block; margin-top:3px; margin-left:3px; }
+.inputWrap + .checkBox {border-top:0;}
+
+.inputWrap {position:relative; overflow:hidden;} /* 단독 */
+.inputWrap input {display:block; padding:15px 15px 0px 15px; height:52px;}
+.inputWrap input.emptype1 {border:0.2rem solid #ee5a00 !important} /* 접근성 2차 /2210 */
+.inputWrap input[type="number"] {padding:1.5rem;}
+.inputWrap input:focus ~ label, .inputWrap input:valid ~ label , .inputWrap select:focus ~ label, .inputWrap select:valid ~ label  {font-size:11px; color:#999; top:7px; }
+.inputWrap label {color:#949494; font-size:11px; position:absolute; pointer-events:none; left:15px; top:20px; transition:0.5s ease all; outline:none;}
+/* 연달아 오는 경우 겹치는 line 처리 : 20180427 */
+.inputWrap + .inputWrap input:first-child {border-top:none}
+
+/* 수정 /2111 */
+.inputWrap input:disabled {background:#fafafa; border:1px solid #e0e0e0;}
+.inputWrap input:disabled + label {color:#999; top:7px; font-size:11px;}
+.inputWrap input:read-only {background:#fafafa; border:1px solid #e0e0e0;}
+.inputWrap input:-moz-read-only {background:#fafafa; border:1px solid #e0e0e0;}
+.inputWrap input:read-only + label {color:#999; top:7px; font-size:11px;}
+.inputWrap input:-moz-read-only + label {color:#999; top:7px; font-size:11px;}
+
+.inputWrap textarea {border:0;}
+.inputWrap textarea:focus {margin-bottom:1px;}
+.inputWrap textarea:focus ~ label, .inputWrap textarea:valid ~ label {font-size:11px; color:#999; top:7px; }
+.inputWrap textarea:disabled {background:#fafafa;}
+
+.inputWrap + .inputWrap > select {border-top:none;}
+.inputWrap > select + .inputWrap > input {border-top:none;}
+
+.inputWrap .txtR{position:absolute;top:5px;right:15px} /* 추가 /1911 */
+
+/* input buNotice /1908 */
+.inputWrap .buNotice{position:absolute;top:18px;right:15px;background-color:#ffffff;letter-spacing:-1px;font-size:12px;color:#ee5a00} /* 접근성 2차 /2210 */
+.inputWrap .buNotice:before{content:'!';display:inline-block;margin-right:4px;width:17px;height:17px;line-height:17px;border-radius:10px;border:1px solid #ee5a00;font-weight:600;text-align:center} /* 접근성 2차 /2210 */
+
+.dimds input {background:#fafafa; padding:0 15px;}
+/*.inputWrap .dimds input:disabled {padding:20px 10px 16px}*/
+.inputWrap input[type="date"] + label {top:7px;}
+.inputWrap input[type="date"] {padding:20px 15px 0px 11px;}
+
+.inputWrap.two {overflow:hidden;}
+.inputWrap.two span, .inputWrap.two input {display:block; float:left; width:50%; position:relative;}
+.inputWrap.two span:nth-child(2) select {border-left:1px solid #e0e0e0;}
+.inputWrap.two span:nth-child(2) input {border-left:0;}
+.inputWrap.two span input {display:inline-block; width:100%;}
+
+.inputWrap.two input:first-child:focus ~ label, .inputWrap input[type='email']:valid ~ label {font-size:11px; color:#999; top:7px; }
+.inputWrap.two + .checkBox {border-top:none;}
+.inputWrap.two select:nth-child(1) {border-right:none;}
+/*.inputWrap.two input:nth-child(1) {border-right:none}*/
+.inputWrap.two input[type="password"] {border-left:0;}
+p + .inputWrap.two {margin-top:1.5rem;}
+
+/* input select date /2101 */
+.inputWrap.two .dateArea{float:left;position:relative;width:50%}
+.inputWrap.two .dateArea > input{border-left:0}
+
+
+.inputWrap.search a.icoSch {position:absolute; right:10px; top:10px; display:inline-block;background:url('https://mdirect.hi.co.kr/images/common/btn_search.png') no-repeat #fff;background-size:1.8rem;}
+.inputWrap.search input {padding:15px;}
+.inputWrap.search input + label {color:transparent;}
+
+.inputWrap.title {overflow:hidden; border:none; margin-top:15px;}
+.inputWrap.title li {float:left; width:33.3%}
+.inputWrap.title li:after, .inputWrap.title li.two:after {content:'';display:block;clear:both;}
+
+/* 한줄짜리 추가 / 202010 */
+.inputWrap.title li.one {width:100%;}
+.inputWrap.title li.two {float:left; width:49%;}
+.inputWrap.title li.two:nth-child(1) {margin-right:2%;clear:both;}
+.inputWrap.title li.two dl {overflow:hidden; clear:both;}
+.inputWrap.title li.two dt {color:#282828; font-size:15px; font-weight:bold; height:30px;}
+
+
+.listBox + .inputWrap.title {margin-top:3rem;}
+
+
+
+.inputWrap.three {display:table; width:100%;}
+.inputWrap.three span {display:table-cell; width:33.3%; vertical-align:top;}
+/*.inputWrap.three span:nth-child(2) select {border-left:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}*/
+
+.inputWrap.three span:nth-child(2) > select {border-left:0; border-right:0;}
+.inputWrap.three span.betweenArea{width:8%;height:52px;box-sizing:border-box;font-size:15px;text-align:center;vertical-align:middle;color:#999999} /* 수정 /1905 */
+
+
+.inputWrap.four {display:table; width:100%;}
+.inputWrap.four span {display:table-cell; width:25%;padding:0 0.5rem;}
+.inputWrap.four span:first-child {padding-left:0;}
+.inputWrap.four span:last-child {padding-right:0;}
+
+/* inputWrap - layoutFlex /2204 */
+.inputWrap.layoutFlex{display:flex;justify-content:space-between;align-items:center;}
+.inputWrap.layoutFlex li{float:none !important}
+.inputWrap.layoutFlex li.tit{font-size:1.4rem;color:#666}
+.inputWrap.layoutFlex li .inputWrap input{padding:11px 37px 10px 15px !important;height:45px;border-top:1px solid #e0e0e0}
+.inputWrap.layoutFlex li .inputWrap select{height:45px}
+.inputWrap.layoutFlex li .inputWrap label,
+.inputWrap.layoutFlex li .inputWrap input:focus ~ label, 
+.inputWrap.layoutFlex li .inputWrap input:valid ~ label{top:15px;font-size:13px}
+
+/* Radio - 보험료계산하기 /2003 */
+.inputWrap + .radioBtn.inputWrapRdo{margin:0;padding:15px;border-top:0}
+.inputWrap + .radioBtn.inputWrapRdo .tiTx{width:50%;line-height:24px;font-size:12px;color:#949494}
+
+.gender {position:absolute; right:0; top:0px; overflow:hidden; background:#fff;}
+.gender > span {position:relative; display:inline-block; border:1px solid #e0e0e0; border-left:none; border-top:none; width:60px; height:52px; cursor:pointer; float:left; color:#636363; text-align:center; box-sizing:border-box;}
+.gender > span > input {padding:0; height:0px;}
+.gender > span > label {line-height:50px; font-size:1.4rem; color:#282828; position:static; left:0; top:0;}
+/*.gender > span.on {border:1px solid #666; box-sizing:border-box;}*/
+.gender > span.on {background:#ee5a00; box-sizing:border-box;} /* 접근성 2차 /2210 */
+.gender > span.on label{color:#fff;}
+.gender.disable > span {background:#fafafa;}
+.gender.disable > span.on {border:1px solid #e0e0e0; box-sizing:border-box;}
+/* 상담신청개선 /2003 */
+.gender.topLine > span{border-top:1px solid #e0e0e0;}
+.gender.topLine > span > input{border-top:0 !important}
+
+/* 상담신청개선 /수정2104 */
+.gender.topLine{border-top:0}
+.gender.topLine > span{border-top:1px solid #e0e0e0;}
+
+/* with button : 20180427 */
+.inputWrap.btn input {padding:15px;line-height:52px;}
+.inputWrap.btn > a {position:absolute; right:10px; top:50%; line-height:27px; display:inline-block; text-align:center; color:#636363; border:1px solid #666; border-radius:15px; margin-top:-1.4rem; padding:0px 12px; letter-spacing:-0.8px;} 
+.inputWrap.btn > a.org{border:1px solid #ee5a00;color:#ee5a00} /* 접근성 2차 /2210 */
+
+
+.inputWrap.btn > a {position:absolute; right:10px; top:50%; line-height:27px; display:inline-block; text-align:center; color:#636363; border:1px solid #666; border-radius:15px; margin-top:-1.4rem; padding:0px 12px; letter-spacing:-0.8px;} 
+/* 20180719 kjh */
+a.bgGrey, a.bgOrange {line-height:27px;display:inline-block;padding:0 12px;color:#fff !important;border:1px solid #a39d98 !important;border-radius:15px;letter-spacing:-0.8px;background-color:#a39d98 !important} 
+a.bgGrey {border-color:#a39d98 !important;background-color:#a39d98 !important} 
+a.bgOrange {border-color:#ee5a00 !important;background-color:#ee5a00 !important} /* 접근성 2차 /2210 */
+a.bgGrey.check {padding:0 12px 0 30px;color:#636363;border:1px solid #666;background-image:url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png');background-repeat:no-repeat;background-position:0.9rem 50%;background-size:1.3rem auto}
+a.bgGrey.check.done {border-color:#ee5a00 !important;background-color:#ee5a00 !important} /* 접근성 2차 /2210 */
+.h2Btn a.bgGrey.check {position:absolute;right:0;top:-0.4rem}
+/* //20180719 kjh */
+
+
+/* select /수정2002 */
+.inputWrap select:disabled{background-color:#fafafa}
+.inputWrap .certify {display:inline-block; position:absolute; right:17px; top:20px; color:#ee5a00; width:auto; height:22px; text-indent:22px; font-weight:bold; background:url('https://mdirect.hi.co.kr/images/common/bg_time.png') no-repeat 0 1px; background-size:17px auto;}
+
+.inputWrap .calBtn {position:absolute; right:15px; top:35%; display:inline-block; width:20px; height:20px; background:url('https://mdirect.hi.co.kr/images/common/ico_cal.png') no-repeat; background-size:1.8rem auto;}
+.inputWrap.select select {float:left; width:30%; border-right:none; /*border-top:none;*/}
+.checkBox + .inputWrap.select select {border-top:none;}
+
+.inputWrap.select input {position:relative; width:calc(100% - 30%); display:inline-block; padding:13px 0 13px 15px;}
+.inputWrap.select a {position:absolute; top:10px; right:10px; display:inline-block; text-align:center; color:#636363; border:1px solid #666; border-radius:15px; padding:0 12px; line-height:26px; letter-spacing:-1px;}
+.inputWrap.select.disabled select,
+.inputWrap.select.disabled a{background-color:#eee !important} /* 추가 /1904 */
+/*.inputWrap.selectR {border-top:1px solid #e0e0e0}*/
+.inputWrap.selectR select {width:50%; border-left:none; border-top:none;}
+.inputWrap.selectR input {position:relative;float:left; width:calc(100% - 50%);}
+.inputWrap.selectR input[type="tel"] {padding:0 15px;}
+.inputWrap.selectR a {position:absolute; top:18px; right:10px; display:inline-block; text-align:center; color:#636363; border:1px solid #666; border-radius:15px; padding:0 12px; line-height:26px; letter-spacing:-1px;}
+.inputWrap.post a {position:absolute; top:18px; right:10px; display:inline-block; text-align:center; color:#636363; border:1px solid #666; border-radius:15px; padding:0 12px; line-height:26px; letter-spacing:-1px;}
+.inputWrap.post > input {padding-right:7rem;}
+
+/* .inputWrap.selectTxt /1905 */
+.inputWrap.selectTxt{margin-top:15px}
+.inputWrap.selectTxt .txt{position:relative;float:left;width:calc(100% - 50%);padding:9px 10px;;box-sizing:border-box}
+.inputWrap.selectTxt select{width:50%;height:40px}
+.inputWrap.selectTxt input{position:relative;float:left;width:calc(100% - 50%)}
+
+/* .inputWrap.selectTxt /1905 */
+.selectTxt .txt{flex:1;position:relative;height:40px;line-height:40px;box-sizing:border-box;text-align:center;font-size:14px}
+.selectTxt .btnHelp3{margin-top:-1px}
+.selectTxt .select{flex:1}
+.selectTxt .select select{height:40px}
+
+.inputWrap .inputPrice span {display:inline-block; position:absolute; right:10px; top:15px; color:#666;} 
+.inputWrap .inputPrice input {padding:0px 15px;}
+
+.inputWrap .txt {display:inline-block; line-height:22px; padding:4px 0 3px 0;}
+.inputWrap .txtBlock {display:block; line-height:22px; padding:4px 0 3px 0;}
+.inputWrap .txtBlock span {display:inline-block;}
+.inputWrap .txtBlock span .helpTxt {margin:5px 0 0 66px;}
+.inputWrap .txtBlock  input[type=text] {width:150px;}
+.inputWrap .inBlock {display:inline-block;}
+.inputWrap .inBlock span {display:inline-block; line-height:20px;}
+
+/* Input Right /2003 */
+.inputWrap.two .iptAreaL{border-right:1px solid #e0e0e0 !important}
+.inputWrap.two .iptAreaR{display:inline-block;position:relative;box-sizing:border-box;}
+
+/* tag */
+span[class^=tag], em[class^=tag] {display:inline-block; padding:0px 3px; line-height:19px; font-weight:normal; font-size:1.2rem; color:#fff !important}
+.tagOrg {background:#ee5a00;} /* 주황생 */ /* 접근성 2차 /2210 */
+.tagGrn {background:#009ab1;} /* 초록색 */ /* 접근성 2차 /2210 */
+.tagBlue {background:#047db5; border-radius:2rem;} /* 파란색 */
+.tagGray {background:#bbb;} /* 회색 */
+
+/* 내용없음 */
+.noResult {margin-top:1.5rem; height:10rem; display:table; width:100%;border:1px solid #e0e0e0; min-height:100%;}
+.noResult p, .nosearchResult p {display:table-cell; vertical-align:middle; background:#fff; text-align:center; box-sizing:border-box; padding:0 20px;}
+.noResult p span, .nosearchResult p span {color:#ee5a00} /* 접근성 2차 /2210 */
+.nosearchResult {height:10.9rem; display:table; width:100%;min-height:100%;}
+.contractBox + .noResult  {margin-top:0px;}
+
+
+/* 리스트박스 */
+.lineBox li {position:relative; padding:1.5rem; border:1px solid #e0e0e0; border-top:none; color:#636363;}
+.lineBox li:first-child {border-top:1px solid #e0e0e0;}
+.lineBox li.on {border:1px solid #676767;}
+.lineBox li strong {position:absolute; right:1.5rem; top:1.6rem; display:inline-block; width:10rem; text-align:right}
+
+.lineBox .radioList {overflow:hidden; position:absolute; right:0; top:0;}
+.lineBox .radioList li {position:relative; display:block; float:left; width:55px; height:42px; background:#fff}
+.lineBox .radioList li input {position:absolute; top:1px; left:1px; width:50px; height:40px; display:none;}
+.lineBox .radioList li label {position:absolute; top:0; left:0; cursor:pointer; width:55px; line-height:40px; font-weight:bold; color:#636363; text-align:center; box-sizing:border-box;}
+.lineBox .radioList li.on label {border:1px solid #666;}
+.lineBox .radioList li.off label {border:1px solid #e0e0e0;}
+
+.whiteBox.two {display:table; width:100%; padding:0}
+.whiteBox.two .selectTwo {display:table-cell; width:50%; padding:1rem;text-align:center;}
+.whiteBox.two .selectTwo:first-child {border-right:solid 1px #e0e0e0;}
+.whiteBox.two .selectTwo strong {display:block; font-weight:normal; margin-bottom:1rem;}
+.whiteBox.two select {width:65px; padding:0.5rem; line-height:1.9rem;}
+
+
+.radioBox {overflow:hidden; color:#636363; background:#fff;}
+/* .radioBox span {display:table; position:relative; width:100%; border:1px solid #e0e0e0; border-bottom:0px; box-sizing:border-box; padding:7px 10px 3px 10px;} */
+.radioBox span {display:table; position:relative; width:100%; border:1px solid #e0e0e0; border-bottom:0px; box-sizing:border-box; padding:6px 10px 4px 10px;} /* 수정1808 */
+.radioBox .on {border:1px solid #666; box-sizing:border-box;}
+.radioBox span.on:first-child {margin-top:0;}
+.radioBox span:last-child {border-bottom:1px solid #e0e0e0;}
+.radioBox span:last-child.on {border-bottom:1px solid #666;}
+.radioBox span strong {position:absolute; right:10px; top:25%;}
+.radioBox span input {overflow:hidden; position:absolute;top:7px; left:10px; width:22px;height:22px}
+/* .radioBox span label {cursor:pointer; display:block; min-height:22px; padding:5px 0 0 30px; background:url('https://mdirect.hi.co.kr/images/common/bg_radio.png') no-repeat 0px -137px; background-size:22px auto;} */
+.radioBox span label {cursor:pointer; display:block; min-height:22px; padding:2px 0 0 30px; background:url('https://mdirect.hi.co.kr/images/common/bg_radio.png') no-repeat 0px -137px; background-size:22px auto;} /* 수정1808 */
+.radioBox span label.widthTag {width:60%;}
+.radioBox span label em {margin-left:1rem;}
+.radioBox span label p {padding-top:0.2rem; font-size:1.2rem; color:#fc843b; font-weight:normal; line-height:1.7rem;}
+.radioBox span input:checked + label {background-position:0px 0px;}
+.radioBox span input:disabled + label {opacity:0.5}
+.radioBox .on + .off {border-top:0px;}
+/* 20180727 kjh */
+.radioBox span var {display:block;position:absolute;right:90px;top:25%;font-weight:bold;font-style:normal}
+.radioBox span var.up {color:#fc843b}
+.radioBox span var.bar {color:#fc843b}
+.radioBox span var.down {color:#2d6dc3}
+.radioBox span var::before {font-size:11px;margin-right:3px}
+.radioBox span var.up::before {content:"▲"}
+.radioBox span var.bar::before {content:"-"}
+.radioBox span var.down::before {content:"▼"}
+/* //20180727 kjh */
+.radioBox span.type2 strong{top:10px} /* 추가1808 */
+.radioBox span.type2 var{float:right;position:static;padding:0 0 5px;} /* 추가1808 */
+
+/* 자동차보험 담보 금액별 보장내용 노출 /2107  */
+.radioBox.typeCarInsu span label{background-position:0 -129px}
+.radioBox.typeCarInsu span label b{font-weight:600}
+.radioBox.typeCarInsu span input:checked + label{background-position:0px 8px;}
+
+.radioBtn {overflow:hidden; border:1px solid #e0e0e0; background:#fff; padding:1.8rem 1.5rem 1.6rem; }
+.radioBtn:after {content:""; display:block; clear:both;}
+.radioBtn span {display:block; float:left; position:relative; width:50%}
+.radioBtn.type3 span{width:33%} /* 210105 */
+.radioBtn span input {position:absolute; left:20px; top:15px; width:0.1rem; height:0.1rem;}
+.radioBtn span label {display:table-cell; color:#636363; cursor:pointer; padding-left:3rem; height:24px; vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/bg_radio.png') no-repeat 0 -150px; background-size:24px auto;}
+.radioBtn span input:checked + label {background-position: 0 0rem; color:#282828;}
+.inputWrap + .radioBtn {margin-top:1.5rem;}
+.tabOpen + .radioBtn {border-bottom:0;}
+
+/* Radio Button Flex /2110 */
+.radioFlex{display:flex;flex-wrap: wrap;width:100%;box-sizing:border-box;border:1px solid #e0e0e0; background:#fff; padding:1rem 0 0 1rem}
+.radioFlex span{position:relative;margin-right:1rem;margin-bottom:1rem}
+.radioFlex span:first-child{margin-left:0}
+.radioFlex span input {position:absolute; left:20px; top:15px; width:0.1rem; height:0.1rem;}
+.radioFlex span label {display:table-cell; color:#636363; cursor:pointer; padding-left:3rem; height:24px; vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/bg_radio.png') no-repeat 0 -150px; background-size:24px auto;}
+.radioFlex span input:checked + label {background-position: 0 0; color:#282828;}
+
+/* 20210608 테두리 없는 라디오버튼 영역 */
+.radioBtn2 {overflow:hidden; background:#fff; padding:1.5rem 1.0rem 0rem 1.00rem; }
+.radioBtn2:after {content:""; display:block; clear:both;}
+.radioBtn2 span {display:block; float:left; position:relative; padding-right:20px}
+.radioBtn2.type3 span{width:33%} /* 210105 */
+.radioBtn2 span input {position:absolute; left:20px; top:15px; width:0.1rem; height:0.1rem;}
+.radioBtn2 span label {display:table-cell; color:#636363; cursor:pointer; padding-left:3rem; height:24px; vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/bg_radio.png') no-repeat 0 -150px; background-size:24px auto;}
+.radioBtn2 span input:checked + label {background-position: 0 0rem; color:#282828;}
+.inputWrap + .radioBtn2 {margin-top:0rem;}
+.tabOpen + .radioBtn2 {border-bottom:0;}
+
+/* 라디오버튼옆에 인풋박스 추가210412 */
+.radioBtn_box {overflow:hidden; border:1px solid #e0e0e0; background:#fff; padding:1.3rem 1.5rem 1.3rem; }
+.radioBtn_box:after {content:""; display:block; clear:both;}
+.radioBtn_box span {display:block; float:left; position:relative; width:100%;}
+.radioBtn_box span input {position:absolute; left:20px; top:15px; width:0.1rem; height:0.1rem;}
+.radioBtn_box span label {display:table-cell; color:#636363; cursor:pointer; padding-left:3rem; height:24px; vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/bg_radio.png') no-repeat 0 -150px; background-size:24px auto;}
+.radioBtn_box span input:checked + label {background-position: 0 0rem; color:#282828;}
+.radioBtn_box  {position:relative;}
+.radioBtn_box .inputRadio .inputWrap {width:70%; top:7px; float:right;}
+.radioBtn_box .inputRadio .inputWrap label {top:3px;}
+.radioBtn_box .inputRadio .inputWrap input {padding:12px 15px 0px 15px; height:40px;}
+
+/* 표준동의서개선210526 */
+.agree_radioBtn {overflow:hidden; border-bottom:1px dotted #e0e0e0; background:#f6f6f6; padding:0.6rem 1.5rem 1.2rem; }
+.agree_radioBtn:after {content:""; display:block; clear:both;}
+.agree_radioBtn span {display:block; float:left !important; position:relative; width:50% !important;}
+.agree_radioBtn span input {position:absolute; left:20px; top:15px; width:0.1rem; height:0.1rem;}
+.agree_radioBtn span label {display:table-cell; color:#636363; cursor:pointer; padding-left:3rem; height:24px; vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/bg_radio.png') no-repeat 0 -150px; background-size:24px auto; width:80px !important;}
+.agree_radioBtn span input:checked + label {background-position: 0 0rem; color:#282828;}
+.bBnone {border-bottom:none;}
+.boderNone {border:none;}
+
+.tabOpen {display:none}
+.tabOpen.on, .tabOpen.open {display:block}
+.tabOpen2 {display:none}
+.tabOpen2.on, .tabOpen2.open {display:block}
+.tabOpen3 {display:none}
+.tabOpen3.on, .tabOpen3.open {display:block}
+
+/* Radio In InputWrap /2004 */
+.radioWrap{position:relative;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0}
+.radioWrap .radioBtn{padding:1.5rem 1.5rem 1.3rem;border:0}
+.radioWrap .radioBtn span{width:30%}
+/* Radio In radioWrap2 /20210608 */
+.radioWrap2{position:relative;background:none} /* 수정 /2108 */
+.radioWrap2{position:relative;}
+.radioWrap2 .radioBtn2{padding:1.0rem 1.0rem 0rem 1.00rem;border:0}
+.radioWrap2 .radioBtn2 span{width:30%}
+
+a.btAddr,
+.inputWrap.select a.btAddr{position:absolute;top:12px;right:10px;display:inline-block;padding:0 12px;line-height:26px;border-radius:15px;border:1px solid #f6873d;letter-spacing:-1px;color:#f6873d;}
+a.btAddr.btSearch,
+.inputWrap.select a.btAddr.btSearch{padding:0 28px 0 12px;background:url('https://mdirect.hi.co.kr/images/common/bt_search_org.png') no-repeat 94% center;background-size:22px auto}
+
+/* BoxContent */
+ul li:first-child .boxContList {margin-top:0;}
+.boxContList {border:1px solid #e0e0e0; background:#fff; padding:1rem; color:#636363; margin-top:1rem;}
+.boxContList > dt {border-bottom:1px dashed #e0e0e0; padding-bottom:1rem}
+.boxContList > dt > strong {display:inline-block; font-weight:normal;}
+.boxContList > dt > span {display:inline-block; float:right; color:#fc843b;}
+.boxContList > dt em {display:block; color:#949494; font-size:1.2rem; margin-top:0.3rem}
+.boxContList > dt > strong.ing {color:#fc843b;} 
+.boxContList > dt > strong.ing:after {content:''; background:url('https://mdirect.hi.co.kr/images/content/icon_phonecodetimer.png') no-repeat right top; display:inline-block; width:18px; height:15px; background-size:auto 15px;}
+.boxContList > dd {margin-top:1rem;}
+.boxContList > dd > span {height:100%;vertical-align:middle;margin:0 0.2rem 0 0.5rem; color:#047db5;}
+.boxContList > dd > span:after {display:table-cell;content:'';clear:both;}
+.boxContList > dd li {padding-top:5px;}
+.boxContList > dd li > strong {display:inline-block; color:#646464; width:27%; font-weight:normal;}
+.boxContList > dd li > span {display:inline-block; width: calc(73% - 1.2rem);}
+.boxContList dt {border-bottom:1px dashed #e0e0e0; padding-bottom:1rem}
+.boxContList dt strong {display:inline-block; font-weight:normal;}
+.boxContList dt span {display:inline-block; float:right; color:#fc843b;}
+.boxContList dt em {display:block; color:#949494; font-size:1.2rem; margin-top:0.3rem}
+.boxContList dt strong.ing {color:#fc843b;} 
+.boxContList dt strong.ing:after {content:''; background:url('https://mdirect.hi.co.kr/images/content/icon_phonecodetimer.png') no-repeat right top; display:inline-block; width:18px; height:15px; background-size:auto 15px;}
+.boxContList dd {margin-top:1rem;}
+.boxContList dd p {font-size:1.4rem; color:#282828;}
+.boxContList dd span {margin:0 0.2rem 0 0.5rem; color:#047db5;}
+.boxContList dd p > span {font-weight:bold;}
+.boxContList dd li {padding-top:5px;}
+.boxContList dd li strong {display:block; float:left; color:#636363; width:45%; font-weight:normal;}
+.boxContList dd li span {display:block; float:left; color:#282828; width:50%; font-weight:700;}
+.boxContList dd li:after {content:""; display:block; clear:both;}
+.boxContList dd li span dl {overflow:hidden;width:100%;}
+.boxContList dd li span dl dt {float:left;clear: both;width:50%;margin:0.3rem 0 0;font-weight:normal;}
+.boxContList dd li span dl dd {float:left;width:50%;margin:0.5rem 0 0;text-align:right;}
+.boxContList dd .dataDetail li > span {margin:0;}
+.boxContList > dd .list2 li {padding-top:5px;overflow:hidden;}
+.boxContList > dd .list2 li > strong {float:left; color:#646464; width:73%;margin:0; font-weight:normal;}
+.boxContList > dd .list2 li > span {display:left; width: 27%;margin:0;text-align:right}
+
+/* 안내박스 콘텐츠 */
+.boxGray {overflow:hidden; padding:15px; border:1px solid #e0e0e0; margin-top:1.5rem; background:#f0f0f0;}
+.boxGray strong {display:block; margin-bottom:1rem; font-size:1.5rem;}
+
+
+/* 정보상세 콘텐츠 */
+.listDetail{display:block;padding:1.5rem;border:1px solid #e0e0e0;background:#fff}
+.listDetail li{display:flex;justify-content:space-between;padding-top:3px}
+.listDetail li:first-child{padding-top:0}
+.listDetail .titl{width:30%;color:#636363;box-sizing:border-box;word-break:keep-all}
+.listDetail .data{width:70%;padding-left:1rem;font-weight:bold;box-sizing:border-box;min-height:20px}
+.listDetail .titl2{width:80%;color:#636363;box-sizing:border-box}
+.listDetail .data2{width:20%;padding-left:0.1rem;font-weight:bold;text-align:right;box-sizing:border-box}
+.listDetail .data em, .listDetail .data2 em{color:#fa6705}
+.listDetail + .listDetail{margin-top:1rem}
+
+.listDetail.type2{padding:0;border:0}
+.listDetail.type2 .titl{width:50%}
+.listDetail.type2 .data{width:50%;color:#047db5}
+.listDetail.type2 .data em{color:#047db5}
+
+.listDetail.type3 .titl{width:60%}
+.listDetail.type3 .data{width:40%}
+
+.listDetail.type4 .data{width:40%;font-weight:normal}
+.listDetail.type4 .price{width:30%;text-align:right}
+
+/* 전화심사내역 /2205 */
+.listDetail.type5 .titl{width:50%;font-weight:normal}
+.listDetail.type5 .data{padding:0;width:50%;text-align:right;font-weight:normal}
+.listDetail.type5 .data em{color:#047db5}
+
+.topCon + .dataDetail{box-shadow:0 5px 10px #e6e6e6;display:block !important}
+.subConOpen + .dataDetail {box-shadow:0 5px 10px #e6e6e6}
+.subConOpen + .dataDetail{border-bottom:1px solid #e0e0e0;box-shadow:0 5px 10px #e6e6e6}
+
+.dataDetail2 .rowType1 {position:relative;}
+.dataDetail2 .rowType1 .cellType1 {display:block; float:left; width:44.5%; font-weight:bold;}
+.dataDetail2 .rowType1 .cellType2 {display:block; float:left; position:relative; width:100%; padding-left:1.2rem; font-size:1.2rem; color:#636363; box-sizing:border-box;}
+.dataDetail2 .rowType1 .cellType2:before {content:"┗"; display:inline-block; position:absolute; top:0.1rem; left:-0.3rem; width:0.8rem; height:0.8rem; font-weight:bold; font-size:0.8rem; color:#999;}
+.dataDetail2 .rowType1 .cellType3 {display:block; position:absolute; top:1.3rem; right:0; width:54.5%; font-weight:bold; font-size:1.4rem; text-align:right;}
+.dataDetail2 .rowType2 .cellType1 {display:block; float:left; width:35%; font-weight:bold; font-size:1.5rem;}
+.dataDetail2 .rowType2 .cellType2 {display:block; float:left; width:64%; font-weight:bold; font-size:1.5rem; color:#fc843b; text-align:right;}
+
+.orgBox {overflow:hidden; border:0.2rem solid #fc843b; background-color:#fff; margin-top:1.5rem; padding:1rem 1.5rem;}
+.orgBox ul > li {display:block; width:100%; border-top:0.1rem dashed #d9d9d9; box-sizing:border-box;}
+.orgBox ul > li:first-child {border-top:0;}
+.orgBox ul > li:after {content:""; display:block; clear:both;}
+.orgBox strong {display:block; float:left; width:50%; min-height:20px; margin:3px 0; }
+.orgBox span {display:block; float:right; font-weight:bold; font-size:1.4rem; min-height:20px; margin:3px 0;}
+.orgBox em {color:#fc843b;}
+.orgBox li.total > strong, .orgBox li.total > span {color:#047db5;}
+.orgBox dl dt {display:block; float:left; color:#636363; width:30%; margin-top:3px; min-height:20px;}
+.orgBox dl dd {display:block; float:left; width:70%; margin-top:3px; min-height:20px;}
+.orgBox dl dd:after {content:""; display:block; clear:both;}
+.orgBox > dl {margin-top:-3px;}
+
+
+.dataListBtn {border:1px solid #e0e0e0; border-bottom:none; background:#fff; box-sizing:border-box; overflow:hidden;}
+.dataListBtn ul {display:block; padding:1.5rem 1.5rem 0.5rem 1.5rem;}
+.dataListBtn ul li {padding-top:1rem}
+.dataListBtn ul li:first-child {padding-top:0;}
+.dataListBtn ul li:after {content:""; display:block; clear:both;}
+.dataListBtn li strong {color:#fc843b}
+.dataListBtn .titl {display:block; float:left; width:30%; color:#636363; box-sizing:border-box;}
+.dataListBtn .data {display:block; float:left; width:70%; padding-left:1rem;font-weight:bold; box-sizing:border-box;}
+.dataListBtn .data em {color:#fc843b; font-weight:normal;}
+.dataListBtn + .dataListBtn {margin-top:1rem}
+.radioBtn + .dataListBtn {margin-top:1.5rem}
+.dataListBtn p {margin:1.5rem;}
+.dataListBtn > .btn a {padding:7px;}
+/* Type /2111 */
+.dataListBtn .type46 .titl{width:40%}
+.dataListBtn .type46 .data{width:60%}
+
+/* 동일증권 동시 */
+.dataListBtnSamePol2 {border:1px solid #e0e0e0; border-bottom:none; background:#fff; box-sizing:border-box; overflow:hidden;}
+.dataListBtnSamePol2 ul {display:block; padding:1.5rem 1.5rem 0.5rem 1.5rem;}
+.dataListBtnSamePol2 ul li {padding-top:1rem}
+.dataListBtnSamePol2 ul li:first-child {padding-top:0;}
+.dataListBtnSamePol2 ul li:after {content:""; display:block; clear:both;}
+.dataListBtnSamePol2 li strong {color:#fc843b}
+.dataListBtnSamePol2 .titl {display:block; float:left; width:30%; color:#636363; box-sizing:border-box;}
+.dataListBtnSamePol2 .data {display:block; float:left; width:70%; padding-left:1rem;font-weight:bold; box-sizing:border-box;}
+.dataListBtnSamePol2 .data em {color:#fc843b; font-weight:normal;}
+.dataListBtnSamePol2 + .dataListBtn {margin-top:1rem}
+.radioBtn + .dataListBtnSamePol2 {margin-top:1.5rem}
+.dataListBtnSamePol2 p {margin:1.5rem;}
+.dataListBtnSamePol2 > .btn a[class^=on] {background:#ee5a00;color:#fff;} /* 접근성 2차 /2210 */
+
+/* 동일증권 동추 */
+.dataListBtnSamePol3 {border:1px solid #e0e0e0; border-bottom:none; background:#fff; box-sizing:border-box; overflow:hidden;}
+.dataListBtnSamePol3 ul {display:block; padding:1.5rem 1.5rem 0.5rem 1.5rem;}
+.dataListBtnSamePol3 ul li {padding-top:1rem}
+.dataListBtnSamePol3 ul li:first-child {padding-top:0;}
+.dataListBtnSamePol3 ul li:after {content:""; display:block; clear:both;}
+.dataListBtnSamePol3 li strong {color:#fc843b}
+.dataListBtnSamePol3 .titl {display:block; float:left; width:30%; color:#636363; box-sizing:border-box;}
+.dataListBtnSamePol3 .data {display:block; float:left; width:70%; padding-left:1rem;font-weight:bold; box-sizing:border-box;}
+.dataListBtnSamePol3 .data em {color:#fc843b; font-weight:normal;}
+.dataListBtnSamePol3 + .dataListBtn {margin-top:1rem}
+.radioBtn + .dataListBtnSamePol3 {margin-top:1.5rem}
+.dataListBtnSamePol3 p {margin:1.5rem;}
+.dataListBtnSamePol3 > .btn a[class^=on] {background:#ee5a00;color:#fff;} /* 접근성 2차 /2210 */
+
+
+/* layerPopup */
+.layerMask{ display:none; position:fixed; width:100%;height:100%;z-index:999; top:0; right:0; bottom:0; left:0; background:#000; opacity:.6; filter:alpha(opacity=60) !important;}
+
+.layerPopup {display:none; z-index:0; position:fixed; left:0; top:0; right:0; bottom:0; background:rgba(0,0,0,0.5); opacity:0; transition:opacity 300ms ease-in; pointer-events:none;}
+.layerPopup:target {z-index:999999; opacity:1; pointer-events:auto;}
+.layerPopup > div.layerWrap {display:block;position:fixed;top:25%;left:5%; width:90%; height:auto; max-height:65%; overflow-y:hidden; background:#fff; padding-bottom:4rem;} 
+.layerPopup > p.changeLayer {background:#fff; width:70%; margin:0 auto; border-radius:20px; margin-top:50px; padding:20px; text-align:center; color:#636363}
+
+/* 간편설계내역 /1909 */
+#easyCarPop.layerPopup > div.layerWrap{top:8%}
+#easyCarPop .layerWrap h3{margin:1rem 0 0.5rem;font-size:1.4rem}
+#easyCarPop .layerWrap .listDetail{padding:0.5rem 1rem}
+#easyCarPop .layerWrap.sizeL .layerCont{max-height:410px}
+
+.layerWrap h2 {font-size:1.5rem; border-bottom:1px solid #e6e6e6; padding:1.3rem 4rem 1.1rem 1.5rem; margin:0; background:#f6f6f6;}
+.layerWrap h3 {font-size:1.5rem; margin-bottom:10px; margin:2.5rem 0 1.5rem;}
+
+.layerWrap .topTxt {font-size:1.3rem; color:#636363}
+.layerWrap .topTxt01 {padding:0 0 1.5rem 0;font-size:1.3rem; color:#282828;line-height:1.7rem;text-align:left;}
+.layerWrap .layerClose {color:transparent; display:block; width:43px; height:43px; position:absolute; right:0; top:0; background:url('https://mdirect.hi.co.kr/images/common/btn_closeLayer.png') no-repeat; background-size:17px auto;background-position: 1.3rem 1.3rem;}
+.layerWrap .layerCont {display:block;padding:1.5rem; max-height:300px; overflow-y:auto; box-sizing:border-box; color:#282828;}
+.layerWrap .layerCont h2:first-child, .layerWrap .layerCont h3:first-child {margin-top:0;}
+.layerCont > .h2Btn:first-child {margin-top:0}
+.layerWrap .layerCont > strong {display:block; margin-bottom:1rem;}
+.layerWrap .layerCont p span {color:#fc843b;} /* color:#dd620d; */
+
+.layerWrap .layerCont > .listDot {margin-top:0;}
+.layerWrap .layerCont .topTxt + .listDot {margin-top:1.5rem;} 
+/* layer tab /1812 */
+.layerWrap .layerCont .tabMenu.joinBtn > a{width:50%;font-size:14px}
+.layerWrap .layerCont .tabOpen, .layerWrap .layerCont .conBox{color:#636363}
+.layerWrap .layerCont .bgTip{padding-right:110px;min-height:85px}
+.layerWrap .layerCont .bgTip.tip01{background:url('https://mdirect.hi.co.kr/images/content/bg_tip01.png') no-repeat right 0;background-size:100px auto}
+.layerWrap .layerCont .bgTip.tip02{background:url('https://mdirect.hi.co.kr/images/content/bg_tip02.png') no-repeat right 0;background-size:100px auto}
+.layerWrap .layerCont .bgTip.tip04{background:url('https://mdirect.hi.co.kr/images/content/bg_tip04.png') no-repeat right 0;background-size:100px auto}
+.layerWrap .layerCont .bgTip.tip05{background:url('https://mdirect.hi.co.kr/images/content/bg_tip05.png') no-repeat right 0;background-size:100px auto}
+.layerWrap .layerCont .bgTip.tip06{background:url('https://mdirect.hi.co.kr/images/content/bg_tip06.png') no-repeat right 0;background-size:100px auto}
+.layerWrap .layerCont .bgTip.tip07{background:url('https://mdirect.hi.co.kr/images/content/bg_tip07.png') no-repeat right 0;background-size:100px auto}
+
+.layerWrap .layerTop{padding:1.5rem;border-bottom:1px solid #e0e0e0}
+.layerWrap .layerTop .h2Btn{margin:0}
+.layerWrap .layerTop .h2Btn h3{margin:0}
+
+.layerWrap .dbCont {display:block;padding:1.5rem; max-height:350px; overflow-y:auto; box-sizing:border-box;} /*db등록*/
+.layerWrap .layerBtn {position:absolute; bottom:0; left:0; width:100%;}
+.layerWrap .layerBtn a {display:block; line-height:4rem; text-align:center; background-color:#a39d98; color:#fff; font-weight:bold; font-size:1.5rem} 
+.layerWrap .layerBtn .on a,.layerWrap .layerBtn a.on {background-color:#ee5a00;} /* 접근성 2차 /2210 */
+.layerWrap .layerBtn a.btBlue {background-color:#009ab1;} /* 접근성 2차 /2210 */
+/*.layerWrap .layerBtn .on a:before, .layerWrap .layerBtn a.on:before {content:""; display:inline-block; width:17px; height:15px; background:url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png') no-repeat 0 bottom; background-size:75% 75%;}*/
+.layerWrap .layerCont > .inputWrap {margin-top:0;}
+.layerWrap > .btn {margin:0; padding:0 1.5rem;}
+.layerWrap > .btn span {float:none; clear:both; width:100%; display:block; margin:5px auto}
+/* sizeL /1810 */
+.layerWrap.sizeL .layerCont{max-height:380px}
+
+/* 카드결제혜택 안내 2007 */
+.layerWrap .layerCont .listInfoTitle{margin-bottom:1.7rem;padding:0.4rem 0 1.9rem;border-bottom:1px solid #efefef;font-size:1.4rem;text-align:center;}
+
+/* Layer Bottom Fixed /2106 */
+.layerBottomFixed{position:relative}
+.layerBottomFixed .layerWrap{display:block;position:fixed;bottom:54px;left:0;padding-bottom:2rem;width:100%;border-top:1px solid #aaa;background:#fff;z-index:5} /* 수정 /2107 */
+.layerBottomFixed .layerWrap h3{font-size:1.6rem;letter-spacing:-1px}
+.layerBottomFixed .layerWrap .layerCont{padding:1.5rem 1rem 0;max-height:250px;pointer-events:none} /* 수정 /2107 */
+.layerBottomFixed .layerWrap .layerClose{width:30px;height:30px;background-position:center center}
+.layerBottomFixed .layerWrap .btn{display:flex;justify-content:center}
+.layerBottomFixed .layerWrap .btn > span{margin:0 0 0 10px}
+.layerBottomFixed .layerWrap .btn > span:first-child{margin-left:0}
+.layerBottomFixed .layerWrap .btn > span.btOrg{width:40%}
+.layerBottomFixed .layerWrap .btn > span.btOrg a{border:0;background:#ee5a00;font-size:14px;color:#fff} /* 접근성 2차 /2210 */
+.layerBottomFixed .layerWrap .btn > span.btGry{width:20%}
+.layerBottomFixed .layerWrap .btn > span.btGry a{border:0;background:#a39d98;font-size:14px;color:#fff}
+/* Layer Box Blue /2204 */
+.layerPopup.layerBoxBlue .layerWrap{display:block;padding:1.8rem 1.8rem 2.5rem;width:90%;height:auto;max-height:80%;box-sizing:border-box;border:1px solid #047db5;background:#fff;line-height:1.4em}
+.layerPopup.layerBoxBlue .layerWrap h2{margin-bottom:10px;padding:0;border:0;background-color:#fff;font-size:1.8rem;letter-spacing:-1px}
+.layerPopup.layerBoxBlue .layerWrap h3{margin-bottom:5px;font-weight:normal;font-size:1.5rem;letter-spacing:-1px;color:#000}
+.layerPopup.layerBoxBlue .layerWrap .layerCont{padding:0;max-height:100%}
+.layerPopup.layerBoxBlue .layerWrap .layerCont .tx{font-size:1.3rem;color:#555}
+.layerPopup.layerBoxBlue .layerWrap .btn{display:flex;justify-content:center}
+.layerPopup.layerBoxBlue .layerWrap .btn > span{margin:0 0 0 10px;padding:0}
+.layerPopup.layerBoxBlue .layerWrap .btn > span:first-child{margin-left:0}
+.layerPopup.layerBoxBlue .layerWrap .btn > span > a{padding:8px}
+.layerPopup.layerBoxBlue .layerWrap .btn > span.btBlue{width:50%}
+.layerPopup.layerBoxBlue .layerWrap .btn > span.btBlue a{border:0;background:#2180d0;font-size:14px;color:#fff}
+.layerPopup.layerBoxBlue .layerWrap .btn > span.btGry{width:30%}
+.layerPopup.layerBoxBlue .layerWrap .btn > span.btGry a{border:0;background:#a39d98;font-size:14px;color:#fff}
+.layerPopup.layerBoxBlue .layerWrap .btClose{position:absolute;top:14px;right:12px;display:block;width:17px;height:17px;}
+.layerPopup.layerBoxBlue .layerWrap .btClose:before,
+.layerPopup.layerBoxBlue .layerWrap .btClose:after{position:absolute;top:-1px;left:8px;content:'';width:1px;height:19px;background-color:#555}
+.layerPopup.layerBoxBlue .layerWrap .btClose:before{transform:rotate(45deg)}
+.layerPopup.layerBoxBlue .layerWrap .btClose:after{transform:rotate(-45deg)}
+.layerPopup.layerBoxBlue .compBox{padding:0;background-color:#fff}
+.layerPopup.layerBoxBlue .compBox .boxGrey{min-width:50px}
+.layerPopup.layerBoxBlue .compBox .boxSky{min-width:50px}
+.layerPopup.layerBoxBlue .compBox .boxOrg{min-width:50px}
+
+/* Compare Box /2106 */
+.compBox{padding:10px;background-color:#fff5e9}
+.compBox .compRow{display:flex;justify-content:space-between;margin-top:5px;letter-spacing:-1px}
+.compBox .compRow:first-child{margin-top:0}
+.compBox .compRow .boxGrey{padding:0 2px 1px;min-width:28px;height:19px;border:0;background:#8e8e8e;font-weight:normal;font-size:12px;color:#fff;text-align:center}
+.compBox .compRow .boxSky{padding:0 2px 1px;min-width:28px;height:19px;border:0;background:#00afc9;font-weight:normal;font-size:12px;color:#fff;text-align:center}
+.compBox .compRow .boxOrg{padding:0 2px 1px;min-width:28px;height:19px;border:0;background:#ee5a00;font-weight:normal;font-size:12px;color:#fff;text-align:center} /* 접근성 2차 /2210 */
+.compBox .compRow .ti{min-width:68px;font-weight:600;font-size:13px;color:#292929}
+.compBox .compRow .tx{min-width:142px;font-weight:normal;font-size:13px;color:#545454}
+.compBox .compRow .price{min-width:45px;font-weight:normal;font-size:13px;color:#ee5a00;text-align:right} /* 접근성 2차 /2210 */
+
+
+.boxButton {width:100%; display:table; margin-bottom:1rem;}
+.boxButton li {display:table-cell; padding:0 5px;}
+.boxButton.two li {width:50%;}
+.boxButton li a {display:block; height:6rem; padding:1.5rem; border:1px solid #e0e0e0; color:#636363; font-size:1.2rem;}
+.boxButton li:first-child {padding-left:0px;}
+.boxButton li:last-child {padding-right:0;}
+.boxButton li:nth-child(1) a {background:#fff url('https://mdirect.hi.co.kr/images/common/bg_down.png') no-repeat right 15px top 15px; background-size:auto 2rem;}
+.boxButton li:nth-child(2) a {background:#fff url('https://mdirect.hi.co.kr/images/common/bg_down.png') no-repeat right 15px top 15px; background-size:auto 2rem;}
+.boxButton li:nth-child(3) a {background:#fff url('https://mdirect.hi.co.kr/images/common/bg_view.png') no-repeat right 15px top 15px; background-size:auto 2rem;}
+
+.imglist li {display:block; margin-top:1rem; border:0.1rem solid #e0e0e0; background-color:#fff;}
+.imglist li > a {display:block; overflow:hidden;padding:1.2rem 1.5rem 1.6rem; color:#282828;}
+.imglist li > a:focus {outline:0.1rem dotted #777;}
+.imglist li > a .potoText {float:left; width: calc( 78% - 0.1rem);border-right:dashed 0.1rem  #ccc;}
+.imglist li > a .potoDesc {display:block;float:left;width:22%;height:100%;min-height:8rem;}
+
+.imglist li .photoTxt {float:left; width:calc(66% - 3rem); padding:1.5rem;}
+.imglist li .photoTxt strong {display:block;}
+.imglist li .photoTxt em {color:#fc843b; display:block; margin-top:0.5rem; font-size:1.2rem;}
+.imglist li .photoTxt span {display:inline-block; font-size:1.2rem; color:#636363;}
+.imglist li .photoImg {float:left; width:34%; }
+.imglist li .photoImg a {border-left:1px dashed #e0e0e0; display:block; margin: 2rem 1.5rem 1.5rem; min-height:5rem;}
+.imglist li .photoImg a span {display:block; text-align:center; padding-top:3.5rem;}
+.imglist li .photoImg a.photo_register {background:url('https://mdirect.hi.co.kr/images/content/bg_photo03.png') no-repeat top center; background-size:30px auto;}
+.imglist li .photoImg a.photo_register span {color:#fc843b;}
+.imglist li .photoImg a.photo_edit {background:url('https://mdirect.hi.co.kr/images/content/bg_photo04.png') no-repeat top center; background-size:30px auto;}
+.imglist li .photoImg a.photo_edit span {color:#aaa;}
+.imglist li:after {content:"";display:block;clear:both}
+
+/* 수정 /1905 */
+.imgList01{display:flex;overflow:hidden}
+.imgList01 li{padding-left:2.5%;width:31%}
+.imgList01 li:first-child{padding-left:0}
+.imgList01 li a{display:block;border:3px solid #e0e0e0;box-sizing:border-box}
+.imgList01 li.on a{border:3px solid #fc843d}
+.imgList01 li a img{width:100%}
+.imgList01 li span{display:block;margin-top:3px;text-align:center;color:#636363} 
+.imgList01 li.on span{color:#232323}
+
+.imglist li.flex {display:flex;justify-content:space-between;}
+.imglist li .photoImg_sum{width:34%;align-self:center;border-left:1px dashed #e0e0e0;}
+.imglist li .photoImg_sum a{display:block;text-align:center; }
+.imglist li .photoImg_sum img {width:80px;} 
+
+.imglist li .photoImg_sum.basicPhoto{float:left;width:34%;}
+.imglist li .photoImg_sum.basicPhoto a{text-align:center;}
+.imglist li .photoImg_sum.basicPhoto a span{display:block;}
+.imglist li .photoImg_sum.basicPhoto img {width:30px; height:auto;}
+
+.imglist li .photoTxt .btnBlueBefore {display:inline-block; padding:2px 9px 2px 9px; border:1px solid #047db5; border-radius:1.5rem; margin-top:5px;}
+.imglist li .photoTxt .btnBlueBefore span {color:#047db5; letter-spacing:-1px}
+
+.imgList01_beforeImg{overflow:hidden;display:table;width:100%;}
+.imgList01_beforeImg li{padding-left:10px; padding:10px 20px;}
+.imgList01_beforeImg:after{content:"";display:block;clear:both}
+.imgList01_beforeImg li a{display:block;border:4px solid #e0e0e0;box-sizing:border-box}
+.imgList01_beforeImg li.on a{border:4px solid #fc843d;box-sizing:border-box}
+.imgList01_beforeImg li a img{width:100%; height:300px;}
+/* 특약사진등록 리스트 버튼 추가 /2003 */
+.imglist li.flexIn{display:block; margin-top:0; border:0; background:none;}
+.imglist li.flexIn div.flex{display:flex;justify-content:space-between;margin-top:1rem; border:0.1rem solid #e0e0e0; background-color:#fff;}
+
+/* 사진등록 */
+.photoList {overflow:hidden;}
+.photoList span > img {width:100%; height:100%; border:1px solid #ccc;}
+.photoList span > strong {display:block; width:50%; color:#fff; font-size:2.5rem; position:absolute; left:25%; top:50%; margin-top:-2rem; text-align:center;}
+.photoList span {display:block; float:left; position:relative; width:calc(50% - 5px); height:150px; overflow:hidden;}
+.photoList span:after {content:"";display:block;clear:both}
+.photoList span:nth-child(2) {border:1px solid #ccc; background:#fff; float:right; box-sizing:border-box;}
+.photoList span.change {border:2px solid #047db5; background:#047db5; box-sizing:border-box;}
+.photoList span.change img {border:none;/*background:transparent;*/ opacity:0.4;}
+.photoList span > .addlist {position:absolute; left:50%; top:50%; margin-left:-3rem; margin-top:-2rem;}
+
+/* 파일업로드 */
+.addlist {position:relative; vertical-align:middle;}
+input.file_name[type="text"] {height:0px; padding:3px 10px; border:none; }
+.txt_filename {display:none;}
+.file_uploader {overflow:hidden; position:absolute; top:0; left:0; width:1px; height:1px; opacity:0;}
+.file_label {display:block; margin:0 auto; width:55px; height:50px; background:url('https://mdirect.hi.co.kr/images/content/btn_photo.png') no-repeat center top; background-size:auto 30px; cursor:pointer; text-align:center;}
+.file_label strong {display:inline-block; margin-top:35px;}
+.photoList span.change .file_label {display:block; margin:0 auto; width:55px; height:50px; color:#fff; background:url('https://mdirect.hi.co.kr/images/content/btn_photo_change.png') no-repeat center top; background-size:auto 30px;}
+
+/* 전 계약 사진등록/1803 */
+.ct_historyPhoto{margin-top:15px;border-bottom:1px solid #ddd}
+.ct_historyPhoto .photoList{margin:0 auto;width:205px}
+.ct_historyPhoto .photoList span{width:100%}
+.ct_historyPhoto .radioBox{margin:10px auto 15px;width:205px;background:#f6f6f6}
+.ct_historyPhoto .radioBox span{padding:7px 5px 3px;border:0}
+.ct_historyPhoto .radioBox span input{left:5px}
+.ct_historyPhoto .radioBox span label{padding-top:2px}
+.ct_historyPhoto .radioBox span:last-child.on{border-bottom:0}
+
+/* 새 사진등록 /2003 */
+.photoArea{overflow:hidden}
+.photoArea .photoIn{position:relative;border:1px solid #cccccc}
+.photoArea .photoIn img{width:100%}
+.photoArea .photoBtn{margin-top:5px;border:1px solid #f6873d;background-color:#ffffff}
+.photoArea .photoBtn .file_label{width:100%;height:40px;background:none}
+.photoArea .photoBtn .file_label strong{margin:0 auto;padding-left:40px;height:40px;line-height:40px;background:url('https://mdirect.hi.co.kr/images/content/btn_photo.png') no-repeat left center;background-size:32px auto}
+
+
+
+/* 로딩바 */
+#loading {position:absolute; left:0; right:0; top:0; bottom:0; width:100%; height:100%; text-align:center; z-index:10000; /*background:rgba(255,255,255,0.8);  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80ffffff,endColorstr=#80ffffff); zoom:1;*/}
+.loadBox {overflow:hidden; width:320px; border:1px solid #ade0ee; padding:20px 25px 25px 25px; position:fixed; top:50%; left:50%; margin:-62px 0 0 -186px;background:#fff;}
+#contentArea .loadBox {top:300px;}
+.loadBox img {float:left; margin-top:10px;}
+.loadBox p {float:left; color:#54565b; margin-left:30px;}
+.loadBox p span {display:block; margin-bottom:7px;}
+.loadBox p strong {color:#111; font-weight:normal; display:block; margin-bottom:5px;}
+.load {opacity:0.2; filter:alpha(opacity=20); z-index:990;}
+
+/* Loading Animation /202008 */
+#loadAni{position:fixed;left:0;right:0;top:0;bottom:0;z-index:10000;width:100%;height:100%;background:rgba(0,0,0,0.5);text-align:center;touch-action:none}
+#loadAni .loadAniBox{position:fixed;top:50%;left:50%;overflow:hidden;box-sizing:border-box;margin:-91px 0 0 -106px;padding:22px 0;width:212px;height:182px;border:1px solid #e67401;background:#fff url('https://mdirect.hi.co.kr/images/common/load_ani.gif') no-repeat center 56px;background-size:79px auto;touch-action:none}
+#loadAni .loadAniBox .img{padding:0 48px;line-height:1;text-align:center}
+#loadAni .loadAniBox .img img{width:100%;}
+#loadAni .loadAniBox .txt{margin-top:88px}
+#loadAni .loadAniBox .txt strong{display:block;height:14px;line-height:13px;font-weight:normal;font-size:13px;color:#e67401}
+#loadAni .loadAniBox .txt span{display:block;margin-top:4px;height:13px;line-height:12px;font-weight:normal;font-size:12px;color:#222}
+
+/* 로딩바 투명 배경 */
+.loadBgW{z-index:999999;position:fixed;top:0;left:0;overflow:hidden;width:100%;height:100%;background:rgba(255,255,255,0);opacity:1;pointer-events:auto}
+.loadImg{position:fixed;top:50%;left:50%;margin:-26px 0 0 -26px;padding:2px;width:48px;height:48px;;border-radius:52px;background-color:rgba(0,0,0,0.4);text-align:center;color:#000;cursor:wait}
+
+
+/* 레이어팝업 테이블 */
+.tbl01 {display:block;border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0;}
+.tbl01 tbody th, .tbl01 tbody td {padding:10px 0; text-align:left;}
+.tbl01 tbody th {color:#636363; vertical-align:top; font-weight:normal;}
+.tbl01 tbody > tr {border-top:1px dashed #e0e0e0;}
+.tbl01 tbody > tr:first-child {border-top:0;}
+
+/* 전화가입상품-개인정보동의 /2108 */
+.layerAgree .layerCont .agreeTi{margin:2rem 0 1rem;font-weight:600;font-size:12pt}
+.layerAgree .layerCont .agreeTx{margin:1.5rem 0 0.5rem;font-weight:normal;font-size:11pt}
+table.tbl01.tblAgree{border-top:0}
+table.tbl01.tblAgree tbody{border-top:1px solid #ddd}
+table.tbl01.tblAgree tbody tr th{padding:8px 4px 9px;border-top:1px solid #eee;background-color:#f6f6f6;font-size:11pt;text-align:left}
+table.tbl01.tblAgree tbody tr td{padding:8px 4px 9px;border-top:1px solid #eee;background-color:#ffffff;font-size:11pt}
+table.tbl01.tblAgree tbody > tr,
+table.tbl01.tblAgree tbody tr:first-child th,
+table.tbl01.tblAgree tbody tr:first-child td{border-top:0}
+table.tbl01.tblAgree .agreeBold{font-weight:600;font-size:12pt}
+
+.tbl02 {font-size:11px; color:#636363;}
+.tbl02 thead th {padding:5px; font-weight:bold; text-align:center; vertical-align:middle; background:#e0e0e0; word-break:keep-all;}
+.tbl02 tbody tr {border-bottom:1px solid #e0e0e0;}
+.tbl02 tbody td {padding:5px 2px; text-align:center;}
+
+/* 개선1809 */
+.tbl03{border-top:1px solid #555;font-size:12px;color:#636363;border-collapse:collapse}
+.tbl03 thead th{overflow:hidden;padding:9px 5px 10px;border:1px solid #d0d0d0;background:#e0e0e0;font-weight:bold;text-align:center;vertical-align:middle}
+.tbl03 tbody tr{overflow:hidden;border-bottom:1px solid #e0e0e0}
+.tbl03 tbody tr:last-child{border-bottom:1px solid #d0d0d0}
+.tbl03 tfoot tr{overflow:hidden;border-bottom:1px solid #d0d0d0}
+.tbl03 tbody th,
+.tbl03 tfoot th{background:#e0e0e0} /* 추가 /2105 */
+.tbl03 tbody td,
+.tbl03 tfoot td{padding:7px 2px 8px;text-align:center;border:1px solid #e0e0e0;word-break:break-all;background-color:#fff}
+.tbl03 thead th:first-child,
+.tbl03 tbody td:first-child,
+.tbl03 tfoot td:first-child{border-left:0 !important}
+.tbl03 thead th:last-child,
+.tbl03 tbody td:last-child,
+.tbl03 tfoot td:last-child{border-right:0 !important}
+.tbl03 tbody td.talAutoDelete{text-align:left}
+.tbl03 .tal{padding-left:5px;text-align:left}
+.tbl03 .tar{padding-right:5px;text-align:right}
+.tbl03 tbody td.pay, /* 추가 /2110*/
+.tbl03 tfoot td.pay{padding-right:0.5rem;text-align:right} /* 추가 /2110*/
+.tbl03 .checkBox{position:relative;margin:0 auto;padding:0;width:24px;height:24px;vertical-align:top}
+.tbl03 .checkBox:after{display:none}
+.tbl03 .checkBox label{position:absolute;top:0;left:0;float:none;margin:0}
+
+/* 표준동의서 개정 테이블 210526 /수정 2109 */
+.agrSection .tbl04{display:block;border-top:1px solid #bebebe;border-bottom:1px solid #bebebe;font-size:15px;color:#636363;border-collapse:collapse}
+.agrSection .tbl04 thead th, 
+.agrSection .tbl04 tbody th{overflow:hidden;padding:9px 5px 10px;border-bottom:1px solid #ccc;background:#e0e0e0;font-weight:bold;text-align:center;vertical-align:middle}
+.agrSection .tbl04 tbody td{padding:7px 2px 8px;border-bottom:1px solid #ccc;background-color:#fff;font-size:15px;text-align:center;word-break:break-all}
+.agrSection .tbl04 tbody tr:last-child th,
+.agrSection .tbl04 tbody tr:last-child td{border-bottom:0 !important}
+.agrSection .tbl04 tbody td.tal{text-align:left}
+
+
+/* 표준동의서 개정 테이블 추가210526 */
+.tbl04{border-top:1px solid #e0e0e0;font-size:15px;color:#636363;border-collapse:collapse}
+.tbl04 thead th, tbody th{overflow:hidden;padding:9px 5px 10px;border:1px solid #e0e0e0;background:#e0e0e0;font-weight:bold;text-align:center;vertical-align:middle}
+.tbl04 tbody th {border-bottom:1px solid #bebebe;}
+.tbl04 tbody tr{overflow:hidden;border-bottom:1px solid #e0e0e0}
+.tbl04 tbody td{padding:7px 2px 8px;text-align:center;border:1px solid #e0e0e0;word-break:break-all;background-color:#fff}
+.tbl04 tbody th:last-child {border-bottom:0 !important}
+.tbl04 tbody td.tal{text-align:left}
+.font18 {font-size:18px !important}
+
+/* 보험상품 /2104 /수정2207 */
+.tbl04{border-top:2px solid #555;border-bottom:1px solid #ddd;font-size:1.2rem;color:#333;border-collapse:collapse}
+.tbl04 thead tr th{border-top:1px solid #aaa}
+.tbl04 tbody tr th{border-left:0;font-size:1.2rem}
+.tbl04 thead th,
+.tbl04 tbody th,
+.tbl04 tfoot th{padding:9px 4px 10px;border-bottom:1px solid #ddd;background:#f5f5f5;font-weight:normal;font-size:1.3rem;text-align:center;vertical-align:middle}
+.tbl04 tbody tr:first-child th,
+.tbl04 tbody tr:first-child td{border-top:0}
+.tbl04 tbody td,
+.tbl04 tfoot td{padding:8px 4px 9px;border:1px solid #eee;word-break:break-all;background-color:#fff;font-size:1.2rem;text-align:center}
+.tbl04 thead th:first-child,
+.tbl04 tbody td:first-child,
+.tbl04 tfoot td:first-child{border-left:0 !important}
+.tbl04 thead th:last-child,
+.tbl04 tbody td:last-child,
+.tbl04 tfoot td:last-child{border-right:0 !important}
+.tbl04 tbody tr td.lineB,
+.tbl04 tbody tr:last-child td,
+.tbl04 tfoot tr:last-child th,
+.tbl04 tfoot tr:last-child td{border-bottom:1px solid #ddd}
+.tbl04.th-line thead th{border:1px solid #ddd}
+.tbl04.tb-in{border-top:1px solid #aaa;}
+.tbl04.tb-in th{padding:4px 2px 5px;font-size:1.2rem;}
+.tbl04.tb-in td{padding:3px 2px 4px;font-size:1.2rem;}
+.tbl04 .tal{text-align:left !important}
+.tbl04 .tar{text-align:right !important}
+.tbl04 .checkBox{position:relative;margin:0 auto;padding:0;width:24px;height:24px;vertical-align:top}
+.tbl04 .checkBox:after{display:none}
+.tbl04 .checkBox label{position:absolute;top:0;left:0;float:none;margin:0}
+
+/* 종합보험가입유도팝업200219 */
+.totalChoiceList{background:#fff;padding:1rem;border-top:1px dashed #e0e0e0;}
+.totalChoiceList:first-child {border-top:1px solid #e0e0e0;}
+.totalChoiceList > dt{color:#636363;padding-bottom:0.5rem}
+.totalChoiceList > dt > strong{display:inline-block;font-weight:normal}
+.totalChoiceList > dt > span{display:inline-block;color:#047db5; border:1px solid #047db5; border-radius:15px; padding:0 6px; line-height:26px; letter-spacing:-1px;font-size:1.2rem;}
+.totalChoiceList > dd{color:#949494; font-size:1.2rem; margin-top:0.3rem}
+.topTxt_totalChoice {background:#fff url('https://mdirect.hi.co.kr/images/content/img_title_bgTotal.png') no-repeat left 10px top 50%; background-size:30px auto;font-size:1.4rem; padding:15px 50px;}
+
+/* 버튼형 선택 */
+.itemPack + h2 {margin-top:3rem !important}
+.itemPack + .itemPack {margin-top:1.5rem;}
+.itemPack ul:after {content:""; display:block; clear:both;}
+.itemPack ul > li {display:block; float:left; overflow:hidden; padding-top:0.5rem; padding-left:0.5rem; box-sizing:border-box;}
+.itemPack ul > li > a {display:table; width:100%; padding:1.4rem 1rem; border:solid #e0e0e0; border-width:0.1rem; background-color:#fff; box-sizing:border-box;}
+/*.itemPack ul > li > a.down {background:#fff url('https://mdirect.hi.co.kr/images/common/bg_down.png') no-repeat 95% calc(100% - 1.5rem); background-size:auto 20px;}*/
+.itemPack ul.itemListN1 > li > a.down {background-position:95% calc(100% - 1.5rem); background-size:auto 20px;}
+.itemPack ul.itemListN2 > li > a.down {background-position:90% calc(100% - 1.5rem); background-size:auto 20px;}
+.itemPack ul.itemListN3 > li > a.down {background-position:85% calc(100% - 1.5rem); background-size:auto 20px;}
+
+/* 20171214 3줄 주황체크 추가  */
+.itemPack ul.itemListN33 > li > a.down {background-position:85% calc(100% - 1.5rem); background-size:auto 20px;}
+
+/* 한줄에 1개 */
+.itemListN1 > li {width:100%;}
+.itemPack ul.itemListN1 > li {padding-left:0;}
+.itemPack ul.itemListN1 > li:nth-child(1) {padding-top:0;}
+
+/* 한줄에 2개 */
+.itemListN2 > li {width:50%;}
+.itemPack ul.itemListN2 > li:nth-child(2n+1) {padding-left:0;}
+.itemPack ul.itemListN2 > li:nth-child(1), .itemPack ul.itemListN2 > li:nth-child(2) {padding-top:0;}
+
+/* 한줄에 3개  */
+.itemListN3 > li {width:33.3%;}
+.itemListN3 > li:nth-child(3n+1) {width:33.4%;}
+.itemPack ul.itemListN3 > li:nth-child(3n+1) {padding-left:0;}
+.itemPack ul.itemListN3 > li:nth-child(1), .itemPack ul.itemListN3 > li:nth-child(2), .itemPack ul.itemListN3 > li:nth-child(3) {padding-top:0;}
+.itemPack ul.itemListN3 > li a{padding:1.4rem .5rem;}
+/* 해상도 ~ 360 max /2206 */
+@media screen and (max-width : 360px) {
+    .itemPack ul.itemListN3 > li a{letter-spacing:-1px;font-size:12px;}
+}
+
+/* 20171214 한줄에 3개 주황체크  */
+.itemListN33 > li {width:33.3%;}
+.itemListN33 > li:nth-child(3n+1) {width:33.4%;}
+.itemPack ul.itemListN33 > li:nth-child(3n+1) {padding-left:0;}
+.itemPack ul.itemListN33 > li:nth-child(1), .itemPack ul.itemListN33 > li:nth-child(2), .itemPack ul.itemListN33 > li:nth-child(3) {padding-top:0;}
+
+/* 한줄에 4개 */
+.itemListN4 > li {width:25%;}
+.itemPack ul.itemListN4 > li:nth-child(4n+1) {padding-left:0;}
+.itemPack ul.itemListN4 > li:nth-child(1), .itemPack ul.itemListN4 > li:nth-child(2), .itemPack ul.itemListN4 > li:nth-child(3), .itemPack ul.itemListN4 > li:nth-child(4) {padding-top:0;}
+
+/* 한줄에 5개 */
+.itemListN5 > li {width:20%;}
+.itemPack ul.itemListN5 > li:nth-child(5n+1) {padding-left:0;}
+.itemPack ul.itemListN5 > li:nth-child(1), .itemPack ul.itemListN5 > li:nth-child(2), .itemPack ul.itemListN5 > li:nth-child(3), .itemPack ul.itemListN5 > li:nth-child(4), .itemPack ul.itemListN5 > li:nth-child(5) {padding-top:0;}
+.itemPack.pd ul > li > a {padding: 0.1rem 0px;} /* 추가210618 */
+
+/* 바로가기 아이콘 /1912 */
+.itemPack ul > li .cont {position:relative;display:table-cell; width:100%; text-align:center; color:#949494; vertical-align:middle; word-break:break-all;}
+.itemPack ul > li .cont em{position:absolute;top:0;right:0;display:block;padding:0 1px 1px 0;width:17px;height:17px;line-height:17px;border-radius:50%;background-color:#ffffff;text-align:center;font-size:8px}
+.itemPack ul > li .cont em.goOrg{border:1px solid #e67401;color:#e67401}
+.itemPack ul > li .cont em.goBlue{border:1px solid #047db5;color:#047db5}
+
+.itemPack .conbox {position:relative; width:100%;}
+.itemPack .conbox .cell {display:block;}
+.itemPack .conbox .cell em {display:block; font-size:1.2rem; color:#282828; margin-top:3px;}
+.itemPack .conbox .fixcell {display:block; color:#ee7700;}
+.itemPack .cont .name {display:block;}
+.itemPack .cont .name em {display:block; font-size:1.2rem; color:#282828; margin-top:3px;}
+.itemPack .cont .desc {display:block; color:#ee7700;}
+
+.itemPack .conbox .cell2 {display:block; width:100%;vertical-align:middle;}
+.itemPack .conbox .fixcell2{display:block; width:100%;}
+.itemPack .conbox .fixcell2 > select {display:inline-block;border:none; width:65px;margin:0 auto;padding:5px;text-align:center; font-family:inherit; color:#999; -webkit-appearance:none; appearance:none; background:#fff url('https://mdirect.hi.co.kr/images/common/bg_select.png') no-repeat; background-size:12px auto; background-position:calc(100% - 15px) 56%; border-radius:0;}
+
+/* 활성화 /1903 */
+.itemPack ul > li.on{position:relative}
+.itemPack ul > li > a.on, /* 202209 접근성 */
+.itemPack ul > li.on > a{border-color:#f6873d;background:#fff url('https://mdirect.hi.co.kr/images/common/bu_selected_on.png') no-repeat top 0.3rem right 0.3rem;background-size:1.2rem auto}
+.itemPack ul > li > a.on .cont, /* 202209 접근성 */
+.itemPack ul > li.on .cont{color:#282828}
+
+/* 20171214 활성화 추가 */
+.itemPack ul.itemListN33 > li.on {position:relative;}
+.itemPack ul.itemListN33 > li.on > a {border-color:#e0e0e0;color:#fff; background:#ee5a00 url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png') no-repeat 10px 7px; background-size:1.2rem auto;} /* 접근성 2차 /2210 */
+.itemPack ul.itemListN33 > li.on .cont {color:#fff;}
+/*.itemPack .conbox .down {display:table-row; width:20px; height:20px; background:url('https://mdirect.hi.co.kr/images/common/bg_down.png') no-repeat 90%; background-size:auto 17px;}*/
+.itemPack .conbox .view {display:table-row; width:20px; height:20px; background:url('https://mdirect.hi.co.kr/images/common/bg_view.png') no-repeat 90%; background-size:auto 17px;}
+
+.itemPack.answer  ul > li.on > a {border-color:#e38723;}
+
+/* 상품설명서 강조 - ani glow /2111 */
+.itemPack ul > li.glow{animation:glowing 1400ms infinite;transform:rotate(0deg);border:#e67401;}
+@keyframes glowing {
+    0%{box-shadow:0 0 3px #e67401}
+    50%{box-shadow:0 0 12px #e67401}
+    100%{box-shadow:0 0 3px #e67401}
+}
+
+/* 버튼의 내용컨텐츠(버튼을 선택하면 선택 컨텐츠를 노출하는 경우.) */
+.itemContWrap {margin-top:1.5rem;}
+.itemContWrap > div {display:none;}
+.itemContWrap > div.on {display:block;}
+.itemContWrap.pl > .tabOpen > strong.hide{overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;border:0;clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%);} /* 접근성 /2005 */
+
+/* 접근성 aria-hidden 사용 시 /2005 */
+.ariaContWrap{}
+.ariaContWrap .itemCont{position:relative;margin-top:0;}
+.ariaContWrap .itemCont > div{z-index:0;display:block;position:absolute;top:0;left:0;width:100%;opacity:0;pointer-events:none}
+.ariaContWrap .itemCont > div.on{z-index:1;padding-bottom:70px;opacity:1;pointer-events:auto}
+.ariaContWrap .itemCont > div .h2Btn:first-child{margin-top:0}
+.ariaContWrap .itemCont > div .h2Btn .btArea2{position:relative;height:30px}
+
+/* 내부Tab /2003 */
+.tabPack ul{display:flex;justify-content:space-between}
+.tabPack ul > li{overflow:hidden;box-sizing:border-box}
+.tabPack ul > li > a{display:block;padding:15px 0;height:100%;box-sizing:border-box;border:0.1rem solid #e0e0e0;background-color:#ffffff}
+.tabPack ul > li .cont{position:relative;width:100%;text-align:center;word-break:break-all;color:#949494}
+.tabPack ul > li.on{position:relative}
+.tabPack ul > li.on > a{border-color:#f6873d;background:#fff url('https://mdirect.hi.co.kr/images/common/bu_selected_on.png') no-repeat top 0.3rem right 0.3rem;background-size:1.2rem auto}
+.tabPack ul > li.on .cont{color:#282828}
+.tabPack ul > li:nth-child(n+2){margin-left:5px}
+.tabPack ul.tabList2 li{width:50%}
+.tabPack ul.tabList3 li:first-child{width:34%}
+.tabPack ul.tabList3 li{width:33%}
+
+/* 내부tab4개일때210412 */
+.tabList2_4 {flex-flow:row wrap; margin-bottom:10px;}
+.tabPack ul.tabList2_4 li{width:49%; margin:4px;}
+.tabPack ul.tabList2_4 > li:nth-child(1), .tabPack ul.tabList2_4 > li:nth-child(2), .tabPack ul.tabList2_4 > li:nth-child(3), .tabPack ul.tabList2_4 > li:nth-child(4) {margin-left:0;}
+.tabPack ul.tabList2_4 > li:nth-child(n+2){margin-left:0px; margin-right:0px;}
+
+/* flexBtnArea /2003 */
+.flexBtnArea{display:flex;flex-direction:row;margin-top:0.5rem}
+.flexBtnArea .flBt{margin-top:0;width:50%;border:0;background:none;text-align:center}
+.flexBtnArea .flBt:nth-child(n+2){margin-left:0.5rem}
+.flexBtnArea .flBt a{display:block;padding:10px 0 10px;box-sizing:border-box;border:0.1rem solid #e0e0e0;background-color:#ffffff;font-size:12px}
+.flexBtnArea .flBt a strong{display:block;font-weight:600;font-size:14px}
+.flexBtnArea .flBt a:active{border:1px solid #047db5;color:#047db5}
+
+/* stepRowArea /2003*/
+.stepRowArea{padding:13px 12px 14px;border:1px solid #e0e0e0;background-color:#ffffff;font-family:'NotoSans-light'}
+.stepRowArea li{display:flex}
+.stepRowArea li:nth-child(n+2){margin-top:20px;padding-top:15px;border-top:1px dashed #e0e0e0}
+.stepRowArea .stepNum{margin-right:10px;min-width:56px;height:19px;line-height:18px;border-radius:19px;background-color:#009ab1;text-align:center;font-weight:normal;font-size:12px;color:#ffffff;letter-spacing:-0.5px} /* 접근성 2차 /2210 */
+.stepRowArea .stepCt .txt{color:#282828}
+.stepRowArea .exImg{margin-top:9px;width:95%}
+.stepRowArea .exImg img{width:100%}
+
+/* 삼성카드 활성화 /2206 */
+.btn.samsungCard{margin-top:0;}
+.btn.samsungCard a.lineGard{display:inline-block;position:relative;width:100%;padding:12px 17px 12px;letter-spacing:-1px;border:2px solid #2d6cc7;background:#fff url('https://mdirect.hi.co.kr/images/content/icon_user_point.png') no-repeat right center;background-origin:content-box;background-size:35px 35px;}
+.btn.samsungCard a.lineGard .cardImgArea{display:block;padding-top:3px;width:86px;height:11px;float:none;}
+.btn.samsungCard a.lineGard .cardImgArea > img{width:86px;height:11px;vertical-align:top}
+.btn.samsungCard a.lineGard .txtCard{display:block;width:auto;margin:6px 0 0 0;text-align:left;line-height:1em;font-size:13px;color:#2f1515;}
+.btn.samsungCard a.lineGard .txtCard > em.point{color:#fc843b;}
+
+/* 산한카드 혜택안내 /2206 */
+.btn.shinhanCard{margin-top:0;}
+.btn.shinhanCard a.lineGard{display:inline-block;position:relative;width:100%;padding:12px 17px 12px;letter-spacing:-1px;border:2px solid #2d6dc7;background:#fff url('https://mdirect.hi.co.kr/images/content/icon_shinhan_point.png') no-repeat right center;background-origin:content-box;background-size:35px 35px;}
+.btn.shinhanCard a.lineGard .cardImgArea{display:block;width:84px;height:14px;float:none;}
+.btn.shinhanCard a.lineGard .cardImgArea > img{width:84px;height:14px;vertical-align:top}
+.btn.shinhanCard a.lineGard .txtCard{display:block;width:auto;margin:6px 0 0 0;text-align:left;line-height:1em;font-size:13px;color:#2f1515;}
+.btn.shinhanCard a.lineGard .txtCard > em.point{color:#fc843b;}
+
+/* 현대카드 혜택안내 추가 220712 */
+.btn.hyundaiCard{margin-top:0;}
+.btn.hyundaiCard a.lineGard{display:inline-block;position:relative;width:100%;padding:12px 17px 12px;letter-spacing:-1px;border:2px solid #2d6dc7;background:#fff url('https://mdirect.hi.co.kr/images/content/icon_hyundai_point.png') no-repeat right center;background-origin:content-box;background-size:35px 35px;}
+.btn.hyundaiCard a.lineGard .cardImgArea{display:block;width:84px;height:14px;float:none;}
+.btn.hyundaiCard a.lineGard .cardImgArea > img{width:84px;height:14px;vertical-align:top}
+.btn.hyundaiCard a.lineGard .txtCard{display:block;width:auto;margin:6px 0 0 0;text-align:left;line-height:1em;font-size:13px;color:#2f1515;}
+.btn.hyundaiCard a.lineGard .txtCard > em.point{color:#fc843b;}
+
+/* 이벤트 상품 증정 /200814 */
+.popContent.anotherCustom .layerCont{display:block;padding:1.7rem 2.0rem 1.5rem; max-height:300px; overflow-y:auto; box-sizing:border-box; color:#282828; background-color:#fff;border-bottom:1px solid #d6d6d6;}
+.popContent.anotherCustom .layerCont > h2{margin:0;font-size:1.7rem;height:1.7rem;line-height:1.7rem;}
+.popContent.anotherCustom .layerCont .evtProductNoti{width:60%;min-height:60px;padding-top:1.3rem;font-size:14px;}
+.popContent.anotherCustom .layerCont .evtProductNoti > span.fontOrg{color:#f18d00;}
+.popContent.anotherCustom .topTxt{padding:1.3rem 2.0rem 1.4rem;}
+.popContent.anotherCustom section.selectOption{padding:2.0rem;}
+.popContent.anotherCustom section.selectOption .radioBox span{padding:1rem 1.2rem;}
+.popContent.anotherCustom section.selectOption .radioBox span label{display:block; float:left; width:auto; height:22px; min-height:1.4rem; padding:2px 0 0 35px;background:url('https://mdirect.hi.co.kr/images/common/bg_check.png') no-repeat 0 0; background-size:24px auto; cursor:pointer;color:#282828;}
+.popContent.anotherCustom section.selectOption .radioBox span input{width:24px;height:24px;top:10px;left:12px;}
+.popContent.anotherCustom section.selectOption .radioBox span input:checked + label {background-position:0 -192px;}
+.popContent.anotherCustom section.selectOption .radioBox:after{content:""; display:block; clear:both;}
+.popContent.anotherCustom section.selectOption > .listDot li, .popContent.anotherCustom section.selectOption > .listDot li:before{color:#282828;}
+
+
+
+/******* CM 가정종합보험 202010 *******/
+.listBox2.anotherType, .listBox2.anotherType li{border:none;}
+.listBox2.anotherType li .listCt{background:#f6f6f6;border-top:none;}
+.listBox2.anotherType li .listCt > section{padding:5px 0 0 0;}
+.listBox2.anotherType li .listSub{border:1px solid #e0e0e0;}
+.listBox2.anotherType li .listSub.on{background:#fff}
+.listBox2.anotherType li .listSub.inputOn{border:1px solid #fe843b;background:#fe823a !important} 
+.listBox2.anotherType li .listSub.inputOn .item .tit2{color:#fff;}
+.listBox2.anotherType li .listSub.inputOn .item .detailSub{display:block;float:left;width:90%;color:#fff}
+
+/* arrow */
+.listBox2.anotherType li .listSub .btnOpen{position:absolute;top:42%;right:10px;width:12px;height:7px;background:url('https://mdirect.hi.co.kr/images/common/icon_arrdown_gray.png') no-repeat center center;background-size:100%;}
+.listBox2.anotherType li .listSub .btnOpen span{overflow:hidden;color:transparent;width:auto;height:7px;display:block}
+.listBox2.anotherType li .listSub.on .btnOpen{background-image:url('https://mdirect.hi.co.kr/images/common/icon_arrup_gray.png');}
+.listBox2.anotherType li .listSub.inputOn .btnOpen{background-image:url('https://mdirect.hi.co.kr/images/common/icon_arrdown_white.png');}
+.listBox2.anotherType li .listSub.inputOn.on .btnOpen{background-image:url('https://mdirect.hi.co.kr/images/common/icon_arrup_white.png');}
+
+/* 거주 형태 */
+.wrapTab.simpleType.other a{border:2px solid #e0e0e0;color:#646464;}
+.wrapTab.simpleType.other a.on{border:2px solid #676767;color:#333;}
+.wrapTab.simpleType.other a.house, .wrapTab.simpleType.other a.house.on{background-color:#fff;min-height:90px;background-image:none}
+.wrapTab.simpleType.other a span, .wrapTab.simpleType.other a.on span{padding-top:23px;}
+.wrapTab.simpleType.other a.house03 span , .wrapTab.simpleType.other a.house03.on span{padding-top:13px;}
+
+/* 주택 유형 및 구조 */
+.wrapTab.longHeight a{height:185px;}
+.wrapTab.longHeight a span, .wrapTab.longHeight a em{font-weight:normal;}
+
+.anotherImgList > h3{margin:1.9rem 0 1rem 0;font-size:1.5rem;font-weight:bold;letter-spacing:-0.5px;}
+.anotherImgList > .imgList01{display:unset;}
+.anotherImgList > .imgList01 li:nth-child(3n+1){margin-left:0;}
+.anotherImgList > .imgList01 li{margin-left:2.5%;padding-left:0;float:left;}
+.anotherImgList > .imgList01:after{content:"";display:block;clear:both;}
+
+/* 예상가액버튼  */
+.btnBluebdr{display:inline-block;width:100%;padding:13px 0;color:#047db5;text-align:center;border:1px solid #047db5;background-color:#fff;}
+.btnBluebdr:hover, .btnBluebdr:active, .btnBluebdr:focus{color:#047db5;}
+
+/* 예상가액확인 */
+.fixHiScroll{max-height:220px;overflow-x:scroll;}
+
+/* 플랜선택 옵션 select박스 */
+.planSelectPut{height:37px;margin-top:-5px;padding-left:0.8rem;background-position:calc(100% - 5px) 52%;}
+
+/* 주택면적 변환 */
+.inputWrap.changeStyle li .inputWrap{float:left;width:100%;}/* 20210705 */
+.inputWrap.changeStyle li .inputWrap label{left:unset;right:15px;}
+.inputWrap.changeStyle li .inputWrap input{padding:15px 37px 10px 15px;text-align:right;}
+.inputWrap.changeStyle input:focus ~ label, .inputWrap.changeStyle input:valid ~ label , .inputWrap.changeStyle select:focus ~ label, .inputWrap.changeStyle select:valid ~ label  {font-size:11px; color:#999; top:20px; }
+.inputWrap.changeStyle li .changArrow{margin:0 10px;float:left;line-height:52px;}
+
+
+/***** 간편문자가입서비스 201214 *****/
+.popContent.anotherCustom .layerCont .logo_in{width:186px;margin:0 auto;padding:15px 0 20px 51px;}
+.popContent.anotherCustom .layerCont .logo_in img{display:inline-block;width:100%;}
+
+.popContent.anotherCustom .layerCont > .seller_info{font-size:15px;padding-bottom:15px;text-align:center;letter-spacing:-1px;}
+.popContent.anotherCustom .layerCont > .seller_txt{color:#636363;font-size:13px;}
+
+  /* 모집자정보 */
+.popContent.anotherCustom .wrap_con .seller_box{padding:15px; border:1px solid #e0e0e0;background-color:#fff;}
+.popContent.anotherCustom .wrap_con .seller_box ul li{margin-bottom:11px;}
+.popContent.anotherCustom .wrap_con .seller_box ul li:last-child{margin-bottom:0;}
+.popContent.anotherCustom .wrap_con .seller_box dl:after{display:block;content:"";clear:both;}
+.popContent.anotherCustom .wrap_con .seller_box dl dt{width:80px;color:#636363;float:left;}
+.popContent.anotherCustom .wrap_con .seller_box dl dd{color:#333;float:left;}
+
+  /* 50% 버튼 */
+.popContent.anotherCustom .wrap_con .half_tab:after{display:block;content:"";clear:both;}
+.popContent.anotherCustom .wrap_con .half_tab li{width:49%;margin-right:2%;border:1px solid #ccc;background-color:#fff;text-align:center;float:left;box-sizing:border-box;}
+.popContent.anotherCustom .wrap_con .half_tab li:last-child{float:right;margin-right:0;}
+.popContent.anotherCustom .wrap_con .half_tab li a{display:block;padding:10px 0;color:#282828}
+.popContent.anotherCustom .wrap_con .half_tab li.on{border:1px solid #ee5a00;background-color:#ee5a00;} /* 접근성 2차 /2210 */
+.popContent.anotherCustom .wrap_con .half_tab li.on a{color:#fff}
+
+  /* 준법감시확인필 */
+.insu_check{margin-top:10px;font-size:11px;color:#636363;text-align:right;}
+
+
+/* Tmap 퍼스널모빌리티 210514 */
+.checkBox.tmap label{display:block;float:left;margin-right:5px;width:24px;height:24px;min-height:2.4rem;background:url('https://mdirect.hi.co.kr/images/common/tmap/bg_check.png') no-repeat 0 0;background-size:24px auto;cursor:pointer;}
+
+.agreeCtr .allAgr.square.tmap{display:block;overflow:hidden;height:48px;line-height:45px;padding-left:45px;background:url('https://mdirect.hi.co.kr/images/common/tmap/bg_check3.png') no-repeat 10px 12px;background-size:25px auto;font-size:1.5rem;color:#282828;cursor:pointer}
+.agreeCtr.on .allAgr.square{background-position:10px -120px}
+
+.agreeCtr.tmap .allAgr {display:block; overflow:hidden; height:48px; line-height:45px; padding-left:45px; background:url('https://mdirect.hi.co.kr/images/common/tmap/bg_check2.png') no-repeat 10px 12px; background-size:25px auto; font-size:1.5rem; color:#282828; cursor:pointer;}
+.agreeCtr.tmap.on .allAgr{background-position:10px -120px;} 
+
+.agreeCtr.tmap + .termCont.tmap label, .termCont.tmap.type2 label{display:inline-block; width:25px; height:27px; background:url('https://mdirect.hi.co.kr/images/common/tmap/bg_check2.png') no-repeat; background-size:25px auto; cursor:pointer;}
+.agreeCtr.tmap + .termCont.tmap input:checked + label, .termCont.tmap.type2 input:checked + label{background-position:0 -131px} 
+
+.agreeCtr .radioBtn.tmap span label{display:table-cell;color:#636363;cursor:pointer;padding-left:3rem;height:24px;vertical-align:middle;background:url('https://mdirect.hi.co.kr/images/common/tmap/bg_radio2.png') no-repeat 0 -150px;background-size:24px auto}
+.radioBtn.tmap span input:checked + label {background-position: 0 0rem; color:#282828;}
+
+a.bgGreyTmap {line-height:27px;display:inline-block;padding:0 12px;color:#fff !important;border:1px solid #a39d98;border-radius:15px;letter-spacing:-0.8px;background-color:#a39d98;} 
+a.bgGreyTmap {border-color:#a39d98 !important;background-color:#a39d98;} 
+a.bgGreyTmap.check {padding:0 12px 0 30px;color:#636363;border:1px solid #666;background-image:url('https://mdirect.hi.co.kr/images/common/btn_bg_next.png');background-repeat:no-repeat;background-position:0.9rem 50%;background-size:1.3rem auto}
+a.bgGreyTmap.check.done {border-color:#3673ee !important;background-color:#3673ee;}
+.h2Btn a.bgGreyTmap.check {position:absolute;right:0;top:-0.4rem}
+
+
+/* 해상도 320 */
+@media screen and (min-width :320px) and (max-width : 400px) {
+.orgboxBtn.three a {height:75px;}
+.checkBox a.link {width:80%;}
+.layerWrap .layerCont {max-height:300px;}
+.layerWrap.sizeM .layerCont{max-height:260px} /* sizeM /1812 */
+.layerWrap.sizeL .layerCont{max-height:300px}	/* sizeL /1810 */
+.layerWrap.sizeL .layerCont{max-height:340px}	/* sizeL /2106 */
+#easyCarPop .layerWrap.sizeL .layerCont{max-height:410px}	/* sizeL 간편설계 /1909 */
+.notiAbs,
+.notiElec,
+.notiRec{font-size:12px}
+}
+/* 해상도 ~ 340 max /202010 */
+@media screen and (max-width : 340px) {
+.notiAbs,
+.notiElec,
+.notiRec{letter-spacing:-1.5px}
+.notiFixed{letter-spacing:-1px}
+}
+
+
+
+/* 해상도 768 */
+@media screen and (min-width :751px) and (max-width : 890px) {
+
+}
+
+/* 해상도 768, 1024 공통 */
+@media screen and (min-width :751px) and (max-width : 1200px) { 
+
+}

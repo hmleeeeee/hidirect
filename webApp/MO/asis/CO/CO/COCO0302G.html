@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 보험기간 선택</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>보험기간 선택</h1>
+		</header>
+		<div class="popContent">
+			<section class="bg">
+				<div class="dateSelectTabWrap">
+					<ul>
+						<li><a href="#none"><strong>시작일시</strong><!-- <em>날짜/시간 선택</em> --><em>2017.02.14 13시</em></a></li>
+						<li><a href="#none" class="on"><strong>종료일시</strong><em>날짜/시간 선택</em></a></li>
+					</ul>
+				</div>
+				<div class="dateInfo">
+					<!-- 2017-06-23 웹접근성 input title 제공 -->
+					<input type="month" value="2017-03" title="날자 선택"><!--
+					<div class="dateSelectBox"></div> -->
+					<!-- <div class="todayYmd"><span>오늘</span>2017.02.14</div> -->
+				</div>
+				<div id="calendarWrap" class="startdata">
+					<ul class="calendar">
+						<li class="header">
+							<span>일</span>
+							<span>월</span>
+							<span>화</span>
+							<span>수</span>
+							<span>목</span>
+							<span>금</span>
+							<span>토</span>
+						</li>
+						<li>
+							<a href="#none" class="disable"><span>25</span></span></a>
+							<a href="#none" class="disable"><span>26</span></span></a>
+							<a href="#none" class="disable"><span>27</span></a>
+							<a href="#none" class="disable"><span>28</span></a>
+							<a href="#none" class="disable"><span>29</span></a>
+							<a href="#none" class="disable"><span>30</span></a>
+							<a href="#none"><span>1</span></a>
+						</li>
+						<li>
+							<a href="#none"><span>2</span></a>
+							<a href="#none"><span>3</span></a>
+							<a href="#none"><span>4</span></a>
+							<a href="#none"><span>5</span></a>
+							<a href="#none"><span>6</span></a>
+							<a href="#none"><span>7</span></a>
+							<a href="#none" class="today"><span>8</span></a>
+						</li>
+						<li>
+							<a href="#none"><span>9</span></a>
+							<a href="#none"><span>10</span></a>
+							<a href="#none"><span>11</span></a>
+							<a href="#none"><span>12</span></a>
+							<a href="#none"><span>13</span></a>
+							<a href="#none"><span class="on">14</span></a>
+							<a href="#none"><span>15</span></a>
+						</li>
+						<li>
+							<a href="#none"><span>16</span></a>
+							<a href="#none"><span>17</span></a>
+							<a href="#none"><span>18</span></a>
+							<a href="#none"><span>19</span></a>
+							<a href="#none"><span>20</span></a>
+							<a href="#none"><span>21</span></a>
+							<a href="#none"><span>22</span></a>
+						</li>
+						<li>
+							<a href="#none"><span>23</span></a>
+							<a href="#none"><span>24</span></a>
+							<a href="#none"><span>25</span></a>
+							<a href="#none"><span>26</span></a>
+							<a href="#none"><span>27</span></a>
+							<a href="#none"><span>28</span></a>
+							<a href="#none"><span>29</span></a>
+						</li>
+						<li>
+							<a href="#none"><span>30</span></a>
+							<a href="#none"><span>31</span></a>
+							<a href="#none" class="disable"><span>1</span></a>
+							<a href="#none" class="disable"><span>2</span></a>
+							<a href="#none" class="disable"><span>3</span></a>
+							<a href="#none" class="disable"><span>4</span></a>
+							<a href="#none" class="disable"><span>5</span></a>
+						</li>
+					</ul>
+				</div>
+				<div class="dateTime">
+					<select title="시작시간 선택">
+						<option>시작시간 선택</option>
+						<option value="1">1시</option>
+						<option value="2">2tl</option>
+					</select>
+				</div>
+
+				<ul class="listDot">
+					<li>보험개시일은 오늘부터 30일 이전까지만 선택가능합니다.</li>
+					<li>보험개시일 익일부터 적용되므로 하루 전에 미리 가입하셔야 하며, 보상효력은 개시일의 24시(다음날 0시)부터 종료일의 24시까지입니다.<br>
+					(단, 새로 구입하신 차량은 보상효력이 발생합니다.)</li>
+				</ul>
+				<div class="btnWrap">
+					<a href="#none" class="on" role="button">확인</span></a>
+				</div>
+			</section>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

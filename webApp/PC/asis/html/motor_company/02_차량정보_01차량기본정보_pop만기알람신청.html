@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>02_차량정보_01차량기본정보_pop만기알람신청</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+</head>
+
+
+<body>
+<!-- 02_차량정보_01차량기본정보_pop만기알람신청 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap Infomation noScroll w600">
+    <div class="titleArea">
+        <h2>만기 알람 신청</h2>
+    </div>
+    <div class="popupContentArea">
+        <div class="con fontBase fz15 mb15">
+            자동차보험의 만기가 <span class="fontPoint1">OOOO년 OO월 OO일</span> 이후인 경우 인터넷 보험료 계산이 어렵습니다.<br>
+            지금 만기 알람 신청을 해주시면 만기일 전 자동차 보험료 안내를 받으실 수 있습니다.
+        </div>
+        <!--inputTable : s-->
+        <div class="inputTable onlyInput bline mb30">
+            <ul class="inputArea">
+                <li class="item">
+                    <div class="radio">
+                        <input type="radio" name="kind" id="kind1" class="yes">
+                        <label for="kind1">기존유지차량</label>
+                    </div>
+                    <div class="radio ml20">
+                        <input type="radio" name="kind" id="kind2" class="no">
+                        <label for="kind2">신규(중고차) 구입차량</label>
+                    </div>
+                </li>
+            </ul>
+			<ul class="inputArea">
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="comname">법인명</label>
+                        <input type="text" id="comname">
+                    </div>
+                </li>
+            </ul>
+			<ul class="inputArea inlineBlock">
+                <li class="item">
+					<div class="inputBase placeholder" style="width:166px;">
+						<input type="text" placeholder="사업자번호" title="사업자번호1">
+					</div>
+					<span class="gapTxt">-</span>
+					<div class="inputBase placeholder" style="width:167px;">
+						<input type="text" title="사업자번호2">
+					</div>
+					<span class="gapTxt">-</span>
+					<div class="inputBase placeholder" style="width:167px;">
+						<input type="text" title="사업자번호3">
+					</div>
+                </li>
+            </ul>
+            <ul class="inputArea">
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="ph">휴대폰번호 (‘-’없이)</label>
+                        <input type="text" id="ph">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--inputTable : e-->
+
+        <div class="btnAreaWrap tac mt15">
+            <a href="#" class="btn line inlineBlock gray"><span>취소</span></a>
+            <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 02_차량정보_01차량기본정보_pop만기알람신청 : e-->
+</body>
+</html>

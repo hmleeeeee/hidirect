@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 우편번호 검색</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>우편번호 검색</h1>
+		</header>
+		<div class="popContent">
+			<div class="tabMenuBox">
+				<div class="tabMenu three">
+					<a href="#none" role="button" class="on"><span>지번</span><span class="hide">선택됨</span></a>
+					<a href="#none" role="button"><span>도로명</span></a>
+					<a href="#none" role="button"><span>건물명</span></a>
+				</div>
+			</div>
+			<section>
+				<!-- 지번검색 -->
+				<!-- 2017-06-19 접근성을 위하여 tabOpen on 추가후  style="display:block" 제거 -->
+				<div class="tabOpen on">
+					<div class="searchBox">
+						<input type="text" id="txt_sch" class="txt_inp search"  placeholder="동원빌딩">
+						<label for="txt_sch" class="hide">동원빌딩</label>
+						<a href="#" class="schBtn" role="button"><span class="icoSch">주소 검색</span></a>
+					</div>
+					<p class="txtTip"><span class="tagOrg">TIP</span> 동/읍/면/리 &plus; <span class="bColor">번지</span>(예 : 당주동128-27)</p>
+
+					<h2>검색 결과 선택(총 <span>200</span>건)</h2>
+					<ul class="addrList">
+						<li>
+							<a href="#none">
+								<span class="titl1">지번</span>
+								<div class="addr">
+									<span class="post">26153</span>
+									<span class="detail">강원도 정선군 사북읍 사북리 369-18 대동원빌딩</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<span class="titl1">지번</span>
+								<div class="addr">
+									<span class="post">26153</span>
+									<span class="detail">강원도 정선군 사북읍 사북리 369-19 대동원빌딩</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<span class="titl1">지번</span>
+								<div class="addr">
+									<span class="post">26153</span>
+									<span class="detail">강원도 정선군 사북읍 사북리 369-18 대동원빌딩</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<span class="titl1">지번</span>
+								<div class="addr">
+									<span class="post">26153</span>
+									<span class="detail">강원도 정선군 사북읍 사북리 369-19 대동원빌딩</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="btnMore">
+						<a href="#" role="button"><span>더보기(10/19)</span></a>
+					</div>
+				</div>
+				<!--// 지번검색 -->
+
+				<!-- 도로명검색 -->
+				<div class="tabOpen">
+					<div class="searchBox">
+						<input type="text" id="txt_sch" class="txt_inp search"  placeholder="동원빌딩">
+						<label for="txt_sch" class="hide">동원빌딩</label>
+						<a href="#" class="schBtn" role="button"><span class="icoSch">주소 검색</span></a>
+					</div>
+					<p class="txtTip"><span class="tagOrg">TIP</span> 도로명 &plus; <span class="bColor">건물번호</span>(예 : 세종로178)</p>
+
+					<h2>1단계 (시,도/시군구)선택</h2>
+					<ul class="addrList">
+						<li><a href="#none" role="button">서울 종로구</a></li>
+						<li><a href="#none" role="button">서울 중구</a></li>
+						<li><a href="#none" role="button">세종시</a></li>
+						<li><a href="#none" role="button">경남 창원시 합포구</a></li>
+					</ul>
+					<div class="btnMore">
+						<a href="#" role="button"><span>더보기(10/19)</span></a>
+					</div>
+				</div>
+				<!--// 도로명검색 -->
+
+				<!-- 건물명검색 -->
+				<div class="tabOpen">
+					<div class="searchBox">
+						<input type="text" id="txt_sch" class="txt_inp search"  placeholder="동원빌딩">
+						<label for="txt_sch" class="hide">동원빌딩</label>
+						<a href="#" class="schBtn" role="button"><span class="icoSch">주소 검색</span></a>
+					</div>
+					<p class="txtTip"><span class="tagOrg">TIP</span> 건물명,아파트명 (예 : 현대해상빌딩)</p>
+
+					<h2>검색 결과 선택(총 <span>200</span>건)</h2>
+					<ul class="addrList">
+						<li>
+							<a href="#none">
+								<span class="titl1">지번</span>
+								<div class="addr">
+									<span class="post">26153</span>
+									<span class="detail">강원도 정선군 사북읍 사북리 369-18 대동원빌딩</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<span class="titl2">도로명</span>
+								<div class="addr">
+									<span class="post">12547</span>
+									<span class="detail">충북 보은군 삼승면 원남로3길 동원빌딩</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<span class="titl1">지번</span>
+								<div class="addr">
+									<span class="post">26153</span>
+									<span class="detail">강원도 정선군 사북읍 사북리 369-19 대동원빌딩</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="btnMore">
+						<a href="#" role="button"><span>더보기(10/19)</span></a>
+					</div>
+				</div>
+				<!--// 건물명검색 -->
+
+				<!-- 결과없음
+				<h2>검색결과 선택</h2>
+				<div class="noResult">
+					<p>
+						<span>&apos;용큐&apos;</span> 검색 결과가 없습니다.
+					</p>
+				</div>
+				 //결과없음 -->
+			</section>
+
+
+			<!-- 검색결과후 선택 -->
+			<p class="topTxt">상세주소 입력 후 확인 버튼을 선택 해 주세요.</p><!-- 0626 문구수정 JJY-->
+			<section>
+				<h2>기본 주소</h2>
+				<div class="inputWrap">
+					<input type="text" id="addB1" disabled="disabled" value="서울시 종로구 세종로 ">
+					<label for="addB1" class="hide">기본 주소</label>
+				</div>
+
+				<h2>상세 주소</h2>
+				<div class="inputWrap">
+					<input type="text" id="addB2" required />
+					<label for="addB2" class="">상세 주소</label>
+				</div>
+
+				<div class="btn">
+					<a href="#" role="button" class="on">주소확인</a>
+				</div>
+
+				<h2>정제된 주소</h2>
+				<ul class="addrList">
+					<li class="disableBg">
+						<a href="#none">
+							<span class="titl1">도로명</span>
+							<div class="addr">
+								<span class="post">26153</span>
+								<span class="detail">서울 종로구 세종대로 163 (세종로, 현대해상빌딩)</span>
+							</div>
+						</a>
+					</li>
+					<li class="disableBg">
+						<a href="#none">
+							<span class="titl2">지번</span>
+							<div class="addr">
+								<span class="post">03183</span>
+								<span class="detail">서울시 종로구 세종로 191 - 1번지 (현대해상빌딩)</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="listDot">
+					<li>도로명주소 전면시행에 따라 도로명주소만 사용가능합니다.</li>
+				</ul>
+			</section>
+			<!-- //정제된 주소 -->
+			<div class="btnWrap">
+				<span><a href="#">이전</a></span>
+				<span><a href="#">등록</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose">창닫기</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 긴급출동특약 담보</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>긴급출동특약 담보</h1>
+		</header>
+		<div class="popContent">
+			<!-- EDIT text del
+			<p class="topTxt">가입조건을 선택해 주세요.</p> -->
+			<section>
+				<div class="radioBox">
+					<span class="off">
+						<input type="radio" id="list01" name="radioBox1"><label for="list01">미가입</label>
+						<strong>0원</strong>
+					</span>
+					<span class="on">
+						<input type="radio" id="list02" name="radioBox1" checked="checked"><label for="list02">하이카서비스</label>
+						<strong>172,190원</strong>
+					</span>
+				</div>
+				<div class="toggleWrap">
+					<div class="tabBox open">
+						<div class="toggleTitle"><a href="#none" class="toggleBtn">담보 상세정보 보기</a></div>
+						<div class="toggleDetail">
+							<h3>[하이카서비스]</h3>
+							<dl>
+								<dt>제공서비스</dt>
+								<dd>긴급구난, 긴급견인, 비상급유, 배터리충전, 잠금장치 해제, 타이어 펑크수리/교체, 휴즈 교환</dd>
+							</dl>
+							<dl class="mgT10">
+								<dt>서비스 제공 횟수</dt>
+								<dd>
+									<ul class="listBasic">
+										<li>1년 계약 : 5회 </li>
+										<li>1년 미만~3개월 초과 계약 : 3회</li>
+										<li>3개월 이하 계약 : 1회</li>
+									</ul>
+									<ul class="listEtc">
+										<li>동일증권(동시/추가)계약이 1년 미안일 경우 5회 제공합니다.</li><!-- 0726 문구추가 -->
+										<li>비상급유/긴급견인 서비스는 각1일 1회 한하여 제공</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="mgT10">
+								<dt>가입대상</dt>
+								<dd>승용차, 경·3종승합, 경·4종화물, 3종A화물</dd>
+							</dl>
+							<h3>[하이카서비스(중형 화물·승합)]</h3>
+							<dl>
+								<dt>제공서비스</dt>
+								<dd>비상급유, 배터리충전, 잠금장치해제</dd>
+							</dl>
+							<dl class="mgT10">
+								<dt>서비스 제공 횟수</dt>
+								<dd>
+									<ul class="listBasic">
+										<li>1년 계약 : 2회 </li>
+										<li>1년 미만 계약 : 1회</li>
+									</ul>
+									<ul class="listEtc">
+										<li>비상급유/긴급견인 서비스는 각1일 1회 한하여 제공</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="mgT10">
+								<dt>가입대상</dt>
+								<dd>2·3종B화물, 2종 습합, 4종화물, 3종(A)화물, 경화물중 기중기장치요율 or 특수 적재 장치요율 적용 차량</dd>
+							</dl>
+							<h3>[하이카서비스(전기자동차)]</h3>
+							<dl>
+								<dt>제공서비스</dt>
+								<dd>긴급견인, 잠금장치해제, 긴급구난, 휴즈교환, 배터리긴급충전지원(충전소로 견인)</dd>
+							</dl>
+							<dl class="mgT10">
+								<dt>서비스 제공 횟수</dt>
+								<dd>
+									<ul class="listBasic">
+										<li>1년 계약 : 5회 </li>
+										<li>1년 미만~3개월 초과 계약 : 3회</li>
+										<li>3개월 이하 계약 : 1회</li>
+									</ul>
+									<ul class="listEtc">
+										<li>비상급유/긴급견인 서비스는 각1일 1회 한하여 제공</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="mgT10">
+								<dt>가입대상</dt>
+								<dd>순수 전기차(하이브리드자동차, 연료전지자동차 제외)</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!-- EDIT del
+				<div class="botFixed">
+					<div class="dataDetail">
+						<ul>
+							<li>
+								<strong class="stit">긴급출동특약 담보</strong><span class="cost">1,000,172,190원</span>
+								<span class="info">하이카서비스</span>
+							</li>
+						</ul>
+					</div>
+					<p class="total">
+						<strong class="titl">최종보험료</strong>
+						<span class="price">￦ 450,000원</span>
+					</p>
+				</div>	-->
+			</section>
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<span><a href="#none" role="button">취소</a></span>
+				<span><a href="#none" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

@@ -10,11 +10,10 @@
 <script>
 	$(function() {
 		UI.init();
-		UI.accordion($('.accordion.notice'));
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="false" data-category="certification" data-category-sub="joint">
+<body data-channel="mobile" data-login="false" data-category="certification">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -37,7 +36,8 @@
 							<h2 class="governing_title">공동인증서 등록/변경을 위해<br>정보를 입력해 주세요.</h2>
 						</div>
             <div class="comp">
-              <div class="form_area">
+							<!-- [04/03] gap_lg 추가 -->
+							<div class="form_area gap_lg">
                 <div class="form_item col2">
                   <div class="form_label"><label for="inp01">주민등록번호/외국인등록번호</label></div>
                   <div class="form_wrap">

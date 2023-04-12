@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>차량 추가정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>차량 추가정보 입력</h1>
+		</header>
+		<div class="popContent">
+			<!-- EDIT text del-->
+			<!-- <p class="topTxt">화물차의 추가정보를 입력해주세요.</p>-->
+			<section>
+				<h2>차종 코드</h2>
+				<div class="inputWrap">
+					<select title="차종 코드 선택">
+						<option>선택</option>
+						<option value="1">승용차</option>
+						<option value="2">승합차</option>
+					</select>
+				</div>
+				<div class="listDot"><p>차종 선택 관련 문의는 고객센터(<a href="tel:18996782">1899-6782</a>)를 이용해주세요.</p></div>
+
+				<h2>차량 용도 (중복선택가능)</h2>
+				<ul class="listBox">
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car01" id="car01" disabled="disabled"><label for="car01"><span class="hide">해당되지 않음 (기타 구조 및 운행용도)</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">해당되지 않음 (기타 구조 및 운행용도)</p>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car02" id="car02"><label for="car02"><span class="hide">화물운송 목적의 탑차/활어차</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">화물운송 목적의 탑차/활어차<em>특수적재장치자동차요율 적용</em></p>
+						</div>
+						<a href="#layerPopCar01" class="btnHelp"><span>도움말</span></a><!-- EDIT 레이어팝업 -->
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car03" id="car03"><label for="car03"><span class="hide">기중기, 붐, 집게 등이 장착된 차량</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">기중기, 붐, 집게 등이 장착된 차량<em>기중기장치자동차요율 적용</em></p>
+						</div>
+						<a href="#layerPopCar02" class="btnHelp"><span>도움말</span></a><!-- EDIT 레이어팝업 -->
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car04" id="car04"><label for="car04"><span class="hide">청소차</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">청소차<em>특수/특정용도추가위험요율 적용</em></p>
+						</div>
+						<a href="#layerPopCar03" class="btnHelp"><span>도움말</span></a><!-- EDIT 레이어팝업 -->
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car05" id="car05"><label for="car05"><span class="hide">경찰청, 소방본부, 소유차량(엠블란스 제외)</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">경찰청, 소방본부, 소유차량(엠블란스 제외)<em>특수/특정용도추가위험요율 적용</em></p>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car06" id="car06"><label for="car06"><span class="hide">위험물 적재가 가능한 차량</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">위험물 적재가 가능한 차량<em>위험요율 적용</em></p>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car07" id="car07"><label for="car07"><span class="hide">캠핑트레일러, 보트 등에 견인되는 차량</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">캠핑트레일러, 보트 등에 견인되는 차량<em>레저장비견인중위험담보요율 적용</em></p>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car08" id="car08"><label for="car08"><span class="hide">운전면허교습, 기능/주행시험에 사용되는 차량</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">운전면허교습, 기능/주행시험에 사용되는 차량<em>별도요율 적용</em></p>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="car09" id="car09"><label for="car09"><span class="hide">운전면허교습, 기능/주행시험에 사용되는 차량</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">자동차판매를 위한 고객 시승용 차량<em>시승용자동차요율 적용</em></p>
+						</div>
+					</li>
+				</ul>
+
+				<h2>가입 전 알릴 사항에 대한 동의</h2>
+				<div class="agreeBox">
+					<strong>계약 전 알려야 할 사항(운행용도) 선택은 보험료 산출과 연계된 고지사항으로써, 반드시 확인 후 정확하게 선택하여 주시기 바랍니다. 차후 잘못된 선택으로 인한 사고 발생 시 보상면책 등의 문제가 발생할 수 있습니다.</strong>
+					<!-- 2017-06-23 웹접근성 개선으로 label 내용 수정 -->
+					<p><input type="checkbox" id="ck1000" checked="checked"><label for="ck1000"><span class="hide">가입 전 알릴 사항에 대한 동의</span></label><span>위 내용에 동의합니다.</span></p>
+					<!-- //2017-06-23 웹접근성 label Text 수정 -->
+				</div>
+			</section>
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<span><a href="#" role="button">취소</a></span>
+				<span><a href="#" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+
+	<!-- EDIT 레이어팝업 -->
+	<!-- 레이어팝업 : 안내(화물운송 목적의 탑차/활어차) -->
+	<div class="layerPopup" id="layerPopCar01">
+		<div class="layerWrap">
+			<h2>안내</h2>
+			<div class="layerCont">
+				<div class="freightCar1">
+					<p class="guiText">
+						<strong>화물운송 목적의 탐차/활어차 안내</strong>
+						<span>화물운송을 목적으로 고정된 박스형태의 적재공간이 설치된 자동차(탑차) 및 어패류 등 해산물 운송장치가 장착된 자동차(활어차)</span>
+					</p>
+
+					<h3>해당되는 차량</h3>
+					<div class="itemPack">
+						<ul class="itemListN3">
+							<li class="m1">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>윙바디(탑차)</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m2">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>냉동탑차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m3">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>내장탑차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m4">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>특수탑차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m5">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>활어차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<h3>해당되지 않는 차량</h3>
+					<p class="descText">해당 되지 않을 경우 차량 용도를 <span>“해당되지 않음”</span>을 선택해주세요.</p>
+					<div class="itemPack">
+						<ul class="itemListN3">
+							<li class="nm1">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>호로천막<br />덮개차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm2">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>코란도 무쏘 등<br />스포츠 탑</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm3">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>닭장차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<a href="#close">확인</a>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+
+	<!-- 레이어팝업 : 안내(기중기, 붐, 집게 등이 장착된 차량) -->
+	<div class="layerPopup" id="layerPopCar02">
+		<div class="layerWrap">
+			<h2>안내</h2>
+			<div class="layerCont">
+				<div class="freightCar2">
+					<p class="guiText">
+						<strong>기중기, 붐, 집게 등이 장착된 차량 안내</strong>
+						<span>기중기 또는 붐(boom)장치가 되어있는 구난형 자동차, 사다리차 등의 자동차(건설기계 제외)</span>
+					</p>
+
+					<h3>해당되는 차량</h3>
+					<div class="itemPack">
+						<ul class="itemListN3">
+							<li class="m1">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>사다리차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m2">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>고소작업차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m3">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>구난용렉카차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m4">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>견인용렉카차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m5">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>스틱크레인</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m6">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>너클크레인</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m7">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>기타화물차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<h3>해당되지 않는 차량</h3>
+					<p class="descText">해당 되지 않을 경우 차량 용도를 <span>“해당되지 않음”</span>을 선택해주세요.</p>
+					<div class="itemPack">
+						<ul class="itemListN3">
+							<li class="nm1">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>세이프티 로더</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm2">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>셀프로더</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm3">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>파워게이트</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm4">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>주차위반견인용<br />렉카차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<a href="#close">확인</a>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+
+	<!-- 레이어팝업 : 안내(청소차) -->
+	<div class="layerPopup" id="layerPopCar03">
+		<div class="layerWrap">
+			<h2>안내</h2>
+			<div class="layerCont">
+				<div class="freightCar3">
+					<p class="guiText">
+						<strong>청소차 안내</strong>
+						<span>쓰레기를 청소할 수 있게 만든 차량으로 운행되는 자동차</span>
+					</p>
+
+					<h3>해당되는 차량</h3>
+					<div class="itemPack">
+						<ul class="itemListN3">
+							<li class="m1">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>암롤청소차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m2">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>압착진개차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m3">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>압축진개차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m4">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>롤온청소차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="m5">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>진개덤프청소차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<h3>해당되지 않는 차량</h3>
+					<p class="descText">해당 되지 않을 경우 차량 용도를 <span>“해당되지 않음”</span>을 선택해주세요.</p>
+					<div class="itemPack">
+						<ul class="itemListN3">
+							<li class="nm1">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>음식물수거차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm2">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>노면청소차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm3">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>준설차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm4">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>살수차</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+							<li class="nm5">
+								<a href="#none" role="button">
+									<div class="cont">
+										<!-- itemdata -->
+										<span>분뇨차<br />(버큠로리)</span>
+										<!-- //itemdata -->
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<a href="#close">확인</a>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+</body>
+</html>

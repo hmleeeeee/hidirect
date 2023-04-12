@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 만기알람 신청</title><!-- 0628 문구수정 JJY-->
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/jquery/jquery-ui.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>만기알람 신청</h1><!-- 0628 문구수정 JJY-->
+		</header>
+		<div class="popContent">
+			<!--0621 디자인 추가 -->
+			<div class="estiVisual">
+				<p>
+					<strong>만기알람 신청을 위해 상품 소개를 위한 <em>동의 및 휴대폰정보</em>가 필요합니다.</strong><!-- 0628 문구수정 JJY-->
+				</p>
+			</div>
+			<!-- <p class="topTxt">견적예약 신청을 위해 상품 소개를 위한 동의 및 휴대폰정보가 필요합니다.</p> --><!-- style 상단 텍스트 위치 변경 -->
+			<section>
+				<!-- style 체크 콘텐츠 변경 -->
+				<!-- EDIT 약관동의 -->
+				<!-- <div class="agreeCtr">
+					<a href="#none" class="allAgr" role="button" title="약관 전체동의하기">전체동의하기</a>
+					<button class="btnView"><span class="state">약관 숨기기</span></button>
+				</div> -->
+				<!-- //EDIT 약관동의 -->
+				<!-- //style -->
+
+				<!-- style form element 변경 -->
+				<div class="inputWrap mgtNone">
+					<input type="text" id="phone" required />
+					<label for="phone">휴대폰 번호 (-없이 입력)</label>
+				</div>
+
+				<!-- 0620 디자인변경으로 인한 마크업 수정 JJY -->
+				<ul class="listBox">
+					<li class="infoTit">
+						<span>소비자 권익보호에 관한 사항</span>
+						<a href="#layerPop_01" class="btnHelp"><em>도움말</em></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collata02" id="collata02_01"><label for="collata02_01"><span class="hide">상품 소개 등을 위한 동의</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="tit">상품 소개 등을 위한 동의</p>
+						</div>
+						<a href="#" class="btnLink"><span>더보기</span></a>
+					</li>
+				</ul>
+				<!--// 0620 디자인변경으로 인한 마크업 수정 JJY -->
+
+
+			</section>
+
+			<!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+			<div class="btnWrap">
+				<span><a href="#">취소</a></span>
+				<span><a href="#layerPop_01">신청완료</a></span><!-- 0628 문구수정 JJY-->
+			</div>
+			<!-- //style -->
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+	<!-- 레이어팝업 -->
+	<div class="layerPopup" id="layerPop_01">
+		<div class="layerWrap">
+			<h2>만기알람 신청 완료</h2><!-- 0628 문구수정 JJY-->
+			<div class="layerCont">
+				<p><span>박현대</span>고객님 감사합니다.</p>
+				<p>현대해상 하이카 다이렉트 보험료 만기알람 신청이 완료되었습니다.<br><!-- 0628 문구수정 JJY-->
+				보험 만기일에 맞춰 입력해주신 휴대폰 번호<span>(010-1234-5678)</span>로 안내문자 드리겠습니다.</p><!-- 0628 문구수정 JJY-->
+			</div>
+			<div class="layerBtn">
+				<a href="#">확인</a>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+</body>
+</html>
+

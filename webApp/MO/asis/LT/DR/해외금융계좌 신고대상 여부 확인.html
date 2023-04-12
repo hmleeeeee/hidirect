@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>해외금융계좌 신고대상 여부 확인</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>해외금융계좌 신고대상 여부 확인</h1>
+		</header>
+		<section>
+			<h2 class="hide">해외금융계좌 신고대상 여부 확인</h2>
+			<div class="grayBox">
+				<strong><span class="textOrenge">해외금융계좌신고에 필요한 정보</span>를 입력해주세요..</strong>
+			</div>
+
+			<h2>신고대상</h2>
+
+			<div class="insSpecial">
+				<ul class="carAttList typeTwo choisH8">
+					<li class="on">
+						<div class="">
+							<a href="#" role="button">
+								<span class="choisText">미국 시민권자</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" role="button">
+								<span class="choisText">미국 영주권자</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" role="button">
+								<span class="choisText">미국 세법상 미국 거주자</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" role="button">
+								<span class="choisText">미국 외 국가</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<ul class="termCont mgT10">
+				<li>
+					<a href="#">한국 이외의 조세목적상 해외거주자인 경우 체크</a>
+					<input type="checkbox" id="ch01"><label for="ch01">한국 이외의 조세목적상 해외거주자인 경우 체크</label>
+				</li>
+			</ul>
+
+			<h2>영문성명</h2>
+			<div class="inputWrap two">
+				<span class=""><input type="text" class="inputClick" value="" title="성 입력" placeholder="성"></span>
+				<span class=""><input type="text" class="inputClick" value="" title="이름 입력" placeholder="이름"></span>
+			</div>
+
+			<h2>거주주소(영문)</h2>
+			<div class="inputWrap">
+				<input type="text" class="inputClick" value="" title="거주주소(영문) 입력" placeholder="거주주소 입력">
+			</div>
+
+			<h2>국가정보</h2>
+			<div id="chkOwn" class="insSpecial addDel">
+				<ul class="carAttList taC">
+					<li>
+						<div class="">
+							<a href="#" role="button">
+								<span class="carAttAdd">국가1
+									<em class="desc">미국</em>
+								</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" role="button">
+								<span class="carAttAdd">국가2
+									<em class="desc">트리니다드 토바고</em>
+								</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" role="button">
+								<span class="carAttAdd">국가3
+								<em class="desc textOrenge">입력해주세요</em>
+								</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="btnWrap">
+				<a href="#" class="on" role="button">확인</a>
+			</div>
+
+		</section>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

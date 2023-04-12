@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>내 설계함</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>내 설계함</h1>
+	<a href="#none" class="btnBack"><span>이전</span></a>
+	<a href="#none" class="btnMenu">전체메뉴 보기</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<div class="planVisual">
+		<p><!-- 0626 문구수정 JJY-->
+			<strong>고객님께서 최근 30일간 보험료 계산한 내역입니다.</strong>
+			목록선택 후 보험료 계산을 이어서 진행할 수 있습니다.
+			<!-- <span>보험시기가 접속일(금일)기준 이전의 날짜면 보험료를 새로 계산하셔야 됩니다.</span> -->
+		</p>
+	</div>
+	<!-- <div class="tabMenuBox">
+		<div class="tabMenu three">
+			<a href="#none" class="on" role="button"><span>자동차/운전자 보험</span><span class="hide">선택됨</span></a>
+			<a href="#none" role="button"><span>여행 보험</span></a>
+			<a href="#none" role="button"><span>기타 장기보험</span></a>
+		</div>
+	</div> -->
+
+	<section>
+		<!-- 자동차/운전자 보험 -->
+		<!-- 2017-06-19 접근성을 위하여 tabOpen on 추가후  style="display:block" 제거 -->
+		<div class="tabOpen on">
+			<ul>
+				<!-- <li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong class="ing">자동차보험</strong>
+								<span>임시저장</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 2</em><span>차량 상세정보</span></p>
+								<ul class="list">
+									<li>
+										<strong>차량번호(차대번호)</strong>
+										<span>03가1234</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>입력대기</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li> -->
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>자동차보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>차량 상세정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>차량번호(차대번호)</strong>
+										<span>03가1234</span>
+									</li>
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<!-- <li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>운전자보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자 정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>차량번호(차대번호)</strong>
+										<span>03가1234</span>
+									</li>
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li> -->
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>운전자보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자 정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>차량번호(차대번호)</strong>
+										<span>03가1234</span>
+									</li>
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>운전자보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자 정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>차량번호(차대번호)</strong>
+										<span>03가1234</span>
+									</li>
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+			</ul>
+			<div class="btnMore">
+				<a href="#" role="button"><span>더보기(10/19)</span></a>
+			</div>
+		</div>
+		<!--// 자동차/운전자 보험 -->
+
+		<!-- 여행 보험-->
+		<div class="tabOpen">
+			<ul>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>해외여행자 보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자정보</span></p>
+								<ul class="list">
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>해외장기체류보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자정보</span></p>
+								<ul class="list">
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>국내여행자보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자정보</span></p>
+								<ul class="list">
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>골프보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자정보</span></p>
+								<ul class="list">
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>해외여행자 보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자정보</span></p>
+								<ul class="list">
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>국내여행자 보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자정보</span></p>
+								<ul class="list">
+									<li>
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>총 보험료</strong>
+										<span>1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+			</ul>
+
+			<div class="btnMore">
+				<a href="#" role="button"><span>더보기(10/19)</span></a>
+			</div>
+		</div>
+		<!-- //여행 보험-->
+
+		<!-- 기타 장기보험 -->
+		<div class="tabOpen">
+			<ul>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>연금보험(무배당)</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자 정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>수령정보</strong>
+										<span>60세부터/매월 1,000,000원</span>
+									</li>
+									<li>
+										<strong>납입정보</strong>
+										<span>20년간/매월55,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>실손의료비보장보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자 정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>보험료</strong>
+										<span>월1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>주택화재보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자 정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>보험료</strong>
+										<span>월납/10,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>연금보험(무배당)</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자 정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>수령정보</strong>
+										<span>60세부터/매월 1,000,000원</span>
+									</li>
+									<li>
+										<strong>납입정보</strong>
+										<span>20년간/매월55,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="#" role="button">
+						<dl class="boxContList">
+							<dt>
+								<strong>실손의료비보장보험</strong>
+								<span>M20174******00000</span>
+								<em>2017.03.09</em>
+							</dt>
+							<dd>
+								<p><em class="tagBlue">STEP 5</em><span>계약자 정보</span></p>
+								<ul class="list">
+									<li class="cont">
+										<strong>보험기간</strong>
+										<span>2017.03.09 ~ 2027.03.09</span>
+									</li>
+									<li>
+										<strong>보험료</strong>
+										<span>월1,000,000원</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</a>
+				</li>
+			</ul>
+			<!--// 기타 장기보험 -->
+
+			<!-- 항목이 없을때 -->
+			<div class="noResult">
+				<p><span>'최근 설계 항목'</span>이 없습니다.</p>
+			</div>
+
+			<div class="btnMore">
+				<a href="#" role="button"><span>더보기(10/19)</span></a>
+			</div>
+		</div>
+	</section>
+	<!-- content -->
+	<div class="layerPopup" id="layerPopup1">
+		<div class="layerWrap">
+			<h2>상담 신청 안내</h2>
+			<div class="layerCont counselInfo">
+				<div class="qaBox">
+					<p><strong>박현대</strong> 고객님</p>
+					<p>인터넷 보험료 계산/가입이 어려우신가요?</p>
+					<p class="topStxt">고객센터로 직접 연락하시거나, 연락처를 남기시면 정보 확인 후 상담원이 직접 연락 드리겠습니다</p>
+				</div>
+				<div class="noteBox">
+					<p>상담전화 신청 유의사항</p>
+					<div>
+						<ul class="listDot">
+							<li>상담신청을 하시면 전문상담원이 보험료계산 방법 등을 안내해 드립니다.(단. 전화료 보험료를 직접 안내해드릴 수 없는점 미리양해 부탁 드립니다.)</li>
+							<li>전화로 가입하시는 경우, 온라인 전용 상품의 할인 혜택을 받으실 수 없으므로 보험료가 달라지게 됩니다.</li>
+						</ul>
+					</div>
+				</div>
+
+				<h2>연락처</h2>
+				<div class="inputWrap">
+					<!-- 2017-06-23 select title 추가 웹접근성 개선 -->
+					<select title="통신사 선택">
+						<option>통신사 선택</option>
+						<option value="1">SKT</option>
+						<option value="2">KT</option>
+						<option value="3">LGT</option>
+						<option value="4">SKT알뜰</option>
+						<option value="5">KT알뜰</option>
+						<option value="6">LGT알뜰</option>
+					</select>
+				</div>
+				<div class="inputWrap">
+					<input type="text" class="inputClick" value="" title="휴대폰 번호" placeholder="휴대폰 번호(-없이 입력)">
+				</div>
+				<div class="collecInfo">
+					 <ul class="termCont">
+						<li class="on">
+							<a href="#">상담전화 신청을 위한 연락처 수집 이용에 동의합니다.</a>
+							<!-- 2017-06-23 웹접근성 label Text 수정 -->
+							<input type="checkbox" id="ch06"><label for="ch06">상담전화 신청을 위한 연락처 수집 이용에 동의</label>
+							<!-- //2017-06-23 웹접근성 label Text 수정 -->
+						</li>
+					</ul>
+					<ul class="listDot">
+						<li>수집정보는 상담 목적 외 용도로 이용되지 않습니다.</li>
+					</ul>
+				</div>
+				<div class="btnWrap">
+					<a href="#" class="blueC" role="button">상담전화 신청</a>
+				</div>
+				<h2>고객센터</h2>
+				<ul class="listDot">
+					<li>평일 09:00 ~ 18:00 / 토요일 09:00 ~ 13:00(토요일은 자동차보험만 상담가능)</li>
+				</ul>
+				<div class="btnWrap">
+					<a href="#" class="on" role="button">1899-6782 Call</a>
+				</div>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+

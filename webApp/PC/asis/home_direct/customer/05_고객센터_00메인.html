@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_고객콜센터_00메인</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+</head>
+<script type="text/javascript">
+    //2017-11-23 수정 : s
+    $(document).on("mouseenter focus",".customerFaq .tab a",function(e){
+		e.preventDefault();
+		var idx = $(this).parent().index();
+		var $target = $(this).closest(".customerFaq");
+		$target.find("li").removeClass("on").eq(idx).addClass("on");
+   })
+    $(document).on("mouseleave blur",".customerFaq .tab a",function(e){
+        e.preventDefault();
+        var $target = $(this).closest(".customerFaq");
+        $target.find("li").removeClass("on")
+    })
+    //2017-11-23 수정 : e
+</script>
+<body class="directHomepage">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#gnb">본문바로가기</a></li>
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<div class="directWrap">
+    <script type="text/javascript" src="../../_ui_include_asis/gnb.js"></script>
+    <!--contentArea : s-->
+    <div class="contentArea">
+        <!--lnbWrap : s-->
+        <div class="lnbWrap">
+            <h2 class="lnbTitle">고객센터</h2>
+            <div class="lnb">
+                <ul class="dep2">
+                    <li><a href="#">공지사항</a></li>
+                    <li class=""><a href="#">홈페이지 이용안내</a>
+                        <ul class="dep3" style="display: none;">
+                            <li><a href="#">보험료계산가이드</a></li>
+                            <li><a href="#">Click 2 Call (실시간 상담원<br>연결서비스) 가이드</a></li>
+                            <li><a href="#">보안프로그램 설치 및 안내</a></li>
+                            <li class=""><a href="#">전자금융거래 유의사항</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">모바일 이용안내</a>
+                        <ul class="dep3">
+                            <li><a href="#">보안프로그램 설치 및 안내</a></li>
+                            <li><a href="#">공인인증서 이용안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">이메일 상담신청</a></li>
+                    <li><a href="#">고객콜센터안내</a></li>
+                    <li><a href="#">상담원 채용</a>
+                        <ul class="dep3">
+                            <li><a href="#">메뉴1</a></li>
+                            <li><a href="#">메뉴2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">전자민원접수</a></li>
+                    <li><a href="#">만족도조사</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--lnbWrap : e-->
+        <!--content : s-->
+        <div class="content">
+            <div class="location">
+                <ul>
+                    <li class="home"><a href="#"><img src="https://direct.hi.co.kr/images/common/location_home.png" alt="메인으로"></a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+            </div>
+            <h3 class="contentTitle">무엇을 도와드릴까요?</h3>
+            <div class="lnbTypeContentArea">
+
+				<div class="customerMainWrap">
+				
+					<!--타이틀:s-->
+					<div class="conTitle02">
+						<h4 class="tit">언제나 고객님의 목소리에 귀 기울이는 현대해상 다이렉트입니다.</h4>
+					</div>
+					<!--타이틀:e-->
+
+					<div class="customerMainArea">	
+						<div class="areaFl">
+							<h5 class="subtit">FAQ</h5>
+							<div class="inputBase placeholder blue" style="width: 470px;">
+								<input type="text" placeholder="궁금하신 내용/단어를 검색하세요." title="궁금하신 내용/단어를 검색하세요.">
+								<a href="#" class="btnRight"><img src="https://direct.hi.co.kr/images/common/btn_search02.png" alt="검색"></a>
+							</div>
+
+							<dl class="questionList">
+								<dt>자주하는 질문 <span class="fontPoint1">TOP 3</span></dt>
+								<dd>
+									<ol>					
+										<li><span>01</span>사고가 발생한 경우 어떻게 하나요?</li>
+										<li><span>02</span>보험료 할인이 되는 경우는 어떤 경우가 있나요?</li>
+										<li><span>03</span>자동차보험을 인터넷 가입 하는 경우 꼭 알아야 할 사항은 무엇인가요?</li>
+									</ol>
+								</dd>
+							</dl>
+							
+							<div class="customerFaq">
+								<ul class="tab">
+									<li><a href="#"><span>보험상품</span></a></li>
+									<li><a href="#"><span>보험료 계산/가입</span></a></li>
+									<li><a href="#"><span>계약관리</span></a></li>
+									<li><a href="#"><span>보상서비스</span></a></li>
+									<li><a href="#"><span>고장출동</span></a></li>
+									<li><a href="#"><span>홈페이지</span></a></li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="areaFr">
+							<h5 class="subtit">다이렉트 고객콜센터</h5>
+							<div class="callcenterbox">
+								<p class="directTel"><span class="fontPoint1">1899-</span><span class="fontPoint2">6782</span></p>
+								<dl class="directInfo">
+									<dt>자동차보험 산출 및 가입상담 <span class="fontPoint2">ARS 1번</span></dt>
+									<dd>평일 09:00 ~ 18:00 / 토요일 09:00 ~ 13:00</dd>
+								</dl>
+								<dl class="directInfo">
+									<dt>장기/일반보험 가입상담 및 계약변경 <span class="fontPoint1">ARS 3번</span></dt>
+									<dd>평일 09:00 ~ 18:00</dd>
+								</dl>
+								<div class="btnAreaWrap">
+									<a href="#" class="btn middle02 tel" style="width:134px;"><span>전화 상담신청</span></a>
+									<a href="#" class="btn	middle02 mail" style="width:134px;"><span>이메일 상담신청</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="customerMainArea line">
+						<div class="areaFl">
+							<ul class="customerInfotab">
+								<li><a href="#"><span>고객콜센터 안내</span></a></li>
+								<li><a href="#"><span>자동차 보험료 계산</span></a></li>
+								<li><a href="#"><span>실시간 상담 연결서비스</span></a></li>
+								<li><a href="#"><span>보험료 계산 가이드</span></a></li>
+								<li><a href="#"><span>공인인증서 안내</span></a></li>
+								<li><a href="#"><span>전자민원접수</span></a></li>
+							</ul>
+						</div>
+						<div class="areaFr">
+							<div class="lineTabWrap tabWrap">
+								<ul class="lineTabList tabList">
+									<li class="on"><a href="#"><span>공지사항</span></a></li>
+									<li><a href="#"><span>채용공고</span></a></li>
+								</ul>
+								<div class="tabCon on">
+									<div class="tabHiddenTitle">공지사항 탭 내용</div>
+									<ul class="listStyle dot">
+										<li><a href="#">다이렉트 홈페이지/앱 서비스 일시 중단 안내</a></li>
+										<li><a href="#">추석연휴 차량무상점검 서비스 시행 안내</a></li>
+										<li><a href="#">자동차 RED 멤버스 포인트 시스템 개편에 …</a></li>
+										<li><a href="#">다이렉트 모바일이 새롭게 바뀌었습니다.</a></li>
+										<li><a href="#">추석연휴 차량무상점검 서비스 시행 안내</a></li>
+									</ul>
+								</div>
+								<div class="tabCon">
+									<div class="tabHiddenTitle">채용공고 탭 내용</div>
+									<ul class="listStyle dot">
+										<li><a href="#">채용공고</a></li>
+										<li><a href="#">추석연휴 차량무상점검 서비스 시행 안내</a></li>
+										<li><a href="#">자동차 RED 멤버스 포인트 시스템 개편에 …</a></li>
+										<li><a href="#">다이렉트 모바일이 새롭게 바뀌었습니다.</a></li>
+										<li><a href="#">추석연휴 차량무상점검 서비스 시행 안내</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+            </div>
+
+        </div>
+        <!--content : e-->
+
+    </div>
+    <!--contentArea : e-->
+    <!--quickArea : s -->
+    <script type="text/javascript" src="../../_ui_include_asis/quick.js"></script>
+    <!--quickArea : e -->
+    <!--2017-11-21 수정 : s-->
+    <!--footerWrap : s-->
+    <script type="text/javascript" src="../../_ui_include_asis/footer.js"></script>
+    <!--footerWrap : e-->
+    <!--2017-11-21 수정 : e-->
+</div>
+</body>
+</html>

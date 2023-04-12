@@ -11,7 +11,8 @@
 	$(function() {
 		UI.init();
 		UI.tab('tabRound');
-		UI.accordion($('.accordion.notice'));
+		UI.tab('tabLine');
+		// UI.accordion($('.filter'), 0)
 
 		//Modal Sample TEST Btn Handler
 		$('.btn_samples').find('.btn').each(function(){
@@ -24,14 +25,14 @@
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="true" data-category="" data-category-sub="">
+<body data-channel="mobile" data-login="true" data-category="">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
 		<div id="header" class="navbar">
 			<div class="header_wrap">
 				<button type="button" class="btn_page_prev" aria-label="이전"></button>
-				<h1 class="header_title">Module</h1>
+				<h1 class="header_title">Module(Filter)</h1>
 				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
 			</div>
 		</div>
@@ -42,60 +43,124 @@
 			<div id="content">
 				<!-- content_wrap -->
 				<div class="content_wrap">
-					<!-- tab_round -->
-					<div class="tab tab_round" data-tab="tabRound">
-						<ul class="tab_wrap">
-							<li><a href="javascript:void(0);"><span>대출 유지계약</span></a></li>
-							<li><a href="javascript:void(0);"><span>날짜별 거래내역</span></a></li>
-						</ul>
-					</div>
-					<!--// tab_round -->
 					<div class="section">
+						<!-- tab_round -->
+						<div class="tab tab_round" data-tab="tabRound">
+							<ul class="tab_wrap">
+								<li><a href="javascript:void(0);"><span>Default Close</span></a></li>
+								<li><a href="javascript:void(0);"><span>Disabed Open</span></a></li>
+							</ul>
+						</div>
+						<!--// tab_round -->
 						<!-- tab_content -->
 						<div class="tab_content" data-tab="tabRound">
-
+							<!-- filter -->
 							<div class="filter">
-								<div class="filter_wrap">
-									<div class="filter_head">
-										<a href="javascript:void(0);" class="filter_btn">
-											 <span class="cal">기간 <em>2021.07.28 ~  2022.05.28</em></span>
-											 <span>전체</span>
+								<div class="item">
+									<div class="fold_header">
+										<a href="javascript:void(0);" role="button" title="내용보기">
+											<div class="title">
+												<span>2021.07.28 ~ 2022.05.28</span>
+												<span>전체</span>
+											</div>
+											<i class="btn toggle">선택</i>
 										</a>
 									</div>
-									<div class="filter_body">
-										
-									</div>
-									<div class="filter_footer">
+									<div class="fold_body">
+										<div class="form_area">
+											<div class="grid2">
+												<div class="form_item dash">
+													<div class="form_label"><label for="inp10">정산시작일</label></div>
+													<div class="form_wrap">
+														<input type="text" id="inp10" placeholder="">
+													</div>
+												</div>
+												<div class="form_item">
+													<div class="form_label"><label for="inp10">기준일</label></div>
+													<div class="form_wrap">
+														<input type="text" id="inp10" placeholder="">
+													</div>
+												</div>
+											</div>
+
+											<div class="option_area">
+												<button type="button" class="btn option"><span>1개월</span></button>
+												<button type="button" class="btn option"><span>3개월</span></button>
+												<button type="button" class="btn option"><span>6개월</span></button>
+												<button type="button" class="btn option"><span>1년</span></button>
+												<button type="button" class="btn option"><span>3년</span></button>
+											</div>
+										</div>
+
 										<div class="btn_area">
-											<button type="button" class="btn line02 block">조회하기</button>
+											<a href="javascript:void(0);" class="btn line02 block">조회</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="comp">
-								<div class="governing">
-									<h2 class="governing_title ta_l">조회가능한 날짜별 거래내역이 <br> 총 <strong class="point_color">133건</strong> 있어요.</h2>
-								</div>
+							<!-- //filter -->
 
+							<div class="governing">
+								<h2 class="governing_title ta_l">조회가능한 날짜별 거래내역이 <br> 총 <strong class="point_color">133건</strong> 있어요.</h2>
+							</div>
+							<div class="comp">
+								<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam deleniti a nemo itaque maxime quisquam alias provident reiciendis beatae facere illo excepturi, ut, fugit, laudantium autem nulla? Vel delectus, architecto!</div>
 								<!-- test -->
-								<div class="btn_area cta btn_samples mt100">
+								<div class="btn_area cta btn_samples mt30">
 									<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#sampleModal_Full'));" class="btn fill02">Full</a>
 								</div>
 
 								<!-- //test -->
-
 							</div>
 						</div>
-						<!-- //tab_content -->
 						<div class="tab_content" data-tab="tabRound">
-							<div class="comp">
+							<!-- filter -->
+							<div class="filter">
+								<div class="item disabled open">
+									<div class="fold_header">
+										<a href="javascript:void(0);" role="button" title="내용보기">
+											<div class="title">
+												<span>조회조건을 선택해 주세요.</span>
+											</div>
+											<i class="btn toggle">선택</i>
+										</a>
+									</div>
+									<div class="fold_body">
+										<div class="form_area">
+											<div class="grid2">
+												<div class="form_item dash">
+													<div class="form_label"><label for="inp10">정산시작일</label></div>
+													<div class="form_wrap">
+														<input type="text" id="inp10" placeholder="">
+													</div>
+												</div>
+												<div class="form_item">
+													<div class="form_label"><label for="inp10">기준일</label></div>
+													<div class="form_wrap">
+														<input type="text" id="inp10" placeholder="">
+													</div>
+												</div>
+											</div>
 
+											<div class="option_area">
+												<button type="button" class="btn option"><span>1개월</span></button>
+												<button type="button" class="btn option"><span>3개월</span></button>
+												<button type="button" class="btn option"><span>6개월</span></button>
+												<button type="button" class="btn option"><span>1년</span></button>
+												<button type="button" class="btn option"><span>3년</span></button>
+											</div>
+										</div>
+
+										<div class="btn_area">
+											<a href="javascript:void(0);" class="btn line02 block">조회</a>
+										</div>
+									</div>
+								</div>
 							</div>
+							<!-- //filter -->
 						</div>
 						<!-- //tab_content -->
-						
 					</div>
-
 
 					<div class="section bottom_fix">
 						<div class="comp">
@@ -103,7 +168,7 @@
 								<div class="item">
 									<div class="fold_header">
 										<a href="javascript:void(0);" role="button" title="내용보기">
-											<div class="title"><strong>유의사항</strong></div>
+											<div class="title"><strong>유의사항(탭있을경우 하단 Fix Test)</strong></div>
 											<i class="icon_angle"><span>내용보기/내용닫기</span></i>
 										</a>
 									</div>
@@ -116,9 +181,15 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<div class="content_footer fix">
+					<div class="btn_area footer">
+						<button type="button" class="btn fill01">다음</button>
+					</div>
+				</div>
+				<!-- //content_footer -->
 			</div>
 			<!-- [End of content] ==================================== -->
 		</div>
@@ -137,8 +208,64 @@
 						<!-- wrapper: modal_body -->
 						<div class="wrapper">
 							<div class="section">
-								<div class="comp">
-									Code Here~!!
+								<!-- tab_round -->
+								<div class="tab tab_line" data-tab="tabLine">
+									<ul class="tab_wrap">
+										<li><a href="javascript:void(0);"><span>Default Close</span></a></li>
+										<li><a href="javascript:void(0);"><span>Disabed Open</span></a></li>
+									</ul>
+								</div>
+								<!--// tab_round -->
+								<!-- tab_content -->
+								<div class="tab_content" data-tab="tabLine">
+									<!-- filter -->
+									<div class="filter">
+										<div class="item">
+											<div class="fold_header">
+												<a href="javascript:void(0);" role="button" title="내용보기">
+													<div class="title">
+														<span>해지환급금</span>
+														<span>청구일 2023.02.20</span>
+													</div>
+													<i class="btn toggle">선택</i>
+												</a>
+											</div>
+											<div class="fold_body">
+												<div class="form_area">
+													<div class="form_item">
+														<div class="form_label"><label for="rdo05">환급금 구분</label></div>
+														<div class="option_area">
+															<input type="radio" id="rdo05" class="btn_rdo" name="rdo05"><label for="rdo05">해지</label>
+															<input type="radio" id="rdo05_02" class="btn_rdo" name="rdo05"><label for="rdo05_02">만기</label>
+														</div>
+													</div>
+													<div class="form_item">
+														<div class="form_label"><label for="inp20">청구일</label></div>
+														<div class="form_wrap">
+															<input type="text" id="inp20" placeholder="">
+														</div>
+													</div>
+												</div>
+
+												<div class="btn_area">
+													<a href="javascript:void(0);" class="btn line02 block">조회</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- //filter -->
+
+									<div class="governing">
+										<h2 class="governing_title ta_l"><span class="point_color">해지환급금</span>을 확인해 주세요.</h2>
+									</div>
+									<div class="comp">
+										Code Here~!!
+									</div>
+								</div>
+								<div class="tab_content" data-tab="tabLine">
+									<div class="comp">
+										Code Here~!!
+									</div>
 								</div>
 							</div>
 						</div>

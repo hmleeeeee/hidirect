@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+/**
+* Layout.popup
+* ------------------
+*/
+
+$svg_btn_close:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath stroke='%23444' stroke-linecap='square' stroke-width='1.5' d='M7 7L29.627 29.627' transform='translate(-1636 -383) translate(1000 335) translate(636 48)'/%3E%3Cpath stroke='%23444' stroke-linecap='square' stroke-width='1.5' d='M7 7L29.627 29.627' transform='translate(-1636 -383) translate(1000 335) translate(636 48) matrix(-1 0 0 1 36.627 0)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A";
+
+
+$svg_line_bg:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='12' viewBox='0 0 1 12'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23CCC'%3E%3Cg%3E%3Cpath d='M253 7H254V19H253z' transform='translate(-1024 -673) translate(771 666)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E";
+
+
+$modal_width_sm: 640px;
+$modal_width: 720px;// (default)
+$modal_width_lg: 1056px;
+$modal_width_xg: 90%;
+$modal_width_alert: 400px;
+$modal_width_confirm: $modal_width_alert;
+$modal_pad: 48px;
+$modal_pad_alert: 32px;
+
+// Size
+.modal{
+	& .modal_content{width:$modal_width;}
+	&.modal_sm .modal_content{width:$modal_width_sm;}
+	&.modal_lg .modal_content{width:$modal_width_lg;}
+	&.modal_xg .modal_content{width:$modal_width_xg;}
+	&.modal_confirm .modal_content,
+	&.modal_alert .modal_content{width:$modal_width_alert;}
+}
+
+// Zindex
+.modal{z-index: $zindex_modal;}//full popup
+.modal.modal_alert{z-index: $zindex_modal_up;}
+.modal.modal_confirm{z-index: $zindex_modal_up;}
+
+//open : body scroll 제제
+.modal_sm_open,
+.modal_open{overflow-x: hidden; overflow-y: hidden !important; 
+	#wrap{z-index: 0;}
+}
+
+// Motion
+.modal.fade {/* transform: translate3d(0, 20%, 0);  */transition : all $transition_base;opacity:0;}
+.modal.show {/* transform: translate3d(0, 0, 0); */opacity:1;}
+
+// Dimmed
+.modal_backdrop { position: fixed; z-index:$zindex_modal_backdrop; top: 0; right: 0; bottom: 0; left: 0; background-color: #000; opacity: 0.5;}
+
+
+
+// * Style
+//--------------------------------
+.modal,
+.wpop_content{display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; outline: 0;
+	.modal_dialog{position: relative; width: auto;height: 100vh; min-height: calc(100% - (10px)); margin: 0 auto; pointer-events: none; 
+
+		display: table-cell;
+		-webkit-appearance:none;
+		vertical-align: center;
+		display: -webkit-box; display: -ms-flexbox; display: flex;
+		display: flex; align-items: center;
+
+		//------------------------------
+		//IE9 관련 top position 재정의 예정
+		//------------------------------
+		html.ie9 &{
+			// top:80px;
+		}
+	}
+
+	.modal_content{position: relative; margin: 0 auto;
+		border-radius: 24px; background:#fff;background-clip: padding-box; box-shadow: 1px 1px 5px #555;
+		pointer-events: auto;  outline: 0;transition:box-shadow 0.15s linear;
+	}
+
+	.modal_header{
+		.wrapper{padding: 48px 48px 0px 48px;
+			.title{font-size:24px;font-weight:$fw_bold; line-height:1.5;color:#222;padding-right:40px;}
+		}
+	}
+
+	.modal_body{position: relative; padding:30px 0 48px 0;
+		.wrapper{position: relative; 
+			height:auto;
+			max-height:calc(100vh - 360px);
+			padding:3px $modal_pad; //위 짤림현상 제제(버튼), //초기 세로 스크롤 제제
+			overflow-y: auto;
+			word-break:break-all;
+		}
+		/*.comp{margin-bottom:30px;
+			&:last-child{margin-bottom: 0;}
+		}*/
+	}
+
+	.modal_footer{ padding:0px 48px 48px 48px;
+		.btn_area{margin-top: -16px;}
+		.btn_area.action{margin:  -16px 0 0 0; }
+		.tel_hepl{position:absolute;right:48px;bottom:48px;font-size:$fz_sm;text-align:right;/*font-family: $font-roboto;*/color:#222;font-weight:$fw_bold;
+			>span:first-child{
+				display: inline-block;margin-right: 4px;
+				font-weight:$fw_medium;
+			}
+		}
+	}
+
+	.modal_content > .btn_close{position:absolute; top:48px; right:48px; background:url($svg_btn_close) no-repeat center center; width:36px; height:36px;
+		span{@include blind();}
+	}
+}
+
+
+
+
+//alert
+.modal.modal_alert{
+	.modal_body{padding: 32px 40px 24px;
+		.wrapper{padding:0;text-align: center;
+			.title{font-size: 20px; font-weight: $fw_bold;line-height:32px;padding-bottom: 8px;}
+			.msg{font-size: 14px;font-weight: $fw_regular;line-height:1.71; color: #444;}
+		}
+	}
+	.modal_content{border-radius: 16px; }
+	.modal_footer{padding: 0 40px $modal_pad_alert;
+		.btn{@include btn_nm(); min-width:86px; }
+	}
+}
+
+
+//한달동안 열지 않음 : A_FP_22040
+.modal .cookie_area{@include clearfix(); margin-top: 30px;
+	.mtl_checkbox{float: right;
+		> span{padding-left: 26px;color: #757575; font-weight: $fw_regular;} 
+	}
+}
+
+
+//윈도우팝업 : A_IB_70001_1_P1
+.wpop_content{position: relative; overflow: auto;display: block;
+	.modal_body .wrapper{max-height:initial;}
+}
+
+//휴대폰 본인확인서비스 이용동의
+.agree_con_scroll{width: 100%;height: 250px;overflow:auto;}
+.list_agree{margin-top:24px;text-align:center;}
+.list_agree>li{display:inline-block;
+	&:first-child{
+		a{
+			&:after{display:none;}
+		}
+	}
+	a{display:block;line-height:24px;text-align:center;position:relative;padding:0 10px 0 12px;
+		&:hover{text-decoration:underline;}
+		&:after{
+	    content: '';
+	    background: url($svg_line_bg) right center no-repeat;
+	    width: 1px;
+	    height: 25px;
+	    display: inline-block;
+	    position: absolute;
+	    left:0;
+	    top:0;
+		}
+	}
+	&.on a{color:#0886c5;}
+}

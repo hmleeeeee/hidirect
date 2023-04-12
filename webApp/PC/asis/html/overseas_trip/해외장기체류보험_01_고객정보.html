@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>01_고객정보</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/overseas_trip.css" />
+    <script>
+        $(function(){
+            var familyIdx = 1;
+            $(document).on("click",".btnAddFamily",function(e){
+                e.preventDefault();
+                var family = "";
+                familyIdx = familyIdx+1;
+                family += '<div class="inputTable titleInput" id="family'+familyIdx+'">';
+                family += '    <div class="title">';
+                family += '        <h3 class="tit"><span class="family">가족'+familyIdx+'</span><span class="fontLevel2 fz14">(피보험자 / 만19세 이상 가입 시 본인명의 휴대폰 인증) </span></h3>';
+                family += '        <div class="rightArea">';
+                family += '             <a href="#" class="btn radius btnDel"><span>삭제</span></a>';
+                family += '        </div>';
+                family += '    </div>';
+                family += '    <div class="inputSet">';
+                family += '        <ul class="inputArea">';
+                family += '            <li class="item">';
+                family += '                <div class="selectItem">';
+                family += '                    <select name="select_family'+familyIdx+'" id="select_family'+familyIdx+'" title="선택">';
+                family += '                        <option value="1">선택1</option>';
+                family += '                        <option value="2">선택2</option>';
+                family += '                        <option value="3">선택3</option>';
+                family += '                    </select>';
+                family += '                </div>';
+                family += '            </li>';
+                family += '        </ul>';
+                family += '        <ul class="inputArea">';
+                family += '            <li class="item">';
+                family += '                <div class="inputBase">';
+                family += '                    <label for="name_family'+familyIdx+'">이름</label>';
+                family += '                    <input type="text" id="name_family'+familyIdx+'">';
+                family += '                </div>';
+                family += '            </li>';
+                family += '        </ul>';
+                family += '        <ul class="inputArea harf73">';
+                family += '            <li class="item">';
+                family += '                <div class="inputBase">';
+                family += '                    <label for="bday_family'+familyIdx+'">생년월일(ex. 19780802)</label>';
+                family += '                    <input type="text" id="bday_family'+familyIdx+'">';
+                family += '                </div>';
+                family += '            </li>';
+                family += '            <li class="item">';
+                family += '                <div class="sexSelect dataSelect">';
+                family += '                    <ul>';
+                family += '                        <li><a href="#" data-media-value="M">남</a></li>';
+                family += '                        <li><a href="#" data-media-value="F">여</a></li>';
+                family += '                    </ul>';
+                family += '                    <input type="hidden" id="sex_family'+familyIdx+'">';
+                family += '                </div>';
+                family += '            </li>';
+                family += '        </ul>';
+                family += '        <div class="btnArea">';
+                family += '            <a href="#" class="btn middle plus btnAddFamily"><span>추가</span></a>';
+                family += '        </div>';
+                family += '    </div>';
+                family += '</div>';
+                $(this).closest(".tabCon").append(family);
+                selectChg();
+                inputAppend();
+            })
+
+            $(document).on("click",".btnDel",function(e){
+                e.preventDefault();
+                $(this).closest(".inputTable").remove();
+            })
+//            $(".ui-datepicker-trigger").eq(0).click();
+        })
+
+    </script>
+</head>
+
+
+<body class="longstayMain" style="background-image: url(https://direct.hi.co.kr/images/overseas_trip/longstay_main_01_bg.jpg);">
+<!-- <body class="longstayMain" style="background-image: url(https://direct.hi.co.kr/images/overseas_trip/longstay_main_02_bg.jpg);"> -->
+<!-- <body class="longstayMain" style="background-image: url(https://direct.hi.co.kr/images/overseas_trip/longstay_main_04_bg.jpg);"> -->
+<!-- 
+3번 이미지의 경우는 로고와 메인 글씨의 색이 달라져 이미지외의 로고와 글씨 부분도 클래스 및 이미지 명을 변경하여 주석처리 하였으니
+중복되는 부분을 확인 후 변경해 주세요!
+
+<body class="longstayMain" style="background-image: url(https://direct.hi.co.kr/images/overseas_trip/longstay_main_03_bg.jpg);"> 
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+
+<div class="productMainWrap">
+    <div class="objFixedWrap">
+        <div class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_black.png" alt="현대해상 다이렉트"></a></div>
+        <h1 class="mainTitle black">
+            <span class="tit">해외 장기체류보험</span>
+            <span class="txt">유학, 어학연수, 출장, 워킹홀리데이의 필수품<br>안전한 여행을 위해 미리 준비하세요.</span>
+        </h1>
+    </div>	
+-->
+
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="productMainWrap">
+    <div class="objFixedWrap">
+        <div class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_white.png" alt="현대해상 다이렉트"></a></div>
+        <h1 class="mainTitle">
+            <span class="tit">해외 장기체류보험</span>
+            <span class="txt">유학, 어학연수, 출장, 워킹홀리데이의 필수품<br>안전한 여행을 위해 미리 준비하세요.</span>
+        </h1>
+    </div>
+
+    <!--contentArea : s -->
+    <div class="productMainContentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>고객정보</h2>
+            <p class="txt">고객님의 정보를 입력해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+        <div class="lineTabWrap tabWrap">
+            <ul class="lineTabList tabList">
+                <li class="on"><a href="#"><span>개인형 (15% 저렴)</span></a></li>
+                <li><a href="#"><span>가족형 (15+10% 저렴)</span></a></li>
+            </ul>
+            <div class="tabCon on">
+                <div class="tabHiddenTitle">개인형 (15% 저렴)</div>
+                <!--inputTable : s-->
+                <div class="inputTable onlyInput noTline">
+                    <ul class="inputArea">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="name1">이름</label>
+                                <input type="text" id="name1">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea item2">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="personNumber1">주민등록번호</label>
+                                <input type="text" id="personNumber1">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="inputBase placeholder">
+                                <input type="password" id="personNumber2_last" placeholder="뒷 7자리" title="주민등록번호뒤자리">
+                                <div class="nospos">
+                                    <input type="checkbox" id="mouse1">
+                                    <label for="mouse1">마우스 입력기</label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea mt15">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="hp1">휴대폰번호 (‘-’없이)</label>
+                                <input type="text" id="hp1">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea item2">
+                        <li class="item">
+                            <div class="inputBase datepicker multi">
+                                <label for="start1">보험개시일</label>
+                                <input type="text" class="start" id="start1" value="2017-08-09">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="selectItem">
+                                <select name="startTime1" id="startTime1" title="시간을 선택해주세요">
+                                    <option value="1">10시</option>
+                                    <option value="2">11시</option>
+                                    <option value="3">12시</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea item2">
+                        <li class="item">
+                            <div class="inputBase datepicker multi">
+                                <label for="end1">보험종료일</label>
+                                <input type="text" class="end" id="end1" value="2017-08-09">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="selectItem">
+                                <select name="endTime1" id="endTime1" title="시간을 선택해주세요">
+                                    <option value="1">10시</option>
+                                    <option value="2">11시</option>
+                                    <option value="3">12시</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--inputTable : e-->
+            </div>
+            <div class="tabCon">
+                <div class="tabHiddenTitle">가족형 (15+10% 저렴)</div>
+                <!--inputTable : s-->
+                <div class="inputTable onlyInput noTline">
+                    <ul class="inputArea">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="name2">이름</label>
+                                <input type="text" id="name2">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea item2">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="personNumber2">주민등록번호</label>
+                                <input type="text" id="personNumber2">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="inputBase placeholder">
+                                <input type="password" id="personNumber2_last" placeholder="뒷 7자리" title="주민등록번호뒤자리">
+                                <div class="nospos">
+                                    <input type="checkbox" id="mouse2">
+                                    <label for="mouse2">마우스 입력기</label>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="checkbox small mouseInput bottom">
+                                <input type="checkbox" id="mouse2">
+                                <label for="mouse2">마우스 입력기</label>
+                            </div>
+                            -->
+                        </li>
+                    </ul>
+                    <ul class="inputArea mt15">
+                        <li class="item">
+                            <div class="inputBase">
+                                <label for="hp2">휴대폰번호 (‘-’없이)</label>
+                                <input type="text" id="hp2">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea item2">
+                        <li class="item">
+                            <div class="inputBase datepicker multi">
+                                <label for="start2">보험개시일</label>
+                                <input type="text" class="start" id="start2" value="2017-08-09">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="selectItem">
+                                <select name="startTime2" id="startTime2" title="시간을 선택해주세요">
+                                    <option value="1">10시</option>
+                                    <option value="2">11시</option>
+                                    <option value="3">12시</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="inputArea item2">
+                        <li class="item">
+                            <div class="inputBase datepicker multi">
+                                <label for="end2">보험종료일</label>
+                                <input type="text" class="end" id="end2" value="2017-08-09">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="selectItem">
+                                <select name="endTime2" id="endTime2" title="시간을 선택해주세요">
+                                    <option value="1">10시</option>
+                                    <option value="2">11시</option>
+                                    <option value="3">12시</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--inputTable : e-->
+
+                <!--inputTable : s-->
+                <div class="inputTable titleInput" id="family1">
+                    <div class="title">
+                        <h3 class="tit"><span class="family">가족1</span><span class="fontLevel2 fz14">(피보험자 / 만19세 이상 가입 시 본인명의 휴대폰 인증) </span></h3>
+                        <!--
+                        <div class="rightArea">
+                            <a href="#" class="btn radius btnDel"><span>삭제</span></a>
+                        </div>
+                        -->
+
+                    </div>
+                    <div class="inputSet">
+                        <ul class="inputArea">
+                            <li class="item">
+                                <div class="selectItem">
+                                    <select name="select_family1" id="select_family1" title="선택해주세요">
+                                        <option value="1">선택1</option>
+                                        <option value="2">선택2</option>
+                                        <option value="3">선택3</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="inputArea">
+                            <li class="item">
+                                <div class="inputBase">
+                                    <label for="name_family1">이름</label>
+                                    <input type="text" id="name_family1">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="inputArea harf73">
+                            <li class="item">
+                                <div class="inputBase">
+                                    <label for="bday_family1">생년월일(ex. 19780802)</label>
+                                    <input type="text" id="bday_family1">
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="sexSelect dataSelect">
+                                    <ul>
+                                        <li><a href="#" data-media-value="M">남</a></li>
+                                        <li><a href="#" data-media-value="F">여</a></li>
+                                    </ul>
+                                    <input type="hidden" id="sex_family1">
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btnArea">
+                            <a href="#" class="btn middle plus btnAddFamily"><span>추가</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!--inputTable : e-->
+
+            </div>
+        </div>
+        <!--openContent : s-->
+        <ul class="openContentArea">
+            <li>
+                <a href="#" class="iconAlert">보험가입시 유의사항</a>
+                <div class="openContent">
+                    <ul class="listStyle dot">
+                        <li>현지취업, 해외거주, 선교사, 봉사활동은 가입할 수 없습니다.</br>
+						<li>보험기간은 90일부터 최대 1년까지 가입 가능합니다.</br>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!--openContent : e-->
+
+
+        <div class="bottomFixed">
+
+            <div class="fontLevel2 mb30">
+                보험료 계산을 위해 본인인증(휴대폰/공인인증서) 및 개인(신용)정보<br>
+                수집·이용에 동의가 필요합니다.
+            </div>
+            <div class="btnAreaWrap">
+                <ul class="btnArea item55">
+                    <li><a href="#" class="btn plus_minus pass"><span>보험료 계산하기</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fixedBannerArea">
+            <div class="bannerArea">
+                <ul>
+                    <li style="width: 202px;">
+                        <div class="titleArea">
+                            <div class="inner"> 인터넷으로<br><strong>25%</strong> 저렴하게</div>
+                        </div>
+                        <div class="conArea">
+                            수수료가 없어<br>저렴한 다이렉트 보험
+                        </div>
+                    </li>
+                    <li style="width: 217px;">
+                        <div class="titleArea">
+                            <div class="inner"><strong>든든</strong>한 준비</div>
+                        </div>
+                        <div class="conArea">
+                            늘어가는 해외 감염과<br>현지 풍토병에 대한 준비!
+                        </div>
+                    </li>
+                    <li style="width: 201px;">
+                        <div class="titleArea">
+                            <div class="inner">나에게 맞는<br><strong>플랜 선택</strong></div>
+                        </div>
+                        <div class="conArea">
+                            3가지 플랜 중<br>
+                            꼭 맞는 플랜 선택
+                        </div>
+                    </li>
+                </ul>
+            </div>
+			<!-- infopopup : s -->
+			<ul class="infopopup">
+				<li><a href="#"><span class="icon exmark">알아두실 사항</span></a></li>
+				<li><a href="#"><span class="icon quesmark">보험상품안내</span></a></li>
+			</ul>
+			<!-- infopopup : e -->
+        </div>
+		
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+
+</div>
+</body>
+</html>

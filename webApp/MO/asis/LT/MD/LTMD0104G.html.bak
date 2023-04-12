@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>계약자정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>계약자정보 입력</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">3</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<p class="topTxt"><span">피보험자/계약자 정보</span>를 입력해주세요.</p>
+	<section>
+		<h2>피보험자/계약자 정보</h2>
+		<form>
+			<fieldset>
+				<legend>피보험자/계약자 정보입력</legend>
+				<div class="inputWrap">
+					<input type="text" id="name01" disabled="disabled">
+					<label for="name01">이름</label>
+				</div>
+				<div class="inputWrap two">
+					<input type="text" id="number01_1" disabled="disabled">
+					<label for="number01_1">주민등록번호<em class="hide">앞자리</em></label>
+					<input type="password" placeholder="●●●●●●●" id="number01_2" disabled="disabled">
+					<label for="number01_2" class="hide">주민등록번호뒷자리</label>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="phone01" required />
+					<label for="phone01">휴대폰 번호</label>
+				</div>
+				<div class="inputWrap">
+					<input type="email" id="email01" required />
+					<label for="email01">이메일 주소</label>
+				</div>
+				<div class="inputWrap select">
+					<select title="등록 주소지 선택">
+						<option selected="selected" value="0">선택</option>
+						<option value="1">자택</option>
+					</select>
+					<input type="text" value="" title="우편번호" placeholder="우편번호">
+					<a href="#" role="button">우편번호 검색</a>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="addB1" disabled="disabled" />
+					<label for="addB1">기본 주소</label>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="addB2" disabled="disabled" />
+					<label for="addB2">상세 주소</label>
+				</div>
+			</fieldset>
+		</form>
+		<ul class="listDot">
+			<li>개인정보(주소, 연락처, 이메일 등)는 입력하신 정보로 업데이트 되오니 이점 유의하시기 바랍니다.</li>
+			<li>
+		</ul>
+
+		<h2>보험증권 수령방법</h2>	
+		<div class="orgboxBtn">
+			<a href="#none" role="button" class="on">이메일</a>
+			<a href="#none" role="button">우편</a>
+		</div>
+
+		<h2>해외금융계좌 신고대상 여부 확인</h2>			
+		<div class="radioBtn">
+			<span><input type="radio" id="yes" name="radioBox" checked="checked"><label for="yes">예</label></span>
+			<span><input type="radio" id="no" name="radioBox"><label for="no">아니오</label></span>
+		</div>
+
+
+		<div class="dataListBtn">
+			<ul>
+				<li>
+					<span class="titl">신고대상</span>
+					<span class="data">한국 이외의 조세목적상 해외거주자</span>
+				</li>
+				<li>
+					<span class="titl">영문성명</span>
+					<span class="data">HONG GIL DONG</span>
+				</li>
+				<li>
+					<span class="titl">거주주소</span>
+					<span class="data">700 Hyundai Boulevard, Montgomery, AL 36105</span>
+				</li>
+				<li>
+					<span class="titl">국가1</span>
+					<span class="data">미국 (납세자 번호: 123456789)</span>
+				</li>
+				<li>
+					<span class="titl">국가2</span>
+					<span class="data">일본 (납세자 번호: 미발급 국가)</span>
+				</li>
+			</ul>
+			<div class="btn">
+				<a href="#" role="button">수정하기</a>
+			</div>
+		</div>		
+
+		<div class="btnWrap">
+			<span><a href="#" role="button">이전</a></span>
+			<span><a href="#" role="button">다음</a></span>
+		</div>
+	</section>
+	<!-- content -->
+</div>
+</body>
+</html>
+

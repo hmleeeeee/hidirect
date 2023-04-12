@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 부가담보</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>부가담보</h1>
+		</header>
+		<div class="popContent">
+			<!-- EDIT text del<p class="topTxt">원하는 가입 담보를 선택해 주세요.</p>-->
+			<section class="addCollat">
+				<ul class="listBox">
+					<li class="infoBox">
+						<a href="#" role="button"><strong>신체손해보장확대</strong><span><em class="hide">하위컨텐츠 열기</em></span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="collat01" id="collat01_01"><label for="collat01_01"><span class="hide">가족 생활비담보(기본형) 선택</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">가족 생활비담보(기본형)</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<input type="checkbox" name="collat01" id="collat01_02"><label for="collat01_02"><span class="hide">가족 생활비담보(주말/휴일한정) 선택</span></label>
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">가족 생활비담보(주말/휴일한정)</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat01" id="collat01_03"><label for="collat01_03"><span class="hide">뺑소니사고 사망담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">뺑소니사고 사망담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat01" id="collat01_04"><label for="collat01_04"><span class="hide">상급병실료지원 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">상급병실료지원</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat01" id="collat01_05"><label for="collat01_05"><span class="hide">상해간병비 지원담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">상해간병비 지원담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat01" id="collat01_06" disabled="disabled"><label for="collat01_06"><span class="hide">상해용품 지원담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">상해용품 지원담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat01" id="collat01_07" disabled="disabled"><label for="collat01_07"><span class="hide">성형&middot;치아보철비용지원 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">성형&middot;치아보철비용지원</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat01" id="collat01_08"><label for="collat01_08"><span class="hide">실버케어 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">실버케어</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat01" id="collat01_09"><label for="collat01_09"><span class="hide">자녀케어 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">자녀케어</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+				</ul>
+
+				<ul class="listBox">
+					<li class="infoBox">
+						<a href="#" role="button"><strong>차량손해보장확대</strong><span><em class="hide">하위컨텐츠 열기</em></span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat02" id="collat02_01"><label for="collat02_01"><span class="hide">Road차량진단 서비스 추가 특약 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">Road차량진단 서비스 추가 특약</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat02" id="collat02_02"><label for="collat02_02"><span class="hide">다른 자동차 차량손해담보(차대차 충돌사고 한정) 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">다른 자동차 차량손해담보(차대차 충돌사고 한정)</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat02" id="collat02_03"><label for="collat02_03"><span class="hide">다른 자동차 차량손해담보(자녀 운전담보 추가) 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">다른 자동차 차량손해담보(자녀 운전담보 추가)</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat02" id="collat02_04"><label for="collat02_04"><span class="hide">신조자동차 판매직원 위험담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">신조자동차 판매직원 위험담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat02" id="collat02_05" disabled="disabled"><label for="collat02_05"><span class="hide">자기차량손해 보장 확대 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">자기차량손해 보장 확대</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat02" id="collat02_06" disabled="disabled"><label for="collat02_06"><span class="hide">자동차시세 하락손해 지원담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">자동차시세 하락손해 지원담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat02" id="collat02_07"><label for="collat02_07"><span class="hide">전손 시 대체차량 등록비용담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+						</div>
+						<div class="item">
+							<p class="titl">전손 시 대체차량 등록비용담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+				</ul>
+
+				<ul class="listBox">
+					<li class="infoBox">
+						<a href="#" role="button"><strong>사고처리비용확대</strong><span><em class="hide">하위컨텐츠 열기</em></span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat03" id="collat03_01"><label for="collat03_01"><span class="hide">벌금비용담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">벌금비용담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat03" id="collat03_02"><label for="collat03_02"><span class="hide">변호사 선임비용 담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">변호사 선임비용 담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat03" id="collat03_03"><label for="collat03_03"><span class="hide">보험대차운전중 사고보상특약 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">보험대차운전중 사고보상특약</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat03" id="collat03_04"><label for="collat03_04"><span class="hide">형사합의 지원금 담보 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">형사합의 지원금 담보</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+				</ul>
+
+				<ul class="listBox">
+					<li class="infoBox">
+						<a href="#" role="button"><strong>기타보장확대</strong><span><em class="hide">하위컨텐츠 열기</em></span></a>
+					</li>
+					<li>
+						<div class="check">
+							<span>
+								<!-- 2017-06-23 웹접근성 label Text 수정 -->
+								<input type="checkbox" name="collat03" id="collat03_01"><label for="collat03_01"><span class="hide">견인서비스 확장 추가특약Ⅰ 선택</span></label>
+								<!-- //2017-06-23 웹접근성 label Text 수정 -->
+							</span>
+						</div>
+						<div class="item">
+							<p class="titl">견인서비스 확장 추가특약Ⅰ</p>
+							<p class="price">999,999,999원</p>
+						</div>
+						<a href="#collatLayerpop" class="btnHelp"><span>도움말</span></a>
+					</li>
+				</ul>
+				<div class="bugaBox ">
+					<h2>비례보상 가입 내역 조회</h2>
+					<strong>교통사고 처리지원금, 벌금, 자동차사고 변호사 선임비용을 보장 받을 수 있는 다른 보험에 가입하신 경우 <span class="">각각 계약에서 실제로 발생한 금액을 한도로 비례 보상</span>되므로, 다른 보험 가입 여부를 꼭 확인하시기 바랍니다.</strong>
+					<ul class="listDot">
+						<li>기명피보험자 외 선택하신 운전자 범위에 속하신 피보험자도 다수보험계약 체결 시 실제로 발생한 금액을 한도로 비례보상 됩니다.</li>
+					</ul>
+					<div class="btn">
+						<a href="#" role="button" class="on">비례보상 담보 가입 조회</a>
+					</div>
+				</div>
+
+				<div class="noteBox2">
+					<p>조회결과</p>
+					<div>
+						<ul class="listDot">
+							<li>형사합의 지원금</li>
+							<li>변호사 선임비용</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- EDIT 디자인변경-->
+				<div class="agreeBox mgtS">
+					<strong>비례보상 가입 내용에 동의합니다.</strong>
+					<!-- 2017-06-23 웹접근성 label Text 수정 -->
+					<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">비례보상 가입 내용에 동의</span></label><span>동의합니다.</span></p>
+					<!-- //2017-06-23 웹접근성 label Text 수정 -->
+				</div>
+
+			</section>
+
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<span><a href="#none" role="button">취소</a></span>
+				<span><a href="#none" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+
+	<!-- 레이어팝업 : 도움말 -->
+	<div class="layerPopup" id="collatLayerpop">
+		<div class="layerWrap">
+			<h2>다른 자동차 운전담보</h2>
+			<div class="layerCont">
+				<div class="conBox">
+					<strong class="tit">보상내용</strong>
+					<p>피보험자가 다른 자동차를 운전 중 대인/대물/자손 사고 발생 시 다른 자동차를 피보험 자동차로 간주하여 보상</p>
+				</div>
+
+				<div class="conBox">
+					<strong class="tit">운전가능자</strong>
+					<ul class="listBasic">
+						<li>기명피보험자 및 배우자(1인 한정의 경우 기명피보험자만 가능)</li>
+						<li>자녀 운전 추가 특약 가입 시 자녀 운전 가능</li>
+					</ul>
+				</div>
+
+				<div class="conBox">
+					<strong class="tit">다른 자동차 범위</strong>
+					<p>일반 승용, 다인승 승용, 경/3종 승합, 경/4종 화물 자동차 간 운전 가능</p>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<a href="#close">확인</a>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+</body>
+</html>

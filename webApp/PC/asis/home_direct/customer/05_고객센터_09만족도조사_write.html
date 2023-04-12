@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_고객센터_09만족도조사_write</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+
+</head>
+<body class="directHomepage">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#gnb">메뉴바로가기</a></li>
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<div class="directWrap">
+    <script type="text/javascript" src="../../_ui_include_asis/gnb.js"></script>
+    <!--contentArea : s-->
+    <div class="contentArea">
+        <!--lnbWrap : s-->
+        <div class="lnbWrap">
+            <h2 class="lnbTitle">고객센터</h2>
+            <div class="lnb">
+                <ul class="dep2">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">홈페이지 이용안내</a>
+                        <ul class="dep3">
+                            <li><a href="#">보험료계산가이드</a></li>
+                            <li><a href="#">Click 2 Call (실시간 상담원<br>연결서비스) 가이드</a></li>
+                            <li class="on"><a href="#">보안프로그램 설치 및 안내</a></li>
+                            <li><a href="#">전자금융거래 유의사항</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">모바일 이용안내</a>
+                        <ul class="dep3">
+                            <li><a href="#">보안프로그램 설치 및 안내</a></li>
+                            <li><a href="#">공인인증서 이용안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">이메일 상담신청</a></li>
+                    <li><a href="#">고객콜센터안내</a></li>
+                    <li><a href="#">상담원 채용</a>
+                        <ul class="dep3">
+                            <li><a href="#">채용공고</a></li>
+                            <li><a href="#">입사지원현황</a></li>
+                            <li><a href="#">인사제도 안내</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">전자민원접수</a></li>
+                    <li class="on"><a href="#">만족도 조사</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--lnbWrap : e-->
+        <!--content : s-->
+        <div class="content">
+            <div class="location">
+                <ul>
+                    <li class="home"><a href="#"><img src="https://direct.hi.co.kr/images/common/location_home.png" alt="메인으로"></a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">만족도 조사</a></li>					        
+                </ul>
+            </div>
+            <h3 class="contentTitle">만족도 조사</h3>
+			<!--타이틀:s-->
+			<div class="conTitle02">
+				<h4 class="tit">언제나 고객님의 목소리에 귀 기울이는 현대해상 다이렉트 입니다.<br>더 나은 서비스를 위해 만족도 조사를 부탁 드립니다.</h4>
+			</div>
+			<!--타이틀:e-->
+
+			<div class="lnbTypeContentArea">
+				<div class="inputTable onlyInput mb18">
+					<ul class="inputArea inlineBlock">
+						<li class="item rline">
+							<div class="selectItem">
+								<select name="selectHp" title="보험명을 선택해 주세요" style="width: 186px;">									
+									<option value="1">실손의료비보장보험</option>
+									<option value="2">골프보험</option>
+									<option value="3">국내여행</option>
+								</select>
+							</div>
+						</li>
+						<li class="item rline">
+							<div class="inputBase" style="width:227px;">
+								<label for="name">이름</label>
+								<input type="text" id="name">
+							</div>
+						</li>
+						<li class="item rline">
+							<div class="inputBase"  style="width:227px;">
+								<label for="birth">생년월일 (ex. 780802)</label>
+								<input type="text" id="birth">
+							</div>
+						</li>
+						<li class="item">
+							<div class="sexSelect dataSelect">
+								<ul>
+									<li><a href="#" data-media-value="M">남</a></li>
+									<li><a href="#" data-media-value="F">여</a></li>
+								</ul>
+								<input type="hidden" id="sex_family1">
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<ul class="listSatiBase listSatisfac lineB">
+					<li>
+						<h4 class="tit">당사 홈페이지(앱 포함)  서비스 이용에 불편함은 없으셨습니까?</h4>
+						<div class="SatirightA">
+							<div class="radio">
+								<input type="radio" name="satisfaction01" id="verygood01_1">
+								<label for="verygood01_1">매우 만족</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction01" id="good01_1">
+								<label for="good01_1">만족</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction01" id="bad01_1">
+								<label for="bad01_1">불만</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction01" id="verybad01_1">
+								<label for="verybad01_1">매우 불만</label>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h4 class="tit">홈페이지 메뉴명 및 전반적인 화면구성이 적절하다고 생각하십니까?</h4>
+						<div class="SatirightA">
+							<div class="radio">
+								<input type="radio" name="satisfaction02" id="verygood01_2">
+								<label for="verygood01_2">매우 만족</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction02" id="good01_2">
+								<label for="good01_2">만족</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction02" id="bad01_2">
+								<label for="bad01_2">불만</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction02" id="verybad01_2">
+								<label for="verybad01_2">매우 불만</label>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h4 class="tit">보험가입 및 조회 프로세스 이용이 간편하였습니까?</h4>
+						<div class="SatirightA">
+							<div class="radio">
+								<input type="radio" name="satisfaction03" id="verygood01_3">
+								<label for="verygood01_3">매우 만족</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction03" id="good01_3">
+								<label for="good01_3">만족</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction03" id="bad01_3">
+								<label for="bad01_3">불만</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction03" id="verybad01_3">
+								<label for="verybad01_3">매우 불만</label>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h4 class="tit">홈페이지(앱포함) 서비스 이용 속도에 만족하십니까?</h4>
+						<div class="SatirightA">
+							<div class="radio">
+								<input type="radio" name="satisfaction04" id="verygood01_4">
+								<label for="verygood01_4">매우 만족</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction04" id="good01_4">
+								<label for="good01_4">만족</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction04" id="bad01_4">
+								<label for="bad01_4">불만</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="satisfaction04" id="verybad01_4">
+								<label for="verybad01_4">매우 불만</label>
+							</div>
+						</div>
+					</li>
+					<!-- 2017-12-12 li class="satibox", div class="satibtn" 클래스 추가 : s -->
+					<li class="satibox">
+						<div class="satibtn">							
+							<!-- 2017-12-05 문구수정 : s -->
+							<h4 class="tit">보험가입/이용 서비스에 대한 소중한 한줄평을 남겨주세요.</h4>
+							<!-- 2017-12-05 문구수정 : e -->							
+							<div class="SatirightA iconset">
+								<a class="btnSaticon" href="#"><span class="saticon icon_good">만족</span></a>
+								<a class="btnSaticon" href="#"><span class="saticon icon_suggestion">건의</span></a>
+								<a class="btnSaticon" href="#"><span class="saticon icon_bad">불만</span></a>
+							</div>
+						</div>
+						<div class="textareaBase introducetxt mt10">
+							<textarea name="txtinput" id="txtinput" title="내용을 입력해주세요." placeholder="내용을 입력해주세요."></textarea>
+						</div>
+					</li>
+					<!-- 2017-12-12 li class="satibox", div class="satibtn" 클래스 추가 : e -->
+				</ul>
+
+
+				<!--inputTable : s-->
+				<div class="inputTable recruitInput line mt40 Saticheckbig">
+					<div class="title">
+						<!-- 2017-12-12 "fz15" 클래스추가 : s -->
+						<h4 class="tit fz15">							
+							<span class="fontPoint2">(필수)</span> 설문조사를 위한 개인정보 수집/이용 동의<a href="#" class="btn small2 ml20" title="자세히보기"><span>자세히보기</span></a>
+						</h4>
+						<!-- 2017-12-12 "fz15" 클래스추가 : e -->
+						<div class="rightArea">
+							<div class="agreeRadio">
+								<div class="radio">
+									<input type="radio" name="agree1" id="agree1_1" class="yes">
+									<label for="agree1_1">동의함</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--inputTable : e-->
+
+				<!--버튼 :s--->
+				 <div class="btnAreaWrap tac">
+					<a href="#" class="btn line inlineBlock gray" style="width: 118px;"><span>취소</span></a>
+					<a href="#" class="btn line inlineBlock orange" style="width: 118px;"><span>상담신청</span></a>
+				</div>
+				<!--버튼 :e--->
+
+			</div>
+        </div>
+        <!--content : e-->
+
+    </div>
+    <!--contentArea : e-->
+    <!--quickArea : s -->
+    <script type="text/javascript" src="../../_ui_include_asis/quick.js"></script>
+    <!--quickArea : e -->
+    <!--2017-11-21 수정 : s-->
+    <!--footerWrap : s-->
+    <script type="text/javascript" src="../../_ui_include_asis/footer.js"></script>
+    <!--footerWrap : e-->
+    <!--2017-11-21 수정 : e-->
+</div>
+</body>
+</html>

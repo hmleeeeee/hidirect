@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+/**
+* Layout.content
+* ------------------
+* section & comp
+* PC/MO 공통
+*/
+
+
+//사용 안함
+@mixin layoutFull($value: $screen_margin) {
+	$_margin: $value;
+	$_margin2x: $value * 2;
+	width: calc(100% + #{$_margin2x}); margin-left: -$_margin; padding-left:0;padding-right: 0;
+}
+
+//사용 안함
+@mixin layoutComp($value: $screen_margin) {
+	padding-left:$value; padding-right:$value;
+}
+
+//사용 안함
+@mixin layoutSection($value: $screen_margin) {
+	$_margin: $value;
+	$_margin2x: $value * 2;
+	& {
+		@include clearfix();
+		box-sizing: border-box;
+		position: relative;
+		margin: 0 auto;
+		> .comp{
+			
+		}
+	}
+}
+
+
+
+.section_group{
+	// margin-top: 100px;
+	& + &{margin-top: 100px;}
+}
+
+.section{@include clearfix(); box-sizing: border-box; position: relative;
+	width: $screen_width; 
+	margin: 0 auto;
+	// padding-top: $content_top_space;
+	// &:first-child{margin-top: 0; padding-top: $content_top_space;}
+
+	&.sm {width: 550px;}
+	&.full {width: auto;}
+
+	& + &{padding-top: 0;margin-top: $section_space_h;}
+}
+
+.comp{@include clearfix(); box-sizing: border-box; position: relative;
+	width: calc($screen_width - ($screen_margin * 2));
+	margin: $comp_space_h auto 0; 
+	&:first-child{margin-top: 0;}
+
+	&.full {width: auto;}
+	&.border_top{padding-top: 30px;border-top:1px solid #eee;}
+	&.border_bottom{padding-bottom: 30px;border-bottom:1px solid #eee;}
+}
+
+.section.full{
+	.comp.grid1{width: auto; 
+		min-width:calc($screen_width - ($screen_margin * 2));//1200px
+		max-width:calc($screen_max_width - ($screen_margin * 2));//1200px
+		margin-left: auto; margin-right: auto;
+	}
+}
+.section > .comp:first-child{margin-top: 0;}
+
+
+.modal{
+	.comp{width: 100%;}
+}
+
+// * responsive (사용 안함)
+//-----------------
+// .container_fluid{position: relative; margin: 0 auto;
+// 	@include responsive(width, calc(1920px), calc(1280px));
+// 	@include responsive(padding-left, 80px, 40px);
+// 	@include responsive(padding-right, 80px, 40px);
+// 	box-sizing:border-box;
+// }
+
+
+
+// * Grid
+//-----------------
+// * Flex Grid
+
+.grid1{width: 100%;}
+
+//grid1~12
+// usage: @include grid(5, 12px, 10px);
+@for $c from 2 through $grid_column{
+	.grid#{$c}{ @include grid($c, 12px, $grid_hgap);}
+	.fl_grid#{$c}{ @include float_grid($c, 24px, $grid_hgap);}
+}
+
+//div1_11
+@for $c from 1 through $grid_column{
+	.div#{$c}_#{$grid_column - $c} {
+		@include div($c, 2%, 20px);
+	}
+}
+
+
+
+
+//===========================
+//===========================
+// layout System
+//.section 과 .comp
+/*
+1. section
+	> 컨텐트 내 레이아웃의 넓이 규정 wrapper
+	> background 요소의 넓이에 따라
+	
+	1) PC
+		- 1280: default
+		- 1920: .section.full 
+		- 100%: .section.full100
+	2) MO
+		- full: default
+
+2. comp
+	> section 내 모듈그룹 단위 레이아웃
+		- heading title 구분 또는
+		- 
+	> 위아래 간격 조정 레이아웃
+	> grid 포함 가능
+	> 상위 요소로 section, tab, accordion 가능
+	
+	1) 위아래 라인 구분
+	1) MO에서 section 만큼 : -margin 으로 full사이즈
+	//2) Scroll Module
+
+	- 좌우패딩
+		* default: 0
+		* 
+
+2.1 구분 라인과 혼용 사용
+	1) MO: .hr 
+
+3. grid
+	- .comp.grid
+	- .comp > .grid
+
+
+4. group
+	> Area Group
+
+============================================
+[이하는 Contents 레이아웃 요소 제외 바랍니다.]
+4. Area
+	> 개별 모듈 단위
+	- accordion 
+	- box
+	- btn
+	- card
+	- form
+	- pagenation
+	- step 
+	- table 
+	- tab(??: 상위 모듈로 이동)
+	- title 
+	- swiper
+	- list
+	- editor
+	- tearms
+	- banner
+5. &_(head, body, footer, top, bottom, left)
+6. item, obj, img, txt, desc, 
+7. &_wrap
+
+
+9. 공통
+	.xs, sm, md(base), lg, xg
+	.round, full, nopad, magic Class
+
+10. comment
+	[3/3: 수정(추가, 삭제)] 설명, 설명...
+
+	ex1. 
+		//[3/8: 수정] 문구수정, 마크업 수정
+		//[3/8: 수정] TD001
+
+
+	ex2.
+		<!-- [3/8: 수정] 문구수정, 마크업 수정 -->
+		...
+		...
+		...
+		<!-- //[3/8: 수정] -->
+*/
+

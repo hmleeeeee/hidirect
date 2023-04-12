@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+
+		//Sample Btn Toggle
+		$('.btn_samples').find('.btn').each(function(){
+			$(this).on('click', function(){
+				$(this).addClass('btn_ok').removeClass('btn_cancel')
+					.siblings().removeClass('btn_ok').addClass('btn_cancel')
+			});
+		});
+		layerPop.open($('#sampleModal'));
+	});
+</script>
+</head>
+<body data-channel="pc" data-login="true" data-category="template" data-category-sub="modal">
+	<script type="text/javascript" src="../_ui_include/skip.js"></script><!-- //Include: skip -->
+	<!-- wrap -->
+	<div id="wrap">
+		<div id="header">
+			<script type="text/javascript" src="../_ui_include/gnb.js"></script><!-- //Include: gnb -->
+		</div>
+		<script type="text/javascript" src="../_ui_include/breadcrumb.js"></script><!-- //Include: breadcrumb-->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<div class="section">
+					<div class="governing">
+						<h2 class="governing_title">Modal</h2>
+					</div>
+					<div class="comp">
+						<div class="btn_area btn_samples">
+							<a href="javascript:layerPop.open($('#sampleModal_sm'));" class="btn btn_cancel">.modal_sm (w :640)</a>
+							<a href="javascript:layerPop.open($('#sampleModal'));" class="btn btn_ok">.modal (w : 720)</a>
+							<a href="javascript:layerPop.open($('#sampleModal_lg'));" class="btn btn_cancel">.modal_lg (w :1065)</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+		<script type="text/javascript" src="../_ui_include/quick.js"></script><!-- //Include: quick -->
+		<div id="footer" class="footer">
+			<script type="text/javascript" src="../_ui_include/footer.js"></script><!-- //Include: footer -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- modal_sm -->
+		<div class="modal modal_sm fade" id="sampleModal_sm" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="title">Modal_sm (w : 640)</h2>
+						</div>
+					</div>
+					<!-- modal_body -->
+					<div class="modal_body">
+						<div class="wrapper">
+							<div class="comp" >
+								Code Here~!!
+
+								<br>
+								<br>
+								<button type="button" class="btn btn_line btn_nm" onclick="layerPop.open('#sampleModal_lg'); return false;">Open Modal</button>
+
+							</div>
+						</div>
+					</div>
+					<!-- //modal_body -->
+					<div class="modal_footer">
+						<div class="btn_area">
+							<button type="button" class="btn btn_cancel">취소</button>
+							<button type="button" class="btn btn_ok">확인</button>
+						</div>
+					</div>
+					<!-- //modal_footer-->
+					<button type="button" class="btn_close" aria-label="Close" onclick="layerPop.close('#sampleModal_sm'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //modal_sm -->
+
+		<!-- modal(default) -->
+		<div class="modal fade" id="sampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<!-- modal_header -->
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="title">Modal (w : 720, default)</h2>
+						</div>
+					</div>
+					<!-- //modal_header -->
+					<!-- modal_body -->
+					<div class="modal_body">
+						<div class="wrapper">
+							<div class="comp" >
+								<button type="button" class="btn btn_line btn_nm" onclick="layerPop.open('#sampleModal_sm'); return false;">Open Modal</button>
+								<a href="javascript: layerPop.alert($('#dataAlert') , {title : 'Alert Test', msg : '모달 위 Alert 테스트 입니다.', buttonTitle : {ok : '확인'}
+											, calllBack : {ok : function(){layerPop.close('#dataAlert'); return false; } } } );" class="btn btn_line btn_nm">Alert</a>
+								<br>
+								<br>
+								Start~
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="mb40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium accusamus ducimus laudantium, hic! Necessitatibus, animi?</div>
+								<div class="" style="padding-bottom:22px">Lorem ipsuum dolor sit amet, consectetur adipisicing elit. Amet architecto numquam mollitia magni, quae vitae id culpa, possimus facilis pariatur earum, dolor neque accusantium  ducimus laudantium, hic! Necessitatibus, animi?</div>
+							</div>
+						</div>
+					</div>
+					<!-- //modal_body -->
+					<!-- modal_footer -->
+					<div class="modal_footer">
+						<div class="btn_area">
+							<button type="button" class="btn btn_cancel">취소</button>
+							<button type="button" class="btn btn_ok">확인</button>
+						</div>
+					</div>
+					<!-- //modal_footer-->
+					<button type="button" class="btn_close" aria-label="Close" onclick="layerPop.close('#sampleModal'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //modal(default) -->
+		
+		<!-- modal_lg -->
+		<div class="modal modal_lg fade" id="sampleModal_lg" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<!-- modal_header -->
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="title">Modal_lg (w : 1056)</h2>
+						</div>
+					</div>
+					<!-- //modal_header -->
+					<!-- modal_body -->
+					<div class="modal_body">
+						<div class="wrapper">
+							<div class="comp" >
+								Code Here~!!
+								<br>
+								<br>
+								<button type="button" class="btn btn_line btn_nm" onclick="layerPop.open('#sampleModal'); return false;">Open Modal</button>
+							</div>
+						</div>
+					</div>
+					<!-- //modal_body -->
+					<!-- modal_footer -->
+					<div class="modal_footer">
+						<div class="btn_area">
+							<button type="button" class="btn btn_cancel">취소</button>
+							<button type="button" class="btn btn_ok">확인</button>
+						</div>
+					</div>
+					<!-- //modal_footer-->
+					<button type="button" class="btn_close" aria-label="Close" onclick="layerPop.close('#sampleModal_lg'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //modal_lg -->
+		
+		<!-- modal_alert -->
+		<div class="modal modal_alert fade" id="dataAlert" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_body">
+						<div class="wrapper">
+							<div class="comp sc_wrap"></div>
+						</div>
+					</div>
+					<div class="modal_footer">
+						<div class="btn_area"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //modal_alert -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

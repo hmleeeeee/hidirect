@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>가입확인서 등록</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>가입확인서 등록</h1>
+		</header>
+		<div class="popContent">
+			<p class="topTxt">장착하신 운행정보확인장치의 가입증명서 사진을 등록해주시기 바랍니다.</p>
+			<section>
+				<ul class="listDot">
+					<li>가입증명서 사진 : 개시일 이전 ~ 이후 15일</li>
+					<li>부적합한 사진(허위 및 해당 사진이 아닌경우)으로 제출 할 경우 해당 특약은 무효가 될 수 있습니다.</li>
+				</ul>
+
+				<h2>해당상품 및 차량정보</h2>
+				<ul class="contractBox">
+					<li>
+						<div class="contractTit">하이카다이렉트 자동차보험(12가12**)</div>
+						<div class="contractWhiteBox">
+							<ul class="dotico lineNone">
+								<li><span class="titl">거리측정정보</span><span class="data">운행정보 확인 장치</span></li>
+								<li><span class="titl">환급계좌정보</span><span class="data por">우리은행 12345600000 <a href="#layerPopup4" class="poSR" role="button">변경</a></span></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+
+				<h2>가입기준일 및 가입 시 기준주행거리</h2>
+				<fieldset>
+					<legend>가입기준일 및 가입 시 기준주행거리</legend>
+					<div class="inputWrap">
+						<input type="text" id="dataStart" required />
+						<label for="dataStart">기준일 (8자리 입력) 예:20100101</label>
+					</div>
+					<div class="inputWrap">
+						<input type="text" id="firstMileage" required />
+						<label for="firstMileage">최초 주행거리</label>
+					</div>
+				</fieldset>
+
+				<h2>가입증명서 사진 등록</h2>
+				<h3>가입증명서 사진</h3>
+				<div class="photoList">
+					<span><img src="https://mdirect.hi.co.kr/images/content/img_blackbox.jpg" alt="가족관계증명서 샘플사진"><strong>SAMPLE</strong></span>
+					<span>
+						<div class="addlist">
+							<input type="file" id="upload" class="file_uploader" title="파일찾기" />
+							<label for="upload" class="file_label"><strong>사진등록</strong></label>
+						</div>
+					</span>
+				</div>
+				<ul class="listDot">
+					<li>사진은 10Mb이하의 JPG, JPEG, GIF, PNG 만 가능합니다.</li>
+				</ul>
+
+				<div class="checkBox">
+					<strong>이용동의</strong>
+					<p>
+						<input type="checkbox" id="ck00"><label for="ck00"><span class="hide">사진정보 수집 및 이용에 대한 동의</span></label>
+						<span>사진정보 수집 및 이용에 대한 동의합니다.</span>
+					</p>
+				</div>
+
+				<div class="btnWrap">
+					<a href="#" class="on" role="button">등록완료</a>
+				</div>
+			</section>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+	<!-- 레이어팝업 : 사진등록 -->
+	<div class="layerPopup" id="layerPopup1">
+		<div class="layerWrap">
+			<h2>사진등록</h2>
+			<div class="layerCont">
+				<ul class="listDot mgtNone">
+					<li>최초 주행거리 등록 : 주행거리 사진.</li>
+				</ul>
+
+				<div class="photoList">
+					<span><img src="https://mdirect.hi.co.kr/images/content/img_blackbox.jpg" alt="블랙박스 샘플사진"><strong>SAMPLE</strong></span>
+					<span>
+						<div class="addlist">
+							<input type="file" id="upload" class="file_uploader" title="파일찾기" />
+							<label for="upload" class="file_label"><strong>사진등록</strong></label>
+						</div>
+					</span>
+				</div>
+
+				<div class="btnMore mgRL0 mgB0">
+					<a href="#layerPopup2" class="on" role="button"><span>등록하기</span></a>
+				</div>
+
+			</div>
+
+			<div class="layerBtn">
+				<a href="#"> 확인</a>
+			</div>
+			<a href="#" role="button" class="layerClose">창닫기</a>
+		</div>
+	</div>
+
+	<!-- 레이어팝업 : 사진등록 확인 -->
+	<div class="layerPopup" id="layerPopup2">
+		<div class="layerWrap">
+			<h2>사진등록</h2>
+			<div class="layerCont">
+				<ul class="listDot mgtNone">
+					<li>최초 주행거리 등록 : 주행거리 사진.</li>
+				</ul>
+				<div class="photoBoxList">
+					<ul>
+						<li><div><img src="https://mdirect.hi.co.kr/images/content/img_blackbox.jpg" alt="블랙박스샘플사진"></div></li>
+					</ul>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<a href="#close"> 확인</a>
+			</div>
+			<a href="#" role="button" class="layerClose">창닫기</a>
+		</div>
+	</div>
+
+	<!-- 레이어팝업 : 사진변경  -->
+	<div class="layerPopup" id="layerPopup3">
+		<div class="layerWrap">
+			<h2>사진변경</h2>
+			<div class="layerCont">
+				<ul class="listDot mgtNone">
+					<li>최초 주행거리 등록 : 주행거리 사진.</li>
+				</ul>
+				<div class="photoList">
+					<span><img src="https://mdirect.hi.co.kr/images/content/img_blackbox.jpg" alt="가족관계증명서 샘플사진"><strong>SAMPLE</strong></span>
+					<span>
+						<div class="addlist">
+							<input type="file" id="upload" class="file_uploader" title="파일찾기" />
+							<label for="upload" class="file_label"><strong>사진등록</strong></label>
+						</div>
+					</span>
+				</div>
+				<div class="btnMore mgRL0 mgB0">
+					<a href="#" class="on" role="button"><span>변경하기</span></a>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<a href="#close"> 확인</a>
+			</div>
+			<a href="#" role="button" class="layerClose">창닫기</a>
+		</div>
+	</div>
+	<!-- 레이어팝업 : 환급계좌 변경  -->
+	<div class="layerPopup" id="layerPopup4">
+		<div class="layerWrap">
+			<h2>환급계좌 변경</h2>
+			<div class="layerCont">
+				<ul class="listDot mgbS">
+					<li>ECO마일리지 특약의 환급금을 받으실 계약자 본인 명의의 계좌정보를 입력해주세요.</li>
+					<li>본인명의가 아닌 경우, 환급 받지 못할 수 있습니다.</li>
+				</ul>
+				<fieldset>
+					<legend>환산주행거리 계산기</legend>
+					<!-- 2017-06-23 웹접근성 selct title 제공  -->
+					<div class="inputWrap">
+						<select title="은행 선택">
+							<option>은행 선택</option>
+							<option value="1">우리은행</option>
+						</select>
+					</div>
+
+					<div class="inputWrap">
+						<input type="text" id="name" required />
+						<label for="name">계좌번호를 입력해주세요 (-제외)</label>
+					</div>
+				</fieldset>
+
+				<div class="btnMore mgRL0 mgB0">
+					<a href="#" class="on" role="button"><span>변경하기</span></a>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<a href="#close"> 확인</a>
+			</div>
+			<a href="#" role="button" class="layerClose">창닫기</a>
+		</div>
+	</div>
+
+</body>
+</html>

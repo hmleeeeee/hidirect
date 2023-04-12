@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 화재 및 붕괴등의 손해(건물)</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>화재 및 붕괴등의 손해(건물)<span class="hide">유형2</span> 담보</h1>
+		</header>
+		<div class="popContent">			
+			<section>
+				<div class="radioBox">
+					<span class="off">
+						<input type="radio" id="list01" name="radioBox1"><label for="list01">미가입</label>
+						<strong>미가입</strong>
+					</span>
+					<span class="on">
+						<input type="radio" id="list02" name="radioBox2" checked="checked"><label for="list02">1000만원</label>
+						<strong>1000만원</strong>
+					</span>
+					<span class="off">
+						<input type="radio" id="list03" name="radioBox3"><label for="list03">5000만원</label>
+						<strong>5000만원</strong>
+					</span>
+					<span class="off">
+						<input type="radio" id="list04" name="radioBox4"><label for="list04">8000만원</label>
+						<strong>8000만원</strong>
+					</span>
+					<span class="off">
+						<input type="radio" id="list05" name="radioBox5"><label for="list05">1억원</label>
+						<strong>1억원</strong>
+					</span>
+				</div>
+				<div class="toggleWrap">
+					<div class="tabBox open">
+						<div class="toggleTitle"><a href="#none" class="toggleBtn">담보 상세정보 보기</a></div>
+						<div class="toggleDetail">
+							내용입력
+						</div>
+					</div>
+				</div>		
+
+				<div class="toggleWrap">
+					<div class="tabBox open">
+						<div class="toggleTitle"><a href="#none" class="toggleBtn">유의사항</a></div>
+						<div class="toggleDetail">
+							<ul class="listDot">
+								<li>가입금액은 합계 3억원(주택 2억원 한도, 가재도구 1억원한도)이내로 가입이 가능합니다.</li>
+								<li>가재도구 가입금액은 TV,냉장고,장롱 등 기준으로 귀중품, 현금 등은 가입 불가합니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>			
+			</section>
+			<div class="btnWrap">
+				<span><a href="#none" role="button">취소</a></span>
+				<span><a href="#none" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>차량 상세정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Content">본문 바로가기</a></div>
+<header>
+	<h1>차량 상세정보 입력</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">입력정보 팝업</a>
+</header>
+<div id="h1Wrap">
+	<!-- content -->
+	<section>
+		<p class="topTxt">고객님의 추가정보를 입력해주세요.</p>
+	</section>
+
+	<section>
+		<div>
+			<h2>여행지</h2>
+			<div class="searchBox"> <!-- style cssname 변경 -->
+				<input type="search" id="txt_sch" class="txt_inp search" placeholder="국가 검색">
+				<label for="txt_sch" class="hide">여행지 검색</label>
+				<a href="#" class="schBtn" role="button"><span class="icoSch">여행지 검색</span></a>
+			</div>
+
+			<h2>여행목적</h2>
+			<div class="noCheckList two height4">
+				<a href="#" role="button" class="on">
+					<span class="choisText">단순여행</span>
+				</a>
+				<a href="#" role="button">
+					<span class="choisText">업무학술/출장</span>
+				</a>
+			</div>
+
+			<h2>보험기간</h2>
+			<div class="inputWrap">
+				<input id="carTerm03" type="text" placeholder="보험기간" value="" readonly="readonly" />
+				<label for="carTerm03">보험기간 입력</label>
+				<a href="#" class="calBtn" role="button"><span class="hide">보험기간 선택</span></a>
+			</div>
+
+			<ul class="listDot">
+				<li>워킹홀리데이, 우프(WWOOF), 취업, 체육대회, 운동경기참석을 위해 해외에 나가시는 경우는 가입이 불가능 합니다.</li>
+				<li>여행(보험)기간은 최대 90일까지 가입 가능합니다.</li>
+				<li>2017년 5월 1일 이후 출발하시는 경우, 금융당국 보험요율 변경 작업으로 보험가입이 불가합니다.</li>
+			</ul>
+
+			//여행제한/금지지역 안내 배너 영역
+
+			<ul class="termCont">
+				<li>
+					<a href="#none">보험가입 보상이 불가능한 지역을 확인하였습니다.</a>
+					<input type="checkbox" id="ch01"><label for="ch01">확인 및 동의</label>
+				</li>
+			</ul>
+
+			<div class="btnWrap">
+				<span><a href="#" role="button">이전</a></span>
+				<span class="on"><a href="#" role="button">다음</a></span>
+			</div>
+
+		</div>
+	</section>
+	<!-- //content -->
+</div>
+</body>
+</html>

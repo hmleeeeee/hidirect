@@ -10,11 +10,10 @@
 <script>
 	$(function() {
 		UI.init();
-		UI.accordion($('.accordion.notice'));
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="false" data-category="register" data-category-sub="step02">
+<body data-channel="mobile" data-login="false" data-category="register">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -44,11 +43,20 @@
 							<p class="info_text">입력하신 정보로<br>모든 보험계약의 개인정보도 함께 변경됩니다.</p>
 						</div>
 						<div class="comp">
-							<div class="form_area">
+							<!-- [04/03] gap_lg 추가 -->
+							<div class="form_area gap_lg">
+								<!-- [04/05] 휴대폰번호 마크업 변경 -->
 								<div class="form_item">
-									<div class="form_label"><label for="inp01">휴대폰번호</label></div>
-									<div class="form_wrap">
-										<input type="number" id="inp01" placeholder="-없이 입력">
+									<div class="form_phone">
+										<div class="form_label"><label for="phone">휴대폰번호</label></div>
+										<div class="form_wrap">
+											<select id="phone">
+												<option>010</option>
+											</select>
+										</div>
+										<div class="form_wrap">
+											<input type="number" placeholder="‘-’없이 숫자 8자리 입력" title="휴대폰번호 입력">
+										</div>
 									</div>
 									<div class="form_msg error">휴대폰번호를 꼭 입력해 주세요.</div>
 								</div>

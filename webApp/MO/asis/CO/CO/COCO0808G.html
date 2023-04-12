@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>긴급공지</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+
+<script>
+$(document).ready(function () {
+	//퍼블리싱 화면에서 보이기 위한 조건노출용 레이어 팝업처리.
+	$('.layerPopup').css({zIndex: '999999',opacity:'1'}).attr('aria-hidden' , false);
+});
+</script>
+</head>
+
+<body>
+<!-- 레이어팝업 : 알럿 -->
+<div class="layerPopup" id="layerPopAlert">
+	<div class="layerWrap">
+		<h2>긴급공지</h2>
+		<div class="layerCont">
+			<strong>인터넷창구 서비스 일시중단(10일)</strong>
+			<span>전산시스템 성능개선으로 인해 홈페이지/모바일 일부서비스가 중단되오니 고객님의 많은 양해 부탁드립니다.</span>
+			<ul class="listDot Line">
+				<li>중단시간 : 2017년 08년 10일(일)01시~02씨</li>
+				<li>일시중단 서비스 : 인터넷창구 메뉴</li>
+			</ul>
+		</div>
+		<div class="layerBtn">
+			<a href="#none" class="on">확인</a>
+		</div>
+		<a href="#" role="button" class="layerClose">창닫기</a>
+	</div>
+	<!-- <p class="changeLayer">역수입 차량, 개별 수입 차량의 차량가 연식과 최초등록일이 상이한 경우 차량 최초 등록일을 입력하셔야 됩니다.</p>	 -->
+</div>
+
+</body>
+</html>
+

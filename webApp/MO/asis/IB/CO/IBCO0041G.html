@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 증명서 발급</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>증명서 발급</h1>
+		</header>
+		<div class="popContent">
+			<p class="topTxt"><strong>하이카다이렉트 자동차보험</strong>원하시는 증명서를 선택한 뒤, 발급방법을 입력해 주시기 바랍니다.</p>
+			<div class="tabMenuBox">
+				<div class="tabMenu">
+					<a href="#none" class="on" role="button"><span>보험증권</span><span class="hide">선택됨</span></a>
+					<a href="#none" role="button"><span>가입증명서</span></a>
+				</div>
+			</div>				
+			<section>
+				<!-- 보험증권 선택시 -->
+				<div class="tabOpen on">
+					<h2>언어</h2>
+					<div class="orgboxBtn">
+						<a href="#none" role="button" class="on">국문</a>
+						<a href="#none" role="button">영문</a>
+					</div>
+
+					<fieldset>
+						<legend>국문선택시 입력</legend>
+						<div class="inputWrap">
+							<input type="text" id="Korname" value="" required />
+							<label for="Korname">이름</label>
+						</div>
+					</fieldset>
+					
+
+					<h2>발급방법(보험증권)</h2>
+					<fieldset>
+						<legend>발급방법 입력</legend>
+						<div class="radioBtn">
+							<span><input type="radio" id="email01" name="radioBox" checked="checked"><label for="email01">이메일</label></span>
+							<span><input type="radio" id="fax01" name="radioBox"><label for="fax01">팩스</label></span>
+						</div>
+
+						<div class="inputWrap">
+							<input type="text" id="email01" value="" required />
+							<label for="email01">이메일주소 입력</label>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="tabOpen">
+					<h2>언어</h2>
+					<div class="orgboxBtn">
+						<a href="#none" role="button">국문</a>
+						<a href="#none" role="button" class="on">영문</a>
+					</div>
+
+					<fieldset>
+						<legend>국문선택시 입력</legend>
+						<div class="inputWrap">
+							<input type="text" id="Engname" value="" required />
+							<label for="Engname">영문이름</label>
+						</div>
+					</fieldset>
+					
+
+					<h2>발급방법(보험증권)</h2>
+					<fieldset>
+						<legend>발급방법 입력</legend>
+						<div class="radioBtn">
+							<span><input type="radio" id="email21" name="radioBox"><label for="email21">이메일</label></span>
+							<span><input type="radio" id="fax21" name="radioBox" checked="checked"><label for="fax21">팩스</label></span>
+						</div>
+
+						<div class="inputWrap">
+							<input type="text" id="fax01" value="" required />
+							<label for="fax01">팩스번호 입력</label>
+						</div>
+					</fieldset>
+				</div>
+				
+
+				<div class="btnWrap">
+					<a href="#" class="on" role="button">발급요청</a>
+				</div>
+			</section>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

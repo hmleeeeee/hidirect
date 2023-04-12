@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>하이카 서비스망</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>하이카 서비스망</h1>
+	<a href="#none" class="btnBack"><span>이전</span></a>
+	<a href="#none" class="btnMenu">메뉴</a>
+</header>
+
+<div id="h1Wrap">
+	<!-- content -->
+	<div class="hicarServVisual">
+		<p>
+			<strong><span>지역</span> 또는 <span>명칭</span>으로 검색하실 수 있습니다.</strong>
+		</p>
+	</div>
+
+	<div class="tabMenuBox">
+		<div class="tabMenu">
+			<a href="#none" class="on" role="button"><span>지역 검색</span><span class="hide"> 선택됨</span></a>
+			<a href="#none" role="button"><span>명칭 검색</span></a>
+		</div>
+	</div>
+	<section>
+		<!-- 2017-06-19 접근성을 위하여 tabOpen on 추가후  style="display:block" 제거 -->
+		<div class="tabOpen on">
+			<fieldset>
+				<legend>지역검색정보 입력</legend>
+				<div class="inputWrap">
+					<select title="시/도 선택">
+						<option>시/도 선택</option>
+					</select>
+				</div>
+				<div class="inputWrap">
+					<select title="시/군/구 선택">
+						<option>시/군/구 선택</option>
+					</select>
+				</div>
+			</fieldset>
+		</div>
+
+		<div class="tabOpen">
+			<div class="inputWrap mgtNone">
+				<input type="text" id="schName" required>
+				<label for="schName">지역명 또는 지점명</label>
+			</div>
+		</div>
+
+		<div class="btn">
+			<a href="#" role="button" class="on">검색</a>
+		</div>
+
+		<ul class="contractBox">
+			<li>
+				<div class="contractTit">
+					<a href="#layerPop">세종기업</a>
+				</div>
+				<div class="contractWhiteBox">
+					<ul>
+						<li>
+							<span class="titl">전화번호</span>
+							<span class="data"><a href="tel:0448686963">044-864-7771</a></span>
+						</li>
+						<li>
+							<span class="titl">도로</span>
+							<span class="data">세종 한누리대로 169, 603호</span>
+						</li>
+						<li>
+							<span class="titl">지번</span>
+							<span class="data">청연로 308</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div class="contractTit">
+					<a href="#layerPop">세종기업</a>
+				</div>
+				<div class="contractWhiteBox">
+					<ul>
+						<li>
+							<span class="titl">전화번호</span>
+							<span class="data"><a href="tel:0448686963">044-864-7771</a></span>
+						</li>
+						<li>
+							<span class="titl">도로</span>
+							<span class="data">세종 한누리대로 169, 603호</span>
+						</li>
+						<li>
+							<span class="titl">지번</span>
+							<span class="data">청연로 308</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+
+		<div class="noResult">
+			<p>
+				조회 결과가 없습니다.
+			</p>
+		</div>
+
+		<div class="btnMore">
+			<a href="#" role="button"><span>더보기(10/19)</span></a>
+		</div>
+	</section>
+	<!-- //content -->
+</div>
+</body>
+</html>

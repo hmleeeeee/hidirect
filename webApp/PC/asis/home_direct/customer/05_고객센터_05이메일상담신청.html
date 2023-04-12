@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_고객콜센터_05이메일상담신청</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+</head>
+<script type="text/javascript">
+$(function(){
+    $(document).on("change","input[name='email']",function(){
+		var val = $(this).val();
+		$(".phone").hide();
+		$(".phone."+val).show();
+	})
+ })
+</script>
+<body class="directHomepage">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#gnb">본문바로가기</a></li>
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<div class="directWrap">
+	<!--gnbWrapSet : s--><!--
+	<div class="gnbWrapSet">
+		<div class="gnbWrap">
+			<div class="gnbArea" id="gnb">
+				<h1 class="logo"><img src="https://direct.hi.co.kr/images/common/homepage_logo_01.png" alt="현대해상 다이렉트" class="logo1"><img src="https://direct.hi.co.kr/images/common/homepage_logo_02.png" alt="현대해상 다이렉트" class="logo2"></h1>
+				<div class="topmenu">
+					<ul class="menu">
+						<li><a href="#">인증서복사 (PC->스마트폰)</a></li>
+						<li><a href="#">고객센터</a></li>
+						<li><a href="#">현대해상</a></li>
+					</ul>
+					<a href="#" class="btnAllmenu"><img src="https://direct.hi.co.kr/images/common/btn_allmenu_off.png" alt="전체메뉴보기"></a>
+				</div>
+				<ul class="gnb">
+					<li><a href="#">인터넷가입상품</a></li>
+					<li><a href="#">전화가입상품</a></li>
+					<li><a href="#">결제할인/제휴혜택</a></li>
+					<li><a href="#">보상서비스</a></li>
+					<li><a href="#">인터넷창구</a></li>
+				</ul>
+				<a href="#" class="btnDirect"><span>다이렉트 보험료 계산</span></a>
+			</div>
+		</div>
+	</div>
+	--> <!--gnbWrapSet : e--><script type="text/javascript" src="../../_ui_include_asis/gnb.js"></script>
+    <!--contentArea : s-->
+    <div class="contentArea">
+        <!--lnbWrap : s-->
+        <div class="lnbWrap">
+            <h2 class="lnbTitle">고객센터</h2>
+            <div class="lnb">
+                <ul class="dep2">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">홈페이지 이용안내</a>
+                        <ul class="dep3">
+                            <li><a href="#">메뉴1</a></li>
+                            <li><a href="#">메뉴2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">모바일 이용안내</a>
+                        <ul class="dep3" style="display: ;">
+                            <li class=""><a href="#">보안프로그램 설치 및 안내</a></li>
+                            <li><a href="#">공인인증서 이용안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">FAQ</a></li>
+                    <li class="on"><a href="#">이메일 상담신청</a></li>
+                    <li><a href="#">고객콜센터안내</a></li>
+                    <li><a href="#">상담원 채용</a>
+                        <ul class="dep3">
+                            <li><a href="#">메뉴1</a></li>
+                            <li><a href="#">메뉴2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">전자민원접수</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--lnbWrap : e-->
+        <!--content : s-->
+        <div class="content">
+            <div class="location">
+                <ul>
+                    <li class="home"><a href="#"><img src="https://direct.hi.co.kr/images/common/location_home.png" alt="메인으로"></a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">이메일 상담신청</a></li>
+                </ul>
+            </div>
+            <h3 class="contentTitle">이메일 상담신청</h3>
+			<div class="lnbTypeContentArea">
+				<!--타이틀:s-->
+				<div class="conTitle02">
+					<h4 class="tit">상담신청을 남겨주시면, 전문 상담원이 직접 연락 드리겠습니다.</h4>
+				</div>
+				<!--타이틀:e-->
+
+				<!--input :s-->
+				<div class="inputTable bline onlyInput emailApply">
+					<ul class="inputArea">
+						<li class="item">
+							<div class="radio">
+								<input type="radio" name="email" id="email" checked value="mail">
+								<label for="email">이메일로 답변</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="email" id="email_phone" value="tellmail">
+								<label for="email_phone">이메일+전화로 답변</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="inputArea inlineBlock">
+						<li class="item rline">
+							<div class="inputBase"  style="width:407px">
+								<label for="name">이름</label>
+								<input type="text" id="name">
+							</div>
+						</li>
+						<li class="item rline">
+							<div class="inputBase" style="width:258px">
+								<label for="birth">생년월일(ex.780802)</label><!--2017-10-17수정-->
+								<input type="text" id="birth">
+							</div>
+						</li>
+						<li class="item">
+							 <div class="sexSelect dataSelect">
+								<ul>
+									<li><a href="#" data-media-value="M">남</a></li>
+									<li><a href="#" data-media-value="F">여</a></li>
+								</ul>
+								<input type="hidden" id="sex_family1">
+							</div>
+						</li>
+					</ul>
+					
+					<ul class="inputArea inlineBlock">
+						<li class="item">
+							<div class="inputBase" style="width: 195px;">
+								<label for="email1">이메일주소</label>
+								<input type="text" id="email1">
+							</div>
+							<span class="gapTxt">@</span>
+							<div class="inputBase inputOnly" style="width:210px;">
+								<input type="text" id="email2">
+							</div>
+						</li>
+						<li class="item rline">
+							<div class="selectItem">
+								<select name="selectHp" title="이메일 종류를 선택해주세요" style="width: 189px;">
+									<option value="">직접입력</option>
+									<option value="1">naver.com</option>
+								</select>
+							</div>
+						</li>
+						<li class="item">
+							<div class="phone mail">
+								<div class="inputBase disabled" style="width: 189px;">
+									<label for="hpNumber">휴대폰번호 (‘-’없이)</label>
+									<input type="text" disabled id="hpNumber">
+								</div>
+							</div>
+							<div class="phone tellmail" style="display:none">
+								<div class="inputBase" style="width: 189px;">
+									<label for="hpNumber2">휴대폰번호 (‘-’없이)</label>
+									<input type="text" id="hpNumber2">
+								</div>
+							</div>
+						</li>
+					</ul>
+					
+					<ul class="inputArea item">
+						<li class="item">
+							<div class="inputBase">
+								<label for="title">제목</label>
+								<input type="text" id="title">
+							</div>
+						</li>
+					</ul>
+					<div class="textareaBase introducetxt mt20">
+						<textarea name="txtinput" id="txtinput" title="상담 내용을 입력해주세요." placeholder="상담 내용을 입력해주세요."></textarea>
+						<span class="byte">0/1000</span>
+					</div>
+
+					<ul class="listStyle star">
+						<li>주말 또는 공휴일에 상담신청을 남기시는 경우, 영업일 시작 후 최대한 빠르게 답변해 드리겠습니다.</li>
+						<li>실시간 상담이 아니므로 상담안내는 고객콜센터 상황에 따라 지연될 수 있습니다.</li>
+						<li>급하게 상담을 원하시는 경우, 고객콜센터 1899-6782로 전화 주시면 바로 상담 받으실 수 있습니다.</li>
+					</ul>
+				</div>
+				<!--input :e-->
+				
+				<!--input :s--><!--2017-10-17수정-->
+				<div class="inputTable noTline">
+					 <div class="title">
+						<h3 class="tit"><span class="fontPoint2">(필수)</span> 상담 접수를 위한 동의</h3>
+					</div>
+					<div class="agreeBox">
+						<ul>
+							<li>
+								<div class="titArea">
+									<span class="txt fz14 fontLevel2">개인(신용)정보의 수집·이용에 관한 사항</span>
+									<a href="#" class="btn small2" title="자세히보기"><span>자세히보기</span></a>
+								</div>
+								<div class="agreeRadio">
+									<div class="radio">
+										<input type="radio" name="agree1" id="agree1_1" class="yes">
+										<label for="agree1_1">동의함</label>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					 <div class="txtContent mt20 bline">
+						<h4>소비자 권익보호에 관한 사항</h4>
+						<div class="con fz14">
+							본 동의를 거부하시는 경우에는 원활한 민원 접수 및 처리가 불가능 할 수 있으며,<br>
+							본 동의서에 의한 개인(신용)정보 조회는 귀하의 신용등급에 영향을 주지 않습니다. 
+						</div>
+					</div>
+				</div>
+				<!--input :e-->
+
+				<!--버튼 :s--->
+				 <div class="btnAreaWrap tac">
+					<a href="#" class="btn line inlineBlock gray" style="width: 118px;"><span>취소</span></a>
+					<a href="#" class="btn line inlineBlock orange" style="width: 118px;"><span>상담신청</span></a>
+				</div>
+				<!--버튼 :e--->
+				
+			</div>
+        </div>
+        <!--content : e-->
+
+    </div>
+    <!--contentArea : e-->
+    <!--quickArea : s -->
+    <script type="text/javascript" src="../../_ui_include_asis/quick.js"></script>
+    <!--quickArea : e -->
+    <!--2017-11-21 수정 : s-->
+    <!--footerWrap : s-->
+    <script type="text/javascript" src="../../_ui_include_asis/footer.js"></script>
+    <!--footerWrap : e-->
+    <!--2017-11-21 수정 : e-->
+</div>
+</body>
+</html>

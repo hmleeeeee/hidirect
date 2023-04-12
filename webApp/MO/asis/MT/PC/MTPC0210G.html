@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>차량번호 입력 | 차량 기본정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>차량 기본정보 입력</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">2</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<!-- style 버튼형 선택 콘텐츠 변경, 화면하단고정타입 버튼영역 위치변경, class 삭제, form element 변경 -->
+	<p class="topTxt01">차량번호, 차대번호, 구입 예정 중<br>선택해주세요.</p><!-- 0620 상단 텍스트 변경 JJY-->
+	<section class="bg">
+		<div class="wrapTab tabChois">
+			<a href="#" class="carNum on" role="button"><span>차량번호 입력</span></a>
+			<a href="#" class="cerVehicle" role="button"><span>차대번호 입력</span></a>
+			<a href="#" class="cerPurchase" role="button"><span>차량구입 예정</span></a>
+		</div>
+		<ul class="listDot mgtS">
+			<li>보험 만기일이 2017년 05월 06일 이후이거나<br> 구입 예정이신 경우 보험료 계산까지만 가능합니다.</li>
+		</ul>
+	</section>
+
+	<section class="topLine">
+		<div class="h2Btn">
+			<h2>차량 유형 선택 및 기본정보 입력</h2>
+			<a href="#layerPopup1" class="btnHelp" role="button"><span>도움말</span></a>
+		</div>
+
+		<div class="itemPack">
+			<ul class="itemListN3">
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">
+							<!-- itemdata -->
+							승용차
+							<!-- //itemdata -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">
+							<!-- itemdata -->
+							승합차
+							<!-- //itemdata -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#none" role="button">
+						<div class="cont">
+							<!-- itemdata -->
+							화물차
+							<!-- //itemdata -->
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="itemContWrap">
+			<div class="tabOpen on">
+				<strong class="hide">승용차</strong>
+				<fieldset>
+					<legend>차량번호 정보입력</legend>
+					<div class="inputWrap">
+						<input id="carNo" name="carNo" type="text" required />
+						<label for="carNo">차량번호 입력</label>
+					</div>
+					<!-- 0628 마크업변경 JJY -->
+					<div class="inputWrap two">
+						<span>
+							<input type="date" id="data01" required>
+							<label for="data01">보험개시일</label>
+						</span>
+						<span>
+							<input type="date" id="data02" required>
+							<label for="data02">보험종료일</label>
+						</span>
+					</div>
+					<!--// 0628 마크업변경 JJY -->
+				</fieldset>
+			</div>
+			<div class="tabOpen">
+				<strong class="hide">승합차</strong>
+				<fieldset>
+					<legend>차대번호 정보입력</legend>
+					<div class="inputWrap">
+						<input id="carbehNo" name="carbehNo" type="text" required />
+						<label for="carbehNo">차대번호 입력</label>
+					</div>
+					<!-- 0628 마크업변경 JJY -->
+					<div class="inputWrap two">
+						<span>
+							<input type="date" id="data01" required>
+							<label for="data01">보험개시일</label>
+						</span>
+						<span>
+							<input type="date" id="data02" required>
+							<label for="data02">보험종료일</label>
+						</span>
+					</div>
+					<!--// 0628 마크업변경 JJY -->
+				</fieldset>
+			</div>
+			<div class="tabOpen">
+				<strong class="hide">화물차</strong>
+				<!-- 0628 마크업변경 JJY -->
+				<div class="inputWrap two">
+					<span>
+						<input type="date" id="data01" required>
+						<label for="data01">보험개시일</label>
+					</span>
+					<span>
+						<input type="date" id="data02" required>
+						<label for="data02">보험종료일</label>
+					</span>
+				</div>
+				<!--// 0628 마크업변경 JJY -->
+			</div>
+		</div>
+
+		<!-- <ul class="listDot">
+			<li>보험 가입 완료 후, 증명서를 출력하시어 등록사업소에 제출하시면 자동차 등록이 가능합니다.</li>
+		</ul> -->
+	</section>
+
+	<div class="btnWrap">
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">다음</a></span>
+	</div>
+	<!-- //style -->
+	<!-- content -->
+</div>
+<!-- 레이어팝업 : 도움말 -->
+<div class="layerPopup" id="layerPopup1">
+	<div class="layerWrap">
+		<h2>도움말</h2>
+		<div class="layerCont">
+			<ul class="hlpList">
+				<li>
+					<div class="carIcon car01"></div>
+					<strong>승용차</strong>
+					<ul>
+						<li>승차정원 10인 이하</li>
+					</ul>
+				</li>
+				<li>
+					<div class="carIcon car02"></div>
+					<strong>승합차</strong>
+					<ul>
+						<li>승차정원 11인 이상
+							<div class="listDot mgtS">
+								<p>다마스, 스타렉스 등 승합차로 분류</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div class="carIcon car03"></div>
+					<strong>화물차</strong>
+					<ul>
+						<li>1톤 이하 적재함이 있는 차량
+							<div class="listDot mgtS">
+								<p>액티언스포츠,무쏘밴 등 밴형은 화물차로 분류</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="layerBtn">
+			<a href="#close">확인</a>
+		</div>
+		<a href="#" role="button" class="layerClose">창닫기</a>
+	</div>
+</div>
+
+<!-- 레이어팝업 : 보험기간 -->
+<div class="layerPopup" id="LayerPopupDate">
+	<div class="layerWrap">
+		<h2>보험기간</h2>
+		<div class="layerCont">
+			<h3>차량정보 <em>05가1234</em></h3>
+			<div class="inputWrap two">
+				<span>
+					<input type="date" id="data01" required>
+					<label for="data01">보험개시일</label>
+				</span>
+				<span>
+					<input type="date" id="data02" required>
+					<label for="data02">보험종료일</label>
+				</span>
+			</div>
+			<div class="innerScroll">
+				<div class="inner">
+					<ul class="listDot">
+						<li>1년으로 가입하는 경우 보험기간의 <span>개시일과 종료일이 같아야 합니다.</span><br>
+						(예:2017-08-<span>15</span>~2018-08-<span>15</span>)</li>
+						<li>보험기간을 <span>1년 미만</span>으로 가입하시는 경우, 아래 내용을 반드시 확인하시기 바랍니다.
+							<ul class="listBasic">
+								<li>갱신시 무사고 할인혜택을 받으실 수 없습니다.</li>
+								<li>인터넷으로 보험가입시, 보험기간이 3개월 미만인 경우에는 자기차량손해 담보를 가입하실 수 없습니다. </li>
+								<li>보험기간이 15일 초과 ~ 1년 미만인 경우 본인소유 차량만 인터넷으로 계약체결이 가능합니다.</li>
+								<li>확정 보험료가 가입시 납입한 보험료와 달라질 수 있으며 추후 보험료 환급추징이 발생할 수 있습니다.</li>
+								<li>보험료 계산시 단기요율이 적용됩니다.</li>
+							</ul>
+							<ul class="listEtc">
+								<li>단기요율: ~7일(6%), ~15일(10%), ~1개월(15%), ~2개월(20%), ~3개월(30%), ~4개월(40%), ~5개월(50%), ~6개월(60%), ~7개월(70%), ~8개월(80%), ~9개월(85%), ~10개월(90%), ~11개월(95%), 12개월(100%)</li>
+								<li>단기요율은 보험기간1년의 적용보험료를 100으로 가정할 때 보험기간에 따라 고객이 부담하게 되는 보험료 비율입니다.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		<div class="layerBtn">
+			<a href="#" class="on" role="button">확인</a>
+		</div>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>주택화재상해보험_03_보험료확인_가족형</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/generalinsurance.css" />
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="형대해상 다이렉트"></a></p>
+            <h1>주택화재상해보험</h1>
+        </div>
+        <div class="stepArea">
+        </div>
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>보험료 확인</h2>
+            <p class="txt">플랜 및 담보를 선택해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+
+        <!--productInfoTable : s-->
+        <div class="productInfoTable mb20 typeHouse">
+            <ul class="titleArea">
+                <li class="tit">가입담보형</li>
+                <li class="pay">가입금액</li>
+                <li class="join">가입설정</li>
+            </ul>
+            <ul class="subTitleArea">
+                <li class="tit">화재손해</li>
+                <li class="pay tar"><p class="inTitle">본인</p><p class="inTitle">가족</p></li>
+                <li class="join"></li>
+            </ul>
+            <div class="infoArea">
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">화재및붕괴등의 손해(건물)</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <div class="selectItem inTable" style="width: 122px;">
+                            <select name="priceSelect1" id="priceSelect1" title="가입금액을 선택해주세요">
+                                <option value="1">2억원</option>
+                                <option value="2">1억원</option>
+                                <option value="3">5,000만원</option>
+                            </select>
+                        </div>
+                        <span class="inTxt">-</span>
+                    </li>
+                    <li class="join fontPoint2">필수가입</li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">화재및붕괴등의 손해(가재)</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <div class="selectItem inTable" style="width: 122px;">
+                            <select name="priceSelect2" id="priceSelect2" title="가입금액을 선택해주세요" >
+                                <option value="1000">1,000만원</option>
+                                <option value="1500">1,500만원</option>
+                                <option value="2000">2,000만원</option>
+                                <option value="2500">2,500만원</option>
+                                <option value="3000">3,000만원</option>
+                                <option value="4000">4,000만원</option>
+                                <option value="5000" selected>5,000만원</option>
+                            </select>
+                        </div>
+                        <span class="inTxt">-</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">대물배상 (실화)</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>미가입</span>
+                        <span class="inTxt">-</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">주택화재및붕괴등 임시거주비용보장</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>1,000만원</span>
+                        <span class="inTxt">1,000만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">가족화재벌금보장</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>20만원</span>
+                        <span class="inTxt">20만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="subTitleArea mt20">
+                <li class="tit">상해</li>
+                <li class="pay"></li>
+                <li class="join"></li>
+            </ul>
+            <div class="infoArea">
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">상해흉터성형수술비</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>10만원</span>
+                        <span class="inTxt">10만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">화상진단보험금</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>1,000만원</span>
+                        <span class="inTxt">1,000만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">화상수술</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>1,000만원</span>
+                        <span class="inTxt">1,000만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">강력범죄위로금</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>20만원</span>
+                        <span class="inTxt">20만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">골절진단(치아파절 제외)</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>10만원</span>
+                        <span class="inTxt">10만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">골절수술위로금</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>1,000만원</span>
+                        <span class="inTxt">1,000만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">5대골절진단 </span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>1,000만원</span>
+                        <span class="inTxt">1,000만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">5대골절수술 </span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>140만원</span>
+                        <span class="inTxt">140만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="subTitleArea mt20">
+                <li class="tit">재산손해</li>
+                <li class="pay"></li>
+                <li class="join"></li>
+            </ul>
+            <div class="infoArea">
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">고장수리(6대가전제품)</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>10만원</span>
+                        <span class="inTxt">10만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="item">
+                    <li class="tit">
+                        <span class="txt">가재도난</span>
+                        <a href="#" class="btnHelp">도움말</a>
+                    </li>
+                    <li class="pay">
+                        <span>1,000만원</span>
+                        <span class="inTxt">1,000만원</span>
+                    </li>
+                    <li class="join fontPoint2">
+                        <div class="circleSlide">
+                            <div class="circle"></div>
+                            <ul>
+                                <li><a href="#" data-media-value="no">미가입</a></li>
+                                <li><a href="#" data-media-value="yes">가입</a></li>
+                            </ul>
+                            <input type="hidden" id="join1">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="listStyle star noGap mt15">
+                <li>가입금액은 합계 3억원 (주택 2억원 한도, 가재도구 1억원 한도) 이내로 가입이 가능합니다.</li>
+                <li>가재도구 가입금액은 TV, 냉장고, 장롱 등 기준으로 귀중품, 현금 등은 가입불가 합니다.</li>
+            </ul>
+            <div class="selectDateArea item2 mt25">
+                <dl>
+                    <dt>보험가입기간</dt>
+                    <dd>
+                        <div class="selectItem">
+                            <select name="selectYear" id="selectYear" title="보험가입기간을 선택해주세요">
+                                <option value="1">10년</option>
+                                <option value="2">5년</option>
+                                <option value="3">1년</option>
+                            </select>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>납입방법</dt>
+                    <dd>
+                        <div class="selectItem">
+                            <select name="selectKind" id="selectKind" title="납입방법을 선택해주세요">
+                                <option value="1">월납</option>
+                                <option value="2">연납</option>
+                            </select>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="InfoTotal">
+                <div class="totalPay">
+                    <p class="txt">결제 보험료(월납)</p>
+                    <div class="price">
+                        <span class="number">7,600</span>
+                        <span class="priceTxt">원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--productInfoTable : e-->
+        <!--btnAreaWrap : s-->
+        <div class="btnAreaWrap right"><a href="#" class="btn small mail"><span>문자로 받기</span></a></div>
+        <!--btnAreaWrap : e-->
+
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item37">
+                    <li><a href="#" class="btn prev"><span>이전</span></a></li>
+                    <li><a href="#" class="btn next"><span>다음</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

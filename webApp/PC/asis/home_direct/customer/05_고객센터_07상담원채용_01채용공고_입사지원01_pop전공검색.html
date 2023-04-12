@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_고객콜센터_07상담원채용_01채용공고_입사지원01_pop전공검색</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+</head>
+<script type="text/javascript">
+ $(document).on("change",".self",function(e){
+	if($(this).is(":checked")){
+		$(".majorEdit .inputedit").show();
+		$(".majorEdit .inputdisabled").hide();
+	}else{
+		$(".majorEdit .inputedit").hide();
+		$(".majorEdit .inputdisabled").show();
+	}
+})
+</script>
+<body class="boxType">
+
+<!--01_pop전공검색 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap w600">
+    <div class="titleArea">
+        <h2>전공 검색</h2>
+    </div>
+    <div class="popupContentArea">
+       
+	  <!--inputTable : s-->
+		<div class="inputTable onlyInput noTline mb10">
+			<div class="inputSet">
+				<ul class="inputArea inlineBlock">
+					<li class="item">
+						<div class="inputBase placeholder" style="width:410px;">
+							<input type="text" placeholder="전공명을 검색하세요." title="전공명을 검색하세요." id="search1">
+						</div>
+					</li>
+					<li class="item">
+						<a href="#" class="btn big" style="width: 120px;"><span>검색</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--inputTable : e-->
+		<ul class="listStyle star">
+			<li>경영학과인 경우 ‘경영’으로 검색하시고 선택하여 주시기 바랍니다.</li>
+			<li>검색 결과가 없는 경우, 좌측 하단 체크박스 선택 후 직접 입력해 주십시오. </li>
+		</ul>
+
+		<div class="serchSrcollArea">
+			<h3>전공명</h3>
+			<div class="serchScrollcon">
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_1">
+						<label for="major1_1">병원관리학</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_2">
+						<label for="major1_2">금융재테크정보학</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_3">
+						<label for="major1_3">기계시스템디자인</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_4">
+						<label for="major1_4">데이터정보학</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_5">
+						<label for="major1_5">소프트웨어공학</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_6">
+						<label for="major1_6">국제사무학</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_7">
+						<label for="major1_7">역사</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_8">
+						<label for="major1_8">농악</label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="radio">
+						<input type="radio" name="major" id="major1_9">
+						<label for="major1_9">농악</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="majorEdit">
+			<div class="checkbox">
+				<input type="checkbox" id="self" class="self">
+				<label for="self">직접입력</label>
+			</div>
+			<div class="inputBase h40 disabled inputdisabled">
+				<label for="none">검색 결과가 없는 경우 직접 입력해 주세요.</label>
+				<input type="text" disabled="" id="none">
+			</div>
+			<div class="inputBase h40 inputedit placeholder" style="display:none;">
+				<input type="text" id="edit" title="전공명 직접입력">
+			</div>
+		</div>
+		<!--btn:s-->
+		<div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock orange" style="width: 90px;"><span>확인</span></a>
+        </div>
+		<!--btn:e-->
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!--01_pop전공검색 : e-->
+
+</body>
+</html>

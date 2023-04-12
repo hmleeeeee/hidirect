@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>12_pop자동차보험설계기본정보</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+	<script>
+		$(function(){
+		    $(".disabledRaioCon input[type=radio]").on("change",function(){
+				var target = $(this).closest("li");
+				var idx = $(this).closest("li").index();
+
+                $(".disabledRaioCon").find(".inputBase").addClass("disabled");
+                $(".disabledRaioCon").find(".inputBase input").attr("disabled", true);
+                $(".disabledRaioCon").find(".inputBase input").attr("disabled","");
+
+				target.find(".inputBase").removeClass("disabled");
+				target.find(".inputBase input").attr("disabled", false);
+				target.find(".inputBase input").attr("disabled","")
+
+			})
+		})
+	</script>
+</head>
+<body class="boxType">
+
+
+
+<!-- 04_보험료확인_pop특약_마일리지 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap failjoin w600">
+    <div class="titleArea">
+        <h2>자동차보험 설계 기본정보</h2>
+    </div>
+    <div class="popupContentArea">
+		<h3 class="infoTit mb15"><span class="fontPoint1">홍길동 고객님,</span> 설계내용 확인 후 차량정보를 입력해주세요.</h3>
+		<div class="carInfomation">
+			<dl>
+				<dt>차량정보 </dt>
+				<dd>캠리</dd>
+			</dl>
+			<dl>
+				<dt>차량세부정보 </dt>
+				<dd>Camry 2.5 XLE Hybrid</dd>
+			</dl>
+			<dl>
+				<dt>추가부속품</dt>
+				<dd>가죽시트,블랙박스</dd>
+			</dl>
+			<dl>
+				<dt>차량등록년도</dt>
+				<dd>2017년</dd>
+			</dl>
+			<dl>
+				<dt>운전자범위(최저연령)</dt>
+				<dd>부부한정(만28세이상)</dd>
+			</dl>
+			<dl>
+				<dt>지정1인</dt>
+				<dd>-</dd>
+			</dl>
+			<dl>
+				<dt>배우자 </dt>
+				<dd>홍길순(880716) </dd>
+			</dl>
+		</div>
+		<!--inputTable : s-->
+		<div class="inputTable inputBline onlyInput mb10">
+			<div class="title inputTitle">
+				<h4 class="tit fz15">차량번호 또는 차대번호 입력</h4>
+			</div>
+			<div class="inputSet">
+				<ul class="inputArea inlineBlock disabledRaioCon">
+					<li class="item pr20">
+						<div class="radio mt8">
+							<input type="radio" name="carNumber" id="carNumber1" checked>
+							<label for="carNumber1"><span class="fontLevel1">차량번호</span></label>
+						</div>
+						<div class="inputBase placeholder h40 ml10" style="width: 155px;">
+							<input type="text" title="자동차번호" placeholder="자동차번호">
+						</div>
+					</li>
+					<li class="item">
+						<div class="radio mt8">
+							<input type="radio" name="carNumber" id="carNumber2">
+							<label for="carNumber2"><span class="fontLevel1">차대번호</span></label>
+						</div>
+						<div class="inputBase placeholder h40  ml10 disabled" style="width: 155px;">
+							<input type="text" title="자동차번호" placeholder="ex: AAABB1111CC" disabled>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--inputTable : e-->
+
+		<div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock gray"><span>취소</span></a>
+            <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 04_보험료확인_pop특약_마일리지 : e-->
+
+</body>
+</html>

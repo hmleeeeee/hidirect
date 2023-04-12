@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>01_고객정보</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+</head>
+
+
+<body class="carComMain">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="productMainWrap">
+     <div class="objFixedWrap">
+        <div class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/motor/logo_hicardirect.png" alt="하이카 다이렉트"></a></div>
+		<!-- 2017-12-13 문구 수정: s -->
+        <h1 class="mainTitle black">
+            <span class="tit">자동차보험 <span class="type">(법인)</span></span>
+            <span class="txt">모든조건 충족시<br>최대 15.4%까지 저렴!</span>
+        </h1>
+		<!-- 2017-12-13 문구 수정: e -->
+    </div>
+    <!--contentArea : s -->
+    <div class="productMainContentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>고객정보</h2>
+            <p class="txt">법인 정보를 입력해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+
+        <!--inputTable : s-->
+        <div class="inputTable onlyInput noTline">
+            <ul class="inputArea">
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="name1">법인명</label>
+                        <input type="text" id="name1">
+                    </div>
+                </li>
+            </ul>
+            <ul class="inputArea inlineBlock">
+                <li class="item">
+                    <div class="inputBase" style="width:120px;">
+                        <label for="personNumber1">사업자번호</label>
+                        <input type="text" id="personNumber1">
+                    </div>
+					<span class="gapTxt">-</span>
+					<div class="inputBase placeholder" style="width:120px;">
+                        <input type="password" id="personNumber1_last" placeholder="뒷 7자리" title="사업자번호">
+                    </div>
+					<span class="gapTxt">-</span>
+					<div class="inputBase placeholder" style="width:120px;">
+                        <input type="password" id="personNumber1_last" placeholder="뒷 7자리" title="사업자번호">
+                    </div>
+                </li>
+            </ul>
+            <ul class="inputArea mt15">
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="hp">휴대폰번호(‘-’없이)</label>
+                        <input type="text" id="hp">
+                    </div>
+                </li>
+            </ul>
+            <ul class="listStyle star fontLevel2 mt15">
+                <li>보험만기일이 OOOO년 OO월 OO일 이후라면 만기 알람 신청을<br> 진행하세요.</li>
+            </ul>
+        </div>
+        <!--inputTable : e-->
+
+
+        <div class="bottomFixed">
+            <div class="fontLevel2 mb30">
+                법인용 자동차의 보험료 계산은 법인용 공인인증서가 없어도 가능합니다.<br>
+				보험 계약을 위해서는 관련 법률 및 규정에 따라 법인용 공인인증서가<br>
+				필요합니다.
+            </div>
+            <div class="btnAreaWrap">
+                <ul class="btnArea item55">
+                    <li><a href="#" class="btn plus_minus pass"><span>보험료 계산하기</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+		<div class="fixedBannerArea">
+            <div class="bannerArea">
+                <ul>                 
+                    <li style="width: 100%">
+                        <div class="titleArea">
+                            <div class="inner">
+								<strong>365일 24시간</strong> 언제든지 인터넷으로 쉽고 빠르게!<br>
+								현대해상 대비 <strong>평균 15.4% 할인</strong>되어 더욱 저렴한 보험료
+							</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+			<!-- infopopup : s -->
+			<ul class="infopopup mt0">
+				<li><a href="#"><span class="icon exmark">알아두실 사항</span></a></li>
+				<!--2017-11-20 삭제 : s--
+				<li><a href="#"><span class="icon quesmark">보험상품안내</span></a></li>
+				<!--2017-11-20 삭제 : e-->
+				<li><a href="#"><span class="icon quesmark">한눈에 보는 이용안내</span></a></li>
+			</ul>
+			<!-- infopopup : e -->
+        </div>		
+
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+
+</div>
+</body>
+</html>

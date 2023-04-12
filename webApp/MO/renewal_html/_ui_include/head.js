@@ -8,18 +8,18 @@
 (function(){
 	var str=''
 		//[Favicon]
-		+'<link rel="SHORTCUT ICON" href="../../resources/images/common/favicon.ico">'
+		// +'<link rel="SHORTCUT ICON" href="../../images/common/favicon.ico">'
 
 		//[CSS]
-		+'<link type="text/css" rel="stylesheet" href="../../resources/css/ui.common.css">'
+		+'<link type="text/css" rel="stylesheet" href="../../css/new_common.css">'
 
 		//[JS]
-		+'<script src="../../resources/plugins/jquery-3.5.1.min.js"></script>'
-		+'<script src="../../resources/plugins/jquery-ui-1.12.1.min.js"></script>'
+		+'<script src="../../js/new_plugins/jquery-3.5.1.min.js"></script>'
+		+'<script src="../../js/new_plugins/jquery-ui-1.12.1.min.js"></script>'
 		
 		// +'<script src="../../resources/js/ui_plugins.js"></script>'
-		+'<script src="../../resources/js/ui.common.js"></script>'
-		+'<script src="../../resources/js/ui.pub.js"></script>' // 퍼블에서만 사용, 개발시 제외 바랍니다
+		+'<script src="../../js/new_common.js"></script>'
+		+'<script src="../../js/new_pub.js"></script>' // 퍼블에서만 사용, 개발시 제외 바랍니다
 	;
 
 	document.write(str);

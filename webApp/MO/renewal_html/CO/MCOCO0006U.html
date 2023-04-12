@@ -14,7 +14,7 @@
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="false" data-category="login" data-category-sub="main">
+<body data-channel="mobile" data-login="false" data-category="login">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -66,7 +66,8 @@
                   <h2 class="governing_title">본인명의 휴대폰으로<br> 본인인증을 진행해 주세요.</h2>
                 </div>
 								<div class="comp">
-                  <div class="form_area">
+									<!-- [04/03] gap_lg 추가 -->
+                  <div class="form_area gap_lg">
                     <div class="form_item">
                       <div class="form_label"><label for="inp01">이름</label></div>
                       <div class="form_wrap">
@@ -101,10 +102,18 @@
 												</select>
 											</div>
 										</div>
+										<!-- [04/05] 휴대폰번호 마크업 변경 -->
 										<div class="form_item">
-											<div class="form_label"><label for="inp02">휴대폰번호</label></div>
-											<div class="form_wrap">
-												<input type="number" id="inp02" placeholder="-없이 입력">
+											<div class="form_phone">
+												<div class="form_label"><label for="phone">휴대폰번호</label></div>
+												<div class="form_wrap">
+													<select id="phone">
+														<option>010</option>
+													</select>
+												</div>
+												<div class="form_wrap">
+													<input type="number" placeholder="‘-’없이 숫자 8자리 입력" title="휴대폰번호 입력">
+												</div>
 											</div>
 											<div class="form_msg error">휴대폰번호를 꼭 입력해 주세요.</div>
 										</div>

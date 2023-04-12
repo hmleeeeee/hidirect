@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/**
+* Page.login
+* ------------------
+*/
+
+.pin-box {overflow:hidden;  padding-top: 100px; text-align: center;
+	input {position: relative;width: 20px; height: 20px; display: inline-block;margin-left: 16px;border: none;background-color: #ccc; border-radius: 50%;
+		&:first-child{margin-left: 0;}
+	}
+	input.on {background-color: #000;}
+}
+
+.pattern-box{padding-top: 100px; text-align: center; }
+

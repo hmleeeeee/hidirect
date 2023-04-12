@@ -7,51 +7,12 @@
 * PC/MO 공통
 */
 
-@mixin layoutFull(){
-	margin-left: -20px;margin-right: -20px;
-	.modal.bottom &{
-		margin-left: -24px;margin-right: -24px;
-	}
-}
-
-
-
-//사용 안함
-// @mixin layoutFull($value: $screen_margin) {
-// 	$_margin: $value;
-// 	$_margin2x: $value * 2;
-// 	width: calc(100% + #{$_margin2x}); margin-left: -$_margin; padding-left:0;padding-right: 0;
-// }
-
-
-
-
-//사용 안함
-@mixin layoutComp($value: $screen_margin) {
-	padding-left:$value; padding-right:$value;
-}
-
-//사용 안함
-@mixin layoutSection($value: $screen_margin) {
-	$_margin: $value;
-	$_margin2x: $value * 2;
-	& {
-		@include clearfix();
-		box-sizing: border-box;
-		position: relative;
-		margin: 0 auto;
-		> .comp{
-			
-		}
-	}
-}
-
 
 // * HR
 //-----------------
 hr{border: none;}
 .hr{
-	@include hr(12px, 32px);
+	@include hr(12px, 32px);// _mixins.scss
 }
 
 .hr2{
@@ -67,14 +28,10 @@ hr{border: none;}
 .section{@include clearfix(); box-sizing: border-box; position: relative;
 	width: $screen_width; 
 	margin: 0 auto;
-	padding-top: $content_top_space;
-	// &:first-child{margin-top: 0; padding-top: $content_top_space;}
-
+	padding-top: 0;
 	&.sm {width: 550px;}
 	&.full {width: auto;}
-
-	& + &{padding-top: 0;margin-top: $section_space_h;}//40px
-	// & + &{padding-top: 0;margin-top: 10px}
+	& + &{padding-top: 0;margin-top: 32px;}
 }
 
 .comp{@include clearfix(); box-sizing: border-box; position: relative;
@@ -83,8 +40,8 @@ hr{border: none;}
 	&:first-child{margin-top: 0;}
 
 	&.full {width: auto;}
-	&.border_top{padding-top: 30px;border-top:1px solid #eee;}
-	&.border_bottom{padding-bottom: 30px;border-bottom:1px solid #eee;}
+	&.border_top{margin-top:32px; border-top:1px solid #EFEFF1;}
+	&.border_bottom{border-bottom:1px solid #EFEFF1;}
 }
 
 .section.full{
@@ -98,16 +55,14 @@ hr{border: none;}
 .section > .comp:first-child{margin-top: 0;}
 
 
-
 //예외 케이스
 .modal.bottom{
-	.comp{width: calc(100% - 48px);} //
+	.comp{width: calc(100% - 48px);} 
 }
 
 .tab + .section{padding-top: 0;}
 .section > .tab_content{margin-top: 0;}
 .modal .section{padding-top: 0;}
-
 
 
 // * Grid
@@ -130,6 +85,9 @@ hr{border: none;}
 	}
 }
 
+
+// * 모듈 간격 조정
+//-----------------
 
 
 
@@ -206,18 +164,17 @@ hr{border: none;}
 	.round, full, nopad, magic Class
 
 10. comment
-	[3/3: 수정(추가, 삭제)] 설명, 설명...
+	[03/03] 수정(추가, 삭제): 설명, 설명...
 
 	ex1. 
-		//[3/8: 수정] 문구수정, 마크업 수정
-		//[3/8: 수정] TD001
+		//[03/08] 문구수정, 마크업 수정
+		//[03/08] 수정 TD001
 
 
 	ex2.
-		<!-- [3/8: 수정] 문구수정, 마크업 수정 -->
+		<!-- [03/08] 수정 문구수정, 마크업 수정 -->
 		...
 		...
-		...
-		<!-- //[3/8: 수정] -->
+		<!-- //[03/08: 수정] -->
 */
 

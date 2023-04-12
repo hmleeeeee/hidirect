@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>구입 예정 | 차량 기본정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.0.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>차량 기본정보 입력</h1>
+	<a href="#none" class="btnHome">메인페이지로 이동</a>
+	<a href="#none" class="btnInfo">입력정보 팝업</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<section>
+		<p class="topTxt">차량번호, 치대번호, 구입 예정 중 1개를 선택하여 차량정보를 입력해주세요.</p>
+		<ul class="wrapTab clFix mgT15 TabChois">
+			<li>
+				<div>
+					<a href="#" class="tabs" >
+						<em class="icoB icoCarNum"></em>
+						<strong class="names">차량번호 입력</strong>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="#" class="tabs" >
+						<em class="icoB icoCerVehicle"></em>
+						<strong class="names">차대번호 입력</strong>
+					</a>
+				</div>
+			</li>
+			<li class="on">
+				<div>
+					<a href="#" class="tabs" >
+						<em class="icoB icoCerPurchase"></em>
+						<strong class="names">구입 예정</strong>
+					</a>
+				</div>
+			</li>
+		</ul>
+		<ul class="listDot mgtM">
+			<li>보험 만기일이 2017년 05월 06일 이후이신 경우 대략적인 보험료의 확인까지만 가능합니다.</li>
+			<li>차량 구입 예정이신 경우, 보험료 계산까지만 가능합니다.</li>
+		</ul>
+	</section>
+	<section class="tabOpen">
+		<div class="wrapTabCont">
+			<h2>차량 유형 선택 및 기본정보 입력</h2>
+			<ul class="carTypCatList ChkChois">
+				<li class="on">
+					<div>
+						<a href="#" class="tabs">
+							<em class="icoCarA ico_CarTypCatA"></em>
+							<strong class="CarTypCatTit">승용차</strong>
+							<span class="CarTypCatDesc">승차정원<br> 10인 이하</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#" class="tabs">
+							<em class="icoCarA ico_CarTypCatB"></em>
+							<strong class="CarTypCatTit">승합차</strong>
+							<span class="CarTypCatDesc">승차정원<br> 11인 이상</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#" class="tabs">
+							<em class="icoCarA ico_CarTypCatC"></em>
+							<strong class="CarTypCatTit">승합차</strong>
+							<span class="CarTypCatDesc">적재함이 <br>있는 자동차</span>
+						</a>
+					</div>
+				</li>
+			</ul>
+
+			<div class="mgtS">
+				<div class="inputWrap">
+					<input id="carNo" name="carNo" value="" type="text"  placeholder="차량번호 입력(예:11가 1234)">
+					<label for="carNo" class="hide">차량번호 입력</label>
+				</div>
+			</div>
+			<p class="txtGuideInfo">차량번호 입력해주세요.</p>
+
+			<div class="mgtS">
+				<div class="inputWrap">
+					<input id="carTerm" class="inpputCal" name="carTerm" maxlength="30" value="" type="text"  placeholder="보험기간 입력">
+					<label for="carTerm" class="hide">보험기간 입력</label>
+					<a href="#" class="calBtn"><span class="icoCal">보험기간 선택</span></a>
+				</div>
+			</div>
+			<p class="txtGuideInfo">보험기간 입력해주세요.</p>
+
+			<div class="btnWrap">
+				<span><a href="#" role="button">이전</a></span>
+				<span class="on"><a href="#" role="button">다음</a></span>
+			</div>
+		</div>
+
+		<ul class="listDot mgtM">
+			<li>보험 가입 완료 후, 증명서를 출력하시어 등록사업소에 제출하시면 자동차 등록이 가능합니다.</li>
+		</ul>
+	</section>
+	<section class="tabOpen">
+		<div class="wrapTabCont">
+			<h2>차량 유형 선택 및 기본정보 입력</h2>
+			<ul class="wrapTab typeSm clFix ChkChois">
+				<li class="on">
+					<div class="">
+						<a href="#" role="button">
+							<span>승용차</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a href="#" role="button">
+							<span>승합차</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a href="#" role="button">
+							<span>화물차</span>
+						</a>
+					</div>
+				</li>
+			</ul>
+
+			<div class="mgtS">
+				<div class="inputWrap">
+					<input id="carbehNo" name="carbehNo" value="" type="text"  placeholder="차대번호 입력(예:11가 1234)">
+					<label for="carbehNo" class="hide">차대번호 입력</label>
+				</div>
+			</div>
+			<p class="txtGuideInfo">차대번호 입력해주세요.</p>
+			<div class="mgtS">
+				<div class="inputWrap">
+					<input id="carTerm" class="inpputCal" name="carTerm" type="text"  placeholder="보험기간 입력">
+					<label for="carTerm" class="hide">보험기간 입력</label>
+					<a href="#" class="calBtn"><span class="icoCal">보험기간 선택</span></a>
+				</div>
+			</div>
+			<p class="txtGuideInfo">보험기간 입력해주세요.</p>
+			<div class="btnWrap">
+				<span><a href="#" role="button">이전</a></span>
+				<span class="on"><a href="#" role="button">다음</a></span>
+			</div>
+		</div>
+
+		<ul class="listDot mgtM">
+			<li>보험 가입 완료 후, 증명서를 출력하시어 등록사업소에 제출하시면 자동차 등록이 가능합니다.</li>
+		</ul>
+	</section>
+	<section class="tabOpen" style="display:block">
+		<div class="wrapTabCont">
+			<h2>차량 유형 선택 및 기본정보 입력</h2>
+			<ul class="wrapTab typeSm clFix ChkChois">
+				<li class="on">
+					<div class="">
+						<a href="#" role="button">
+							<span>승용차</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a href="#" role="button">
+							<span>승합차</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a href="#" role="button">
+							<span>화물차</span>
+						</a>
+					</div>
+				</li>
+			</ul>
+
+			<div class="mgtS">
+				<div class="inputWrap">
+					<input id="carTerm" class="inpputCal" name="carTerm" type="text" placeholder="보험기간 입력">
+					<label for="carTerm" class="hide">보험기간 입력</label>
+					<a href="#" class="calBtn"><span class="icoCal">보험기간 선택</span></a>
+				</div>
+			</div>
+			<p class="txtGuideInfo">보험기간 입력해주세요.</p>
+
+			<div class="btnWrap">
+				<span><a href="#" role="button">이전</a></span>
+				<span class="on"><a href="#" role="button">다음</a></span>
+			</div>
+		</div>
+
+		<ul class="listDot mgtM">
+			<li>보험 가입 완료 후, 증명서를 출력하시어 등록사업소에 제출하시면 자동차 등록이 가능합니다.</li>
+		</ul>
+	</section>
+	<!-- content -->
+</div>
+</body>
+</html>
+

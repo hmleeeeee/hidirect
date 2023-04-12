@@ -19,7 +19,7 @@
 	max-height:$height + px;
 	line-height:$lineHeight;
 	word-wrap:break-word;
-	word-break:break-word;
+	word-break:keep-all;
 	-webkit-line-clamp:$line; 
 	-webkit-box-orient:vertical;
 	display:-webkit-box;
@@ -37,14 +37,15 @@
 //--------------------
 
 //강조 숫자 (금액) / 27px / bold / grey850
-@mixin fz27{font-weight: 700; font-size: 27px; line-height: 1.5; letter-spacing: -0.02em; color: #1F1F21; }
+@mixin fz27{font-weight: 500; font-size: 27px; line-height: 37px; letter-spacing: -0.02em; color: #1F1F21; }
+@mixin fz27_700{font-weight: 700; font-size: 27px; line-height: 37px; letter-spacing: -0.02em; color: #1F1F21; }
 //타이틀1 / 22px / Bold / Black
 @mixin fz22{font-weight: 700; font-size: 22px; line-height: 1.5; letter-spacing: -0.02em; color: #1F1F21; }
 //서브타이틀1 / 18px / Blod / grey850
 @mixin fz18{font-weight: 700; font-size: 18px; line-height: 1.5; letter-spacing: -0.02em; color: #1F1F21; }
 
 //폼 플레이스 홀더, 비활성 / 17px / medium / grey400
-@mixin fz17{font-weight: 500; font-size: 17px; line-height: 1.5; letter-spacing: -0.02em; color: #1F1F21; }
+@mixin fz17{font-weight: 500; font-size: 17px; line-height: 23px; letter-spacing: -0.02em; color: #1F1F21; }
 //바텀시트 팝업 타이틀1 , 서브 페이지 콘텐츠 타이틀1 / 17px /Bold /grey850
 @mixin fz17_700{@include fz17(); font-weight: 700; }
 //폼 플레이스 홀더, 비활성 / 17px / medium / grey400
@@ -55,9 +56,9 @@
 @mixin fz16_700{@include fz16();font-weight: 700; }
 //-------------------
 //단일 박스 메뉴1 (인증서) / 15px / Medium / grey850
-@mixin fz15{font-weight: 500; font-size: 15px; line-height: 1.5; letter-spacing: -0.04em; color: #1F1F21; }
+@mixin fz15{font-weight: 500; font-size: 15px; line-height: 21px; letter-spacing: -0.04em; color: #1F1F21; }
 //단일 박스 메뉴1 (인증서) / 15px / Medium / grey850
-@mixin fz15_700{@include fz15(); font-weight: 500; }
+@mixin fz15_700{@include fz15(); font-weight: 700; }
 //본문 / 15px / regular / grey700
 @mixin fz15_400{@include fz15(); font-weight: 400; }
 //-------------------
@@ -71,19 +72,33 @@
 //유의사항, 꼭알아두세요 리스트 / 13px / regular / grey650
 //라벨, 인증 보조설명 / 13px / regular / grey650
 //타이블 내  Td  본문 / 13px / regular / grey650
-@mixin fz13{font-weight: 400; font-size: 13px; line-height: 1.5; letter-spacing: -0.04em; color: #767678; }
+@mixin fz13_400{font-weight: 400; font-size: 13px; line-height: 1.5; letter-spacing: -0.02em; color: #767678; }
+@mixin fz13{font-weight: 500; font-size: 13px; line-height: 1.5; letter-spacing: -0.02em; color: #767678; }
+@mixin fz13_700{font-weight: 700; font-size: 13px; line-height: 19px; letter-spacing: -0.04em; color: #1F1F21; }
+//-------------------
 //카드, 팁 문구 / 12px / regular / grey650
-@mixin fz12{font-weight: 400; font-size: 12px; line-height: 1.5; letter-spacing: -0.04em; color: #767678; }
+@mixin fz12{font-weight: 500; font-size: 12px; line-height: 1.5; letter-spacing: -0.04em; color: #767678; }
+@mixin fz12_400{font-weight: 400; font-size: 12px; line-height: 1.5; letter-spacing: -0.04em; color: #767678; }
 //푸터 주소 및 정보 / 11px / regular / grey700
+//-------------------
 @mixin fz11{font-weight: 400; font-size: 11px; line-height: 1.5; letter-spacing: -0.04em; color: #555557; }
 
 
-// @mixin h2{@include fz22();}
-@mixin h2{@include fz18();}
-@mixin h3{@include fz17_700();}
-@mixin h4{@include fz15_700();}
-@mixin h5{@include fz14();}
 
+
+// 디자인: H1, H2 ~> 퍼블: H2, H3 ~ (1++)
+@mixin h2{@include fz22();}//Governing
+
+@mixin h3{@include fz17_700(); color: #3F3F41;}
+@mixin h4{@include fz15(); color: #3F3F41;}
+
+@mixin h5{@include fz14(); color: #000;}//[4/5]유의사항만 사용되어지고 있음
+
+
+.fz15{font-size: 15px !important; }
+strong.fz15{font-size: 15px !important; font-weight: 700 !important;}
+.fz17{font-size: 17px !important; }
+strong.fz17{font-size: 17px !important; font-weight: 700 !important;}
 
 
 
@@ -91,12 +106,12 @@
 // List Style
 //=======================================================
 @mixin bul_dot(){
-	position: relative;padding-left: 12px; //line-height: 20px; 
+	position: relative;padding-left: 10px; //line-height: 20px; 
 	&:before{content: ""; position: absolute; left: 1px; top: 10px; width:2px; height:2px; background-color: #909090; border-radius: 50%;}
 }
 
 @mixin bul_bar(){
-	position: relative;padding-left: 12px; //line-height: 20px;
+	position: relative;padding-left: 10px; //line-height: 20px;
 	&:before{
 		position: absolute; content: ''; top: 12px; left: 0; width: 4px; height: 1px;background: #767678; 
 	}
@@ -105,28 +120,18 @@
 @mixin bul_imp(){
 	position: relative;padding-left:16px;
 	&:before{
-		position: absolute; content: '※'; top: 0; left: 0;
+		position: absolute; content: '※'; top: 0; left: 0; font-size:11px;
 	}
+	& small{font-size: 13px;}
 }
-
 
 
 // EAEBED
 //기본폰트: body inherit: @include fz14_400();
 @mixin uol_list(){
-	h1,h2,h3,h4,h5,h6{
-		& {margin-top: 24px;}
-
-		& + ul,
-		& + ol{margin-top: 16px;}
-
-		& + P{@include fz15_400(); margin-top: 24px;}
-	}
-
-	table{margin-top: 16px;}
+	table{margin-top: 24px;}
 	table+table, table+p {margin-top: 16px;}
 	table + .bul_imp{margin-top: 12px;}
-
 
 	p{margin-bottom: 4px;}
 	p + p{margin-top: 12px;}
@@ -146,15 +151,21 @@
 
 	strong{color: #1F1F21; font-weight: 500;}
 
-	//list-type
-	ul, ol{ 
+	//list-type: 
+	// li: fz14 
+	// li > li : fz13
+	ul, ol, &.fz_sm ul, &.fz_sm ol{ 
 		li{position: relative; margin-top: 8px; color: #3F3F41;word-break: break-all;
+			p{@include fz13_400(); margin-top: 6px;}
 			ul, ol{margin-top: 6px; 
-				li{color: #767678;}
+				li{	@include fz13_400();color: #767678;margin-top: 6px;
+					p{@include fz12_400(); margin-top: 6px;}
+				}
 			} 
 		}
 		li:first-child{margin-top: 0; }
 	}
+
 	ol{
 		li{margin-top:8px;padding-left: 19px;text-indent:-19px; 
 			&:first-letter {letter-spacing: 3px;}
@@ -176,7 +187,27 @@
 		> ul >li{@include bul_bar();}
 	}
 
+	//page에 따라 bar, dot 가 Change 됨에 따라 개별은 초기화
 	ul.bul_bar > li{@include bul_bar();}
+	.bul_bar{padding-left: 0;
+		&:before{content:''; width: 0;height: 0;}
+	}
+	.bul_dot{padding-left: 0;
+		&:before{content:''; width: 0;height: 0;}
+	}
+
+	
+	ul, ol > li{
+		.bul_imp{font-size: 13px;margin-left: -10px; margin-top: 4px;}
+		> ul, ol >li{
+			.bul_imp{font-size: 12px;}
+		}
+	}
+
+	ol > li{
+		.bul_imp{margin-left: -19px;}
+	}
+
 
 	ul, ol{
 		li{
@@ -191,6 +222,32 @@
 	li{
 		br + [class*='btn_']{margin-top: 8px;}
 	}
+}
+
+
+//약관/안내 페이지 
+//기본폰트: body inherit: @include fz14_400();
+@mixin base_list(){
+	@include uol_list();
+
+	h2{@include h2();}//fz22
+	h3{@include h3();}//fz17_700
+	h4{@include h4();}//fz15 (500)
+	// h3{@include h3(); margin-bottom: 24px;}//fz17_700
+	// h4{@include h4(); margin-bottom: 16px; }//fz15 (500)
+
+	// h1
+	h1,h2,h3,h4,h5,h6{
+		margin-top: 40px;
+		&:first-child{margin-top: 32px;}
+		& + ul, & + ol, & + div, & + P{margin-top: 24px;}
+	}
+
+	h4{margin-top: 24px;
+		& + ul, & + ol, & + div, & + P{margin-top: 16px;}
+	}
+	// .sub_text{@include fz13_400(); margin-top: 12px;}
+	//테이블 보조 및 하단
 }
 
 

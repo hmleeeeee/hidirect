@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>01_고객정보</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+</head>
+
+
+<body class="carMain">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="productMainWrap">
+    <div class="objFixedWrap">
+        <div class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/motor/logo_hicardirect.png" alt="하이카 다이렉트"></a></div>
+        <h1 class="mainTitle black">
+			<!-- 2017-12-13 문구 수정(개인용 -> 개인): s -->
+            <span class="tit">자동차보험 <span class="type">(개인)</span></span>
+			<!-- 2017-12-13 문구 수정(개인용 -> 개인): e -->
+            <span class="txt">모든조건 충족시<br>최대 58.7%까지 저렴!</span>
+        </h1>
+    </div>
+    <!--contentArea : s -->
+    <div class="productMainContentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>고객정보</h2>
+            <p class="txt">자동차 소유주(예정) 정보를 입력해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+
+        <!--inputTable : s-->
+        <div class="inputTable onlyInput noTline">
+            <ul class="inputArea">
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="name1">이름</label>
+                        <input type="text" id="name1">
+                    </div>
+                </li>
+            </ul>
+            <ul class="inputArea item2">
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="personNumber1">주민등록번호</label>
+                        <input type="text" id="personNumber1">
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="inputBase placeholder">
+                        <input type="password" id="personNumber1_last" placeholder="뒷 7자리" title="주민등록번호뒤자리">
+                        <div class="nospos">
+                            <input type="checkbox" id="mouse">
+                            <label for="mouse">마우스 입력기</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="inputArea mt15">
+                <li class="item">
+                    <div class="inputBase">
+                        <label for="hp">휴대폰번호(‘-’없이)</label>
+                        <input type="text" id="hp">
+                    </div>
+                </li>
+            </ul>
+            <ul class="listStyle star fontLevel2 mt15">
+                <li>보험만기일이 OOOO년 OO월 OO일 이후라면 만기 알람 신청을<br>진행하세요.</li>
+            </ul>
+        </div>
+        <!--inputTable : e-->
+        <div class="fontLevel2 mt20">
+            보험료 계산을 위해 본인인증(휴대폰/공인인증서) 및 개인(신용)정보<br>
+            수집·이용에 동의가 필요합니다.
+        </div>
+
+
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item55">
+                    <li><a href="#" class="btn plus_minus pass"><span>보험료 계산하기</span></a></li>
+                </ul>
+            </div>
+            <div class="eventBanner">
+                <a href="#" class="btnOpen ">event</a>
+                <div class="mainBanner">
+                    <a href="#"><img src="https://direct.hi.co.kr/images/motor/main_banner.png" alt="아듀 2017! 다이렉트 자동차보험 산출 이벤트 자동차보험 산출하고 따뜻한 스타벅스 커피 받아가세요~"></a>
+                </div>
+            </div>
+        </div>
+        <div class="fixedBannerArea">
+			<!-- 2017-12-21 문구수정/문구순서변경 : s -->
+            <div class="bannerArea plusMiddle motor">
+                <ul>
+                    <li style="width: 155px;">
+                        <div class="titleArea">
+                            <div class="inner"><strong>15.4%</strong><br>인터넷 가입</div>
+                        </div>
+                        <div class="conArea">
+                            (오프라인 대비 저렴)
+                        </div>
+						<div class="titleArea">
+                            <div class="inner"><strong>7%</strong><br>커넥티드카 특약 할인</div>
+                        </div>
+                        <div class="conArea">
+                            (사고 통보장치 설치)
+                        </div>
+                    </li>
+                    <li style="width: 155px;">
+						<div class="titleArea">
+                            <div class="inner"><strong>32%</strong><br>마일리지 특약 할인</div>
+                        </div>
+                        <div class="conArea">
+                            (3천Km이하)
+                        </div>
+						<div class="titleArea">
+                            <div class="inner"><strong>4.7%</strong><br>교통법규준수 할인</div>
+                        </div>
+                        <div class="conArea">
+                            (교통법규 준수)
+                        </div>
+                    </li>
+                    <li style="width: 155px;">
+						<div class="titleArea">
+                            <div class="inner"><strong>10.2%</strong><br>무사고 할인</div>
+                        </div>
+                        <div class="conArea">
+                            (3년 이상)
+                        </div>
+						<div class="titleArea">
+                            <div class="inner"><strong>3%</strong><br>블랙박스 특약 할인</div>
+                        </div>
+                        <div class="conArea">
+                            (블랙박스 장착)
+                        </div>
+                    </li>
+                    <li style="width: 155px;">
+                        <div class="titleArea">
+                            <div class="inner"><strong>7%</strong><br>자녀할인 특약</div>
+                        </div>
+                        <div class="conArea">
+                            (만 6세이하 자녀)
+                        </div>						
+						<div class="titleArea">
+                            <div class="inner"><strong>1,000원</strong><br>그린 서비스 특약 할인</div>
+                        </div>
+                        <div class="conArea">
+                            (약관 등 이메일 수신 시)
+                        </div>
+                    </li>
+                </ul>				
+            </div>
+			<!-- 2017-12-21 문구수정/문구순서변경 : e -->
+			<!-- infopopup : s -->
+			<ul class="infopopup">
+				<li><a href="#"><span class="icon exmark">알아두실 사항</span></a></li>
+				<li><a href="#"><span class="icon quesmark">보험상품안내</span></a></li>
+				<li><a href="#"><span class="icon quesmark">한눈에 보는 이용안내</span></a></li>
+				<li><a href="#"><span class="icon clockmark">만기 알람 신청</span></a></li>
+			</ul>
+			<!-- infopopup : e -->
+        </div>
+		
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

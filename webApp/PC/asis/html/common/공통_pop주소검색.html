@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>공통_pop주소 검색</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+</head>
+<body>
+
+<!-- 공통_pop주소 검색 : s-->
+<!--layerPopWrap : s-->
+<script>
+    $(function(){
+        $(document).on("click",".tabCon .zipList a",function(e){
+            e.preventDefault();
+            var val = $(this).find(".addrdata").text();
+            var $target = $(this).closest(".tabCon");
+            $target.find(".zipStep").hide();
+            $target.find(".zipStep2").show();
+            $target.find(".zipStep2 .addr").val(val);
+        })
+
+        $(".wrap_zipcode li a").on("click",function(){
+            var idx = $(this).parent().index();
+            var target = $(this).closest("ul");
+            target.addClass("on");
+            target.find("li").removeClass("on").eq(idx).addClass("on")
+        })
+    })
+</script>
+<div class="dim_bg"></div>
+<div class="layerPopWrap w780 zipSearch">
+    <div class="titleArea">
+        <h2>주소 검색</h2>
+    </div>
+    <div class="popupContentArea">
+        <!--lineTabWrap : s-->
+        <div class="lineTabWrap tabWrap">
+            <ul class="lineTabList tabList item3 mb15">
+                <li><a href="#"><span>지번</span></a></li>
+                <li><a href="#"><span>도로명</span></a></li>
+                <li class="on"><a href="#"><span>건물명</span></a></li>
+            </ul>
+            <div class="tabCon zipType1">
+                <div class="tabHiddenTitle">지번 탭 내용</div>
+                <!--inputTable : s-->
+				<!-- 2017-11-23 수정(input 크기/주소리스트 레이아웃 수정) : s -->
+                <div class="inputTable onlyInput noTline mb20">
+                    <div class="inputSet">
+                        <ul class="inputArea inlineBlock">
+                            <li class="item">
+                                <div class="inputBase placeholder" style="width:590px;">
+                                    <input type="text" placeholder="도로명 + 건물번호 (예: 새종로 178)" id="search1" title="검색어 입력">
+                                </div>
+                            </li>
+                            <li class="item">
+                                <a href="#" class="btn big" style="width: 120px;"><span>검색</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--inputTable : e-->
+                <div class="zipStep zipStep1">
+                    <h3 class="tit">주소 선택</h3>
+					<div class="zipScrollArea" style="display:none;">
+						<div class="defaultTxt"><span class="fontPoint2">동/면/읍</span> 검색<br><span class="fontPoint2">동 + 지번</span> (예: 잠실동, 잠실12동)</div>
+					</div>
+                    <div class="ziplistdata">
+						<div class="listit">
+							<span class="addr">주소</span>
+							<span class="postcode">우편번호</span>
+						</div>
+						<div class="zipScrollArea listxt">						
+							<ul class="zipList">
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="addrdata">경기 김포시 유현로 200 (풍무동, 풍무 푸르지오)1</span>
+										<span class="postcode">12345</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 2017-11-23 수정(input 크기/주소리스트 레이아웃 수정) : e -->
+                </div>
+                <div class="zipStep zipStep2">
+                    <h3 class="tit">주소</h3>
+                    <!--inputTable : s-->
+                    <div class="inputTable onlyInput noTline mb15">
+                        <div class="inputSet">
+                            <ul class="inputArea ">
+                                <li class="item">
+                                    <div class="inputBase disabled placeholder">
+                                        <input type="text" disabled id="zipType1_address1" class="addr" title="기본주소">
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="inputArea inlineBlock">
+                                <li class="item">
+                                    <div class="inputBase" style="width:590px;">
+                                        <label for="zipType1_address2">상세주소</label>
+                                        <input type="text" id="zipType1_address2">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <a href="#" class="btn big" style="width: 120px;"><span>주소확인</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--inputTable : e-->
+
+                    <!--inputTable : s-->
+                    <div class="inputTable line mb0">
+                        <ul class="selectRadioList labelTitle">
+                            <li class="item">
+                                <div class="radio">
+                                    <input type="radio" name="zipType1_addressType" id="zipType1_addressType1">
+                                    <label for="zipType1_addressType1" class="fz15">
+                                        <span class="zipTit fontLevel2">도로명</span>
+                                        [10113] 경기도 김포시 유현로 200, 109동-3305호 (풍무동, 풍무 푸르지오)
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="radio">
+                                    <input type="radio" name="zipType1_addressType" id="zipType1_addressType2">
+                                    <label for="zipType1_addressType2" class="fz15">
+                                        <span class="zipTit fontLevel2">지번</span>
+                                        [10113] 경기도 김포시 풍무동 354-1번지 109동-3305호
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--inputTable : e-->
+
+                    <div class="btnAreaWrap tac mt20">
+                        <a href="#" class="btn line inlineBlock gray"><span>취소</span></a>
+                        <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tabCon zipType2">
+                <div class="tabHiddenTitle">도로명 탭 내용</div>
+                <!--inputTable : s-->
+                <div class="inputTable onlyInput noTline mb20">
+                    <div class="inputSet">
+                        <ul class="inputArea inlineBlock">
+                            <li class="item">
+                                <div class="inputBase placeholder" style="width:590px;">
+                                    <input type="text" placeholder="도로명 + 건물번호 (예: 새종로 178)" id="search2">
+                                </div>
+                            </li>
+                            <li class="item">
+                                <a href="#" class="btn big" style="width: 120px;"><span>검색</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--inputTable : e-->
+                <div class="zipStep zipStep1">
+                    <h3 class="tit">시/도/시군구 선택</h3>
+                    <!--2017-11-21 도로명 검색 수정: s-->
+                    <div id="zipCodeResult1" class="wrap_zipcode">
+                        <dl>
+                            <dt class="next_step">1단계 (시도/시군구)</dt>
+                            <dd>
+                                <ul id="zzps1019voList1">
+
+
+                                    <li><a href="javascript:fnGoZipSearch('02', '01', '종로구', '')">서울 종로구</a></li>
+
+                                    <li><a href="javascript:fnGoZipSearch('02', '01', '중구', '')">서울 중구</a></li>
+
+
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="next_step">2단계 (도로명)</dt>
+                            <dd>
+                                <ul id="zzps1019voList2">
+
+
+                                    <li><a href="javascript:fnGoZipSearch('03', '', '', '세종대로')">세종대로</a></li>
+
+                                    <li><a href="javascript:fnGoZipSearch('03', '', '', '세종대로21길')">세종대로21길</a></li>
+
+                                    <li><a href="javascript:fnGoZipSearch('03', '', '', '세종대로23길')">세종대로23길</a></li>
+
+
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>3단계 (도로명/건물명)</dt>
+                            <dd>
+                                <ul id="zzps1019voList3">
+
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '71', '서울 종로구 세종대로', '', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '72', '서울 종로구 세종대로', '', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '41', '서울 종로구 세종대로', '', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '54', '서울 종로구 세종대로', '', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '83', '서울 종로구 세종대로', '', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '87', '서울 종로구 세종대로', '', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '86', '서울 종로구 세종대로', '', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '86', '서울 종로구 세종대로', '149', '2', '111102005001', '1111011900', '(세종로, 광화문빌딩)')">서울 종로구 세종대로 149 (세종로, 광화문빌딩)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '87', '서울 종로구 세종대로', '152', '2', '111102005001', '1111011900', '(세종로, 일민미술관)')">서울 종로구 세종대로 152 (세종로, 일민미술관)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '83', '서울 종로구 세종대로', '159', '2', '111102005001', '1111011900', '(세종로, 세광빌딩)')">서울 종로구 세종대로 159 (세종로, 세광빌딩)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '83', '서울 종로구 세종대로', '161', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 161 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '83', '서울 종로구 세종대로', '163', '2', '111102005001', '1111011900', '(세종로, 현대해상빌딩)')">서울 종로구 세종대로 163 (세종로, 현대해상빌딩)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '83', '서울 종로구 세종대로', '167', '2', '111102005001', '1111011900', '(세종로, 현대빌딩)')">서울 종로구 세종대로 167 (세종로, 현대빌딩)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '83', '서울 종로구 세종대로', '169', '2', '111102005001', '1111011900', '(세종로, 삼보빌딩)')">서울 종로구 세종대로 169 (세종로, 삼보빌딩)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '54', '서울 종로구 세종대로', '지하 172', '2', '111102005001', '1111011900', '(세종로, 5호선광화문역)')">서울 종로구 세종대로 지하 172 (세종로, 5호선광화문역)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '72', '서울 종로구 세종대로', '175', '2', '111102005001', '1111011900', '(세종로)')">서울 종로구 세종대로 175 (세종로)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '72', '서울 종로구 세종대로', '지하 175', '2', '111102005001', '1111011900', '(세종로, 세종이야기)')">서울 종로구 세종대로 지하 175 (세종로, 세종이야기)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '54', '서울 종로구 세종대로', '178', '2', '111102005001', '1111011900', '(세종로, KT광화문빌딩West)')">서울 종로구 세종대로 178 (세종로, KT광화문빌딩West)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '41', '서울 종로구 세종대로', '188', '2', '111102005001', '1111011900', '(세종로, 미국대사관)')">서울 종로구 세종대로 188 (세종로, 미국대사관)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '72', '서울 종로구 세종대로', '지하 189', '2', '111102005001', '1111011900', '(세종로, 세종로지하주차장)')">서울 종로구 세종대로 지하 189 (세종로, 세종로지하주차장)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '41', '서울 종로구 세종대로', '198', '2', '111102005001', '1111011900', '(세종로, 대한민국역사박물관)')">서울 종로구 세종대로 198 (세종로, 대한민국역사박물관)</a></li>
+
+                                    <li><a href="javascript:fnRoadGotoDetail('031', '71', '서울 종로구 세종대로', '209', '2', '111102005001', '1111011900', '(세종로, 정부서울청사)')">서울 종로구 세종대로 209 (세종로, 정부서울청사)</a></li>
+
+
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl id="zipCodeResult2" class="scroll_body" style="display: none;">
+                            <dt><span>주소</span><span>우편번호</span></dt>
+                            <dd id="zzps1019voListBuildNum"></dd>
+                        </dl>
+                    </div>
+                    <!--2017-11-21 도로명 검색 수정: s-->
+                </div>
+                <div class="zipStep zipStep2">
+                    <h3 class="tit">주소</h3>
+                    <!--inputTable : s-->
+                    <div class="inputTable onlyInput noTline mb15">
+                        <div class="inputSet">
+                            <ul class="inputArea ">
+                                <li class="item">
+                                    <div class="inputBase disabled placeholder">
+                                        <input type="text" disabled id="zipType2_address1" class="addr">
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="inputArea inlineBlock">
+                                <li class="item">
+                                    <div class="inputBase" style="width:590px;">
+                                        <label for="zipType2_address2">상세주소</label>
+                                        <input type="text" id="zipType2_address2">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <a href="#" class="btn big" style="width: 120px;"><span>주소확인</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--inputTable : e-->
+
+                    <!--inputTable : s-->
+                    <div class="inputTable line mb0">
+                        <ul class="selectRadioList labelTitle">
+                            <li class="item">
+                                <div class="radio">
+                                    <input type="radio" name="zipType2_addressType" id="zipType2_addressType1">
+                                    <label for="zipType2_addressType1" class="fz15">
+                                        <span class="zipTit fontLevel2">도로명</span>
+                                        [10113] 경기도 김포시 유현로 200, 109동-3305호 (풍무동, 풍무 푸르지오)
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="radio">
+                                    <input type="radio" name="zipType2_addressType" id="zipType2_addressType2">
+                                    <label for="zipType2_addressType2" class="fz15">
+                                        <span class="zipTit fontLevel2">지번</span>
+                                        [10113] 경기도 김포시 풍무동 354-1번지 109동-3305호
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--inputTable : e-->
+
+                    <div class="btnAreaWrap tac mt20">
+                        <a href="#" class="btn line inlineBlock gray"><span>취소</span></a>
+                        <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tabCon  zipType3 on">
+                <div class="tabHiddenTitle">검물명 탭 내용</div>
+                <!--inputTable : s-->
+                <div class="inputTable onlyInput noTline mb20">
+                    <div class="inputSet">
+                        <ul class="inputArea inlineBlock">
+                            <li class="item">
+                                <div class="inputBase placeholder" style="width:590px;">
+                                    <input type="text" placeholder="건물명, 아파트명 (예: 현대해상빌딩)" id="search3">
+                                </div>
+                            </li>
+                            <li class="item">
+                                <a href="#" class="btn big" style="width: 120px;"><span>검색</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--inputTable : e-->
+                <div class="zipScrollArea">
+                    <!-- 데이터 없을 경우
+                    <div class="noData"><span class="fontPoint2">‘으잉’</span> 검색 결과가 없습니다.</div>
+                    -->
+                    <div class="defaultTxt"><span class="fontPoint2">건물명</span> 또는 <span class="fontPoint2">아파트명</span>을 입력해주세요</div>
+                </div>
+            </div>
+        </div>
+        <!--lineTabWrap : e-->
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 공통_pop주소 검색 : e-->
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>04_보험료확인_pop특약_자녀할인</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+	<script>
+		$(function(){
+		    $("input[name='babyType']").on("change",function(){
+		        var value = $(this).val();
+                $(".selectContent").hide();
+                $(".selectContent."+value).show();
+			})
+
+		})
+	</script>
+</head>
+<body class="boxType">
+
+
+
+<!-- 04_보험료확인_pop특약_자녀할인 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap failjoin w600">
+    <div class="titleArea">
+        <h2>자녀 할인 특약 입증 방법 선택</h2>
+    </div>
+    <div class="popupContentArea">
+		<!--2017-11-17 수정 : s-->
+        <h3 class="infoTit mb5">자녀 할인 특약을 가입합니다. <span class="fontPoint2">(7%할인)</span></h3>
+		<div class="con mb15 fz15">기명피보험자의 부양자녀만 해당(계약자의 부양자녀는 해당하지 않습니다.)</div>
+		<!--2017-11-17 수정 : e-->
+
+		<!--inputTable : s-->
+		<div class="inputTable inputBline onlyInput mb10">
+			<ul class="inputArea inlineBlock">
+				<li class="item">
+					<p class="tit">자녀구분</p>
+					<div class="radio ml20">
+						<input type="radio" name="babyType" id="babyType1" value="babyType1" checked>
+						<label for="babyType1"><span class="fontLevel1">자녀(만6세이하)</label>
+					</div>
+					<div class="radio ml20">
+						<input type="radio" name="babyType" id="babyType2" value="babyType2">
+						<label for="babyType2"><span class="fontLevel1">태아</label>
+					</div>
+				</li>
+			</ul>
+			<div class="selectContent babyType1" style="display: block;">
+				<ul class="inputArea">
+					<li class="item">
+						<div class="radio block">
+						   <input type="radio" name="cfirmJoin" id="longcfirm">
+							<label for="longcfirm"><span class="fontLevel1">당사 장기보험 가입확인</label>
+						</div>
+						<div class="radio block mt10">
+						   <input type="radio" name="cfirmJoin" id="carcfirm">
+							<label for="carcfirm"><span class="fontLevel1">당사 자동차보험 가입확인</label>
+						</div>
+						<div class="radio block mt10">
+						   <input type="radio" name="cfirmJoin" id="famcertifi">
+							<!--2017-11-17 수정 : s-->
+							<label for="famcertifi"><span class="fontLevel1">가족관계증명서 또는 주민등록등본(가족관계 입증서류)</label>
+							<!--2017-11-17 수정 : e-->
+						</div>
+					</li>
+				</ul>
+				<ul class="inputArea inlineBlock">
+					<li class="item">
+						<div class="inputBase h40"  style="width:380px;">
+							<input type="text" id="text1" placeholder="자녀이름" title="자녀 이름을 입력하세요">
+						</div>
+					</li>
+					<li class="item">
+						<div class="sexSelect dataSelect popsmall">
+							<ul>
+								<li><a href="#" data-media-value="M">남</a></li>
+								<li><a href="#" data-media-value="F">여</a></li>
+							</ul>
+							<input type="hidden" id="sex_family1">
+						</div>
+					</li>
+				</ul>
+				<ul class="inputArea inlineBlock mt10">
+					<li class="item">
+						<div class="inputBase h40" style="width:380px;">
+							<input type="text" id="text1" placeholder="생년월일(예 : 770930)" title="생년월일을 입력하세요">
+						</div>
+					</li>
+					<li class="item">
+						<div class="inputBase h40" style="width:150px;">
+							<input type="text" id="text1" placeholder="만나이" title="만나이를 입력하세요">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="selectContent babyType2" style="display: none;">
+				<ul class="inputArea inlineBlock">
+					<li class="item">
+						<div class="radio mt7">
+							<input type="radio" name="cfirmJoin" id="longcfirm">
+							<label for="longcfirm"><span class="fontLevel1">병/의원에서 발급한 임신확인서</label>
+						</div>
+					</li>
+					<li class="item">
+						<div class="inputBase h40"  style="width:300px;">
+							<input type="text" id="text1" placeholder="출생예정일 (예 : 180930)" title="출생예정일 (예 : 180930)">
+						</div>
+					</li>
+				</ul>
+
+			</div>
+
+		</div>
+		<!--inputTable : e-->
+		<!--2017-11-17 수정 : s-->
+		<ul class="listStyle star mt10">
+			<li>
+				가족관계입증 서류가 현재 없어도 보험료 계산은 가능합니다.<br>
+				단, 보험가입 시 가족관계 입증서류(가족관계증명서 혹은 주민등록등본)가 필요하므로<br>
+				미리 이미지파일을 준비해 주세요.
+			</li>
+			<li>긴급출동 특약 보험료를 제외한 담보별 보험료를 할인해 드립니다. (기타 특약 일부 포함)</li>
+		</ul>
+		<!--2017-11-17 수정 : e-->
+
+		<div class="btnAreaWrap tac mt15">
+            <a href="#" class="btn line inlineBlock gray" style="width: 100px;"><span>특약해재</span></a>
+			<a href="#" class="btn line inlineBlock orange" style="width: 100px;"><span>특약수정</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 04_보험료확인_pop특약_자녀할인 : e-->
+
+</body>
+</html>

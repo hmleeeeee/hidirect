@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>보험차익 과세/비과세 설정</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>보험차익 과세/비과세 설정</h1>
+		</header>
+
+		<div class="popContent">
+			<p class="topTxt">보험차익 비과세 한도 조회를 바로 진행하시겠습니까?</p>
+			<section>
+				<div class="itemPack">
+					<ul class="itemListN2">
+						<li>
+							<a href="#none" role="button">
+								<div class="cont">
+									<!-- itemdata -->
+									아니오
+									<!-- //itemdata -->
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#none" role="button">
+								<div class="cont">
+									<!-- itemdata -->
+									예
+									<!-- //itemdata -->
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<h2>과세/비과세 선택</h2>
+				<div class="dataListBtn">
+					<ul>
+						<li>
+							<span class="titl">총 가입 한도</span>
+							<span class="data">18,000,000원</span>
+						</li>
+						<li>
+							<span class="titl">예산한도액</span>
+							<span class="data">28,488원</span>
+						</li>
+						<li>
+							<span class="titl">한도여유분</span>
+							<span class="data"><em>18,000,000원</em></span><!-- 0628 ￦삭제 JJY -->
+						</li>
+					</ul>
+					<div class="btn">
+						<span><a href="#" role="button">과세</a></span>
+						<span><a href="#" role="button">비과세</a></span>
+					</div>
+				</div>
+
+				<ul class="listDot">
+					<li>예상 한도액이 한도 여유분 초과 시 비과세 선택이 불가하며 이 경우 과세로 전환 해주시기 바랍니다.</li>
+				</ul>
+			</section>
+
+			<div class="btnWrap">
+				<a href="#" role="button">확인</a>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

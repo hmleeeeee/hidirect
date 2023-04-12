@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>04_가입전알릴사항_pop보장제외후보험가입</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/overseas_trip.css" />
+</head>
+<body class="boxType">
+
+
+
+<!-- 04_가입전알릴사항_pop보장제외후보험가입 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap sameCheck w750">
+    <div class="titleArea">
+        <h2>가족정보입력</h2>
+    </div>
+    <div class="popupContentArea">
+        <p class="mb10">당사에 등록된 개인정보가 보험가입 시 입력하신 정보(주소, 연락처, 이메일 등)로 업데이트 되오니,<br>이점 유의하시기 바랍니다.</h3>
+
+            <!--inputTable : s-->
+        <div class="inputTable onlyInput bline">
+            <div class="inputSet">
+                <ul class="inputArea item2 mt20">
+                    <li class="item">
+                        <div class="inputBase disabled">
+                            <label for="name">이름</label>
+                            <input type="text" disabled id="name" value="홍길동">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <!-- 2017-11-09 수정 : s -->
+                        <div class="inputBase">
+                            <label for="number">영문이름(여권과 동일한 영문이름 입력)</label>
+                            <input type="text" id="number">
+                        </div>
+                        <!-- 2017-11-09 수정 : e -->
+                    </li>
+                </ul>
+                <!--연락처 종류 선택 부분 수정 : s-->
+                <ul class="inputArea inlineBlock">
+                    <li class="item">
+                        <div class="inputBase disabled" style="width: 237px;">
+                            <label for="person1">주민등록번호</label>
+                            <input type="text" disabled id="person1" value="790110-1******">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="selectItem">
+                            <select name="selectHp" id="telType" class="telType" title="연락처 종류를 선택해주세요" style="width: 149px;">
+                                <option value="hpTypeCon">휴대폰</option>
+                                <option value="telTypeCon">자택</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="item ">
+                        <div class="selectTelType hpTypeCon">
+                            <div class="inputBase" style="width: 284px;">
+                                <label for="hpNumber">휴대폰번호 (‘-’없이)</label>
+                                <input type="text" id="hpNumber" value="01087584589">
+                            </div>
+                        </div>
+                        <div class="selectTelType telTypeCon" style="display: none;">
+                            <div class="selectItem">
+                                <select name="selectTel" title="지역번호를 선택해주세요" style="width: 109px;">
+                                    <option value="02">02</option>
+                                    <option value="031">031</option>
+                                </select>
+                            </div>
+                            <div class="inputBase ml10" style="width: 165px;">
+                                <label for="telNumber">전화번호 (‘-’없이)</label>
+                                <input type="text" id="telNumber" value="01087584589">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--연락처 종류 선택 부분 수정 : e-->
+                <ul class="inputArea inlineBlock">
+                    <li class="item">
+                        <div class="inputBase" style="width: 227px;">
+                            <label for="email1">이메일계정</label>
+                            <input type="text" id="email1">
+                        </div>
+                        <span class="gapTxt">@</span>
+                        <div class="inputBase inputOnly" style="width:235px;">
+                            <input type="text" id="email2">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="selectItem">
+                            <select name="selectHp" title="이메일 종류를 선택해주세요" style="width: 198px;">
+                                <option value="1">직접입력</option>
+                                <option value="2">naver.com</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="inputArea inlineBlock">
+                    <li class="item">
+                        <div class="selectItem">
+                            <select name="selectHp" title="주소종류를 선택해주세요" style="width: 198px;">
+                                <option value="1">자택</option>
+                                <option value="2">회사</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="inputBase inputOnly" style="width:274px;">
+                            <input type="text" id="hp" readonly>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="btn big" style="width: 198px;"><span>주소검색</span></a>
+                    </li>
+                </ul>
+                <ul class="inputArea item2 mt10">
+                    <li class="item">
+                        <div class="inputBase disabled">
+                            <label for="addr1">기본주소</label>
+                            <input type="text" disabled id="addr1">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="inputBase disabled">
+                            <label for="addr2">상세주소</label>
+                            <input type="text" disabled id="addr2">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--inputTable : e-->
+
+
+
+        <div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock gray"><span>취소</span></a>
+            <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+		<!-- 2017-11-09 수정 : e -->
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 04_가입전알릴사항_pop보장제외후보험가입 : e-->
+
+</body>
+</html>

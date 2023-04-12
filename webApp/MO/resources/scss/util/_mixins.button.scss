@@ -83,10 +83,10 @@
 	}
 	@else if $type ==  'fill02'{
 		color: #fff;
-		background-color:#767678;
+		background-color:#909090;
 		
 		&.hover,
-		&:hover{background-color:#555557;}
+		&:hover{background-color:#767678;}
 
 		&:focus,
 		&.focus{background: #3F3F41}

@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/**
+* layout.breadcrumb
+* ------------------
+*/
+
+$svg_breadcrumb_arrow: "data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='16px' height='16px' viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E675D89DC-47BB-4A18-B6C4-E4D42BAA1364%3C/title%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='***GUIDE_COMMON' transform='translate(-649.000000, -1205.000000)'%3E%3Cg id='@@@_1920' transform='translate(299.000000, 315.000000)'%3E%3Cg id='@@@SUB_TOP' transform='translate(0.000000, 628.000000)'%3E%3Cg id='@@LOGIN' transform='translate(1.000000, 76.000000)'%3E%3Cg id='@LOCATION_1' transform='translate(0.000000, 99.000000)'%3E%3Cg id='Group-28' transform='translate(161.000000, 7.000000)'%3E%3Cg id='drop1' transform='translate(36.000000, 33.000000)'%3E%3Cg id='Group-6' transform='translate(152.000000, 47.000000)'%3E%3Crect id='Rectangle' fill='%23E64848' opacity='0' x='0' y='0' width='16' height='16'%3E%3C/rect%3E%3Crect id='Rectangle' fill='%23DDDDDD' transform='translate(9.000000, 5.750000) rotate(45.000000) translate(-9.000000, -5.750000) ' x='6' y='5' width='6' height='1.5' rx='0.75'%3E%3C/rect%3E%3Crect id='Rectangle' fill='%23DDDDDD' transform='translate(9.000000, 9.151650) scale(1, -1) rotate(45.000000) translate(-9.000000, -9.151650) ' x='6' y='8.40165043' width='6' height='1.5' rx='0.75'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E";
+
+$svg_breadcrumb_btn_arrow: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='5' viewBox='0 0 6 5'%3E%3Cpath id='Path_7' data-name='Path 7' d='M6,0H0L3,5Z' fill='%23fff'/%3E%3C/svg%3E%0A";
+
+
+.breadcrumb{background-color: #fff; 
+	// border-bottom: 1px solid #e0e0e0;
+	z-index:$zindex_breadcrumb;position: absolute; top:$header_height;left: 0;right: 0;
+	max-width:$screen_max_width; 
+	min-height:$breadcrumb_height;
+	margin: 0 auto;padding-top:9px; 
+	padding-right: $screen_margin;
+	// border: 1px solid #000;
+
+	&_wrap{ @include clearfix();}
+
+	.location > li:after {content:''; position: absolute; right: -7px; top: calc(50% - 5px);width:14px;height: 14px; background:url($svg_breadcrumb_arrow) 0 0 no-repeat;background-size: 100%; }
+
+	.location{overflow: hidden;
+		@include clearfix();float:right;
+		> li.home{
+			a{padding-right: 0; line-height: 20px;color: #757575;font-size: 12px;
+				&:after{background: none;}
+				&:hover:after{background: none;}
+			}
+		}
+		> li{position: relative;float: left; padding:0 15px;
+			&:last-child{padding-right: 0;}
+			&:last-child:after{background: none;}
+			> a {position: relative; padding-right: 24px; line-height: 20px;color: #757575;font-size: 12px;font-weight: $fw_regular;
+				&:after{content:''; position: absolute; right: 0; top: calc(50% - 8px);width: 16px;height: 16px; background:#e0e0e0 url($svg_breadcrumb_btn_arrow) center center no-repeat;background-size: 6px 5px; border-radius:50%;}
+				&:hover{color: #222;/*font-weight: $fw_medium;*/
+					&:after{background-color: #afafaf;}
+				}
+			}
+		}
+	}
+}
+
+
+
+//------------------------------------------
+//로그인, 메인 Case별 
+//------------------------------------------
+
+// (Case : 로그인 이후 : body[data-login="true"])
+[data-login="true"]{
+
+}
+
+// (Case : 메인 페이지 : body[data-main="true"])
+[data-main="true"] {
+	.breadcrumb{display: none; }
+}

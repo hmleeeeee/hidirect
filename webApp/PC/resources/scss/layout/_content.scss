@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/**
+* layout.content
+* ------------------
+*/
+
+
+
+// * Heading Title
+//-----------------
+
+
+.heading1{font-size: $heding1;}
+.heading2{font-size: $heding2;}
+.heading3{font-size: $heding3;}
+
+.h2{font-size: 34px;}
+.h3{font-size: 20px; font-weight: $fw_bold;}
+.h4{font-size: 18px; font-weight: $fw_medium; }
+.h5{font-size: 16px; font-weight: 700; }
+
+
+
+// * governing & title_area
+//-----------------
+.governing {text-align: center;
+	.governing_title { font-size: $heding1; line-height: 40px; letter-spacing: -1px;}
+	.governing_title strong { font-weight: 700; }
+	.info_text { display: block; font-size: 16px; font-weight: 300; color: #777; line-height: 20px; margin-top: 25px; word-break: keep-all; }
+	.info_text:first-child {margin-top: 0;}
+	.info_text + .info_text{margin-top:10px;}
+}
+
+
+.title_area{
+	display: flex;align-items:flex-end; flex-wrap:wrap; justify-content: space-between;margin-bottom:14px;
+	&.border_bottom{padding-bottom:14px;margin-bottom:20px;border-bottom:2px solid #000;}
+	&.point_color{
+		.h2,.h3,.h4,.h5{color: $point_color;}
+		&.under_line{border-color: $point_color;}
+	}
+	.title_footer{
+		width: 100%;
+		padding-top: 10px;
+		display: flex;align-items:flex-end; flex-wrap:wrap; justify-content: space-between;
+	}
+	.desc_obj{ display: block;display: flex;}
+	.info_txt{font-size: 14px; margin-left: auto;}
+}
+
+
+
+// * btn_area
+//-----------------
+
+
+
+// * table_area
+//-----------------
+
+
+
+// * chart_area
+//-----------------
+/*.chart_area{position: relative; min-height: 320px; border: 1px solid #ccc;
+	.txt{position: absolute; left: 50% ;top: 50%; transform:translate(-50%, -50%); font-size: 20px; color: #ccc; }
+}*/
+
+
+
+// * list_area
+//-----------------
+// .list_dot{
+// 	@include list_dot();
+// }
+.list_bar{
+	@include list_bar();
+}
+
+.list_dot{
+	& > li{@include list_dot(); padding-left: 16px;
+		> ul >li{
+			@include list_bar(); 
+			padding-left: 16px;
+		}
+	}
+}
+
+// * Tag
+//-----------------
+
+
+
+
+// * box & card
+//-----------------
+.card,
+.box{
+	@include box();
+	&.gray{
+		@include box(gray);
+	}
+	&.blue{
+		@include box(blue);
+	}
+}
+
+
+.card {
+	display:flex;
+	align-items: center;
+	.card_wrap{
+		position: relative;
+		width:100%;
+		padding-right: 150px;
+		min-height: 80px;
+		&:after{
+			content:'';
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -46px;
+			width: 92px;
+			height: 92px;
+			background-color: lightgray;
+		}
+	}
+	.card_wrap.before_icon{
+		position: relative;
+		padding-right: 0;
+		padding-left: 120px;
+		&:after{
+			content:'';
+			left: 0;
+			top: 50%;
+			margin-top: -46px;
+			width: 92px;
+			height: 92px;
+			background-color: lightgray;
+		}
+	}
+}
+
+
+
+//------------------------------------
+// modal content
+//------------------------------------
+.modal{
+	// .section > .comp:first-child > .table_area{margin-top: 2px;}
+}

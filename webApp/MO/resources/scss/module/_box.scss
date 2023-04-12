@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+/**
+* Module.Box
+* ------------------
+*/
+
+
+// * Default
+//-----------------
+.box{
+	@include box();
+	&.gray{
+		@include box(gray);
+		.box_head{
+			strong{@include fz15();}
+		}
+		.box_head + .box_body{margin-top: 16px;}
+		.box_body{line-height:1.5em;
+			strong{font-weight:500 }
+			&+.box_footer{margin-top:20px; padding-top:20px; border-top:1px solid #EFEFF1; }
+		}
+		.box_footer{
+			input[type=checkbox]+label{@include fz15();}
+		}
+	}
+	&.gray_line{@include box(gray_line);}
+	&.blue{@include box(blue);}
+}
+
+
+
+
+
+// * Page
+//-----------------
+//공동인증서 복사(PC→스마트폰)
+.box .num_box{display:flex; height:34px; justify-content:center; font-size:0;
+	input{width:51px; height:34px; font-size:24px; font-weight:500; line-height:1.4em; letter-spacing:-0.04em; color:#1F1F21;
+	}
+	span{
+		&:after{content:'-'; font-size:24px; font-weight:500; line-height:1.4em; letter-spacing:-0.04em; color:#1F1F21;
+		}
+	}
+}
+
+
+//꼭 알아두세요
+.box.notice{@include box(gray, 16px);margin-top: 32px;
+	.box_head{@include fz15();position: relative; padding-left: 24px;
+		&:after{content:''; position:absolute; top:50%; left:0; width:16px; height:16px; background:url($svg_icon_notice_red) no-repeat center center;transform:translateY(-50%);
+		}
+	}
+	.box_body{margin-top: 10px;
+		@include uol_list();
+		@include fz13_400();
+		ul li{margin-top: 6px;color: #555557;
+			&:first-child{margin-top: 0; }
+		}
+	}
+}
+
+
+// 계약담당자 Call
+.box_manager{
+	@include grid(2, 6px, 0);
+	li{
+		display:flex;
+	}
+	.box_wrap{@include box(gray, 16px); display: block;width:100%;
+		.name{
+			@include fz13();word-break: break-all;
+			color: #555557; position: relative;display: block; padding-top: 32px;
+			&:after{content:''; position: absolute;left: 0;top: 0;width: 24px;height: 24px;background-size: 100%;}
+			&.icon_manager:after{background: url($svg_icon_manager) no-repeat 0 0;}
+			&.icon_office:after{background: url($svg_icon_office) no-repeat 0 0;}
+		}
+		.num{
+			@include fz13_400();word-break: break-all;
+			position: relative;display:inline-block;margin-top: 20px;color: #555557; 
+			&:after{content:''; position: absolute;right: -26px;top: 0;width: 18px;height: 18px;background-size: 100%;background: url($svg_icon_call) no-repeat 0 0;
+			}
+		}
+	}
+}
+
+//MY: 보험계약 변경(MMYIC0200U)
+.service_link{
+	// ul{@include grid(2, 10, 10px);}
+}
+
+.box_link{
+	display:flex;
+	.box_wrap{
+		@include box(white_shadow, 18px 68px);
+		width:100%;
+		margin-top:10px;
+		strong{
+			display:block;
+			font-size:15px;
+			font-weight:500;
+			line-height:1.5em;
+			letter-spacing:-0.04em;
+			color:#3F3F41;
+		}
+		span{
+			display:block;
+			margin-top:6px;
+			font-size:13px;
+			line-height:1.5em;
+			letter-spacing:-0.04em;
+			color:#767678;
+		}
+		.icon{
+			position:absolute;
+			top:50%;
+			left:20px;
+			width:32px;
+			height:32px;
+			margin-top:-16px;
+			background-position:50% 50%;
+			background-repeat:no-repeat;
+			background-size:100%;
+			background: #ccc;
+			&.icon01_01{background-image: url();}
+		}
+		&:after{
+			content:'';
+			position:absolute;
+			top:50%;
+			right:20px;
+			width:24px;
+			height:24px;
+			margin-top:-12px;
+			background:url(svg_color($svg_arrow_right_24, '#C8C8CA', '%23C8C8CA')) 50% 50% no-repeat;
+			background-size:100% 100%;
+		}
+	}
+}

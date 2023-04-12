@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>보험료 계산하기</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Content">본문 바로가기</a></div>
+<header>
+	<h1>보험료 계산하기</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<!-- <a href="#none" class="btnInfo">1</a> -->
+</header>
+<div id="h1Wrap">
+	<!-- content -->
+	<div class="golfVisual"><!-- 0821 수정 -->
+		<p>
+			<strong>실속파 골퍼들을 위한<br />다이렉트 골프보험</strong>
+			<span>스윙에 자신감을 더하세요!</span>
+		</p>
+	</div>
+	<p class="topTxt">인터파크 임직원 현대카드 결제 시, 3만원 추가할인</p>
+	<section>
+		<fieldset>
+		<legend>개인형 정보입력</legend>
+			<div class="inputWrap">
+				<input type="text" id="name" required />
+				<label for="name">이름</label>
+			</div>
+			<div class="inputWrap two">
+				<input type="tel" id="number01" required>
+				<label for="number01">주민등록번호<em class="hide">앞자리</em></label>
+				<input type="password" placeholder="●●●●●●●" id="number02" />
+				<label for="number02" class="hide">주민등록번호뒷자리</label>
+			</div>
+			<div class="inputWrap">
+				<input type="tel" id="phone" required />
+				<label for="phone">본인명의 휴대폰번호('-없이')</label>
+			</div>
+			<div class="inputWrap selectR">
+				<input type="date" id="data01" required />
+				<label for="data01">보험개시일</label>
+				<select title="보험개시일 시간 선택">
+					<option>00시</option>
+					<option value="1">12시</option>
+					<option value="2">01시</option>
+				</select>
+			</div>
+			<div class="inputWrap selectR">
+				<input type="date" id="data01" required />
+				<label for="data01">보험종료일</label>
+				<select title="보험종료일 시간 선택">
+					<option>00시</option>
+					<option value="1">12시</option>
+					<option value="2">01시</option>
+				</select>
+			</div>
+		</fieldset>
+		
+		<ul class="listDot"><!-- 0821 수정 -->
+			<li>가입가능 : 연령 (만)19 ~ 80세</li>
+		</ul>
+	</section>
+
+	<div class="btnWrap two">
+		<span><a href="#" role="button">최근 계산 내역</a></span>
+		<span><a href="#" role="button">보험료 계산하기</a></span>
+	</div>
+	<!-- //content -->
+</div>
+</body>
+</html>
+

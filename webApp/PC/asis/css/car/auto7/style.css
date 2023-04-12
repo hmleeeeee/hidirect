@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+.skip_navi {
+	position: relative; z-index: 9999;
+}
+.skip_navi a {
+	background: silver; left: 0px; top: -30px; width: 200px; display: inline-block; position: absolute;
+}
+.skip_navi a:focus {
+	top: 0px;
+}
+body {
+	background: rgb(245, 245, 245);
+}
+#container {
+	background: url("https://direct.hi.co.kr/images/car/auto7/bg_container.jpg") no-repeat top rgb(255, 255, 255); height: 720px;
+}
+#header {
+	background: rgb(255, 255, 255); width: 100%; height: 80px; border-bottom-color: rgb(250, 166, 53); border-bottom-width: 2px; border-bottom-style: solid;
+}
+#header .header_inn {
+	margin: 0px auto; width: 980px;
+}
+#header .header_inn h1 {
+	padding: 31px 0px 0px;
+}
+#footer {
+	background: rgb(245, 245, 245); clear: both; border-top-color: rgb(220, 220, 220); border-top-width: 1px; border-top-style: solid; min-height: 150px;
+}
+#footer .footer_inn {
+	margin: 0px auto; width: 980px;
+}
+#footer .footer_inn {
+	padding: 20px 0px; color: rgb(102, 102, 102); font-size: 11px;
+}
+.footer_gomenu::after {
+	clear: both; display: block; content: "";
+}
+.footer_gomenu {
+	overflow: hidden;
+}
+.footer_gomenu span {
+	float: left;
+}
+.footer_gomenu span.footer_logo {
+	padding-right: 12px;
+}
+.footer_gomenu .goMenu {
+	margin-top: 5px; float: left;
+}
+.footer_gomenu .goMenu li {
+	background: url("https://direct.hi.co.kr/images/car/auto7/bg_bar.gif") no-repeat right; padding: 0px 8px; letter-spacing: -1px; font-size: 12px;
+}
+.footer_gomenu .goMenu li:last-child {
+	background: none;
+}
+.footer_gomenu .goMenu li.em {
+	color: rgb(102, 102, 102);
+}
+.footer_gomenu .goMenu li a {
+	color: rgb(102, 102, 102);
+}
+.footer_gomenu .siteP {
+	float: right;
+}
+.footer_gomenu ul {
+	overflow: hidden;
+}
+.footer_gomenu ul li {
+	font-size: 11px; float: left;
+}
+.footer_gomenu .info_mobile {
+	float: right;
+}
+.footer_address {
+	overflow: hidden; margin-top: 18px;
+}
+.footer_address p {
+	line-height: 1.6em; margin-bottom: 2px;
+}
+.footer_address p span {
+	padding: 0px 5px; color: rgb(213, 213, 212);
+}
+.footer_address_inn {
+	float: left;
+}
+.siteP {
+	float: right;
+}
+.siteP li {
+	margin-left: 8px; float: left;
+}
+.siteP li:first-child {
+	margin-left: 0px;
+}
+#contents {
+	margin: 0px auto; width: 980px; position: relative;
+}
+#contents .hicar {
+	background: url("https://direct.hi.co.kr/images/car/auto7/bg_cube.png") no-repeat right 200px; border: 1px solid rgb(193, 193, 193); top: 38px; width: 653px; height: 518px; position: relative;
+}
+#contents .hicar .bar-list {
+	display:block; position:absolute; bottom:0; left: 25px;
+}
+#contents .hicar .bar-list li {
+	float:left; position:relative; width:86px; height:375px; cursor:pointer;
+}
+#contents .hicar .bar-list li>div { position:absolute; bottom:0; width:100%;
+	-webkit-transition-property: width; transition-property: width;
+	-webkit-transition-duration: 0.5s; transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease; transition-timing-function: ease;
+}
+#contents .hicar .bar-list li>div>img{ width:100%; }
+#contents .hicar .bar-list li .s { }
+#contents .hicar .bar-list li .b { opacity: 0; }
+#contents .hicar .bar-list:after { content:" ";display:block;overflow:hidden;clear:both;height:0;}
+
+#contents h2.direct {
+	background: url("https://direct.hi.co.kr/images/car/auto7/img2.jpg") no-repeat left top; left: 670px; top: 38px; width: 310px; height: 381px; position: absolute;
+}
+#contents h2.direct a.btn2 {
+	left: 5px; bottom: 7px; position: absolute; /************ top >175로 수정 *************/
+}
+#contents p.img3 {
+	left: 0px; top: 435px; position: absolute;
+}
+#contents p.img4 {
+	left: 166px; top: 435px; position: absolute;
+}
+#contents p.img5 {
+	left: 332px; top: 435px; position: absolute;
+}
+#contents p.img6 {
+	left: 498px; top: 435px; position: absolute;
+}
+#contents p.img7 {
+	left: 670px; top: 435px; position: absolute;
+}
+#contents p.img8 {
+	left: 725px; top: 569px; color: rgb(115, 115, 115); font-size: 11px; position: absolute;
+}
+#contents .icon_img {
+	width: 585px; padding-top: 13px; padding-left: 20px; margin-left: 30px; border-top-color: rgb(193, 193, 193); border-top-width: 1px; border-top-style: solid;
+}
+#contents .icon_img li {
+	width: 33%; line-height: 1.6em; padding-bottom: 15px; float: left;
+}
+.caution {
+	color: rgb(62, 62, 62); margin-top: 55px;
+}
+.caution h4 {
+	background: url("https://direct.hi.co.kr/images/car/auto7/icon_caution.gif") no-repeat 0px 0.2em; padding: 0.2em 0px 0.7em 1.8em; color: rgb(208, 74, 0); font-family: "NanumGothic"; font-size: 14px; font-weight: bold; margin-bottom: 5px; border-bottom-color: rgb(230, 116, 0); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.caution > ul {
+	margin: 15px 0px 0px 25px;
+}
+.caution > ul > li {
+	background: url("https://direct.hi.co.kr/images/car/auto7/bul_chk.gif") no-repeat 0px 7px; line-height: 1.65em; padding-left: 12px;
+}

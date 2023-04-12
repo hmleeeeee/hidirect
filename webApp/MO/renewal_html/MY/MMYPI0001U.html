@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">내정보 확인/변경</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+            <div class="governing ta_l">
+							<h2 class="governing_title">내 정보를 최신 정보로<br>수정해 주세요.</h2>
+							<p class="info_text mt02">보험계약의 내 정보도 같이 변경되니<br>정확하게 입력해 주세요.</p>
+						</div>
+            <div class="comp">
+							<div class="title_area">
+								<h3 class="h3">기본정보</h3>
+							</div>
+							<div class="form_area">
+								<div class="form_item">
+									<div class="form_label"><label for="inp01">이름</label></div>
+									<div class="form_wrap">
+										<input type="text" value="홍길동" placeholder="" disabled="disabled">
+									</div>
+								</div>
+								<div class="form_item">
+									<div class="form_phone">
+										<div class="form_label"><label for="phone">휴대폰번호</label></div>
+										<div class="form_wrap">
+											<select id="phone">
+												<option>010</option>
+											</select>
+										</div>
+										<div class="form_wrap">
+											<input type="number" placeholder="‘-’없이 숫자 8자리 입력" title="휴대폰번호 입력">
+										</div>
+									</div>
+									<div class="form_msg error">휴대폰번호를 꼭 입력해 주세요.</div>
+								</div>
+								<div class="form_item">
+									<div class="form_label"><label for="email">이메일</label></div>
+									<div class="form_wrap">
+										<input type="text" id="email">
+									</div>
+									<div class="form_msg error">이메일을 꼭 입력해 주세요.</div>
+								</div>
+								<div class="form_item">
+									<div class="form_label"><span class="form_title">주소</span></div>
+									<div class="option_area">
+										<input type="radio" id="rdo01_01" class="btn_rdo" name="rdo01" checked="checked"><label for="rdo01_01">집</label>
+										<input type="radio" id="rdo01_02" class="btn_rdo" name="rdo01"><label for="rdo01_02">직장</label>
+									</div>
+									<!-- 등록된 주소가 없는 경우 -->
+									<div class="address_area">
+										<p class="address_text">
+											<span class="number">03183</span>
+											<span>서울특별시 종로구 세종대로 163, 현대해상빌딩(세종로)</span>
+										</p>
+										<button type="button" class="btn_form">주소찾기</button>
+									</div>
+									<!-- 등록된 주소가 있는 경우 -->
+									<div class="address_area">
+										<div class="address_text">
+											<span>주소를 등록 하세요.</span>
+										</div>
+										<button type="button" class="btn_form">주소찾기</button>
+									</div>
+								</div>
+							</div>
+							<div class="title_area">
+								<h3 class="h3">우편물수령지</h3>
+							</div>
+							<div class="form_area">
+								<div class="form_item no_label">
+									<div class="option_area">
+										<input type="radio" id="rdo02_01" class="btn_rdo" name="rdo02" checked="checked"><label for="rdo02_01">모두 집</label>
+										<input type="radio" id="rdo02_02" class="btn_rdo" name="rdo02"><label for="rdo02_02">모두 직장</label>
+									</div>
+								</div>
+							</div>
+							<div class="post_area">
+								<ul class="post_list">
+									<li class="post_item">
+										<p>무배당현대해상다이렉트H건강보험 (Hi2301)</p>
+										<span>2021.01.15~2055.01.15</span>
+										<div>
+											<input type="radio" id="post01_01" name="post01" checked="checked">
+											<label for="post01_01">집</label>
+											<input type="radio" id="post01_02" name="post01">
+											<label for="post01_02">직장</label>
+										</div>
+									</li>
+									<li class="post_item">
+										<p>무배당현대해상다이렉트H건강보험 (Hi2301)</p>
+										<span>2021.01.15~2055.01.15</span>
+										<div>
+											<input type="radio" id="post02_01" name="post02" checked="checked">
+											<label for="post02_01">집</label>
+											<input type="radio" id="post02_02" name="post02">
+											<label for="post02_02">직장</label>
+										</div>
+									</li>
+									<li class="post_item">
+										<p>무배당현대해상다이렉트H건강보험 (Hi2301)</p>
+										<span>2021.01.15~2055.01.15</span>
+										<div>
+											<input type="radio" id="post03_01" name="post03" checked="checked">
+											<label for="post03_01">집</label>
+											<input type="radio" id="post03_02" name="post03">
+											<label for="post03_02">직장</label>
+										</div>
+									</li>
+								</ul>
+							</div>
+            </div>
+					</div>
+
+					<div class="section bottom_fix">
+						<div class="comp">
+							<div class="accordion notice full">
+								<div class="item">
+									<div class="fold_header">
+										<a href="javascript:void(0);" role="button" title="내용보기">
+											<div class="title"><strong>이용안내</strong></div>
+											<i class="icon_angle"><span>내용보기/내용닫기</span></i>
+										</a>
+									</div>
+									<div class="fold_body uol_list use_info">
+										<ul>
+                        <li>화재보험의 목적물소재지(보장 대상이 되는 건물의 주소지) 변경은 계약담당자 또는 계약 담당지점으로 요청해 주세요.</li>
+												<li>변경된 휴대폰번호로 변경내역을 안내할 예정이에요.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+				<!-- content_footer -->
+				<div class="content_footer fix">
+					<div class="btn_area footer">
+						<button type="button" class="btn fill01">본인인증 후 정보 변경</button>
+					</div>
+				</div>
+				<!-- //content_footer -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Code Here~!! -->
+		<!-- [End of Modal] ======================================== -->
+
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

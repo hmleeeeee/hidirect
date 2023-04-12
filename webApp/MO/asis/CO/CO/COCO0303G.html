@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 국가 검색</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>국가 검색</h1>
+		</header>
+		<div class="popContent">
+			<!-- <p class="topTxt">해당국가의 자음을 선택하시거나 검색해 주세요.</p> -->
+			<section>
+				<h2>해당국가의 자음 선택</h2>
+				<div class="noCheckList seven">
+					<a href="#" role="button"><span class="choisText">ㄱ</span></a>
+					<a href="#" role="button"><span class="choisText">ㄴ</span></a>
+					<a href="#" role="button"><span class="choisText">ㄷ</span></a>
+					<a href="#" role="button"><span class="choisText">ㄹ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅁ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅂ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅅ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅇ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅈ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅊ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅋ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅌ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅍ</span></a>
+					<a href="#" role="button"><span class="choisText">ㅎ</span></a>
+				</div>
+
+				<h2>국가 선택(검색결과)</h2>
+				<!-- 검색결과 선택 -->
+				<div class="radioBox"><!-- 0621 : label에 너비설정 class="auto" 추가 -->
+					<span class="on">
+						<input type="radio" id="list01" name="radioBox" checked="checked"><label for="list01" class="auto">가나가나가나가나가나가나가나가나가나체류지 2개이상일 경우체류지 2개이상일 경우체류지 2개이상일 경우체류지 2개이상일 경우체류지 2개이상일 경우</label>
+					</span>
+					<span class="off">
+						<input type="radio" id="list02" name="radioBox"><label for="list02" class="auto">가봉</label>
+					</span>
+					<span class="off">
+						<input type="radio" id="list03" name="radioBox"><label for="list03" class="auto">가이아나</label>
+					</span>
+					<span class="off">
+						<input type="radio" id="list04" name="radioBox"><label for="list04" class="auto">캄비아</label>
+					</span>
+				</div><!-- 0621 -->
+
+				<div class="checkBox">
+					<input type="checkbox" id="ck00"><label for="ck00"><span class="hide">체류지 2개이상일 경우</span></label>
+					<span>체류지가 2개국 이상이신가요?</span>
+				</div>
+
+				<h2>납세자번호 미기재사유</h2>
+				<div class="inputWrap">
+					<select title="취득 선택">
+						<option>선택</option>
+						<option value="1">미발급 국가</option>
+						<option value="2">미요구 국가</option>
+						<option value="3">미취득</option>
+					</select>
+				</div>
+				<div class="inputWrap">
+					<input type="text" id="case01" required />
+					<label for="case01">미취득사유</label>
+				</div>
+
+				<h2>납세자번호 입력</h2>
+				<div class="inputWrap">
+					<input type="text" id="case02" required />
+					<label for="case02">납세자번호</label>
+				</div>
+
+
+				<div class="btnWrap">
+			    	<span><a href="#" role="button">취소</a></span>
+			    	<span class="on"><a href="#" role="button">확인</a></span>
+			    </div>
+			</section>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

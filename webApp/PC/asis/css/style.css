@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/* 로딩화면 */
+.layerPop.loading{border:solid 2px #003170; border-radius:7px;padding:24px;width:350px;height:258px;margin-left:-199px}
+.layerPop.loading div{margin-top:37px;text-align:center;}
+.layerPop.loading div span{display:inline-block;}
+.layerPop.loading p{text-align:center;font-family:NanumBarunGothic;font-size:18px;color:#003170;line-height:1.3em;margin:16px 0 45px 0}
+.layerPop.loading .guideList{margin-left:20px}
+.layerPop.loading .guideList li {background:url("https://direct.hi.co.kr/images/common/icon_guideList.png") no-repeat 0 3px;font-size:12px}
+
+/* 보안프로그램 설치 */
+#contents.noneNavi{float:none;width:860px;padding-top:40px;margin:0 auto;font-family:"돋움",Dotum,AppleGothic}
+.tit_dep1_2{font-family:NanumBarunGothic;font-size:24px !important;font-weight:normal;padding-top:1px;line-height:1em;margin-bottom:15px;text-align:center;line-height:1.4em;color:#333 !important}
+.wrap_security{padding-left:130px;background:url('https://direct.hi.co.kr/images/common/bg_security1.png') no-repeat left top;}
+.wrap_security + table{margin-top:30px;}
+.wrap_security ol{margin-top:30px}
+
+.veraPort {width:750px;margin:100px auto 0;}
+.veraPort .header {overflow:hidden;font-family:"NanumBarunGothic";text-align:left;line-height:26px;border-bottom:2px solid #7190be;margin-bottom:15px;padding-bottom:15px;}
+.veraPort .header h1 {float:left;padding-top:10px;}
+.veraPort .header h2 {float:right;color:#003170;font-weight:bold;font-size:24px;}
+.veraPort .header h2 em {display:block;color:#333;font-size:16px;font-weight:normal;}
+.veraPort .contents {width:650px;margin:40px auto;}
+.veraPort .contents .loadingBar {text-align:center;padding-bottom:30px;margin-bottom:30px;border-bottom:1px dotted #adadad;}
+.veraPort .contents .loadingBar p {margin-top:20px;font-weight:bold;}
+.veraPort .contents .loadingBar .listType06 {margin-top:40px;display:inline-block;text-align:left;}
+.veraPort .contents .loadingBar .listType06 li strong {color:#D04A00;}
+.veraPort .contents .information {background-color:#f6f6f6;padding:30px 45px;}
+.veraPort .contents .information .pointC01{color:#d04a00 !important;}
+.veraPort .contents .information dl {}
+.veraPort .contents .information dl dt {font-family:"NanumBarunGothic";font-weight:normal;font-size:18px;color:#003170;}
+.veraPort .contents .information dl dt + dd {margin-top:12px;}
+.veraPort .contents .information dl dd {padding-left: 7px;background: url("https://direct.hi.co.kr/images/common/bul_sub3.gif") no-repeat scroll 0px 7px transparent;line-height: 1.65em;}
+.veraPort .listType06. li {line-height:1.65em;background-position:0px 6px;}
+
+/* 현대해상 다이렉트 - 보안프로그램 안내 161027 */
+/* renewal_direct_page_wrap */
+.renewal_direct_page_wrap {width:100%;padding:0 0 40px;line-height:1;}
+.renewal_direct_page_wrap .security_tit {padding-bottom:16px;border-bottom:1px solid #e1e1e1;font-family:NanumBarunGothic;font-size:24px;font-weight:normal;}
+.renewal_direct_page_wrap .page_desc {position:relative;margin-top:8px;}
+.renewal_direct_page_wrap .page_desc .inner_wrap {position:absolute;bottom:24px;left:15px;}
+.renewal_direct_page_wrap .page_desc .inner_wrap > .g {font-family:NanumBarunGothic;font-size:15px;color:#4b515d;line-height:1.2}
+.renewal_direct_page_wrap .page_desc .desc_tit {margin-bottom:0;padding:18px 0;font-family:NanumBarunGothic;font-size:18px;line-height:1;}
+.renewal_direct_page_wrap .page_desc .desc_tit.direct {color:#4260a0;}
+.renewal_direct_page_wrap .page_desc .desc_tit a {display:inline-block;vertical-align:2px;}
+.renewal_direct_page_wrap .page_desc p {font-size:13px;line-height:1.2;}
+
+/* 현대해상 다이렉트 - 보안프로그램 설치 161031 */
+/* os_tabType01 - Windows, Max, Linux */
+.os_tabType01 {background-image:url("https://direct.hi.co.kr/images/common/renewal/bg_os_tabType.png");background-position:0 100%;background-repeat:repeat-x;}
+.os_tabType01:after {display:block;clear:both;content:"";}
+.os_tabType01 li {float:left;margin:0 25px;padding:18px 0;background-color:transparent;}
+.os_tabType01 li a {display:block;}
+.os_tabType01 li > img {margin-top:20px;}
+
+/* renewal_install_guide */
+.renewal_install_guide {margin-top:-24px;margin-left:-40px;}
+.renewal_install_guide:after {display:block;clear:both;content:"";}
+.renewal_install_guide .inner {float:left;width:365px;margin-top:24px;margin-left:40px;}
+.renewal_install_guide .inner p {min-height:42px;margin-bottom:8px;}
+.renewal_install_guide .inner em {font-size:15px;font-weight:bold;color:#757575;}
+.renewal_install_guide .inner strong {font-size:13px;font-weight:bold;color:#e67400;}
+.renewal_install_guide .inner .thin_line_box {display:table-cell;width:365px;height:295px;box-sizing:border-box;text-align:center;vertical-align:middle;}
+
+/* browser_download_list */
+.browser_download_list li {position:relative;padding:5px 0;}
+.browser_download_list li a {position:absolute;top:0;left:331px;vertical-align:2px;}
+.browser_download_list li a img {margin:0;}
+.new_tbl_type tbody td > .browser_download_list li {margin-top:9px;}
+
+/* 161018 보안프로그램 설치 페이지 */
+/* 배경 색상 옵션 */
+.bgc_e2e6f3 {background-color:#e2e6f3 !important;}
+.bgc_e67400 {background-color:#e67400 !important;}
+.bgc_c5c5c5 {background-color:#c5c5c5 !important;}
+.bgc_eaeaea {background-color:#eaeaea !important;}
+.bgc_5d72a7 {background-color:#5d72a7 !important;}
+.bgc_909090 {background-color:#909090 !important;}
+.bgc_e5e5e5 {background-color:#e5e5e5 !important;}
+
+/* 밑 줄 옵션 161027 */
+.brd_t_2_6d6d6d {border-top:2px solid #6d6d6d;}
+
+/* thin_line_box */
+.thin_line_box {border:1px solid #d2d2d2;}
+.thin_line_box.bgWhite{padding:5px 6px;line-height:1.4;background-color:#ffffff} /* 추가 /2003 */
+
+/* 텍스트 위치 옵션 */
+.text_right {text-align:right !important;}
+
+/* security_page_wrap */
+.security_page_wrap {width:980px;margin:0 auto;padding:50px 0;line-height:1;}
+.security_page_wrap:after {display:block;clear:both;content:"";}
+.security_page_wrap .tit_dep1 {height:auto !important;margin:42px 0 0;font-family:NanumBarunGothic;font-size:24px;font-weight:normal;}
+.security_page_wrap .security_tit {height:auto !important;/* margin-top:50px; */padding:6px 0 18px;border-bottom:2px solid #7190be;}
+.security_page_wrap .security_tit.bg_logo {background:url("https://direct.hi.co.kr/images/common/security/bg_logo.jpg") 0 0 no-repeat;text-align:right;}
+.security_page_wrap .page_desc {position:relative;margin-top:8px;margin-bottom:15px;}
+.security_page_wrap .bullet_type {position:absolute;bottom:0;left:0;}
+.security_page_wrap .bullet_type li {margin-bottom:4px;padding-left:9px;background:url("https://direct.hi.co.kr/images/common/ico/bu_desc.gif") no-repeat 1px 7px;font-family:NanumBarunGothic;font-size:14px;color:#4b515d;line-height:1.3;}
+.security_page_wrap .bullet_type li a {display:inline-block;vertical-align:top;}
+
+
+/* 우편번호검색 */
+.wrap_zipcode:after{content:'';display:block;clear:both}
+.wrap_zipcode{border:solid 1px #e1e1e1;margin-top:10px}
+.wrap_zipcode dl{float:left;width:179px;border-left:solid 1px #e1e1e1}
+.wrap_zipcode dl:first-child{border-left:0;width:178px}
+.wrap_zipcode dl dt{background-color:#f5f5f5;font-weight:bold;text-align:center;padding:12px 0;border-bottom:solid 1px #e1e1e1}
+.wrap_zipcode dl dt.next_step{background:url('https://direct.hi.co.kr/images/common/bul_arrow1.png') no-repeat 168px center #f5f5f5;}
+.wrap_zipcode dl dd{height:342px;overflow-y:scroll}
+.wrap_zipcode dl dd ul{}
+.wrap_zipcode dl dd ul li{border-top:solid 1px #e1e1e1;}
+.wrap_zipcode dl dd ul li a:hover{text-decoration:underline;color:#D04A00}
+.wrap_zipcode dl dd ul li a:focus{text-decoration:underline;color:#D04A00}
+.wrap_zipcode dl dd ul li a{display:block;padding:10px 8px 9px 8px}
+.wrap_zipcode dl dd ul li a.on{background-color:#003170;color:#fff}
+.wrap_zipcode dl dd ul li:first-child{border-top:0}
+.aHover a:hover, a.aHover:hover{text-decoration:underline;color:#D04A00}
+.aHover a:focus, a.aHover:focus{text-decoration:underline;color:#D04A00}
+.scroll_body{border:1px solid #e1e1e1;margin-top:10px}
+.scroll_body dt{background:#f5f5f5;font-weight:bold;border-bottom:1px solid #e1e1e1;}
+.scroll_body dt span{display:inline-block;text-align:center;width:121px;padding:11px 0 10px 0;}
+.scroll_body dt span:first-child{border-right:1px solid #e1e1e1;width:416px}
+.scroll_body dd{height:342px;overflow-y:scroll}
+.scroll_body dd strong{display:block;margin-top:100px;font-size:14px;text-align:center;}
+.scroll_body dd a{display:block;border-top:1px solid #e1e1e1;}
+.scroll_body dd a.on{display:block;background-color:#003170;color:#fff}
+.scroll_body dd a:first-child{border-top:0}
+.scroll_body dd a span{width:102px;text-align:center;display:inline-block;padding:11px 0 10px 0;}
+.scroll_body dd a span:first-child{text-align:left;border-right:1px solid #e1e1e1;width:406px;padding-left:10px}
+.tblCol2 {border:1px solid #e1e1e1;}
+.tblCol2 th, .tblCol2 td {padding:11px 5px 10px;text-align:center;border:1px solid #e1e1e1;}
+.tblCol2 th {background:#f5f5f5;}
+.tblCol2 th:first-child {border-left:0;}
+.tblCol2 tr th.bdL, .tblCol2 tr td.bdL {border-left:1px solid #e1e1e1;}
+.tblCol2 td {padding:11px 10px 10px;border-left:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;}
+.tblCol2 td:first-child {border-left:0;}
+.tblCol2.alL td {text-align:left;}
+.tblCol2 .bgGray th, .tblCol2 td.bgGray {background:#fafafa;color:#666;}
+
+
+/* 직업선택 */
+.jobResult {margin-top:5px;}
+.jobResult label {padding-right:10px;font-weight:bold;}
+/* 직업검색 결과 */
+.resultMsg {margin-top:20px;padding:12px 20px;border:1px solid #003170;background:#7190be;}
+.resultMsg p {color:#fff;font-weight:bold;}
+.resultMsg p strong {color:#FFFEA4;}
+.resultMsg .bgWarn {padding:2px 0 2px 19px;background:url('https://direct.hi.co.kr/images/common/icon_warn.gif') no-repeat 0 3px;text-align:center;}
+
+.resultMsg + table {margin-top:15px;}
+.resultMsg + table.tblCol tr th, .resultMsg + table.tblCol tr td {padding:10px 12px;}
+.resultMsg + table.tblCol tbody tr th {text-align:left;}
+
+/* 현대해상달력 */
+.ui-datepicker .ui-datepicker-title select{font-size:12px}
+/* TouchEnKey (화면 하단 공백생기는 오류) */
+#TouchEnKey{position:absolute;}
+.fullSize object,
+.fullSize embed{position:absolute;bottom:0}
+html{overflow-y:scroll}
+
+/* 국가검색 */
+.listNa{overflow:hidden;border:solid 1px #e1e1e1; border-width:0px 0 1px 1px ;margin:5px 0 15px 0;background:#f5f5f5}
+.listNa li{float:left; vertical-align:middle;border:solid 1px #e1e1e1;border-width:1px 1px 0  0 }
+.listNa li a{display:block;padding:12px 31px 12px 30px;font-size:14px;font-weight:bold}
+.listNa li a.on{color:#fff;background:#00346e}
+
+.scroll_body2{border:1px solid #e1e1e1;margin-top:10px}
+.scroll_body2 dt{background:#f5f5f5;font-weight:bold;border-bottom:1px solid #e1e1e1;}
+.scroll_body2 dt span{display:inline-block;text-align:center;width:416px;padding:11px 0 10px 0;}
+.scroll_body2 dt span:first-child{border-right:1px solid #e1e1e1;width:121px}
+.scroll_body2 dd{height:342px;overflow-y:scroll}
+.scroll_body2 dd strong{display:block;margin-top:100px;font-size:14px;text-align:center;}
+.scroll_body2 dd a{display:block;border-top:1px solid #e1e1e1;}
+.scroll_body2 dd a.on{display:block;background-color:#fafafa;color:#e67400;}
+.scroll_body2 dd a.on span{text-decoration:underline}
+.scroll_body2 dd a:first-child{border-top:0}
+.scroll_body2 dd a span{width:398px;text-align:center;display:inline-block;padding:11px 0 10px 0;}
+.scroll_body2 dd a span:first-child{text-align:center;border-right:1px solid #e1e1e1;width:111px;padding-left:10px}

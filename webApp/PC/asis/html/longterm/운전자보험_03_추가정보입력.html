@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>운전자보험_03_추가정보입력</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/longterm.css" />
+    <script>
+        $(function(){
+
+            $(".ctgSelect li a").on("click",function(){
+                var idx = $(this).parent().index();
+                var target = $(this).closest(".ctgSelect");
+                target.addClass("on");
+                target.find("li").removeClass("on").eq(idx).addClass("on")
+            })
+            $(".btnJobSearch").on("click",function(){
+                $(".ctgSelectArea").addClass("small");
+                $(".ctgSelectArea .scrollYArea").slideUp();
+                $(".jobSearchResult").slideDown();
+            })
+            $(".ctgSelectArea .tit").on("click",function(){
+                $(".ctgSelectArea").removeClass("small");
+                $(".ctgSelectArea .scrollYArea").slideDown();
+                $(".jobSearchResult").slideUp();
+            })
+        })
+    </script>
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="형대해상 다이렉트"></a></p>
+            <h1>운전자보험</h1>
+        </div>
+        <div class="stepArea">
+        </div>
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>추가정보 입력</h2>
+            <p class="txt">차량 정보 및 직업정보를 입력해 주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+        <!--itemSelectArea : s-->
+        <div class="itemSelectArea">
+            <ul class="itemList tabList">
+                <li class="on"><a href="#" class="buySoon"><span>자가용</span></a></li>
+                <li><a href="#" class="business"><span>영업용</span></a></li>
+            </ul>
+            <h3 class="tabInfoTopTxt">
+                <span class="fontPoint2">차종 정보</span>를 선택해주세요.
+            </h3>
+        </div>
+        <!--itemSelectArea : e-->
+        <!--itemSelectArea : s-->
+        <div class="itemSelectArea mb30">
+            <ul class="itemList tabList lineOnly">
+                <li class="on"><a href="#"><span>승용차</span></a></li>
+                <li><a href="#"><span>승합차</span></a></li>
+                <li><a href="#"><span>화물차</span></a></li>
+                <li><a href="#"><span>기타</span></a></li>
+            </ul>
+        </div>
+        <!--itemSelectArea : e-->
+
+        <!--inputTable : s-->
+        <div class="inputTable">
+            <div class="title inputType">
+                <h3 class="tit">
+                    직업정보 <span class="fontLevel3 fz14">(직업분류를 선택 또는 직업명을 직접 입력해서 검색해주세요.)</span>
+                </h3>
+                <div class="rightArea">
+                    <div class="inputBase placeholder small btnType" style="width: 270px;">
+                        <input type="text" placeholder="직업 검색" title="직업 검색" class="autoCompleteInput">
+                        <a href="#" class="btnRight btnJobSearch"><img src="https://direct.hi.co.kr/images/common/btn_search_small.png" alt="검색"></a>
+                    </div>
+                </div>
+            </div>
+            <!--ctgSelectArea : s-->
+            <div class="ctgSelectArea bline">
+                <div class="ctgSelect">
+                    <a href="#" class="tit">대분류 선택</a>
+                    <div class="scrollYArea">
+                        <ul>
+                            <li class="on"><a href="#">관리자(사무직)</a></li>
+                            <li><a href="#">전문가 및 관련 종사자</a></li>
+                            <li><a href="#">사무 종사자</a></li>
+                            <li><a href="#">서비스 종사자</a></li>
+                            <li><a href="#">판매 종사자</a></li>
+                            <li><a href="#">농림어업 숙련 종사자</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ctgSelect">
+                    <a href="#" class="tit">중분류 선택</a>
+                    <div class="scrollYArea">
+                        <ul>
+                            <li><a href="#">관리자(사무직)</a></li>
+                            <li><a href="#">전문가 및 관련 종사자</a></li>
+                            <li><a href="#">사무 종사자</a></li>
+                            <li><a href="#">서비스 종사자</a></li>
+                            <li><a href="#">판매 종사자</a></li>
+                            <li><a href="#">농림어업 숙련 종사자</a></li>
+                            <li><a href="#">관리자(사무직)</a></li>
+                            <li><a href="#">전문가 및 관련 종사자</a></li>
+                            <li><a href="#">사무 종사자</a></li>
+                            <li><a href="#">서비스 종사자</a></li>
+                            <li><a href="#">판매 종사자</a></li>
+                            <li><a href="#">농림어업 숙련 종사자</a></li>
+                            <li><a href="#">관리자(사무직)</a></li>
+                            <li><a href="#">전문가 및 관련 종사자</a></li>
+                            <li><a href="#">사무 종사자</a></li>
+                            <li><a href="#">서비스 종사자</a></li>
+                            <li><a href="#">판매 종사자</a></li>
+                            <li><a href="#">농림어업 숙련 종사자</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ctgSelect">
+                    <a href="#" class="tit">소분류 선택</a>
+                    <div class="scrollYArea">
+                    </div>
+                </div>
+            </div>
+            <!--ctgSelectArea : e-->
+            <!--jobSearchResult : s-->
+            <div class="jobSearchResult">
+                <p class="tit">검색결과 총 <span class="fontPoint2">50</span>건</p>
+                <div class="scrollYArea">
+                    <ul>
+                        <li><a href="#">관리자(사무직)</a></li>
+                        <li><a href="#">전문가 및 관련 종사자</a></li>
+                        <li><a href="#">사무 종사자</a></li>
+                        <li><a href="#">서비스 종사자</a></li>
+                        <li><a href="#">판매 종사자</a></li>
+                        <li><a href="#">농림어업 숙련 종사자</a></li>
+                        <li><a href="#">관리자(사무직)</a></li>
+                        <li><a href="#">전문가 및 관련 종사자</a></li>
+                        <li><a href="#">사무 종사자</a></li>
+                        <li><a href="#">서비스 종사자</a></li>
+                        <li><a href="#">판매 종사자</a></li>
+                        <li><a href="#">농림어업 숙련 종사자</a></li>
+                        <li><a href="#">관리자(사무직)</a></li>
+                        <li><a href="#">전문가 및 관련 종사자</a></li>
+                        <li><a href="#">사무 종사자</a></li>
+                        <li><a href="#">서비스 종사자</a></li>
+                        <li><a href="#">판매 종사자</a></li>
+                        <li><a href="#">농림어업 숙련 종사자</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--jobSearchResult : e-->
+        </div>
+        <!--inputTable : e-->
+
+
+        <!--inputTable : s-->
+        <div class="inputTable line">
+            <div class="title">
+                <div class="tit">
+                    <p class="fontPoint2 fl">(필수)</p>
+                    <p class="fl ml5">피보험자가 이륜자동차 운전중에 발생한 상해사고는 보험에서 보상되지 않습니다.</p>
+                </div>
+                <div class="rightArea">
+                    <div class="checkbox">
+                        <input type="checkbox" id="agree">
+                        <label for="agree">동의함</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--inputTable : e-->
+
+
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item37">
+                    <li><a href="#" class="btn prev"><span>이전</span></a></li>
+                    <li><a href="#" class="btn next"><span>다음</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

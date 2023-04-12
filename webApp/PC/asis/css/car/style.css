@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* skip_navi */
+.skip_navi{position:relative;z-index:9999;}
+	.skip_navi a{display:inline-block;width:200px;position:absolute;left:0px;top:-30px;background:silver}
+	.skip_navi a:focus{top:0;}
+
+/* layout */
+body{background:#fff;}
+#wrap{width:100%;}
+#container{background:#fff;}
+
+/* header */
+#header{width:100%;height:80px;background:#fff;}
+	#header .header_inn{width:980px;margin:0 auto;}
+		#header .header_inn h1{padding:31px 0 0 0;}
+
+/* footer */
+#footer{clear:both;min-height:150px;border-top:solid 1px #dcdcdc;background:#f5f5f5;}
+	#footer .footer_inn{width:980px; margin:0 auto;}
+	#footer .footer_inn{padding:20px 0;color:#666;font-size:11px}
+
+	.footer_address{margin-top:18px;overflow:hidden}
+		.footer_address p{line-height:1.6em;margin-bottom:2px}
+		.footer_address p span{padding:0 5px;color:#d5d5d4}
+		.footer_address_inn{float:left;}
+.siteP{float:right}
+	.siteP li{margin-left:8px;float:left}
+	.siteP li:first-child{margin-left:0px}
+
+/* footer 1904 */
+.footerArea {margin:0 auto; width:900px; position:relative; margin-top:250px; overflow:hidden;}
+.footerArea .logo {float:left;}
+
+.footerArea .footerTxt{ color:#777777; font-size:11px; margin-left:20px; float:left;}
+.footerArea .footerTxt .line{display:inline-block;width:1px;height:15px;background:#e5e5e5;margin:0px 3px 0 5px;vertical-align:top;}
+.footerArea .footerTxt .copyright{ color:#999999; display:block; margin-top:10px;}
+
+.footerArea .number {position:absolute; right:0; top:0px; overflow:hidden;color:#888888; font-size:11px;}
+
+.footerArea .bottomLogo {position:absolute; right:0; top:25px;}
+.footerArea .bottomLogo li {float:left; margin-left:3px;}
+
+/*contentArea*/
+.contentTxt{ color:#777777; font-size:11px; margin-left:20px; float:left;text-align:left;}
+.contentTxt li {margin-bottom:5px;color:#878787;font-family:돋움,AppleGothic;font-size:11px;}
+
+/* contents */
+#container .header {border-bottom:none;height:0;background:transparent !important}
+#container .header_inn{position:relative; width:1100px;margin:0 auto;}
+#container .header .header_inn h1{overflow:hidden;position:absolute;top:2.3rem;left:2rem;font-size:1px;color:transparent;width:131px;height:17px;}
+
+#container .contents {height:639px;}
+#container .contents .mainTop {background-image:url(https://direct.hi.co.kr/images/car4/visual.jpg);}
+#container .contents .titleArea {height:639px;background-repeat:no-repeat;background-position:center top;-webkit-background-size:cover;background-size:cover;}
+#container .contents .objArea { position:relative; width:930px; padding-top:100px; right:-5px; text-align:right; margin:0 auto;}
+#container .contents .objArea .btnArea {margin-top:20px; right:10px;}
+
+.quickBanner {position:absolute; top:100px; left:-70px;}
+.quickBanner a { display:block;}
+.beneFitBanner{width:930px; position:relative; top:70px; margin:0 auto; text-align:center}
+.beneFitBanner ul{}
+
+/* contents */
+#contents{width:1024px;margin:0 auto;position:relative;}

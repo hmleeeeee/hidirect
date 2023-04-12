@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        #guide:after{display:block;clear:both;content:''}
+        .layout{display:inline-block;width:calc(50% - 103px);vertical-align:top;margin:50px;padding:30px 10px 10px;border:3px solid #000;border-radius:15px}
+        .layout div:after{display:block;clear:both;content:''}
+        .layout > div{height:30px}
+        .layout > div+div{height:auto;margin-top:50px}
+        .layout div span{display:inline-block;position:absolute;top:-20px;left:10px;height:20px;padding:1px 10px 0;border-radius:8px 8px 0 0;border:1px solid #ccc;border-width:1px 1px 0 1px;font-size:12px;letter-spacing:1px;color:#fff;background-color:#ccc}
+        .layout div, .layout ul, .layout ul li, .layout h1, .layout a{display:block;position:relative;margin:10px;padding-top:30px;border-radius:8px;border:1px solid #ccc;list-style:none}
+        .layout ul > li{margin-top:30px}
+        .layout ul > li a{margin-top:0;cursor:default}
+        .layout>div>div+div{margin-top:50px;padding:30px 10px 0;display:flex;}
+        .layout>div>div+div>div:nth-child(2){margin:0 0 10px;flex-grow:1;min-width:150px}
+        .layout>div>div+div>div:nth-child(3){margin:0 0 10px 10px;flex-grow:100}
+        .layout>div>div+div>div ul{width:150px;padding-top:0}
+        .layout>div>div+div>div:nth-child(2) div+div,
+        .layout>div>div+div>div+div>div+div{margin-top:30px}
+        .layout>div>span+div h1{border-radius:10px}
+        .layout>div>div:last-child div{position:relative;top:0;width:100%;height:100px}
+    </style>
+    <script src="./resources/js/worklist.min.js"></script>
+    <script>
+        window.onload = function(){
+            function guide(){
+                const $tag = document.getElementById('guide').querySelectorAll('*')
+                $('.layout *').prepend('<span></span>')
+                for (var i = 0; i < $tag.length; i++) {
+                    const $item = $tag.item(i)
+                    
+                    let $tagName = $tag.item(i).nodeName
+                    let $id = $tag[i].getAttribute('id')
+                    let $class = $tag[i].getAttribute('class')
+
+                    let $textId = null
+                    let $textClass = null
+
+                    $item.querySelector('span').insertAdjacentHTML('beforeend',$tagName.toLowerCase())
+                    if($id !== '' && $id !== null){
+                        $textId = $id
+                        $item.querySelector('span').insertAdjacentHTML('beforeend','#'+$id)
+                    }
+
+                    if($class !== '' && $class !== null){
+                        $textClass = $class
+                        $item.querySelector('span').insertAdjacentHTML('beforeend','.'+$class)
+                    }
+                }
+                $('a').click(function(){
+                    return false
+                })
+            }
+            guide()
+        }
+    </script>
+    <style>
+    </style>
+</head>
+<body data-channel="pc" >
+    <div id="guide">
+        <div class="layout">
+            <div id="skip-nav"></div>
+            <div id="wrap">
+                <div id="header"></div>
+                <div id="container">
+                    <div id="lnb">
+
+                    </div>
+                    <div id="content">
+                        <div class="section"></div>
+                    </div>
+                </div>
+                <div id="footer">
+                    <div class="footer_wrap"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layout">
+            <div id="skip-nav"></div>
+            <div id="wrap">
+                <div id="header" class="header"></div>
+                <div id="container">
+                    <div id="content">
+                        <div class="section"></div>
+                    </div>
+                </div>
+                <div id="footer">
+                    <div class="footer_wrap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

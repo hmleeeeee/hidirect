@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>05_계약자정보_01pop자동차소유자정보</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+</head>
+<body class="boxType">
+
+
+
+<!-- 05_계약자정보_01pop자동차소유자정보 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap failjoin w600">
+    <div class="titleArea">
+        <h2>자동차 소유자정보 확인</h2>
+    </div>
+    <div class="popupContentArea">
+        <h3 class="infoTit mb5">안녕하세요. <span class="fontPoint1">홍길동 고객님</span></h3>
+		<div class="con mb15 fz15">
+			현재 가입하시려는 자동차에 대한 보험개발원 조회결과, 자동차소유자 정보에 대한 확인이<br>
+			필요합니다. 아래 항목 중에서 하나를 선택하신 후 확인 버튼을 클릭하시면 보험 가입을<br>
+			계속 진행하실 수 있습니다.
+		</div>
+
+		<!--inputTable : s-->
+		<div class="inputTable inputBline onlyInput mb10">	
+			<ul class="inputArea">
+				<li class="item">					
+					<div class="radio block">
+					   <input type="radio" name="ownerinfo" id="sales">
+						<label for="sales"><span class="fontLevel1">매매(명의이전 예정) : 신규 또는 중고차를 구입하거나 상속예정</label>
+					</div>
+					<div class="conBox" style="display: block;">
+						차량 매매로 인하여 등록증상 소유자와 피보험자가 불일치한 경우입니다.<br>
+						15일 이내에 차량등록 이전이 이루어지지 않을 경우 사고 발생 시 보상에 문제가 있을 수 있습니다.<br>
+						보험 가입 후 15일 이내 차량등록을 확인해 주세요.
+					</div>					
+				</li>
+				<li class="item mt10">					
+					<div class="radio block">
+					   <input type="radio" name="ownerinfo" id="jointname">
+						<label for="jointname"><span class="fontLevel1">공동명의 소유 : 다른사람과 공동명의로 자동차를 소유하는 경우</label>
+					</div>
+				</li>
+				<li class="item mt10">					
+					<div class="radio block">
+					   <input type="radio" name="ownerinfo" id="lease">
+						<label for="lease"><span class="fontLevel1">리스계약 : 리스계약으로 자동차를 이용하는 경우</label>
+					</div>
+					<div class="conBox" style="display: block;">
+						<ul class="inputType">
+							<li class="tit">사업자번호</li>
+							<li class="input">
+								<input type="text" style="width: 110px;">
+								<input type="text" style="width: 110px;">
+								<input type="text" style="width: 110px;">
+							</li>
+						</ul>
+					</div>					
+				</li>
+				<li class="item mt10">					
+					<div class="radio block">
+					   <input type="radio" name="ownerinfo" id="other">
+						<label for="other"><span class="fontLevel1">기타사유 : 장애인차량, 등록오류 등</label>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!--inputTable : e-->
+		<ul class="listStyle star mt15 noGap">			
+			<li>명의이전 예정 외 다른 사유를 선택하신 경우 인터넷 보험가입이 불가능 할 수 있습니다.</li>
+			<li>소유자 정보 불일치로 인한 관련 문의는 고객콜센터(1899-6782)를 이용해 주십시오.</li>
+			<li>리스계약의 경우, 질권설정은 고객콜센터(1577-1001)를 이용해주십시오.</li>
+		</ul>
+
+		<div class="btnAreaWrap tac mt20">            
+            <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 05_계약자정보_01pop자동차소유자정보 : e-->
+
+</body>
+</html>

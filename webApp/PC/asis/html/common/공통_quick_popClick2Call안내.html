@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>01_pop전화상담신청</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+</head>
+<body class="boxType">
+
+<!--01_pop전화상담신청 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<script>
+    $(function(){
+        $(document).on("change","input[name='insurance']",function(){
+            var val = $(this).val();
+            $(".insurance").hide();
+            $(".insurance."+val).show();
+        })
+    })
+</script>
+<div class="layerPopWrap failjoin w600 tellApply">
+    <div class="titleArea">
+        <h2>전화상담 신청</h2>
+    </div>
+    <div class="popupContentArea">
+        <div class="infoTit mb20">
+            김근덕 님 <span class="fontPoint1">Click 2 Call신청</span>을 클릭하시면<br>
+            상담원과 <span class="fontPoint2">전화 연결</span>을 통해 서비스를 이용하실 수 있습니다.
+
+        </div>
+		<!--inputTable : s-->
+		<div class="inputTable onlyInput bline">
+            <div class="telInfo">
+                <p class="fontPoint1 mb5">Click 2 Call[클릭 투 콜] 서비스란?</p>
+                전문 상담원이 고객님과 같은 화면을 보면서,<br>
+                가입방법 및 상품을 안내해드리는 실시간 상담원 연결 서비스 입니다.
+
+            </div>
+			<ul class="inputArea inlineBlock">
+				<li class="item">
+					<div class="selectItem">
+						<select name="selectHp" id="c2cTelType" class="c2cTelType" title="연락처를 선택해주세요" style="width: 150px;">
+							<option value="hpTypeCon">휴대폰</option>
+							<option value="telTypeCon">자택</option>
+							<option value="jobTypeCon">직장</option>
+						</select>
+					</div>
+				</li>
+				<li class="item">
+                    <div class="selectTelType hpTypeCon">
+                        <div class="inputBase" style="width: 380px;">
+                            <label for="hpNumber">휴대폰번호 (‘-’없이)</label>
+                            <input type="text" id="hpNumber" value="01087584589">
+                        </div>
+                    </div>
+
+                    <div class="selectTelType telTypeCon" style="display: none;">
+                        <div class="selectItem">
+                            <select name="selectTel" title="지역번호를 선택해주세요" style="width: 100px;">
+                                <option value="02">02</option>
+                                <option value="031">031</option>
+                            </select>
+                        </div>
+                        <div class="inputBase ml10" style="width: 270px;">
+                            <label for="telNumber">전화번호 (‘-’없이)</label>
+                            <input type="text" id="telNumber" value="">
+                        </div>
+                    </div>
+                    <div class="selectTelType jobTypeCon" style="display: none;">
+                        <div class="selectItem">
+                            <select name="selectJob" title="지역번호를 선택해주세요" style="width: 100px;">
+                                <option value="02">02</option>
+                                <option value="031">031</option>
+                            </select>
+                        </div>
+                        <div class="inputBase ml10" style="width: 270px;">
+                            <label for="jobNumber">전화번호 (‘-’없이)</label>
+                            <input type="text" id="jobNumber" value="">
+                        </div>
+                    </div>
+				</li>
+			</ul>
+
+
+		</div>
+		<!--inputTable : e-->
+
+        <ul class="listStyle star">
+            <li>고객님의 개인정보(주민등록번호, 계좌번호, 카드번호 등)는 저장되거나 상담원에게 전달되지<br>않습니다. 안심하고 이용해 주세요.</li>
+            <li>연락처 입력 후 Click 2 Call 신청 버튼을 클릭하시면 상담원이 전화를 드려 도움을 드리도록<br>하겠습니다. 모든 상담원이 통화 중일 경우, Click 2 Call[클릭투콜] 서비스 연결이 지연될 수 있습니다.<br>양해 부탁 드립니다.</li>
+            <li>상담전화 연결을 통해서 Click 2 Call[클릭투콜] 서비스를 제공하기 위한 연락처 수집/이용에<br>동의합니다.</li>
+        </ul>
+
+		<!--btn:s-->
+		<div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock gray" style="width: 90px;"><span>취소</span></a>
+            <a href="#" class="btn line inlineBlock orange" style="width: 150px;"><span>Click 2 Call 신청</span></a>
+        </div>
+		<!--btn:e-->
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!--01_pop전화상담신청 : e-->
+
+</body>
+</html>

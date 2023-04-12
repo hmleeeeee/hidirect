@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>03_보험료확인_pop담보내용자세히보기</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/longterm.css" />
+</head>
+<body class="boxType">
+
+
+
+<!-- 긴급공지 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap w1030">
+    <div class="titleArea">
+        <h2>개인(신용)정보의 수집·이용에 관한 사항</h2>
+    </div>
+    <div class="popupContentArea">
+        <div class="popAgreeScroll">
+			
+			<h3 class="titleLevel1 mt0 mb10">기본 계약</h3>
+			<!--테이블list:s-->
+			<table class="contentTable lineTd">
+				<caption>기본 계약 : 구분, 지급사유, 지급금액등이 기입된 기본 계약 표</caption>
+				<colgroup>
+					<col width="102px">
+					<col width="82px">
+					<col width="304px;">
+					<col width="*">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" colspan="2">구분</th>
+						<th scope="col">지급사유</th>
+						<th scope="col">지급금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="2" class="tdbg">상해입원<br>실손의료비<br>(갱신형)</td>
+						<td class="tdbg">표준형</td>
+						<td class="tal fontLevel2">
+							상해로 입원하여 치료를 받은 경우<br>(비급여도수치료·체외충격파치료·증식치료<br>실손의료비,비급여주사료실손의료비,비급여<br>
+							자기공명영상진단(MRI/MRA) 실손의료비 제외)<br>(자동차보험, 산재보험 처리분 제외)
+						</td>
+						<td class="tal fontLevel2 noRight">
+							<span class="fontBase">입원실료, 입원제비용, 수술비</span>
+							<p>
+								‘국민건강보험법에서 정한 요양급여 또는 의료급여법에서 정한 의료급여 중<br>본인부담금‘과‘비급여’(본인이 실제로 부담한 금액)를 합한 금액의 80% 해당액<br>(단, 20%해당액이 연간 200만원을 초과하는 경우 그 초과금액은 보상)<br>주) 상급병실료 차액 제외
+							</p>							
+							<ul class="listStyle star noGap mb5">
+								<li>하나의 상해당 보장가입금액 한도</li>
+							</ul>
+							<span class="fontBase">상급병실료 차액</span>
+							<p>실제사용병실과 기준병실과의 병실료 차액 중 50%를 공제한 후의 금액 (단, 1일 평균금액 10만원 한도)</p>
+							<ul class="listStyle star noGap">
+								<li>1일 평균금액 : 상급병실료차액 전체를 총 입원일수로 나눈 금액</li>
+								<li>하나의 상해당 보장가입금액 한도</li>
+							</ul>							
+						</td>
+					</tr>
+					<tr>
+						<td class="tdbg">선택형Ⅱ</td>
+						<td class="tal fontLevel2">
+							상해로 입원하여 치료를 받은 경우<br>(비급여도수치료·체외충격파치료·증식치료<br>실손의료비,비급여주사료실손의료비,비급여<br>
+							자기공명영상진단(MRI/MRA) 실손의료비 제외)<br>(자동차보험, 산재보험 처리분 제외)
+						</td>
+						<td class="tal fontLevel2 noRight">
+							<span class="fontBase">입원실료, 입원제비용, 수술비</span>
+							<p>
+								‘국민건강보험법에서 정한 요양급여 또는 의료급여법에서 정한 의료급여 중<br>본인부담금(본인이 실제로 부담한 금액)’의 90% 해당액과 ‘비급여(본인이 실제로<br> 부담한 금액)’의 80% 해당액의 합계액 (단, 급여 중 본인부담금의 10% 해당액과<br>
+								비급여의 20% 해당액을 합산한 금액이 연간 200만원을 초과하는 경우 그 초과<br>금액은 보상) 주) 상급병실료 차액 제외
+							</p>
+							<ul class="listStyle star noGap mb5">
+								<li>하나의 상해당 보장가입금액 한도</li>
+							</ul>
+							<span class="fontBase">상급병실료 차액</span>
+							<p>실제사용병실과 기준병실과의 병실료 차액 중 50%를 공제한 후의 금액 (단, 1일 평균금액 10만원 한도)</p>
+							<ul class="listStyle star noGap">
+								<li>1일 평균금액 : 상급병실료차액 전체를 총 입원일수로 나눈 금액</li>
+								<li>하나의 상해당 보장가입금액 한도</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2" class="tdbg">상해통원<br>실손의료비<br>(외래)<br>(갱신형)</td>
+						<td class="tdbg">표준형</td>
+						<td class="tal fontLevel2">
+							상해로 통원치료를 받거나 처방조제를 받는 경우<br>(비급여도수치료·체외충격파치료·증식치료실손<br>의료비,비급여주사료실손의료비,비급여자기공명<br>영상진단(MRI/MRA)실손의료비 제외)<br>(자동차보험, 산재보험 처리분 제외)
+						</td>
+						<td class="tal noRight">
+							<span class="fontBase">외래</span>
+							<p>국민건강보험법 또는 의료급여법에 의하여 피보험자가 부담하는 비용에서 방문<br>1회당 약관에서 정한 공제금액(의원 1만원, 병원 1.5만원, 종합전문요양기관<br>2만원과 보상대상 의료비의 20% 중 큰 금액)을 차감한 금액</p>
+							<ul class="listStyle star noGap mb5">
+								<li>방문 1회당 보장 가입금액한도(매년 계약해당일로부터 1년간 180회 한도)</li>
+							</ul>
+							<span class="fontBase">처방조제비</span>
+							<p>국민건강보험법 또는 의료급여법에 의하여 피보험자가 부담하는 비용에서<br>처방전 1건당 8천원과 보상대상 의료비의 20% 중 큰 금액을 공제한 금액</p>
+							<ul class="listStyle star noGap">
+								<li>처방전 1건당 보장가입금액한도(매년 계약해당일로부터 1년간 180건 한도)</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="tdbg">선택형Ⅱ</td>
+						<td class="tal fontLevel2">
+							상해로 통원치료를 받거나 처방조제를 받는 경우<br>(비급여도수치료·체외충격파치료·증식치료실손<br>의료비,비급여주사료실손의료비,비급여자기공명<br>영상진단(MRI/MRA)실손의료비 제외)<br>(자동차보험, 산재보험 처리분 제외)
+						</td>
+						<td class="tal noRight">
+							<span class="fontBase">외래</span>
+							<p>국민건강보험법 또는 의료급여법에 의하여 피보험자가 부담하는 비용에서 방문<br>1회당 약관에서 정한 공제금액(의원 1만원과 공제기준금액 중 큰 금액,<br>병원 1만5천원과 공제기준금액 중 큰 금액, 종합전문요양기관 2만원과<br>공제기준금액 중 큰 금액)을 차감한 금액</p>
+							<ul class="listStyle star noGap mb5 let">
+								<li>공제기준금액: 보상대상의료비의 급여 10% 해당액과 비급여 20% 해당액 합산액</li>
+								<li>방문 1회당 보장 가입금액한도(매년 계약해당일로부터 1년간 180회 한도)</li>
+							</ul>
+							<span class="fontBase">처방조제비</span>
+							<p>국민건강보험법 또는 의료급여법에 의하여 피보험자가 부담하는 비용에서 처방전<br>1건당 8천원과 공제기준금액 중 큰 금액을 공제한 금액</p>
+							<ul class="listStyle star noGap">
+								<li>공제기준금액: 보상대상의료비의 급여 10% 해당액과 비급여 20% 해당액 합산액</li>
+								<li>처방전 1건당 보장가입금액한도(매년 계약해당일로부터 1년간 180건 한도)</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2" class="tdbg">질병입원<br>실손의료비<br>(갱신형)</td>
+						<td class="tdbg">표준형</td>
+						<td class="tal fontLevel2">약관에서 정한 질병으로 입원하여 치료를 받은<br>경우(비급여도수치료·체외충격파치료·증식치료<br>실손의료비,비급여주사료실손의료비,비급여자기<br>공명영상진단(MRI/MRA)실손의료비제외)<br>(산재보험 처리분 제외)</td>
+						<td class="tal noRight">
+							<span class="fontBase">입원실료, 입원제비용, 수술비</span>
+							<p>‘국민건강보험법에서 정한 요양급여 또는 의료급여법에서 정한 의료급여 중 본인<br>부담금‘과‘비급여’(본인이 실제로 부담한 금액)를 합한 금액의 80% 해당액<br>(단, 20%해당액이 연간 200만원을 초과하는 경우 그 초과금액은 보상)</p>
+							<ul class="listStyle star noGap mb5">
+								<li>1일 평균금액 : 상급병실료차액 전체를 총 입원일수로 나눈 금액</li>
+								<li>하나의 상해당 보장가입금액 한도</li>
+							</ul>
+							<span class="fontBase">상급병실료 차액</span>
+							<p>실제사용병실과 기준병실과의 병실료 차액 중 50%를 공제한 후의 금액<br>(단, 1일 평균금액 10만원 한도)</p>
+							<ul class="listStyle star noGap">
+								<li>1일 평균금액 : 상급병실료차액 전체를 총 입원일수로 나눈 금액</li>
+								<li>하나의 상해당 보장가입금액 한도</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="tdbg">선택형Ⅱ</td>
+						<td class="tal fontLevel2">약관에서 정한 질병으로 입원하여 치료를 받은<br>경우 (비급여도수치료·체외충격파치료·증식치료<br>실손의료비,비급여주사료실손의료비,비급여자기<br>공명영상진단(MRI/MRA) 실손의료비제외)<br>(산재보험 처리분 제외)</td>
+						<td class="tal noRight">
+							<span class="fontBase">입원실료, 입원제비용, 수술비</span>
+							<p>‘국민건강보험법에서 정한 요양급여 또는 의료급여법에서 정한 의료급여 중 본인<br>부담금(본인이 실제로 부담한 금액)’의 90% 해당액과 ‘비급여(본인이 실제로 부담한<br>금액)’의 80% 해당액의 합계액<br>(단, 급여 중 본인부담금의 10% 해당액과 비급여의 20% 해당액을 합산한 금액이<br>연간 200만원을 초과하는 경우 그 초과금액은 보상) 주) 상급병실료 차액 제외</p>
+							<ul class="listStyle star noGap mb5">
+								<li>하나의 상해당 보장가입금액 한도</li>
+							</ul>
+							<span class="fontBase">상급병실료 차액</span>
+							<p>실제사용병실과 기준병실과의 병실료 차액 중 50%를 공제한 후의 금액<br>(단, 1일 평균금액 10만원 한도)</p>
+							<ul class="listStyle star noGap">
+								<li>1일 평균금액 : 상급병실료차액 전체를 총 입원일수로 나눈 금액</li>
+								<li>하나의 상해당 보장가입금액 한도</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2" class="tdbg lastLine">질병통원<br>실손의료비<br>(갱신형)</td>
+						<td class="tdbg">표준형</td>
+						<td class="tal fontLevel2">약관에서 정한 질병으로 통원치료를 받거나 처방<br>조제를 받은 경우(비급여도수치료·체외충격파<br>치료·증식치료실손의료비,비급여주사료실손<br>의료비,비급여자기공명영상진단(MRI/MRA)<br>실손의료비 제외)(산재보험 처리분 제외)</td>
+						<td class="tal noRight">
+							<span class="fontBase">외래</span>
+							<p class="let">국민건강보험법 또는 의료급여법에 의하여 피보험자가 부담하는 비용에서 방문 1회당<br>약관에서 정한 공제금액(의원 1만원, 병원 1.5만원, 종합전문요양기관 2만원과 보상<br>대상 의료비의 20% 중 큰 금액)을 차감한 금액</p>
+							<ul class="listStyle star noGap mb5">
+								<li>방문 1회당 보장 가입금액한도(매년 계약해당일로부터 1년간 180회 한도)</li>
+							</ul>
+							<span class="fontBase">처방조제비</span>
+							<p>국민건강보험법 또는 의료급여법에 의하여 피보험자가 부담하는 비용에서 처방전 <br>1건당 8천원과 보상대상 의료비의 20% 중 큰 금액을 공제한 금액</p>
+							<ul class="listStyle star noGap">
+								<li>처방전 1건당 보장가입금액한도(매년 계약해당일로부터 1년간 180건 한도)</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="tdbg">선택형Ⅱ</td>
+						<td class="tal fontLevel2">약관에서 정한 질병으로 통원치료를 받거나 처방조제를 받은 경우(비급여도수치료·체외충격파<br>치료·증식치료실손의료비,비급여주사료실손<br>의료비,비급여자기공명영상진단(MRI/MRA)<br>실손의료비 제외)(산재보험 처리분 제외)</td>
+						<td class="tal noRight">
+							<span class="fontBase">외래</span>
+							<p class="let">국민건강보험법 또는 의료급여법에 의하여 피보험자가 부담하는 비용에서 방문 1회당<br>약관에서 정한 공제금액(의원 1만원과 공제기준금액 중 큰 금액, 병원 1만5천원과<br>공제기준금액 중 큰 금액, 종합전문요양기관 2만원과 공제기준금액 중 큰 금액)을<br>차감한 금액</p>
+							<ul class="listStyle star noGap mb5">
+								<li>공제기준금액: 보상대상의료비의 급여 10% 해당액과 비급여 20% 해당액 합산액</li>
+								<li>방문 1회당 보장 가입금액한도(매년 계약해당일로부터 1년간 180회 한도)</li>
+							</ul>
+							<span class="fontBase">처방조제비</span>
+							<p>국민건강보험법 또는 의료급여법에 의하여 피보험자가 부담하는 비용에서 처방전<br>1건당 8천원과 공제기준금액 중 큰 금액을 공제한 금액</p>
+							<ul class="listStyle star noGap">
+								<li>공제기준금액: 보상대상의료비의 급여 10% 해당액과 비급여 20% 해당액 합산액</li>
+								<li>처방전 1건당 보장가입금액한도(매년 계약해당일로부터 1년간 180건 한도)</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!--테이블list:e-->
+
+			<h3 class="titleLevel1 mb10">선택 계약</h3>
+			<!--테이블list:s-->
+			<table class="contentTable lineTd">
+				<caption>선택 계약 : 구분, 지급사유, 지급금액등이 기입된 선택 계약 표</caption>
+				<colgroup>
+					<col width="184px">
+					<col width="304px;">
+					<col width="*">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">구분</th>
+						<th scope="col">지급사유</th>
+						<th scope="col">지급금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tdbg">비급여도수치료<br>체외충격파치료<br>증식치료실손의료비<br>(갱신형)</td>
+						<td class="tal fontLevel2">상해 또는 질병의 치료목적으로 병원에 입원 또는 <br>통원하여 약관에서 정한 비급여「도수치료·체외<br>충격파치료·증식치료」를 받은 경우<br></td>
+						<td class="tal fontLevel2 noRight let1">
+							도수치료·체외충격파치료·증식치료로 인하여 본인이 실제로 부담한 비급여 의료비<br>(행위료, 약제비, 치료재료대 포함)에서 약관에서 정한 공제금액<br>(1회당 2만원과 보상대상의료비의 30% 중 큰 금액)을 차감한 금액<br>
+							<ul class="listStyle star noGap mt5">
+								<li>계약일 또는 매년 계약해당일부터 1년단위로 350만원 이내 50회 한도<br>(단, 도수치료·체외충격파치료·증식치료의 각 치료횟수를 합산하여 50회 한도)</li>
+							</ul>						
+						</td>
+					</tr>
+					<tr>
+						<td class="tdbg">비급여주사료실손의료비<br>(갱신형)</td>
+						<td class="tal fontLevel2">상해 또는 질병의 치료목적으로 병원에 입원 또는<br>통원하여 약관에서 정한 비급여에 해당하는<br>주사료를 부담하는 경우</td>
+						<td class="tal fontLevel2 noRight">
+							주사치료를 받아 본인이 실제로 부담한 비급여 주사료에서 약관에서 정한 공제금액<br>(입원·통원 1회당 2만원과 보상대상의료비의 30% 중 큰 금액)을 차감한 금액<br>
+							<ul class="listStyle star noGap mt5">
+								<li>계약일 또는 매년 계약해당일부터 1년 단위로 250만원 이내에서 입원과 통원을<br>합산하여 50회 한도</li>
+							</ul>						
+						</td>
+					</tr>
+					<tr>
+						<td class="tdbg">비급여자기공명영상진단<br>(MRI/MRA)<br>실손의료비(갱신형)</td>
+						<td class="tal fontLevel2">상해 또는 질병의 치료목적으로 병원에 입원 또는<br>통원하여 약관에서 정한 비급여 자기공명영상<br>진단을 받은 경우</td>
+						<td class="tal fontLevel2 noRight">
+							자기공명영상진단을 받아 본인이 실제로 부담한 비급여 의료비(조영제, 판독료 포함)<br>에서 약관에서 정한 공제금액(1회당 2만원과 보상대상의료비의 30% 중 큰 금액)을<br>차감한 금액
+							<ul class="listStyle star noGap mt5">
+								<li>계약일 또는 매년 계약해당일부터 1년 단위로 연간 300만원 한도</li>
+							</ul>						
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<h3 class="titleLevel1">주요 용어 해설</h3>
+            <h4 class="titleLevel2 mt10">상해입원실손의료비, 질병입원실손의료비</h4>
+            <ul class="listStyle dot fontLevel1">
+				<li>입원실료 : 기준병실(해당 병원 또는 의원에서 국민건강보험 환자에게 적용하는 기준병실)사용료, 환자관리료, 식대 등		</li>
+				<li>입원제비용 : 진찰료, 검사료, 방사선료, 투약 및 처방료(퇴원시 의사로부터 치료목적으로 처방받은 약제비 포함), 주사료, 이학요법(물리치료, 재활치료)료, 정신요법료,<br>처치료, 치료재료, 석고붕대료(cast), 지정진료비 등</li>
+				<li>수술비 : 수술료, 마취료, 수술재료비 등</li>
+				<li>상급병실료차액 : 실제 사용병실과 기준병실과의 병실료차액</li>
+			</ul>
+
+            <h4 class="titleLevel2">상해통원실손의료비, 질병통원실손의료비</h4>
+			<ul class="listStyle dot noGap fontLevel1">
+				<li>외래제비용 : 진찰료, 검사료, 방사선료, 투약 및 처방료, 주사료, 이학요법(물리치료, 재활치료)료, 정신요법료, 처치료, 치료재료, 석고붕대료(cast), 지정진료비 등</li>
+				<li>외래수술비 : 수술료, 마취료, 수술재료비 등</li>
+				<li>처방조제비 : 약국의 처방조제비, 약사의 직접조제비</li>
+			</ul>
+
+			<h4 class="titleLevel2">비급여도수치료·체외충격파치료·증식치료실손의료비</h4>
+			<ul class="listStyle dot fontLevel1">
+				<li>도수치료 : 치료자가 손(정형용 교정장치 장비 등의 도움을 받는 경우를 포함합니다)을 이용해서 환자의 근골격계통(관절, 근육, 연부조직, 림프절 등)의 기능 개선 및<br>통증감소를 위하여 실시하는 치료행위 (의사 또는 의사의 지도하에 물리치료사가 도수치료를 하는 경우에 한함)</li>
+				<li>체외충격파치료 : 체외에서 충격파를 병변에 가해 혈관 재형성을 돕고 건(힘줄) 및 뼈의 치유 과정을 자극하거나 재활성화시켜 기능개선 및 통증감소를 위하여 실시하는<br>치료행위(체외충격파쇄석술은 제외)</li>
+				<li>증식치료 : 근골격계 통증이 있는 부위의 인대나 건(힘줄), 관절, 연골 등에 증식물질을 주사하여 통증이 소실되거나 완화되는 것을 유도하는 치료행위</li>
+			</ul>
+
+			<h4 class="titleLevel2">비급여주사료실손의료비</h4>
+			<ul class="listStyle dot fontLevel1">
+				<li>주사료 : 주사치료시 사용된 행위, 약제 및 치료재료대</li>
+			</ul>
+
+			<h4 class="titleLevel2">상해통원실손의료비, 질병통원실손의료비</h4>
+			<ul class="listStyle dot fontLevel1">
+				<li>
+					자기공명영상진단 : 자기공명영상 장치를 이용하여 고주파 등을 통한 신호의 차이를 영상화하여 조직의 구조를 분석하는 검사(MRI/MRA)<br>(보건복지부에서 고시하는 「건강보험 행위 급여?비급여 목록 및 급여 상대가치점수」상의 MRI 범주에 따름)
+					<ul class="listStyle dot noGap fz14">
+						<li>자기공명영상진단 결과를 다른 의료기관에서 판독하는 경우 포함</li>
+						<li>준법감시인 확인필 20170725 (2017.03.30)</li>
+					</ul>
+				</li>
+			</ul>
+            
+        </div>
+		<div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock orange"><span>확인</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 긴급공지 : e-->
+
+</body>
+</html>

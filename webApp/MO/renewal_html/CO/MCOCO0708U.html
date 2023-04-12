@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<title>현대해상다이렉트</title>
+<script type="text/javascript" src="../_ui_include/head.js"></script><!-- //Include: head -->
+<script>
+	$(function() {
+		UI.init();
+		UI.tab('find_address', 2);
+    
+		$('.btn_samples').find('.btn').click();
+	});
+</script>
+</head>
+<body data-channel="mobile" data-login="false" data-category="">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navbar -->
+		<div id="header" class="navbar">
+			<div class="header_wrap">
+				<button type="button" class="btn_page_prev" aria-label="이전"></button>
+				<h1 class="header_title">공통</h1>
+				<button type="button" class="btn_sidebar_open" aria-label="메뉴 열기"></button>
+			</div>
+		</div>
+		<!-- //navbar -->
+		<script type="text/javascript" src="../_ui_include/sidebar.js"></script><!-- Include: sidebar -->
+		<div id="container">
+			<!-- [Start of content] ================================== -->
+			<div id="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="section">
+						<div class="governing">
+							<h2 class="governing_title">Modal</h2>
+						</div>
+						<div class="comp">
+							<div class="btn_area cta btn_samples">
+								<a href="javascript:void(0);" onclick="javascript:layerPop.open($('#MCOCO0708U'));" class="btn fill01">Open</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+			</div>
+			<!-- [End of content] ==================================== -->
+		</div>
+
+		<!-- [Start of Modal] ====================================== -->
+		<!-- Modal Full -->
+		<div class="modal full fade" id="MCOCO0708U" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal_dialog" role="document">
+				<div class="modal_content">
+					<div class="modal_header">
+						<div class="wrapper">
+							<h2 class="modal_title">주소검색</h2>
+						</div>
+					</div>
+					<div class="modal_body">
+						<!-- wrapper: modal_body -->
+						<div class="wrapper">
+							<div class="section">
+                <!-- tab_line -->
+                <div class="tab tab_line" data-tab="find_address">
+                  <ul class="tab_wrap">
+                    <li><a href="javascript:void(0);"><span>지번</span></a></li>
+                    <li><a href="javascript:void(0);"><span>도로명</span></a></li>
+                    <li><a href="javascript:void(0);"><span>건물명</span></a></li>
+                  </ul>
+                </div>
+                <!--// tab_line -->
+                <!-- tab_content -->
+                <div class="tab_content" data-tab="find_address">
+                </div>
+                <div class="tab_content" data-tab="find_address">
+                </div>
+                <div class="tab_content" data-tab="find_address">
+                  <div class="comp">
+                    <div class="form_search">
+                      <div class="form_wrap">
+                        <input type="text" placeholder="현대해상빌딩" data-clear="true" title="건물명 주소 검색 입력">
+                      </div>
+                      <button class="btn_search"><span class="blind">검색하기</span></button>
+                    </div>
+                    <!-- 검색 전 노출 -->
+                    <p class="search_info">찾고 싶으신 건물명,아파트명을 입력해 주세요.<br>예) 현대해상빌딩</p>
+                    
+                    <!-- 검색 후 노출 -->
+                    <div>
+                      <p class="search_result">검색 결과 <span class="point_color">2,188</span>건</p>
+                      <ul class="result_list">
+                        <li class="result_item">
+                          <button type="button" class="result_anchor">
+                            <span class="result_sub_text point_color">12345</span>
+                            <span class="result_text">서울 종로구 당주동 로얄빌딩</span>
+                          </button>
+                        </li>
+                        <li class="result_item">
+                          <button type="button" class="result_anchor">
+                            <span class="result_sub_text point_color">12345</span>
+                            <span class="result_text">서울 종로구 당주동 로얄빌딩</span>
+                          </button>
+                        </li>
+                        <li class="result_item">
+                          <button type="button" class="result_anchor">
+                            <span class="result_sub_text point_color">12345</span>
+                            <span class="result_text">서울 종로구 당주동 로얄빌딩</span>
+                          </button>
+                        </li>
+                        <li class="result_item">
+                          <button type="button" class="result_anchor">
+                            <span class="result_sub_text point_color">12345</span>
+                            <span class="result_text">서울 종로구 당주동 로얄빌딩</span>
+                          </button>
+                        </li>
+                        <li class="result_item">
+                          <button type="button" class="result_anchor">
+                            <span class="result_sub_text point_color">12345</span>
+                            <span class="result_text">서울 종로구 당주동 로얄빌딩</span>
+                          </button>
+                        </li>
+                      </ul>
+                      <div class="btn_area more more">
+                        <button type="button" class="btn more"><span>더보기 (1/3)</span></button>
+                      </div>
+                    </div>
+
+                    <!-- 검색 결과 없을 시 노출 -->
+                    <div class="governing nodata" data-icon="nodata2">
+                      <p class="governing_title">‘<strong>검색어</strong>’에 대한 검색 결과가 없습니다.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- //tab_content -->
+							</div>
+						</div>
+						<!-- //wrapper: modal_body -->
+					</div>
+					<button type="button" class="btn_modal_close" aria-label="Close" onclick="layerPop.close('#MCOCO0708U'); return false;"><span>닫기</span></button>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal Full -->
+		<!-- [End of Modal] ======================================== -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

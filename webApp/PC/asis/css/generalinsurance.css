@@ -1,0 +1,117 @@
+@charset "utf-8";
+/*주택화재상해보험*/
+.houseMain{ background:url("https://direct.hi.co.kr/images/generalinsurance/house_bg.jpg") no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+
+
+.itemSelectArea .itemList li a.houseType01{ background:url("https://direct.hi.co.kr/images/generalinsurance/icon_houseType_01_off.png") no-repeat center 20px;}
+.itemSelectArea .itemList li.on a.houseType01{ background:url("https://direct.hi.co.kr/images/generalinsurance/icon_houseType_01_on.png") no-repeat center 20px;}
+.itemSelectArea .itemList li a.houseType02{ background:url("https://direct.hi.co.kr/images/generalinsurance/icon_houseType_02_off.png") no-repeat center 20px;}
+.itemSelectArea .itemList li.on a.houseType02{ background:url("https://direct.hi.co.kr/images/generalinsurance/icon_houseType_02_on.png") no-repeat center 20px;}
+.itemSelectArea .itemList li a.houseType03{ background:url("https://direct.hi.co.kr/images/generalinsurance/icon_houseType_03_off.png") no-repeat center 20px;}
+.itemSelectArea .itemList li.on a.houseType03{ background:url("https://direct.hi.co.kr/images/generalinsurance/icon_houseType_03_on.png") no-repeat center 20px;}
+.itemSelectArea .itemList li a.houseType04{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_04_off.png') no-repeat center 20px;} /* 추가 /1905 */
+.itemSelectArea .itemList li.on a.houseType04{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_04_on.png') no-repeat center 20px;} /* 추가 /1905 */
+
+.houseTypeSelect{border-bottom:1px solid #dddddd;}
+.houseTypeSelect > ul{ margin-bottom:15px; overflow:hidden;}
+.houseTypeSelect > ul > li{ float:left; margin-right:22px;}
+.houseTypeSelect > ul > li:last-child{ margin-right:0;}
+.houseTypeSelect > ul > li > .title{ color:#222222; margin-bottom:10px; font-size:15px;}
+
+/* 풍수해보험 /1905 */
+.productInfoTable.groupType.type1 .pay.typeSelect{width:180px}
+.productInfoTable.groupType.type1 .pay.typeSelect .select-title strong{padding-right:40px}
+.productInfoTable.groupType.type1 .pay.typeSelect .select-option{text-align:center}
+
+
+/* 골프보험 */
+.golfMain{ background:url("https://direct.hi.co.kr/images/generalinsurance/bg_golf2211.jpg") no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+/*개인정보배상*/
+.privacyMain{ background:url("https://direct.hi.co.kr/images/generalinsurance/privacyBg.jpg") no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+/*재난배상책임보험 200416 */
+.disasterMain{ background:url("https://direct.hi.co.kr/images/generalinsurance/disasterbg.jpg") no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+/*다중이용업소재난책임보상보험 200615 */
+.multipleMain{ background:url("https://direct.hi.co.kr/images/generalinsurance/multiplebg.jpg") no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+/*학원배상책임보험 20200907 */
+.curriculumMain{ background:url("https://direct.hi.co.kr/images/generalinsurance/curriculumVisualbg.jpg") no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+/* 가스사고배상책임보험 201208 */
+.gasMain{ background:url("https://direct.hi.co.kr/images/generalinsurance/gasFirebg.jpg") no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+
+/* 생산물배상책임보험 201122 */
+.productMain{ background:url("https://direct.hi.co.kr/images/generalinsurance/productbg.jpg") no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+
+/* 기업성보험-모집자 고지확인 팝업 210406 */
+.recruPop{margin-top:20px; overflow:hidden;}
+.recruPop .con p{float:left;width:300px;border:1px solid #e5e5e5; box-sizing:border-box; position:relative; padding:7px 5px 5px 10px; margin:0 0 10px 15px;display: table;}
+.recruPop .con p span { vertical-align:middle; display:table-cell}
+.recruPop p.ml0 {margin-left:0;}
+
+
+/* ETC /2206 */
+.f_skyBlue{color:#35d8f0}
+.f_yellow{color:#f0db2b}
+
+/* Notice /2206 */
+.iconNotice{padding-left:20px;background:url('https://direct.hi.co.kr/images/common/icon_notice_insuJoin.png') no-repeat left 2.5px;line-height:19px}
+.iconNotice > a.btArw{display:inline-block;padding-right:15px;background:url('https://direct.hi.co.kr/images/common/banner_right_arr.png') no-repeat right 50%}
+.iconNotice a.btHelp{display:inline-block;margin:2px 0 0 3px;width:16px;height:16px;background:url('https://direct.hi.co.kr/images/common/btn_help.png') no-repeat right 50%;vertical-align:top}
+
+/* Input Search Orange /2206 */
+.inputBase.org{position: relative;padding-right:60px;height:56px;border: 1px solid #e67401}
+.inputBase.org .btnRight{position:absolute;top:0;right:0}
+.inputBase.org > input{height:54px !important;border:0 !important}
+.inputBase.org > input::placeholder{color:#e67401 !important}
+.inputBase.org.placeholder.focus > input{border:0 !important}
+
+/* Text Slider CSS3 Transition /2206 */
+.reRol{position:relative;overflow:visible}
+.reRol li.vSlide{display:flex;position:absolute;-webkit-transform:translateY(60px);-ms-transform:translateY(60px);transform:translateY(60px)}
+.reRol li.vSlideIn{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);-webkit-transition:0.4s;transition:0.4s} /* 롤링 In 시간 */
+.reRol li.vSildeOut{-webkit-transform:translateY(-60px);-ms-transform:translateY(-60px);transform:translateY(-60px);-webkit-transition:0.4s;transition:0.4s} /* 롤링 Out 시간 */
+/* 고객체험기 리스트 */
+#csReList{z-index:5;position:absolute;left:0px;bottom:-25px;overflow:hidden;width:700px;height:0;max-height:750px;background-color:#ffffff;opacity:0} /* 수정 /2208 */
+#csReList .topArea{position:relative;padding:32px 0 0 40px;height:191px;-webkit-box-sizing:border-box;box-sizing:border-box;background:#e67401 url('https://direct.hi.co.kr/images/motor/bg_csReList.jpg') no-repeat right 0} /* 수정 /2110 */
+#csReList .topArea.bg01{background-image:url('https://direct.hi.co.kr/images/motor/bg_csReList2109.jpg')}
+#csReList .topArea h2{margin-bottom:15px;font-size:38px;line-height:1em;color:#ffffff}
+#csReList .topArea .topTxt{line-height:1.5rem;font-size:17px;color:#ffffff}
+#csReList .topArea .csBn{position:absolute;top:25px;right:61px}
+#csReList .reList{position:relative;padding:36px 40px 30px}
+#csReList .reList ul{overflow-y:scroll;padding:0 20px 0 4px;height:418px}
+#csReList .reList ul li{margin-top:10px;padding:11px 12px 12px;min-height:39px;border:1px solid #dedede;background-color:#f8f8f8}
+#csReList .reList ul li:first-child{margin-top:0}
+#csReList .reList ul li>p{overflow:hidden;padding-right:65px;min-height:23px;font-size:15px;color:#242424;line-height:1.3rem}
+#csReList .reList ul li div{display:flex;justify-content:flex-end;align-items:flex-end;height:18px}
+#csReList .reList ul li div p{height:17px;line-height:17px;color:#606060}
+#csReList .reList ul li div p.reDate{position:relative;padding-left:16px}
+#csReList .reList ul li div p.reDate:before{content:'';display:block;position:absolute;left:8px;top:3px;width:1px;height:12px;border-left:1px solid #e67401}
+#csReList .btArea{text-align:center}
+#csReList .btArea a{display:inline-block;margin:0 auto;padding:0 11px 1px 28px;height:32px;line-height:33px;border:1px solid #cccccc;background:#ffffff url('https://direct.hi.co.kr/images/motor/bu_plus_blue.gif') no-repeat 9px center;font-size:15px;color:#555555}
+#csReList .btnCloseRe{position:absolute;top:22px;right:24px;width:19px;height:18px;transform:rotateZ(0deg);transition:0.6s all ease-in}
+#csReList .btnCloseRe.on{transform:rotateZ(450deg);transition:0.8s all ease-out}
+
+/* 풍수해보험-주택용 /2206 */
+.houseMain.insuJoinBg{background:#988e86 url('https://direct.hi.co.kr/images/generalinsurance/house_bg2206.jpg') no-repeat center 0;background-size:cover}
+.houseMain.cpMain.insuJoinBg{background:#627c8f url('https://direct.hi.co.kr/images/generalinsurance/houseCp_bg2206.jpg') no-repeat center 0;background-size:cover}
+.houseMain.insuJoinBg .productImg{position:relative;width:700px;height:750px}
+.houseMain.insuJoinBg .productImg .csReArea{position:absolute;bottom:25px;padding:0 25px;width:650px}
+.houseMain.insuJoinBg .productImg .csReArea dl{display:flex;justify-content:space-between;overflow:hidden;padding:9px 16px 10px 25px;height:21px;border-radius:20px;background:rgba(0,0,0,0.5)}
+.houseMain.insuJoinBg .productImg .csReArea dl dt{width:90px;height:21px;line-height:21px;letter-spacing:0;font-size:15px;color:#fce202}
+.houseMain.insuJoinBg .productImg .csReArea dl dd{height:21px;line-height:21px;font-size:15px;color:#ffffff}
+.houseMain.insuJoinBg .productImg .csReArea dl dd.reUp{width:19px;line-height:18px;text-align:center}
+.houseMain.insuJoinBg .productImg .csReArea dl dd.reUp a{display:inline-block;margin-top:1px;width:21px;height:21px}
+.houseMain.insuJoinBg .productImg .csReArea dl dd.reUp a img{vertical-align:top}
+.houseMain.insuJoinBg .productImg .csReArea dl dd.reContent,
+.houseMain.insuJoinBg .productImg .csReArea dl dd.reContent .reRol{width:470px}
+.houseMain.insuJoinBg .productImg .csReArea dl dd.reContent .reRol li span{display:block;height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} /* 말줄임 */
+.houseMain.insuJoinBg .productImg .csReArea dl dd.reContent .reRol li span.reTxt{width:350px}
+.houseMain.insuJoinBg .productImg .csReArea dl dd.reContent .reRol li span.reName{margin-left:20px;width:100px;text-align:center}
+.houseMain.insuJoinBg .productMainWrap .productSideMenu .smList{background-color:#00afc9}
+.houseMain.insuJoinBg .lineTabWrap .rdoTabList{display:flex}
+.houseMain.insuJoinBg .lineTabWrap .rdoTabList li{width:50%}
+.houseMain.insuJoinBg .lineTabWrap .rdoTabList li a{display:inline-block;position:relative;line-height:23px;padding-left:30px;font-size:15px}
+.houseMain.insuJoinBg .lineTabWrap .rdoTabList li a > .point_rdo{display:block;position:absolute;top:0;left:0;width:24px;height:24px;box-sizing:border-box;border-radius:12px;border:1px solid #bdbdbd;background-color:#fff}
+.houseMain.insuJoinBg .lineTabWrap .rdoTabList li.on{z-index:1}
+.houseMain.insuJoinBg .lineTabWrap .rdoTabList li.on a > .point_rdo:after{content:'';display:block;position:absolute;top:50%;left:50%;margin-top:-5px;margin-left:-5px;width:10px;height:10px;border-radius:5px;background-color:#fc843b}
+
+/* 골프보험 /2211 */
+.golfMain.insuJoinBg .productMainWrap .productSideMenu .smList{background-color:#00afc9}

@@ -1,0 +1,480 @@
+@charset "utf-8";
+
+.driverMain{background:url("https://direct.hi.co.kr/images/longterm/driver2002_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;} /* 수정 /2002 */
+.driverMain2{ background:url("https://direct.hi.co.kr/images/longterm/driver_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.ltmdMain{ background:url("https://direct.hi.co.kr/images/longterm/ltmd_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.anuityHiroMain{background:url("https://direct.hi.co.kr/images/longterm/anuity_hiro_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.anuityMain{ background:url("https://direct.hi.co.kr/images/longterm/anuity_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.cancerMain{ background:url("https://direct.hi.co.kr/images/longterm/cencer_bg.jpg") no-repeat fixed; -webkit-background-size:cover; background-size:cover;}
+.healthMain{background:url("https://direct.hi.co.kr/images/longterm/health_bg.jpg") no-repeat fixed;-webkit-background-size:cover;background-size:cover} /* 건강보험 /202006 */
+.healthMain .fixedBannerArea{margin-left:-900px} /* 건강보험 /202006 */
+.ltmdMain .productMainWrap .mainTitle.left {top: 168px;}
+
+/* 어린이보험 /2106 */
+.childrenMain{background:url('https://direct.hi.co.kr/images/longterm/children_bg.jpg') no-repeat fixed;-webkit-background-size:cover;background-size:cover}
+.childrenMain .productMainWrap .mainTitle .tit{margin-bottom:20px;line-height:55px;font-size:52px}
+.childrenMain .productMainWrap .mainTitle .txt{font-size:26px}
+
+/* 실손의료비보장보험 /202008 */
+.ltmdMain .fixedBannerArea .bannerArea li .titleArea{height:auto}
+.ltmdMain .productMainWrap .mainTitle .txt2{display:block;margin-top:5px;font-size:24px;color:#595757}
+
+/* 다이렉트 H건강보험 /2112 */
+.healthMain{background:url('https://direct.hi.co.kr/images/longterm/health_bg2112.jpg') no-repeat fixed;-webkit-background-size:cover;background-size:cover}
+/* 고객체험기 영역 /2112 */
+.healthMain .productImg{position:relative}
+.healthMain .productImg .csReArea{position:absolute;bottom:25px;padding:0 25px;width:650px}
+.healthMain .productImg .csReArea dl{display:flex;justify-content:space-between;overflow:hidden;padding:9px 16px 10px 25px;height:21px;border-radius:20px;background:rgba(0,0,0,0.5)}
+.healthMain .productImg .csReArea dl dt{width:90px;height:21px;line-height:21px;letter-spacing:0;font-size:15px;color:#fce202}
+.healthMain .productImg .csReArea dl dd{height:21px;line-height:21px;font-size:15px;color:#ffffff}
+.healthMain .productImg .csReArea dl dd.reUp{width:19px;line-height:18px;text-align:center}
+.healthMain .productImg .csReArea dl dd.reUp a{display:inline-block;margin-top:1px;width:21px;height:21px}
+.healthMain .productImg .csReArea dl dd.reUp a img{vertical-align:top}
+.healthMain .productImg .csReArea dl dd.reContent,
+.healthMain .productImg .csReArea dl dd.reContent .reRol{width:470px}
+.healthMain .productImg .csReArea dl dd.reContent .reRol li span{display:block;height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} /* 말줄임 */
+.healthMain .productImg .csReArea dl dd.reContent .reRol li span.reTxt{width:350px;}
+.healthMain .productImg .csReArea dl dd.reContent .reRol li span.reName{margin-left:20px;width:100px;text-align:center}
+/* 건강보험 고객정보입력 수정 /2112 */
+.insuJoinBg.healthMain .productMainWrap .productSideMenu .smList{background-color:#00afc9}
+.insuJoinBg.healthMain .inputArea.inpSimpleArea .item{float:left;width:36%;}
+.insuJoinBg.healthMain .inputArea.inpSimpleArea .item:first-child{ width:64%;}
+.insuJoinBg.healthMain .inputArea.inpSimpleArea .item .sexSelect li{border-color:#bbb;background-color:#fff}
+.insuJoinBg.healthMain .inputArea.inpSimpleArea .item .sexSelect li.on{border-color:#e67401;}
+.insuJoinBg.healthMain .inputArea.inpSimpleArea .item a.btn.big{width:123px}
+
+/* Text Slider CSS3 Transition /2112 */
+.reRol{position:relative;overflow:visible}
+.reRol li.vSlide{display:flex;position:absolute;-webkit-transform:translateY(60px);-ms-transform:translateY(60px);transform:translateY(60px);}
+.reRol li.vSlideIn{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);-webkit-transition:0.4s;transition:0.4s;} /* 롤링 In 시간 */
+.reRol li.vSildeOut{-webkit-transform:translateY(-60px);-ms-transform:translateY(-60px);transform:translateY(-60px);-webkit-transition:0.4s;transition:0.4s;} /* 롤링 Out 시간 */
+/* 고객체험기 리스트 /개선 2112 */
+#csReList{z-index:5;position:absolute;left:0px;bottom:-25px;overflow:hidden;width:700px;height:0;background-color:#ffffff;opacity:0}
+#csReList .topArea{position:relative;padding:32px 0 0 40px;height:191px;-webkit-box-sizing:border-box;box-sizing:border-box;background:#e67401 url('https://direct.hi.co.kr/images/motor/bg_csReList.jpg') no-repeat right 0} /* 수정 /2110 */
+#csReList .topArea.bg01{background-image:url('https://direct.hi.co.kr/images/motor/bg_csReList2109.jpg')} /* 추가 /2110 */
+#csReList .topArea h2{margin-bottom:15px;font-size:38px;line-height:1em;color:#ffffff}
+#csReList .topArea .topTxt{line-height:1.5rem;font-size:17px;color:#ffffff}
+#csReList .topArea .csBn{position:absolute;top:25px;right:61px} /* 추가 /2110 */
+#csReList .reList{position:relative;padding:36px 40px 30px}
+#csReList .reList ul{overflow-y:scroll;padding:0 20px 0 4px;height:418px}
+#csReList .reList ul li{margin-top:10px;padding:11px 12px 12px;min-height:39px;border:1px solid #dedede;background-color:#f8f8f8}
+#csReList .reList ul li:first-child{margin-top:0}
+#csReList .reList ul li>p{overflow:hidden;padding-right:65px;min-height:23px;font-size:15px;color:#242424;line-height:1.3rem}
+#csReList .reList ul li div{display:flex;justify-content:flex-end;align-items:flex-end;height:18px}
+#csReList .reList ul li div p{height:17px;line-height:17px;color:#606060}
+#csReList .reList ul li div p.reDate{position:relative;padding-left:16px}
+#csReList .reList ul li div p.reDate:before{content:'';display:block;position:absolute;left:8px;top:3px;width:1px;height:12px;border-left:1px solid #e67401;}
+#csReList .btArea{text-align:center}
+#csReList .btArea a{display:inline-block;margin:0 auto;padding:0 11px 1px 28px;height:32px;line-height:33px;border:1px solid #cccccc;background:#ffffff url('https://direct.hi.co.kr/images/motor/bu_plus_blue.gif') no-repeat 9px center;font-size:15px;color:#555555}
+#csReList .btnCloseRe{position:absolute;top:22px;right:24px;width:19px;height:18px;transform:rotateZ(0deg);transition:0.6s all ease-in}
+#csReList .btnCloseRe.on{transform:rotateZ(450deg);transition:0.8s all ease-out}
+
+/* ETC /2112 */
+.f_skyBlue{color:#35d8f0}
+.f_yellow{color:#f0db2b}
+/* Notice /2204 */
+.iconNotice{padding-left:20px;background:url('https://direct.hi.co.kr/images/common/icon_notice_insuJoin.png') no-repeat left 2.5px;line-height:19px}
+.iconNotice > a.btArw{display:inline-block;padding-right:15px;background:url('https://direct.hi.co.kr/images/common/banner_right_arr.png') no-repeat right 50%}
+
+/* 다이렉트 운전자보험 /202105 */
+.driverMain .productMainWrap .mainTitle.black .tit{margin-bottom:5px;letter-spacing:-1px}
+.driverMain .productMainWrap .mainTitle.black .txt{line-height:37px;font-size:26px}
+.driverMain .productMainWrap .fixedBannerArea{margin-left:-900px}
+.driverMain .productMainWrap .fixedBannerArea .bannerArea ul{padding:0 0 27px}
+.driverMain .productMainWrap .fixedBannerArea .bannerArea ul li:after{top: 150px;right:130px;}
+.driverMain .productMainWrap .fixedBannerArea .bannerArea ul+ul{padding:28px 0 0}
+.driverMain .productMainWrap .fixedBannerArea .bannerArea ul+ul li:after{top: -51px;right:-160px;}
+/* 운전자보험1~3년 /2102 */
+.driverMain.driverShort .productMainWrap .fixedBannerArea .bannerArea ul li:after{top:48px;right:-14px;}
+
+/* 운전자보험 고객체험기 영역 /2202 */
+.driverMain .productImg{position:relative}
+.driverMain .productImg .csReArea{position:absolute;bottom:25px;padding:0 25px;width:650px}
+.driverMain .productImg .csReArea dl{display:flex;justify-content:space-between;overflow:hidden;padding:9px 16px 10px 25px;height:21px;border-radius:20px;background:rgba(0,0,0,0.5)}
+.driverMain .productImg .csReArea dl dt{width:90px;height:21px;line-height:21px;letter-spacing:0;font-size:15px;color:#fce202}
+.driverMain .productImg .csReArea dl dd{height:21px;line-height:21px;font-size:15px;color:#ffffff}
+.driverMain .productImg .csReArea dl dd.reUp{width:19px;line-height:18px;text-align:center}
+.driverMain .productImg .csReArea dl dd.reUp a{display:inline-block;margin-top:1px;width:21px;height:21px}
+.driverMain .productImg .csReArea dl dd.reUp a img{vertical-align:top}
+.driverMain .productImg .csReArea dl dd.reContent,
+.driverMain .productImg .csReArea dl dd.reContent .reRol{width:470px}
+.driverMain .productImg .csReArea dl dd.reContent .reRol li span{display:block;height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} /* 말줄임 */
+.driverMain .productImg .csReArea dl dd.reContent .reRol li span.reTxt{width:350px;}
+.driverMain .productImg .csReArea dl dd.reContent .reRol li span.reName{margin-left:20px;width:100px;text-align:center}
+/* 운전자보험 고객정보입력 /2202 */
+.driverMain.insuJoinBg{background:#354b62 url('https://direct.hi.co.kr/images/longterm/driver2202_bg.jpg') no-repeat 0 0; -webkit-background-size:cover; background-size:cover;}
+.driverMain.insuJoinBg .productMainWrap .productSideMenu .smList{background-color:#00afc9}
+.driverMain.insuJoinBg .inputArea.inpSimpleArea .item{float:left;width:36%;}
+.driverMain.insuJoinBg .inputArea.inpSimpleArea .item:first-child{ width:64%;}
+.driverMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li{border-color:#bbb;background-color:#fff}
+.driverMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li.on{border-color:#e67401;}
+.driverMain.insuJoinBg .inputArea.inpSimpleArea .item a.btn.big{width:123px}
+
+/* 암보험 내용영역추가200525 CM암보험 계산1단계 화면 변경*/
+.cancerMain .productMainWrap .fixedBannerArea{margin-left:-900px}
+.cancerMain .productMainWrap .fixedBannerArea .bannerArea ul{padding:10px 0 17px}
+.cancerMain .productMainWrap .fixedBannerArea .bannerArea ul li:after{top:90px;right:130px;}
+.cancerMain .productMainWrap .fixedBannerArea .bannerArea ul+ul{padding:10px 0 0;}
+.cancerMain .productMainWrap .fixedBannerArea .bannerArea ul+ul li:after{top:-35px;right:-160px;}
+.cancerMain .productMainWrap .fixedBannerArea .bannerArea li.plus:after{content:""; display:block; background:url("https://direct.hi.co.kr/images/common/banner_plus.png") no-repeat; width:28px; height:28px; position:absolute; right:130px; top:55px;}
+.cancerMain .productMainWrap .fixedBannerArea .bannerArea .titleArea {height:20px;}
+
+/* multilineBox */
+.multilineBox{padding:20px;background:#f5f5f5;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;}
+.insutranbox{margin-top:22px;padding-top:20px;border-top:1px solid #e5e5e5;}
+.insutranbox:after{content:'';display:block;clear:both;}
+.insutranbox > dl{float:left;}
+.insutranbox > dl:after{content:'';display:block;clear:both;}
+.insutranbox > dl dt{float:left;font-size:15px;color:#222222;margin-right:15px;}
+.insutranbox > dl dd{float:left;color:#777777;}
+.insutranbox > .radibox{float:right;}
+.insutranbox > .radibox > .radio{margin-right:30px;}
+.insutranbox > .radibox > .radio:last-child{margin-right:0;}
+
+/* inputPlus */
+.etcConWrap.inputPlus{padding-bottom:10px;}
+.etcConWrap.inputPlus dl{overflow:visible;}
+.etcConWrap.inputPlus dl:after{content:'';display:block;clear:both;}
+.etcConWrap.inputPlus dl dt{font-size:17px;}
+.etcConWrap.inputPlus .etcCon{overflow:visible;}
+.etcConWrap.inputPlus .etcCon:after{clear:both;height:15px;}
+.etcConWrap .etcCon li.inputP:after{content:'';display:block;clear:both;}
+.etcConWrap .etcCon li.inputP > .tit{margin-bottom:0;}
+.etcConWrap .etcCon li.inputP > .con{position:absolute;right:0;top:0;}
+.etcConWrap .etcCon li.inputP > .con > .radio{margin-right:30px;}
+.etcConWrap .etcCon li.inputP > .con > .radio:last-child{margin-right:30px;}
+
+/* 가정종합보험 /202010 */
+.famMain{background:url('https://direct.hi.co.kr/images/generalinsurance/bg_famMain.jpg') no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+.famMain  .productMainWrap .mainTitle .tit{font-size:53px}
+.famMain .fixedBannerArea{margin-left:-900px}
+.famMain .fixedBannerArea .famInfoArea{padding-top:10px;padding-left:32px}
+.famMain .fixedBannerArea .famInfoArea .infoTi{margin-bottom:15px;height:22px;line-height:21px;font-size:21px;color:#35d8f0}
+.famMain .fixedBannerArea .famInfoArea .infoList{}
+.famMain .fixedBannerArea .famInfoArea .infoList li{padding:10px 0 12px 100px;background:url('https://direct.hi.co.kr/images/generalinsurance/info_hfam_ico1.png') no-repeat 5px center;line-height:1.5;font-size:15px;color:#fff}
+.famMain .fixedBannerArea .famInfoArea .infoList li+li{background:url('https://direct.hi.co.kr/images/generalinsurance/info_hfam_ico2.png') no-repeat 7px center;}
+.famMain .fixedBannerArea .famInfoArea .infoList li+li+li{background:url('https://direct.hi.co.kr/images/generalinsurance/info_hfam_ico3.png') no-repeat 3px center;}
+.famMain .fixedBannerArea .famInfoArea .infoList li+li+li+li{background:url('https://direct.hi.co.kr/images/generalinsurance/info_hfam_ico4.png') no-repeat 3px center;}
+.famMain .fixedBannerArea .famInfoArea .infoList li strong{font-size:17px;color:#fff}
+.famMain .fixedBannerArea .famInfoArea .infoList li em{color:#f0db2b}
+
+/* 가정종합보험 - 추가정보Tab /202010 */
+.famDetailWrap .lineTabList{display:flex;justify-content:space-between;overflow:hidden;margin:0 -1px 20px 0}
+.famDetailWrap .lineTabList li{flex:1;margin:0 0 0 -1px; -webkit-box-sizing:border-box;box-sizing:border-box; position:relative;border-bottom:1px solid #555555;}
+.famDetailWrap .lineTabList li:first-child{margin-left:0;}
+.famDetailWrap .lineTabList li.tab1{}
+.famDetailWrap .lineTabList li.tabNone{width:160px; padding:12px}
+.famDetailWrap .lineTabList li > .btn{padding:0 10px; margin:0;}
+.famDetailWrap .lineTabList li .tit,
+.famDetailWrap .lineTabList li .txt{font-size:14px;}
+.famDetailWrap .lineTabList li .btnModify{padding:4px 4px 5px;height:13px;line-height:12px;background-color:#036491;font-weight:normal;font-size:12px;text-align:center;color:#fff}
+.famDetailWrap .lineTabList li .item{display:block; background:#f5f5f5; line-height:68px; text-align:left;padding:0 15px; font-size:14px;border:1px solid #dddddd; border-bottom:0;}
+.famDetailWrap .lineTabList li .item .btnModify{display:none;}
+.famDetailWrap .lineTabList li .item .txt{display:none;}
+.famDetailWrap .lineTabList li.on{z-index:1;border-bottom:1px solid transparent;}
+.famDetailWrap .lineTabList li.on .item{background:#fff; border:1px solid #555555; border-bottom:0;}
+.famDetailWrap .lineTabList li.insertEnd{background:#047db5;}
+.famDetailWrap .lineTabList li.insertEnd .item{background:#047db5; border:1px solid #047db5; border-bottom:0; color:#ffffff; line-height:1;height:68px; border-left:1px solid #036491;border-right:1px solid #036491;}
+.famDetailWrap .lineTabList li.insertEnd .item .tit{margin-top:13px;}
+.famDetailWrap .lineTabList li.insertEnd .item .txt{display:block; font-size:15px; margin-top:10px;text-overflow:ellipsis; overflow:hidden;white-space:nowrap;word-break:keep-all; max-width:100%;}
+.famDetailWrap .lineTabList li.insertEnd .item .btnModify{display:block;position:absolute;right:1px;top:0;z-index:1}
+
+/* 가정종합보험 - itemSelectArea /202010 */
+.famDetailWrap .itemSelectArea .itemList{text-align:left}
+.famDetailWrap .itemSelectArea .itemList li{vertical-align:top}
+.famDetailWrap .itemSelectArea .itemList li a{height:159px}
+.famDetailWrap .itemSelectArea .itemList li a .txt{display:block;line-height:1.4;font-size:14px}
+.famDetailWrap .itemSelectArea .itemList li:first-child{margin-left:0}
+
+/* 가정종합보험 - houseTypeSelect /202010 */
+.famDetailWrap .houseTypeSelect{}
+.famDetailWrap .houseTypeSelect > ul > li{float:none}
+.famDetailWrap .houseTypeSelect > ul > li > .title{margin-bottom:0px}
+.famDetailWrap .houseTypeSelect .itemSelectArea > ul.itemList{display:flex;}
+.famDetailWrap .houseTypeSelect .itemSelectArea > ul.itemList > li{flex:1;max-width:195px;max-height:132px}
+.famDetailWrap .houseTypeSelect .itemSelectArea > ul.itemList > li:last-child{}
+.famDetailWrap .houseTypeSelect .itemSelectArea > ul.itemList > li > a{max-height:132px}
+.famDetailWrap .houseTypeSelect .itemSelectArea > ul.itemList > li > a > .img > img{width:100%}
+.famDetailWrap .houseTypeSelect .itemSelectArea > ul.itemList > li > a > .txt{display:inline-block;position:relative;margin-top:9px;padding:0 0 0 26px;background:none}
+.famDetailWrap .houseTypeSelect .itemSelectArea > ul.itemList > li > a > .txt:before{content:'';display:block;position:absolute;top:0;left:0;width:18px;height:19px;background:url('https://direct.hi.co.kr/images/common/icon_item_select_off.png') no-repeat 0 center}
+.famDetailWrap .houseTypeSelect .itemSelectArea > ul.itemList > li.on > a > .txt:before{background:url('https://direct.hi.co.kr/images/common/icon_item_select.png') no-repeat 0 center}
+/* famDetailWrap- item  */
+.famDetailWrap .multiInputBox{padding:14px 19px 15px 19px;border-left:0;border-right:0;text-align:center}
+.famDetailWrap .multiInputBox .item .inpTit{line-height:39px;font-size:16px}
+/* famDetailWrap- inPlan- border */
+.famDetailWrap .inPlan .contentTable.lineTh tbody td .planJoin .pay{line-height:23px}
+.famDetailWrap .inPlan .contentTable.lineTh tbody td .planJoin .pay.h35{line-height:34px}
+.famDetailWrap .inPlan .contentTable.lineTh tbody td{min-height:41px}
+.famDetailWrap .inPlan .contentTable.lineTh tbody tr .lineNone{border-bottom:0 !important}
+/* famDetailWrap- inPlan- input */
+.famDetailWrap .inPlan .selectItem.small{height:35px}
+.famDetailWrap .inPlan .selectItem.small .select-title{height:35px;line-height:34px}
+
+.itemSelectArea .itemList li a.houseType01{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_01_off.png') no-repeat center 20px;}
+.itemSelectArea .itemList li.on a.houseType01{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_01_on.png') no-repeat center 20px;}
+.itemSelectArea .itemList li a.houseType02{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_02_off.png') no-repeat center 20px;}
+.itemSelectArea .itemList li.on a.houseType02{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_02_on.png') no-repeat center 20px;}
+.itemSelectArea .itemList li a.houseType03{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_03_off.png') no-repeat center 20px;}
+.itemSelectArea .itemList li.on a.houseType03{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_03_on.png') no-repeat center 20px;}
+.itemSelectArea .itemList li a.houseType04{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_04_off.png') no-repeat center 20px;}
+.itemSelectArea .itemList li.on a.houseType04{background:url('https://direct.hi.co.kr/images/generalinsurance/icon_houseType_04_on.png') no-repeat center 20px;}
+
+.houseTypeSelect{border-bottom:1px solid #dddddd;}
+.houseTypeSelect > ul{margin-bottom:15px; overflow:hidden;}
+.houseTypeSelect > ul > li{float:left; margin-right:22px;}
+.houseTypeSelect > ul > li:last-child{margin-right:0;}
+.houseTypeSelect > ul > li > .title{color:#222222; margin-bottom:10px; font-size:15px;}
+
+/* 암보험 - cancerInfoArea /2106 */
+.cancerMain .productMainWrap .mainTitle .tit{margin-bottom:20px;line-height:55px;font-size:53px}
+.fixedInfoArea .cancerInfoArea{padding-top:10px;padding-left:20px}
+.fixedInfoArea .cancerInfoArea .infoTi{margin-bottom:18px;height:22px;line-height:21px;font-size:21px;color:#35d8f0}
+.fixedInfoArea .cancerInfoArea .infoList{}
+.fixedInfoArea .cancerInfoArea .infoList li{margin-top:15px;padding:0 0 12px 100px;background:url('https://direct.hi.co.kr/images/longterm/info_cancer_ico1.png') no-repeat 0 7px;line-height:1.5;font-size:15px;color:#fff}
+.fixedInfoArea .cancerInfoArea .infoList li+li{background:url('https://direct.hi.co.kr/images/longterm/info_cancer_ico2.png') no-repeat 0 5px;}
+.fixedInfoArea .cancerInfoArea .infoList li+li+li{background:url('https://direct.hi.co.kr/images/longterm/info_cancer_ico3.png') no-repeat 0 7px;}
+.fixedInfoArea .cancerInfoArea .infoList li+li+li+li{background:url('https://direct.hi.co.kr/images/longterm/info_cancer_ico4.png') no-repeat 6px 4px;}
+.fixedInfoArea .cancerInfoArea .infoList li strong{font-size:17px;color:#fff}
+.fixedInfoArea .cancerInfoArea .infoList li em{color:#f0db2b}
+
+/* 다이렉트 원스탑실손전환보험 수정 S /2203 */
+.onestopMain{background:url('https://direct.hi.co.kr/images/longterm/onestop_bg2203.jpg') no-repeat fixed;-webkit-background-size:cover;background-size:cover}
+.onestopMain .productImg{position:relative}
+.onestopMain .productImg .csReArea{position:absolute;bottom:25px;padding:0 25px;width:650px}
+.onestopMain .productImg .csReArea dl{display:flex;justify-content:space-between;overflow:hidden;padding:9px 16px 10px 25px;height:21px;border-radius:20px;background:rgba(0,0,0,0.5)}
+.onestopMain .productImg .csReArea dl dt{width:90px;height:21px;line-height:21px;letter-spacing:0;font-size:15px;color:#fce202}
+.onestopMain .productImg .csReArea dl dd{height:21px;line-height:21px;font-size:15px;color:#ffffff}
+.onestopMain .productImg .csReArea dl dd.reUp{width:19px;line-height:18px;text-align:center}
+.onestopMain .productImg .csReArea dl dd.reUp a{display:inline-block;margin-top:1px;width:21px;height:21px}
+.onestopMain .productImg .csReArea dl dd.reUp a img{vertical-align:top}
+.onestopMain .productImg .csReArea dl dd.reContent,
+.onestopMain .productImg .csReArea dl dd.reContent .reRol{width:470px}
+.onestopMain .productImg .csReArea dl dd.reContent .reRol li span{display:block;height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} /* 말줄임 */
+.onestopMain .productImg .csReArea dl dd.reContent .reRol li span.reTxt{width:350px;}
+.onestopMain .productImg .csReArea dl dd.reContent .reRol li span.reName{margin-left:20px;width:100px;text-align:center}
+.onestopMain.insuJoinBg .productMainWrap .productSideMenu .smList{background-color:#00afc9}
+.onestopMain.insuJoinBg .inputArea.inpSimpleArea .item{float:left;width:36%;}
+.onestopMain.insuJoinBg .inputArea.inpSimpleArea .item:first-child{ width:64%;}
+.onestopMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li{border-color:#bbb;background-color:#fff}
+.onestopMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li.on{border-color:#e67401;}
+.onestopMain.insuJoinBg .inputArea.inpSimpleArea .item a.btn.big{width:123px}
+.conArea .onestopConPop{overflow:hidden;width:100%;margin-top:10px;}
+.conArea .onestopConPop ul  {display:flex;justify-content:space-between; width:100%;}
+.conArea .onestopConPop ul li{display:inline-block; text-align:left; width:80%}
+.conArea .onestopConPop ul li.first{width:100px;margin-right:10px;font-size:15px;text-align:center;background-color: #047db5; color:#fff; border-radius: 25px; height:30px; line-height: 30px;}
+.conArea .conPopsTit {width:100%; height: 43px;box-sizing: border-box;border-radius: 8px; text-align: center;color:#047db5;font-size: 20px; line-height: 43px; background:#daecf4 url('https://direct.hi.co.kr/images/longterm/popcon_checkimg.png') no-repeat left 15px top 8px;}
+.conArea .conPopsTxt {text-align: center; font-size: 15px; color:#555555; line-height: 22px; margin:10px 0 20px;}   
+.conArea .onestopPopGuide{overflow:hidden;width:100%;margin-top:10px;}
+.conArea .onestopPopGuide ul {display:flex;flex-flow:row wrap; justify-content:space-around; width:100%;}
+.conArea .onestopPopGuide ul li{flex:1; box-sizing: border-box; border:1px solid #e5e5e5; border-radius: 4px;margin-right:15px;text-align: center;padding:8px;margin-bottom:15px;}
+.conArea .onestopPopGuide ul li .rmarginno {margin-right:0;}
+.infoTotalArea .InfoTotal.type2 .saleList li .rowone{display:flex;justify-content:space-between;overflow:hidden;margin-top:4px;width:350px;}
+.infoTotalArea .InfoTotal.type2 .saleList li .rowone:first-child{margin-top:0}
+.infoTotalArea .InfoTotal.type2 .saleList li .rowone .tit{max-width:260px;height:18px;line-height:17px}
+.infoTotalArea .InfoTotal.type2 .saleList li .rowone .con{height:18px;line-height:17px;text-align:right}
+.infoTotalArea .InfoTotal.type2 .saleList li .rowone .btnHelp{margin:-2px 0 0 8px;background-image:url('https://direct.hi.co.kr/images/common/btn_help_w.png')}
+.infoTotalArea .InfoTotal.type2 .saleList li .rowone{display:flex;justify-content:space-between;overflow:hidden;margin-top:4px;width:350px;}
+.InfoTotalOnly .saleList li .rowone {display:flex;justify-content:space-between;overflow:hidden;margin-top:12px;width:350px;}
+.InfoTotalOnly .saleList li .rowone .tit{max-width:260px;height:18px;line-height:17px}
+.InfoTotalOnly .saleList li .rowone .con{height:18px;line-height:17px;text-align:right}
+.infoTableWrap .infoTable .item dl dd.priceOrg{position:relative;padding-right:30px;text-align:right;color:#ec4d0f}
+.infoTableWrap .infoTable .item dl dd.priceOrg a{display:inline-block;color:#ec4d0f;padding-right:40px;background:url('https://direct.hi.co.kr/images/common/btn_datepicker_next_org.png') no-repeat right center;margin-right:-20px}
+.infoTableWrap .rightArea{ float:right; top:0;}
+.infoTableWrap .rightArea .btnArea .btn.detail{display:inline-block;width:120px;border:1px solid #e67401;line-height:35px; height:35px; background:#fff; padding:0 20px;  text-align:left; background:url('https://direct.hi.co.kr/images/common/btn_datepicker_next_org.png') no-repeat right 13px center;}
+.infoTableWrap .rightArea .btnArea .btn.detail span{font-size:15px; color:#e67401;vertical-align:top;}
+
+.bottomFixed > .tooltipCon{position:absolute; display:inline-block;right:40px; bottom:10px; width:420px; z-index: 999; font-size: 15px;
+  background-color: #daedf4; color:#003170; text-align:center; border:1px solid #badce9; border-radius: 4px; height:38px;line-height: 38px;padding:0 0.6rem;}
+.bottomFixed > .tooltipCon::after {content: "";position: absolute; top:100%;left:90%;margin-left:-5px; border:6px solid; border-color: #badce9 transparent transparent transparent}
+/* 다이렉트 원스탑실손전환보험 수정 E /2203 */
+
+/* 다이렉트 원스탑실손전환보험 PC 자녀 전환가입 수정 S /2211 */
+.onestopMain.insuJoinBg .productMainWrap .productInputArea .inputTitArea .tit .step{display: inline-block;position: relative;top: -12px;padding:4px 1px 4px 0;width: 23px;height: 16px;line-height: 15px;border-radius: 24px;background-color: #00afc9;text-align: center;font-size: 16px;color: #ffffff;}
+.onestopMain.insuJoinBg .lineTabWrap .rdoTabList{display:flex;}
+.onestopMain.insuJoinBg .lineTabWrap .rdoTabList li{width:50%;}
+.onestopMain.insuJoinBg .lineTabWrap .rdoTabList li a{display:block;position:relative;line-height:23px;padding-left:30px;font-size:15px;}
+.onestopMain.insuJoinBg .lineTabWrap .rdoTabList li a > .point_rdo{display:block;position:absolute;top:0;left:0;width:24px;height:24px;box-sizing:border-box;border-radius:12px;border:1px solid #bdbdbd;background-color:#fff;}
+.onestopMain.insuJoinBg .lineTabWrap .rdoTabList li.on{z-index:1;}
+.onestopMain.insuJoinBg .lineTabWrap .rdoTabList li.on a > .point_rdo:after{content:'';display:block;position:absolute;top:50%;left:50%;margin-top:-5px;margin-left:-5px;width:10px;height:10px;border-radius:5px;background-color:#fc843b;}
+.infoTableWrap2 .rightArea{ float:right; top:0;}
+.infoTableWrap2 .tit{ display:block; float:left; font-size:17px; margin-right:10px;}
+/* 다이렉트 원스탑실손전환보험 PC 자녀 전환가입 수정 E /2211 */
+
+/* 주택화재상해보험 가입1단계 /2203 */
+.houseFireMain.insuJoinBg{background:#354b62 url('https://direct.hi.co.kr/images/longterm/bg_insuJoin_house2203.jpg') no-repeat 0 0;-webkit-background-size:cover;background-size:cover;}
+.houseFireMain.insuJoinBg .productMainWrap .productSideMenu .smList{background-color:#00afc9}
+
+/* common /2204 */
+.iconNotice{padding-left:20px;background:url('https://direct.hi.co.kr/images/common/icon_notice_insuJoin.png') no-repeat left 2.5px;line-height:19px}
+.iconNotice > a.btArw{display:inline-block;padding-right:15px;background:url('https://direct.hi.co.kr/images/common/banner_right_arr.png') no-repeat right 50%}
+
+/* 굿앤굿어린이보험 가입1단계 /2203 */
+.childrenMain.insuJoinBg{background:#354b62 url('https://direct.hi.co.kr/images/longterm/bg_insuJoin_children2203.jpg') no-repeat 0 0;-webkit-background-size:cover;background-size:cover;}
+.childrenMain.insuJoinBg .productMainWrap .productSideMenu .smList{background-color:#00afc9}
+.childrenMain.insuJoinBg .inputArea.inpSimpleArea .item{float:left;width:36%;}
+.childrenMain.insuJoinBg .inputArea.inpSimpleArea .item:first-child{ width:64%;}
+.childrenMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li{border-color:#bbb;background-color:#fff}
+.childrenMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li.on{border-color:#e67401;}
+.childrenMain.insuJoinBg .inputArea.inpSimpleArea .item a.btn.big{width:123px}
+.childrenMain.insuJoinBg .productMainWrap .productInputArea .inputTitArea .tit .step{display: inline-block;position: relative;top: -12px;padding:4px 1px 4px 0;width: 23px;height: 16px;line-height: 15px;border-radius: 24px;background-color: #00afc9;text-align: center;font-size: 16px;color: #ffffff;}
+/* tab design - radio /2203 */
+.childrenMain.insuJoinBg .lineTabWrap .rdoTabList{display:flex}
+.childrenMain.insuJoinBg .lineTabWrap .rdoTabList li{width:50%}
+.childrenMain.insuJoinBg .lineTabWrap .rdoTabList li a{display:block;position:relative;line-height:23px;padding-left:30px;font-size:15px;}
+.childrenMain.insuJoinBg .lineTabWrap .rdoTabList li a > .point_rdo{display:block;position:absolute;top:0;left:0;width:24px;height:24px;box-sizing:border-box;border-radius:12px;border:1px solid #bdbdbd;background-color:#fff}
+.childrenMain.insuJoinBg .lineTabWrap .rdoTabList li.on{z-index:1}
+.childrenMain.insuJoinBg .lineTabWrap .rdoTabList li.on a > .point_rdo:after{content:'';display:block;position:absolute;top:50%;left:50%;margin-top:-5px;margin-left:-5px;width:10px;height:10px;border-radius:5px;background-color:#fc843b}
+
+/* 계속받는암보험 가입1단계 /2203 */
+.cancerMain.insuJoinBg{background:#354b62 url('https://direct.hi.co.kr/images/longterm/bg_insuJoin_cancer2203.jpg') no-repeat 0 0;-webkit-background-size:cover;background-size:cover;}
+.cancerMain.insuJoinBg .productMainWrap .productSideMenu .smList{background-color:#00afc9}
+.cancerMain.insuJoinBg .inputArea.inpSimpleArea .item{float:left;width:36%;}
+.cancerMain.insuJoinBg .inputArea.inpSimpleArea .item:first-child{ width:64%;}
+.cancerMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li{border-color:#bbb;background-color:#fff}
+.cancerMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li.on{border-color:#e67401;}
+.cancerMain.insuJoinBg .inputArea.inpSimpleArea .item a.btn.big{width:123px}
+
+/* 연금보험 가입1단계 /2204 */
+.anuityMain.insuJoinBg{background:#a3a3a2 url('https://direct.hi.co.kr/images/longterm/bg_insuJoin_anuity2204.jpg') no-repeat 0 0;-webkit-background-size:cover;background-size:cover;}
+
+/* H사업장화재보험 /2203 */
+.hFireMain{background:url('https://direct.hi.co.kr/images/generalinsurance/hFire_bg2203.jpg') no-repeat fixed;-webkit-background-size:cover; background-size:cover;}
+.hFireMain .productImg{position:relative;width:700px;height:750px;}
+.hFireMain .productImg .csReArea{position:absolute;bottom:25px;padding:0 25px;width:650px}
+.hFireMain .productImg .csReArea dl{display:flex;justify-content:space-between;overflow:hidden;padding:9px 16px 10px 25px;height:21px;border-radius:20px;background:rgba(0,0,0,0.5)}
+.hFireMain .productImg .csReArea dl dt{width:90px;height:21px;line-height:21px;letter-spacing:0;font-size:15px;color:#fce202}
+.hFireMain .productImg .csReArea dl dd{height:21px;line-height:21px;font-size:15px;color:#ffffff}
+.hFireMain .productImg .csReArea dl dd.reUp{width:19px;line-height:18px;text-align:center}
+.hFireMain .productImg .csReArea dl dd.reUp a{display:inline-block;margin-top:1px;width:21px;height:21px}
+.hFireMain .productImg .csReArea dl dd.reUp a img{vertical-align:top}
+.hFireMain .productImg .csReArea dl dd.reContent,
+.hFireMain .productImg .csReArea dl dd.reContent .reRol{width:470px}
+.hFireMain .productImg .csReArea dl dd.reContent .reRol li span{display:block;height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} /* 말줄임 */
+.hFireMain .productImg .csReArea dl dd.reContent .reRol li span.reTxt{width:350px;}
+.hFireMain .productImg .csReArea dl dd.reContent .reRol li span.reName{margin-left:20px;width:100px;text-align:center}
+
+/* H사업장화재보험 고객정보입력 /2203 */
+.insuJoinBg.hFireMain .productMainWrap .productSideMenu .smList{background-color:#00afc9}
+.insuJoinBg.hFireMain .productMainWrap .productInputArea .inputTitArea .tit .step{display:inline-block;position:relative;top:-12px;padding:4px 0;width:24px;height:16px;line-height:15px;border-radius:24px;background-color:#00afc9;text-align:center;font-size:16px;color:#ffffff;}
+.insuJoinBg.hFireMain .inputArea.inputFind .item{float:left;width:38.5%;}
+.insuJoinBg.hFireMain .inputArea.inputFind .item:first-child{width:61.5%;}
+.insuJoinBg.hFireMain .inputArea.inputFind .item .sexSelect ul{display:flex;justify-content:space-between;}
+.insuJoinBg.hFireMain .inputArea.inputFind .item .sexSelect ul li{border-color:#bbb;background-color:#fff}
+.insuJoinBg.hFireMain .inputArea.inputFind .item .sexSelect ul li.on{border-color:#e67401;}
+.insuJoinBg.hFireMain .inputArea.inputCompany .item{float:left;width:66%;}
+.insuJoinBg.hFireMain .inputArea.inputCompany .item:first-child{width:34%;}
+.insuJoinBg.hFireMain .inputArea.inputCompany .item.numberSearch{display:flex;justify-content:space-between;}
+.insuJoinBg.hFireMain .inputArea.inputCompany .item.numberSearch .txt{padding:15px 5px 0 0;min-width:34px;font-size:16px;color:#636363;text-align:center}
+.insuJoinBg.hFireMain .inputArea.inputCompany .item.numberSearch .inputBase{flex:1}
+.insuJoinBg.hFireMain .radioList{padding-top:15px;border-bottom:1px solid #555555;}
+.insuJoinBg.hFireMain .radioList > li{padding-bottom:10px;}
+.insuJoinBg.hFireMain .radioList > li > .numberArea{overflow:hidden;height:0;-webkit-transition:all 0.2s ease;transition:all 0.2s ease;}
+.insuJoinBg.hFireMain .radioList > li > .numberArea.on{padding-bottom:5px;height:66px}
+
+/* 사업장정보 /2204 */
+.hFireDetailWrap .radioList{padding-left:5px;}
+.hFireDetailWrap .radioList > li{padding-bottom:5px}
+.hFireDetailWrap .radioList > li > .numberArea{overflow:hidden;padding-top:10px;height:0;-webkit-transition:all 0.2s ease;transition:all 0.2s ease;}
+.hFireDetailWrap .radioList > li > .numberArea.on{height:66px;}
+.hFireDetailWrap .inputArea .item.numberSearch .txt{display:inline-block;padding:15px 5px 0 0;min-width:34px;font-size:16px;color:#636363;text-align:center;}
+.hFireDetailWrap .inputArea .item.numberSearch .txt + .inputBase{width:250px}
+
+/* 실손의료비보장보험 가입1단계 /2204 */
+.damageMain.insuJoinBg{background:#b6b8b4 url('https://direct.hi.co.kr/images/longterm/bg_insuJoin_damage2204.jpg') no-repeat 0 0;-webkit-background-size:cover;background-size:cover;}
+.damageMain.insuJoinBg .inputArea.inpSimpleArea .item{float:left;width:36%;}
+.damageMain.insuJoinBg .inputArea.inpSimpleArea .item:first-child{width:64%;}
+.damageMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li{border-color:#bbb;background-color:#fff;}
+.damageMain.insuJoinBg .inputArea.inpSimpleArea .item .sexSelect li.on{border-color:#e67401;}
+.damageMain.insuJoinBg .inputArea.inpSimpleArea .item a.btn.big{width:123px;}
+.damageMain.insuJoinBg .productMainWrap .productInputArea .inputTitArea .tit .step{display: inline-block;position: relative;top: -12px;padding:4px 1px 4px 0;width: 23px;height: 16px;line-height: 15px;border-radius: 24px;background-color: #00afc9;text-align: center;font-size: 16px;color: #ffffff;}
+.damageMain.insuJoinBg .lineTabWrap .rdoTabList{display:flex;}
+.damageMain.insuJoinBg .lineTabWrap .rdoTabList li{width:50%;}
+.damageMain.insuJoinBg .lineTabWrap .rdoTabList li a{display:block;position:relative;line-height:23px;padding-left:30px;font-size:15px;}
+.damageMain.insuJoinBg .lineTabWrap .rdoTabList li a > .point_rdo{display:block;position:absolute;top:0;left:0;width:24px;height:24px;box-sizing:border-box;border-radius:12px;border:1px solid #bdbdbd;background-color:#fff;}
+.damageMain.insuJoinBg .lineTabWrap .rdoTabList li.on{z-index:1;}
+.damageMain.insuJoinBg .lineTabWrap .rdoTabList li.on a > .point_rdo:after{content:'';display:block;position:absolute;top:50%;left:50%;margin-top:-5px;margin-left:-5px;width:10px;height:10px;border-radius:5px;background-color:#fc843b;}
+
+/* 가입정보입력 배너 - 보장범위 비교 /2204 */
+.insuJoinBg .insuBnCompare{margin-top:19px}
+.insuJoinBg .insuBnCompare a{display:block}
+
+/* 실손+어린이보험 수정 S /2204 */
+.infoInsuCompare .flex_insuInfo .insuBoxKid{flex:1;position:relative;padding:20px 0 0 45px;background-color:#fff;background-repeat:no-repeat;background-position:no-repeat top ;text-align: left;height:600px;}
+.infoInsuCompare .flex_insuInfo .insuBoxKid.contentKid{border:1px solid #047db5;background-image:url('https://direct.hi.co.kr/images/longterm/infoInsuCompare_kid.jpg')}
+.infoInsuCompare .flex_insuInfo .insuBoxKid .tiBoxKid{display:block;width:170px;margin:-39px auto 0;padding:10px 0 11px;height:19px;line-height:18px;text-align:center;font-weight:normal;font-size:19px;color:#fff}
+.infoInsuCompare .flex_insuInfo .insuBoxKid .tiBoxKid.boxBlue{background-color:#047db5}
+.infoInsuCompare .flex_insuInfo .insuBoxKid .payTxtKid{overflow:hidden;margin-top:380px;margin-bottom:25px;padding:25px 0 15px;width:375px;height:25px;line-height:25px;border-bottom:1px solid #cecece;text-align:center;font-size:20px;color:#000;}
+.infoInsuCompare .flex_insuInfo .insuBoxKid .btn.big.h53{width:375px;line-height:53px;font-size: 24px;height:53px;}
+.infoInsuCompare .flex_insuInfo .insuBoxKid .btn.big.blue{border:1px solid #00a2ed}
+
+.layerPopWrap .popupContentArea.insuInfoKid{vertical-align:top;background:url('https://direct.hi.co.kr/images/longterm/infoInsuCompare_kid_popimg02.jpg') no-repeat;background-position:0 120px;height:690px;}
+.layerPopWrap .popupContentArea.insuInfoKid .infokidTxt {margin-top:340px;margin-left:20px;width:240px;}
+.layerPopWrap .popupContentArea.insuInfoKid .infokidTxt .payTxtKid{overflow:hidden;margin-bottom:25px;padding:0 0 15px;width:100%;height:25px;line-height:25px;border-bottom:1px solid #cecece;text-align:center;font-size:18px;color:#000;}
+.layerPopWrap .popupContentArea.insuInfoKid .infokidTxt .btn.big.h45{width:100%;line-height:45px;height:45px;background-color: #e67401;}
+.layerPopWrap .popupContentArea.insuInfoKid .infokidTxt .btn.big.h45 span {color:#fff;font-size: 18px;}
+/* 실손+어린이보험 수정 E /2204 */
+
+
+/* 하이펫보험 /2207 */
+.hiPetMain.insuJoinBg{background:#a3a3a2 url('https://direct.hi.co.kr/images/longterm/bg_insuJoin_hiPet2207.jpg') no-repeat 0 0;-webkit-background-size:cover;background-size:cover;}
+.insuJoinBg .productImg{position:relative}
+.insuJoinBg .productImg .csReArea{position:absolute;bottom:25px;padding:0 25px;width:650px}
+.insuJoinBg .productImg .csReArea dl{display:flex;justify-content:space-between;overflow:hidden;padding:9px 16px 10px 25px;height:21px;border-radius:20px;background:rgba(0,0,0,0.5)}
+.insuJoinBg .productImg .csReArea dl dt{width:90px;height:21px;line-height:21px;letter-spacing:0;font-size:15px;color:#fce202}
+.insuJoinBg .productImg .csReArea dl dd{height:21px;line-height:21px;font-size:15px;color:#ffffff}
+.insuJoinBg .productImg .csReArea dl dd.reUp{width:19px;line-height:18px;text-align:center}
+.insuJoinBg .productImg .csReArea dl dd.reUp a{display:inline-block;margin-top:1px;width:21px;height:21px}
+.insuJoinBg .productImg .csReArea dl dd.reUp a img{vertical-align:top}
+.insuJoinBg .productImg .csReArea dl dd.reContent,
+.insuJoinBg .productImg .csReArea dl dd.reContent .reRol{width:470px}
+.insuJoinBg .productImg .csReArea dl dd.reContent .reRol li span{display:block;height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} /* 말줄임 */
+.insuJoinBg .productImg .csReArea dl dd.reContent .reRol li span.reTxt{width:350px;}
+.insuJoinBg .productImg .csReArea dl dd.reContent .reRol li span.reName{margin-left:20px;width:100px;text-align:center}
+.petSystemArea{border-top:1px solid #eee}
+
+/* 사진등록 /2207 */
+.photoUploadBox{position:relative;padding:20px;border-top:1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5; background:#f5f5f5;}
+.photoUploadBox > .tit{margin-bottom:15px;font-size:14px;color:#777}
+.photoUploadBox .btnClose{position:absolute;right:20px !important;top:20px !important;}
+.photoUploadBox .picArea{display:flex;justify-content:space-around;}
+.photoUploadBox .picArea .picImg{overflow:hidden;width:41%;text-align:right;}
+.photoUploadBox .picArea .picImg img{width:260px; height:170px;vertical-align: top;}
+.photoUploadBox .picArea .picTxt{display:flex;justify-content:center;flex-direction:column;align-items:center;width:59%;text-align:center;font-size:15px;}
+.photoUploadBox .picArea .picTxt .txtArea{line-height:1.3em;font-size:15px}
+.photoUploadBox .picArea .picTxt .txtArea .tit{color:#222}
+.photoUploadBox .picArea .picTxt .txtArea .txt{margin:5px 0;color:#777}
+.photoUploadBox .picArea .picTxt .btnAreaWrap > a{height:35px;line-height:28px}
+.photoUploadBox .picArea .picTxt .btnAreaWrap > a > span{font-size:14px}
+
+
+/* 보험료확인 - Flex /2209 */
+.infoTotalFlex{overflow:hidden;position:sticky;bottom:55px;width:100%;max-width:820px;}
+.infoTotalFlex .InfoTotal{display:flex;justify-content:space-between;background:#047db5;min-height:84px;overflow:hidden;position:relative;box-sizing:border-box;}
+.infoTotalFlex .InfoTotal .saleList{display:flex;position:relative;overflow:hidden;box-sizing:border-box;padding:18px 24px;width:580px;float:none;}
+.infoTotalFlex .InfoTotal .saleList li{position:relative;color:#ffffff;letter-spacing:-0.05em;min-height:89px;}
+.infoTotalFlex .InfoTotal .saleList li:not(:first-of-type){margin-left:32px;padding-left:32px;}
+.infoTotalFlex .InfoTotal .saleList li:not(:first-of-type):before{ content:''; display:block; width:1px; height:100%; background:#036491; position:absolute; left:0; top:0px;}
+.infoTotalFlex .InfoTotal .saleList li .row{overflow:hidden;margin-top:5px;width:208px;}
+.infoTotalFlex .InfoTotal .saleList li .row:first-child{margin-bottom:12px;font-size:16px}
+.infoTotalFlex .InfoTotal .saleList li .row .tit{float:left;max-width:200px;line-height:1.3em;}
+.infoTotalFlex .InfoTotal .saleList li .row .con{float:right;text-align:right;line-height:1.3em;}
+.infoTotalFlex .InfoTotal .saleList li .row .btnHelp{margin:-2px 0 0 8px;background-image:url('https://direct.hi.co.kr/images/common/btn_help_w.png');}
+.infoTotalFlex .InfoTotal .saleList li .row strong{color:#ff9933}
+.infoTotalFlex .InfoTotal .saleList li .saleListContent{overflow:hidden;transition:all 0.3s;-webkit-transition:all 0.3s;}
+.infoTotalFlex .InfoTotal .saleList li .saleListContent.hidden{max-height:80px;}
+.infoTotalFlex .InfoTotal .saleList li .saleListContent.open{max-height:170px;}
+.infoTotalFlex .InfoTotal .saleList li .btnMore{display:inline-block;background:url('https://direct.hi.co.kr/images/motor/more_icon.png') no-repeat;padding-left:25px;color:#ffffff;line-height:19px;margin-top:5px;}
+.infoTotalFlex .InfoTotal .saleList li .saleInfo{margin-left:-14px;padding:8px 12px;border-radius:4px;background-color:#003170;line-height:1.3em;font-weight:normal;font-size:15px;letter-spacing:-1px;text-align:center;color:#ffffff}
+.infoTotalFlex .InfoTotal .saleList li .saleInfo em{color:#f0db2b}
+.infoTotalFlex .InfoTotal .totalPay{position:relative;width:240px;padding:18px 24px 18px 0;box-sizing:border-box;height:auto;text-align:right;background:#003170;}
+.infoTotalFlex .InfoTotal .totalPay:after{content:'';display:block;position:absolute;left:0;top:29px;width:0;height:0;border-style:solid;border-width:11px 0 11px 14px;border-color:transparent transparent transparent #047db5}
+.infoTotalFlex .InfoTotal .totalPay .payArea{text-align:right}
+.infoTotalFlex .InfoTotal .totalPay .txt{margin:0;font-size:15px;color:#ffffff;}
+.infoTotalFlex .InfoTotal .totalPay .price{font-weight:bold;font-size:32px;text-align:right;color:#f0db2b;}
+.infoTotalFlex .InfoTotal .totalPay .price .number{display:inline-block;vertical-align:top;}
+.infoTotalFlex .InfoTotal .totalPay .price .priceTxt{display:inline-block;vertical-align:top;font-size:19px;color:#f0db2b;margin:15px 0 0 -3px;}
+.infoTotalFlex .InfoTotal .totalPay .reFund{line-height:1.1rem;}
+.infoTotalFlex .InfoTotal .totalPay .reFund a.arr{display:inline-block;position:relative;padding-right:20px;font-weight:600;font-size:14px;color:#00afc9}
+.infoTotalFlex .InfoTotal .totalPay .reFund a.arr:after{content:'';display:block;position:absolute;top:50%;right:0;margin-top:-7.5px;width:15px;height:15px;border-radius:8px;background:#e67401 url('https://direct.hi.co.kr/images/common/btn_arr_right.png') no-repeat 0 center;}
+.infoTotalFlex .InfoTotal .totalBtn{position:absolute;top:50%;left:50%;margin:-18px 0 0 -59px}
+.infoTotalFlex .InfoTotal .totalBtn a.btnWh{display:inline-block;box-sizing:border-box;width:118px;height:36px;line-height:35px;border:1px solid #ccd6e2;background:#003170;text-align:center;font-weight:normal;font-size:14px;color:#fff}

@@ -13,7 +13,7 @@
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="true" data-category="" data-category-sub="">
+<body data-channel="mobile" data-login="true" data-category="">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -36,52 +36,106 @@
 							<h2 class="governing_title">Tooltip</h2>
 							<span class="info_txt">Tooltip 가이드 입니다.</span>
 						</div>
-            <div class="comp">
-              <div class="tooltip_wrap bottom">
-								<button type="button" class="btn_tooltip"><span class="blind">툴팁</span></button>
-								<div class="tooltip_area">
-									<div class="tooltip_title">툴팁 제목</div>
-									<div class="tooltip_contents">
-										내용
+						<div class="section">
+							<div class="comp">
+								<div class="title_area">
+									<h3 class="h2">Bottom, Click(Default)</h3>
+									<div class="title_footer">
+										[data-pos="bottom"] [data-icon="true"] [data-handler="click"]
 									</div>
 								</div>
-							</div>
-						</div>
-						<br><br><br><br><br>
-						<div class="comp">
-              <div class="tooltip_wrap top">
-								<button type="button" class="btn_tooltip"><span class="blind">툴팁</span></button>
-								<div class="tooltip_area">
-									<div class="tooltip_title">툴팁 제목</div>
-									<div class="tooltip_contents">
-										내용
-									</div>
-								</div>
-							</div>
-            </div>
-						<br><br><br><br><br>
-						<div class="comp">
-							<div class="form_item">
-								<div class="form_label">
-									<label for="inp11">금액 입력</label>
-									<div class="tooltip_wrap bottom">
-										<button type="button" class="btn_tooltip"><span class="blind">툴팁</span></button>
-										<div class="tooltip_area">
+								<div class="tooltip">
+									<button type="button" class="btn_tooltip" data-pos="bottom" data-icon="true" data-handler="click"><span class="blind">툴팁 bottom</span></button>
+									<div class="tooltip_wrap" role="tooltip">
+										<div class="tooltip_con">
 											<div class="tooltip_title">툴팁 제목</div>
 											<div class="tooltip_contents">
-												Lorm ipsum dolor sit amet, consecteturLorm ipsum dolor sit amet, consectetur
+												내용
+											</div>
+										</div>
+										<a class="tooltip_close" href="javascript:void(0);" role="button">Close</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="comp">
+								<div class="form_item">
+									<div class="form_label">
+										<label for="inp11">금액 입력</label>
+										<div class="tooltip">
+											<button type="button" class="btn_tooltip" data-pos="bottom" data-icon="true" data-handler="click"><span class="blind">툴팁</span></button>
+											<div class="tooltip_wrap" role="tooltip">
+												<div class="tooltip_con">
+													<div class="tooltip_title">툴팁 제목</div>
+													<div class="tooltip_contents">
+														Lorm ipsum dolor sit amet, consecteturLorm ipsum dolor sit amet, consectetur
+													</div>
+												</div>
+												<a class="tooltip_close" href="javascript:void(0);" role="button">Close</a>
 											</div>
 										</div>
 									</div>
+									<div class="form_wrap">
+										<input type="number" id="inp11" placeholder="숫자만 입력" data-clear="true">
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
+									</div>
 								</div>
-								<div class="form_wrap form_amount">
-									<input type="number" id="inp11" placeholder="숫자만 입력">
-									<span class="form_unit">만원</span>
-									<button type="button" class="btn_form"><span>전액</span></button>
-								</div>
-								<div class="form_msg">에러 또는 성공 메시지 영역</div>
 							</div>
 						</div>
+
+						<div class="section">
+							<div class="comp">
+								<div class="title_area">
+									<h3 class="h2">Top, Click</h3>
+									<div class="title_footer">
+										[data-pos="top"]
+									</div>
+								</div>
+								<div class="tooltip">
+									<button type="button" class="btn_tooltip" data-pos="top" data-icon="true" data-handler="click"><span class="blind">툴팁</span></button>
+									<div class="tooltip_wrap" role="tooltip">
+										<div class="tooltip_con">
+											<div class="tooltip_title">툴팁 제목</div>
+											<div class="tooltip_contents">
+												내용
+											</div>
+										</div>
+										<a class="tooltip_close" href="javascript:void(0);" role="button">Close</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="comp">
+								<div class="form_item">
+									<div class="form_label">
+										<label for="inp12">금액 입력</label>
+										<div class="tooltip">
+											<button type="button" class="btn_tooltip" data-pos="top" data-icon="true" data-handler="click"><span class="blind">툴팁</span></button>
+											<div class="tooltip_wrap" role="tooltip">
+												<div class="tooltip_con">
+													<div class="tooltip_title">툴팁 제목</div>
+													<div class="tooltip_contents">
+														Lorm ipsum dolor sit amet, consecteturLorm ipsum dolor sit amet, consectetur
+													</div>
+												</div>
+												<a class="tooltip_close" href="javascript:void(0);" role="button">Close</a>
+											</div>
+										</div>
+									</div>
+									<div class="form_wrap">
+										<input type="number" id="inp12" placeholder="숫자만 입력" data-clear="true">
+										<div class="append">
+											<span class="unit">만원</span>
+											<span class="unit"><button type="button" class="btn_form">전액</button></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 				<!-- //content_wrap -->

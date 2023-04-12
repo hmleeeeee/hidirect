@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>02_차량정보_03기타옵션_03화물차</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/motor.css" />
+    <script>
+        $(function(){
+            /*자동완성 보여주기위한 임시 스크립트*/
+            $(".autoComplete .autoCompleteInput").on("keyup",function(){
+                var target = $(this).closest(".autoComplete");
+                target.find(".autoCompleteList").show();
+            })
+            $(".autoCompleteList li a").on("click",function(){
+                var target = $(this).closest(".autoComplete");
+                target.find(".autoCompleteInput").val($(this).text());
+                target.find(".autoCompleteList").hide();
+            })
+            /*add del*/
+            $(document).on("click",".addItemArea .btnAdd",function(e){
+                e.preventDefault();
+                var addItemHtml =''
+                addItemHtml += '<ul class="inputLine mt10">';
+                addItemHtml += '    <li class="name">부속품명</li>';
+                addItemHtml += '    <li class="ml10">';
+                addItemHtml += '	<div class="selectItem small">';
+                addItemHtml += '	    <select title="부속품명을 선택해주세요" style="width: 200px;">';
+                addItemHtml += '		<option value="">선택</option>';
+                addItemHtml += '		<option value="1">배우자</option>';
+                addItemHtml += '		<option value="2">부모</option>';
+                addItemHtml += '		<option value="3">자녀</option>';
+                addItemHtml += '	    </select>';
+                addItemHtml += '	</div>';
+                addItemHtml += '    </li>';
+                addItemHtml += '    <li class="ml10">';
+                addItemHtml += '	<div class="labelTitleInput">';
+                addItemHtml += '	    <div class="inputSetAlign" style="width: 200px;">';
+                addItemHtml += '		<div class="inputSet">';
+                addItemHtml += '		    <div class="input"><input type="text" id="more5_1" title="금액 (예:20)" placeholder="금액 (예:20)"></div>';
+                addItemHtml += '		    <div class="rightTxt">만원</div>';
+                addItemHtml += '		</div>';
+                addItemHtml += '	    </div>';
+                addItemHtml += '	</div>';
+                addItemHtml += '    </li>';
+                addItemHtml += '    <li class="addBtn"><a href="#" class="btn middle h40 plus btnAdd"><span>추가</span></a><a href="#" class="btn middle h40 btnDel"><span>삭제</span></a></li>';
+                addItemHtml += '</ul>';
+                $(this).closest(".addItemArea").append(addItemHtml);
+                selectChg();
+            })
+            $(document).on("click",".addItemArea .btnDel",function(e){
+                e.preventDefault();
+                $(this).closest(".inputLine").remove();
+            })
+            $("input[name='etcCheckAgree']").on("change",function(){
+                if($(this).val() == "yes"){
+                    $(".openAgreeBox").slideDown();
+                }else{
+                    console.log($("#carBuy").is(":checked"));
+                    $(".openAgreeBox").slideUp();
+                }
+            })
+
+
+        })
+    </script>
+</head>
+<body class="boxType">
+<!--skipNavi : s-->
+<ul class="skipNavi">
+    <li><a href="#contents">본문바로가기</a></li>
+</ul>
+<!--skipNavi : e-->
+<div class="contentWrap">
+    <!--leftArea : s-->
+    <div class="leftArea">
+        <div class="topBox">
+            <p class="logo"><a href="#"><img src="https://direct.hi.co.kr/images/common/logo_small.png" alt="형대해상 다이렉트"></a></p>
+            <h1>자동차보험 <span class="fz17">(법인용)</span></h1>
+        </div>
+        <div class="stepArea">
+        </div>
+		<div class="helpPopWrap">
+            <div class="titleArea">도움말</div>
+            <div class="scrollArea">
+				<div class="item" id="help1Con">
+                    <p class="title">차량이 특정용도 차량, 수반차(자체 동력이 없어 견인되는 형태로 이동하는 차량), 교습용 차량입니까?</p>
+                    <div class="conArea">
+                        <div class="con">
+                            특정용도차량<br>
+							특정한 용도에 사용되는 자동차로서 이동진료차, 이동도서관차, 채혈차, 방송중계차, 혈액수송차, 검사측정차, 현금수송차, 방역차, 소독차, 이동우편차, 영화촬영차, 이동판매차, 충전차, 배전차, 발전차 등 이와 유사한 형태로 사용하는 자동차 (단, 관련 장비가 차체에 부착된 경우에만 해당하며, 화물차에 장비를 싣고 다니는 경우에는 해당되지 않습니다.)
+                        </div>
+                        <div class="con">
+                            교습용차량<br>
+							인가된 자동차학원 또는 자동차학원 대표자가 소유하면서, 운전교습 및 도로주행교육 및 시험에 사용되는 자동차
+                        </div>
+                    </div>
+                </div>
+                <div class="item on" id="help2Con">
+                    <p class="title">차량이 보안, 경비업체 긴급출동 차량입니까?</p>
+                    <div class="conArea">
+                        <div class="con">
+							특수작업용 차량은 특수·특정용도추가위험요율이 적용됩니다.
+                        </div>                        
+                    </div>
+                </div>
+				<div class="item on" id="help3Con">
+                    <p class="title">차량이 경찰청, 소방본부 소유차량(엠블란스 제외)입니까?</p>
+                    <div class="conArea">
+                        <div class="con">
+							특수작업용 차량은 특수·특정용도추가위험요율이 적용됩니다.
+                        </div>                        
+                    </div>
+                </div>
+				<div class="item on" id="help4Con">
+                    <p class="title">위험물 적재가 가능한 자동차입니까?</p>
+                    <div class="conArea">
+                        <div class="con">
+							위험물운반차량은 위험물적재요율이 적용됩니다.
+                        </div>                        
+                    </div>
+                </div>
+				<div class="item on" id="help5Con">
+                    <p class="title">차량이 캠핑트레일러, 보트, 수상오토바이 등을 견인하는 자동차입니까?</p>
+                    <div class="conArea">
+                        <div class="con">
+							레저차(장비)견인용 차량은 레저장비견인중위험담보요율이 적용됩니다.
+                        </div>                        
+                    </div>
+                </div>
+				<div class="item on" id="help6Con">
+                    <p class="title">차량이 자동차판매를 위해 고객 시승용으로 운행되는 자동차제조사 소유차량입니까?</p>
+                    <div class="conArea">
+                        <div class="con">
+							시승용 차량은 시승용자동차요율이 적용됩니다.
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btnHelpClose"><img src="https://direct.hi.co.kr/images/common/btn_help_close.png" alt="닫기"></a>
+        </div>
+        <div class="bottomBtn bottomFixed">
+            <div class="btnArea">
+                <a href="#" class="btnHelp">도움말</a>
+                <a href="#" class="btnNew">최근계산내역</a>
+            </div>
+        </div>
+    </div>
+    <!--leftArea : e-->
+    <!--contentArea : s -->
+    <div class="contentArea" id="contents">
+        <!--titleArea : s-->
+        <div class="topTitleArea">
+            <h2>차량 상세정보 입력</h2>
+            <p class="txt">기타옵션을 선택해주세요.</p>
+        </div>
+        <!--titleArea : e-->
+
+
+        <!--carDetailWrap : s-->
+        <div class="carDetailWrap">
+            <div class="titleArea">
+                <div class="keyWordArea">
+                    <h3 class="tit">인기 검색어 : </h3>
+                    <div class="keyWordList">
+                        <a href="#">그랜져</a>
+                        <a href="#">쏘나타</a>
+                        <a href="#">K5</a>
+                        <a href="#">말리부</a>
+                        <a href="#">K7</a>
+                        <a href="#">아반떼</a>
+                        <a href="#">SM6</a>
+                        <a href="#">투싼</a>
+                        <a href="#">싼타페</a>
+                    </div>
+                </div>
+                <div class="rightArea">
+                    <div class="autoComplete">
+                        <div class="inputBase placeholder small btnType" style="width: 270px;">
+                            <input type="text" placeholder="자동차명으로 검색 ex) 그랜져" title="직자동차명으로 검색 ex) 그랜져" class="autoCompleteInput">
+                            <a href="#" class="btnRight"><img src="https://direct.hi.co.kr/images/common/btn_search_small.png" alt="검색"></a>
+                        </div>
+                        <ul class="autoCompleteList">
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                           <li><a href="#">아반떼</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <ul class="lineTabList">
+                <li class="tab tab1 insertEnd">
+                    <div class="item">
+                        <div class="tit">제조사</div>
+                        <div class="txt">현대</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+                <li class="tab tab2 insertEnd">
+                    <div class="item">
+                        <div class="tit">대표차명</div>
+                        <div class="txt">그랜져</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+                <li class="tab tab3 insertEnd">
+                    <div class="item">
+                        <div class="tit">등록년도</div>
+                        <div class="txt">2017년 (2월 이후)</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+                <li class="tab tab4 insertEnd">
+                    <div class="item">
+                        <div class="tit">세부차명</div>
+                        <div class="txt">그랜져HG</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+                <li class="tab tab5 insertEnd">
+                    <div class="item">
+                        <div class="tit">세부형식</div>
+                        <div class="txt">5인승,H220,프리미엄 컬렉션,오토,에어컨,기타등등등등</div>
+                        <a href="#" class="btnModify"><img src="https://direct.hi.co.kr/images/common/btn_modify.png" alt="수정"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--carDetailWrap : e-->
+
+        <!--confirmTable : s-->
+        <div class="confirmTable noAllSet longCon mt30 mb30">
+            <ol class="confirmList">
+                <li>
+                    <div class="titleWrap">
+                        <div class="title">
+                            <div class="num">1.</div>
+                            <div class="txt">LPG 차량이신가요?</div>
+                        </div>
+                        <div class="rightArea">
+                            <div class="confirm dataSelect">
+                                <ul>
+                                    <li><a href="#" class="yes" data-media-value="yes">예</a></li>
+                                    <li><a href="#" class="no" data-media-value="no">아니오</a></li>
+                                </ul>
+                                <input type="hidden" id="confirm1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moreInsetBox openClose">
+                        <ul class="inputLine">
+                            <li>
+                                <div class="labelTitleInput">
+                                    <div class="inputSetAlign" style="width: 150px;">
+                                        <div class="inputSet">
+                                            <div class="input"><input type="text" id="more5_1" title="금액 (예:20)" placeholder="금액 (예:20)"></div>
+                                            <div class="rightTxt">만원</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ml10">(수정가능범위 : O,OOO만원 ~ O,OOO만원)</li>
+                        </ul>
+                        <ul class="listStyle star">
+                            <li>LPG차량의 경우 차량가액 80% ~ 100% 범위 내에서 차량가액 수정이 가능합니다.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="titleWrap">
+                        <div class="title">
+                            <div class="num">2.</div>
+                            <div class="txt">차량 기본 부속품 외 추가부속품이 있나요?</div>
+                        </div>
+                        <div class="rightArea">
+                            <div class="confirm dataSelect">
+                                <ul>
+                                    <li><a href="#" class="yes" data-media-value="yes">예</a></li>
+                                    <li><a href="#" class="no" data-media-value="no">아니오</a></li>
+                                </ul>
+                                <input type="hidden" id="confirm1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moreInsetBox openClose">
+                        <div class="fz15 mb10">
+                            기본 장착품 및 블랙박스 외에 장착하신 제품 정보를 입력해 주세요.<br>
+                            <span class="fz14 fontLevel2">(부속품은 최대 10개까지 추가 가능하며, 부속품 가액은 차량가액으로 포함됩니다.)</span>
+                        </div>
+                        <div class="addItemArea">
+                            <ul class="inputLine">
+                                <li class="name">부속품명</li>
+                                <li class="ml10">
+                                    <div class="selectItem small">
+                                        <select title="부속품명을 선택해주세요" style="width: 200px;">
+                                            <option value="">선택</option>
+                                            <option value="1">배우자</option>
+                                            <option value="2">부모</option>
+                                            <option value="3">자녀</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="ml10">
+                                    <div class="labelTitleInput">
+                                        <div class="inputSetAlign" style="width: 200px;">
+                                            <div class="inputSet">
+                                                <div class="input"><input type="text" id="more5_1" title="금액 (예:20)" placeholder="금액 (예:20)"></div>
+                                                <div class="rightTxt">만원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="addBtn"><a href="#" class="btn middle h40 plus btnAdd"><span>추가</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="titleWrap">
+                        <div class="title">
+                            <div class="num">3.</div>
+                            <div class="txt">차량이 특정용도 차량, 수반차(자체 동력이 없어 견인되는 형태로 이동하는 차량),<br>교습용 차량입니까? <a href="#help1Con" class="btnHelp">도움말</a></div>
+                        </div>
+                        <div class="rightArea">
+                            <div class="confirm dataSelect">
+                                <ul>
+                                    <li><a href="#" class="yes" data-media-value="yes">예</a></li>
+                                    <li><a href="#" class="no" data-media-value="no">아니오</a></li>
+                                </ul>
+                                <input type="hidden" id="confirm1">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <!--confirmTable : e-->
+        <!--inputTable : s-->
+        <div class="inputTable point">
+            <div class="title">
+                <div class="tit fz17">
+                    계약 전 알려야 할 사항(운행용도) 선택은 보험료 산출과 연계된 고지사항으로써,<br>
+                    반드시 확인 후 정확하게 선택하여 주시기 바랍니다.<br>
+                    <p class="fontPoint2 mt5 fz15">차후 잘못된 선택으로 인한 사고 발생 시 보상면책 등의 문제가 발생할 수 있습니다.</p>
+                </div>
+                <div class="rightArea">
+                    <div class="checkbox">
+                        <input type="checkbox" id="agree">
+                        <label for="agree">확인</label>
+                    </div>
+                </div>
+                <div class="mt20 clearW tar fz14 fontLevel2">(1) ~ (9) 중복선택 불가. (10)는 타 항목과 중복으로 선택가능</div>
+            </div>
+            <ol class="inputMultiNoArea">
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(1)</span>
+                            <span class="txt">차량에 화물운송 목적의 박스형태 탑이나 해산물 운송장치가 장착되어 있습니까?</span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio1" id="radio1_1">
+                                <label for="radio1_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio1" id="radio1_2">
+                                <label for="radio1_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(2)</span>
+                            <span class="txt">차량에 기중기, 붐, 집게가 장착되어 있습니까?</span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio2" id="radio2_1">
+                                <label for="radio2_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio2" id="radio2_2">
+                                <label for="radio2_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(3)</span>
+                            <span class="txt">차량이 압롤청소차, 압착진개차, 압축진개차, 롤온청소차, 진개덤프 청소차입니까?</span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio3" id="radio3_1">
+                                <label for="radio3_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio3" id="radio3_2">
+                                <label for="radio3_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(4)</span>
+                            <span class="txt">차량이 보안, 경비업체 긴급출동 차량입니까? <a href="#help2Con" class="btnHelp">도움말</a></span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio4" id="radio4_1">
+                                <label for="radio4_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio4" id="radio4_2">
+                                <label for="radio4_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(5)</span>
+                            <span class="txt">차량이 경찰청, 소방본부 소유차량(앰블란스 제외)입니까? <a href="#help3Con" class="btnHelp">도움말</a></span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio5" id="radio5_1">
+                                <label for="radio5_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio5" id="radio5_2">
+                                <label for="radio5_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(6)</span>
+                            <span class="txt">위험물 적재가 가능한 자동차입니까? <a href="#help4Con" class="btnHelp">도움말</a></span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio6" id="radio6_1">
+                                <label for="radio6_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio6" id="radio6_2">
+                                <label for="radio6_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(7)</span>
+                            <span class="txt">차량이 캠핑트레일러, 보트, 수상오토바이 등을 견인하는 자동차입니까? <a href="#help5Con" class="btnHelp">도움말</a></span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio7" id="radio7_1">
+                                <label for="radio7_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio7" id="radio7_2">
+                                <label for="radio7_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(8)</span>
+                            <span class="txt">차량이 운전면허 교습, 기능시험, 주행시험에 사용되는 자동차입니까?</span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio8" id="radio8_1">
+                                <label for="radio8_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio8" id="radio8_2">
+                                <label for="radio8_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(9)</span>
+                            <span class="txt">차량이 자동차판매를 위해 고객 시승용으로 운행되는 자동차제조사 소유차량입니까? <a href="#help6Con" class="btnHelp">도움말</a></span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="radio9" id="radio9_1">
+                                <label for="radio9_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="radio9" id="radio9_2">
+                                <label for="radio9_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="titleSet">
+                        <div class="txtArea">
+                            <span class="num">(10)</span>
+                            <span class="txt">(1) ~ (10)의 운행용도 이외의 기타 구조 및 운행용도로 사용하는 자동차입니까?</span>
+                        </div>
+                        <div class="rightArea">
+                            <div class="radio">
+                                <input type="radio" name="etcCheckAgree" id="radio10_1" value="yes">
+                                <label for="radio10_1">예</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="etcCheckAgree" id="radio10_2" value="no">
+                                <label for="radio10_2">아니오</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="openAgreeBox">
+                        <div class="fz15">
+                            화물차에 대한 구조 및 운행용도를 ‘기타’로 선택하셨습니다.<br>
+                            이는 보험료 산출과 연계된 고지사항으로써, 차후 잘못된 선택으로 인한 사고발생 시 보상면책 등의 문제가 발생할 수 있습니다.<br>
+                            차량사진이 포함된 구조 및 운행용도를 보시고 다시 한 번 정확하게 확인 후 선택하여 주시기 바랍니다.
+                        </div>
+                        <ul class="agreeArea">
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree1">
+                                    <label for="agree1">
+                                        <span class="fontBase">기중기차량</span> (기중기장치자동차요율 적용)<br>
+                                        <span class="fontLevel2 fz14">기증기 또는 붐(boom)장치가 되어있는 구난형자동차, 사다리차 등의 자동차(건설기계 제외)</span>
+                                    </label>
+                                </div>
+                                <div class="moreView">
+                                    <a href="#" class="btn small2" title="만기환급금 입금 계좌 동의 자세히보기"><span>자세히보기</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree2">
+                                    <label for="agree2">
+                                        <span class="fontBase">탑차/활어차</span> (특수적재장치자동차요율 적용)<br>
+                                        <span class="fontLevel2 fz14">화물운송을 목적으로 고정된 박스형태의 젝재공간이 설치된 자동차(탑차) 및 어패류 등 해산물 운송장치가<br>장착된 자동차(활어차)</span>
+                                    </label>
+                                </div>
+                                <div class="moreView">
+                                    <a href="#" class="btn small2" title="만기환급금 입금 계좌 동의 자세히보기"><span>자세히보기</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree3">
+                                    <label for="agree3">
+                                        <span class="fontBase">청소차</span> (특수특정용도추가위험요율 적용)<br>
+                                        <span class="fontLevel2 fz14">쓰레기를 청소할 수 있게 만든 차량으로 운행되는 자동차</span>
+                                    </label>
+                                </div>
+                                <div class="moreView">
+                                    <a href="#" class="btn small2" title="만기환급금 입금 계좌 동의 자세히보기"><span>자세히보기</span></a>
+                                </div>
+                            </li>
+                            <li class="checkboxSet">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree4_1">
+                                    <label for="agree4_1"><span class="fontBase">경찰청, 소방본부 소유차량(앰블런스 제외)</span> (특수·특정용도추가위험요율 적용)</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree4_2">
+                                    <label for="agree4_2"><span class="fontBase">보안, 경비업체 긴급출동 자동차</span> (특수·특정용도추가위험요율 적용)</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree4_3">
+                                    <label for="agree4_3"><span class="fontBase">캠핑트레일러, 보트, 수상오토바이 등을 견인하는 자동차</span> (레저장비견인중위험담보요율 적용)</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree4_4">
+                                    <label for="agree4_4"><span class="fontBase">위험물 적재가 가능한 자동차</span> (위험물적재요율 적용)</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btnAreaWrap tac mt20">
+                            <a href="#" class="btn line2 inlineBlock" style="width: 115px;"><span>해당 없음</span></a>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <!--inputTable : e-->
+
+
+        <div class="bottomFixed">
+            <div class="btnAreaWrap">
+                <ul class="btnArea item37">
+                    <li><a href="#" class="btn prev"><span>이전</span></a></li>
+                    <li><a href="#" class="btn next"><span>다음</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_close.png" alt="닫기"></a>
+    </div>
+    <!--contentArea : e -->
+</div>
+</body>
+</html>

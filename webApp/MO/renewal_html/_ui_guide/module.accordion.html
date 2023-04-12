@@ -11,17 +11,15 @@
 	$(function() {
 		UI.init();
 
-		//@param: _target, _openNum(활성화 넘버, 0부터시작)
-		UI.accordion($('#sampleAccordion_Solo'));
-		UI.accordion($('#sampleAccordion_List'), 1);
-		UI.accordion($('.accordion.notice'));
+		//재선언: UI.init()에서 accordion 호출 됨
+		// UI.accordion($('#sampleAccordion_List'));
 
 		//Guide
 		guideTab();
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="true" data-category="guide" data-category-sub="">
+<body data-channel="mobile" data-login="true" data-category="guide">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -49,6 +47,7 @@
 								<li><a href="javascript:void(0);"><span>Accordion</span></a></li>
 								<li><a href="javascript:void(0);"><span>Full</span></a></li>
 								<li><a href="javascript:void(0);"><span>Notice</span></a></li>
+								<li><a href="javascript:void(0);"><span>Select</span></a></li>
 								<li><a href="javascript:void(0);"><span>View All</span></a></li>
 							</ul>
 						</div>
@@ -61,7 +60,7 @@
 							</div>
 							<!-- accordion -->
 							<ul class="accordion" id="sampleAccordion_List">
-								<li class="item">
+								<li class="item open">
 									<div class="fold_header">
 										<a href="javascript:void(0);" role="button" title="내용보기">
 											<div class="title">
@@ -152,7 +151,7 @@
 								<h2 class="h2">03 .accordion.notice</h2>
 							</div>
 							<!-- accordion: notice -->
-							<div class="accordion notice full">
+							<div class="accordion notice full open">
 								<div class="item">
 									<div class="fold_header">
 										<a href="javascript:void(0);" role="button" title="내용보기">
@@ -176,6 +175,42 @@
 								</div>
 							</div>
 							<!-- //accordion: notcie -->
+						</div>
+
+						<div class="comp tab_content" data-tab="GuideTab">
+							<div class="title_area">
+								<h2 class="h2">04 .Select</h2>
+							</div>
+							<!-- accordion -->
+							<ul class="accordion select" id="sampleAccordion_select">
+								<li class="item">
+									<div class="fold_header">
+										<a href="javascript:void(0);" role="button" title="내용보기">
+											<div class="title">
+												<strong>영상 자막보기</strong>
+											</div>
+											<i class="icon_angle"><span class="blind">내용보기/내용닫기</span></i>
+										</a>
+									</div>
+									<div class="fold_body">
+										<div class="scroll_wrap">
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+											<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae impedit ea earum minus aspernatur soluta incidunt quidem at, quasi a magnam culpa illum! Et asperiores, distinctio natus voluptates beatae perspiciatis?</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<!-- //accordion -->
 						</div>
 					</div>
 				</div>

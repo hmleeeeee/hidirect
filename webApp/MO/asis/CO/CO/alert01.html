@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>내 설계함</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+
+<script>
+$(document).ready(function () {
+	//퍼블리싱 화면에서 보이기 위한 조건노출용 레이어 팝업처리.
+	$('.layerPopup').css({zIndex: '999999',opacity:'1'}).attr('aria-hidden' , false);
+});
+</script>
+</head>
+
+<body>
+<!-- 레이어팝업 : 알럿 -->
+<div class="layerPopup" id="layerPop2">
+	<div class="layerWrap">
+		<h2>차량 최초 등록일 입력</h2>
+		<section>
+			<div class="grayBoxLine mgtNone">
+				<p>차대번호 또는 구입 예정으로 입력하셨거나 차량 연식과 최초 등록일이 상이한 경우 차량의 최초 등록일을 입력하셔야 됩니다.</p>
+			</div>
+			<h3 class="">차량 최초 등록일</h3>
+			<div class="inputWrap three">
+				<!-- <input type="date" name="" title="년월일 선택" placeholder="년도 선택"> -->
+				<span class="dimds">
+					<!-- 2017-06-23 웹접근성 input title 제공 -->
+					<input type="text" value="2017" readonly="readonly" title="차량 최초 등록 년" disabled="disabled">
+
+				</span>
+				<span>
+					<!-- 2017-06-23 select title 추가 웹접근성 개선 -->
+					<select title="월 선택">
+						<option>월 선택</option>
+						<option value="1">1월</option>
+						<option value="2">2월</option>
+					</select>
+				</span>
+				<span>
+					<!-- 2017-06-23 select title 추가 웹접근성 개선 -->
+					<select title="일 선택">
+						<option>일 선택</option>
+						<option value="1">1일</option>
+						<option value="2">2일</option>
+					</select>
+				</span>
+			</div>
+			<div class="layerBtn">
+			<span><a href="#">취소</a></span>
+				<span class="on"><a href="#">확인</a></span>
+			</div>
+		</section>
+		<a href="#close" class="layerClose">닫기</a>
+	</div>
+</div>
+<!-- 
+<div class="layerPopup" id="layerPopAlert">
+	<div class="layerWrap">
+		<h2>타이틀 영역</h2>
+		<div class="layerCont">
+			<p>역수입 차량, 개별 수입 차량의 차량가 연식과 최초등록일이 상이한 경우 차량 최초 등록일을 입력하셔야 됩니다.</p>
+		</div>
+		<div class="layerBtn">
+			<span><a href="#none">취소</a></span>
+			<span><a href="#none" class="on">확인</a></span>
+		</div>
+		<a href="#" role="button" class="layerClose">창닫기</a>
+	</div>
+</div> -->
+
+</body>
+</html>
+

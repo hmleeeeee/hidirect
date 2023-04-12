@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/**
+* font: Noto Sans
+* --------------
+*/
+
+// $font_path : '../../resources/fonts/'; // util/_variables.scss
+
+@font-face {
+	font-family:'Noto Sans';
+	font-style:normal;
+	font-weight:300;
+	src:local('Noto Sans Light'), local('Noto Sans Light'), local('Noto Sans Light');
+	src:url($font_path+'NotoSans/NotoSans-Light.eot');
+	src:url($font_path+'NotoSans/NotoSans-Light.eot?#iefix') format('embedded-opentype'),
+	url($font_path+'NotoSans/NotoSans-Light.woff') format('woff'),
+	url($font_path+'NotoSans/NotoSans-Light.otf') format('truetype');
+}
+@font-face {
+	font-family:'Noto Sans';
+	font-style:normal;
+	font-weight:400;
+	src:local('Noto Sans Regular'), local('Noto Sans Regular'), local('Noto Sans Regular');
+	src:url($font_path+'NotoSans/NotoSans-Regular.eot');
+	src:url($font_path+'NotoSans/NotoSans-Regular.eot?#iefix') format('embedded-opentype'),
+	url($font_path+'NotoSans/NotoSans-Regular.woff') format('woff'),
+	url($font_path+'NotoSans/NotoSans-Regular.otf') format('truetype');
+}
+@font-face {
+	font-family:'Noto Sans';
+	font-style:normal;
+	font-weight:500;
+	src:local('Noto Sans Medium'), local('Noto Sans Medium'), local('Noto Sans Medium');
+	src:url($font_path+'NotoSans/NotoSans-Medium.eot');
+	src:url($font_path+'NotoSans/NotoSans-Medium.eot?#iefix') format('embedded-opentype'),
+		url($font_path+'NotoSans/NotoSans-Medium.woff') format('woff'),
+		url($font_path+'NotoSans/NotoSans-Medium.otf') format('truetype');
+}
+@font-face {
+	font-family:'Noto Sans';
+	font-style:normal;
+	font-weight:700;
+	src:local('Noto Sans Bold'), local('Noto Sans Bold'), local('Noto Sans Bold');
+	src:url($font_path+'NotoSans/NotoSans-Bold.eot');
+	src:url($font_path+'NotoSans/NotoSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url($font_path+'NotoSans/NotoSans-Bold.woff') format('woff'),
+		url($font_path+'NotoSans/NotoSans-Bold.otf') format('truetype');
+}
+
+

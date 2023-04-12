@@ -1,0 +1,127 @@
+.wrap_main_ars .main_ars > ul > li > span {font-weight:bold;color:#003170;background:url('https://direct.hi.co.kr/images/common/bul_dot6.gif') no-repeat 0 50%;padding-left:7px;}https://direct.hi.co.krhttps://direct.hi.co.krhttps://direct.hi.co.krhttps://direct.hi.co.krhttps://direct.hi.co.krhttps://direct.hi.co.krhttps://direct.hi.co.krhttps://direct.hi.co.krhttps://direct.hi.co.krhttps://direct.hi.co.kr
+.wrap_main_ars .main_ars > ul > li > ul {margin:5px 0 7px;}
+.wrap_main_ars .main_ars > ul > li > ul > li strong {display:block;}
+.wrap_main_ars .main_ars.on{display:block}
+.wrap_main_ars .main_ars li{font-size:11px;color:#8e8d8d;margin-top:3px;letter-spacing:-0.5px;overflow:hidden}
+.wrap_main_ars .main_ars li.ls01 {letter-spacing:-1px;}
+.wrap_main_ars .main_ars li:first-child{margin-top:0px}
+.wrap_main_ars .main_ars ul li ul li span{display:inline-block;border:solid 1px #e17e1b;background-color:#D04A00;border-radius:2px;color:#fff;width:32px;padding:1px 0 0px 0;text-align:center;margin-right:9px;}
+.btn_ars{display:block;width:207px;padding:5px 5px 5px 0;border:solid 1px #6984ab;border-radius:2px;background:url('https://devdirect.hi.co.kr/images/common/bul_ars1.gif') no-repeat 180px center #ffffff;text-align:center;}
+.btn_ars.on{background:url('https://devdirect.hi.co.kr/images/common/bul_ars1_on.gif') no-repeat 180px center #fff88;}
+
+#main_container.main_new{background:url('https://devdirect.hi.co.kr/images/common/main_bg.png') no-repeat center top #e9eff4;padding-top:40px;padding-bottom:34px}
+#main_container.main_new + #footer{margin-top:0}
+#main_container.main_new .main_contents{position:relative;width:1080px;margin:0 auto}
+
+.main_visual_tab{position:absolute;top:40px;left:-30px}
+.main_visual_tab a{display:block;width:30px;height:225px}
+
+.main_product{overflow:hidden}
+.main_product:after{content:'';display:block;clear:both}
+.main_product .mproduct1{float:left;width:678px;border:1px solid #c1c1c1}
+.main_product .mproduct1 .main_visual{position:relative}
+.main_product .mproduct1 .main_visual .tab_banner{position:absolute;top:39px;left:-1px;width:490px;height:235px;opacity:0;filter:alpha(opacity=0)}
+
+.main_product .mproduct1 .main_visual .main_btn{position:absolute;top:201px;left:48px;width:364px}
+.main_product .mproduct1 .main_visual .main_btn:after{content:'';display:block;clear:both}
+.main_product .mproduct1 .main_visual .main_btn a{display:block;float:left}
+.main_product .mproduct1 .main_visual .main_btn a+a{margin-left:14px}
+.main_product .mproduct2{float:right;width:385px;height:531px;border:solid 1px #c1c1c1;background-color:#fff}
+.main_product .mproduct2 ul:after{content:'';display:block;clear:both}
+.main_product .mproduct2 ul li{float:left;border-bottom:solid 1px #c1c1c1}
+.main_product .mproduct2 ul li a{display:block}
+.main_product .mproduct2 ul li:first-child{border-top:0}
+.main_product .mproduct2 ul li.border_right{border-right:solid 1px #c1c1c1}
+
+
+.main_vis{background:url('https://devdirect.hi.co.kr/images/common/main_vis.png') no-repeat right bottom;height:356px}
+.main_vis p{padding:49px 0 0 35px}
+.main_vis span.btn_main_vi_mt{display:block;margin:40px 0 0 36px}
+.main_service{background-color:#385288}
+.main_service:after{overflow:hidden;}
+.main_service li{float:left;width:298px;padding:1px;background-color:#385288}
+.main_vis_event{background:url('https://devdirect.hi.co.kr/images/common/main_vis_event.png') no-repeat right bottom;height:356px}
+.main_vis_event p{padding:49px 0 0 35px}
+.main_vis_event span.btn_main_vi_mt{display:block;margin:20px 0 0 36px}
+.main_vis_event .sub{ position:absolute; margin:0px 50px 0 250px;}
+.main_vis_kids{background:url('https://devdirect.hi.co.kr/images/common/main_vis_kids.png') no-repeat right bottom;height:356px} 
+.main_vis_kids p{padding:49px 0 0 35px}
+.main_vis_kids span.btn_main_vi_mt{display:block;margin:20px 0 0 36px}
+.main_vis_kids .sub{ position:absolute; margin:-47px 50px 0px 120px;} 
+
+.btn_main_vi_mt{position:relative;width:206px}
+.btn_main_vi_mt a {display:block;}
+.btn_main_vi_mt_area1{position:absolute;left:0;top:0;display:none;width:313px}
+.btn_main_vi_mt_area1 a{float:left;}
+
+
+.wrap_main_info{}
+.wrap_main_info:after{content:'';display:block;clear:both}
+.wrap_main_info{margin-top:15px}
+.wrap_main_info > dl{float:left;background-color:#fff;border:solid 1px #c1c1c1}
+.wrap_main_info dl dt{margin-bottom:15px}
+
+/*.wrap_main_info dl.main_event{margin:0 14px 0 0; width:252px;padding:20px 5px 7px 20px;background:url('https://devdirect.hi.co.kr/images/common/bg_banner_kids.png') no-repeat 1px top; }
+.wrap_main_info dl.main_event dt{margin-bottom:5px}
+.wrap_main_info dl.main_event dd{position:relative;}*/
+
+
+
+.wrap_main_info dl.main_notice{position:relative;margin-right:13px;padding:20px 20px 9px 20px;width:284px;height:163px;overflow:hidden}
+.wrap_main_info dl.main_notice dt{margin-bottom:14px}
+.wrap_main_info dl.main_notice dd.more{position:absolute;right:15px;top:15px}
+.wrap_main_info dl.main_notice dd ul{}
+.wrap_main_info dl.main_notice dd ul li:after{content:'';display:block;clear:both}
+.wrap_main_info dl.main_notice dd ul li{padding-bottom:9px;color:#666}
+.wrap_main_info dl.main_notice dd ul li a{float:left;width:270px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+.wrap_main_info dl.main_notice dd ul li span{float:right}
+
+
+.wrap_main_info dl.main_event{margin-right:13px;width:319px;height:172px;padding:20px 0px 0px 20px;}
+.wrap_main_info dl.main_event dt{margin-bottom:8px}
+.wrap_main_info dl.main_event dd{position:relative;}
+
+
+.wrap_main_info ul.main_product_tel{float:left;border:solid 1px #c1c1c1;width:385px;background-color:#fff}
+.wrap_main_info ul.main_product_tel li{width:385px;height:72px;border-top:solid 1px #c1c1c1}
+.wrap_main_info ul.main_product_tel li+li{float:left;width:192px;height:72px}
+.wrap_main_info ul.main_product_tel li+li+li+li{width:385px;height:46px;clear:both}
+.wrap_main_info ul.main_product_tel li:first-child{border-top:none}
+.wrap_main_info ul.main_product_tel li.border_right{border-right:solid 1px #c1c1c1}
+.wrap_main_info ul.main_product_tel li a {display:bloc;}
+.wrap_main_info ul.main_product_tel li dl{margin-top:20px;color:#666;}
+.wrap_main_info ul.main_product_tel li dl dd.sale{height:24px;font-size:11px;padding:4px 0 0 40px;letter-spacing:-2px;margin-left:-10px}
+.wrap_main_info ul.main_product_tel li dl dd.sale strong{color:#e67400}
+.wrap_main_info ul.main_product_tel li dl dd.tel{background:url('https://devdirect.hi.co.kr/images/common/bg_main_telicon.gif') no-repeat 0px bottom;padding-top:0px; padding-left:30px;}
+.wrap_main_info ul.main_product_tel li dl dd.tel.web{background:url('https://devdirect.hi.co.kr/images/common/bg_main_webicon.gif') no-repeat 0px bottom;padding-top:0px; padding-left:30px;}
+
+
+
+.quickMenu{width:110px;font-size:11px;letter-spacing:-1px;position:fixed;top:150px;z-index:99;left:50%;margin-left:510px;}
+.quickMenu span{display:block;background-color: #f7f7f7;padding:2px 0;text-align:center;border:solid 1px #d7d7d7;border-top:0}
+.quickMenu ul{border:solid 1px #d7d7d7;border-bottom:0px}
+.quickMenu ul li{border-bottom:solid 1px #d7d7d7;display:table;width:100%}
+.quickMenu ul li a{display:table-cell;line-height: 1.3em;background:url('https://devdirect.hi.co.kr/images/common/bg_quick2.gif') no-repeat 0px 0px;padding-left:34px;vertical-align:middle;height:40px}
+.quickMenu ul li a:hover{background-position:-137px 0px;color:#D04A00}
+.quickMenu ul li.qm_2 a{background-position:0px -41px;}
+.quickMenu ul li.qm_3 a{background-position:0px -83px;}
+.quickMenu ul li.qm_4 a{background-position:0px -123px;}
+.quickMenu ul li.qm_5 a{background-position:0px -164px;}
+.quickMenu ul li.qm_6 a{background-position:0px -205px;}
+.quickMenu ul li.qm_7 a{background-position:0px -246px;}
+.quickMenu ul li.qm_2 a:hover{background-position:-137px -41px;}
+.quickMenu ul li.qm_3 a:hover{background-position:-137px -83px;}
+.quickMenu ul li.qm_4 a:hover{background-position:-137px -123px;}
+.quickMenu ul li.qm_5 a:hover{background-position:-137px -164px;}
+.quickMenu ul li.qm_6 a:hover{background-position:-137px -205px;}
+.quickMenu ul li.qm_7 a:hover{background-position:-137px -246px;}
+.confi_quick{margin-top:10px}
+
+
+.aside_c2c{position:fixed;top:183px;z-index:99;left:50%;margin-left:500px;}
+.aside_c2c_help{position:fixed;top:151px;z-index:99;left:50%;margin-left:500px;}
+.aside_c2c .aside_c2c_inner{position:relative;}
+.aside_c2c .aside_c2c_inner .wrap_c2c_tooltip{position:absolute;left:-350px;bottom:-73px;display:none}
+.wrap_c2c_tooltip_inner{border:solid 2px #7190be;border-radius:3px;background-color:#fff;padding:12px;width:320px;position:relative;}
+.wrap_c2c_tooltip_inner .arrow{right:-8px;top:50%;position:absolute;}
+.wrap_c2c_tooltip_inner .c2c_tooltip_close{right:5px;top:5px;position:absolute;}

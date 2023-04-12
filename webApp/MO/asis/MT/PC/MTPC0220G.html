@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>차량 추가정보 입력</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>차량 추가정보 입력</h1>
+		</header>
+		<div class="popContent">
+			<!-- EDIT text del-->
+			<!-- <p class="topTxt">승합차의 추가정보를 입력해주세요.</p> -->
+			<section>
+				<!--0621 EDIT button -> select으로 변경 -->
+				<h2>차종 코드</h2>
+				<div class="inputWrap">
+					<select title="차종 코드 선택">
+						<option>선택</option>
+						<option value="1">승용차</option>
+						<option value="2">승합차</option>
+					</select>
+				</div>
+				<!--div class="listDot"><p>차종 선택 관련 문의는 고객센터(<a href="tel:18996782">1899-6782</a>)를 이용해주세요.</p></div><!-- 0621 상단 텍스트 삭제 JJY-->
+
+				<h2>차량 용도</h2>
+				<div class="radioBox">
+					<span class="off">
+						<input type="radio" id="list01" name="radioBox1"><label for="list01" class="auto">해당되지 않음</label>
+					</span>
+					<span class="off">
+						<input type="radio" id="list02" name="radioBox1"><label for="list02" class="auto">자동차판매를 위한 고객 시승용 차량<p>시승용자동차요율 적용</p></label>
+					</span>
+					<span class="off">
+						<input type="radio" id="list03" name="radioBox1"><label for="list03" class="auto">운전면허 교습, 기능/주행시험에 사용되는 차량<p>별도요율 적용</p></label>
+					</span>
+					<span class="off">
+						<input type="radio" id="list04" name="radioBox1"><label for="list04" class="auto">캠핑트레일러, 보트 등을 견인하는 차량<p>레저장비견인중위험담보요율 적용</p></label>
+					</span>
+					<span class="off">
+						<input type="radio" id="list05" name="radioBox1"><label for="list05" class="auto">캠핑트레일러, 보트 등에 견인되는 차량<p>별도요율 적용</p></label>
+					</span>
+					<span class="on spOption">
+						<input type="radio" id="list06" name="radioBox1" checked="checked"><label for="list06" class="auto">앰블런스, 긴급출동 등의 특수용도 차량<p>특수/특정용도추가위험요율 적용</p></label>
+						<div class="inputWrap">
+							<select title="상세 용도 선택">
+								<option>상세 용도를 선택해주세요.</option>
+								<option value="1">앰블런스</option>
+								<option value="2">긴급출동</option>
+							</select>
+						</div>
+					</span>
+				</div>
+
+				<h2>요금(대가)을 받는 승객 운송 차량 여부</h2>
+				<!-- EDIT design변경-->
+				<div class="radioBtn">
+					<span><input type="radio" id="yes" name="radioBox" checked="checked"><label for="yes">예</label></span>
+					<span><input type="radio" id="no" name="radioBox"><label for="no">아니오</label></span>
+				</div>
+
+
+				<h2>가입 전 알릴 사항에 대한 동의</h2>
+				<div class="termCont agreeBox">
+					<strong>계약 전 알려야 할 사항(운행용도) 선택은 보험료 산출과 연계된 고지사항으로써, 반드시 확인 후 정확하게 선택하여 주시기 바랍니다. 차후 잘못된 선택으로 인한 사고 발생 시 보상면책 등의 문제가 발생할 수 있습니다.</strong>
+					<!-- 2017-06-23 웹접근성 label Text 수정 -->
+					<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">위 내용에 동의</span></label><span>위 내용에 동의합니다.</span></p>
+					<!-- //2017-06-23 웹접근성 label Text 수정 -->
+				</div>
+			</section>
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<span><a href="#" role="button">취소</a></span>
+				<span><a href="#" role="button">확인</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+	<div class="layerPopup" id="layerPop1">
+		<div class="layerWrap">
+			<h2>네비게이션 정보 입력</h2>
+			<div class="layerCont">
+				<strong>제품의 장착년월, 구매 가격정보를 입력해주세요.</strong>
+				<div class="paddingT0Box">
+					<div class="aniForm">
+						<input type="text" id="addyear" required="">
+						<label for="addyear">장착년월</label>
+					</div>
+					<div class="aniForm">
+						<input type="text" id="addcost" required="">
+						<label for="addcost">금액입력</label>
+					</div>
+				</div>
+				<!-- <div class="termBox mgtNone">
+					<strong class="prodCost"><span class="title">현재가</span><span class="price"><em>1,240,000</em>만원</span></strong>
+				</div> -->
+				<div class="carAttProdTotalBox mgtNone">
+					<span class="carAttProdTotalCostName">현재가</span>
+					<span class="carAttProdTotalCost"><em>1,240,000</em>만원</span>
+				</div>
+			</div>
+			<div class="layerBtn">
+				<span><a href="#close">취소</a></span>
+				<span class="on"><a href="#">확인</a></span>
+			</div>
+			<a href="#close" class="layerClose">닫기</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>포인트/마일리지 사용 | 보험료 결제하기</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>보험료 결제하기</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">7</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<!-- content -->
+	<a href="#" class="subConOpen" role="button">
+		<strong>결제금액</strong>
+		<span>1,000,000,000원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+	</a>
+	<div class="dataDetail">
+		<ul>
+			<!-- EDIT text del
+			<li>
+				<strong class="titl">기본 보험료</strong>
+				<span class="cost">1,210,000원</span>
+			</li>-->
+			<li>
+				<strong class="titl">할인</strong><span class="cost">-100,000만원</span>
+				<span class="info">다이렉트 할인 (평균 15.4%), 블릭박스 특약, 하이카 그린서비스 특약</span><!-- EDIT 한줄처리-->
+			</li>
+			<li>
+				<strong class="titl">카드 포인트/마일리지 사용</strong>
+				<span class="cost"> 1,000P</span>
+			</li>
+			<li>
+				<strong class="titl">ECO마일리지 환급 예상</strong>
+				<span class="cost"> -120,000~20,000원</span>
+			</li>
+			<!-- EDIT text del
+			<li class="total">
+				<strong class="titl">최종 보험료</strong>
+				<span class="cost">￦ 1,000,000원</span>
+			</li>-->
+		</ul>
+	</div>
+
+	<section>
+		<div class="pointWBox">
+			<span class="titl">신용카드 (삼성카드)</span>
+			<a href="#" role="button"><span class="">결제방법 변경</span></a>
+		</div>
+
+		<h2>포인트/마일리지 사용</h2>
+		<div class="cardInfoBox">
+			<div class="cardInfoText bottomLine">
+				<div class="cardlogoimg">
+					<img src="https://mdirect.hi.co.kr/images/content/img_hyundai_log.png" alt="현대카드 로고">
+				</div>
+				<div class="cardInfoDesc">
+					<p class="point"><em>현대카드 혜택</em><strong>포인트 연계할부 / 포인트 이용</strong>
+					<p>보험료 10만원 이상 결제 시 삼성카드 보너스포인트 이용이 가능합니다.<br>
+					<p>카드 승인액 한도내  보너스 포인트 1포인트 ~ 보유 포인트 전액 차감<br> (타 제휴 포인트 복합결제 불가)</p>
+					<p class="tel">고객센터 : <a href="tel:15881688">1588 - 1688</a></p>
+				</div>
+			</div>
+		</div>
+		<fieldset>
+			<legend>포인트 사용 동의</legend>
+			<div class="checkBoxA topBtmLineNone">
+				<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">포인트 사용 동의</span></label><span>현대카드 보너스 포인트 사용</span></p>
+			</div>
+			<div class="pointViewWrap mgtNone">
+					<div class="pointguideBox">
+					<!-- 하단 em의 point 가 있을 경우 -->
+					<span class="pointTit on">
+						보유포인트
+
+						<em class="point">150,000 P</em>
+					</span>
+					<!-- 하단 em의 point 가 없는 경우 -->
+					<!-- 상위 pointTit 에 on을 활성화 하며 없는 경우 on을 제거합니다.
+					<span class="pointTit">
+						보유포인트
+					</span>
+					 -->
+				</div>
+				<a href="#">포인트 조회</a>
+			</div>
+			<div class="inputWrap">
+				<input type="text" id="point" required="" />
+				<label for="point">사용포인트</label>
+			</div>
+		</fieldset>
+	</section>
+
+	<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">다음</a></span>
+	</div>
+	<!-- content -->
+</div>
+
+</body>
+</html>
+

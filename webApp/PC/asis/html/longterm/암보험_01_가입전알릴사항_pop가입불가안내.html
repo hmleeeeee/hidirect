@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>암보험_05_가입전알릴사항_pop가입불가안내</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/longterm.css" />
+</head>
+<body class="boxType">
+
+
+
+<!-- 04_가입전알릴사항_pop가입불가안내 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap failjoin w600">
+    <div class="titleArea">
+        <h2>가입불가안내</h2>
+    </div>
+    <div class="popupContentArea">
+        <div class="failimg phone">
+            <h3 class="poinTit">고객님 죄송합니다.</h3>
+            <div class="con">
+				해당 상품은 만49세까지 가입이 가능합니다.<br>
+				암보험 가입 상담을 원하시는 분은 상담신청을 남겨주시면 연락 드리겠습니다.
+			</div>
+        </div>
+		<!--inputTable : s-->
+		<div class="inputTable inputBline onlyInput mb15">			
+			<ul class="inputArea inlineBlock">
+				<li class="item">
+					<div class="inputBase" style="width:198px;">
+						<label for="bday_family1">이름</label>
+						<input type="text" id="bday_family1" >
+					</div>
+				</li>
+				<li class="item">
+					<div class="inputBase" style="width:199px;">
+						<label for="bday_family2">생년월일(6자리)</label>
+						<input type="text" id="bday_family2">
+					</div>
+				</li>
+				<li class="item">
+					<div class="sexSelect dataSelect">
+						<ul>
+							<li><a href="#" data-media-value="M">남</a></li>
+							<li><a href="#" data-media-value="F">여</a></li>
+						</ul>
+						<input type="hidden" id="sex_family1">
+					</div>
+				</li>
+			</ul>
+			<ul class="inputArea inlineBlock">
+				<li class="item">
+					<div class="selectItem">
+						<select name="selectHp" title="통신사를 선택해주세요" style="width: 200px;">
+							<option value="1">SKT</option>
+							<option value="2">KT</option>
+							<option value="3">LGT</option>
+						</select>
+					</div>
+				</li>
+				<li class="item">
+					<div class="inputBase" style="width:330px;">
+						<label for="hp">휴대폰번호 (‘-’없이)</label>
+						<input type="text" id="hp">
+					</div>
+				</li>							
+			</ul>
+
+		</div>
+		<!--inputTable : e-->
+		<div class="agreeOnlyTitle">
+			<div class="title">개인정보 수집/이용 동의</div>
+			<div class="agreeRadio">
+				<div class="radio">
+					<input type="radio" name="agree4" id="agree4_1" class="yes">
+					<label for="agree4_1">동의함</label>
+				</div>
+				<div class="radio">
+					<input type="radio" name="agree4" id="agree4_2" class="no">
+					<label for="agree4_2">동의하지 않음</label>
+				</div>
+			</div>
+		</div>
+		<div class="agreementBox mt10">
+			본 동의를 거부하시는 경우에는 보험계약 상담 등 정상적인 서비스 제공이 불가능하며,<br> 
+			본 동의서에 의한 개인(신용) 정보 조회는 귀하의 신용등급에 영향을 주지 않습니다. 또한,<br>
+			동의하시더라도 당시 홈페이지 및 고객콜센터(1577-1001)를 통해 철회하거나 보험계약상담
+		</div>
+		<div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock gray" style="width: 150px;"><span>취소</span></a>
+            <a href="#" class="btn line inlineBlock orange" style="width: 150px;"><span>상담전화 신청</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 04_가입전알릴사항_pop가입불가안내 : e-->
+
+</body>
+</html>

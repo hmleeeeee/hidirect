@@ -10,11 +10,10 @@
 <script>
 	$(function() {
 		UI.init();
-		UI.accordion($('.accordion.notice'));
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="false" data-category="certification" data-category-sub="pin">
+<body data-channel="mobile" data-login="false" data-category="certification">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -37,7 +36,8 @@
 							<h2 class="governing_title">PIN번호 재발급을 위해<br>본인인증을 진행해 주세요.</h2>
 						</div>
             <div class="comp">
-              <div class="form_area">
+							<!-- [04/03] gap_lg 추가 -->
+							<div class="form_area gap_lg">
                 <div class="form_item">
                   <div class="form_label"><label for="inp01">이름</label></div>
                   <div class="form_wrap">
@@ -94,7 +94,7 @@
 				<!-- content_footer -->
 				<div class="content_footer fix">
 					<div class="btn_area footer">
-						<button type="button" class="btn fill01">PIN인증 재발급</button>
+						<button type="button" class="btn fill01">PIN번호 재발급</button>
 					</div>
 				</div>
 				<!-- //content_footer -->

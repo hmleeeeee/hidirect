@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 공인인증 전자서명</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>공인인증 전자서명</h1>
+		</header>
+		<div class="popContent">
+			<!-- <a href="#" class="subConOpen" role="button">
+				<strong>계약번호</strong>
+				<strong class="data">F17KA0000956</strong>
+				<em>하위컨텐츠 열기</em>
+			</a>
+			<div class="dataDetail">
+				<ul>
+					<li>
+						<span class="titl">보험상품명</span>
+						<span class="data">HiCar개인용(CM)</span>
+					</li>
+					<li>
+						<span class="titl">총 보험료</span>
+						<span class="data"><em>1,000,000</em>원</span>
+					</li>
+					<li>
+						<span class="titl">신청자IP</span>
+						<span class="data">110.70.58.***</span>
+					</li>
+					<li>
+						<span class="titl">계약자명</span>
+						<span class="data">박현대</span>
+					</li>
+					<li>
+						<span class="titl">결제수단</span>
+						<span class="data">신용카드(일시납)</span>
+					</li>
+				</ul>
+			</div> -->
+
+			<section>
+				<h2>공인인증서 목록</h2><!-- 0620 텍스트 변경 JJY-->
+				<div class="wrapLineBox"><!-- style 목록 컨텐츠 변경 : 결과없음 메세지를 리스트에서 삭제 및 분리함. -->
+					<ul class="CerList">
+						<li>
+							<div class="CerBox">
+								<strong class="certName">박해상</strong>
+								<dl class="certDesc">
+									<dt>발급자</dt>
+									<dd>yessign</dd>
+									<dt>구분</dt>
+									<dd>은행개인</dd>
+									<dt>만료일</dt>
+									<dd>2017.08.27</dd>
+								</dl>
+								<a href="#none" class="btn"><span class="hide">인증서 선택</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="CerBox">
+								<strong class="certName">박해상</strong>
+								<dl class="certDesc">
+									<dt>발급자</dt>
+									<dd>yessign</dd>
+								</dl>
+								<dl class="certDesc">
+									<dt>구분</dt>
+									<dd>은행개인</dd>
+								</dl>
+								<dl class="certDesc">
+									<dt>만료일</dt>
+									<dd>2017.08.27</dd>
+								</dl>
+								<a href="#none" class="btn"><span class="hide">인증서 선택</span></a>
+							</div>
+						</li>
+					</ul>
+					<!-- style 목록 컨텐츠 변경 -->
+					<div class="noResult">
+						<p>저장 된 공인인증서가 없습니다.</p>
+					</div>
+					<!-- //style -->
+				</div>
+			</section>
+			<!-- 2017-06-19 누락 제거분 주석처리 -->
+			<!-- <div class="accodionPo">
+				<a href="#" class="subConOpen" role="button">
+					<strong>계약번호</strong>
+					<strong class="data">F17KA0000956</strong>
+					<em>하위컨텐츠 열기</em>
+				</a>
+				<section class="dataDetail w20">
+					<ul>
+						<li>
+							<span class="titl">보험상품명</span>
+							<span class="data">HiCar개인용(CM)</span>
+						</li>
+						<li>
+							<span class="titl">총 보험료</span>
+							<span class="data"><em>1,000,000</em>원</span>
+						</li>
+						<li>
+							<span class="titl">신청자IP</span>
+							<span class="data">110.70.58.***</span>
+						</li>
+						<li>
+							<span class="titl">계약자명</span>
+							<span class="data">박현대</span>
+						</li>
+						<li>
+							<span class="titl">결제수단</span>
+							<span class="data">신용카드(일시납)</span>
+						</li>
+					</ul>
+				</section>
+			</div> -->
+			<!-- //2017-06-19 누락 제거분 주석처리 -->
+		</div>
+		<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+			<a href="#none" role="button">취소</a>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>01이벤트_01진행이벤트_view_pop이벤트응모</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+	<link rel="stylesheet" type="text/css"  href="../../css/layout_direct.css" />
+</head>
+<body class="boxType">
+
+<!-- 01이벤트_01진행이벤트_view_pop이벤트응모 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap failjoin w600">
+    <div class="titleArea">
+        <h2>이벤트 응모</h2>
+    </div>
+    <div class="popupContentArea">
+		
+		<!--inputTable : s-->
+		<div class="inputTable inputBline onlyInput mb20">						
+			<ul class="inputArea inlineBlock">
+				<li class="item">
+					<div class="inputBase" style="width:265px;">
+						<label for="name">이름</label>
+						<input type="text" id="name">
+					</div>
+				</li>
+				<li class="item">
+					<div class="inputBase" style="width:265px;">
+						<label for="hp">휴대폰번호 (‘-’없이)</label>
+						<input type="text" id="hp" value="01087584589">
+					</div>
+				</li>							
+			</ul>
+			<ul class="inputArea inlineBlock">
+                <li class="item">
+                    <div class="inputBase" style="width:168px;">
+                        <label for="person1_family1">주민등록번호</label>
+                        <input type="text" id="person1_family1">
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="inputBase rightMouse" style="width:169px;">
+                        <label for="person2_family1">뒷 7자리</label>
+                        <input type="password" id="person2_family1">
+                        <div class="nospos">
+                            <input type="checkbox" id="mouse">
+                            <label for="mouse">마우스 입력기</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+		</div>
+		<!--inputTable : e-->
+		<div class="checkAllSet">
+			<div class="agreeOnlyTitle">
+				<div class="title">					
+					<span class="fontPoint2">(필수)</span> 이벤트 동의를 위한 개인정보 수집/이용 동의
+				</div>
+				<div class="agreeRadio checkAllSetItem">
+					<div class="radio">
+						<input type="radio" name="agree" id="agree1" class="yes">
+						<label for="agree1">동의함</label>
+					</div>
+				</div>
+			</div>
+			<div class="agreementBox mt10">
+				<dl>
+					<dt class="fontBase">소비자 권익보호에 관한 사항</dt>
+					<dd class="mt5">본 동의를 거부하시는 경우에는 보험계약 상담  등 정상적인 서비스 제공이 불가능합니다. 또한, 동의하시더라도 당시 홈페이지 및 고객콜센터(1899-6782)를 통해 철회하거나 보험계약상담 목적의 연락에 대해 중단을 요청 하실 수 있습니다.</dd>
+				</dl>
+				<dl class="mt10">
+					<dt class="fontBase">개인(신용)정보의 수집ㆍ이용에 관한 사항</dt>
+					<dd class="mt5">
+						당사 및 당사 업무수탁자는 ‘개인정보보호법’및’신용정보의 이용 및 보호에 관한 법률’에 따라 귀하의 개인(신용)정보를 다음과 같이 수집ㆍ이용하고자 합니다.
+						<ol>
+							<li>1. 개인(신용)정보의 수집ㆍ이용 목적 : 보험계약 상담, 보험계약 상담, 보험계약 인수여부 결정을 위한 판단</li>
+							<li>2. 수집ㆍ이용할 개인(신용)정보의 내용 : 이름, 연락처, 주민번호</li>
+							<li>
+								3. 개인(신용)정보의 보유ㆍ이용 기간
+								<ul>
+									<li>- 이용기간 : 수집ㆍ이용 동의일로부터 3개월까지</li>
+									<li>- 보유기간 : 수집ㆍ이용 동의일로부터 1년까지</li>
+								</ul>
+							</li>
+						</ol>
+					</dd>
+				</dl>
+			</div>
+		</div>
+
+		<div class="btnAreaWrap tac mt20">
+            <a href="#" class="btn line inlineBlock orange" style="width: 178px;"><span>이벤트 응모하기</span></a>
+        </div>
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 01이벤트_01진행이벤트_view_pop이벤트응모 : e-->
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 추천담보 설정하기</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>추천담보</h1><!-- EDIT text del-->
+		</header>
+		<div class="popContent">
+			<div class="tabMenuBox">
+				<div class="tabMenu">
+					<a href="#none" class="on" role="button"><span>인기 담보</span><span class="hide"> 선택됨</span></a>
+					<a href="#none" role="button"><span>최초 설정 담보</span></a>
+				</div>
+			</div>
+			<section class="recommendCollat">
+				<!-- 2017-06-19 접근성을 위하여 tabOpen on 추가후  style="display:block" 제거 -->
+				<div class="tabOpen on">
+					<h2 class="hide">인기 담보</h2>
+
+					<p>현대해상이 <span class="fontOrg">박해상</span>고객님에게 추천해주는 담보입니다.</p><!-- style class삭제 -->
+
+					<div class="inputWrap two">
+						<span>
+							<select title="성별 선택">
+								<option>성별</option>
+								<option value="1">남</option>
+								<option value="2">여</option>
+							</select>
+						</span>
+						<span>
+							<select title="나이 선택">
+								<option>나이</option>
+								<option value="1">10대</option>
+								<option value="2">20대</option>
+							</select>
+						</span>
+					</div>
+					<!-- 2017-06-23 웹접근성 label Text 수정 -->
+					<ul class="listBox">
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat01" id="collat01_01" disabled="disabled"><label for="collat01_01"><span class="hide">대인배상Ⅰ유형1 가입 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">대인배상Ⅰ<span class="hide">유형1</span><em>가입</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat01" id="collat01_02"><label for="collat01_02"><span class="hide">대인배상Ⅱ 유형2 무한 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">대인배상Ⅱ<span class="hide">유형2</span><em>무한</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat01" id="collat01_03"><label for="collat01_03"><span class="hide">대물배상 1억원 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">대물배상<em>1억원</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat01" id="collat01_04"><label for="collat01_04"><span class="hide">자기신체손해 손해액의 20% / 20 부터 50만원 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">자기신체손해<em>손해액의 20% / 20~<span class="hide">부터</span>50만원</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat01" id="collat01_05"><label for="collat01_05"><span class="hide">무보험차상해 2억원 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">무보험차상해<em>2억원</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat01" id="collat01_06"><label for="collat01_06"><span class="hide">자기차량손해 손해액의 20% / 20 부터 50만원 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">자기차량손해<em>손해액의 20% / 20~<span class="hide">부터</span>50만원</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+					</ul>
+					<!-- //2017-06-23 웹접근성 label Text 수정 -->
+					<ul class="listDot">
+						<li>물적할증 금액과 부가 담보 설정은 별도 등록/설정해 주세요.</li>
+					</ul>
+				</div>
+
+				<div class="tabOpen">
+					<h2 class="hide">최초 설정 담보</h2>
+
+					<p>고객님의 입력하신 정보 기준, <span class="fontOrg">최초 설정</span>되는 담보입니다.</p>
+					<!-- 갱신일경우
+					<p>고객님께서 <span class="fontOrg">작년에 가입</span>하신 담보입니다.</p>
+					-->
+					<!-- 2017-06-23 웹접근성 label Text 수정 -->
+					<ul class="listBox mgtS">
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat02" id="collat02_01" disabled="disabled"><label for="collat02_01"><span class="hide">대인배상Ⅰ 유형1 가입 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">대인배상Ⅰ<span class="hide">유형1</span><em>가입</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat02" id="collat02_02"><label for="collat02_02"><span class="hide">대인배상Ⅱ 유형2 무한 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">대인배상Ⅱ<span class="hide">유형2</span><em>무한</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat02" id="collat02_03"><label for="collat02_03"><span class="hide">대물배상 1억원 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">대물배상<em>1억원</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat02" id="collat02_04"><label for="collat02_04"><span class="hide">자기신체손해 손해액의 20% / 20 부터 50만원 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">자기신체손해<em>손해액의 20% / 20~<span class="hide">부터</span>50만원</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat02" id="collat02_05"><label for="collat02_05"><span class="hide">무보험차상해 2억원 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">무보험차상해<em>2억원</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+						<li>
+							<div class="check">
+								<span>
+									<input type="checkbox" name="collat02" id="collat02_06"><label for="collat02_06"><span class="hide">자기차량손해 손해액의 20% / 20 부터 50만원 선택</span></label>
+								</span>
+							</div>
+							<div class="item">
+								<p class="tit">자기차량손해<em>손해액의 20% / 20~<span class="hide">부터</span>50만원</em></p>
+								<p class="won">8,999,999,999원</p>
+							</div>
+						</li>
+					</ul>
+					<!-- //2017-06-23 웹접근성 label Text 수정 -->
+					<ul class="listDot">
+						<li>물적할증 금액과 부가 담보 설정은 별도 등록/설정해 주세요.</li>
+					</ul>
+				</div>
+
+			</section>
+			<div class="btnWrap"><!-- style 화면하단고정타입 버튼영역 위치변경, class 삭제 -->
+				<span><a href="#none" role="button">취소</a></span>
+				<span><a href="#none" role="button">반영</a></span>
+			</div>
+		</div>
+		<button type="button" class="btnClose">창닫기</button>
+	</div>
+</body>
+</html>

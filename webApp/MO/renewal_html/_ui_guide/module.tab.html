@@ -11,7 +11,14 @@
 	$(function() {
 		UI.init();
 
-		UI.tab('tabRound');
+		UI.tab('tabRound', 0, function($this, i){
+			// console.log($this, i);
+			var $title = $('.title_footer.callback h2');
+			if(i == 0) $title.html('대출 유지 계약');
+			else $title.html('날짜별 거래내역');
+		});
+
+
 
 		UI.tab('tabLine01');//01.basic (Default ActiveNum : 0)
 		UI.tab('scrollTab01', 0);
@@ -27,7 +34,7 @@
 	});
 </script>
 </head>
-<body data-channel="mobile" data-login="true" data-category="guide" data-category-sub="">
+<body data-channel="mobile" data-login="true" data-category="guide">
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- navbar -->
@@ -62,12 +69,13 @@
 						</div>
 					</div>
 
-					
-
 					<div class="section tab_content" data-tab="GuideTab">
 						<div class="comp">
 							<div class="title_area">
 								<h2 class="h2">.tab_round</h2>
+								<div class="title_footer callback">
+									<h2 class="h4"></h2>
+								</div>
 							</div>
 						</div>
 						<!-- tab_round -->

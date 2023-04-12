@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+/**
+* Module.List
+* ------------------
+*/
+
+
+// * Upper Class
+//-----------------
+//MY: 계약조회(MMYCT0202U)
+.my_contract_list{}
+
+//MY: 납입내역조회 Case(MMYCT0322U)
+.my_deposit_list{position: relative; margin-top: 32px; 
+	@include hr();
+	& > .list{margin-top: 8px;}
+	.form_area{margin-top: 24px;}
+	.form_area + .list{margin-top: 0;}
+	.list .list_item:first-child .list_body{border-top: none;}
+}
+
+
+
+// * Default
+//-----------------
+.list{border-bottom: 1px solid #EFEFF1;
+	&.border_top_none{border-top: none;
+		.list_item:first-child .list_body{border-top: none;}
+	}
+	&.border_top{border-top: 1px solid #EFEFF1;
+		.list_item:first-child .list_body{border-top: 1px solid #EFEFF1;}
+	}
+}
+
+
+.list_item{display:flex;
+	$pad_top_bottom: 24px; 
+	.list_wrap{padding-bottom: calc($pad_top_bottom / 2);} 
+	.list_body{padding: $pad_top_bottom 0 calc($pad_top_bottom / 2);}
+	.list_footer{padding-bottom: calc($pad_top_bottom / 2);}
+
+	.list_wrap{width:100%;} 
+	.list_body{position: relative; display: flex; justify-content:space-between; width:100%;  border-top: 1px solid #EFEFF1;
+
+		strong{@include fz14(); display:block;word-break:break-all;}
+		span{@include fz13_400(); display:block; margin-top:6px; word-break:break-all;}
+		span.fz14{@include fz14_400();color:#1F1F21;}
+		span.fz15{@include fz15();color:#1F1F21;}
+
+		.title{
+			span:first-child{margin-top: 0;}
+		}
+		.right{display: flex; flex-direction: column; align-items: end;  justify-content: center; min-width: 100px;
+			span:first-child{margin-top: 0;}
+			strong{display:inline-block; font-weight: 700; vertical-align: middle}
+			.badge{
+				margin-right:8px;
+				vertical-align:top;
+			}
+		}
+	}
+	.list_footer{
+		.box{
+			@include box(gray, 6px, 4px);
+			@include fz12_400();color: #555557;
+		}
+		.form_box{margin-top: 4px; text-align: right;}
+	}
+
+	.list_wrap.disabled{
+		.list_body{
+			strong{color: #767678;}
+			span{color: #767678;}
+			.right{color: #767678;
+				strong{color: #767678;}
+				.point_color{color: #767678 !important;}
+			}
+		}
+	}
+
+	//Case: 링크
+	button.list_wrap,
+	a.list_wrap{
+		.list_body{padding-right:24px;
+			&:after{content:''; position:absolute; top:50%; right:0px; width:24px; height:24px; margin-top:-6px; background:url(svg_color($svg_arrow_right_24, '#C8C8CA', '%23C8C8CA')) 50% 50% no-repeat; background-size:100% 100%; 
+			}
+		}
+	}
+}
+
+.list_bottom{border-top: 1px solid #1F1F21;
+	.result{display: flex; justify-content:space-between; width:100%; padding: 32px 0 16px;
+		@include fz15_700();
+		strong{@include fz17_700();}
+	}
+}
+
+
+
+// * Notice
+//-----------------------
+.list.notice {
+	.list_item{
+		$pad_top_bottom: 16px; 
+		.list_wrap{padding-bottom: calc($pad_top_bottom / 2);} 
+		.list_body{padding: $pad_top_bottom 0 calc($pad_top_bottom / 2);}
+
+		.list_body{
+			strong{@include fz15();}
+			span{@include fz13_400();}
+		}
+	}
+	button.list_wrap,
+	a.list_wrap .list_body{padding-right:0px;
+		&:after{content:''; width: 0;height: 0; display: none;}
+	}
+
+}
+
+
+// * cardType
+//-----------------------
+.list.card_type {border-bottom: none;
+	@include box(white, 0 24px);
+	.list_item{
+		&:first-child .list_wrap .list_body{border-top: none;}
+	}
+}
+
+
+// * iconType
+//-----------------------
+.list.icon_type {
+	.list_item{
+		$pad_top_bottom: 16px; 
+		.list_wrap{padding-bottom: calc($pad_top_bottom / 2);} 
+		.list_body{padding: $pad_top_bottom 0 calc($pad_top_bottom / 2) 68px;}
+		.list_footer{padding-bottom: calc($pad_top_bottom / 2);}
+
+		.icon{position: absolute; top: 50%; left: 20px; width: 32px; height: 32px; margin-top: -8px; background-position: 50% 50%; background-repeat: no-repeat; background-size: 100%; background: #ccc;
+		}
+	}
+
+	//Case: 링크
+	button.list_wrap,
+	a.list_wrap .list_body{padding-right:24px;}
+}
+
+//icon Sample Guide
+.list.icon_type[data-icon-id="list_guide_icon"]{
+	.list_item .icon{
+		&[data-icon="icon01_01"]{background-color: orange;}
+		&[data-icon="icon01_02"]{background-color: pink;}
+	}
+}
+
+
+
+
+// * 간격
+//-----------------------
+.list + .list, 
+.list + .list_bottom{margin-top: -1px;}
+
+.list + .form_area,
+.form_area + .list{margin-top: 24px;}

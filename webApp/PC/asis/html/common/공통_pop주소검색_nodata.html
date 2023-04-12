@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>공통_pop주소 검색</title>
+    <!--<link rel="shortcut icon" href="https://direct.hi.co.kr/images/common/favicon.ico"/>-->
+    <script language="JavaScript" src="../../js/lib/jquery-1.11.2.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script language="JavaScript" src="../../js/lib/jquery-fakeform-0.5.js"></script>
+    <script language="JavaScript" src="../../js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="../../css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/content.css" />
+    <link rel="stylesheet" type="text/css"  href="../../css/popup.css" />
+</head>
+<body>
+
+<!-- 공통_pop주소 검색 : s-->
+<!--layerPopWrap : s-->
+<div class="dim_bg"></div>
+<div class="layerPopWrap w600 zipSearch">
+    <div class="titleArea">
+        <h2>주소 검색</h2>
+    </div>
+    <div class="popupContentArea">
+        <!--lineTabWrap : s-->
+        <div class="lineTabWrap tabWrap">
+            <ul class="lineTabList tabList item3 mb15">
+                <li><a href="#"><span>지번</span></a></li>
+                <li><a href="#"><span>도로명</span></a></li>
+                <li class="on"><a href="#"><span>건물명</span></a></li>
+            </ul>
+            <div class="tabCon zipType1">
+                <div class="tabHiddenTitle">지번 탭 내용</div>
+                개인형
+            </div>
+            <div class="tabCon zipType2">
+                <div class="tabHiddenTitle">도로명 탭 내용</div>
+                가족
+            </div>
+            <div class="tabCon  zipType3 on">
+                <div class="tabHiddenTitle">검물명 탭 내용</div>
+                <div class="inputTable onlyInput noTline mb20">
+                    <div class="inputSet">
+                        <ul class="inputArea inlineBlock">
+                            <li class="item">
+                                <div class="inputBase placeholder" style="width:410px;">
+                                    <input type="text" placeholder="건물명, 아파트명 (예: 현대해상빌딩)" id="search3">
+                                </div>
+                            </li>
+                            <li class="item">
+                                <a href="#" class="btn big" style="width: 120px;"><span>검색</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="zipScrollArea">
+                    <!-- 데이터 없을 경우-->
+                    <div class="noData"><span class="fontPoint2">‘으잉’</span> 검색 결과가 없습니다.</div>
+                    <!--
+                    <div class="defaultTxt"><span class="fontPoint2">건물명</span> 또는 <span class="fontPoint2">아파트명</span>을 입력해주세요</div>
+                    -->
+                </div>
+            </div>
+        </div>
+        <!--lineTabWrap : e-->
+
+    </div>
+    <a href="#" class="btnClose"><img src="https://direct.hi.co.kr/images/common/btn_popup_close.png" alt="닫기"></a>
+</div>
+<!--layerPopWrap : e-->
+<!-- 공통_pop주소 검색 : e-->
+
+</body>
+</html>

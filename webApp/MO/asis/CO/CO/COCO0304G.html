@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 직업 검색</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>직업 검색</h1>
+		</header>
+		<div class="popContent">
+			<!-- <p class="topTxt">직업 직접 선택하시거나 검색해주세요.</p> -->
+			<div class="tabMenuBox">
+				<div class="tabMenu">
+					<a href="#none" class="on" role="button"><span>검 색</span><span class="hide">선택됨</span></a>
+					<a href="#none" role="button"><span>분류로 찾기</span></a>
+				</div>
+			</div>
+
+			<section>
+				<div class="tabOpen on">
+					<strong class="hide">검색</strong>
+					<div class="searchBox"> <!-- style cssname 변경 -->
+						<input type="search" id="txt_sch" class="txt_inp search" placeholder="직업명 입력">
+						<label for="txt_sch" class="hide">직업명 입력</label>
+						<a href="#" class="schBtn" role="button"><span class="icoSch">직업명 입력</span></a>
+					</div>
+
+					<h2>검색결과 <span>25</span>개</h2>
+					<div class="noCheckList txtLeft">
+						<a href="#" role="button"><span class="choisText">관리자 (사무직)</span></a>
+						<a href="#" role="button"><span class="choisText">전문가 및 관련종사자</span></a>
+						<a href="#" role="button"><span class="choisText">사무 종사자</span></a>
+						<a href="#" role="button"><span class="choisText">판매종사자</span></a>
+						<a href="#" role="button"><span class="choisText">농림어업 숙련종사자</span></a>
+						<a href="#" role="button"><span class="choisText">장치/기계조작 및 조립 종사자</span></a>
+						<a href="#" role="button"><span class="choisText">단순노무 종사자</span></a>
+						<a href="#" role="button"><span class="choisText">군인</span></a>
+						<a href="#" role="button"><span class="choisText">주부/학생 및 기타 비경제활동</span></a>
+					</div>
+
+					<div class="btnMore">
+						<a href="#" role="button"><span>더보기(10/19)</span></a>
+					</div>
+
+					<div class="btnWrap">
+				    	<span><a href="#" role="button">취소</a></span>
+				    	<span class="on"><a href="#" role="button">확인</a></span>
+				    </div>
+				</div>
+
+				<div class="tabOpen">
+					<strong class="hide">분류로 검색</strong>
+					<div class="toggleWrap select">
+						<div class="tabBox">
+							<div class="toggleTitle">
+								<a href="#none" class="toggleBtn">대분류
+								<!-- 	<span class="selectTxt">숙박여행오락 및 스포츠 관련업체 사무직 관리자</span> -->
+								</a>
+							</div>
+							<div class="toggleDetail">
+								<ul class="job">
+									<li><a href="#">오락(유흥서비스) 관련업체 사무직 관리자</a></li>
+									<li><a href="#">오락(유흥서비스) 관련업체 사무직 관리자</a></li>
+									<li><a href="#">오락(유흥서비스) 관련업체 사무직 관리자</a></li>
+									<li><a href="#">오락(유흥서비스) 관련업체 사무직 관리자</a></li>
+									<li><a href="#">오락(유흥서비스) 관련업체 사무직 관리자</a></li>
+									<li><a href="#">오락(유흥서비스) 관련업체 사무직 관리자</a></li>
+									<li><a href="#">오락(유흥서비스) 관련업체 사무직 관리자</a></li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="tabBox">
+							<div class="toggleTitle"><a href="#none" class="toggleBtn">중분류 </a></div>
+							<div class="toggleDetail">
+								<ul class="job">
+									<li><a href="#">숙박여행오락 및 스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">숙박여행오락 및 스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">숙박여행오락 및 스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">숙박여행오락 및 스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">숙박여행오락 및 스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">숙박여행오락 및 스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">숙박여행오락 및 스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">숙박여행오락 및 스포츠 관련업체 사무직 관리자</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="tabBox">
+							<div class="toggleTitle"><a href="#none" class="toggleBtn">소분류 </a></div>
+							<div class="toggleDetail">
+								<ul class="job">
+									<li><a href="#">스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">스포츠 관련업체 사무직 관리자</a></li>
+									<li><a href="#">스포츠 관련업체 사무직 관리자</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- 검색결과 없을때
+					<div class="noResult">
+						<p>
+							<span>‘캄비’</span> 검색 결과가 없습니다.<br>해당 직업을 선택하시거나 다시 검색해 주세요.
+						</p>
+					</div>
+					-->
+
+					<div class="btnWrap">
+				    	<span><a href="#" role="button">취소</a></span>
+				    	<span class="on"><a href="#" role="button">확인</a></span>
+				    </div>
+				</div>
+			</section>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>

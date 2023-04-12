@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>보험료 결제 방법 선택 | 보험료 결제하기</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+<div id="skipNavi"><a href="#h1Wrap">본문 바로가기</a></div>
+<header>
+	<h1>보험료 결제하기</h1>
+	<a href="#none" class="btnHome">메인으로 이동</a>
+	<a href="#none" class="btnInfo">7</a>
+</header>
+
+<!-- content -->
+<div id="h1Wrap">
+	<!-- content -->
+	<a href="#" class="subConOpen" role="button">
+		<strong>결제금액</strong>
+		<span>1,000,000,000원<em>하위컨텐츠 열기</em></span><!-- 0628 ￦삭제 JJY -->
+	</a>
+	<div class="dataDetail">
+		<ul>
+			<li>
+				<strong class="titl">기본 보험료</strong>
+				<span class="cost">1,210,000원</span>
+			</li>
+			<li>
+				<strong class="titl">할인</strong><span class="cost">-100,000만원</span>
+				<span class="info">다이렉트 할인 (평균 15.4%), 블릭박스 특약, 하이카 그린서비스 특약</span><!-- EDIT 한줄처리-->
+			</li>
+			<li>
+				<strong class="titl">카드 포인트/마일리지 사용</strong>
+				<span class="cost"> 1,000P</span>
+			</li>
+			<li>
+				<strong class="titl">ECO마일리지 환급 예상</strong>
+				<span class="cost"> -120,000~20,000원</span>
+			</li>
+			<li class="total">
+				<strong class="titl">최종 보험료</strong>
+				<span class="cost">1,000,000원</span><!-- 0628 ￦삭제 JJY -->
+			</li>
+		</ul>
+	</div>
+
+	<section>
+		<div class="pointWBox">
+			<span class="titl">신용카드 (삼성카드)</span>
+			<a href="#" role="button"><span class="">결제방법 변경</span></a>
+		</div>
+
+		<h2>ECO 마일리지 환급 계좌 정보 입력</h2>
+		<!-- EDIT text del<p class="h2Txt">ECO마일리지 환급금을 받으실 계약자 본인  명의의 계좌 정보를 입력해주세요.</p>-->
+
+		<fieldset>
+			<legend>결제정보 입력</legend>
+			<div class="checkBoxA">
+				<!-- 2017-06-23 웹접근성 label Text 수정 -->
+				<p><input type="checkbox" id="ck1000"><label for="ck1000"><span class="hide">결제계좌와 동일 확인 체크</span></label>
+				<!-- //2017-06-23 웹접근성 label Text 수정 -->
+				<span>결제계좌와 동일합니다.</span></p>
+			</div>
+
+			<!-- <div class="checkBox">
+				<input type="checkbox" id="ck00"><label for="ck00"><span class="hide">동의 체크</span></label>
+				<span>결제계좌와 동일합니다.</span>
+			</div> -->
+
+			<div class="inputWrap">
+				<select title="은행 선택">
+					<option>은행을 선택해주세요</option>
+					<option value="1">국민은행</option>
+					<option value="2">기업은행</option>
+				</select>
+			</div>
+			<div class="inputWrap">
+				<input type="text" id="accountNumber2" maxlength="30" required />
+				<label for="accountNumber2">계좌번호</label>
+			</div>
+		</fieldset>
+		<ul class="listDot">
+			<li>입력하신 계좌정보는 보험 가입 후 <a href="#" class="link"><span>계약관리>ECO마일리지 특약관리</span></a> 메뉴에서 변경하실 수 있습니다.</li>
+		</ul>
+	</section>
+
+	<div class="btnWrap">
+		<span><a href="#" role="button">이전</a></span>
+		<span><a href="#" role="button">간편 결제하기</a></span>
+	</div>
+	<!-- content -->
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>[팝업] 자녀할인 특약(만 6세 이하)</title>
+<link rel="stylesheet" type="text/css" href="../../css/directH1.css">
+<script src="../../js/jquery/jquery-1.8.3.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../../js/ui_common.js"></script>
+</head>
+
+<body>
+	<div class="popWrap">
+		<header>
+			<h1>자녀할인 특약(만 6세 이하)</h1>
+		</header>
+		<div class="popContent">
+			<div class="childrenOption">
+				<div class="tabMenuBox">
+					<!-- 0629 디자인 변경 -->
+					<div class="tabMenu joinBtn">
+						<a href="#none" class="on" role="button">가 입<span class="hide">선택됨</span></a>
+						<a href="#none" role="button">미가입</a>
+					</div>
+				</div>
+
+				<section class="childrenInfo">
+					<div class="tabOpen open">
+						<h2>자녀정보 확인방법</h2>
+						<div class="itemPack">
+							<ul class="itemListN3">
+								<li class="on">
+									<a href="#none" role="button">
+										<div class="cont">
+											<!-- itemdata -->
+											장기보험<br>가입 확인<br>(현대해상)
+											<!-- //itemdata -->
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none" role="button">
+										<div class="cont">
+											<!-- itemdata -->
+											자동차보험<br>가입 확인<br>(현대해상)
+											<!-- //itemdata -->
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none" role="button">
+										<div class="cont">
+											<!-- itemdata -->
+											가족 관계<br>입증 서류<br>(스캔본)
+											<!-- //itemdata -->
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="btnDisable three">
+							<span>장기보험<br>가입 확인<br>(현대해상)</span>
+							<span>자동차보험<br>가입 확인<br>(현대해상)</span>
+							<span>가족 관계<br>입증 서류<br>(스캔본)</span>
+						</div>
+
+						<ul class="listDot mgtS">
+							<li>계약자의 부양자녀는 해당하지 않습니다. 기명피보험자(본인)의 부양자녀만 해당합니다.</li>
+						</ul>
+
+						<div class="itemContWrap">
+							<div>
+								<h2>자녀 정보를 확인해주세요.</h2>
+								<ul class="listDetail">
+									<li>
+										<span class="titl">이름</span>
+										<span class="data">박해상</span>
+									</li>
+									<li>
+										<span class="titl">생년월일</span>
+										<span class="data">881201(만5세)</span>
+									</li>
+									<li>
+										<span class="titl">성별</span>
+										<span class="data">남자</span>
+									</li>
+								</ul>
+								<ul class="listDot">
+									<li>자녀가 여러 명인 경우 가장 어린 분의 정보가 노출</li>
+								</ul>
+							</div>
+
+							<div>
+								<h2>가장 어린 자녀의 정보를 입력</h2>
+								<fieldset>
+									<legend>가장 나이가 어린 가족의 정보입력</legend>
+									<div class="inputWrap">
+										<input type="text" id="name01" required />
+										<label for="name01">이름</label>
+									</div>
+									<div class="inputWrap birth">
+										<input type="text" title="생년월일" id="birth01" required />
+										<label for="birth01">생년월일(ex.881201)</label>
+										<div class="gender">
+											<span>
+												<input type="radio" id="man01" name="gender01"><label for="man01">남</label>
+											</span>
+											<span>
+												<input type="radio" id="woman01" name="gender01"><label for="woman01">여</label>
+											</span>
+										</div>
+									</div>
+								</fieldset>
+								<ul class="listDot">
+									<li>자녀가 여러 명인 경우 가장 어린 분의 정보가 노출</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="toggleWrap">
+						<div class="tabBox open">
+							<div class="toggleTitle"><a href="#none" class="toggleBtn">특약 상세정보 보기</a></div>
+							<!-- 2017-07-11 기획 요청 컨텐츠 수정
+							<div class="toggleDetail">
+								보험 가입시 청약내용 확인 단계에서 아래 2가지 사진중 1개의 사진 등록이 필요합니다.(사진이 없어도 보험료 계산은 가능)
+								<ol class="numList">
+									<li>가족관계증명서 스캔사진</li>
+									<li>주민등록등본(가족관계 입증 서류)스캔사진</li>
+								</ol>
+							</div> -->
+							<div class="toggleDetail">
+								<ul  class="listDot mgtNone">
+									<li>가족관계입증 서류가 현재 없어도 보험료 계산은 가능합니다.<br>
+										단, 보험가입시 가족관계 입증서류<span>(가족관계증명서 혹은 주민등록등본)</span>가 필요하므로 미리 이미지파일로 준비해 주세요.</li><!-- 0814 수정 -->
+									<li>긴급출동 특약 보험료를 제외한  담보별 보험료를 할인하여 드립니다.(기타 특약 일부 포함)</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<div class="btnWrap">
+					<span><a href="#none" role="button">취소</a></span>
+					<span><a href="#none" role="button">확인</a></span>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="btnClose" onclick="window.close();">창닫기</button>
+	</div>
+</body>
+</html>
